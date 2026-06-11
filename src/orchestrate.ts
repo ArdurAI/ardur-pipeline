@@ -13,7 +13,10 @@
  *  - **Bounded retries** — each engine stage is wrapped in `withRetry`; a
  *    transient failure does not sink the cycle, an exhausted one does.
  *  - **Observable** — structured logs per stage with durations; a roll-up
- *    `RunResult`; a webhook alert on `failed`/`degraded`.
+ *    `RunResult`; a webhook alert on `failed`/`degraded`; per-cycle metrics.
+ *  - **Dry-run** — when `dryRun` is set, all four stages run and the immutable
+ *    archive is written, but `latest/` and `manifest.json` are NOT flipped. The
+ *    result carries `dryRun: true`. Safe for verification and E2E harnesses.
  *
  * This orchestrator is the OUT-OF-PROCESS deployment conductor: it spawns the
  * four engine CLIs (see runners.ts). `ardur-top10-engine` ships an in-process
@@ -29,6 +32,7 @@ import { withRetry } from './retry.ts';
 import { createCliRunners, type StageRunners } from './runners.ts';
 import { ArtifactStore, buildManifest, type CyclePublishSet, type PublishStatus } from './store.ts';
 import { sendAlert } from './alert.ts';
+import { buildCycleMetrics, emitMetrics } from './metrics.ts';
 
 export type CycleStatus = 'published' | 'degraded' | 'failed' | 'skipped';
 
@@ -43,6 +47,8 @@ export interface RunResult {
   warnings: string[];
   nextRefreshAt: string;
   timings: StageTiming[];
+  /** True when the cycle ran with dryRun: latest/ and manifest.json were not written. */
+  dryRun?: boolean;
 }
 
 export interface RunCycleDeps {
@@ -54,6 +60,12 @@ export interface RunCycleDeps {
   store?: ArtifactStore;
   /** Injectable clock so cycles are reproducible. Default `new Date()`. */
   now?: () => Date;
+  /**
+   * When true, run all four stages and write the immutable archive under
+   * `cycles/<id>/` but skip the `latest/` + `manifest.json` pointer flip.
+   * The returned RunResult has `dryRun: true`.
+   */
+  dryRun?: boolean;
 }
 
 function errMessage(e: unknown): string {
@@ -64,6 +76,7 @@ function errMessage(e: unknown): string {
 export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
   const { config } = deps;
   const now = (deps.now ?? (() => new Date()))();
+  const startedAt = now.toISOString();
   const cycle = cycleFor(now);
   const next = nextRefreshAt(cycle);
   const log = deps.logger.child({ cycleId: cycle.id });
@@ -71,8 +84,30 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
   const runners = deps.runners ?? createCliRunners(config, cycle, log);
   const warnings: string[] = [];
   const timings: StageTiming[] = [];
+  let articleCount = 0;
+  let topicsCovered: string[] = [];
 
   log.info('cycle start', { windowStart: cycle.windowStart, windowEnd: cycle.windowEnd });
+
+  // Emit metrics at every exit point, best-effort.
+  const finalize = async (result: RunResult): Promise<RunResult> => {
+    const metrics = buildCycleMetrics(
+      result.status,
+      cycle.id,
+      startedAt,
+      result.timings,
+      result.warnings.length,
+      articleCount,
+      topicsCovered,
+    );
+    await emitMetrics(metrics, {
+      storeRoot: store.root,
+      cycleId: cycle.id,
+      webhookUrl: config.observability.metricsWebhookUrl,
+      logger: log,
+    });
+    return deps.dryRun ? { ...result, dryRun: true } : result;
+  };
 
   // Timing helper — wraps a stage with retry + duration logging.
   const stage = async <T>(name: string, fn: () => Promise<T>): Promise<T> => {
@@ -94,7 +129,7 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     const existing = await store.loadPublished(cycle);
     if (existing) {
       log.info('idempotent skip: cycle already published');
-      return { cycle, status: 'skipped', warnings, nextRefreshAt: next, timings };
+      return finalize({ cycle, status: 'skipped', warnings, nextRefreshAt: next, timings });
     }
   } catch (e) {
     warnings.push(`loadPublished failed (continuing): ${errMessage(e)}`);
@@ -116,6 +151,8 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     const top10 = await stage('top10', () => runners.selectTop10(ranking, previous, aggregation));
     const articles = await stage('synthesize', () => runners.synthesize(top10, aggregation));
     set = { cycle, aggregation, ranking, top10, articles };
+    articleCount = articles.data.articles.length;
+    topicsCovered = top10.data.topicsCovered;
   } catch (e) {
     warnings.push(`stage failed: ${errMessage(e)}`);
     log.error('cycle failed before publish', { warnings });
@@ -124,7 +161,7 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       { cycle, status: 'failed', warnings },
       log,
     );
-    return { cycle, status: 'failed', warnings, nextRefreshAt: next, timings };
+    return finalize({ cycle, status: 'failed', warnings, nextRefreshAt: next, timings });
   }
 
   // Soft cycle-consistency checks — flag drift without failing the cycle.
@@ -153,7 +190,9 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
 
   // --- Publish all-or-nothing. ------------------------------------------------
   try {
-    await stage('publish', () => store.publish(set, manifest));
+    await stage('publish', () =>
+      store.publish(set, manifest, { dryRun: deps.dryRun, rawWarnings: allWarnings }),
+    );
   } catch (e) {
     allWarnings.push(`publish failed: ${errMessage(e)}`);
     log.error('cycle failed at publish (previous cycle stays live)', { warnings: allWarnings });
@@ -162,10 +201,21 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       { cycle, status: 'failed', warnings: allWarnings },
       log,
     );
-    return { cycle, status: 'failed', warnings: allWarnings, nextRefreshAt: next, timings };
+    return finalize({
+      cycle,
+      status: 'failed',
+      warnings: allWarnings,
+      nextRefreshAt: next,
+      timings,
+    });
   }
 
-  log.info('cycle published', { status, nextRefreshAt: next, warnings: allWarnings.length });
+  log.info('cycle published', {
+    status,
+    dryRun: deps.dryRun ?? false,
+    nextRefreshAt: next,
+    warnings: allWarnings.length,
+  });
   if (status === 'degraded') {
     await sendAlert(
       config.observability.alertWebhookUrl,
@@ -173,5 +223,5 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       log,
     );
   }
-  return { cycle, status, warnings: allWarnings, nextRefreshAt: next, timings };
+  return finalize({ cycle, status, warnings: allWarnings, nextRefreshAt: next, timings });
 }

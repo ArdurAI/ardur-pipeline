@@ -36,18 +36,22 @@ flowchart LR
 ## Quickstart
 
 ```bash
-# from a workspace with the four engines checked out as siblings:
-#   ardur-pipeline/  ardur-news-aggregator/  ardur-ranking-engine/
-#   ardur-top10-engine/  ardur-article-synthesizer/
+# 1. clone the orchestrator
+git clone https://github.com/ArdurAI/ardur-pipeline.git
 cd ardur-pipeline
-npm install
-cp .env.example .env            # defaults are safe: deterministic, budget=0
 
-# run the current cycle (logs -> stderr, RunResult JSON -> stdout)
+# 2. bootstrap — clone/pull + install all four engine repos as siblings
+./scripts/bootstrap.sh              # safe to re-run; respects .env overrides
+cp .env.example .env                # defaults are safe: deterministic, budget=0
+
+# 3. run the current cycle (logs -> stderr, RunResult JSON -> stdout)
 npm run cycle
 
 # backfill a specific window
 node --experimental-strip-types src/cli.ts --at 2026-06-11T06:00:00Z
+
+# dry-run: all four stages run, archive written, latest/ + manifest.json unchanged
+node --experimental-strip-types src/cli.ts --dry-run
 
 # the published store lands in ./.artifacts (manifest.json + latest/ + cycles/)
 ```
@@ -92,19 +96,23 @@ is the out-of-process conductor that spawns all four CLIs and owns the deploy + 
 
 ```
 src/
-  cli.ts          entrypoint — run one cycle (what the scheduler invokes)
+  cli.ts          entrypoint — run one cycle (--at backfill, --dry-run)
   orchestrate.ts  the conductor: idempotency, retries, last-good-wins, alerting
   runners.ts      CLI-backed StageRunners — the only place that spawns engines
-  store.ts        artifact store + the manifest handoff contract
+  store.ts        artifact store + manifest handoff (warning categorization, health)
   cycle.ts        6-hour UTC cycle math
   config.ts       env -> typed config (safe defaults; budget=0)
   retry.ts        bounded retry + backoff
   log.ts          structured logging
   alert.ts        webhook alerting
+  metrics.ts      per-cycle metrics (metrics.json + metrics.ndjson + webhook)
   contracts.ts    VENDORED shared wire contract (do not edit here)
-  smoke.test.ts   unit tests for the orchestrator's own glue (not engine E2E)
+  smoke.test.ts   orchestrator glue tests (idempotency, dry-run, metrics, ...)
+  golden.test.ts  full end-to-end tests over golden fixtures
+scripts/
+  bootstrap.sh    one-command local setup (clone/pull + install all engines)
 docs/spec.md      full design spec with diagrams
-.github/workflows/cycle.yml   the 6-hour scheduled cycle
+.github/workflows/cycle.yml   the 6-hour scheduled cycle (engine ref pinning)
 ```
 
 ## Scope boundary

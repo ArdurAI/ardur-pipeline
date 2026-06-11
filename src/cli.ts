@@ -4,6 +4,7 @@
  * Usage:
  *   node --experimental-strip-types src/cli.ts            # run the current cycle
  *   node --experimental-strip-types src/cli.ts --at 2026-06-11T06:00:00Z   # backfill
+ *   node --experimental-strip-types src/cli.ts --dry-run  # all stages, no pointer flip
  *
  * Reads config from the environment (see .env.example). Emits structured logs to
  * stderr and a final JSON `RunResult` to stdout. Exit code:
@@ -16,6 +17,10 @@
 import { loadConfig } from './config.ts';
 import { createLogger } from './log.ts';
 import { runCycle } from './orchestrate.ts';
+
+function parseFlag(argv: string[], flag: string): boolean {
+  return argv.includes(flag);
+}
 
 function parseAt(argv: string[]): Date | undefined {
   const i = argv.indexOf('--at');
@@ -30,12 +35,21 @@ function parseAt(argv: string[]): Date | undefined {
 async function main(): Promise<void> {
   const config = loadConfig();
   const logger = createLogger({ format: config.observability.logFormat });
-  const at = parseAt(process.argv.slice(2));
+  const args = process.argv.slice(2);
+  const at = parseAt(args);
+  const dryRun = parseFlag(args, '--dry-run');
+
+  if (dryRun) {
+    logger.info(
+      'dry-run mode: archive will be written, latest/ and manifest.json will NOT be updated',
+    );
+  }
 
   const result = await runCycle({
     config,
     logger,
     now: at ? () => at : undefined,
+    dryRun,
   });
 
   // Final machine-readable summary on stdout (logs went to stderr).

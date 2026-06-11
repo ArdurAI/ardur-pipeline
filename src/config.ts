@@ -44,6 +44,8 @@ export interface PipelineConfig {
   };
   observability: {
     alertWebhookUrl: string | null;
+    /** Optional POST target for per-cycle CycleMetrics JSON (same shape as alert.ts). */
+    metricsWebhookUrl: string | null;
     logFormat: 'json' | 'pretty';
   };
 }
@@ -89,6 +91,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     },
     observability: {
       alertWebhookUrl: str('ALERT_WEBHOOK_URL', '') || null,
+      metricsWebhookUrl: str('METRICS_WEBHOOK_URL', '') || null,
       logFormat: str('LOG_FORMAT', 'json') === 'pretty' ? 'pretty' : 'json',
     },
   };

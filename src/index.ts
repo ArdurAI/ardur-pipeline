@@ -9,11 +9,20 @@ export { runCycle } from './orchestrate.ts';
 export type { RunResult, RunCycleDeps, CycleStatus, StageTiming } from './orchestrate.ts';
 export { loadConfig, aiEnv } from './config.ts';
 export type { PipelineConfig, EngineLocations } from './config.ts';
-export { ArtifactStore, buildManifest } from './store.ts';
-export type { PublishManifest, CyclePublishSet, PublishStatus } from './store.ts';
+export { ArtifactStore, buildManifest, categorizeWarnings } from './store.ts';
+export type {
+  PublishManifest,
+  CyclePublishSet,
+  PublishStatus,
+  WarningCategory,
+  HealthRollup,
+  PublishOptions,
+} from './store.ts';
 export { createCliRunners } from './runners.ts';
 export type { StageRunners } from './runners.ts';
 export { createLogger } from './log.ts';
 export type { Logger } from './log.ts';
 export { cycleFor, nextRefreshAt, windowStart, cycleId } from './cycle.ts';
+export { buildCycleMetrics, emitMetrics } from './metrics.ts';
+export type { CycleMetrics, MetricsEmitOptions } from './metrics.ts';
 export * from './contracts.ts';

@@ -10,13 +10,17 @@
  *     top10.json
  *     articles.json
  *   cycles/<cycleId>/            <- immutable per-cycle archive (audit + rollback)
- *     aggregation.json ranking.json top10.json articles.json run.json
+ *     aggregation.json ranking.json top10.json articles.json run.json metrics.json
+ *   metrics.ndjson               <- append-only per-cycle metrics stream
  *
  * Publish is **all-or-nothing**: the immutable archive is written first, then
  * `latest/` and `manifest.json` are swapped in via temp-file + rename. A reader
  * that loads `manifest.json` is guaranteed a complete, internally-consistent set
  * — there is no window where `latest/` is half-written. If a cycle fails, the
  * pointer is never flipped and the previous cycle keeps serving (last-good-wins).
+ *
+ * When `dryRun` is set, the archive is still written (for inspection) but the
+ * `latest/` swap and `manifest.json` flip are skipped.
  */
 
 import { mkdir, readFile, writeFile, rename, cp, rm } from 'node:fs/promises';
@@ -41,6 +45,66 @@ export interface CyclePublishSet {
   top10: Top10Artifact;
   articles: ArticleArtifact;
 }
+
+// ---------------------------------------------------------------------------
+// Warning categorization (#2)
+// ---------------------------------------------------------------------------
+
+export interface WarningCategory {
+  category: string;
+  count: number;
+  /** First up to 3 verbatim warnings in this category (rest in the archive). */
+  sample: string[];
+}
+
+export interface HealthRollup {
+  /** Sources queried but not responded across all topics. */
+  failedSources: number;
+  /** Topics whose coverage was marked degraded by the aggregator. */
+  degradedTopics: number;
+  /** Expected 10 articles; 10 - actual (articles dropped by the synthesizer). */
+  articlesDropped: number;
+  /** True if any engine fell back to a deterministic / zero-cost path. */
+  usedFallback: boolean;
+}
+
+const WARNING_PATTERNS: Array<{ category: string; patterns: string[] }> = [
+  { category: 'blocked-fetch', patterns: ['blocked', 'ssrf', 'forbidden'] },
+  { category: 'http-error', patterns: ['http error', 'status', 'fetch failed', 'network'] },
+  { category: 'diversity-floor', patterns: ['diversity', 'coverage', 'floor'] },
+  { category: 'copyright-gate', patterns: ['copyright', 'paywalled', 'gated'] },
+  { category: 'ai-fallback', patterns: ['fallback', 'budget', 'max_generations', 'deterministic'] },
+  { category: 'cycle-mismatch', patterns: ['cycle mismatch'] },
+];
+const SAMPLE_CAP = 3;
+
+function matchWarningCategory(warning: string): string {
+  const lower = warning.toLowerCase();
+  for (const { category, patterns } of WARNING_PATTERNS) {
+    if (patterns.some((p) => lower.includes(p))) return category;
+  }
+  return 'other';
+}
+
+export function categorizeWarnings(warnings: string[]): WarningCategory[] {
+  const map = new Map<string, { count: number; sample: string[] }>();
+  for (const w of warnings) {
+    const cat = matchWarningCategory(w);
+    const entry = map.get(cat) ?? { count: 0, sample: [] };
+    entry.count++;
+    if (entry.sample.length < SAMPLE_CAP) entry.sample.push(w);
+    map.set(cat, entry);
+  }
+  return Array.from(map.entries()).map(([category, { count, sample }]) => ({
+    category,
+    count,
+    sample,
+  }));
+}
+
+// ---------------------------------------------------------------------------
+// Manifest
+// ---------------------------------------------------------------------------
 
 /**
  * `manifest.json` — the stable, versioned handoff the site consumes. ardur.ai
@@ -67,14 +131,24 @@ export interface PublishManifest {
     top10: string;
     articles: string;
   };
-  /** Non-fatal degradations rolled up from every stage. */
-  warnings: string[];
+  /**
+   * Warnings compacted by category for the manifest consumer.
+   * Full raw list lives in `cycles/<id>/run.json`.
+   */
+  warnings: WarningCategory[];
+  /** One-glance health badge for the site. */
+  health: HealthRollup;
   /** Topic + headline summary so the site can render without parsing payloads. */
   summary: {
     topicsCovered: string[];
     globalTop10: { rank: number; topic: string; headline: string }[];
     articleCount: number;
   };
+}
+
+/** Full archive record stored in `cycles/<id>/run.json` (superset of manifest). */
+interface RunArchive extends PublishManifest {
+  rawWarnings: string[];
 }
 
 const STAGE_FILES = {
@@ -84,8 +158,15 @@ const STAGE_FILES = {
   articles: 'articles.json',
 } as const;
 
+export interface PublishOptions {
+  /** Write the archive but skip `latest/` + `manifest.json` pointer flip. */
+  dryRun?: boolean;
+  /** Full raw warning list for the immutable archive (manifest gets a summary). */
+  rawWarnings?: string[];
+}
+
 export class ArtifactStore {
-  private readonly root: string;
+  readonly root: string;
 
   constructor(root: string) {
     this.root = root;
@@ -95,8 +176,7 @@ export class ArtifactStore {
     return join(this.root, 'manifest.json');
   }
 
-  private cycleDir(cycle: CycleMeta): string {
-    // ':' is filesystem-hostile on some platforms; encode it for the dir name.
+  cycleDir(cycle: CycleMeta): string {
     return join(this.root, 'cycles', cycle.id.replace(/:/g, '-'));
   }
 
@@ -137,18 +217,26 @@ export class ArtifactStore {
    * Publish one cycle, all-or-nothing.
    *  1. write the immutable archive under cycles/<id>/
    *  2. stage latest/ + manifest into temp dirs/files
-   *  3. atomically rename them into place (pointer flip)
+   *  3. atomically rename them into place (pointer flip) — skipped on dryRun
    */
-  async publish(set: CyclePublishSet, manifest: PublishManifest): Promise<void> {
+  async publish(
+    set: CyclePublishSet,
+    manifest: PublishManifest,
+    opts?: PublishOptions,
+  ): Promise<void> {
     const dir = this.cycleDir(set.cycle);
     await mkdir(dir, { recursive: true });
+    const rawWarnings = opts?.rawWarnings ?? [];
+    const runRecord: RunArchive = { ...manifest, rawWarnings };
     await Promise.all([
       writeFile(join(dir, STAGE_FILES.aggregation), pretty(set.aggregation)),
       writeFile(join(dir, STAGE_FILES.ranking), pretty(set.ranking)),
       writeFile(join(dir, STAGE_FILES.top10), pretty(set.top10)),
       writeFile(join(dir, STAGE_FILES.articles), pretty(set.articles)),
-      writeFile(join(dir, 'run.json'), pretty(manifest)),
+      writeFile(join(dir, 'run.json'), pretty(runRecord)),
     ]);
+
+    if (opts?.dryRun) return;
 
     // Stage latest/ in a temp dir, then swap atomically.
     const latest = join(this.root, 'latest');
@@ -176,6 +264,20 @@ export function buildManifest(
   publishedAt: string,
   warnings: string[],
 ): PublishManifest {
+  const cycleSlug = set.cycle.id.replace(/:/g, '-');
+
+  // Health rollup derived from actual artifact data.
+  const coverages = Object.values(set.aggregation.data.coverageByTopic);
+  const failedSources = coverages.reduce(
+    (sum, c) => sum + Math.max(0, c.sourcesQueried - c.sourcesResponded),
+    0,
+  );
+  const degradedTopics = coverages.filter((c) => c.degraded).length;
+  const articlesDropped = Math.max(0, 10 - set.articles.data.articles.length);
+  const usedFallback = warnings.some(
+    (w) => w.toLowerCase().includes('fallback') || w.toLowerCase().includes('deterministic'),
+  );
+
   return {
     schemaVersion: SCHEMA_VERSION,
     cycle: set.cycle,
@@ -189,12 +291,13 @@ export function buildManifest(
       articles: set.articles.runId,
     },
     artifacts: {
-      aggregation: `cycles/${set.cycle.id.replace(/:/g, '-')}/${STAGE_FILES.aggregation}`,
-      ranking: `cycles/${set.cycle.id.replace(/:/g, '-')}/${STAGE_FILES.ranking}`,
-      top10: `cycles/${set.cycle.id.replace(/:/g, '-')}/${STAGE_FILES.top10}`,
-      articles: `cycles/${set.cycle.id.replace(/:/g, '-')}/${STAGE_FILES.articles}`,
+      aggregation: `cycles/${cycleSlug}/${STAGE_FILES.aggregation}`,
+      ranking: `cycles/${cycleSlug}/${STAGE_FILES.ranking}`,
+      top10: `cycles/${cycleSlug}/${STAGE_FILES.top10}`,
+      articles: `cycles/${cycleSlug}/${STAGE_FILES.articles}`,
     },
-    warnings,
+    warnings: categorizeWarnings(warnings),
+    health: { failedSources, degradedTopics, articlesDropped, usedFallback },
     summary: {
       topicsCovered: set.top10.data.topicsCovered,
       globalTop10: set.top10.data.global.map((e) => ({
