@@ -392,18 +392,27 @@ test('schema version mismatch in a runner fails the cycle with no publish', asyn
   const root = await mkdtemp(join(tmpdir(), 'ardur-gate-schema-'));
   const config = testConfig(root);
   const now = () => new Date('2026-06-11T06:30:00Z');
-  const cycle = cycleFor(now());
 
   // Simulates parseArtifact gating a v2-schemaVersion payload from the aggregation engine.
   const badRunners: StageRunners = {
     async aggregate() {
-      const payload = { schemaVersion: 'ardur-content-pipeline/v2', artifact: 'aggregation', data: {} };
+      const payload = {
+        schemaVersion: 'ardur-content-pipeline/v2',
+        artifact: 'aggregation',
+        data: {},
+      };
       assertCompatibleArtifact(payload, 'aggregation');
       return payload as unknown as AggregationArtifact;
     },
-    async rank() { throw new Error('unreachable'); },
-    async selectTop10() { throw new Error('unreachable'); },
-    async synthesize() { throw new Error('unreachable'); },
+    async rank() {
+      throw new Error('unreachable');
+    },
+    async selectTop10() {
+      throw new Error('unreachable');
+    },
+    async synthesize() {
+      throw new Error('unreachable');
+    },
   };
 
   const res = await runCycle({ config, logger: silent, now, runners: badRunners });
@@ -417,7 +426,6 @@ test('wrong artifact stage in a runner fails the cycle with no publish', async (
   const root = await mkdtemp(join(tmpdir(), 'ardur-gate-stage-'));
   const config = testConfig(root);
   const now = () => new Date('2026-06-11T06:30:00Z');
-  const cycle = cycleFor(now());
 
   // Simulates a mis-wired engine that outputs 'ranking' where 'aggregation' is expected.
   const miswiredRunners: StageRunners = {
@@ -426,9 +434,15 @@ test('wrong artifact stage in a runner fails the cycle with no publish', async (
       assertCompatibleArtifact(payload, 'aggregation');
       return payload as unknown as AggregationArtifact;
     },
-    async rank() { throw new Error('unreachable'); },
-    async selectTop10() { throw new Error('unreachable'); },
-    async synthesize() { throw new Error('unreachable'); },
+    async rank() {
+      throw new Error('unreachable');
+    },
+    async selectTop10() {
+      throw new Error('unreachable');
+    },
+    async synthesize() {
+      throw new Error('unreachable');
+    },
   };
 
   const res = await runCycle({ config, logger: silent, now, runners: miswiredRunners });
