@@ -250,6 +250,7 @@ test('buildManifest computes health rollup', async () => {
   const set: CyclePublishSet = { cycle, aggregation: agg, ranking: rank, top10, articles };
   const manifest = buildManifest(set, 'published', cycle.windowStart, []);
   assert.equal(manifest.health.articlesDropped, 10); // 0 articles produced, expected 10
+  assert.equal(manifest.health.heldArticles, 0); // no held articles in fake fixture
   assert.equal(manifest.health.usedFallback, false);
 });
 
@@ -488,4 +489,125 @@ test('wrong artifact stage in a runner fails the cycle with no publish', async (
   assert.equal(res.status, 'failed');
   const store = new ArtifactStore(root);
   assert.equal(await store.readManifest(), null, 'no publish on stage mismatch');
+});
+
+// --- HOLD path (#15) --------------------------------------------------------
+
+test('held articles are excluded from latest/ but included in cycle archive', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-hold-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  // Runner that synthesizes one published + one held article.
+  const holdRunners: StageRunners = {
+    ...fakeRunners(cycle),
+    async synthesize(top10) {
+      return envelope('articles' as AggregationArtifact['artifact'], cycle, 'art-hold', {
+        articles: [
+          {
+            id: 'art-pub-1',
+            rank: 1,
+            topic: 'ai',
+            topicLabel: 'AI',
+            headline: 'Published AI Article',
+            dek: 'A published piece.',
+            body: [],
+            keyPoints: [],
+            whyItMatters: '',
+            readerAction: '',
+            tags: [],
+            confidence: 'high',
+            sourceQuality: 'multi-source',
+            references: [],
+            provenance: {
+              clusterId: 'c1',
+              sourceCount: 1,
+              distinctDomains: 1,
+              upstreamRunId: top10.runId,
+            },
+            ai: {
+              provider: 'deterministic',
+              model: 'none',
+              status: 'fallback',
+              generatedAt: cycle.windowStart,
+            },
+            legalNote: '',
+            wordCount: 10,
+            readingTimeMinutes: 1,
+            generatedAt: cycle.windowStart,
+            editorialStatus: 'published',
+          },
+          {
+            id: 'art-held-1',
+            rank: 2,
+            topic: 'security',
+            topicLabel: 'Security',
+            headline: 'Held Security Article',
+            dek: 'Insufficient corroboration.',
+            body: [],
+            keyPoints: [],
+            whyItMatters: '',
+            readerAction: '',
+            tags: [],
+            confidence: 'low',
+            sourceQuality: 'single source',
+            references: [],
+            provenance: {
+              clusterId: 'c2',
+              sourceCount: 1,
+              distinctDomains: 1,
+              upstreamRunId: top10.runId,
+            },
+            ai: {
+              provider: 'deterministic',
+              model: 'none',
+              status: 'fallback',
+              generatedAt: cycle.windowStart,
+            },
+            legalNote: '',
+            wordCount: 5,
+            readingTimeMinutes: 1,
+            generatedAt: cycle.windowStart,
+            editorialStatus: 'held',
+          },
+        ],
+        copyrightPolicy: {
+          originalTextOnly: true,
+          maxQuoteWords: 25,
+          reproduceArticleBody: false,
+          requireAttribution: true,
+          requireCanonicalLinks: true,
+        },
+      }) as unknown as ArticleArtifact;
+    },
+  };
+
+  const res = await runCycle({ config, logger: silent, now, runners: holdRunners });
+
+  // Cycle degrades because of the hold warning.
+  assert.equal(res.status, 'degraded');
+  assert.equal(res.heldCount, 1);
+  assert.ok(res.warnings.some((w) => w.includes('held')));
+
+  // Archive has both articles.
+  const cycleSlug = cycle.id.replace(/:/g, '-');
+  const archived = JSON.parse(
+    await readFile(join(root, 'cycles', cycleSlug, 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(archived.data.articles.length, 2);
+
+  // latest/ strips the held article.
+  const live = JSON.parse(
+    await readFile(join(root, 'latest', 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(live.data.articles.length, 1);
+  assert.equal(live.data.articles[0]!.id, 'art-pub-1');
+
+  // Manifest health reflects the split.
+  const store = new ArtifactStore(root);
+  const manifest = await store.readManifest();
+  assert.ok(manifest);
+  assert.equal(manifest.health.heldArticles, 1);
+  assert.equal(manifest.summary.articleCount, 1);
 });

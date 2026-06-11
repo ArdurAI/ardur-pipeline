@@ -1,0 +1,41 @@
+{
+  "name": "news-aggregator",
+  "description": "Stage 1: ingest ≥20–30 sources per topic, dedup, cluster, and optionally ETL-fetch article bodies for fact extraction.",
+  "manifestVersion": "1.0.0",
+  "contractRevision": 3,
+  "cli": {
+    "args": [],
+    "env": [
+      "ARDUR_AI_PROVIDER",
+      "ARDUR_AI_MAX_GENERATIONS",
+      "ARDUR_AI_TIMEOUT_MS",
+      "ARDUR_ETL_ENABLED",
+      "ARDUR_ETL_TIMEOUT_MS",
+      "OLLAMA_HOST",
+      "OLLAMA_MODEL"
+    ],
+    "stdout": "json"
+  },
+  "inputArtifact": null,
+  "outputArtifact": "aggregation",
+  "outputSchema": {
+    "type": "object",
+    "required": ["schemaVersion", "artifact", "runId", "cycle", "data"],
+    "properties": {
+      "schemaVersion": { "type": "string", "enum": ["ardur-content-pipeline/v1"] },
+      "contractRevision": { "type": "number", "description": "3 for rev-3 producers" },
+      "artifact": { "type": "string", "enum": ["aggregation"] },
+      "runId": { "type": "string" },
+      "upstreamRunId": { "type": "string" },
+      "generatedAt": { "type": "string", "description": "ISO 8601 UTC" },
+      "cycle": { "type": "object", "description": "CycleMeta: id, windowStart, windowEnd" },
+      "warnings": { "type": "array", "description": "Non-fatal issues (timeouts, SSRF blocks, …)" },
+      "data": {
+        "type": "object",
+        "description": "AggregationData: itemsByTopic, clustersByTopic, coverageByTopic, documentsByTopic?, factsByCluster?"
+      }
+    }
+  },
+  "idempotency": "cycle",
+  "stateless": true
+}

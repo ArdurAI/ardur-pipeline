@@ -8,9 +8,10 @@
  *     aggregation.json
  *     ranking.json
  *     top10.json
- *     articles.json
+ *     articles.json              <- published articles only (held articles excluded)
  *   cycles/<cycleId>/            <- immutable per-cycle archive (audit + rollback)
  *     aggregation.json ranking.json top10.json articles.json run.json metrics.json
+ *     articles.json includes ALL articles (held + published) for editorial audit.
  *   metrics.ndjson               <- append-only per-cycle metrics stream
  *
  * Publish is **all-or-nothing**: the immutable archive is written first, then
@@ -19,11 +20,16 @@
  * — there is no window where `latest/` is half-written. If a cycle fails, the
  * pointer is never flipped and the previous cycle keeps serving (last-good-wins).
  *
+ * HOLD semantics: articles with `editorialStatus: 'held'` are written to the
+ * immutable archive (for editorial review) but are filtered out of `latest/`.
+ * `manifest.health.heldArticles` counts them; `manifest.summary.articleCount`
+ * reflects only the published slice.
+ *
  * When `dryRun` is set, the archive is still written (for inspection) but the
  * `latest/` swap and `manifest.json` flip are skipped.
  */
 
-import { mkdir, readFile, writeFile, rename, cp, rm } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, rename, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { SCHEMA_VERSION } from '@ardurai/contracts';
@@ -62,8 +68,10 @@ export interface HealthRollup {
   failedSources: number;
   /** Topics whose coverage was marked degraded by the aggregator. */
   degradedTopics: number;
-  /** Expected 10 articles; 10 - actual (articles dropped by the synthesizer). */
+  /** Expected 10 articles; 10 - total articles produced (dropped by synthesizer). */
   articlesDropped: number;
+  /** Articles held for editorial review (editorialStatus: 'held'). Not in latest/. */
+  heldArticles: number;
   /** True if any engine fell back to a deterministic / zero-cost path. */
   usedFallback: boolean;
 }
@@ -74,6 +82,7 @@ const WARNING_PATTERNS: Array<{ category: string; patterns: string[] }> = [
   { category: 'diversity-floor', patterns: ['diversity', 'coverage', 'floor'] },
   { category: 'copyright-gate', patterns: ['copyright', 'paywalled', 'gated'] },
   { category: 'ai-fallback', patterns: ['fallback', 'budget', 'max_generations', 'deterministic'] },
+  { category: 'editorial-hold', patterns: ['held', 'hold', 'fact corroboration'] },
   { category: 'cycle-mismatch', patterns: ['cycle mismatch'] },
 ];
 const SAMPLE_CAP = 3;
@@ -142,6 +151,7 @@ export interface PublishManifest {
   summary: {
     topicsCovered: string[];
     globalTop10: { rank: number; topic: string; headline: string }[];
+    /** Count of articles in latest/articles.json (published only, held excluded). */
     articleCount: number;
   };
 }
@@ -163,6 +173,13 @@ export interface PublishOptions {
   dryRun?: boolean;
   /** Full raw warning list for the immutable archive (manifest gets a summary). */
   rawWarnings?: string[];
+}
+
+/** Return a copy of the ArticleArtifact with held articles stripped out. */
+function publishedArticles(artifact: ArticleArtifact): ArticleArtifact {
+  const live = artifact.data.articles.filter((a) => a.editorialStatus !== 'held');
+  if (live.length === artifact.data.articles.length) return artifact;
+  return { ...artifact, data: { ...artifact.data, articles: live } };
 }
 
 export class ArtifactStore {
@@ -215,9 +232,9 @@ export class ArtifactStore {
 
   /**
    * Publish one cycle, all-or-nothing.
-   *  1. write the immutable archive under cycles/<id>/
-   *  2. stage latest/ + manifest into temp dirs/files
-   *  3. atomically rename them into place (pointer flip) — skipped on dryRun
+   *  1. write the immutable archive under cycles/<id>/ (full artifact, held included)
+   *  2. stage latest/ with held articles filtered out
+   *  3. atomically rename both into place (pointer flip) — skipped on dryRun
    */
   async publish(
     set: CyclePublishSet,
@@ -228,6 +245,8 @@ export class ArtifactStore {
     await mkdir(dir, { recursive: true });
     const rawWarnings = opts?.rawWarnings ?? [];
     const runRecord: RunArchive = { ...manifest, rawWarnings };
+
+    // Archive always stores the FULL artifact (held articles included for audit).
     await Promise.all([
       writeFile(join(dir, STAGE_FILES.aggregation), pretty(set.aggregation)),
       writeFile(join(dir, STAGE_FILES.ranking), pretty(set.ranking)),
@@ -238,11 +257,20 @@ export class ArtifactStore {
 
     if (opts?.dryRun) return;
 
-    // Stage latest/ in a temp dir, then swap atomically.
+    // Build a held-filtered view of articles for the live pointer.
+    const liveArticles = publishedArticles(set.articles);
+
+    // Stage latest/ explicitly (cannot cp cycle dir — articles differ).
     const latest = join(this.root, 'latest');
     const latestTmp = join(this.root, `.latest.tmp-${set.cycle.id.replace(/:/g, '-')}`);
     await rm(latestTmp, { recursive: true, force: true });
-    await cp(dir, latestTmp, { recursive: true });
+    await mkdir(latestTmp, { recursive: true });
+    await Promise.all([
+      writeFile(join(latestTmp, STAGE_FILES.aggregation), pretty(set.aggregation)),
+      writeFile(join(latestTmp, STAGE_FILES.ranking), pretty(set.ranking)),
+      writeFile(join(latestTmp, STAGE_FILES.top10), pretty(set.top10)),
+      writeFile(join(latestTmp, STAGE_FILES.articles), pretty(liveArticles)),
+    ]);
     await rm(latest, { recursive: true, force: true });
     await rename(latestTmp, latest);
 
@@ -273,7 +301,12 @@ export function buildManifest(
     0,
   );
   const degradedTopics = coverages.filter((c) => c.degraded).length;
-  const articlesDropped = Math.max(0, 10 - set.articles.data.articles.length);
+  const totalArticles = set.articles.data.articles.length;
+  const heldArticles = set.articles.data.articles.filter(
+    (a) => a.editorialStatus === 'held',
+  ).length;
+  const publishedCount = totalArticles - heldArticles;
+  const articlesDropped = Math.max(0, 10 - totalArticles);
   const usedFallback = warnings.some(
     (w) => w.toLowerCase().includes('fallback') || w.toLowerCase().includes('deterministic'),
   );
@@ -297,7 +330,7 @@ export function buildManifest(
       articles: `cycles/${cycleSlug}/${STAGE_FILES.articles}`,
     },
     warnings: categorizeWarnings(warnings),
-    health: { failedSources, degradedTopics, articlesDropped, usedFallback },
+    health: { failedSources, degradedTopics, articlesDropped, heldArticles, usedFallback },
     summary: {
       topicsCovered: set.top10.data.topicsCovered,
       globalTop10: set.top10.data.global.map((e) => ({
@@ -305,7 +338,7 @@ export function buildManifest(
         topic: e.topic,
         headline: e.headline,
       })),
-      articleCount: set.articles.data.articles.length,
+      articleCount: publishedCount,
     },
   };
 }

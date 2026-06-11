@@ -1,0 +1,37 @@
+{
+  "name": "top10-engine",
+  "description": "Stage 3: select the top 10 clusters per topic (and a global top 10) with tie-break, category-cap balancing, hysteresis, and delta tracking.",
+  "manifestVersion": "1.0.0",
+  "contractRevision": 3,
+  "cli": {
+    "args": ["<ranking.json>", "<previous-top10.json | ->", "<aggregation.json>"],
+    "env": [
+      "ARDUR_AI_PROVIDER",
+      "ARDUR_AI_MAX_GENERATIONS",
+      "ARDUR_AI_TIMEOUT_MS"
+    ],
+    "stdout": "json"
+  },
+  "inputArtifact": "ranking",
+  "outputArtifact": "top10",
+  "outputSchema": {
+    "type": "object",
+    "required": ["schemaVersion", "artifact", "runId", "cycle", "data"],
+    "properties": {
+      "schemaVersion": { "type": "string", "enum": ["ardur-content-pipeline/v1"] },
+      "contractRevision": { "type": "number", "description": "3 for rev-3 producers" },
+      "artifact": { "type": "string", "enum": ["top10"] },
+      "runId": { "type": "string" },
+      "upstreamRunId": { "type": "string", "description": "ranking.runId" },
+      "generatedAt": { "type": "string", "description": "ISO 8601 UTC" },
+      "cycle": { "type": "object", "description": "CycleMeta: id, windowStart, windowEnd" },
+      "warnings": { "type": "array" },
+      "data": {
+        "type": "object",
+        "description": "Top10Data: top10ByTopic, global, topicsCovered, nextRefreshAt, stability. Top10Entry.references is the full uncapped set; display cap is a renderer concern."
+      }
+    }
+  },
+  "idempotency": "cycle",
+  "stateless": true
+}

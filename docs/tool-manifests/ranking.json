@@ -1,0 +1,39 @@
+{
+  "name": "ranking-engine",
+  "description": "Stage 2: score each cluster on five signals (interaction, credibility, recency, diversity, corroboration), attach resolved references and gateStatus.",
+  "manifestVersion": "1.0.0",
+  "contractRevision": 3,
+  "cli": {
+    "args": ["<aggregation.json>"],
+    "env": [
+      "ARDUR_AI_PROVIDER",
+      "ARDUR_AI_MAX_GENERATIONS",
+      "ARDUR_AI_TIMEOUT_MS",
+      "OLLAMA_HOST",
+      "OLLAMA_MODEL"
+    ],
+    "stdout": "json"
+  },
+  "inputArtifact": "aggregation",
+  "outputArtifact": "ranking",
+  "outputSchema": {
+    "type": "object",
+    "required": ["schemaVersion", "artifact", "runId", "cycle", "data"],
+    "properties": {
+      "schemaVersion": { "type": "string", "enum": ["ardur-content-pipeline/v1"] },
+      "contractRevision": { "type": "number", "description": "3 for rev-3 producers" },
+      "artifact": { "type": "string", "enum": ["ranking"] },
+      "runId": { "type": "string" },
+      "upstreamRunId": { "type": "string", "description": "aggregation.runId" },
+      "generatedAt": { "type": "string", "description": "ISO 8601 UTC" },
+      "cycle": { "type": "object", "description": "CycleMeta: id, windowStart, windowEnd" },
+      "warnings": { "type": "array" },
+      "data": {
+        "type": "object",
+        "description": "RankingData: rankedByTopic (RankedCluster[] with optional gateStatus/references/sourceDocIds), audit, weightProfile"
+      }
+    }
+  },
+  "idempotency": "cycle",
+  "stateless": true
+}

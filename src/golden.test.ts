@@ -8,6 +8,7 @@
  *  - Manifest structure: health rollup, warning categories, summary, runIds.
  *  - run.json archive: includes rawWarnings for forensics.
  *  - metrics.ndjson grows by one line per distinct cycle.
+ *  - HOLD path: held articles stay in archive but are excluded from latest/.
  *
  * Fake runners return golden, pin-point artifacts so the assertions are stable.
  */
@@ -23,7 +24,7 @@ import { ArtifactStore } from './store.ts';
 import { runCycle } from './orchestrate.ts';
 import { createLogger, type Logger } from './log.ts';
 import { loadConfig } from './config.ts';
-import { SCHEMA_VERSION } from '@ardurai/contracts';
+import { SCHEMA_VERSION, CONTRACT_REVISION } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
   RankingArtifact,
@@ -45,6 +46,7 @@ function goldenRunners(cycle: CycleMeta, warnings: string[] = []): StageRunners 
     async aggregate() {
       return {
         schemaVersion: SCHEMA_VERSION,
+        contractRevision: CONTRACT_REVISION,
         artifact: 'aggregation',
         runId: 'golden-agg-run',
         upstreamRunId: null,
@@ -107,6 +109,8 @@ function goldenRunners(cycle: CycleMeta, warnings: string[] = []): StageRunners 
               degraded: false,
             },
           },
+          documentsByTopic: {},
+          factsByCluster: {},
         },
       } as AggregationArtifact;
     },
@@ -114,6 +118,7 @@ function goldenRunners(cycle: CycleMeta, warnings: string[] = []): StageRunners 
     async rank(aggregation) {
       return {
         schemaVersion: SCHEMA_VERSION,
+        contractRevision: CONTRACT_REVISION,
         artifact: 'ranking',
         runId: 'golden-rank-run',
         upstreamRunId: aggregation.runId,
@@ -199,6 +204,7 @@ function goldenRunners(cycle: CycleMeta, warnings: string[] = []): StageRunners 
     async selectTop10(ranking, _previous, _aggregation) {
       return {
         schemaVersion: SCHEMA_VERSION,
+        contractRevision: CONTRACT_REVISION,
         artifact: 'top10',
         runId: 'golden-top10-run',
         upstreamRunId: ranking.runId,
@@ -274,6 +280,7 @@ function goldenRunners(cycle: CycleMeta, warnings: string[] = []): StageRunners 
     async synthesize(top10, _aggregation) {
       return {
         schemaVersion: SCHEMA_VERSION,
+        contractRevision: CONTRACT_REVISION,
         artifact: 'articles',
         runId: 'golden-art-run',
         upstreamRunId: top10.runId,
@@ -427,6 +434,7 @@ test('real publish produces correct manifest structure', async () => {
   assert.equal(manifest.health.failedSources, 2); // 20 queried, 18 responded
   assert.equal(manifest.health.degradedTopics, 0);
   assert.equal(manifest.health.articlesDropped, 9); // expected 10, got 1
+  assert.equal(manifest.health.heldArticles, 0); // no held articles in the golden fixture
   assert.equal(manifest.health.usedFallback, false);
 
   // Warnings array is categorized (not raw strings).
@@ -499,4 +507,117 @@ test('metrics.ndjson accumulates one line per non-duplicate cycle', async () => 
   const ids = lines.map((l) => (JSON.parse(l) as { cycleId: string }).cycleId);
   assert.ok(ids.includes(c1.id));
   assert.ok(ids.includes(c2.id));
+});
+
+// ---------------------------------------------------------------------------
+// HOLD path — held articles must not reach latest/
+// ---------------------------------------------------------------------------
+
+/** Runners where the synthesizer returns one held + one published article. */
+function holdRunners(cycle: CycleMeta): StageRunners {
+  const base = goldenRunners(cycle);
+  return {
+    ...base,
+    async synthesize(top10, aggregation) {
+      const art = await base.synthesize(top10, aggregation);
+      // Add a second article that is held by the provenance gate.
+      const heldArticle = {
+        ...art.data.articles[0]!,
+        id: 'article-held-1',
+        rank: 2,
+        headline: 'Held Article — Insufficient Corroboration',
+        editorialStatus: 'held' as const,
+      };
+      return {
+        ...art,
+        data: {
+          ...art.data,
+          articles: [...art.data.articles, heldArticle],
+        },
+      };
+    },
+  };
+}
+
+test('HOLD path: held article in archive but excluded from latest/, manifest reflects counts', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-golden-hold-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+  const cycleSlug = cycle.id.replace(/:/g, '-');
+
+  const res = await runCycle({
+    config,
+    logger: silent,
+    now,
+    runners: holdRunners(cycle),
+  });
+
+  // Cycle publishes as degraded (held articles generate a warning).
+  assert.equal(res.status, 'degraded');
+  assert.equal(res.heldCount, 1);
+  assert.ok(
+    res.warnings.some((w) => w.includes('held')),
+    'warning mentions held',
+  );
+
+  // Full artifact in the ARCHIVE includes both articles (published + held).
+  const archiveArt = JSON.parse(
+    await readFile(join(root, 'cycles', cycleSlug, 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(archiveArt.data.articles.length, 2, 'archive has both articles');
+  assert.ok(
+    archiveArt.data.articles.some((a) => a.editorialStatus === 'held'),
+    'archive contains held article',
+  );
+
+  // latest/articles.json has only the published article.
+  const latestArt = JSON.parse(
+    await readFile(join(root, 'latest', 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(latestArt.data.articles.length, 1, 'latest/ has only published article');
+  assert.ok(
+    latestArt.data.articles.every((a) => a.editorialStatus !== 'held'),
+    'latest/ contains no held articles',
+  );
+
+  // Manifest health and summary reflect the split.
+  const store = new ArtifactStore(root);
+  const manifest = await store.readManifest();
+  assert.ok(manifest, 'manifest exists');
+  assert.equal(manifest.health.heldArticles, 1);
+  assert.equal(manifest.summary.articleCount, 1); // only published
+  assert.ok(
+    manifest.warnings.some((w) => w.category === 'editorial-hold'),
+    'manifest warnings include editorial-hold category',
+  );
+});
+
+test('HOLD path dry-run: archive has held article, no latest/ flip', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-golden-hold-dry-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+  const cycleSlug = cycle.id.replace(/:/g, '-');
+
+  const res = await runCycle({
+    config,
+    logger: silent,
+    now,
+    dryRun: true,
+    runners: holdRunners(cycle),
+  });
+
+  assert.equal(res.dryRun, true);
+  assert.equal(res.heldCount, 1);
+
+  // Archive still has both articles on dry-run.
+  const archiveArt = JSON.parse(
+    await readFile(join(root, 'cycles', cycleSlug, 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(archiveArt.data.articles.length, 2);
+
+  // No pointer flip on dry-run.
+  assert.ok(!existsSync(join(root, 'latest')), 'latest/ not created on dry-run');
+  assert.ok(!existsSync(join(root, 'manifest.json')), 'manifest.json not created on dry-run');
 });

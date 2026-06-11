@@ -1,0 +1,39 @@
+{
+  "name": "article-synthesizer",
+  "description": "Stage 4: write one original, fact-grounded, copyright-safe article per Top-10 entry. Articles that fail the provenance gate are emitted with editorialStatus: 'held'.",
+  "manifestVersion": "1.0.0",
+  "contractRevision": 3,
+  "cli": {
+    "args": ["--top10", "<top10.json>", "--aggregation", "<aggregation.json>"],
+    "env": [
+      "ARDUR_AI_PROVIDER",
+      "ARDUR_AI_MAX_GENERATIONS",
+      "ARDUR_AI_TIMEOUT_MS",
+      "OLLAMA_HOST",
+      "OLLAMA_MODEL"
+    ],
+    "stdout": "json"
+  },
+  "inputArtifact": "top10",
+  "outputArtifact": "articles",
+  "outputSchema": {
+    "type": "object",
+    "required": ["schemaVersion", "artifact", "runId", "cycle", "data"],
+    "properties": {
+      "schemaVersion": { "type": "string", "enum": ["ardur-content-pipeline/v1"] },
+      "contractRevision": { "type": "number", "description": "3 for rev-3 producers" },
+      "artifact": { "type": "string", "enum": ["articles"] },
+      "runId": { "type": "string" },
+      "upstreamRunId": { "type": "string", "description": "top10.runId" },
+      "generatedAt": { "type": "string", "description": "ISO 8601 UTC" },
+      "cycle": { "type": "object", "description": "CycleMeta: id, windowStart, windowEnd" },
+      "warnings": { "type": "array" },
+      "data": {
+        "type": "object",
+        "description": "ArticleData: articles (SynthesizedArticle[]), copyrightPolicy. SynthesizedArticle.editorialStatus: 'published' | 'held' | 'draft'. Held articles are in the archive but must NOT be served to readers."
+      }
+    }
+  },
+  "idempotency": "cycle",
+  "stateless": true
+}

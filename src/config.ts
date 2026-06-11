@@ -25,15 +25,30 @@ export interface PipelineConfig {
   engines: EngineLocations;
   /** Absolute path to the artifact store root. */
   artifactStore: string;
-  /** AI knobs forwarded verbatim to ranking + synthesizer child processes. */
+  /** AI knobs forwarded verbatim to all engine child processes. */
   ai: {
     provider: string;
     maxGenerations: number;
     timeoutMs: number;
   };
-  /** Per-stage spawn timeouts. */
+  /** Ollama connection settings forwarded to engines that support it. */
+  ollama: {
+    /** Base URL of the Ollama API, e.g. http://localhost:11434. Empty = not configured. */
+    host: string;
+    /** Model tag to use for Ollama inference, e.g. "llama3.2". */
+    model: string;
+  };
+  /** ETL full-text fetch+extract. When enabled the aggregator fetches source bodies. */
+  etl: {
+    enabled: boolean;
+    /** Per-article fetch+extraction timeout forwarded to the aggregator. */
+    timeoutMs: number;
+  };
+  /** Per-stage spawn timeouts (wall-clock, includes the engine's own internal timeout). */
   stageTimeouts: {
     aggregate: number;
+    /** ETL timeout is per-document inside the aggregator; this is the total aggregator budget. */
+    extract: number;
     rank: number;
     top10: number;
     synthesize: number;
@@ -62,6 +77,11 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     const raw = env[name];
     return raw === undefined || raw === '' ? fallback : raw;
   };
+  const bool = (name: string, fallback: boolean): boolean => {
+    const raw = env[name];
+    if (raw === undefined || raw === '') return fallback;
+    return raw === '1' || raw.toLowerCase() === 'true';
+  };
 
   const enginesDir = resolve(str('ENGINES_DIR', '..'));
   const join = (name: string, fallback: string) => resolve(enginesDir, str(name, fallback));
@@ -75,12 +95,22 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     },
     artifactStore: resolve(str('ARTIFACT_STORE', '.artifacts')),
     ai: {
-      provider: str('ARDUR_AI_PROVIDER', 'deterministic'),
+      // Default to ollama; engines fall back to deterministic when maxGenerations=0.
+      provider: str('ARDUR_AI_PROVIDER', 'ollama'),
       maxGenerations: num('ARDUR_AI_MAX_GENERATIONS', 0),
       timeoutMs: num('ARDUR_AI_TIMEOUT_MS', 20_000),
     },
+    ollama: {
+      host: str('OLLAMA_HOST', ''),
+      model: str('OLLAMA_MODEL', ''),
+    },
+    etl: {
+      enabled: bool('ARDUR_ETL_ENABLED', false),
+      timeoutMs: num('ARDUR_ETL_TIMEOUT_MS', 30_000),
+    },
     stageTimeouts: {
       aggregate: num('STAGE_TIMEOUT_AGGREGATE_MS', 600_000),
+      extract: num('STAGE_TIMEOUT_EXTRACT_MS', 600_000),
       rank: num('STAGE_TIMEOUT_RANK_MS', 120_000),
       top10: num('STAGE_TIMEOUT_TOP10_MS', 120_000),
       synthesize: num('STAGE_TIMEOUT_SYNTHESIZE_MS', 900_000),
@@ -99,9 +129,16 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
 
 /** The AI environment forwarded to every engine child process. */
 export function aiEnv(config: PipelineConfig): Record<string, string> {
-  return {
+  const env: Record<string, string> = {
     ARDUR_AI_PROVIDER: config.ai.provider,
     ARDUR_AI_MAX_GENERATIONS: String(config.ai.maxGenerations),
     ARDUR_AI_TIMEOUT_MS: String(config.ai.timeoutMs),
+    // ETL knobs consumed by the aggregator.
+    ARDUR_ETL_ENABLED: config.etl.enabled ? 'true' : 'false',
+    ARDUR_ETL_TIMEOUT_MS: String(config.etl.timeoutMs),
   };
+  // Forward Ollama connection only when configured — engines skip it when blank.
+  if (config.ollama.host) env['OLLAMA_HOST'] = config.ollama.host;
+  if (config.ollama.model) env['OLLAMA_MODEL'] = config.ollama.model;
+  return env;
 }

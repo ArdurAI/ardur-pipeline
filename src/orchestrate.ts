@@ -49,6 +49,8 @@ export interface RunResult {
   timings: StageTiming[];
   /** True when the cycle ran with dryRun: latest/ and manifest.json were not written. */
   dryRun?: boolean;
+  /** Articles held by the editorial gate (editorialStatus: 'held') — not in latest/. */
+  heldCount?: number;
 }
 
 export interface RunCycleDeps {
@@ -85,18 +87,20 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
   const warnings: string[] = [];
   const timings: StageTiming[] = [];
   let articleCount = 0;
+  let heldCount = 0;
   let topicsCovered: string[] = [];
 
   log.info('cycle start', { windowStart: cycle.windowStart, windowEnd: cycle.windowEnd });
 
   // Emit metrics at every exit point, best-effort.
   const finalize = async (result: RunResult): Promise<RunResult> => {
+    const withHeld = heldCount > 0 ? { ...result, heldCount } : result;
     const metrics = buildCycleMetrics(
-      result.status,
+      withHeld.status,
       cycle.id,
       startedAt,
-      result.timings,
-      result.warnings.length,
+      withHeld.timings,
+      withHeld.warnings.length,
       articleCount,
       topicsCovered,
     );
@@ -106,7 +110,7 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       webhookUrl: config.observability.metricsWebhookUrl,
       logger: log,
     });
-    return deps.dryRun ? { ...result, dryRun: true } : result;
+    return deps.dryRun ? { ...withHeld, dryRun: true } : withHeld;
   };
 
   // Timing helper — wraps a stage with retry + duration logging.
@@ -150,8 +154,23 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     const ranking = await stage('rank', () => runners.rank(aggregation));
     const top10 = await stage('top10', () => runners.selectTop10(ranking, previous, aggregation));
     const articles = await stage('synthesize', () => runners.synthesize(top10, aggregation));
+
+    // Honor HOLD: held articles are archived but must not reach readers.
+    const heldArticles = articles.data.articles.filter((a) => a.editorialStatus === 'held');
+    if (heldArticles.length > 0) {
+      heldCount = heldArticles.length;
+      log.warn('articles held for editorial review', {
+        heldCount,
+        held: heldArticles.map((a) => ({ id: a.id, topic: a.topic, headline: a.headline })),
+      });
+      // Push into the artifact's own warnings so it flows into upstreamWarnings → degraded status.
+      articles.warnings.push(
+        `${heldCount} article(s) held: insufficient fact corroboration — not published to latest/`,
+      );
+    }
+
     set = { cycle, aggregation, ranking, top10, articles };
-    articleCount = articles.data.articles.length;
+    articleCount = articles.data.articles.length - heldArticles.length;
     topicsCovered = top10.data.topicsCovered;
   } catch (e) {
     warnings.push(`stage failed: ${errMessage(e)}`);
