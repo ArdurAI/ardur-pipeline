@@ -333,10 +333,73 @@ export type ArticleBlock = TextBlock | ChartBlock | ImageBlock | GifBlock | Embe
 // SynthesizedArticle gains (additive):
 //   editorialStatus?: 'published' | 'held' | 'draft';
 //   facts?: ExtractedFact[];   // the grounding set used (for the source-trail UI)
+//   claims?: ClaimProvenance[]; // per-claim → fact map (folds in synthesizer #6)
+```
+
+### 6.1 Folded-in contract-gap issues (closed by this revision)
+
+These four pre-existing contract-gap issues are absorbed into rev 3 as **optional additive
+fields** — deliberately the **non-breaking** path. The ranking-engine issue feared a
+`SCHEMA_VERSION` bump (ArdurAI/ardur-ranking-engine#6); ArdurAI/ardur-ranking-engine#9 correctly
+observes the field is non-breaking under structural typing. Rev 3 takes that path: no
+`SCHEMA_VERSION` change, `CONTRACT_REVISION` 2→3, every field optional and absent-safe.
+
+**(a) Typed Technical-Significance (T) — closes ArdurAI/ardur-ranking-engine#6, #9**
+`ScoreBreakdown` (`src/index.ts:186`) currently drops the T *value* (it survives only in
+`AuditEntry.inputs["T"]`). Add it, with a doc note that recency/diversity are *multipliers*, not
+additive components:
+
+```ts
+export interface ScoreBreakdown {
+  interaction: number;             // E
+  credibility: number;             // S
+  corroboration: number;           // C
+  technicalSignificance?: number;  // T — rev 3; absent on rev-2 producers, always set by rev-3 ranking
+  recency: number;                 // MULTIPLIER (not an additive component)
+  diversity: number;               // MULTIPLIER
+  total: number;                   // = recency × Σ(wᵢ·signalᵢ) × diversity
+  weights: Record<string, number>;
+}
+// RankedCluster (additive, optional): gateStatus?: 'auto' | 'flagged' | 'hold';
+//   (ranking #6 item 3 — the engine already computes the gate; carry it instead of mapping down)
+```
+
+**(b) References without the full AggregationArtifact — closes ArdurAI/ardur-top10-engine#6**
+A `RankedCluster` carries only `memberIds[]`, so top-10 cannot build `SourceRef[]` without the
+stage-1 artifact. Take the issue's **Option 2** (additive): the **ranking engine** — which already
+resolves members to compute corroboration — attaches the references it has the items for, so
+top-10 reads them directly and the uncapped source set flows through one place:
+
+```ts
+// RankedCluster gains (additive):
+//   references?: SourceRef[];   // UNCAPPED, resolved upstream; lets top10 skip the full agg artifact
+//   sourceDocIds?: string[];    // → SourceDocument.id (rev-3 provenance set)
+```
+Top-10's existing `selectTop10(ranking, previous, { aggregation })` 3-arg path still works as a
+fallback when `references` is absent (rev-2 producer); rev-3 makes the aggregation optional for
+reference assembly.
+
+**(c) Ratify per-claim provenance on the wire — closes ArdurAI/ardur-article-synthesizer#6**
+Promote the synthesizer's internal `ClaimProvenance`/`ProvenanceMap` (`src/provenance.ts`) into the
+shared contract, re-keyed onto rev-3 `ExtractedFact` IDs so the gate (§5.4) and the source-trail UI
+(§7, W3) share one type. (Distinct from the already-ratified rev-2 `AggregatedItem.claims?: string[]`
+keyword field — this is the article-level claim→fact map.)
+
+```ts
+export interface ClaimProvenance {
+  blockIndex: number;       // which ArticleBlock the claim sentence lives in
+  text: string;             // the claim-bearing sentence
+  isEditorial: boolean;     // editorial/transition lines are not fact-gated
+  factIds: string[];        // ExtractedFact.id values grounding it (≥1 for non-editorial)
+  corroboration: number;    // distinct source domains across those facts
+  confidence: Confidence;
+}
+// SynthesizedArticle.claims?: ClaimProvenance[]   // (see §6 block above)
 ```
 
 Zod mirrors (`@ardurai/contracts/zod`) get the same additions with `.passthrough()` retained for
-forward-compat. README versioning table updated; rev-3 note added.
+forward-compat. README versioning table updated; rev-3 note added, listing the four folded-in
+issues so the implementation wave closes them in lockstep with the producing engines.
 
 ---
 
@@ -399,15 +462,15 @@ render; ranking/top-10/pipeline/Hermes wire through.
 
 | # | Repo | Issue | Depends on |
 |---|---|---|---|
-| C1 | ardur-contracts | Rev 3 additive schema: `ExtractedFact`, `FactProvenance`, `SourceDocument`, visual `ArticleBlock` union, `MediaProvenance`, uncapped source set; bump `CONTRACT_REVISION`→3; Zod mirrors | — |
+| C1 | ardur-contracts | Rev 3 additive schema: `ExtractedFact`, `FactProvenance`, `SourceDocument`, visual `ArticleBlock` union, `MediaProvenance`, uncapped source set; bump `CONTRACT_REVISION`→3; Zod mirrors. **Folds in §6.1 gaps:** `ScoreBreakdown.technicalSignificance?` (ranking#6,#9), `RankedCluster.references?/sourceDocIds?/gateStatus?` (top10#6), `ClaimProvenance`+`SynthesizedArticle.claims?` (synth#6) | — |
 | A1 | ardur-news-aggregator | Remove downstream source ceilings; uncapped per-topic ingestion (budget/dedup only) | C1 |
 | A2 | ardur-news-aggregator | Per-topic search discovery beyond catalog (`SearchProvider` interface) | C1 |
 | A3 | ardur-news-aggregator | ETL: full-text fetch + extraction (robots/ToS; paywall→snippet+flag), normalize, persistent store | C1, A1 |
 | A4 | ardur-news-aggregator | Fact extraction (AI-primary) → emit `ExtractedFact[]` + `SourceDocument[]` with per-source provenance | C1, A3 |
 | A5 | ardur-news-aggregator | ETL copyright guard: store bodies privately; emit facts + <25-word quotes + canonical links only | C1, A3 |
-| R1 | ardur-ranking-engine | Fact-level corroboration signal; pass facts through | C1, A4 |
-| T1 | ardur-top10-engine | Uncapped source set + facts passthrough; remove `references` cap | C1, A4 |
-| S1 | ardur-article-synthesizer | Consume `ExtractedFact[]` as primary input (replace title+hint) | C1, A4 |
+| R1 | ardur-ranking-engine | Fact-level corroboration signal; pass facts through. **Closes ranking#6,#9** (emit `technicalSignificance`+`gateStatus`) and the **producing** side of **top10#6** (attach `RankedCluster.references`/`sourceDocIds`) | C1, A4 |
+| T1 | ardur-top10-engine | Uncapped source set + facts passthrough; remove `references` cap. **Closes top10#6** (consume `RankedCluster.references` without the full agg artifact) | C1, A4, R1 |
+| S1 | ardur-article-synthesizer | Consume `ExtractedFact[]` as primary input (replace title+hint); expose `SynthesizedArticle.claims?: ClaimProvenance[]`. **Closes synth#6** | C1, A4 |
 | S2 | ardur-article-synthesizer | AI-primary (Ollama primary, env keys); deterministic → last-resort **HOLD** | C1, S1 |
 | S3 | ardur-article-synthesizer | Claim-level provenance gate vs facts (≥1, prefer ≥2); fail-closed/HOLD | C1, S1 |
 | S4 | ardur-article-synthesizer | Emit visual blocks: chart from real numbers, image/embed/gif + media provenance | C1, S1 |
