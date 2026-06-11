@@ -18,13 +18,15 @@
 import { spawn } from 'node:child_process';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { assertCompatibleArtifact } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
   RankingArtifact,
   Top10Artifact,
   ArticleArtifact,
   CycleMeta,
-} from './contracts.ts';
+  PipelineStage,
+} from '@ardurai/contracts';
 import { aiEnv, type PipelineConfig } from './config.ts';
 import type { Logger } from './log.ts';
 
@@ -88,13 +90,20 @@ function runEngineCli(
   });
 }
 
-function parseArtifact<T>(label: string, raw: string): T {
+function parseArtifact<T>(label: string, raw: string, stage: PipelineStage): T {
+  let parsed: unknown;
   try {
-    return JSON.parse(raw) as T;
+    parsed = JSON.parse(raw);
   } catch (e) {
     const reason = e instanceof Error ? e.message : String(e);
     throw new Error(`${label} produced invalid JSON: ${reason}`);
   }
+  // Gate before stamp: throws SchemaVersionError on version or stage mismatch.
+  const { envelope, warnings } = assertCompatibleArtifact(parsed, stage);
+  if (warnings.length > 0) {
+    (envelope.warnings as string[]).push(...warnings);
+  }
+  return envelope as unknown as T;
 }
 
 /**
@@ -125,7 +134,7 @@ export function createCliRunners(
         config.stageTimeouts.aggregate,
         logger,
       );
-      return parseArtifact<AggregationArtifact>('aggregation', stdout);
+      return parseArtifact<AggregationArtifact>('aggregation', stdout, 'aggregation');
     },
 
     async rank(aggregation) {
@@ -137,7 +146,7 @@ export function createCliRunners(
         config.stageTimeouts.rank,
         logger,
       );
-      return parseArtifact<RankingArtifact>('ranking', stdout);
+      return parseArtifact<RankingArtifact>('ranking', stdout, 'ranking');
     },
 
     async selectTop10(ranking, previous, aggregation) {
@@ -151,7 +160,7 @@ export function createCliRunners(
         config.stageTimeouts.top10,
         logger,
       );
-      return parseArtifact<Top10Artifact>('top10', stdout);
+      return parseArtifact<Top10Artifact>('top10', stdout, 'top10');
     },
 
     async synthesize(top10, aggregation) {
@@ -164,7 +173,7 @@ export function createCliRunners(
         config.stageTimeouts.synthesize,
         logger,
       );
-      return parseArtifact<ArticleArtifact>('articles', stdout);
+      return parseArtifact<ArticleArtifact>('articles', stdout, 'articles');
     },
   };
 }

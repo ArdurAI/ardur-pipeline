@@ -25,4 +25,4 @@ export type { Logger } from './log.ts';
 export { cycleFor, nextRefreshAt, windowStart, cycleId } from './cycle.ts';
 export { buildCycleMetrics, emitMetrics } from './metrics.ts';
 export type { CycleMetrics, MetricsEmitOptions } from './metrics.ts';
-export * from './contracts.ts';
+export * from '@ardurai/contracts';

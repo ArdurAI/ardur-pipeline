@@ -26,14 +26,14 @@
 import { mkdir, readFile, writeFile, rename, cp, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { SCHEMA_VERSION } from './contracts.ts';
+import { SCHEMA_VERSION } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
   RankingArtifact,
   Top10Artifact,
   ArticleArtifact,
   CycleMeta,
-} from './contracts.ts';
+} from '@ardurai/contracts';
 
 export type PublishStatus = 'published' | 'degraded';
 

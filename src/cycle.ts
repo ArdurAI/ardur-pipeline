@@ -9,7 +9,7 @@
  * engine. The canonical interval lives in the shared contract.
  */
 
-import { CYCLE_INTERVAL_MS, type CycleMeta } from './contracts.ts';
+import { CYCLE_INTERVAL_MS, type CycleMeta } from '@ardurai/contracts';
 
 /** Floor an instant to the start of its 6-hour UTC window. */
 export function windowStart(now: Date): Date {

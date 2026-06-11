@@ -24,7 +24,7 @@
  * schedule, the artifact store, and the handoff to ardur.ai.
  */
 
-import type { CycleMeta } from './contracts.ts';
+import type { CycleMeta } from '@ardurai/contracts';
 import type { PipelineConfig } from './config.ts';
 import type { Logger } from './log.ts';
 import { cycleFor, nextRefreshAt } from './cycle.ts';

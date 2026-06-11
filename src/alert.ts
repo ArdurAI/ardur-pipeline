@@ -6,7 +6,7 @@
  */
 
 import type { Logger } from './log.ts';
-import type { CycleMeta } from './contracts.ts';
+import type { CycleMeta } from '@ardurai/contracts';
 
 export interface AlertPayload {
   cycle: CycleMeta;

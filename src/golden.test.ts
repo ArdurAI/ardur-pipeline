@@ -23,14 +23,14 @@ import { ArtifactStore } from './store.ts';
 import { runCycle } from './orchestrate.ts';
 import { createLogger, type Logger } from './log.ts';
 import { loadConfig } from './config.ts';
-import { SCHEMA_VERSION } from './contracts.ts';
+import { SCHEMA_VERSION } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
   RankingArtifact,
   Top10Artifact,
   ArticleArtifact,
   CycleMeta,
-} from './contracts.ts';
+} from '@ardurai/contracts';
 import type { StageRunners } from './runners.ts';
 
 const silent: Logger = createLogger({ format: 'json', write: () => {} });

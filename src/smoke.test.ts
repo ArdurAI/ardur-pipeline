@@ -18,14 +18,14 @@ import { ArtifactStore, buildManifest, categorizeWarnings, type CyclePublishSet 
 import { runCycle } from './orchestrate.ts';
 import { createLogger, type Logger } from './log.ts';
 import { loadConfig } from './config.ts';
-import { SCHEMA_VERSION } from './contracts.ts';
+import { SCHEMA_VERSION, SchemaVersionError, assertCompatibleArtifact } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
   RankingArtifact,
   Top10Artifact,
   ArticleArtifact,
   CycleMeta,
-} from './contracts.ts';
+} from '@ardurai/contracts';
 import type { StageRunners } from './runners.ts';
 
 const silent: Logger = createLogger({ format: 'json', write: () => {} });
@@ -358,4 +358,81 @@ test('failed cycle also emits metrics (partial)', async () => {
   const m = JSON.parse(await readFile(metricsPath, 'utf8'));
   assert.equal(m.status, 'failed');
   assert.equal(m.slo.artifactFresh, false);
+});
+
+// --- assertCompatibleArtifact gate (#8) ------------------------------------
+
+test('assertCompatibleArtifact throws SchemaVersionError on wrong schemaVersion', () => {
+  const bad = {
+    schemaVersion: 'ardur-content-pipeline/v2',
+    artifact: 'aggregation',
+    data: {},
+    warnings: [],
+  };
+  assert.throws(
+    () => assertCompatibleArtifact(bad, 'aggregation'),
+    (e) => e instanceof SchemaVersionError && e.detail.stage === 'aggregation',
+  );
+});
+
+test('assertCompatibleArtifact throws SchemaVersionError on wrong artifact stage', () => {
+  const bad = {
+    schemaVersion: SCHEMA_VERSION,
+    artifact: 'ranking',
+    data: {},
+    warnings: [],
+  };
+  assert.throws(
+    () => assertCompatibleArtifact(bad, 'aggregation'),
+    (e) => e instanceof SchemaVersionError && e.detail.stage === 'aggregation',
+  );
+});
+
+test('schema version mismatch in a runner fails the cycle with no publish', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-gate-schema-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  // Simulates parseArtifact gating a v2-schemaVersion payload from the aggregation engine.
+  const badRunners: StageRunners = {
+    async aggregate() {
+      const payload = { schemaVersion: 'ardur-content-pipeline/v2', artifact: 'aggregation', data: {} };
+      assertCompatibleArtifact(payload, 'aggregation');
+      return payload as unknown as AggregationArtifact;
+    },
+    async rank() { throw new Error('unreachable'); },
+    async selectTop10() { throw new Error('unreachable'); },
+    async synthesize() { throw new Error('unreachable'); },
+  };
+
+  const res = await runCycle({ config, logger: silent, now, runners: badRunners });
+  assert.equal(res.status, 'failed');
+  assert.ok(res.warnings.some((w) => w.includes('v2')));
+  const store = new ArtifactStore(root);
+  assert.equal(await store.readManifest(), null, 'no publish on gate failure');
+});
+
+test('wrong artifact stage in a runner fails the cycle with no publish', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-gate-stage-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  // Simulates a mis-wired engine that outputs 'ranking' where 'aggregation' is expected.
+  const miswiredRunners: StageRunners = {
+    async aggregate() {
+      const payload = { schemaVersion: SCHEMA_VERSION, artifact: 'ranking', data: {} };
+      assertCompatibleArtifact(payload, 'aggregation');
+      return payload as unknown as AggregationArtifact;
+    },
+    async rank() { throw new Error('unreachable'); },
+    async selectTop10() { throw new Error('unreachable'); },
+    async synthesize() { throw new Error('unreachable'); },
+  };
+
+  const res = await runCycle({ config, logger: silent, now, runners: miswiredRunners });
+  assert.equal(res.status, 'failed');
+  const store = new ArtifactStore(root);
+  assert.equal(await store.readManifest(), null, 'no publish on stage mismatch');
 });
