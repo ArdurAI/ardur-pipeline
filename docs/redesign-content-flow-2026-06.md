@@ -421,3 +421,25 @@ render; ranking/top-10/pipeline/Hermes wire through.
 maps to an `ExtractedFact` with provenance, (b) at least one `chart` block is built from real
 extracted numbers, (c) the LLM wrote it (provider≠deterministic, status≠fallback), and (d) a
 fact-starved topic is **held**, not published flat.
+
+### 10.1 Filed issues (live index: tracker ArdurAI/ardur-pipeline#18)
+
+| # | Repo | Issue |
+|---|---|---|
+| C1 | ardur-contracts | [#1](https://github.com/ArdurAI/ardur-contracts/issues/1) |
+| A1 | ardur-news-aggregator | [#8](https://github.com/ArdurAI/ardur-news-aggregator/issues/8) |
+| A2 | ardur-news-aggregator | [#9](https://github.com/ArdurAI/ardur-news-aggregator/issues/9) |
+| A3 | ardur-news-aggregator | [#10](https://github.com/ArdurAI/ardur-news-aggregator/issues/10) |
+| A4 | ardur-news-aggregator | [#11](https://github.com/ArdurAI/ardur-news-aggregator/issues/11) |
+| A5 | ardur-news-aggregator | [#12](https://github.com/ArdurAI/ardur-news-aggregator/issues/12) |
+| R1 | ardur-ranking-engine | [#11](https://github.com/ArdurAI/ardur-ranking-engine/issues/11) |
+| T1 | ardur-top10-engine | [#11](https://github.com/ArdurAI/ardur-top10-engine/issues/11) |
+| S1 | ardur-article-synthesizer | [#13](https://github.com/ArdurAI/ardur-article-synthesizer/issues/13) |
+| S2 | ardur-article-synthesizer | [#14](https://github.com/ArdurAI/ardur-article-synthesizer/issues/14) |
+| S3 | ardur-article-synthesizer | [#15](https://github.com/ArdurAI/ardur-article-synthesizer/issues/15) |
+| S4 | ardur-article-synthesizer | [#16](https://github.com/ArdurAI/ardur-article-synthesizer/issues/16) |
+| P1 | ardur-pipeline | [#15](https://github.com/ArdurAI/ardur-pipeline/issues/15) |
+| P2 | ardur-pipeline | [#16](https://github.com/ArdurAI/ardur-pipeline/issues/16) |
+| W1 | ardur.ai | [#120](https://github.com/ArdurAI/ardur.ai/issues/120) |
+| W2 | ardur.ai | [#121](https://github.com/ArdurAI/ardur.ai/issues/121) |
+| W3 | ardur.ai | [#122](https://github.com/ArdurAI/ardur.ai/issues/122) |
