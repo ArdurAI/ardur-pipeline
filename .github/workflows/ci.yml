@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Typecheck, build, and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # CI runs the zero-cost deterministic path — no network model calls. The
+      # orchestrator's own logic is exercised with fake runners (no engine spawn).
+      ARDUR_AI_PROVIDER: deterministic
+      ARDUR_AI_MAX_GENERATIONS: "0"
+      CI: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Format check
+        run: npm run format:check
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm test

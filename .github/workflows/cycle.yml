@@ -1,0 +1,150 @@
+name: 6-Hour Pipeline Cycle
+
+# Runs ONE full content-pipeline cycle every 6 hours, UTC-aligned:
+#   aggregate -> rank -> top10 -> synthesize -> publish.
+#
+# The orchestrator (src/cli.ts) derives the cycle from floor(now, 6h) UTC, spawns
+# the four engine CLIs, and writes the artifact store. It is idempotent per
+# cycle.id and last-good-wins: a failed cycle publishes NOTHING and the previous
+# cycle keeps serving. The CLI exit code (1 = failed) drives that at the deploy
+# layer too — the publish step below only runs when the cycle succeeded.
+
+on:
+  schedule:
+    # 00:00, 06:00, 12:00, 18:00 UTC — the cycle window boundaries.
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      at:
+        description: "Backfill a specific cycle (ISO 8601, e.g. 2026-06-11T06:00:00Z)"
+        required: false
+
+concurrency:
+  # Never run two cycles at once; let an in-flight cycle finish (no cancel).
+  group: ardur-pipeline-cycle
+  cancel-in-progress: false
+
+permissions:
+  contents: write # push the published artifacts to the `published` data branch
+
+env:
+  ENGINES_DIR: ${{ github.workspace }}
+  ARTIFACT_STORE: ${{ github.workspace }}/ardur-pipeline/.artifacts
+  # Cost-guarded, pluggable provider. Default deterministic (budget=0, zero-cost).
+  ARDUR_AI_PROVIDER: ${{ vars.ARDUR_AI_PROVIDER || 'deterministic' }}
+  ARDUR_AI_MAX_GENERATIONS: ${{ vars.ARDUR_AI_MAX_GENERATIONS || '0' }}
+  ARDUR_AI_TIMEOUT_MS: ${{ vars.ARDUR_AI_TIMEOUT_MS || '20000' }}
+  OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+  LOG_FORMAT: json
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout orchestrator
+        uses: actions/checkout@v4
+        with:
+          path: ardur-pipeline
+
+      # The four engines are checked out as siblings under ENGINES_DIR. Pin a ref
+      # via repo vars if you need to lock a known-good engine version.
+      - name: Checkout aggregator
+        uses: actions/checkout@v4
+        with:
+          repository: ArdurAI/ardur-news-aggregator
+          path: ardur-news-aggregator
+      - name: Checkout ranking engine
+        uses: actions/checkout@v4
+        with:
+          repository: ArdurAI/ardur-ranking-engine
+          path: ardur-ranking-engine
+      - name: Checkout top10 engine
+        uses: actions/checkout@v4
+        with:
+          repository: ArdurAI/ardur-top10-engine
+          path: ardur-top10-engine
+      - name: Checkout synthesizer
+        uses: actions/checkout@v4
+        with:
+          repository: ArdurAI/ardur-article-synthesizer
+          path: ardur-article-synthesizer
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install (orchestrator + engines)
+        run: |
+          for repo in ardur-pipeline ardur-news-aggregator ardur-ranking-engine ardur-top10-engine ardur-article-synthesizer; do
+            echo "::group::npm install $repo"
+            (cd "$repo" && (npm ci || npm install))
+            echo "::endgroup::"
+          done
+
+      - name: Run one pipeline cycle
+        id: run
+        working-directory: ardur-pipeline
+        run: |
+          AT_ARG=""
+          if [ -n "${{ github.event.inputs.at }}" ]; then AT_ARG="--at ${{ github.event.inputs.at }}"; fi
+          set +e
+          node --experimental-strip-types src/cli.ts $AT_ARG > "$RUNNER_TEMP/result.json"
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          set -e
+          {
+            echo "### ardur-pipeline cycle result"
+            echo '```json'
+            cat "$RUNNER_TEMP/result.json"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload artifact store (always, for observability)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-${{ github.run_id }}
+          path: ardur-pipeline/.artifacts
+          if-no-files-found: ignore
+          retention-days: 14
+
+      # Publish only on a successful cycle (exit 0). On failure the previous
+      # cycle's published branch is untouched — last-good-wins at the deploy layer.
+      - name: Publish to `published` data branch
+        if: steps.run.outputs.exit == '0'
+        working-directory: ardur-pipeline
+        run: |
+          git config user.name "ardur-pipeline[bot]"
+          git config user.email "pipeline@ardur.ai"
+          CYCLE_ID=$(node -e "const m=require('./.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
+          git fetch origin published --depth=1 || true
+          git switch published 2>/dev/null || git switch --orphan published
+          # Replace the served set with this cycle's manifest + latest + archive.
+          rm -rf manifest.json latest cycles
+          cp -R .artifacts/manifest.json .artifacts/latest .artifacts/cycles .
+          git add manifest.json latest cycles
+          git commit -m "publish cycle ${CYCLE_ID}" || echo "nothing to publish"
+          git push origin published
+
+      # Optional: nudge ardur.ai to rebuild against the fresh artifacts. Requires
+      # a PAT with `repo` scope on ArdurAI/ardur.ai stored as PIPELINE_DISPATCH_TOKEN.
+      - name: Notify ardur.ai to rebuild
+        if: steps.run.outputs.exit == '0'
+        env:
+          GH_TOKEN: ${{ secrets.PIPELINE_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "no PIPELINE_DISPATCH_TOKEN; skipping rebuild dispatch"; exit 0; fi
+          CYCLE_ID=$(node -e "const m=require('ardur-pipeline/.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
+          gh api repos/ArdurAI/ardur.ai/dispatches \
+            -f event_type=pipeline-published \
+            -F "client_payload[cycle]=$CYCLE_ID" \
+            || echo "dispatch skipped"
+
+      - name: Fail the job if the cycle failed
+        if: steps.run.outputs.exit != '0'
+        run: |
+          echo "::error::pipeline cycle failed; nothing published, previous cycle stays live"
+          exit 1
