@@ -13,6 +13,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
+import { assertCompatibleArtifact } from '@ardurai/contracts';
 import { createCliRunners } from './runners.ts';
 import { cycleFor } from './cycle.ts';
 import { CoverageStore } from './coverage-store.ts';
@@ -202,23 +203,63 @@ export class ToolRegistry {
   /**
    * Invoke a tool by name. Returns a structured `ToolResult` — never throws.
    * Unknown tools or bad inputs get an `ok: false` error envelope.
+   *
+   * Guards (in order):
+   *  1. Tool must exist (#23)
+   *  2. Engine-spawning tools require darkLaunchEnabled (#22)
+   *  3. Engine must be present (availability check) (#23)
+   *  4. Run the tool
+   *  5. Enforce sizeBudget on the result (#23)
    */
   async call(name: string, args: unknown): Promise<ToolResult<unknown>> {
+    const descriptor = this.descriptors().find((d) => d.name === name);
+    if (!descriptor) return err('UNKNOWN_TOOL', `Unknown tool: ${name}`);
+
+    // Engine-spawning tools are gated by dark-launch mode (#22).
+    const ENGINE_TOOLS = new Set(['aggregate', 'rank', 'select_top10', 'synthesize']);
+    if (ENGINE_TOOLS.has(name) && !this.config.hermes.darkLaunchEnabled) {
+      return err(
+        'DARK_LAUNCH_DISABLED',
+        'Engine tools require HERMES_DARK_LAUNCH=true — they are only available in dark-launch mode.',
+      );
+    }
+
+    // Availability check: ensure the engine repo is present before spawning (#23).
+    const avail = await descriptor.availability();
+    if (!avail.available) {
+      return err('ENGINE_UNAVAILABLE', avail.reason ?? 'Engine not available');
+    }
+
     try {
+      let result: ToolResult<unknown>;
       switch (name) {
         case 'aggregate':
-          return await this._aggregate(args as Partial<AggregateInput>);
+          result = await this._aggregate(args as Partial<AggregateInput>);
+          break;
         case 'rank':
-          return await this._rank(args as Partial<RankInput>);
+          result = await this._rank(args as Partial<RankInput>);
+          break;
         case 'select_top10':
-          return await this._top10(args as Partial<Top10Input>);
+          result = await this._top10(args as Partial<Top10Input>);
+          break;
         case 'synthesize':
-          return await this._synthesize(args as Partial<SynthesizeInput>);
+          result = await this._synthesize(args as Partial<SynthesizeInput>);
+          break;
         case 'check_coverage':
-          return this._checkCoverage(args as Partial<CheckCoverageInput>);
+          result = this._checkCoverage(args as Partial<CheckCoverageInput>);
+          break;
         default:
           return err('UNKNOWN_TOOL', `Unknown tool: ${name}`);
       }
+
+      // Enforce sizeBudget: protect agent context window from oversized artifacts (#23).
+      if (result.ok && result.sizeBytes > descriptor.sizeBudget) {
+        return err(
+          'SIZE_EXCEEDED',
+          `Result size ${result.sizeBytes} bytes exceeds budget of ${descriptor.sizeBudget} bytes for tool '${name}'`,
+        );
+      }
+      return result;
     } catch (e) {
       return err('TOOL_ERROR', e instanceof Error ? e.message : String(e));
     }
@@ -240,6 +281,12 @@ export class ToolRegistry {
 
   private async _rank(input: Partial<RankInput>): Promise<ToolResult<RankingArtifact>> {
     if (!input.aggregation) return err('MISSING_INPUT', 'aggregation is required');
+    // Gate-before-stamp: validate the caller-supplied artifact before spawning the engine (#21).
+    try {
+      assertCompatibleArtifact(input.aggregation, 'aggregation');
+    } catch (e) {
+      return err('INVALID_INPUT', e instanceof Error ? e.message : String(e));
+    }
     const cycle = cycleFor(this.getNow());
     const data = await this._runners(cycle).rank(input.aggregation);
     return ok(data);
@@ -248,6 +295,17 @@ export class ToolRegistry {
   private async _top10(input: Partial<Top10Input>): Promise<ToolResult<Top10Artifact>> {
     if (!input.ranking) return err('MISSING_INPUT', 'ranking is required');
     if (!input.aggregation) return err('MISSING_INPUT', 'aggregation is required');
+    // Gate-before-stamp: validate caller-supplied artifacts before spawning (#21).
+    try {
+      assertCompatibleArtifact(input.ranking, 'ranking');
+    } catch (e) {
+      return err('INVALID_INPUT', e instanceof Error ? e.message : String(e));
+    }
+    try {
+      assertCompatibleArtifact(input.aggregation, 'aggregation');
+    } catch (e) {
+      return err('INVALID_INPUT', e instanceof Error ? e.message : String(e));
+    }
     const cycle = cycleFor(this.getNow());
     const data = await this._runners(cycle).selectTop10(
       input.ranking,
@@ -260,6 +318,17 @@ export class ToolRegistry {
   private async _synthesize(input: Partial<SynthesizeInput>): Promise<ToolResult<ArticleArtifact>> {
     if (!input.top10) return err('MISSING_INPUT', 'top10 is required');
     if (!input.aggregation) return err('MISSING_INPUT', 'aggregation is required');
+    // Gate-before-stamp: validate caller-supplied artifacts before spawning (#21).
+    try {
+      assertCompatibleArtifact(input.top10, 'top10');
+    } catch (e) {
+      return err('INVALID_INPUT', e instanceof Error ? e.message : String(e));
+    }
+    try {
+      assertCompatibleArtifact(input.aggregation, 'aggregation');
+    } catch (e) {
+      return err('INVALID_INPUT', e instanceof Error ? e.message : String(e));
+    }
     const cycle = cycleFor(this.getNow());
     const data = await this._runners(cycle).synthesize(input.top10, input.aggregation);
     return ok(data);

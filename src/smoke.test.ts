@@ -611,3 +611,162 @@ test('held articles are excluded from latest/ but included in cycle archive', as
   assert.equal(manifest.health.heldArticles, 1);
   assert.equal(manifest.summary.articleCount, 1);
 });
+
+// --- #20 allowlist gate -------------------------------------------------------
+
+test('#20: allowlist — article with unknown status does not reach latest/', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-allowlist-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  // Runner that returns an article with an unrecognised status ('draft').
+  // The blacklist (!== 'held') would have let it through; the allowlist must not.
+  const draftRunners: StageRunners = {
+    ...fakeRunners(cycle),
+    async synthesize(top10) {
+      return envelope('articles' as AggregationArtifact['artifact'], cycle, 'art-draft', {
+        articles: [
+          {
+            id: 'art-draft-1',
+            rank: 1,
+            topic: 'ai',
+            topicLabel: 'AI',
+            headline: 'Draft Article',
+            dek: '',
+            body: [],
+            keyPoints: [],
+            whyItMatters: '',
+            readerAction: '',
+            tags: [],
+            confidence: 'high',
+            sourceQuality: 'multi-source',
+            references: [],
+            provenance: {
+              clusterId: 'c1',
+              sourceCount: 1,
+              distinctDomains: 1,
+              upstreamRunId: top10.runId,
+            },
+            ai: { provider: 'deterministic', model: 'none', status: 'fallback', generatedAt: cycle.windowStart },
+            legalNote: '',
+            wordCount: 10,
+            readingTimeMinutes: 1,
+            generatedAt: cycle.windowStart,
+            editorialStatus: 'draft', // not 'published' and not 'held'
+          },
+        ],
+        copyrightPolicy: {
+          originalTextOnly: true,
+          maxQuoteWords: 25,
+          reproduceArticleBody: false,
+          requireAttribution: true,
+          requireCanonicalLinks: true,
+        },
+      }) as unknown as ArticleArtifact;
+    },
+  };
+
+  await runCycle({ config, logger: silent, now, runners: draftRunners });
+
+  const live = JSON.parse(
+    await readFile(join(root, 'latest', 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(live.data.articles.length, 0, 'draft article must not reach latest/');
+});
+
+test('#20: low-confidence enforcement — conductor holds low-confidence articles the synthesizer passed', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-lowconf-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  // Runner returns two articles: one high-confidence published, one low-confidence published.
+  // The synthesizer marks both as 'published'; the conductor must hold the low-confidence one.
+  const lowConfRunners: StageRunners = {
+    ...fakeRunners(cycle),
+    async synthesize(top10) {
+      return envelope('articles' as AggregationArtifact['artifact'], cycle, 'art-lc', {
+        articles: [
+          {
+            id: 'art-hi-1',
+            rank: 1,
+            topic: 'ai',
+            topicLabel: 'AI',
+            headline: 'High-Confidence Article',
+            dek: '',
+            body: [],
+            keyPoints: [],
+            whyItMatters: '',
+            readerAction: '',
+            tags: [],
+            confidence: 'high',
+            sourceQuality: 'multi-source',
+            references: [],
+            provenance: { clusterId: 'c1', sourceCount: 2, distinctDomains: 2, upstreamRunId: top10.runId },
+            ai: { provider: 'deterministic', model: 'none', status: 'fallback', generatedAt: cycle.windowStart },
+            legalNote: '',
+            wordCount: 100,
+            readingTimeMinutes: 1,
+            generatedAt: cycle.windowStart,
+            editorialStatus: 'published', // synthesizer says published
+          },
+          {
+            id: 'art-lo-1',
+            rank: 2,
+            topic: 'security',
+            topicLabel: 'Security',
+            headline: 'Low-Confidence Article',
+            dek: '',
+            body: [],
+            keyPoints: [],
+            whyItMatters: '',
+            readerAction: '',
+            tags: [],
+            confidence: 'low',            // low confidence
+            sourceQuality: 'single source',
+            references: [],
+            provenance: { clusterId: 'c2', sourceCount: 1, distinctDomains: 1, upstreamRunId: top10.runId },
+            ai: { provider: 'deterministic', model: 'none', status: 'fallback', generatedAt: cycle.windowStart },
+            legalNote: '',
+            wordCount: 10,
+            readingTimeMinutes: 1,
+            generatedAt: cycle.windowStart,
+            editorialStatus: 'published', // synthesizer says published, but conductor must override
+          },
+        ],
+        copyrightPolicy: {
+          originalTextOnly: true,
+          maxQuoteWords: 25,
+          reproduceArticleBody: false,
+          requireAttribution: true,
+          requireCanonicalLinks: true,
+        },
+      }) as unknown as ArticleArtifact;
+    },
+  };
+
+  const res = await runCycle({ config, logger: silent, now, runners: lowConfRunners });
+
+  // Cycle must be degraded because the conductor held the low-confidence article.
+  assert.equal(res.status, 'degraded');
+  assert.equal(res.heldCount, 1);
+  assert.ok(res.warnings.some((w) => w.includes('held')));
+
+  // Archive has both articles (for editorial audit), the low-conf one now marked 'held'.
+  const cycleSlug = cycle.id.replace(/:/g, '-');
+  const archived = JSON.parse(
+    await readFile(join(root, 'cycles', cycleSlug, 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(archived.data.articles.length, 2);
+  const archivedLowConf = archived.data.articles.find((a) => a.id === 'art-lo-1');
+  assert.ok(archivedLowConf, 'low-conf article must be in archive');
+  assert.equal(archivedLowConf.editorialStatus, 'held', 'conductor must have set it to held');
+
+  // latest/ must contain only the high-confidence article.
+  const live = JSON.parse(
+    await readFile(join(root, 'latest', 'articles.json'), 'utf8'),
+  ) as ArticleArtifact;
+  assert.equal(live.data.articles.length, 1);
+  assert.equal(live.data.articles[0]!.id, 'art-hi-1');
+});

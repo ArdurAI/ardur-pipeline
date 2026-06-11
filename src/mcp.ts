@@ -24,9 +24,12 @@ async function main(): Promise<void> {
     tools: registry.descriptors().map((d) => d.name),
     coverageDb: config.hermes.coverageDbPath || '(disabled)',
     darkLaunch: config.hermes.darkLaunchEnabled,
+    auth: config.mcp.apiKey ? 'key-required' : 'open',
   });
 
-  await startMcpServer(registry, logger);
+  await startMcpServer(registry, logger, process.stdin, process.stdout, {
+    apiKey: config.mcp.apiKey,
+  });
 
   logger.info('ardur-pipeline mcp server stopped');
 }

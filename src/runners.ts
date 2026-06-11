@@ -47,6 +47,15 @@ interface SpawnResult {
   stderr: string;
 }
 
+// Safe env keys passed through from the parent process (#24).
+// process.execPath is an absolute path, so PATH is not needed.
+// AI knobs and Ollama settings come from the `env` arg (aiEnv result).
+const SAFE_PASSTHROUGH_KEYS = ['HOME', 'TMPDIR', 'TMP', 'TEMP', 'USERPROFILE'] as const;
+
+// Hard output limits to prevent OOM from a runaway engine (#24).
+const MAX_STDOUT_BYTES = 128 * 1024 * 1024; // 128 MiB
+const MAX_STDERR_BYTES = 1 * 1024 * 1024; // 1 MiB
+
 /** Run an engine CLI in its own repo, capture stdout, enforce a timeout. */
 function runEngineCli(
   cwd: string,
@@ -59,27 +68,61 @@ function runEngineCli(
   const nodeArgs = ['--experimental-strip-types', cli, ...args];
   logger.debug('spawn engine', { cwd, args });
 
+  // Build minimal env: only the declared safe passthrough keys + explicit AI knobs.
+  // Never spread process.env — that would leak secrets, tokens, and host config.
+  const safeEnv: Record<string, string> = {};
+  for (const key of SAFE_PASSTHROUGH_KEYS) {
+    const val = process.env[key];
+    if (val !== undefined) safeEnv[key] = val;
+  }
+
   return new Promise<SpawnResult>((resolve, reject) => {
     const child = spawn(process.execPath, nodeArgs, {
       cwd,
-      env: { ...process.env, ...env },
+      env: { ...safeEnv, ...env },
       stdio: ['ignore', 'pipe', 'pipe'],
     });
 
     let stdout = '';
     let stderr = '';
-    const timer = setTimeout(() => {
-      child.kill('SIGKILL');
-      reject(new Error(`engine timed out after ${timeoutMs}ms: ${cwd} ${args.join(' ')}`));
-    }, timeoutMs);
+    let stdoutBytes = 0;
+    let stderrBytes = 0;
+    let done = false;
 
-    child.stdout.on('data', (d: Buffer) => (stdout += d.toString()));
-    child.stderr.on('data', (d: Buffer) => (stderr += d.toString()));
+    const fail = (reason: Error) => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      child.kill('SIGKILL');
+      reject(reason);
+    };
+
+    const timer = setTimeout(
+      () => fail(new Error(`engine timed out after ${timeoutMs}ms: ${cwd} ${args.join(' ')}`)),
+      timeoutMs,
+    );
+
+    child.stdout.on('data', (d: Buffer) => {
+      stdoutBytes += d.length;
+      if (stdoutBytes > MAX_STDOUT_BYTES) {
+        fail(new Error(`engine stdout exceeded ${MAX_STDOUT_BYTES} bytes: ${cwd}`));
+        return;
+      }
+      stdout += d.toString();
+    });
+    child.stderr.on('data', (d: Buffer) => {
+      stderrBytes += d.length;
+      if (stderrBytes <= MAX_STDERR_BYTES) stderr += d.toString();
+    });
     child.on('error', (e) => {
+      if (done) return;
+      done = true;
       clearTimeout(timer);
       reject(e);
     });
     child.on('close', (code) => {
+      if (done) return;
+      done = true;
       clearTimeout(timer);
       if (code === 0) {
         resolve({ stdout, stderr });
@@ -151,11 +194,18 @@ export function createCliRunners(
 
     async selectTop10(ranking, previous, aggregation) {
       const rankingPath = await writeScratch('ranking.json', ranking);
-      const prevPath = previous ? await writeScratch('previous-top10.json', previous) : '-';
       const aggPath = await writeScratch('aggregation.json', aggregation);
+      // Use named flags as declared by the top10 CLI (#25: legacy positional args were silently
+      // ignored by the named-flag parser, so previous/aggregation were never loaded).
+      const top10Args: string[] = ['--ranking', rankingPath];
+      if (previous) {
+        const prevPath = await writeScratch('previous-top10.json', previous);
+        top10Args.push('--previous', prevPath);
+      }
+      top10Args.push('--aggregation', aggPath);
       const { stdout } = await runEngineCli(
         config.engines.top10,
-        [rankingPath, prevPath, aggPath],
+        top10Args,
         env,
         config.stageTimeouts.top10,
         logger,

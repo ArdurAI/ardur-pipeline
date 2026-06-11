@@ -267,8 +267,29 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     const articles = await stage('synthesize', () => runners.synthesize(top10, aggregation));
     darkLaunchEditorialGate(articles, log);
 
+    // Conductor-level hold: low-confidence articles must not reach readers
+    // even if the synthesizer emitted them with editorialStatus: 'published'.
+    // This is the enforcement path — darkLaunchEditorialGate above only observes.
+    const articlesForPublish: ArticleArtifact = articles.data.articles.some(
+      (a) => a.editorialStatus !== 'held' && a.confidence === 'low',
+    )
+      ? {
+          ...articles,
+          data: {
+            ...articles.data,
+            articles: articles.data.articles.map((a) =>
+              a.editorialStatus !== 'held' && a.confidence === 'low'
+                ? { ...a, editorialStatus: 'held' as const }
+                : a,
+            ),
+          },
+        }
+      : articles;
+
     // Honor HOLD: held articles are archived but must not reach readers.
-    const heldArticles = articles.data.articles.filter((a) => a.editorialStatus === 'held');
+    const heldArticles = articlesForPublish.data.articles.filter(
+      (a) => a.editorialStatus === 'held',
+    );
     if (heldArticles.length > 0) {
       heldCount = heldArticles.length;
       log.warn('articles held for editorial review', {
@@ -276,13 +297,13 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
         held: heldArticles.map((a) => ({ id: a.id, topic: a.topic, headline: a.headline })),
       });
       // Push into the artifact's own warnings so it flows into upstreamWarnings → degraded status.
-      articles.warnings.push(
+      articlesForPublish.warnings.push(
         `${heldCount} article(s) held: insufficient fact corroboration — not published to latest/`,
       );
     }
 
-    set = { cycle, aggregation, ranking, top10, articles };
-    articleCount = articles.data.articles.length - heldArticles.length;
+    set = { cycle, aggregation, ranking, top10, articles: articlesForPublish };
+    articleCount = articlesForPublish.data.articles.length - heldArticles.length;
     topicsCovered = top10.data.topicsCovered;
   } catch (e) {
     warnings.push(`stage failed: ${errMessage(e)}`);

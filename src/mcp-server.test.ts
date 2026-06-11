@@ -15,7 +15,10 @@ import { createLogger } from './log.ts';
 const silent = createLogger({ format: 'json', write: () => {} });
 
 /** Send one or more JSON-RPC lines to the server; collect the response lines. */
-async function runMcpLines(inputLines: string[]): Promise<unknown[]> {
+async function runMcpLines(
+  inputLines: string[],
+  opts?: { apiKey?: string },
+): Promise<unknown[]> {
   const config = loadConfig({});
   const registry = createToolRegistry(config, silent);
 
@@ -29,7 +32,7 @@ async function runMcpLines(inputLines: string[]): Promise<unknown[]> {
 
   const input = new Readable({ read() {} });
 
-  const serverDone = startMcpServer(registry, silent, input, output);
+  const serverDone = startMcpServer(registry, silent, input, output, { apiKey: opts?.apiKey });
 
   // Push all lines then signal EOF
   for (const line of inputLines) {
@@ -188,4 +191,96 @@ test('MCP tools/call check_coverage missing args returns isError content', async
   assert.equal(resp.id, 20);
   assert.equal(resp.result.isError, true);
   assert.ok(resp.result.content[0]?.text.includes('MISSING_INPUT'));
+});
+
+// ---------------------------------------------------------------------------
+// #22 — MCP server authentication (CWE-306)
+// ---------------------------------------------------------------------------
+
+test('#22: tools/list is rejected before authenticate when apiKey is required', async () => {
+  const responses = await runMcpLines(
+    [JSON.stringify({ jsonrpc: '2.0', id: 30, method: 'tools/list', params: {} })],
+    { apiKey: 'secret-key' },
+  );
+  assert.equal(responses.length, 1);
+  const resp = responses[0] as { id: number; error: { code: number } };
+  assert.equal(resp.id, 30);
+  assert.equal(resp.error.code, -32001);
+});
+
+test('#22: initialize without correct key returns auth error', async () => {
+  const responses = await runMcpLines(
+    [
+      JSON.stringify({
+        jsonrpc: '2.0',
+        id: 31,
+        method: 'initialize',
+        params: {
+          protocolVersion: '2024-11-05',
+          capabilities: {},
+          clientInfo: { name: 'test', version: '0.0.1' },
+          credentials: { apiKey: 'wrong-key' },
+        },
+      }),
+    ],
+    { apiKey: 'secret-key' },
+  );
+  assert.equal(responses.length, 1);
+  const resp = responses[0] as { id: number; error: { code: number } };
+  assert.equal(resp.id, 31);
+  assert.equal(resp.error.code, -32001);
+});
+
+test('#22: correct key in initialize allows subsequent tools/list', async () => {
+  const responses = await runMcpLines(
+    [
+      JSON.stringify({
+        jsonrpc: '2.0',
+        id: 32,
+        method: 'initialize',
+        params: {
+          protocolVersion: '2024-11-05',
+          capabilities: {},
+          clientInfo: { name: 'test', version: '0.0.1' },
+          credentials: { apiKey: 'secret-key' },
+        },
+      }),
+      JSON.stringify({ jsonrpc: '2.0', id: 33, method: 'tools/list', params: {} }),
+    ],
+    { apiKey: 'secret-key' },
+  );
+
+  // Both requests must get responses.
+  assert.equal(responses.length, 2);
+  const [initResp, listResp] = responses as [
+    { id: number; result: { serverInfo: { name: string } } },
+    { id: number; result: { tools: unknown[] } },
+  ];
+  assert.equal(initResp.id, 32);
+  assert.equal(initResp.result.serverInfo.name, 'ardur-pipeline');
+  assert.equal(listResp.id, 33);
+  assert.equal(listResp.result.tools.length, 5);
+});
+
+test('#22: no apiKey configured → open access (no auth required)', async () => {
+  // When apiKey is undefined/null, tools/list works without initialize.
+  const responses = await runMcpLines(
+    [JSON.stringify({ jsonrpc: '2.0', id: 34, method: 'tools/list', params: {} })],
+    // no apiKey opt
+  );
+  assert.equal(responses.length, 1);
+  const resp = responses[0] as { id: number; result: { tools: unknown[] } };
+  assert.equal(resp.id, 34);
+  assert.equal(resp.result.tools.length, 5);
+});
+
+test('#22: ping is allowed before authenticate even when apiKey is required', async () => {
+  const responses = await runMcpLines(
+    [JSON.stringify({ jsonrpc: '2.0', id: 35, method: 'ping' })],
+    { apiKey: 'secret-key' },
+  );
+  assert.equal(responses.length, 1);
+  const resp = responses[0] as { id: number; result: object };
+  assert.equal(resp.id, 35);
+  assert.deepEqual(resp.result, {});
 });

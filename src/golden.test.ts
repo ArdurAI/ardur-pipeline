@@ -330,6 +330,7 @@ function goldenRunners(cycle: CycleMeta, warnings: string[] = []): StageRunners 
               wordCount: 5,
               readingTimeMinutes: 1,
               generatedAt: cycle.windowStart,
+              editorialStatus: 'published' as const,
             },
           ],
           copyrightPolicy: {

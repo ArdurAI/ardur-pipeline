@@ -175,9 +175,14 @@ export interface PublishOptions {
   rawWarnings?: string[];
 }
 
-/** Return a copy of the ArticleArtifact with held articles stripped out. */
+/** Return a copy of the ArticleArtifact with only explicitly-published articles (allowlist). */
 function publishedArticles(artifact: ArticleArtifact): ArticleArtifact {
-  const live = artifact.data.articles.filter((a) => a.editorialStatus !== 'held');
+  // Allowlist: only 'published' status (or absent status for backward-compat with pre-Rev3
+  // artifacts) reaches readers. Any explicit non-'published' value ('held', 'draft', etc.)
+  // is excluded. A blacklist (!== 'held') would silently pass through unknown future statuses.
+  const live = artifact.data.articles.filter(
+    (a) => a.editorialStatus === 'published' || a.editorialStatus == null,
+  );
   if (live.length === artifact.data.articles.length) return artifact;
   return { ...artifact, data: { ...artifact.data, articles: live } };
 }

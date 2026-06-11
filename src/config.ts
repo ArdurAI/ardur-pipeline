@@ -67,8 +67,18 @@ export interface PipelineConfig {
     /**
      * When true (default), dark-launch gate verdicts are logged at INFO level
      * every cycle. Set HERMES_DARK_LAUNCH=false to suppress.
+     * Engine-spawning MCP tools (aggregate/rank/select_top10/synthesize) are only
+     * available when this flag is true.
      */
     darkLaunchEnabled: boolean;
+  };
+  mcp: {
+    /**
+     * Optional bearer API key for MCP server authentication (CWE-306).
+     * Set MCP_API_KEY to require clients to pass the key in initialize params.
+     * Null / empty string = no auth required (local / trusted-process use).
+     */
+    apiKey: string | null;
   };
   observability: {
     alertWebhookUrl: string | null;
@@ -136,6 +146,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     hermes: {
       coverageDbPath: str('HERMES_COVERAGE_DB', join(artifactStoreBase, 'coverage.db')),
       darkLaunchEnabled: bool('HERMES_DARK_LAUNCH', true),
+    },
+    mcp: {
+      apiKey: str('MCP_API_KEY', '') || null,
     },
     observability: {
       alertWebhookUrl: str('ALERT_WEBHOOK_URL', '') || null,

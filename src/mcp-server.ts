@@ -44,6 +44,8 @@ const PARSE_ERROR = -32700;
 const METHOD_NOT_FOUND = -32601;
 const INVALID_PARAMS = -32602;
 const INTERNAL_ERROR = -32603;
+// Application-level auth error in the server-error range (CWE-306 fix, #22).
+const UNAUTHORIZED = -32001;
 
 // ---------------------------------------------------------------------------
 // Wire helpers
@@ -75,12 +77,18 @@ function errResponse(id: JsonRpcId, code: number, message: string, data?: unknow
  *
  * This function is intentionally agnostic about the transport direction —
  * tests can pass in-memory streams.
+ *
+ * Authentication (#22 / CWE-306): if `opts.apiKey` is set, clients must pass
+ * the matching key in `initialize` params as `params.credentials.apiKey`.
+ * All non-auth requests before a successful initialize are rejected with -32001.
+ * `ping` is exempted (health check only; no tool invocation).
  */
 export function startMcpServer(
   registry: ToolRegistry,
   logger: Logger,
   input: NodeJS.ReadableStream = process.stdin,
   output: NodeJS.WritableStream = process.stdout,
+  opts?: { apiKey?: string | null },
 ): Promise<void> {
   return new Promise<void>((resolve) => {
     const rl = createInterface({ input, terminal: false });
@@ -93,6 +101,18 @@ export function startMcpServer(
     }));
 
     const write = (msg: string) => output.write(msg);
+    const requiredKey = opts?.apiKey ?? null;
+    // If no key is configured the session starts pre-authenticated (dev / trusted-process mode).
+    let authenticated = !requiredKey;
+
+    // Track in-flight async tool calls. The server must not resolve until all
+    // async responses have been written — otherwise the test helper (and any
+    // real client that closes stdin immediately) would miss responses.
+    let pendingCalls = 0;
+    let streamClosed = false;
+    const tryResolve = () => {
+      if (streamClosed && pendingCalls === 0) resolve();
+    };
 
     rl.on('line', (line) => {
       const trimmed = line.trim();
@@ -110,10 +130,23 @@ export function startMcpServer(
       if (req.id === undefined) return;
 
       const id = req.id ?? null;
-      handleRequest(req, id, tools, registry, logger, write);
+
+      // Auth gate: allow initialize (for the handshake) and ping (health check).
+      // All other methods require a successful initialize first.
+      if (!authenticated && req.method !== 'initialize' && req.method !== 'ping') {
+        write(errResponse(id, UNAUTHORIZED, 'Not authenticated — send initialize with valid credentials'));
+        return;
+      }
+
+      handleRequest(req, id, tools, registry, logger, write, requiredKey, authenticated, (v) => {
+        authenticated = v;
+      }, (delta) => {
+        pendingCalls += delta;
+        tryResolve();
+      });
     });
 
-    rl.on('close', () => resolve());
+    rl.on('close', () => { streamClosed = true; tryResolve(); });
   });
 }
 
@@ -128,9 +161,22 @@ function handleRequest(
   registry: ToolRegistry,
   logger: Logger,
   write: (msg: string) => void,
+  requiredKey: string | null,
+  authenticated: boolean,
+  setAuthenticated: (v: boolean) => void,
+  trackPending: (delta: 1 | -1) => void,
 ): void {
   switch (req.method) {
-    case 'initialize':
+    case 'initialize': {
+      // Validate API key during initialize if one is required (#22).
+      if (requiredKey && !authenticated) {
+        const params = req.params as { credentials?: { apiKey?: string } } | undefined;
+        if (params?.credentials?.apiKey !== requiredKey) {
+          write(errResponse(id, UNAUTHORIZED, 'Invalid or missing API key in initialize params.credentials.apiKey'));
+          return;
+        }
+        setAuthenticated(true);
+      }
       write(
         okResponse(id, {
           protocolVersion: PROTOCOL_VERSION,
@@ -139,6 +185,7 @@ function handleRequest(
         }),
       );
       break;
+    }
 
     case 'ping':
       write(okResponse(id, {}));
@@ -154,6 +201,7 @@ function handleRequest(
         write(errResponse(id, INVALID_PARAMS, 'tools/call requires params.name'));
         return;
       }
+      trackPending(1);
       registry
         .call(params.name, params.arguments ?? {})
         .then((result) => {
@@ -178,6 +226,9 @@ function handleRequest(
           const message = e instanceof Error ? e.message : String(e);
           logger.error('mcp tools/call unhandled error', { tool: params.name, error: message });
           write(errResponse(id, INTERNAL_ERROR, message));
+        })
+        .finally(() => {
+          trackPending(-1);
         });
       break;
     }
