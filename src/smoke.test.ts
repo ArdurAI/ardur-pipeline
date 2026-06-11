@@ -145,6 +145,45 @@ test('all instants within a window share a cycle id (idempotency basis)', () => 
   assert.equal(a, b);
 });
 
+// --- cycle.id canonical format (#13) ----------------------------------------
+
+test('cycleId emits full ISO 8601 UTC with milliseconds (canonical wire format)', () => {
+  // Pins the format contract: @ardurai/contracts CycleMeta.id example is
+  // "2026-06-11T06:00:00.000Z". The orchestrator's cycle-consistency check
+  // compares this string against the id stamped in every engine artifact, so
+  // the format must be exact — NOT the truncated "2026-06-11T06:00Z" form.
+  assert.equal(cycleId(new Date('2026-06-11T06:00:00.000Z')), '2026-06-11T06:00:00.000Z');
+  assert.equal(cycleId(new Date('2026-06-11T12:00:00.000Z')), '2026-06-11T12:00:00.000Z');
+  assert.equal(cycleId(new Date('2026-06-11T18:00:00.000Z')), '2026-06-11T18:00:00.000Z');
+  assert.equal(cycleId(new Date('2026-06-11T00:00:00.000Z')), '2026-06-11T00:00:00.000Z');
+});
+
+// --- sentinel catch-up math (#12) -------------------------------------------
+
+test('windowStart floors every instant in a 6h window to the same boundary', () => {
+  // The sentinel computes floor(now, 6h) in bash to find the "expected" cycle
+  // id, then compares it against the live manifest. This test verifies the JS
+  // equivalent: any instant inside a window resolves to the window start.
+  const boundaries = [
+    '2026-06-11T00:00:00.000Z',
+    '2026-06-11T06:00:00.000Z',
+    '2026-06-11T12:00:00.000Z',
+    '2026-06-11T18:00:00.000Z',
+  ];
+  for (const boundary of boundaries) {
+    const start = new Date(boundary);
+    // One second before the NEXT window must still resolve to this boundary.
+    const oneBeforeNext = new Date(start.getTime() + 6 * 60 * 60 * 1000 - 1000);
+    assert.equal(
+      cycleId(windowStart(oneBeforeNext)),
+      boundary,
+      `instant ${oneBeforeNext.toISOString()} should floor to ${boundary}`,
+    );
+    // The boundary itself resolves to itself.
+    assert.equal(cycleId(windowStart(start)), boundary);
+  }
+});
+
 // --- store round-trip -------------------------------------------------------
 
 test('store publish is atomic and round-trips via manifest', async () => {

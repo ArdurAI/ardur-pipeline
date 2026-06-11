@@ -18,10 +18,15 @@ export function windowStart(now: Date): Date {
 }
 
 /**
- * Stable cycle id — the canonical form the four engines emit:
- * `windowStart.toISOString()`, e.g. "2026-06-11T06:00:00.000Z". Matching it
- * exactly keeps the orchestrator's idempotency key aligned with the cycle id
- * each engine stamps into its artifact (no spurious drift warnings).
+ * Stable cycle id in the canonical wire format defined by `@ardurai/contracts`
+ * (`CycleMeta.id` comment: "2026-06-11T06:00:00.000Z"). Full ISO 8601 UTC with
+ * milliseconds — NOT the truncated minute-precision form (`slice(0,16)+'Z'`).
+ *
+ * Canonical format rationale: the full form preserves sub-minute precision for
+ * future sub-6h windows, is unambiguously parseable, and is what the contracts
+ * package documentation specifies as the example. Engines must emit this format
+ * so the orchestrator's cycle-consistency check (orchestrate.ts) never fires
+ * spurious `cycle-mismatch` warnings.
  */
 export function cycleId(start: Date): string {
   return start.toISOString();

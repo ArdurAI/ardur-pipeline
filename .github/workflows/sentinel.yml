@@ -1,0 +1,89 @@
+name: Cycle Sentinel (catch-up)
+
+# Detects missed / paused 6-hour cycles and self-heals by dispatching cycle.yml.
+#
+# Why this exists (issue #12):
+#   - cycle.yml is scheduled at 00:00, 06:00, 12:00, 18:00 UTC. A single failure
+#     or scheduler hiccup leaves the live manifest stale for up to 6 hours.
+#   - The sentinel runs every 2 hours, computes the current 6h window id, and
+#     compares it to the live manifest. If they differ (or the manifest is absent),
+#     it dispatches cycle.yml for the current window.
+#   - Running every 2 hours also keeps the schedule alive; GitHub auto-pauses
+#     schedules after 60 days of inactivity (deploy-plan §6).
+#
+# Idempotency: cycle.yml's own idempotency guard (loadPublished check) makes a
+# re-dispatch a cheap no-op when the cycle is already published. The concurrency
+# group on cycle.yml (ardur-pipeline-cycle, cancel-in-progress: false) queues
+# duplicate dispatches rather than racing them.
+
+on:
+  schedule:
+    # Every 2 hours. Cheap no-op when the manifest is current.
+    - cron: "0 */2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: write # needed to dispatch cycle.yml
+
+concurrency:
+  group: ardur-sentinel
+  cancel-in-progress: true # only the latest sentinel run matters
+
+jobs:
+  sentinel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Compute current 6h window id
+        id: expected
+        run: |
+          NOW_EPOCH=$(date -u +%s)
+          # 6 h = 21600 s — must match CYCLE_INTERVAL_MS in @ardurai/contracts.
+          CYCLE_SECS=21600
+          WINDOW_EPOCH=$(( (NOW_EPOCH / CYCLE_SECS) * CYCLE_SECS ))
+          # Full ISO 8601 UTC with milliseconds — canonical format per @ardurai/contracts
+          # CycleMeta.id and ardur-pipeline/src/cycle.ts (issue #13).
+          EXPECTED_ID=$(date -u -d "@${WINDOW_EPOCH}" '+%Y-%m-%dT%H:%M:%S.000Z')
+          echo "id=${EXPECTED_ID}" >> "$GITHUB_OUTPUT"
+          echo "Current 6h window: ${EXPECTED_ID}"
+
+      - name: Read live manifest cycle id
+        id: live
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch manifest.json from the published branch.
+          # Empty string when the branch doesn't exist or no cycle has been published yet.
+          LIVE_ID=$(
+            gh api \
+              "repos/${{ github.repository }}/contents/manifest.json?ref=published" \
+              2>/dev/null \
+              | jq -r '.content // empty' \
+              | base64 -d \
+              | jq -r '.cycle.id // empty' \
+              2>/dev/null
+          ) || true
+          echo "id=${LIVE_ID}" >> "$GITHUB_OUTPUT"
+          if [ -z "${LIVE_ID}" ]; then
+            echo "No live manifest found (branch absent or no cycles published yet)"
+          else
+            echo "Live manifest cycle id: ${LIVE_ID}"
+          fi
+
+      - name: Dispatch cycle.yml (catch-up)
+        if: steps.live.outputs.id != steps.expected.outputs.id
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Manifest stale or missing:"
+          echo "  live     = '${{ steps.live.outputs.id }}'"
+          echo "  expected = '${{ steps.expected.outputs.id }}'"
+          echo "Dispatching cycle.yml for catch-up..."
+          gh workflow run cycle.yml
+          echo "Dispatched. cycle.yml concurrency group prevents races with any in-flight run."
+
+      - name: No-op (manifest is current)
+        if: steps.live.outputs.id == steps.expected.outputs.id
+        run: |
+          echo "Manifest is current (cycle.id=${{ steps.live.outputs.id }}). No catch-up needed."
