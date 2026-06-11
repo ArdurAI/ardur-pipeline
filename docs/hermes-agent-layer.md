@@ -414,19 +414,21 @@ the deterministic pipeline *is* the correct answer and an agent is overhead we s
 
 ## 9. Agent-readiness issues filed
 
-Filed as `status:ready` + `agent-readiness` on each repo (see the session report for live
-links):
+Filed as `status:ready` + `agent-readiness` on each repo:
 
-- **ardur-news-aggregator** — uniform CLI + `--in/--out`; `--now/--run-id` (kill `randomUUID`/
-  wall-clock on the default path); offline/fixture mode; `--describe`; JSON errors;
-  `contractRevision` stamp.
-- **ardur-ranking-engine** — `--now` flag (deterministic `generatedAt`); `--describe`; JSON
-  error envelope; stamp `contractRevision`.
-- **ardur-top10-engine** — `--in/--out` + stdin support; collapse positional-arg/`-` ergonomics;
-  `--describe`; `contractRevision` stamp; give `orchestrate.ts` a CLI or drop the script target;
-  align cycle-id precision.
-- **ardur-article-synthesizer** — `--now/--run-id` (deterministic ids/timestamps on the no-LLM
-  path); require explicit `--provider` (no implicit env network mode); `--describe`; JSON
-  errors.
-- **ardur-pipeline** — promote `runners.ts` to a tool registry; add the MCP server; add the
-  SQLite+FTS5 coverage store + `check_coverage`; dark-launch agent verdict logging at the gates.
+- **[ardur-news-aggregator#13](https://github.com/ArdurAI/ardur-news-aggregator/issues/13)** —
+  uniform CLI + `--in/--out`; `--now/--run-id` (kill `randomUUID`/wall-clock on the default
+  path); offline/fixture mode; `--describe`; JSON errors; `contractRevision` stamp.
+- **[ardur-ranking-engine#12](https://github.com/ArdurAI/ardur-ranking-engine/issues/12)** —
+  `--now` flag (deterministic `generatedAt`); `--describe`; JSON error envelope; stamp
+  `contractRevision`.
+- **[ardur-top10-engine#12](https://github.com/ArdurAI/ardur-top10-engine/issues/12)** —
+  `--in/--out` + stdin support; collapse positional-arg/`-` ergonomics; `--describe`;
+  `contractRevision` stamp; give `orchestrate.ts` a CLI or drop the script target; align
+  cycle-id precision.
+- **[ardur-article-synthesizer#17](https://github.com/ArdurAI/ardur-article-synthesizer/issues/17)**
+  — `--now/--run-id` (deterministic ids/timestamps on the no-LLM path); require explicit
+  `--provider` (no implicit env network mode); `--describe`; JSON errors.
+- **[ardur-pipeline#19](https://github.com/ArdurAI/ardur-pipeline/issues/19)** — promote
+  `runners.ts` to a tool registry; add the MCP server; add the SQLite+FTS5 coverage store +
+  `check_coverage`; dark-launch agent verdict logging at the gates.
