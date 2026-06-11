@@ -15,10 +15,7 @@ import { createLogger } from './log.ts';
 const silent = createLogger({ format: 'json', write: () => {} });
 
 /** Send one or more JSON-RPC lines to the server; collect the response lines. */
-async function runMcpLines(
-  inputLines: string[],
-  opts?: { apiKey?: string },
-): Promise<unknown[]> {
+async function runMcpLines(inputLines: string[], opts?: { apiKey?: string }): Promise<unknown[]> {
   const config = loadConfig({});
   const registry = createToolRegistry(config, silent);
 

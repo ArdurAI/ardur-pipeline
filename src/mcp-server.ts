@@ -134,19 +134,39 @@ export function startMcpServer(
       // Auth gate: allow initialize (for the handshake) and ping (health check).
       // All other methods require a successful initialize first.
       if (!authenticated && req.method !== 'initialize' && req.method !== 'ping') {
-        write(errResponse(id, UNAUTHORIZED, 'Not authenticated — send initialize with valid credentials'));
+        write(
+          errResponse(
+            id,
+            UNAUTHORIZED,
+            'Not authenticated — send initialize with valid credentials',
+          ),
+        );
         return;
       }
 
-      handleRequest(req, id, tools, registry, logger, write, requiredKey, authenticated, (v) => {
-        authenticated = v;
-      }, (delta) => {
-        pendingCalls += delta;
-        tryResolve();
-      });
+      handleRequest(
+        req,
+        id,
+        tools,
+        registry,
+        logger,
+        write,
+        requiredKey,
+        authenticated,
+        (v) => {
+          authenticated = v;
+        },
+        (delta) => {
+          pendingCalls += delta;
+          tryResolve();
+        },
+      );
     });
 
-    rl.on('close', () => { streamClosed = true; tryResolve(); });
+    rl.on('close', () => {
+      streamClosed = true;
+      tryResolve();
+    });
   });
 }
 
@@ -172,7 +192,13 @@ function handleRequest(
       if (requiredKey && !authenticated) {
         const params = req.params as { credentials?: { apiKey?: string } } | undefined;
         if (params?.credentials?.apiKey !== requiredKey) {
-          write(errResponse(id, UNAUTHORIZED, 'Invalid or missing API key in initialize params.credentials.apiKey'));
+          write(
+            errResponse(
+              id,
+              UNAUTHORIZED,
+              'Invalid or missing API key in initialize params.credentials.apiKey',
+            ),
+          );
           return;
         }
         setAuthenticated(true);

@@ -67,20 +67,20 @@ function minimalAggregation(): AggregationArtifact {
 function mockTop10Cli(schemaVersion: string): string {
   return [
     "import { readFileSync } from 'node:fs';",
-    "const argv = process.argv.slice(2);",
+    'const argv = process.argv.slice(2);',
     // Fail loudly if the caller did NOT use named flags (old positional arg style)
     "if (!argv.includes('--ranking')) {",
     "  process.stderr.write('FAIL: expected --ranking named flag\\n');",
-    "  process.exit(42);",
-    "}",
+    '  process.exit(42);',
+    '}',
     "const ri = argv.indexOf('--ranking');",
     "const rank = JSON.parse(readFileSync(argv[ri + 1], 'utf8'));",
     'const out = {',
     `  schemaVersion: '${schemaVersion}',`,
     "  artifact: 'top10', runId: 'mock-top10', upstreamRunId: null,",
-    "  generatedAt: rank.generatedAt, cycle: rank.cycle,",
-    "  topics: [], warnings: [],",
-    "  data: { nextRefreshAt: rank.cycle.windowEnd, topicsCovered: [], top10ByTopic: {}, global: [], stability: { carriedOver: 0, fresh: 0, churnRate: 0 } }",
+    '  generatedAt: rank.generatedAt, cycle: rank.cycle,',
+    '  topics: [], warnings: [],',
+    '  data: { nextRefreshAt: rank.cycle.windowEnd, topicsCovered: [], top10ByTopic: {}, global: [], stability: { carriedOver: 0, fresh: 0, churnRate: 0 } }',
     '};',
     "process.stdout.write(JSON.stringify(out) + '\\n');",
   ].join('\n');
@@ -91,20 +91,20 @@ function mockAggEnvCli(canaryKey: string, schemaVersion: string): string {
   return [
     `if (process.env['${canaryKey}'] !== undefined) {`,
     `  process.stderr.write('FAIL: canary env var ${canaryKey} was forwarded\\n');`,
-    "  process.exit(77);",
-    "}",
+    '  process.exit(77);',
+    '}',
     // also assert that the AI knob env was forwarded
     "if (!process.env['ARDUR_AI_PROVIDER']) {",
     "  process.stderr.write('FAIL: ARDUR_AI_PROVIDER not forwarded\\n');",
-    "  process.exit(78);",
-    "}",
+    '  process.exit(78);',
+    '}',
     "const cycle = { id: '2026-06-11T06:00:00.000Z', windowStart: '2026-06-11T06:00:00.000Z', windowEnd: '2026-06-11T12:00:00.000Z' };",
     'const out = {',
     `  schemaVersion: '${schemaVersion}',`,
     "  artifact: 'aggregation', runId: 'env-ok', upstreamRunId: null,",
-    "  generatedAt: cycle.windowStart, cycle,",
-    "  topics: [], warnings: [],",
-    "  data: { itemsByTopic: {}, clustersByTopic: {}, coverageByTopic: {}, documentsByTopic: {}, factsByCluster: {} }",
+    '  generatedAt: cycle.windowStart, cycle,',
+    '  topics: [], warnings: [],',
+    '  data: { itemsByTopic: {}, clustersByTopic: {}, coverageByTopic: {}, documentsByTopic: {}, factsByCluster: {} }',
     '};',
     "process.stdout.write(JSON.stringify(out) + '\\n');",
   ].join('\n');
@@ -140,19 +140,19 @@ test('selectTop10 runner omits --previous flag when previous is null', async () 
   // This CLI fails if --previous is present (should not be when previous=null)
   const cli = [
     "import { readFileSync } from 'node:fs';",
-    "const argv = process.argv.slice(2);",
+    'const argv = process.argv.slice(2);',
     "if (argv.includes('--previous')) {",
     "  process.stderr.write('FAIL: --previous should be absent when previous=null\\n');",
-    "  process.exit(43);",
-    "}",
+    '  process.exit(43);',
+    '}',
     "const ri = argv.indexOf('--ranking');",
     "const rank = JSON.parse(readFileSync(argv[ri + 1], 'utf8'));",
     'const out = {',
     `  schemaVersion: '${SCHEMA_VERSION}',`,
     "  artifact: 'top10', runId: 'no-prev', upstreamRunId: null,",
-    "  generatedAt: rank.generatedAt, cycle: rank.cycle,",
-    "  topics: [], warnings: [],",
-    "  data: { nextRefreshAt: rank.cycle.windowEnd, topicsCovered: [], top10ByTopic: {}, global: [], stability: { carriedOver: 0, fresh: 0, churnRate: 0 } }",
+    '  generatedAt: rank.generatedAt, cycle: rank.cycle,',
+    '  topics: [], warnings: [],',
+    '  data: { nextRefreshAt: rank.cycle.windowEnd, topicsCovered: [], top10ByTopic: {}, global: [], stability: { carriedOver: 0, fresh: 0, churnRate: 0 } }',
     '};',
     "process.stdout.write(JSON.stringify(out) + '\\n');",
   ].join('\n');
@@ -215,9 +215,9 @@ test('engine subprocess that overflows stdout is killed with an error', async ()
   await mkdir(join(tmpDir, 'src'), { recursive: true });
   // CLI that writes ~200 MiB of data (well above the 128 MiB limit).
   const cli = [
-    "// Write 200 MB of zeros to stdout to trigger the buffer limit.",
+    '// Write 200 MB of zeros to stdout to trigger the buffer limit.',
     "const chunk = Buffer.alloc(1024 * 1024, 'x'); // 1 MiB",
-    "for (let i = 0; i < 200; i++) process.stdout.write(chunk);",
+    'for (let i = 0; i < 200; i++) process.stdout.write(chunk);',
   ].join('\n');
   await writeFile(join(tmpDir, 'src', 'cli.ts'), cli);
 

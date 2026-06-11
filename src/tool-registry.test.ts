@@ -186,7 +186,11 @@ test('#21: select_top10 with wrong-stage ranking artifact returns INVALID_INPUT'
     runId: 'r',
     upstreamRunId: null,
     generatedAt: new Date().toISOString(),
-    cycle: { id: '2026-06-11T06:00:00.000Z', windowStart: '2026-06-11T06:00:00.000Z', windowEnd: '2026-06-11T12:00:00.000Z' },
+    cycle: {
+      id: '2026-06-11T06:00:00.000Z',
+      windowStart: '2026-06-11T06:00:00.000Z',
+      windowEnd: '2026-06-11T12:00:00.000Z',
+    },
     topics: [],
     warnings: [],
     data: {},
@@ -197,12 +201,19 @@ test('#21: select_top10 with wrong-stage ranking artifact returns INVALID_INPUT'
     runId: 'a',
     upstreamRunId: null,
     generatedAt: new Date().toISOString(),
-    cycle: { id: '2026-06-11T06:00:00.000Z', windowStart: '2026-06-11T06:00:00.000Z', windowEnd: '2026-06-11T12:00:00.000Z' },
+    cycle: {
+      id: '2026-06-11T06:00:00.000Z',
+      windowStart: '2026-06-11T06:00:00.000Z',
+      windowEnd: '2026-06-11T12:00:00.000Z',
+    },
     topics: [],
     warnings: [],
     data: {},
   };
-  const result = await registry.call('select_top10', { ranking: wrongStage, aggregation: validAgg });
+  const result = await registry.call('select_top10', {
+    ranking: wrongStage,
+    aggregation: validAgg,
+  });
   assert.equal(result.ok, false);
   if (!result.ok) {
     assert.ok(
@@ -246,7 +257,10 @@ test('#22: check_coverage is still allowed when darkLaunchEnabled=false', async 
 // ---------------------------------------------------------------------------
 
 test('#23: aggregate returns ENGINE_UNAVAILABLE when engine dir is absent', async () => {
-  const config = loadConfig({ HERMES_DARK_LAUNCH: 'true', ENGINE_AGGREGATOR: '/nonexistent-path-xyz' });
+  const config = loadConfig({
+    HERMES_DARK_LAUNCH: 'true',
+    ENGINE_AGGREGATOR: '/nonexistent-path-xyz',
+  });
   const registry = createToolRegistry(config, silent);
   const result = await registry.call('aggregate', {});
   assert.equal(result.ok, false);
