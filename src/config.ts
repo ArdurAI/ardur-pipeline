@@ -7,7 +7,7 @@
  * `PipelineConfig` everywhere so cycles are reproducible and testable.
  */
 
-import { resolve } from 'node:path';
+import { join, resolve } from 'node:path';
 
 export interface EngineLocations {
   aggregator: string;
@@ -57,6 +57,19 @@ export interface PipelineConfig {
     attempts: number; // additional tries after the first
     backoffMs: number; // base for exponential backoff
   };
+  hermes: {
+    /**
+     * Absolute path for the Hermes coverage SQLite DB.
+     * Defaults to `<artifactStore>/coverage.db`.
+     * Set HERMES_COVERAGE_DB to override.
+     */
+    coverageDbPath: string;
+    /**
+     * When true (default), dark-launch gate verdicts are logged at INFO level
+     * every cycle. Set HERMES_DARK_LAUNCH=false to suppress.
+     */
+    darkLaunchEnabled: boolean;
+  };
   observability: {
     alertWebhookUrl: string | null;
     /** Optional POST target for per-cycle CycleMetrics JSON (same shape as alert.ts). */
@@ -84,16 +97,17 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
   };
 
   const enginesDir = resolve(str('ENGINES_DIR', '..'));
-  const join = (name: string, fallback: string) => resolve(enginesDir, str(name, fallback));
+  const enginePath = (name: string, fallback: string) => resolve(enginesDir, str(name, fallback));
+  const artifactStoreBase = resolve(str('ARTIFACT_STORE', '.artifacts'));
 
   return {
     engines: {
-      aggregator: join('ENGINE_AGGREGATOR', 'ardur-news-aggregator'),
-      ranking: join('ENGINE_RANKING', 'ardur-ranking-engine'),
-      top10: join('ENGINE_TOP10', 'ardur-top10-engine'),
-      synthesizer: join('ENGINE_SYNTHESIZER', 'ardur-article-synthesizer'),
+      aggregator: enginePath('ENGINE_AGGREGATOR', 'ardur-news-aggregator'),
+      ranking: enginePath('ENGINE_RANKING', 'ardur-ranking-engine'),
+      top10: enginePath('ENGINE_TOP10', 'ardur-top10-engine'),
+      synthesizer: enginePath('ENGINE_SYNTHESIZER', 'ardur-article-synthesizer'),
     },
-    artifactStore: resolve(str('ARTIFACT_STORE', '.artifacts')),
+    artifactStore: artifactStoreBase,
     ai: {
       // Default to ollama; engines fall back to deterministic when maxGenerations=0.
       provider: str('ARDUR_AI_PROVIDER', 'ollama'),
@@ -118,6 +132,10 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     retry: {
       attempts: num('STAGE_RETRIES', 2),
       backoffMs: num('STAGE_BACKOFF_MS', 5_000),
+    },
+    hermes: {
+      coverageDbPath: str('HERMES_COVERAGE_DB', join(artifactStoreBase, 'coverage.db')),
+      darkLaunchEnabled: bool('HERMES_DARK_LAUNCH', true),
     },
     observability: {
       alertWebhookUrl: str('ALERT_WEBHOOK_URL', '') || null,

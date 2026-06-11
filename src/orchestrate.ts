@@ -27,12 +27,14 @@
 import type { CycleMeta } from '@ardurai/contracts';
 import type { PipelineConfig } from './config.ts';
 import type { Logger } from './log.ts';
+import type { CoverageStore } from './coverage-store.ts';
 import { cycleFor, nextRefreshAt } from './cycle.ts';
 import { withRetry } from './retry.ts';
 import { createCliRunners, type StageRunners } from './runners.ts';
 import { ArtifactStore, buildManifest, type CyclePublishSet, type PublishStatus } from './store.ts';
 import { sendAlert } from './alert.ts';
 import { buildCycleMetrics, emitMetrics } from './metrics.ts';
+import type { AggregationArtifact, Top10Artifact, ArticleArtifact } from '@ardurai/contracts';
 
 export type CycleStatus = 'published' | 'degraded' | 'failed' | 'skipped';
 
@@ -68,10 +70,115 @@ export interface RunCycleDeps {
    * The returned RunResult has `dryRun: true`.
    */
   dryRun?: boolean;
+  /**
+   * Coverage store for Hermes dark-launch gates. Optional — omit to skip gates.
+   * When provided, each gate logs what an agent WOULD do without acting on it.
+   * The deterministic conductor path is unchanged regardless.
+   */
+  coverageStore?: CoverageStore;
 }
 
 function errMessage(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
+}
+
+// ---------------------------------------------------------------------------
+// Hermes dark-launch gates
+//
+// Each gate logs what an autonomous agent WOULD do at this decision point.
+// The verdict is tagged `hermesGate: true` for easy grep/filter. The
+// deterministic path continues unchanged — these are observations, not actions.
+// ---------------------------------------------------------------------------
+
+function darkLaunchCurationGate(
+  aggregation: AggregationArtifact,
+  coverage: CoverageStore | undefined,
+  log: Logger,
+): void {
+  if (!coverage) return;
+
+  const topicsWithCoverage: { topic: string; hitCount: number }[] = [];
+  for (const topic of Object.keys(aggregation.data.clustersByTopic)) {
+    const result = coverage.check({ topic });
+    if (result.covered) {
+      topicsWithCoverage.push({ topic, hitCount: result.hitCount });
+    }
+  }
+
+  log.info('hermes:curation-gate [dark-launch]', {
+    hermesGate: true,
+    gate: 'curation',
+    verdict: {
+      topicsChecked: Object.keys(aggregation.data.clustersByTopic).length,
+      topicsWithPriorCoverage: topicsWithCoverage.length,
+      topicsWithCoverage,
+      // Threshold: skip topics seen ≥2 times unless cluster diversity is high
+      wouldSkipCount: topicsWithCoverage.filter((t) => t.hitCount >= 2).length,
+    },
+    deterministic: 'pass',
+  });
+}
+
+function darkLaunchExhaustionGate(
+  top10: Top10Artifact,
+  coverage: CoverageStore | undefined,
+  log: Logger,
+): void {
+  if (!coverage) return;
+
+  const exhaustedTopics: string[] = [];
+  for (const topic of top10.data.topicsCovered) {
+    const result = coverage.check({ topic });
+    if (result.exhausted) exhaustedTopics.push(topic);
+  }
+
+  log.info('hermes:coverage-exhaustion-gate [dark-launch]', {
+    hermesGate: true,
+    gate: 'coverage-exhaustion',
+    verdict: {
+      topicsChecked: top10.data.topicsCovered.length,
+      exhaustedTopics,
+      wouldFlagCount: exhaustedTopics.length,
+    },
+    deterministic: 'pass',
+  });
+}
+
+function darkLaunchEditorialGate(articles: ArticleArtifact, log: Logger): void {
+  const wouldHold: { id: string; reasons: string[] }[] = [];
+
+  for (const article of articles.data.articles) {
+    if (article.editorialStatus === 'held') continue; // already held by deterministic gate
+
+    const reasons: string[] = [];
+    if (article.ai?.provider === 'deterministic' && article.ai?.status === 'fallback') {
+      reasons.push('deterministic-fallback');
+    }
+    if (article.confidence === 'low') reasons.push('low-confidence');
+    if (article.references.length === 0) reasons.push('no-references');
+    if (article.wordCount !== undefined && article.wordCount < 100) reasons.push('too-short');
+
+    if (reasons.length > 0) wouldHold.push({ id: article.id, reasons });
+  }
+
+  const deterministic = {
+    heldByProvGate: articles.data.articles.filter((a) => a.editorialStatus === 'held').length,
+    publishedCount:
+      articles.data.articles.length -
+      articles.data.articles.filter((a) => a.editorialStatus === 'held').length,
+  };
+
+  log.info('hermes:editorial-qa-gate [dark-launch]', {
+    hermesGate: true,
+    gate: 'editorial-qa',
+    verdict: {
+      articlesChecked: articles.data.articles.length,
+      wouldHoldCount: wouldHold.length,
+      wouldHold,
+      wouldPublishCount: deterministic.publishedCount - wouldHold.length,
+    },
+    deterministic,
+  });
 }
 
 /** Run one full cycle. Never throws for an expected pipeline failure. */
@@ -151,9 +258,14 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
   let set: CyclePublishSet;
   try {
     const aggregation = await stage('aggregate', () => runners.aggregate(cycle));
+    darkLaunchCurationGate(aggregation, deps.coverageStore, log);
+
     const ranking = await stage('rank', () => runners.rank(aggregation));
     const top10 = await stage('top10', () => runners.selectTop10(ranking, previous, aggregation));
+    darkLaunchExhaustionGate(top10, deps.coverageStore, log);
+
     const articles = await stage('synthesize', () => runners.synthesize(top10, aggregation));
+    darkLaunchEditorialGate(articles, log);
 
     // Honor HOLD: held articles are archived but must not reach readers.
     const heldArticles = articles.data.articles.filter((a) => a.editorialStatus === 'held');
@@ -227,6 +339,26 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       nextRefreshAt: next,
       timings,
     });
+  }
+
+  // After a real (non-dry) publish, record coverage for future gate queries.
+  if (!deps.dryRun && deps.coverageStore) {
+    const nowStr = now.toISOString();
+    for (const entry of set.top10.data.global) {
+      deps.coverageStore.record(
+        {
+          fingerprint: entry.clusterId,
+          clusterId: entry.clusterId,
+          topic: entry.topic,
+          cycleId: cycle.id,
+          publishedAt: nowStr,
+          angle: entry.headline,
+        },
+        nowStr,
+      );
+    }
+    deps.coverageStore.setCursor('last-cycle-id', cycle.id, nowStr);
+    deps.coverageStore.setCursor('last-cycle-status', status, nowStr);
   }
 
   log.info('cycle published', {

@@ -21,11 +21,12 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --test --experimental-strip-types \"src/**/*.test.ts\"",
+    "test": "node --test --experimental-strip-types --experimental-sqlite \"src/**/*.test.ts\"",
     "lint": "eslint .",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
-    "cycle": "node --experimental-strip-types src/cli.ts"
+    "cycle": "node --experimental-strip-types --experimental-sqlite src/cli.ts",
+    "mcp": "node --experimental-strip-types --experimental-sqlite src/mcp.ts"
   },
   "keywords": [
     "ardur",

@@ -17,6 +17,7 @@
 import { loadConfig } from './config.ts';
 import { createLogger } from './log.ts';
 import { runCycle } from './orchestrate.ts';
+import { CoverageStore } from './coverage-store.ts';
 
 function parseFlag(argv: string[], flag: string): boolean {
   return argv.includes(flag);
@@ -45,16 +46,26 @@ async function main(): Promise<void> {
     );
   }
 
-  const result = await runCycle({
-    config,
-    logger,
-    now: at ? () => at : undefined,
-    dryRun,
-  });
+  // Open coverage store for Hermes dark-launch gates when enabled.
+  const coverageStore = config.hermes.darkLaunchEnabled
+    ? new CoverageStore(config.hermes.coverageDbPath)
+    : undefined;
 
-  // Final machine-readable summary on stdout (logs went to stderr).
-  process.stdout.write(JSON.stringify(result, null, 2) + '\n');
-  process.exitCode = result.status === 'failed' ? 1 : 0;
+  try {
+    const result = await runCycle({
+      config,
+      logger,
+      now: at ? () => at : undefined,
+      dryRun,
+      coverageStore,
+    });
+
+    // Final machine-readable summary on stdout (logs went to stderr).
+    process.stdout.write(JSON.stringify(result, null, 2) + '\n');
+    process.exitCode = result.status === 'failed' ? 1 : 0;
+  } finally {
+    coverageStore?.close();
+  }
 }
 
 main().catch((error: unknown) => {
