@@ -293,9 +293,9 @@ longer than 6h*, which the alert + `nextRefreshAt` staleness signal surfaces.
 
 | Repo | Issue | Scope |
 |---|---|---|
-| ardur-pipeline | *Deploy: production cutover of `cycle.yml`* | vars/secrets, Deploy-Hook step, drop OpenAI env + legacy dispatch, retention prune (§2, §3.2, §8) |
-| ardur-pipeline | *Catch-up sentinel workflow* | hourly staleness check → dispatch current window (§6) |
-| ardur.ai | *INTEG-006 #86 + companion* | CF Pages project + Deploy Hook consumption + `build:from-pipeline` build-time data pull & gate (§2.3, §3.3) |
+| ardur-pipeline | [#11](https://github.com/ArdurAI/ardur-pipeline/issues/11) — Deploy: production cutover of `cycle.yml` | vars/secrets, Deploy-Hook step, drop OpenAI env + legacy dispatch, retention prune (§2, §3.2, §8) |
+| ardur-pipeline | [#12](https://github.com/ArdurAI/ardur-pipeline/issues/12) — Catch-up sentinel workflow | hourly staleness check → dispatch current window (§6) |
+| ardur.ai | [#86](https://github.com/ArdurAI/ardur.ai/issues/86) (INTEG-006) + [#111](https://github.com/ArdurAI/ardur.ai/issues/111) (INTEG-006b) | CF Pages project + Deploy Hook consumption + `build:from-pipeline` build-time data pull & gate (§2.3, §3.3) |
 
 This plan owns the **runtime/hosting/transport/ops**; the **data-shape gate** is owned by
 [`integration-plan.md`](./integration-plan.md) + issues #7/#8/#9 (pipeline) and #81/#106
