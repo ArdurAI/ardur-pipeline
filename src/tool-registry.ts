@@ -207,9 +207,10 @@ export class ToolRegistry {
    * Guards (in order):
    *  1. Tool must exist (#23)
    *  2. Engine-spawning tools require darkLaunchEnabled (#22)
-   *  3. Engine must be present (availability check) (#23)
-   *  4. Run the tool
-   *  5. Enforce sizeBudget on the result (#23)
+   *  3. Required-field check — MISSING_INPUT before hitting the filesystem (#23)
+   *  4. Engine must be present (availability check) (#23)
+   *  5. Run the tool (includes INVALID_INPUT artifact format check)
+   *  6. Enforce sizeBudget on the result (#23)
    */
   async call(name: string, args: unknown): Promise<ToolResult<unknown>> {
     const descriptor = this.descriptors().find((d) => d.name === name);
@@ -223,6 +224,12 @@ export class ToolRegistry {
         'Engine tools require HERMES_DARK_LAUNCH=true — they are only available in dark-launch mode.',
       );
     }
+
+    // Required-field check before availability: fail fast on missing inputs without
+    // touching the filesystem (#23). This must precede the availability guard so that
+    // MISSING_INPUT is deterministic even when engine repos are absent (e.g. in CI).
+    const inputErr = checkRequiredInputs(name, args);
+    if (inputErr) return inputErr;
 
     // Availability check: ensure the engine repo is present before spawning (#23).
     const avail = await descriptor.availability();
@@ -385,6 +392,20 @@ function ok<T>(data: T): ToolResult<T> {
 
 function err(code: string, message: string, details?: unknown): ToolResult<never> {
   return { ok: false, error: { code, message, ...(details !== undefined ? { details } : {}) } };
+}
+
+function checkRequiredInputs(name: string, args: unknown): ToolResult<never> | null {
+  const a = args as Record<string, unknown>;
+  if (name === 'rank' && !a?.aggregation) return err('MISSING_INPUT', 'aggregation is required');
+  if (name === 'select_top10' && !a?.ranking) return err('MISSING_INPUT', 'ranking is required');
+  if (name === 'select_top10' && !a?.aggregation)
+    return err('MISSING_INPUT', 'aggregation is required');
+  if (name === 'synthesize' && !a?.top10) return err('MISSING_INPUT', 'top10 is required');
+  if (name === 'synthesize' && !a?.aggregation)
+    return err('MISSING_INPUT', 'aggregation is required');
+  if (name === 'check_coverage' && !a?.topic && !a?.fingerprint)
+    return err('MISSING_INPUT', 'topic or fingerprint is required');
+  return null;
 }
 
 function checkEngineAvailable(dir: string): { available: boolean; reason?: string } {
