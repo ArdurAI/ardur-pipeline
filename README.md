@@ -76,25 +76,25 @@ Each stage is a standalone npm script:
 | `npm run aggregate` | aggregator engine only | 0 |
 | `npm run rank` | ranking engine (reads `aggregation.json`) | 0 |
 | `npm run top10` | top-10 engine (reads `ranking.json` + `aggregation.json`) | 0 |
-| `npm run prepare` | aggregate → rank → top10 in one shot | **0** |
+| `npm run stage:prepare` | aggregate → rank → top10 in one shot | **0** |
 | `npm run synthesize` | article synthesizer (reads `top10.json` + `aggregation.json`) | **AI** |
-| `npm run cycle` | prepare + synthesize + publish (full scheduled cycle) | AI |
+| `npm run cycle` | stage:prepare + synthesize + publish (full scheduled cycle) | AI |
 | `npm run cycle:no-ai` | full cycle, `ARDUR_AI_MAX_GENERATIONS=0` — all articles HELD | **0** |
-| `npm run hermes` | Hermes entry point: prepare + synthesize → handoff JSON | AI |
-| `npm run hermes -- --prepare-only` | prepare only → handoff with top-10, no articles | **0** |
+| `npm run hermes` | Hermes entry point: stage:prepare + synthesize → handoff JSON | AI |
+| `npm run hermes -- --prepare-only` | stage:prepare only → handoff with top-10, no articles | **0** |
 
 Stage commands read/write artifacts from `.artifacts/prepared/` by default.
 Override with `-- --work-dir <path>`.
 
 ```bash
 # Run just the deterministic half — verify pipeline health, inspect clusters, no tokens:
-npm run prepare                        # → .artifacts/prepared/{aggregation,ranking,top10}.json
+npm run stage:prepare                  # → .artifacts/prepared/{aggregation,ranking,top10}.json
 
 # Then run AI synthesis separately (only this step costs tokens):
 npm run synthesize                     # → .artifacts/prepared/articles.json
 
 # Or chain them explicitly:
-npm run prepare && npm run synthesize
+npm run stage:prepare && npm run synthesize
 
 # Verify the full pipeline without spending any tokens:
 npm run cycle:no-ai                    # full cycle, all articles HELD, no AI calls

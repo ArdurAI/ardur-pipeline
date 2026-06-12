@@ -59,12 +59,7 @@ import { loadConfig } from '../src/config.ts';
 import { createLogger } from '../src/log.ts';
 import { createCliRunners } from '../src/runners.ts';
 import { cycleFor } from '../src/cycle.ts';
-import type {
-  AggregationArtifact,
-  RankingArtifact,
-  Top10Artifact,
-  ArticleArtifact,
-} from '@ardurai/contracts';
+import type { AggregationArtifact, Top10Artifact, ArticleArtifact } from '@ardurai/contracts';
 
 // Handoff format consumed by ardur.ai via ARDUR_NEWS_ENGINE_ARTIFACT.
 // Schema: ardur-news-handoff/v1 (see src/lib/newsEngineSource.ts in ardur.ai)

@@ -20,9 +20,9 @@
  * Exit: 0 = ok, 1 = error
  *
  * Typical usage:
- *   npm run prepare                            # zero tokens → .artifacts/prepared/
+ *   npm run stage:prepare                      # zero tokens → .artifacts/prepared/
  *   npm run synthesize                         # AI step only, reads prepared/ artifacts
- *   npm run prepare && npm run synthesize      # full cycle, staged
+ *   npm run stage:prepare && npm run synthesize  # full cycle, staged
  *   npm run cycle:no-ai                        # prepare + held-only synthesis (no tokens)
  */
 
