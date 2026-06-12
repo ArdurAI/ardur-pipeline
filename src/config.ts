@@ -37,6 +37,8 @@ export interface PipelineConfig {
     host: string;
     /** Model tag to use for Ollama inference, e.g. "llama3.2". */
     model: string;
+    /** Bearer key for Ollama Cloud. When set, engines use cloud inference instead of local. */
+    apiKey: string;
   };
   /** ETL full-text fetch+extract. When enabled the aggregator fetches source bodies. */
   etl: {
@@ -127,6 +129,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     ollama: {
       host: str('OLLAMA_HOST', ''),
       model: str('OLLAMA_MODEL', ''),
+      apiKey: str('OLLAMA_API_KEY', ''),
     },
     etl: {
       enabled: bool('ARDUR_ETL_ENABLED', false),
@@ -171,5 +174,6 @@ export function aiEnv(config: PipelineConfig): Record<string, string> {
   // Forward Ollama connection only when configured — engines skip it when blank.
   if (config.ollama.host) env['OLLAMA_HOST'] = config.ollama.host;
   if (config.ollama.model) env['OLLAMA_MODEL'] = config.ollama.model;
+  if (config.ollama.apiKey) env['OLLAMA_API_KEY'] = config.ollama.apiKey;
   return env;
 }
