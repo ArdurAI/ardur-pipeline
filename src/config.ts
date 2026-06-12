@@ -121,8 +121,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
     },
     artifactStore: artifactStoreBase,
     ai: {
-      // Default to ollama; engines fall back to deterministic when maxGenerations=0.
-      provider: str('ARDUR_AI_PROVIDER', 'ollama'),
+      // Default to deterministic; opt into Ollama explicitly via env/repo variables.
+      provider: str('ARDUR_AI_PROVIDER', 'deterministic'),
       maxGenerations: num('ARDUR_AI_MAX_GENERATIONS', 0),
       timeoutMs: num('ARDUR_AI_TIMEOUT_MS', 20_000),
     },

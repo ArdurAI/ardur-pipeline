@@ -64,8 +64,28 @@ Exit code: `0` for `published | degraded | skipped`, `1` for `failed`.
 ([`.github/workflows/cycle.yml`](./.github/workflows/cycle.yml)): free, native artifacts,
 secrets, `workflow_dispatch` backfill, and one place for everything. The job checks out
 the four engines as siblings, runs one cycle, and on success pushes the artifact store to
-a dedicated **`published`** branch the site reads. Self-hosted cron and serverless are
+a dedicated **`published`** branch the site reads, then POSTs the Cloudflare Pages Deploy
+Hook so `ardur.ai` rebuilds from the fresh artifacts. Self-hosted cron and serverless are
 documented alternatives. See [`docs/spec.md` §3](./docs/spec.md#3-runtime--deploy).
+
+Production repo variables:
+
+- `ARDUR_AI_PROVIDER=deterministic`
+- `ARDUR_AI_MAX_GENERATIONS=0`
+- `ENGINE_AGGREGATOR_REF`, `ENGINE_RANKING_REF`, `ENGINE_TOP10_REF`, `ENGINE_SYNTHESIZER_REF`
+  pinned to known-good engine refs
+- `PUBLISHED_CYCLES_TO_KEEP=40` by default; raise/lower this to tune `published` branch
+  archive retention
+
+Production repo secrets:
+
+- `CF_PAGES_DEPLOY_HOOK` — required for the Cloudflare Pages rebuild handoff
+- `ALERT_WEBHOOK_URL` — recommended for failed/degraded cycle alerts
+- `OLLAMA_API_KEY` — optional only for explicitly opted-in Ollama enrichment
+
+`OPENAI_API_KEY` and `PIPELINE_DISPATCH_TOKEN` are not part of the production core path.
+Failed cycles publish nothing and do not fire the Deploy Hook; skipped/idempotent cycles
+also skip the publish and hook steps.
 
 ## Data handoff to ardur.ai
 
@@ -82,12 +102,12 @@ Full contract + schema: [`docs/spec.md` §4](./docs/spec.md#4-data-handoff-contr
 
 ## The four engines
 
-| # | Repo | Produces |
-|---|------|----------|
-| 1 | [`ardur-news-aggregator`](https://github.com/ArdurAI/ardur-news-aggregator) | `AggregationArtifact` |
-| 2 | [`ardur-ranking-engine`](https://github.com/ArdurAI/ardur-ranking-engine) | `RankingArtifact` |
-| 3 | [`ardur-top10-engine`](https://github.com/ArdurAI/ardur-top10-engine) | `Top10Artifact` |
-| 4 | [`ardur-article-synthesizer`](https://github.com/ArdurAI/ardur-article-synthesizer) | `ArticleArtifact` |
+| #   | Repo                                                                                | Produces              |
+| --- | ----------------------------------------------------------------------------------- | --------------------- |
+| 1   | [`ardur-news-aggregator`](https://github.com/ArdurAI/ardur-news-aggregator)         | `AggregationArtifact` |
+| 2   | [`ardur-ranking-engine`](https://github.com/ArdurAI/ardur-ranking-engine)           | `RankingArtifact`     |
+| 3   | [`ardur-top10-engine`](https://github.com/ArdurAI/ardur-top10-engine)               | `Top10Artifact`       |
+| 4   | [`ardur-article-synthesizer`](https://github.com/ArdurAI/ardur-article-synthesizer) | `ArticleArtifact`     |
 
 `ardur-top10-engine` also ships an in-process `runCycle` for library embedding; this repo
 is the out-of-process conductor that spawns all four CLIs and owns the deploy + handoff.
