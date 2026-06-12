@@ -58,6 +58,120 @@ node --experimental-strip-types src/cli.ts --dry-run
 
 Exit code: `0` for `published | degraded | skipped`, `1` for `failed`.
 
+## Running individual stages
+
+The pipeline has a hard AI boundary: **the LLM is called only during `synthesize`**. Every
+other stage is a deterministic script with zero tokens.
+
+```
+[DETERMINISTIC — 0 tokens]           [AI — tokens here only]
+aggregate → rank → top10   ────────►   synthesize
+     └──── prepare ──┘
+```
+
+Each stage is a standalone npm script:
+
+| Command | What runs | Tokens |
+|---------|-----------|--------|
+| `npm run aggregate` | aggregator engine only | 0 |
+| `npm run rank` | ranking engine (reads `aggregation.json`) | 0 |
+| `npm run top10` | top-10 engine (reads `ranking.json` + `aggregation.json`) | 0 |
+| `npm run prepare` | aggregate → rank → top10 in one shot | **0** |
+| `npm run synthesize` | article synthesizer (reads `top10.json` + `aggregation.json`) | **AI** |
+| `npm run cycle` | prepare + synthesize + publish (full scheduled cycle) | AI |
+| `npm run cycle:no-ai` | full cycle, `ARDUR_AI_MAX_GENERATIONS=0` — all articles HELD | **0** |
+| `npm run hermes` | Hermes entry point: prepare + synthesize → handoff JSON | AI |
+| `npm run hermes -- --prepare-only` | prepare only → handoff with top-10, no articles | **0** |
+
+Stage commands read/write artifacts from `.artifacts/prepared/` by default.
+Override with `-- --work-dir <path>`.
+
+```bash
+# Run just the deterministic half — verify pipeline health, inspect clusters, no tokens:
+npm run prepare                        # → .artifacts/prepared/{aggregation,ranking,top10}.json
+
+# Then run AI synthesis separately (only this step costs tokens):
+npm run synthesize                     # → .artifacts/prepared/articles.json
+
+# Or chain them explicitly:
+npm run prepare && npm run synthesize
+
+# Verify the full pipeline without spending any tokens:
+npm run cycle:no-ai                    # full cycle, all articles HELD, no AI calls
+```
+
+## AI boundary and per-article token budget
+
+**The LLM sees only distilled `ExtractedFact[]` and minimal source metadata — not raw article bodies.**
+
+For each top-10 entry the synthesizer sends:
+
+| Input component | Approx. tokens |
+|-----------------|----------------|
+| System directive + voice directive | ~80 |
+| Headline hint + topic label | ~30 |
+| `ExtractedFact[]` (up to 20; typical 4–8) | ~150–800 |
+| Attribution source refs (title, source, date, URL) | ~150–400 |
+| Output format rules | ~200 |
+| **Total input per article** | **~610–1,510** |
+| Output (synthesized article JSON) | ~500–700 |
+
+**Per full cycle (10 articles):**
+- ~10,000 input + ~6,000 output = **~16,000 tokens total**
+- At a frontier model tier (~$5–15/M input): **< $0.25 per cycle**, < $1/day at 4 cycles/day
+
+Because the input budget is small, quality scales with model tier rather than prompt
+size — use a larger/smarter model to get richer articles, not a bigger prompt.
+
+> **Prompt trim opportunity:** `ardur-article-synthesizer` currently appends a full
+> `context draft` JSON (~600 tokens) to the Ollama prompt as a structural hint.
+> Removing it would cut per-article input by ~40% with no quality loss.
+> See [ardur-article-synthesizer#24](https://github.com/ArdurAI/ardur-article-synthesizer/issues/24).
+
+## How Hermes drives the engines
+
+`scripts/hermes-run.ts` is the single entry point a hermes-agent uses to drive the
+pipeline and produce a `news-engine-handoff/v1` artifact ready for `ardur.ai`.
+
+```
+hermes-agent
+    │
+    ├── npm run hermes -- --prepare-only   → .artifacts/hermes-handoff.json (top-10 only, 0 tokens)
+    │       │
+    │       └── agent reads top-10, runs coverage gates, decides what to synthesize
+    │
+    └── npm run hermes                     → .artifacts/hermes-handoff.json (top-10 + articles)
+            │
+            └── ardur.ai reads via ARDUR_NEWS_ENGINE_ARTIFACT=<path>
+```
+
+**Handoff format** (`ardur-news-handoff/v1`, consumed by `src/lib/newsEngineSource.ts`):
+
+```json
+{
+  "schemaVersion": "ardur-news-handoff/v1",
+  "generatedAt": "2026-06-11T18:00:00.000Z",
+  "top10": { /* Top10Artifact */ },
+  "articles": { /* ArticleArtifact — published only, held articles stripped */ }
+}
+```
+
+**Typical hermes-agent workflow (stub → full):**
+
+1. Agent calls `npm run hermes -- --prepare-only`; receives path to handoff on stdout.
+2. Reads `handoff.top10.data.global` to evaluate coverage (has this topic been recently covered?).
+3. Checks `CoverageStore` gates (dark-launch curation + exhaustion gates in `orchestrate.ts`).
+4. If synthesis is warranted, calls `npm run hermes`; emits the full handoff.
+5. Caller sets `ARDUR_NEWS_ENGINE_ARTIFACT=<path>` and triggers an `ardur.ai` build.
+
+The `--prepare-only` split lets the agent inspect the top-10 before spending any tokens,
+and gives it a veto point between the deterministic and AI segments.
+
+> **Status:** `scripts/hermes-run.ts` is a working stub — it runs the full pipeline but
+> does not yet implement autonomous gate logic. Gate observation is already wired in
+> `orchestrate.ts` (dark-launch mode). See [PR#17](https://github.com/ArdurAI/ardur-pipeline/pull/17)
+> for the Hermes feasibility study.
+
 ## Deploy
 
 **GitHub Actions scheduled workflow** is the recommended runtime
@@ -96,7 +210,8 @@ is the out-of-process conductor that spawns all four CLIs and owns the deploy + 
 
 ```
 src/
-  cli.ts          entrypoint — run one cycle (--at backfill, --dry-run)
+  cli.ts          entrypoint — run one full cycle (--at backfill, --dry-run)
+  stage-cli.ts    stage-by-stage entrypoint (aggregate|rank|top10|prepare|synthesize)
   orchestrate.ts  the conductor: idempotency, retries, last-good-wins, alerting
   runners.ts      CLI-backed StageRunners — the only place that spawns engines
   store.ts        artifact store + manifest handoff (warning categorization, health)
@@ -111,6 +226,7 @@ src/
   golden.test.ts  full end-to-end tests over golden fixtures
 scripts/
   bootstrap.sh    one-command local setup (clone/pull + install all engines)
+  hermes-run.ts   Hermes entry point — prepare (+ optionally synthesize) → handoff JSON
 docs/spec.md      full design spec with diagrams
 .github/workflows/cycle.yml   the 6-hour scheduled cycle (engine ref pinning)
 ```
