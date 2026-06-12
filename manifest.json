@@ -1,24 +1,24 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-06-11T18:00:00.000Z",
-    "windowStart": "2026-06-11T18:00:00.000Z",
-    "windowEnd": "2026-06-12T00:00:00.000Z"
+    "id": "2026-06-12T18:00:00.000Z",
+    "windowStart": "2026-06-12T18:00:00.000Z",
+    "windowEnd": "2026-06-13T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-06-11T20:32:14.751Z",
-  "nextRefreshAt": "2026-06-12T00:00:00.000Z",
+  "publishedAt": "2026-06-12T20:22:07.244Z",
+  "nextRefreshAt": "2026-06-13T00:00:00.000Z",
   "runIds": {
-    "aggregation": "0855662a-4f48-47f0-a1ee-95d31d7be201",
-    "ranking": "rank-f76ee539",
-    "top10": "top10:2026-06-11T18:00:00.000Z",
-    "articles": "synth-top10:2026-06-11T18:00:00.000Z-2026-06-11T20:32:24.645Z"
+    "aggregation": "7bde491b-4a4a-4f50-ac5e-0ba341407072",
+    "ranking": "rank-1638e1ec",
+    "top10": "top10:2026-06-12T18:00:00.000Z",
+    "articles": "synth-top10:2026-06-12T18:00:00.000Z-2026-06-12T20:22:15.505Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-06-11T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-06-11T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-06-11T18-00-00.000Z/top10.json",
-    "articles": "cycles/2026-06-11T18-00-00.000Z/articles.json"
+    "aggregation": "cycles/2026-06-12T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-06-12T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-06-12T18-00-00.000Z/top10.json",
+    "articles": "cycles/2026-06-12T18-00-00.000Z/articles.json"
   },
   "warnings": [
     {
@@ -34,14 +34,14 @@
       "category": "http-error",
       "count": 42,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 36,
+      "count": 30,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,7 +54,7 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
@@ -65,12 +65,30 @@
         "AI unavailable for entry 2 (deterministic provider selected) — article held",
         "AI unavailable for entry 3 (deterministic provider selected) — article held"
       ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 24,
+      "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 2,
+      "sample": [
+        "27 article(s) held (AI unavailable or grounding failed)",
+        "All 27 article(s) are held — no AI-generated content published"
+      ]
     }
   ],
   "health": {
     "failedSources": 132,
     "degradedTopics": 5,
-    "articlesDropped": 0,
+    "articlesDropped": 10,
+    "heldArticles": 0,
     "usedFallback": true
   },
   "summary": {
@@ -85,54 +103,54 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Claude Corps"
+        "headline": "Claude Fable is relentlessly proactive"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "OpenAI to acquire Ona"
+        "topic": "security",
+        "headline": "RHSA-2026:25534: Critical: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic v. OpenAI: Behind the bitter battle for the future of AI"
+        "headline": "What the SpaceX I.P.O. Means for OpenAI and Anthropic"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:25253: Important: runc security update"
+        "topic": "kubernetes",
+        "headline": "v1.11.9"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Evaluate AI agents systematically with Agent-EvalKit"
+        "topic": "kubernetes",
+        "headline": "v1.12.2"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.16.15"
+        "topic": "ai",
+        "headline": "OpenAI kicks off the AI price wars with flexible rate-limit resets for its Codex coding agent"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "A Bootiful Podcast: Spring Security lead Rob Winch answers some security questions for me"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.16.16-rc.1"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:25191: Critical: kernel security update"
+        "topic": "kubernetes",
+        "headline": "Helm v4.2.1"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "RHSA-2026:25341: Important: tomcat9 update"
+        "headline": "LangGraph Flaw Chain Exposes Self-Hosted AI Agents to Remote Code Execution"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Homebrew 6.0.0 released"
+        "headline": "How speculative decoding delivers faster LLM inference"
       }
     ],
-    "articleCount": 50
+    "articleCount": 0
   }
 }
