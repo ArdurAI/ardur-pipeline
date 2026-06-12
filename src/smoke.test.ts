@@ -35,6 +35,12 @@ function testConfig(store: string) {
   return config;
 }
 
+test('loadConfig defaults to the deterministic budget-zero AI path', () => {
+  const config = loadConfig({});
+  assert.equal(config.ai.provider, 'deterministic');
+  assert.equal(config.ai.maxGenerations, 0);
+});
+
 // --- tiny artifact fixtures -------------------------------------------------
 
 function envelope<T>(

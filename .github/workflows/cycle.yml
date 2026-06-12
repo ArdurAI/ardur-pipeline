@@ -22,23 +22,23 @@ name: 6-Hour Pipeline Cycle
 on:
   schedule:
     # 00:00, 06:00, 12:00, 18:00 UTC — the cycle window boundaries.
-    - cron: "0 */6 * * *"
+    - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
       at:
-        description: "Backfill a specific cycle (ISO 8601, e.g. 2026-06-11T06:00:00Z)"
+        description: 'Backfill a specific cycle (ISO 8601, e.g. 2026-06-11T06:00:00Z)'
         required: false
       aggregator_ref:
-        description: "Override ENGINE_AGGREGATOR_REF for this run only"
+        description: 'Override ENGINE_AGGREGATOR_REF for this run only'
         required: false
       ranking_ref:
-        description: "Override ENGINE_RANKING_REF for this run only"
+        description: 'Override ENGINE_RANKING_REF for this run only'
         required: false
       top10_ref:
-        description: "Override ENGINE_TOP10_REF for this run only"
+        description: 'Override ENGINE_TOP10_REF for this run only'
         required: false
       synthesizer_ref:
-        description: "Override ENGINE_SYNTHESIZER_REF for this run only"
+        description: 'Override ENGINE_SYNTHESIZER_REF for this run only'
         required: false
 
 concurrency:
@@ -56,8 +56,8 @@ env:
   ARDUR_AI_PROVIDER: ${{ vars.ARDUR_AI_PROVIDER || 'deterministic' }}
   ARDUR_AI_MAX_GENERATIONS: ${{ vars.ARDUR_AI_MAX_GENERATIONS || '0' }}
   ARDUR_AI_TIMEOUT_MS: ${{ vars.ARDUR_AI_TIMEOUT_MS || '20000' }}
+  PUBLISHED_CYCLES_TO_KEEP: ${{ vars.PUBLISHED_CYCLES_TO_KEEP || '40' }}
   OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
   LOG_FORMAT: json
 
@@ -119,12 +119,17 @@ jobs:
       - name: Run one pipeline cycle
         id: run
         working-directory: ardur-pipeline
+        env:
+          AT_INPUT: ${{ github.event.inputs.at }}
         run: |
-          AT_ARG=""
-          if [ -n "${{ github.event.inputs.at }}" ]; then AT_ARG="--at ${{ github.event.inputs.at }}"; fi
+          AT_ARG=()
+          if [ -n "$AT_INPUT" ]; then AT_ARG=(--at "$AT_INPUT"); fi
           set +e
-          node --experimental-strip-types src/cli.ts $AT_ARG > "$RUNNER_TEMP/result.json"
-          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          node --experimental-strip-types src/cli.ts "${AT_ARG[@]}" > "$RUNNER_TEMP/result.json"
+          EXIT_CODE=$?
+          STATUS=$(node -e "const fs=require('node:fs'); try { const r=JSON.parse(fs.readFileSync(process.argv[1], 'utf8')); process.stdout.write(String(r.status || 'unknown')); } catch { process.stdout.write('unknown'); }" "$RUNNER_TEMP/result.json")
+          echo "exit=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
           set -e
           {
             echo "### ardur-pipeline cycle result"
@@ -145,9 +150,13 @@ jobs:
       # Publish only on a successful cycle (exit 0). On failure the previous
       # cycle's published branch is untouched — last-good-wins at the deploy layer.
       - name: Publish to `published` data branch
-        if: steps.run.outputs.exit == '0'
+        if: steps.run.outputs.exit == '0' && (steps.run.outputs.status == 'published' || steps.run.outputs.status == 'degraded')
         working-directory: ardur-pipeline
         run: |
+          if ! [[ "$PUBLISHED_CYCLES_TO_KEEP" =~ ^[0-9]+$ ]] || [ "$PUBLISHED_CYCLES_TO_KEEP" -lt 1 ]; then
+            echo "::error::PUBLISHED_CYCLES_TO_KEEP must be a positive integer"
+            exit 1
+          fi
           git config user.name "ardur-pipeline[bot]"
           git config user.email "pipeline@ardur.ai"
           CYCLE_ID=$(node -e "const m=require('./.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
@@ -156,23 +165,31 @@ jobs:
           # Replace the served set with this cycle's manifest + latest + archive.
           rm -rf manifest.json latest cycles
           cp -R .artifacts/manifest.json .artifacts/latest .artifacts/cycles .
+          if [ -d cycles ]; then
+            find cycles -mindepth 1 -maxdepth 1 -type d \
+              | sort -r \
+              | tail -n +"$((PUBLISHED_CYCLES_TO_KEEP + 1))" \
+              | while read -r old_cycle; do
+                  echo "Pruning old published cycle: $old_cycle"
+                  rm -rf "$old_cycle"
+                done
+          fi
           git add manifest.json latest cycles
           git commit -m "publish cycle ${CYCLE_ID}" || echo "nothing to publish"
           git push origin published
 
-      # Optional: nudge ardur.ai to rebuild against the fresh artifacts. Requires
-      # a PAT with `repo` scope on ArdurAI/ardur.ai stored as PIPELINE_DISPATCH_TOKEN.
-      - name: Notify ardur.ai to rebuild
-        if: steps.run.outputs.exit == '0'
+      # Optional: nudge Cloudflare Pages to rebuild ardur.ai against the fresh artifacts.
+      - name: Trigger ardur.ai Cloudflare Pages rebuild
+        if: steps.run.outputs.exit == '0' && (steps.run.outputs.status == 'published' || steps.run.outputs.status == 'degraded')
         env:
-          GH_TOKEN: ${{ secrets.PIPELINE_DISPATCH_TOKEN }}
+          CF_PAGES_DEPLOY_HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
         run: |
-          if [ -z "$GH_TOKEN" ]; then echo "no PIPELINE_DISPATCH_TOKEN; skipping rebuild dispatch"; exit 0; fi
-          CYCLE_ID=$(node -e "const m=require('ardur-pipeline/.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
-          gh api repos/ArdurAI/ardur.ai/dispatches \
-            -f event_type=pipeline-published \
-            -F "client_payload[cycle]=$CYCLE_ID" \
-            || echo "dispatch skipped"
+          if [ -z "$CF_PAGES_DEPLOY_HOOK" ]; then
+            echo "no CF_PAGES_DEPLOY_HOOK; skipping Cloudflare Pages rebuild"
+            exit 0
+          fi
+          curl -fsS -X POST "$CF_PAGES_DEPLOY_HOOK" >/dev/null
+          echo "Cloudflare Pages Deploy Hook fired"
 
       - name: Fail the job if the cycle failed
         if: steps.run.outputs.exit != '0'
