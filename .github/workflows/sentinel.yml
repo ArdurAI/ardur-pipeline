@@ -80,7 +80,7 @@ jobs:
           echo "  live     = '${{ steps.live.outputs.id }}'"
           echo "  expected = '${{ steps.expected.outputs.id }}'"
           echo "Dispatching cycle.yml for catch-up..."
-          gh workflow run cycle.yml
+          gh workflow run cycle.yml --repo ${{ github.repository }}
           echo "Dispatched. cycle.yml concurrency group prevents races with any in-flight run."
 
       - name: No-op (manifest is current)

@@ -25,6 +25,8 @@ jobs:
       ARDUR_AI_PROVIDER: deterministic
       ARDUR_AI_MAX_GENERATIONS: "0"
       CI: "true"
+      # Opt into Node 24 for JS actions ahead of the June 16 2026 forced migration.
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
