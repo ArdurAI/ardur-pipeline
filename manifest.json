@@ -6,13 +6,13 @@
     "windowEnd": "2026-06-14T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-06-14T12:02:04.895Z",
+  "publishedAt": "2026-06-14T14:21:58.206Z",
   "nextRefreshAt": "2026-06-14T18:00:00.000Z",
   "runIds": {
-    "aggregation": "ee666664-4a8f-4909-bce5-374c25f0abec",
-    "ranking": "rank-534156c3",
+    "aggregation": "cc876337-f49b-4b22-b8a0-4f43d7b3d700",
+    "ranking": "rank-b35c7788",
     "top10": "top10:2026-06-14T12:00:00.000Z",
-    "articles": "synth-top10:2026-06-14T12:00:00.000Z-2026-06-14T12:02:13.358Z"
+    "articles": "synth-top10:2026-06-14T12:00:00.000Z-2026-06-14T14:22:11.238Z"
   },
   "artifacts": {
     "aggregation": "cycles/2026-06-14T12-00-00.000Z/aggregation.json",
@@ -23,11 +23,20 @@
   "warnings": [
     {
       "category": "blocked-fetch",
-      "count": 129,
+      "count": 132,
       "sample": [
         "[ai] source microsoft.com: Blocked unsafe fetch URL: https://www.microsoft.com/en-us/research/feed/",
         "[ai] source fast.ai: Blocked unsafe fetch URL: https://www.fast.ai/index.xml",
         "[ai] source technologyreview.com: Blocked unsafe fetch URL: https://www.technologyreview.com/topic/artificial-intelligence/feed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 39,
+      "sample": [
+        "[ai] source huggingface.co: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[models] source huggingface.co: HTTP 429 Too Many Requests"
       ]
     },
     {
@@ -37,15 +46,6 @@
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 30,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[platform] source charity.wtf: charity.wtf feed exceeded 1500000 byte body limit"
       ]
     },
     {
@@ -68,24 +68,24 @@
     },
     {
       "category": "copyright-gate",
-      "count": 46,
+      "count": 45,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 2,
       "sample": [
-        "5 article(s) held (AI unavailable or grounding failed)",
-        "All 5 article(s) are held — no AI-generated content published"
+        "6 article(s) held (AI unavailable or grounding failed)",
+        "All 6 article(s) are held — no AI-generated content published"
       ]
     }
   ],
   "health": {
-    "failedSources": 132,
+    "failedSources": 140,
     "degradedTopics": 5,
     "articlesDropped": 10,
     "heldArticles": 0,
@@ -108,47 +108,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Amazon CEO’s Talks With U.S. Officials Triggered Crackdown on Anthropic Models"
+        "headline": "Will Anthropic Offer Claude Fable 5 Refunds?"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Publishing WASM wheels to PyPI for use with Pyodide"
+        "headline": "Google Cloud&039;s Open Knowledge Format turns scattered docs into Markdown files for AI agents"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Databricks Open-Sources Omnigent: A Meta-Harness That Composes, Governs, and Shares AI Agents Across Claude Code, Codex, and Pi"
+        "headline": "Amazon CEO’s Talks With U.S. Officials Triggered Crackdown on Anthropic Models"
       },
       {
         "rank": 5,
+        "topic": "models",
+        "headline": "Publishing WASM wheels to PyPI for use with Pyodide"
+      },
+      {
+        "rank": 6,
         "topic": "platform",
         "headline": "Terraform MCP Server Enables AI Assistants to Interact with Terraform Infrastructure"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "‘No More Soggy Strawberries’ — This Storage Container Keeps Fruit Fresh for ‘Over 3 Weeks’"
+        "rank": 7,
+        "topic": "models",
+        "headline": "Microsoft Research&039;s Mirage gives video generation a persistent spatial memory that doesn&039;t forget what&039;s around the corner"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "topic": "security",
         "headline": "Critical Splunk Enterprise Flaw Lets Attackers Run Code Without Authentication"
       },
       {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "5 Smarter Ways to Run Modern Workloads—Without Losing Control in the Public Cloud"
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "How Investors May Respond To Okta OKTA Elevating AI Identity Security In Its Product Pipeline"
+        "topic": "kubernetes",
+        "headline": "‘No More Soggy Strawberries’ — This Storage Container Keeps Fruit Fresh for ‘Over 3 Weeks’"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Local AI Inference Mini PC Now Runs 235B Models: AMD Ryzen AI Max+ 395 vs. Cloud Costs"
+        "topic": "platform",
+        "headline": "5 Smarter Ways to Run Modern Workloads—Without Losing Control in the Public Cloud"
       }
     ],
     "articleCount": 0
