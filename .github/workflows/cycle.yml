@@ -69,7 +69,7 @@ jobs:
     timeout-minutes: 40
     steps:
       - name: Checkout orchestrator
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: ardur-pipeline
 
@@ -78,35 +78,35 @@ jobs:
       # To pin a version: set ENGINE_<NAME>_REF as a repo variable in settings.
       # To promote: bump the variable once an engine cuts a known-good release.
       - name: Checkout aggregator
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ArdurAI/ardur-news-aggregator
           path: ardur-news-aggregator
           ref: ${{ github.event.inputs.aggregator_ref || vars.ENGINE_AGGREGATOR_REF || 'main' }}
 
       - name: Checkout ranking engine
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ArdurAI/ardur-ranking-engine
           path: ardur-ranking-engine
           ref: ${{ github.event.inputs.ranking_ref || vars.ENGINE_RANKING_REF || 'main' }}
 
       - name: Checkout top10 engine
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ArdurAI/ardur-top10-engine
           path: ardur-top10-engine
           ref: ${{ github.event.inputs.top10_ref || vars.ENGINE_TOP10_REF || 'main' }}
 
       - name: Checkout synthesizer
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ArdurAI/ardur-article-synthesizer
           path: ardur-article-synthesizer
           ref: ${{ github.event.inputs.synthesizer_ref || vars.ENGINE_SYNTHESIZER_REF || 'main' }}
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
 
