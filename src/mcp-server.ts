@@ -10,9 +10,22 @@
  * No external MCP SDK dependency — the protocol is simple enough to implement
  * directly and keeps the dependency surface minimal.
  */
+import { createHash, timingSafeEqual } from 'node:crypto';
 import { createInterface } from 'node:readline';
 import type { Logger } from './log.ts';
 import type { ToolRegistry } from './tool-registry.ts';
+
+// Constant-time API-key comparison to prevent timing side-channels (CWE-208, #41).
+function apiKeyEq(a: string, b: string): boolean {
+  const ha = createHash('sha256').update(a).digest();
+  const hb = createHash('sha256').update(b).digest();
+  return timingSafeEqual(ha, hb);
+}
+
+// Maximum concurrent in-flight tools/call requests to prevent fork-bomb (#40).
+const MAX_CONCURRENT_TOOL_CALLS = 4;
+// Drop input lines that exceed this to prevent OOM from a single oversized message (CWE-400, #41).
+const MAX_LINE_BYTES = 10 * 1024 * 1024; // 10 MiB
 
 const PROTOCOL_VERSION = '2024-11-05';
 const SERVER_NAME = 'ardur-pipeline';
@@ -115,6 +128,13 @@ export function startMcpServer(
     };
 
     rl.on('line', (line) => {
+      // Guard against oversized lines that would OOM before JSON.parse (CWE-400, #41).
+      if (Buffer.byteLength(line, 'utf8') > MAX_LINE_BYTES) {
+        logger.warn('mcp: oversized input line dropped', { bytes: Buffer.byteLength(line, 'utf8') });
+        write(errResponse(null, PARSE_ERROR, 'Line too large'));
+        return;
+      }
+
       const trimmed = line.trim();
       if (!trimmed) return;
 
@@ -160,6 +180,7 @@ export function startMcpServer(
           pendingCalls += delta;
           tryResolve();
         },
+        pendingCalls,
       );
     });
 
@@ -185,13 +206,16 @@ function handleRequest(
   authenticated: boolean,
   setAuthenticated: (v: boolean) => void,
   trackPending: (delta: 1 | -1) => void,
+  currentPending: number,
 ): void {
   switch (req.method) {
     case 'initialize': {
-      // Validate API key during initialize if one is required (#22).
+      // Validate API key during initialize if one is required (#22 / #41).
+      // Uses constant-time compare to prevent timing side-channels (CWE-208).
       if (requiredKey && !authenticated) {
         const params = req.params as { credentials?: { apiKey?: string } } | undefined;
-        if (params?.credentials?.apiKey !== requiredKey) {
+        const provided = params?.credentials?.apiKey ?? '';
+        if (!apiKeyEq(provided, requiredKey)) {
           write(
             errResponse(
               id,
@@ -225,6 +249,11 @@ function handleRequest(
       const params = req.params as ToolCallParams | undefined;
       if (!params?.name) {
         write(errResponse(id, INVALID_PARAMS, 'tools/call requires params.name'));
+        return;
+      }
+      // Concurrency cap: prevent unbounded subprocess spawning (CWE-400, #40).
+      if (currentPending >= MAX_CONCURRENT_TOOL_CALLS) {
+        write(errResponse(id, INTERNAL_ERROR, 'Server busy: too many concurrent tool calls'));
         return;
       }
       trackPending(1);

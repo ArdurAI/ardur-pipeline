@@ -58,6 +58,7 @@ import { join, resolve } from 'node:path';
 import { loadConfig } from '../src/config.ts';
 import { createLogger } from '../src/log.ts';
 import { createCliRunners } from '../src/runners.ts';
+import { applyLowConfidenceHold, publishedArticles } from '../src/store.ts';
 import { cycleFor } from '../src/cycle.ts';
 import type { AggregationArtifact, Top10Artifact, ArticleArtifact } from '@ardurai/contracts';
 
@@ -147,31 +148,25 @@ async function main(): Promise<void> {
     logger.info('[hermes] synthesize (AI step)');
     articles = await runners.synthesize(top10, agg);
     await write('articles', articles);
-    const published = articles.data.articles.filter(
-      (a) =>
-        !('editorialStatus' in a) || (a as { editorialStatus?: string }).editorialStatus !== 'held',
-    ).length;
+    // Apply the same HOLD semantics as the conductor (#34).
+    articles = applyLowConfidenceHold(articles);
+    const published = publishedArticles(articles).data.articles.length;
     const held = articles.data.articles.length - published;
     logger.info('[hermes] synthesize done', { published, held });
   }
 
   // ── Assemble and write the handoff ─────────────────────────────────────────
+  // Apply identical HOLD semantics to the conductor path (#34):
+  //   1. applyLowConfidenceHold — already applied above in the synthesis branch;
+  //      apply again here for prepare-only path where articles was constructed inline.
+  //   2. publishedArticles — allowlist filter (not blacklist) strips held + draft + any
+  //      future statuses. Mirrors store.ts publishedArticles exactly.
+  const liveArticles = publishedArticles(applyLowConfidenceHold(articles));
   const handoff: NewsEngineHandoff = {
     schemaVersion: 'ardur-news-handoff/v1',
     generatedAt: new Date(at).toISOString(),
     top10,
-    // Strip held articles from the handoff — ardur.ai must not serve them.
-    articles: {
-      ...articles,
-      data: {
-        ...articles.data,
-        articles: articles.data.articles.filter(
-          (a) =>
-            !('editorialStatus' in a) ||
-            (a as { editorialStatus?: string }).editorialStatus !== 'held',
-        ),
-      },
-    },
+    articles: liveArticles,
   };
 
   await mkdir(resolve(outPath, '..'), { recursive: true });

@@ -4,7 +4,8 @@
   "manifestVersion": "1.0.0",
   "contractRevision": 3,
   "cli": {
-    "args": ["<ranking.json>", "<previous-top10.json | ->", "<aggregation.json>"],
+    "args": ["--ranking", "<ranking.json>", "--previous", "<previous-top10.json>", "--aggregation", "<aggregation.json>"],
+    "note": "--previous is optional (omit for a fresh-start cycle with no hysteresis)",
     "env": [
       "ARDUR_AI_PROVIDER",
       "ARDUR_AI_MAX_GENERATIONS",

@@ -14,7 +14,7 @@ import { mkdtemp, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { cycleFor, cycleId, windowStart, nextRefreshAt } from './cycle.ts';
-import { ArtifactStore, buildManifest, categorizeWarnings, type CyclePublishSet } from './store.ts';
+import { ArtifactStore, buildManifest, categorizeWarnings, publishedArticles, applyLowConfidenceHold, type CyclePublishSet } from './store.ts';
 import { runCycle } from './orchestrate.ts';
 import { createLogger, type Logger } from './log.ts';
 import { loadConfig } from './config.ts';
@@ -794,4 +794,116 @@ test('#20: low-confidence enforcement — conductor holds low-confidence article
   ) as ArticleArtifact;
   assert.equal(live.data.articles.length, 1);
   assert.equal(live.data.articles[0]!.id, 'art-hi-1');
+});
+
+// --- #29 articleCount matches the allowlist, not totalArticles-held -----------
+
+test('#29: articleCount equals publishedArticles() allowlist count (not total-held)', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-ac-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  // Three articles: 1 published, 1 held, 1 draft.
+  // total - held = 2, but allowlist count = 1 (only 'published' passes).
+  const mixedRunners: StageRunners = {
+    ...fakeRunners(cycle),
+    async synthesize(top10) {
+      return envelope('articles' as AggregationArtifact['artifact'], cycle, 'art-29', {
+        articles: [
+          { id: 'art-pub', rank: 1, topic: 'ai', topicLabel: 'AI', headline: 'H1', dek: '', body: [], keyPoints: [], whyItMatters: '', readerAction: '', tags: [], confidence: 'high', sourceQuality: 'multi-source', references: [], provenance: { clusterId: 'c1', sourceCount: 1, distinctDomains: 1, upstreamRunId: top10.runId }, ai: { provider: 'deterministic', model: 'none', status: 'fallback', generatedAt: cycle.windowStart }, legalNote: '', wordCount: 100, readingTimeMinutes: 1, generatedAt: cycle.windowStart, editorialStatus: 'published' },
+          { id: 'art-held', rank: 2, topic: 'security', topicLabel: 'Security', headline: 'H2', dek: '', body: [], keyPoints: [], whyItMatters: '', readerAction: '', tags: [], confidence: 'high', sourceQuality: 'multi-source', references: [], provenance: { clusterId: 'c2', sourceCount: 1, distinctDomains: 1, upstreamRunId: top10.runId }, ai: { provider: 'deterministic', model: 'none', status: 'fallback', generatedAt: cycle.windowStart }, legalNote: '', wordCount: 100, readingTimeMinutes: 1, generatedAt: cycle.windowStart, editorialStatus: 'held' },
+          { id: 'art-draft', rank: 3, topic: 'cloud', topicLabel: 'Cloud', headline: 'H3', dek: '', body: [], keyPoints: [], whyItMatters: '', readerAction: '', tags: [], confidence: 'high', sourceQuality: 'multi-source', references: [], provenance: { clusterId: 'c3', sourceCount: 1, distinctDomains: 1, upstreamRunId: top10.runId }, ai: { provider: 'deterministic', model: 'none', status: 'fallback', generatedAt: cycle.windowStart }, legalNote: '', wordCount: 100, readingTimeMinutes: 1, generatedAt: cycle.windowStart, editorialStatus: 'draft' },
+        ],
+        copyrightPolicy: { originalTextOnly: true, maxQuoteWords: 25, reproduceArticleBody: false, requireAttribution: true, requireCanonicalLinks: true },
+      }) as unknown as ArticleArtifact;
+    },
+  };
+
+  await runCycle({ config, logger: silent, now, runners: mixedRunners });
+
+  const store = new ArtifactStore(root);
+  const manifest = await store.readManifest();
+  assert.ok(manifest);
+
+  // latest/articles.json must have only the 'published' article.
+  const live = JSON.parse(await readFile(join(root, 'latest', 'articles.json'), 'utf8')) as ArticleArtifact;
+  assert.equal(live.data.articles.length, 1);
+
+  // manifest.summary.articleCount must equal the allowlist count, not total-held.
+  assert.equal(manifest.summary.articleCount, live.data.articles.length,
+    'articleCount must equal the count in latest/articles.json');
+
+  // health.heldArticles must still count only explicitly-held articles.
+  assert.equal(manifest.health.heldArticles, 1);
+});
+
+// --- #33 manifest.artifacts.articles points at latest/ (held-filtered) -------
+
+test('#33: manifest.artifacts.articles points at latest/articles.json, not the held-inclusive archive', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-art33-'));
+  const config = testConfig(root);
+  const now = () => new Date('2026-06-11T06:30:00Z');
+  const cycle = cycleFor(now());
+
+  await runCycle({ config, logger: silent, now, runners: fakeRunners(cycle) });
+
+  const store = new ArtifactStore(root);
+  const manifest = await store.readManifest();
+  assert.ok(manifest);
+  assert.equal(manifest.artifacts.articles, 'latest/articles.json',
+    'artifacts.articles must be the held-filtered live path (#33)');
+});
+
+// --- #27 latest/ is continuously accessible across re-publish ----------------
+
+test('#27: re-publish via atomic rename — latest/ is accessible before and after the swap', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-swap27-'));
+  const config = testConfig(root);
+  const now1 = () => new Date('2026-06-11T06:30:00Z');
+  const cycle1 = cycleFor(now1());
+  const now2 = () => new Date('2026-06-11T13:00:00Z');
+  const cycle2 = cycleFor(now2());
+
+  // First publish.
+  await runCycle({ config, logger: silent, now: now1, runners: fakeRunners(cycle1) });
+  assert.ok(existsSync(join(root, 'latest', 'articles.json')), 'latest/ must exist after first publish');
+
+  // Second publish into a different cycle.
+  await runCycle({ config, logger: silent, now: now2, runners: fakeRunners(cycle2) });
+  assert.ok(existsSync(join(root, 'latest', 'articles.json')), 'latest/ must exist after second publish');
+
+  // Both cycle archives must coexist.
+  assert.ok(existsSync(join(root, 'cycles', cycle1.id.replace(/:/g, '-'), 'articles.json')), 'cycle1 archive exists');
+  assert.ok(existsSync(join(root, 'cycles', cycle2.id.replace(/:/g, '-'), 'articles.json')), 'cycle2 archive exists');
+});
+
+// --- publishedArticles / applyLowConfidenceHold exports (#42 dead-code fix) --
+
+test('publishedArticles allowlist: only published and null-status pass, draft and held blocked', () => {
+  const cycle = cycleFor(new Date('2026-06-11T06:00:00Z'));
+  const base = { rank: 1, topic: 'ai', topicLabel: 'AI', headline: 'H', dek: '', body: [], keyPoints: [], whyItMatters: '', readerAction: '', tags: [], confidence: 'high' as const, sourceQuality: 'multi-source' as const, references: [], provenance: { clusterId: 'c1', sourceCount: 1, distinctDomains: 1, upstreamRunId: 'r' }, ai: { provider: 'det', model: 'none', status: 'fallback' as const, generatedAt: cycle.windowStart }, legalNote: '', wordCount: 100, readingTimeMinutes: 1, generatedAt: cycle.windowStart };
+  const art = { schemaVersion: SCHEMA_VERSION, artifact: 'articles' as const, stage: 'articles' as const, runId: 'r', upstreamRunId: null, generatedAt: cycle.windowStart, cycle, topics: [], warnings: [], data: { articles: [
+    { ...base, id: 'pub', editorialStatus: 'published' as const },
+    { ...base, id: 'held', editorialStatus: 'held' as const },
+    { ...base, id: 'draft', editorialStatus: 'draft' as const },
+    { ...base, id: 'none' },
+  ], copyrightPolicy: { originalTextOnly: true, maxQuoteWords: 25, reproduceArticleBody: false, requireAttribution: true, requireCanonicalLinks: true } } } as unknown as ArticleArtifact;
+  const live = publishedArticles(art);
+  assert.deepEqual(live.data.articles.map((a) => a.id), ['pub', 'none']);
+});
+
+test('applyLowConfidenceHold forces low-confidence published → held', () => {
+  const cycle = cycleFor(new Date('2026-06-11T06:00:00Z'));
+  const base = { rank: 1, topic: 'ai', topicLabel: 'AI', headline: 'H', dek: '', body: [], keyPoints: [], whyItMatters: '', readerAction: '', tags: [], sourceQuality: 'multi-source' as const, references: [], provenance: { clusterId: 'c1', sourceCount: 1, distinctDomains: 1, upstreamRunId: 'r' }, ai: { provider: 'det', model: 'none', status: 'fallback' as const, generatedAt: cycle.windowStart }, legalNote: '', wordCount: 100, readingTimeMinutes: 1, generatedAt: cycle.windowStart };
+  const art = { schemaVersion: SCHEMA_VERSION, artifact: 'articles' as const, stage: 'articles' as const, runId: 'r', upstreamRunId: null, generatedAt: cycle.windowStart, cycle, topics: [], warnings: [], data: { articles: [
+    { ...base, id: 'hi', confidence: 'high' as const, editorialStatus: 'published' as const },
+    { ...base, id: 'lo', confidence: 'low' as const, editorialStatus: 'published' as const },
+    { ...base, id: 'lo-already-held', confidence: 'low' as const, editorialStatus: 'held' as const },
+  ], copyrightPolicy: { originalTextOnly: true, maxQuoteWords: 25, reproduceArticleBody: false, requireAttribution: true, requireCanonicalLinks: true } } } as unknown as ArticleArtifact;
+  const result = applyLowConfidenceHold(art);
+  const statuses = Object.fromEntries(result.data.articles.map((a) => [a.id, a.editorialStatus]));
+  assert.equal(statuses['hi'], 'published');
+  assert.equal(statuses['lo'], 'held');
+  assert.equal(statuses['lo-already-held'], 'held');
 });

@@ -59,7 +59,6 @@ env:
   ARDUR_AI_MAX_GENERATIONS: ${{ vars.ARDUR_AI_MAX_GENERATIONS || '0' }}
   ARDUR_AI_TIMEOUT_MS: ${{ vars.ARDUR_AI_TIMEOUT_MS || '20000' }}
   OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
   LOG_FORMAT: json
 
@@ -118,12 +117,34 @@ jobs:
             echo "::endgroup::"
           done
 
+      # Restore prior artifact state so idempotency guard and cross-cycle hysteresis work (#36).
+      # Restores manifest.json and the most recent cycle's top10.json from the published branch.
+      - name: Restore artifact store
+        working-directory: ardur-pipeline
+        run: |
+          git fetch origin published --depth=1 2>/dev/null || true
+          if git show-ref --verify --quiet refs/remotes/origin/published; then
+            mkdir -p .artifacts
+            git show origin/published:manifest.json > .artifacts/manifest.json 2>/dev/null || true
+            if [ -f .artifacts/manifest.json ]; then
+              PREV_CYCLE=$(node -e "try{const m=require('./.artifacts/manifest.json');process.stdout.write(m.cycle.id.replace(/:/g,'-'))}catch{}")
+              if [ -n "$PREV_CYCLE" ]; then
+                mkdir -p ".artifacts/cycles/$PREV_CYCLE"
+                git show "origin/published:cycles/$PREV_CYCLE/top10.json" > ".artifacts/cycles/$PREV_CYCLE/top10.json" 2>/dev/null || true
+              fi
+            fi
+          fi
+
       - name: Run one pipeline cycle
         id: run
         working-directory: ardur-pipeline
+        # Pass the backfill timestamp through env, not via expression interpolation, to
+        # prevent shell script injection (CWE-78, #37).
+        env:
+          AT_INPUT: ${{ github.event.inputs.at }}
         run: |
           AT_ARG=""
-          if [ -n "${{ github.event.inputs.at }}" ]; then AT_ARG="--at ${{ github.event.inputs.at }}"; fi
+          if [ -n "$AT_INPUT" ]; then AT_ARG="--at $AT_INPUT"; fi
           set +e
           node --experimental-strip-types src/cli.ts $AT_ARG > "$RUNNER_TEMP/result.json"
           echo "exit=$?" >> "$GITHUB_OUTPUT"
@@ -153,28 +174,30 @@ jobs:
           git config user.name "ardur-pipeline[bot]"
           git config user.email "pipeline@ardur.ai"
           CYCLE_ID=$(node -e "const m=require('./.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
-          git fetch origin published --depth=1 || true
+          CYCLE_SLUG=$(echo "$CYCLE_ID" | sed 's/:/-/g')
+          git fetch origin published --depth=100 2>/dev/null || true
           git switch published 2>/dev/null || git switch --orphan published
-          # Replace the served set with this cycle's manifest + latest + archive.
-          rm -rf manifest.json latest cycles
-          cp -R .artifacts/manifest.json .artifacts/latest .artifacts/cycles .
-          git add manifest.json latest cycles
+          # Update manifest + latest (always); append this cycle's archive (#36 — don't rm -rf cycles).
+          rm -rf manifest.json latest
+          cp -R .artifacts/manifest.json .artifacts/latest .
+          mkdir -p "cycles/$CYCLE_SLUG"
+          cp -R ".artifacts/cycles/$CYCLE_SLUG/." "cycles/$CYCLE_SLUG/"
+          # Retention prune: keep last 48 cycles (~12 days) to bound branch size (#11).
+          ls -d cycles/*/ 2>/dev/null | sort | head -n -48 | xargs -r rm -rf
+          git add manifest.json latest "cycles/$CYCLE_SLUG"
+          git add -u cycles/ 2>/dev/null || true
           git commit -m "publish cycle ${CYCLE_ID}" || echo "nothing to publish"
           git push origin published
 
-      # Optional: nudge ardur.ai to rebuild against the fresh artifacts. Requires
-      # a PAT with `repo` scope on ArdurAI/ardur.ai stored as PIPELINE_DISPATCH_TOKEN.
-      - name: Notify ardur.ai to rebuild
+      # Trigger ardur.ai rebuild via Cloudflare Pages Deploy Hook (#11).
+      # CF_PAGES_DEPLOY_HOOK must be set as a repo secret; skipped cleanly when absent.
+      - name: Trigger Cloudflare Pages rebuild
         if: steps.run.outputs.exit == '0'
         env:
-          GH_TOKEN: ${{ secrets.PIPELINE_DISPATCH_TOKEN }}
+          CF_PAGES_DEPLOY_HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
         run: |
-          if [ -z "$GH_TOKEN" ]; then echo "no PIPELINE_DISPATCH_TOKEN; skipping rebuild dispatch"; exit 0; fi
-          CYCLE_ID=$(node -e "const m=require('ardur-pipeline/.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
-          gh api repos/ArdurAI/ardur.ai/dispatches \
-            -f event_type=pipeline-published \
-            -F "client_payload[cycle]=$CYCLE_ID" \
-            || echo "dispatch skipped"
+          if [ -z "$CF_PAGES_DEPLOY_HOOK" ]; then echo "CF_PAGES_DEPLOY_HOOK not set; skipping"; exit 0; fi
+          curl -fsS -X POST "$CF_PAGES_DEPLOY_HOOK" || echo "deploy hook failed (non-fatal)"
 
       - name: Fail the job if the cycle failed
         if: steps.run.outputs.exit != '0'

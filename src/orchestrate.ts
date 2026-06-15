@@ -31,7 +31,13 @@ import type { CoverageStore } from './coverage-store.ts';
 import { cycleFor, nextRefreshAt } from './cycle.ts';
 import { withRetry } from './retry.ts';
 import { createCliRunners, type StageRunners } from './runners.ts';
-import { ArtifactStore, buildManifest, type CyclePublishSet, type PublishStatus } from './store.ts';
+import {
+  ArtifactStore,
+  buildManifest,
+  applyLowConfidenceHold,
+  type CyclePublishSet,
+  type PublishStatus,
+} from './store.ts';
 import { sendAlert } from './alert.ts';
 import { buildCycleMetrics, emitMetrics } from './metrics.ts';
 import type { AggregationArtifact, Top10Artifact, ArticleArtifact } from '@ardurai/contracts';
@@ -270,21 +276,7 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     // Conductor-level hold: low-confidence articles must not reach readers
     // even if the synthesizer emitted them with editorialStatus: 'published'.
     // This is the enforcement path — darkLaunchEditorialGate above only observes.
-    const articlesForPublish: ArticleArtifact = articles.data.articles.some(
-      (a) => a.editorialStatus !== 'held' && a.confidence === 'low',
-    )
-      ? {
-          ...articles,
-          data: {
-            ...articles.data,
-            articles: articles.data.articles.map((a) =>
-              a.editorialStatus !== 'held' && a.confidence === 'low'
-                ? { ...a, editorialStatus: 'held' as const }
-                : a,
-            ),
-          },
-        }
-      : articles;
+    const articlesForPublish: ArticleArtifact = applyLowConfidenceHold(articles);
 
     // Honor HOLD: held articles are archived but must not reach readers.
     const heldArticles = articlesForPublish.data.articles.filter(
@@ -313,8 +305,12 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       { cycle, status: 'failed', warnings },
       log,
     );
+    // Clean up scratch even on failure (#31).
+    await runners.cleanupScratch?.().catch(() => {});
     return finalize({ cycle, status: 'failed', warnings, nextRefreshAt: next, timings });
   }
+  // Clean up per-cycle scratch dir to prevent unbounded growth (#31).
+  await runners.cleanupScratch?.().catch(() => {});
 
   // Soft cycle-consistency checks — flag drift without failing the cycle.
   for (const [name, art] of [

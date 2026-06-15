@@ -236,3 +236,50 @@ test('engine subprocess that overflows stdout is killed with an error', async ()
     (err: Error) => err.message.includes('exceeded'),
   );
 });
+
+// ---------------------------------------------------------------------------
+// #28 — multibyte UTF-8 across chunk boundaries
+// ---------------------------------------------------------------------------
+
+test('#28: multibyte UTF-8 characters split across stdout chunks are decoded correctly', async () => {
+  const tmpDir = await mkdtemp(join(tmpdir(), 'ardur-runner-utf8-'));
+  await mkdir(join(tmpDir, 'src'), { recursive: true });
+
+  // Write a minimal valid aggregation artifact where the runId contains a non-ASCII
+  // multibyte character (€ = U+20AC, 3 bytes in UTF-8) to prove the decoder
+  // handles chunk splits. We write the JSON byte-by-byte so each write() call is
+  // a single-byte chunk — this guarantees a split on every multibyte boundary.
+  const runId = 'test-€-runid';  // € is U+20AC, 3 UTF-8 bytes
+  const cycle = minimalCycle();
+  const artifact = JSON.stringify({
+    schemaVersion: SCHEMA_VERSION,
+    artifact: 'aggregation',
+    runId,
+    upstreamRunId: null,
+    generatedAt: cycle.windowStart,
+    cycle,
+    topics: [],
+    warnings: [],
+    data: { itemsByTopic: {}, clustersByTopic: {}, coverageByTopic: {} },
+  });
+
+  // CLI writes the JSON one byte at a time so every multibyte char straddles chunks.
+  const cli = [
+    "import { Buffer } from 'node:buffer';",
+    `const payload = ${JSON.stringify(artifact)};`,
+    'const bytes = Buffer.from(payload, "utf8");',
+    'for (const byte of bytes) { process.stdout.write(Buffer.from([byte])); }',
+  ].join('\n');
+  await writeFile(join(tmpDir, 'src', 'cli.ts'), cli);
+
+  const config = loadConfig({
+    ARTIFACT_STORE: tmpDir,
+    ENGINE_AGGREGATOR: tmpDir,
+    STAGE_RETRIES: '0',
+    STAGE_BACKOFF_MS: '0',
+    STAGE_TIMEOUT_AGGREGATE_MS: '30000',
+  });
+  const runners = createCliRunners(config, cycle, silent);
+  const agg = await runners.aggregate(cycle);
+  assert.equal(agg.runId, runId, 'multibyte runId must survive chunk-by-chunk decoding');
+});

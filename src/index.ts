@@ -9,7 +9,7 @@ export { runCycle } from './orchestrate.ts';
 export type { RunResult, RunCycleDeps, CycleStatus, StageTiming } from './orchestrate.ts';
 export { loadConfig, aiEnv } from './config.ts';
 export type { PipelineConfig, EngineLocations } from './config.ts';
-export { ArtifactStore, buildManifest, categorizeWarnings } from './store.ts';
+export { ArtifactStore, buildManifest, categorizeWarnings, publishedArticles, applyLowConfidenceHold } from './store.ts';
 export type {
   PublishManifest,
   CyclePublishSet,
@@ -30,4 +30,6 @@ export type { CoverageRecord, CoverageHit, CoverageResult } from './coverage-sto
 export { ToolRegistry, createToolRegistry } from './tool-registry.ts';
 export type { ToolDescriptor, ToolResult, JSONSchemaObject } from './tool-registry.ts';
 export { startMcpServer } from './mcp-server.ts';
+export { loadToolManifest, assertManifestCompatible } from './tool-manifest.ts';
+export type { ToolManifest, CliSpec, ArtifactSchema } from './tool-manifest.ts';
 export * from '@ardurai/contracts';

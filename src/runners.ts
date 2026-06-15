@@ -16,8 +16,9 @@
  */
 
 import { spawn } from 'node:child_process';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { StringDecoder } from 'node:string_decoder';
 import { assertCompatibleArtifact } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
@@ -40,6 +41,8 @@ export interface StageRunners {
     aggregation: AggregationArtifact,
   ): Promise<Top10Artifact>;
   synthesize(top10: Top10Artifact, aggregation: AggregationArtifact): Promise<ArticleArtifact>;
+  /** Remove the per-cycle scratch dir. Call in a finally after all stages complete (#31). */
+  cleanupScratch?(): Promise<void>;
 }
 
 interface SpawnResult {
@@ -77,10 +80,13 @@ function runEngineCli(
   }
 
   return new Promise<SpawnResult>((resolve, reject) => {
+    // detached: true — on timeout/overflow we kill the process GROUP so grandchildren
+    // (model servers, fetchers spawned by the engine) are also reaped (#31).
     const child = spawn(process.execPath, nodeArgs, {
       cwd,
       env: { ...safeEnv, ...env },
       stdio: ['ignore', 'pipe', 'pipe'],
+      detached: true,
     });
 
     let stdout = '';
@@ -88,12 +94,18 @@ function runEngineCli(
     let stdoutBytes = 0;
     let stderrBytes = 0;
     let done = false;
+    // StringDecoders handle multi-byte UTF-8 split across chunk boundaries (#28).
+    const stdoutDec = new StringDecoder('utf8');
+    const stderrDec = new StringDecoder('utf8');
 
     const fail = (reason: Error) => {
       if (done) return;
       done = true;
       clearTimeout(timer);
-      child.kill('SIGKILL');
+      // Kill the process group to reap grandchildren (#31).
+      if (child.pid !== undefined) {
+        try { process.kill(-child.pid, 'SIGKILL'); } catch { /* already dead */ }
+      }
       reject(reason);
     };
 
@@ -108,11 +120,11 @@ function runEngineCli(
         fail(new Error(`engine stdout exceeded ${MAX_STDOUT_BYTES} bytes: ${cwd}`));
         return;
       }
-      stdout += d.toString();
+      stdout += stdoutDec.write(d);
     });
     child.stderr.on('data', (d: Buffer) => {
       stderrBytes += d.length;
-      if (stderrBytes <= MAX_STDERR_BYTES) stderr += d.toString();
+      if (stderrBytes <= MAX_STDERR_BYTES) stderr += stderrDec.write(d);
     });
     child.on('error', (e) => {
       if (done) return;
@@ -124,6 +136,9 @@ function runEngineCli(
       if (done) return;
       done = true;
       clearTimeout(timer);
+      // Flush any trailing incomplete multi-byte character (#28).
+      stdout += stdoutDec.end();
+      stderr += stderrDec.end();
       if (code === 0) {
         resolve({ stdout, stderr });
       } else {
@@ -224,6 +239,10 @@ export function createCliRunners(
         logger,
       );
       return parseArtifact<ArticleArtifact>('articles', stdout, 'articles');
+    },
+
+    async cleanupScratch() {
+      await rm(scratch, { recursive: true, force: true });
     },
   };
 }

@@ -83,11 +83,12 @@ for dir in "${!ENGINE_REPOS[@]}"; do
     fi
   else
     info "$dir: cloning from $url"
-    CLONE_ARGS=(--quiet)
+    # Clone without --branch so commit SHAs work; then checkout the ref if given (#39).
+    # git clone --branch rejects commit SHAs on a fresh clone (only tags/branches allowed).
+    git clone --quiet "$url" "$target"
     if [[ -n "$REF" ]]; then
-      CLONE_ARGS+=(--branch "$REF")
+      git -C "$target" checkout --quiet "$REF"
     fi
-    git clone "${CLONE_ARGS[@]}" "$url" "$target"
   fi
 
   step "installing $dir"

@@ -70,21 +70,22 @@ test('unknown tool name returns UNKNOWN_TOOL error', async () => {
 });
 
 test('rank without aggregation returns MISSING_INPUT error', async () => {
-  const registry = createToolRegistry(loadConfig({}), silent);
+  // dark launch must be enabled so the engine gate passes and MISSING_INPUT is reached (#40).
+  const registry = createToolRegistry(loadConfig({ HERMES_DARK_LAUNCH: 'true' }), silent);
   const result = await registry.call('rank', {});
   assert.equal(result.ok, false);
   if (!result.ok) assert.equal(result.error.code, 'MISSING_INPUT');
 });
 
 test('select_top10 without ranking returns MISSING_INPUT error', async () => {
-  const registry = createToolRegistry(loadConfig({}), silent);
+  const registry = createToolRegistry(loadConfig({ HERMES_DARK_LAUNCH: 'true' }), silent);
   const result = await registry.call('select_top10', { aggregation: {} });
   assert.equal(result.ok, false);
   if (!result.ok) assert.equal(result.error.code, 'MISSING_INPUT');
 });
 
 test('synthesize without top10 returns MISSING_INPUT error', async () => {
-  const registry = createToolRegistry(loadConfig({}), silent);
+  const registry = createToolRegistry(loadConfig({ HERMES_DARK_LAUNCH: 'true' }), silent);
   const result = await registry.call('synthesize', { aggregation: {} });
   assert.equal(result.ok, false);
   if (!result.ok) assert.equal(result.error.code, 'MISSING_INPUT');

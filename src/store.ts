@@ -133,7 +133,11 @@ export interface PublishManifest {
     top10: string;
     articles: string;
   };
-  /** Relative paths (from the store root) the site can fetch directly. */
+  /**
+   * Relative paths (from the store root) the site can fetch directly.
+   * `articles` points at `latest/articles.json` (held-filtered, always safe to serve).
+   * The held-inclusive archive is at `cycles/<cycle.id>/articles.json` (#33).
+   */
   artifacts: {
     aggregation: string;
     ranking: string;
@@ -175,8 +179,11 @@ export interface PublishOptions {
   rawWarnings?: string[];
 }
 
-/** Return a copy of the ArticleArtifact with only explicitly-published articles (allowlist). */
-function publishedArticles(artifact: ArticleArtifact): ArticleArtifact {
+/**
+ * Return a copy of the ArticleArtifact with only explicitly-published articles (allowlist).
+ * Exported so callers (hermes-run, tests) can apply identical HOLD semantics.
+ */
+export function publishedArticles(artifact: ArticleArtifact): ArticleArtifact {
   // Allowlist: only 'published' status (or absent status for backward-compat with pre-Rev3
   // artifacts) reaches readers. Any explicit non-'published' value ('held', 'draft', etc.)
   // is excluded. A blacklist (!== 'held') would silently pass through unknown future statuses.
@@ -185,6 +192,29 @@ function publishedArticles(artifact: ArticleArtifact): ArticleArtifact {
   );
   if (live.length === artifact.data.articles.length) return artifact;
   return { ...artifact, data: { ...artifact.data, articles: live } };
+}
+
+/**
+ * Apply the conductor-level low-confidence hold: articles with confidence === 'low'
+ * that are not already held are forced to held. Exported so hermes-run can match
+ * the conductor's HOLD semantics identically.
+ */
+export function applyLowConfidenceHold(artifact: ArticleArtifact): ArticleArtifact {
+  const needsHold = artifact.data.articles.some(
+    (a) => a.editorialStatus !== 'held' && a.confidence === 'low',
+  );
+  if (!needsHold) return artifact;
+  return {
+    ...artifact,
+    data: {
+      ...artifact.data,
+      articles: artifact.data.articles.map((a) =>
+        a.editorialStatus !== 'held' && a.confidence === 'low'
+          ? { ...a, editorialStatus: 'held' as const }
+          : a,
+      ),
+    },
+  };
 }
 
 export class ArtifactStore {
@@ -276,8 +306,12 @@ export class ArtifactStore {
       writeFile(join(latestTmp, STAGE_FILES.top10), pretty(set.top10)),
       writeFile(join(latestTmp, STAGE_FILES.articles), pretty(liveArticles)),
     ]);
-    await rm(latest, { recursive: true, force: true });
-    await rename(latestTmp, latest);
+    // Atomic directory swap: rename old aside first so there is no window where
+    // latest/ does not exist (#27 — rm-then-rename left a blank-state gap).
+    const latestOld = `${latest}.old-${set.cycle.id.replace(/:/g, '-')}`;
+    await rename(latest, latestOld).catch(() => {}); // no-op on first publish
+    await rename(latestTmp, latest);                  // atomic: new dir appears instantly
+    await rm(latestOld, { recursive: true, force: true });
 
     // Flip the manifest pointer last, via temp-file + rename.
     const manifestTmp = this.manifestPath() + '.tmp';
@@ -310,7 +344,8 @@ export function buildManifest(
   const heldArticles = set.articles.data.articles.filter(
     (a) => a.editorialStatus === 'held',
   ).length;
-  const publishedCount = totalArticles - heldArticles;
+  // Use the same allowlist as latest/articles.json to avoid counting 'draft' etc. (#29).
+  const publishedCount = publishedArticles(set.articles).data.articles.length;
   const articlesDropped = Math.max(0, 10 - totalArticles);
   const usedFallback = warnings.some(
     (w) => w.toLowerCase().includes('fallback') || w.toLowerCase().includes('deterministic'),
@@ -332,7 +367,9 @@ export function buildManifest(
       aggregation: `cycles/${cycleSlug}/${STAGE_FILES.aggregation}`,
       ranking: `cycles/${cycleSlug}/${STAGE_FILES.ranking}`,
       top10: `cycles/${cycleSlug}/${STAGE_FILES.top10}`,
-      articles: `cycles/${cycleSlug}/${STAGE_FILES.articles}`,
+      // Point at latest/articles.json (held-filtered). The held-inclusive archive
+      // lives at cycles/<id>/articles.json and is derivable from cycle.id (#33).
+      articles: `latest/${STAGE_FILES.articles}`,
     },
     warnings: categorizeWarnings(warnings),
     health: { failedSources, degradedTopics, articlesDropped, heldArticles, usedFallback },

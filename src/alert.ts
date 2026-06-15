@@ -29,6 +29,7 @@ export async function sendAlert(
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ text, ...payload }),
+      signal: AbortSignal.timeout(5_000), // prevent a hung endpoint stalling the cycle (#38)
     });
     if (!res.ok) {
       logger.warn('alert webhook non-2xx', { status: res.status });

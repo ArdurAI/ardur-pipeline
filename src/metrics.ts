@@ -94,6 +94,7 @@ export async function emitMetrics(metrics: CycleMetrics, opts: MetricsEmitOption
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(metrics),
+      signal: AbortSignal.timeout(5_000), // prevent a hung endpoint stalling the cycle (#38)
     });
     if (!res.ok) logger?.warn('metrics webhook non-2xx', { status: res.status });
   } catch (e) {

@@ -387,7 +387,9 @@ export function createToolRegistry(
 // ---------------------------------------------------------------------------
 
 function ok<T>(data: T): ToolResult<T> {
-  return { ok: true, data, sizeBytes: JSON.stringify(data).length };
+  // Use Buffer.byteLength for accurate UTF-8 byte count (#30 — String.length is UTF-16 code units).
+  const json = JSON.stringify(data);
+  return { ok: true, data, sizeBytes: Buffer.byteLength(json, 'utf8') };
 }
 
 function err(code: string, message: string, details?: unknown): ToolResult<never> {
