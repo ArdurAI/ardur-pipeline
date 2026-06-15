@@ -6,13 +6,13 @@
     "windowEnd": "2026-06-15T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-06-15T12:26:58.875Z",
+  "publishedAt": "2026-06-15T12:37:08.578Z",
   "nextRefreshAt": "2026-06-15T18:00:00.000Z",
   "runIds": {
-    "aggregation": "03cd2bab-de07-4df7-b0a6-669e084995c4",
-    "ranking": "rank-2ae7b48f",
+    "aggregation": "5502d336-f943-4e60-b381-0c35a9a4b161",
+    "ranking": "rank-e53eb392",
     "top10": "top10:2026-06-15T12:00:00.000Z",
-    "articles": "synth-top10:2026-06-15T12:00:00.000Z-2026-06-15T12:27:17.477Z"
+    "articles": "synth-top10:2026-06-15T12:00:00.000Z-2026-06-15T12:37:27.039Z"
   },
   "artifacts": {
     "aggregation": "cycles/2026-06-15T12-00-00.000Z/aggregation.json",
@@ -23,20 +23,11 @@
   "warnings": [
     {
       "category": "blocked-fetch",
-      "count": 132,
+      "count": 129,
       "sample": [
         "[ai] source microsoft.com: Blocked unsafe fetch URL: https://www.microsoft.com/en-us/research/feed/",
         "[ai] source fast.ai: Blocked unsafe fetch URL: https://www.fast.ai/index.xml",
         "[ai] source technologyreview.com: Blocked unsafe fetch URL: https://www.technologyreview.com/topic/artificial-intelligence/feed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 36,
-      "sample": [
-        "[ai] source huggingface.co: HTTP 429 Too Many Requests",
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[models] source huggingface.co: HTTP 429 Too Many Requests"
       ]
     },
     {
@@ -46,6 +37,15 @@
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 30,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[platform] source charity.wtf: charity.wtf feed exceeded 1500000 byte body limit"
       ]
     },
     {
@@ -68,24 +68,24 @@
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 2,
       "sample": [
-        "22 article(s) held (AI unavailable or grounding failed)",
-        "All 22 article(s) are held — no AI-generated content published"
+        "23 article(s) held (AI unavailable or grounding failed)",
+        "All 23 article(s) are held — no AI-generated content published"
       ]
     }
   ],
   "health": {
-    "failedSources": 140,
+    "failedSources": 134,
     "degradedTopics": 5,
     "articlesDropped": 10,
     "heldArticles": 0,
@@ -108,12 +108,12 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Amazon CEO’s Talks With U.S. Officials Triggered Crackdown on Anthropic Models"
+        "headline": "Why the US government shut down Anthropic’s latest Claude AI model"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Why the US government shut down Anthropic’s latest Claude AI model"
+        "headline": "Amazon CEO’s Talks With U.S. Officials Triggered Crackdown on Anthropic Models"
       },
       {
         "rank": 4,
@@ -123,32 +123,32 @@
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Can open-source beat OpenAI?"
+        "headline": "IPO News - IPO Winners & Losers: SpaceX's Goldilocks Debut, OpenAI's Move, and IPO Discipline"
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Dan Ives Calls SpaceX IPO A 'Goldilocks Outcome' That Signals Green Light For OpenAI, Anthropic Debuts"
+      },
+      {
+        "rank": 7,
         "topic": "kubernetes",
         "headline": "Accelerate Incident Resolution with PagerDuty and AWS DevOps Agent"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "topic": "security",
         "headline": "Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw"
       },
       {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models"
-      },
-      {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Vercel Labs Open-Sources Zero-Native: A Zig-Based Cross-Platform Native Application Framework"
+        "topic": "models",
+        "headline": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "MPI-powered gradient synchronization in PyTorch distributed training"
+        "headline": "Vercel Labs Open-Sources Zero-Native: A Zig-Based Cross-Platform Native Application Framework"
       }
     ],
     "articleCount": 0
