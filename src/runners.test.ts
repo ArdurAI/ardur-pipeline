@@ -249,7 +249,7 @@ test('#28: multibyte UTF-8 characters split across stdout chunks are decoded cor
   // multibyte character (€ = U+20AC, 3 bytes in UTF-8) to prove the decoder
   // handles chunk splits. We write the JSON byte-by-byte so each write() call is
   // a single-byte chunk — this guarantees a split on every multibyte boundary.
-  const runId = 'test-€-runid';  // € is U+20AC, 3 UTF-8 bytes
+  const runId = 'test-€-runid'; // € is U+20AC, 3 UTF-8 bytes
   const cycle = minimalCycle();
   const artifact = JSON.stringify({
     schemaVersion: SCHEMA_VERSION,

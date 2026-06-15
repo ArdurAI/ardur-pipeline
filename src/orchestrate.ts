@@ -281,7 +281,11 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     // Honor HOLD: held articles are archived but must not reach readers.
     // Rev 3+: synthesizer puts held articles in data.heldArticles (not data.articles).
     // Pre-Rev3: held articles are in data.articles with editorialStatus:'held'.
-    const explicitHeld = (articlesForPublish.data as { heldArticles?: { id: string; topic: string; headline: string }[] }).heldArticles;
+    const explicitHeld = (
+      articlesForPublish.data as {
+        heldArticles?: { id: string; topic: string; headline: string }[];
+      }
+    ).heldArticles;
     const heldFromArticles = articlesForPublish.data.articles.filter(
       (a) => a.editorialStatus === 'held',
     );

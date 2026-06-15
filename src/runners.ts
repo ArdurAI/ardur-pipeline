@@ -104,7 +104,11 @@ function runEngineCli(
       clearTimeout(timer);
       // Kill the process group to reap grandchildren (#31).
       if (child.pid !== undefined) {
-        try { process.kill(-child.pid, 'SIGKILL'); } catch { /* already dead */ }
+        try {
+          process.kill(-child.pid, 'SIGKILL');
+        } catch {
+          /* already dead */
+        }
       }
       reject(reason);
     };

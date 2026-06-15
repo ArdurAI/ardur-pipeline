@@ -310,7 +310,7 @@ export class ArtifactStore {
     // latest/ does not exist (#27 — rm-then-rename left a blank-state gap).
     const latestOld = `${latest}.old-${set.cycle.id.replace(/:/g, '-')}`;
     await rename(latest, latestOld).catch(() => {}); // no-op on first publish
-    await rename(latestTmp, latest);                  // atomic: new dir appears instantly
+    await rename(latestTmp, latest); // atomic: new dir appears instantly
     await rm(latestOld, { recursive: true, force: true });
 
     // Flip the manifest pointer last, via temp-file + rename.

@@ -130,7 +130,9 @@ export function startMcpServer(
     rl.on('line', (line) => {
       // Guard against oversized lines that would OOM before JSON.parse (CWE-400, #41).
       if (Buffer.byteLength(line, 'utf8') > MAX_LINE_BYTES) {
-        logger.warn('mcp: oversized input line dropped', { bytes: Buffer.byteLength(line, 'utf8') });
+        logger.warn('mcp: oversized input line dropped', {
+          bytes: Buffer.byteLength(line, 'utf8'),
+        });
         write(errResponse(null, PARSE_ERROR, 'Line too large'));
         return;
       }
