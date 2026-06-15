@@ -279,9 +279,13 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     const articlesForPublish: ArticleArtifact = applyLowConfidenceHold(articles);
 
     // Honor HOLD: held articles are archived but must not reach readers.
-    const heldArticles = articlesForPublish.data.articles.filter(
+    // Rev 3+: synthesizer puts held articles in data.heldArticles (not data.articles).
+    // Pre-Rev3: held articles are in data.articles with editorialStatus:'held'.
+    const explicitHeld = (articlesForPublish.data as { heldArticles?: { id: string; topic: string; headline: string }[] }).heldArticles;
+    const heldFromArticles = articlesForPublish.data.articles.filter(
       (a) => a.editorialStatus === 'held',
     );
+    const heldArticles = Array.isArray(explicitHeld) ? explicitHeld : heldFromArticles;
     if (heldArticles.length > 0) {
       heldCount = heldArticles.length;
       log.warn('articles held for editorial review', {
@@ -295,7 +299,7 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     }
 
     set = { cycle, aggregation, ranking, top10, articles: articlesForPublish };
-    articleCount = articlesForPublish.data.articles.length - heldArticles.length;
+    articleCount = articlesForPublish.data.articles.length;
     topicsCovered = top10.data.topicsCovered;
   } catch (e) {
     warnings.push(`stage failed: ${errMessage(e)}`);

@@ -340,10 +340,14 @@ export function buildManifest(
     0,
   );
   const degradedTopics = coverages.filter((c) => c.degraded).length;
-  const totalArticles = set.articles.data.articles.length;
-  const heldArticles = set.articles.data.articles.filter(
-    (a) => a.editorialStatus === 'held',
-  ).length;
+  // Rev 3+: synthesizer separates published (data.articles) from held (data.heldArticles).
+  // Pre-Rev3 synthesizers put held articles in data.articles with editorialStatus:'held'.
+  // Support both layouts for backward-compat.
+  const explicitHeld = (set.articles.data as { heldArticles?: unknown[] }).heldArticles;
+  const heldArticles = Array.isArray(explicitHeld)
+    ? explicitHeld.length
+    : set.articles.data.articles.filter((a) => a.editorialStatus === 'held').length;
+  const totalArticles = set.articles.data.articles.length + heldArticles;
   // Use the same allowlist as latest/articles.json to avoid counting 'draft' etc. (#29).
   const publishedCount = publishedArticles(set.articles).data.articles.length;
   const articlesDropped = Math.max(0, 10 - totalArticles);
