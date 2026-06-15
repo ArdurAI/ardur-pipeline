@@ -1,24 +1,24 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-06-15T00:00:00.000Z",
-    "windowStart": "2026-06-15T00:00:00.000Z",
-    "windowEnd": "2026-06-15T06:00:00.000Z"
+    "id": "2026-06-15T12:00:00.000Z",
+    "windowStart": "2026-06-15T12:00:00.000Z",
+    "windowEnd": "2026-06-15T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-06-15T05:18:47.202Z",
-  "nextRefreshAt": "2026-06-15T06:00:00.000Z",
+  "publishedAt": "2026-06-15T12:26:58.875Z",
+  "nextRefreshAt": "2026-06-15T18:00:00.000Z",
   "runIds": {
-    "aggregation": "7d7753fc-ce27-4bb0-98d5-4c5daa6551e7",
-    "ranking": "rank-98fb21ad",
-    "top10": "top10:2026-06-15T00:00:00.000Z",
-    "articles": "synth-top10:2026-06-15T00:00:00.000Z-2026-06-15T05:18:55.244Z"
+    "aggregation": "03cd2bab-de07-4df7-b0a6-669e084995c4",
+    "ranking": "rank-2ae7b48f",
+    "top10": "top10:2026-06-15T12:00:00.000Z",
+    "articles": "synth-top10:2026-06-15T12:00:00.000Z-2026-06-15T12:27:17.477Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-06-15T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-06-15T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-06-15T00-00-00.000Z/top10.json",
-    "articles": "cycles/2026-06-15T00-00-00.000Z/articles.json"
+    "aggregation": "cycles/2026-06-15T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-06-15T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-06-15T12-00-00.000Z/top10.json",
+    "articles": "cycles/2026-06-15T12-00-00.000Z/articles.json"
   },
   "warnings": [
     {
@@ -41,10 +41,10 @@
     },
     {
       "category": "http-error",
-      "count": 42,
+      "count": 45,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
@@ -52,9 +52,9 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
@@ -68,24 +68,24 @@
     },
     {
       "category": "copyright-gate",
-      "count": 40,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 2,
       "sample": [
-        "11 article(s) held (AI unavailable or grounding failed)",
-        "All 11 article(s) are held — no AI-generated content published"
+        "22 article(s) held (AI unavailable or grounding failed)",
+        "All 22 article(s) are held — no AI-generated content published"
       ]
     }
   ],
   "health": {
-    "failedSources": 138,
+    "failedSources": 140,
     "degradedTopics": 5,
     "articlesDropped": 10,
     "heldArticles": 0,
@@ -102,53 +102,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Introducing the OpenAI Partner Network"
+        "topic": "security",
+        "headline": "RHSA-2026:25925: Important: valkey security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:25901: Important: gimp security update"
+        "topic": "ai",
+        "headline": "Amazon CEO’s Talks With U.S. Officials Triggered Crackdown on Anthropic Models"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:25900: Moderate: systemd security update"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "White House forces Anthropic to disable new frontier models following abrupt export ban"
-      },
-      {
-        "rank": 5,
-        "topic": "platform",
-        "headline": "Vercel Labs Open-Sources Zero-Native: A Zig-Based Cross-Platform Native Application Framework"
-      },
-      {
-        "rank": 6,
         "topic": "ai",
         "headline": "Why the US government shut down Anthropic’s latest Claude AI model"
       },
       {
-        "rank": 7,
+        "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:25919: Moderate: mysql:8.0 security update"
+      },
+      {
+        "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic Suspends Mythos Access Following Government Security Concerns"
+        "headline": "Can open-source beat OpenAI?"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Accelerate Incident Resolution with PagerDuty and AWS DevOps Agent"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "The 7.1 kernel has been released"
+        "topic": "ai",
+        "headline": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Anthropic Releases and Temporarily Suspends Claude Fable 5"
+        "headline": "Vercel Labs Open-Sources Zero-Native: A Zig-Based Cross-Platform Native Application Framework"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Spring Boot 4.1 Adds gRPC Auto-Configuration, SSRF Mitigation, and Kotlin 2.3 Support"
+        "headline": "MPI-powered gradient synchronization in PyTorch distributed training"
       }
     ],
     "articleCount": 0
