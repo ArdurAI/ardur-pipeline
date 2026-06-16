@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-06-15T18:00:00.000Z",
-    "windowStart": "2026-06-15T18:00:00.000Z",
-    "windowEnd": "2026-06-16T00:00:00.000Z"
+    "id": "2026-06-16T00:00:00.000Z",
+    "windowStart": "2026-06-16T00:00:00.000Z",
+    "windowEnd": "2026-06-16T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-06-15T18:33:58.939Z",
-  "nextRefreshAt": "2026-06-16T00:00:00.000Z",
+  "publishedAt": "2026-06-16T04:51:41.376Z",
+  "nextRefreshAt": "2026-06-16T06:00:00.000Z",
   "runIds": {
-    "aggregation": "8d965e90-22f6-47a8-b03d-c0f0da1a6b47",
-    "ranking": "rank-9b2972b9",
-    "top10": "top10:2026-06-15T18:00:00.000Z",
-    "articles": "synth-top10:2026-06-15T18:00:00.000Z-2026-06-15T18:34:07.698Z"
+    "aggregation": "f56cbfa0-05b9-47b6-882c-f6257c68c82e",
+    "ranking": "rank-bf49224e",
+    "top10": "top10:2026-06-16T00:00:00.000Z",
+    "articles": "synth-top10:2026-06-16T00:00:00.000Z-2026-06-16T04:51:50.413Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-06-15T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-06-15T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-06-15T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-06-16T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-06-16T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-06-16T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -34,8 +34,8 @@
       "category": "http-error",
       "count": 42,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
@@ -54,7 +54,7 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 8 distinct domains < floor 20"
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 23,
       "sample": [
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
@@ -79,9 +79,9 @@
       "category": "editorial-hold",
       "count": 3,
       "sample": [
-        "24 article(s) held (AI unavailable or grounding failed)",
-        "All 24 article(s) are held — no AI-generated content published",
-        "24 article(s) held: insufficient fact corroboration — not published to latest/"
+        "28 article(s) held (AI unavailable or grounding failed)",
+        "All 28 article(s) are held — no AI-generated content published",
+        "28 article(s) held: insufficient fact corroboration — not published to latest/"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 132,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:25932: Important: postfix security update"
+        "headline": "RHSA-2026:26054: Important: osbuild-composer security update"
       },
       {
         "rank": 2,
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.18.1"
+      },
+      {
+        "rank": 3,
+        "topic": "platform",
+        "headline": "Java News Roundup: A2A Java SDK 1.0, Jakarta EE 12, JNoSQL, GraalVM, Micrometer, OpenXava, Gradle"
+      },
+      {
+        "rank": 4,
         "topic": "security",
         "headline": "RHSA-2026:25999: Moderate: yggdrasil-worker-package-manager security update"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "\"They screwed us\": Personality clashes sent Anthropic's models offline"
-      },
-      {
-        "rank": 4,
-        "topic": "platform",
-        "headline": "The Anthropic Fable mess, explained"
-      },
-      {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.16.16"
+        "topic": "ai",
+        "headline": "Anthropic Sued Over Alleged False Advertising on Claude Max Subscription Usage Limits"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic to meet with US officials over export curbs"
-      },
-      {
-        "rank": 7,
         "topic": "security",
         "headline": "What Changed in OWASP Top 10 2025 and Recommendations for Each Category"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "topic": "ai",
-        "headline": "The US government may be asking Anthropic the impossible by demanding unhackable LLMs"
+        "headline": "Quoting Matteo Wong, The Atlantic"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "ISC Stormcast For Tuesday, June 16th, 2026 https://isc.sans.edu/podcastdetail/9974, Tue, Jun 16th"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "CrowdStrike Unveils Continuous Identity for AI Agents"
+        "headline": "AI Agent Failure Detection and Root Cause Analysis with Strands Evals"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers"
+        "topic": "ai",
+        "headline": "How Anthropic lost the White House’s trust — and then its flagship product"
       }
     ],
     "articleCount": 0
