@@ -46,13 +46,77 @@ const STATIC_PROJECTS: ProjectCard[] = [
     languageColor: '#3178c6',
     stars: 0,
     license: 'MIT',
-    href: 'https://github.com/gnanirahulnutakki/ardur-pipeline',
+    href: 'https://github.com/ArdurAI/ardur-pipeline',
+  },
+  {
+    name: 'ardur-contracts',
+    description:
+      'Shared wire contract for the Ardur AI content pipeline — Zod schemas, TypeScript types, and Tier-1/2 validation.',
+    visibility: 'PUBLIC',
+    topics: ['contracts', 'zod', 'typescript', 'schema'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-contracts',
+  },
+  {
+    name: 'ardur-article-synthesizer',
+    description:
+      'Copyright-safe article synthesis from Top-10 topics and clustered sources — stage 4 of the Ardur pipeline.',
+    visibility: 'PUBLIC',
+    topics: ['synthesis', 'copyright-safe', 'provenance', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-article-synthesizer',
+  },
+  {
+    name: 'ardur-top10-engine',
+    description:
+      'Top-10 signal selector with co-mention graph (ENGINE-008) — deterministic ranking from aggregated clusters.',
+    visibility: 'PUBLIC',
+    topics: ['ranking', 'graph', 'signal-intelligence', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-top10-engine',
+  },
+  {
+    name: 'ardur-ranking-engine',
+    description:
+      'Multi-signal scoring engine — corroboration, credibility, recency, and diversity for cluster ranking.',
+    visibility: 'PUBLIC',
+    topics: ['scoring', 'ranking', 'signal-intelligence', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-ranking-engine',
+  },
+  {
+    name: 'ardur-news-aggregator',
+    description:
+      'RSS and news aggregator — multi-source feed ingest, deduplication, and cluster formation.',
+    visibility: 'PUBLIC',
+    topics: ['rss', 'aggregation', 'deduplication', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-news-aggregator',
   },
 ];
 
 const ARDUR_REPOS = [
   { owner: 'ArdurAI', repo: 'ardur-pipeline' },
   { owner: 'ArdurAI', repo: 'ardur-contracts' },
+  { owner: 'ArdurAI', repo: 'ardur-article-synthesizer' },
+  { owner: 'ArdurAI', repo: 'ardur-top10-engine' },
+  { owner: 'ArdurAI', repo: 'ardur-ranking-engine' },
+  { owner: 'ArdurAI', repo: 'ardur-news-aggregator' },
 ];
 
 interface GhRepoResponse {

@@ -162,6 +162,15 @@ export interface DsHomeData {
 }
 
 // ---------------------------------------------------------------------------
+// Emoji stripper — prevent 🔥🚀🤗 from reaching rendered pages
+// ---------------------------------------------------------------------------
+
+function stripEmoji(text: string): string {
+  // \p{Extended_Pictographic} covers emoji glyphs without matching digits/punctuation
+  return text.replace(/\p{Extended_Pictographic}/gu, '').replace(/\s{2,}/g, ' ').trim();
+}
+
+// ---------------------------------------------------------------------------
 // HTML entity decoder
 // ---------------------------------------------------------------------------
 
@@ -287,7 +296,7 @@ function wordOverlap(a: string, b: string): number {
 }
 
 // ---------------------------------------------------------------------------
-// Version extraction from a ref title
+// Version extraction from a ref title / URL
 // ---------------------------------------------------------------------------
 
 const VERSION_RE = /v\d+[\d.]*(?:-rc[\d.]*|-alpha[\d.]*|-beta[\d.]*)?/i;
@@ -297,22 +306,73 @@ function extractVersion(title: string): string | null {
   return m ? m[0] : null;
 }
 
+function extractProjectFromUrl(url: string): string | null {
+  const m = url.match(/^https?:\/\/github\.com\/[^/]+\/([^/]+)\/releases\/tag\//i);
+  return m?.[1] ?? null;
+}
+
+// ---------------------------------------------------------------------------
+// ENGINE-008 co-mention graph pass — compute links from shared entities
+// ---------------------------------------------------------------------------
+
+function computeGraphLinksFromFacts(
+  signals: EngineSignal[],
+  factsByCluster: Record<string, EngineFact[]>,
+): GraphLink[] {
+  const links: GraphLink[] = [];
+  for (let i = 0; i < signals.length; i++) {
+    for (let j = i + 1; j < signals.length; j++) {
+      const a = signals[i]!;
+      const b = signals[j]!;
+      const factsA = factsByCluster[a.clusterId] ?? [];
+      const factsB = factsByCluster[b.clusterId] ?? [];
+      const entitiesA = new Set(factsA.flatMap((f) => f.entities));
+      const entitiesB = new Set(factsB.flatMap((f) => f.entities));
+      if (entitiesA.size === 0 || entitiesB.size === 0) continue;
+      const shared = [...entitiesA].filter((e) => entitiesB.has(e));
+      if (shared.length === 0) continue;
+      const weight =
+        Math.round((shared.length / Math.max(entitiesA.size, entitiesB.size)) * 100) / 100;
+      const idA = a.signalId ?? a.clusterId;
+      const idB = b.signalId ?? b.clusterId;
+      if (!idA || !idB) continue;
+      links.push({ a: idA, b: idB, relation: 'similar_to', weight });
+    }
+  }
+  return links;
+}
+
 // ---------------------------------------------------------------------------
 // Deterministic summary generator — 0 AI tokens
 // ---------------------------------------------------------------------------
+
+function capAt20Words(text: string): string {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= 20) return text;
+  return words.slice(0, 20).join(' ').replace(/[,;]\s*$/, '') + '…';
+}
 
 function generateSummary(headline: string, refs: EngineRef[], facts: EngineFact[]): string {
   const h = decodeHtml(headline).trim();
   const unique = dedupeRefs(refs);
   const refTitles = unique.map((r) => decodeHtml(r.title).trim());
 
-  // ── Pattern A: Release notes ────────────────────────────────────────────
-  // Trigger: any ref is from "Release notes from <project>" AND headline contains a version tag.
-  const releaseRef = unique.find((r) => /^release notes from\s/i.test(r.source));
+  // ── Pattern A: Release notes ─────────────────────────────────────────────
+  // Trigger: any ref is from "Release notes from <project>" OR has a GitHub
+  // releases tag URL, AND headline contains a version tag.
+  const releaseRef = unique.find(
+    (r) =>
+      /^release notes from\s/i.test(r.source) ||
+      /^https?:\/\/github\.com\/[^/]+\/[^/]+\/releases\/tag\//i.test(r.url),
+  );
   const headlineHasVersion = VERSION_RE.test(h);
 
   if (releaseRef && headlineHasVersion) {
-    const project = normProjectName(releaseRef.source.replace(/^release notes from\s+/i, ''));
+    const projectFromSource = /^release notes from\s/i.test(releaseRef.source)
+      ? normProjectName(releaseRef.source.replace(/^release notes from\s+/i, ''))
+      : null;
+    const project =
+      projectFromSource ?? normProjectName(extractProjectFromUrl(releaseRef.url) ?? releaseRef.source);
     // Extract version tags from all unique ref titles
     const versions = refTitles.map(extractVersion).filter(Boolean) as string[];
     const uniqueVersions = [...new Set(versions)];
@@ -400,7 +460,8 @@ function generateSummary(headline: string, refs: EngineRef[], facts: EngineFact[
 
   // ── Pattern F: Single source / fallback ──────────────────────────────────
   const tidy = h.length > 120 ? h.slice(0, h.lastIndexOf(' ', 117)) + '…' : h;
-  return tidy.endsWith('.') ? tidy : tidy + '.';
+  const fallback = tidy.endsWith('.') ? tidy : tidy + '.';
+  return capAt20Words(fallback);
 }
 
 // ---------------------------------------------------------------------------
@@ -445,7 +506,67 @@ const STATIC_REPOS: RepoCardData[] = [
     languageColor: '#3178c6',
     stars: 0,
     license: 'MIT',
-    href: 'https://github.com/gnanirahulnutakki/ardur-pipeline',
+    href: 'https://github.com/ArdurAI/ardur-pipeline',
+  },
+  {
+    name: 'ardur-contracts',
+    description:
+      'Shared wire contract for the Ardur AI content pipeline — Zod schemas, TypeScript types, and Tier-1/2 validation.',
+    visibility: 'PUBLIC',
+    topics: ['contracts', 'zod', 'typescript', 'schema'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-contracts',
+  },
+  {
+    name: 'ardur-article-synthesizer',
+    description:
+      'Copyright-safe article synthesis from Top-10 topics and clustered sources — stage 4 of the Ardur pipeline.',
+    visibility: 'PUBLIC',
+    topics: ['synthesis', 'copyright-safe', 'provenance', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-article-synthesizer',
+  },
+  {
+    name: 'ardur-top10-engine',
+    description:
+      'Top-10 signal selector with co-mention graph (ENGINE-008) — deterministic ranking from aggregated clusters.',
+    visibility: 'PUBLIC',
+    topics: ['ranking', 'graph', 'signal-intelligence', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-top10-engine',
+  },
+  {
+    name: 'ardur-ranking-engine',
+    description:
+      'Multi-signal scoring engine — corroboration, credibility, recency, and diversity for cluster ranking.',
+    visibility: 'PUBLIC',
+    topics: ['scoring', 'ranking', 'signal-intelligence', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-ranking-engine',
+  },
+  {
+    name: 'ardur-news-aggregator',
+    description:
+      'RSS and news aggregator — multi-source feed ingest, deduplication, and cluster formation for the Ardur pipeline.',
+    visibility: 'PUBLIC',
+    topics: ['rss', 'aggregation', 'deduplication', 'typescript'],
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 0,
+    license: 'MIT',
+    href: 'https://github.com/ArdurAI/ardur-news-aggregator',
   },
 ];
 
@@ -489,14 +610,18 @@ function run(): void {
     const facts = factsByCluster[s.clusterId] ?? [];
     const unique = dedupeRefs(s.references);
     // Rev 4: prefer engine-emitted summary over adapter-generated fallback
-    const summary = s.summary ?? generateSummary(s.headline, s.references, facts);
+    const rawSummary = s.summary ?? generateSummary(s.headline, s.references, facts);
+    const summary = stripEmoji(rawSummary);
+
+    // Rev 4: use stable signalId from engine; fall back to cycle-scoped "s1"…"s10".
+    // Guard: signalId must not be an empty string.
+    const stableId = s.signalId && s.signalId.length > 0 ? s.signalId : `s${s.rank}`;
 
     return {
-      // Rev 4: use stable signalId from engine; fall back to cycle-scoped "s1"..."s10"
-      id: s.signalId ?? `s${s.rank}`,
-      signalId: s.signalId,
+      id: stableId,
+      signalId: s.signalId && s.signalId.length > 0 ? s.signalId : undefined,
       rank: s.rank,
-      title: decodeHtml(s.headline),
+      title: stripEmoji(decodeHtml(s.headline)),
       summary,
       topic: s.topic,
       topicLabel: s.topicLabel,
@@ -512,8 +637,10 @@ function run(): void {
 
   const cycleId: string = top10Raw.cycle?.id ?? top10Raw.generatedAt ?? 'unknown';
 
-  // Rev 4: load real graph links + projects (fallback to static when absent)
-  const links = loadLinks();
+  // Rev 4: load graph links from graph.json; if empty, compute ENGINE-008
+  // co-mention pass directly from factsByCluster (handles stale artifacts).
+  const graphLinks = loadLinks();
+  const links = graphLinks.length > 0 ? graphLinks : computeGraphLinksFromFacts(global10, factsByCluster);
   const repos = loadRepos();
 
   const output: DsHomeData = {
