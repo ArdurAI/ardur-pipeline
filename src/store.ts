@@ -50,6 +50,8 @@ export interface CyclePublishSet {
   ranking: RankingArtifact;
   top10: Top10Artifact;
   articles: ArticleArtifact;
+  /** Rev 4: GitHub-API fetched project cards for RepoCard (GAP-6). Optional — absent on failure. */
+  projects?: import('./projects.ts').ProjectCard[];
 }
 
 // ---------------------------------------------------------------------------
@@ -281,6 +283,10 @@ export class ArtifactStore {
     const rawWarnings = opts?.rawWarnings ?? [];
     const runRecord: RunArchive = { ...manifest, rawWarnings };
 
+    // Rev 4: extract graph links from top10 (ENGINE-008 pass) for graph.json
+    const graphLinks = (set.top10.data as { links?: unknown }).links;
+    const graphJson = pretty({ generatedAt: set.top10.generatedAt, cycleId: set.cycle.id, links: graphLinks ?? [] });
+
     // Archive always stores the FULL artifact (held articles included for audit).
     await Promise.all([
       writeFile(join(dir, STAGE_FILES.aggregation), pretty(set.aggregation)),
@@ -288,6 +294,7 @@ export class ArtifactStore {
       writeFile(join(dir, STAGE_FILES.top10), pretty(set.top10)),
       writeFile(join(dir, STAGE_FILES.articles), pretty(set.articles)),
       writeFile(join(dir, 'run.json'), pretty(runRecord)),
+      writeFile(join(dir, 'graph.json'), graphJson),
     ]);
 
     if (opts?.dryRun) return;
@@ -300,12 +307,17 @@ export class ArtifactStore {
     const latestTmp = join(this.root, `.latest.tmp-${set.cycle.id.replace(/:/g, '-')}`);
     await rm(latestTmp, { recursive: true, force: true });
     await mkdir(latestTmp, { recursive: true });
-    await Promise.all([
+    const latestWrites = [
       writeFile(join(latestTmp, STAGE_FILES.aggregation), pretty(set.aggregation)),
       writeFile(join(latestTmp, STAGE_FILES.ranking), pretty(set.ranking)),
       writeFile(join(latestTmp, STAGE_FILES.top10), pretty(set.top10)),
       writeFile(join(latestTmp, STAGE_FILES.articles), pretty(liveArticles)),
-    ]);
+      writeFile(join(latestTmp, 'graph.json'), graphJson),
+    ];
+    if (set.projects) {
+      latestWrites.push(writeFile(join(latestTmp, 'projects.json'), pretty(set.projects)));
+    }
+    await Promise.all(latestWrites);
     // Atomic directory swap: rename old aside first so there is no window where
     // latest/ does not exist (#27 — rm-then-rename left a blank-state gap).
     const latestOld = `${latest}.old-${set.cycle.id.replace(/:/g, '-')}`;

@@ -37,6 +37,8 @@ const getArg = (flag: string, fallback: string): string => {
 
 const top10Path = getArg('--top10', join(REPO_ROOT, '.artifacts/latest/top10.json'));
 const rankingPath = getArg('--ranking', join(REPO_ROOT, '.artifacts/latest/ranking.json'));
+const graphPath = getArg('--graph', join(REPO_ROOT, '.artifacts/latest/graph.json'));
+const projectsPath = getArg('--projects', join(REPO_ROOT, '.artifacts/latest/projects.json'));
 const outPath = getArg('--out', join(REPO_ROOT, '.artifacts/latest/ds-home.json'));
 
 // ---------------------------------------------------------------------------
@@ -75,6 +77,17 @@ interface EngineSignal {
   delta?: { previousRank: number | null; movement: string };
   carriedOver?: boolean;
   sourceDocIds?: string[];
+  /** Rev 4: stable 8-char SHA-256 prefix of headline. */
+  signalId?: string;
+  /** Rev 4: story-specific one-sentence lede from top10 engine (0 AI tokens). */
+  summary?: string;
+}
+
+interface GraphLink {
+  a: string;
+  b: string;
+  relation: string;
+  weight: number;
 }
 
 interface EngineFact {
@@ -92,8 +105,10 @@ interface EngineFact {
 
 /** Unified DS signal shape — superset of RadarSignal, SignalNode, TickerSignal, RankRow props. */
 export interface DsSignal {
-  /** Cycle-scoped ID: "s1"…"s10". */
+  /** Stable 8-char signalId from engine (rev 4) or cycle-scoped "s1"…"s10" fallback. */
   id: string;
+  /** signalId from the top10 engine (SHA-256 prefix). Absent on rev-3 data. */
+  signalId?: string;
   rank: number;
   /** Decoded headline (no HTML entities). */
   title: string;
@@ -140,7 +155,9 @@ export interface DsHomeData {
   };
   /** Pass to SignalRadar, SignalGraph, SignalTicker, or iterate for RankRows. */
   signals: DsSignal[];
-  /** Ardur project cards for RepoCard (curated static data). */
+  /** Co-mention graph edges from ENGINE-008 (rev 4). Empty when no factsByCluster. */
+  links: GraphLink[];
+  /** Ardur project cards for RepoCard (live GitHub data or curated static fallback). */
   repos: RepoCardData[];
 }
 
@@ -414,10 +431,10 @@ function formatDelta(delta: EngineSignal['delta'], currentRank: number): string 
 }
 
 // ---------------------------------------------------------------------------
-// Static repo card data (not in engine output — curated)
+// Repo card data — live from projects.json; static fallback if absent
 // ---------------------------------------------------------------------------
 
-const REPOS: RepoCardData[] = [
+const STATIC_REPOS: RepoCardData[] = [
   {
     name: 'ardur-pipeline',
     description:
@@ -431,6 +448,27 @@ const REPOS: RepoCardData[] = [
     href: 'https://github.com/gnanirahulnutakki/ardur-pipeline',
   },
 ];
+
+function loadRepos(): RepoCardData[] {
+  try {
+    const raw = JSON.parse(readFileSync(projectsPath, 'utf8'));
+    if (Array.isArray(raw) && raw.length > 0) return raw as RepoCardData[];
+  } catch {
+    /* projects.json absent — use static fallback */
+  }
+  return STATIC_REPOS;
+}
+
+function loadLinks(): GraphLink[] {
+  try {
+    const raw = JSON.parse(readFileSync(graphPath, 'utf8'));
+    const links = raw.links;
+    if (Array.isArray(links)) return links as GraphLink[];
+  } catch {
+    /* graph.json absent — no links */
+  }
+  return [];
+}
 
 // ---------------------------------------------------------------------------
 // Main
@@ -450,10 +488,13 @@ function run(): void {
   const signals: DsSignal[] = global10.map((s) => {
     const facts = factsByCluster[s.clusterId] ?? [];
     const unique = dedupeRefs(s.references);
-    const summary = generateSummary(s.headline, s.references, facts);
+    // Rev 4: prefer engine-emitted summary over adapter-generated fallback
+    const summary = s.summary ?? generateSummary(s.headline, s.references, facts);
 
     return {
-      id: `s${s.rank}`,
+      // Rev 4: use stable signalId from engine; fall back to cycle-scoped "s1"..."s10"
+      id: s.signalId ?? `s${s.rank}`,
+      signalId: s.signalId,
       rank: s.rank,
       title: decodeHtml(s.headline),
       summary,
@@ -471,6 +512,10 @@ function run(): void {
 
   const cycleId: string = top10Raw.cycle?.id ?? top10Raw.generatedAt ?? 'unknown';
 
+  // Rev 4: load real graph links + projects (fallback to static when absent)
+  const links = loadLinks();
+  const repos = loadRepos();
+
   const output: DsHomeData = {
     _meta: {
       generatedAt: new Date().toISOString(),
@@ -479,7 +524,8 @@ function run(): void {
       sourceFile: resolve(top10Path),
     },
     signals,
-    repos: REPOS,
+    links,
+    repos,
   };
 
   writeFileSync(outPath, JSON.stringify(output, null, 2) + '\n', 'utf8');

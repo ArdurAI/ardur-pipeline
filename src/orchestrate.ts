@@ -41,6 +41,7 @@ import {
 import { sendAlert } from './alert.ts';
 import { buildCycleMetrics, emitMetrics } from './metrics.ts';
 import type { AggregationArtifact, Top10Artifact, ArticleArtifact } from '@ardurai/contracts';
+import { fetchProjects } from './projects.ts';
 
 export type CycleStatus = 'published' | 'degraded' | 'failed' | 'skipped';
 
@@ -302,7 +303,17 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       );
     }
 
-    set = { cycle, aggregation, ranking, top10, articles: articlesForPublish };
+    // Rev 4: fetch GitHub project cards for RepoCard (GAP-6). Best-effort — never blocks cycle.
+    const projects = await fetchProjects({
+      githubToken: config.githubToken,
+      timeoutMs: 8000,
+      logger: log,
+    }).catch((e: unknown) => {
+      warnings.push(`projects fetch failed (non-fatal): ${e instanceof Error ? e.message : String(e)}`);
+      return undefined;
+    });
+
+    set = { cycle, aggregation, ranking, top10, articles: articlesForPublish, projects };
     articleCount = articlesForPublish.data.articles.length;
     topicsCovered = top10.data.topicsCovered;
   } catch (e) {

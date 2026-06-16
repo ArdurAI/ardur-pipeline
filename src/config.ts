@@ -86,6 +86,8 @@ export interface PipelineConfig {
     metricsWebhookUrl: string | null;
     logFormat: 'json' | 'pretty';
   };
+  /** Optional GitHub personal-access token for the projects API fetch (GAP-6). */
+  githubToken?: string;
 }
 
 /** Resolve configuration from the given environment (defaults to the process env). */
@@ -158,6 +160,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): PipelineConfig
       metricsWebhookUrl: str('METRICS_WEBHOOK_URL', '') || null,
       logFormat: str('LOG_FORMAT', 'json') === 'pretty' ? 'pretty' : 'json',
     },
+    githubToken: str('GITHUB_TOKEN', '') || undefined,
   };
 }
 
