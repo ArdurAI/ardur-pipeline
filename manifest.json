@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-06-16T00:00:00.000Z",
-    "windowStart": "2026-06-16T00:00:00.000Z",
-    "windowEnd": "2026-06-16T06:00:00.000Z"
+    "id": "2026-06-21T18:00:00.000Z",
+    "windowStart": "2026-06-21T18:00:00.000Z",
+    "windowEnd": "2026-06-22T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-06-16T04:51:41.376Z",
-  "nextRefreshAt": "2026-06-16T06:00:00.000Z",
+  "publishedAt": "2026-06-21T19:50:46.922Z",
+  "nextRefreshAt": "2026-06-22T00:00:00.000Z",
   "runIds": {
-    "aggregation": "f56cbfa0-05b9-47b6-882c-f6257c68c82e",
-    "ranking": "rank-bf49224e",
-    "top10": "top10:2026-06-16T00:00:00.000Z",
-    "articles": "synth-top10:2026-06-16T00:00:00.000Z-2026-06-16T04:51:50.413Z"
+    "aggregation": "58ec67a5-1e05-40f2-a170-2f96c2d2cb2c",
+    "ranking": "rank-8d141690",
+    "top10": "top10:2026-06-21T18:00:00.000Z",
+    "articles": "synth-top10:2026-06-21T18:00:00.000Z-2026-06-21T19:52:02.595Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-06-16T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-06-16T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-06-16T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-06-21T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-06-21T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-06-21T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -41,25 +41,25 @@
     },
     {
       "category": "other",
-      "count": 30,
+      "count": 46,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[platform] source charity.wtf: charity.wtf feed exceeded 1500000 byte body limit"
+        "[ai] source news.google.com: HTTP 503 Service Unavailable",
+        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 1 distinct domains < floor 20",
+        "[models] degraded: 1 distinct domains < floor 20",
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 50,
+      "count": 36,
       "sample": [
         "AI unavailable for entry 1 (deterministic provider selected) — article held",
         "AI unavailable for entry 2 (deterministic provider selected) — article held",
@@ -68,28 +68,28 @@
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 31,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 3,
       "sample": [
-        "28 article(s) held (AI unavailable or grounding failed)",
-        "All 28 article(s) are held — no AI-generated content published",
-        "28 article(s) held: insufficient fact corroboration — not published to latest/"
+        "6 article(s) held (AI unavailable or grounding failed)",
+        "All 6 article(s) are held — no AI-generated content published",
+        "6 article(s) held: insufficient fact corroboration — not published to latest/"
       ]
     }
   ],
   "health": {
-    "failedSources": 132,
+    "failedSources": 142,
     "degradedTopics": 5,
-    "articlesDropped": 0,
-    "heldArticles": 28,
+    "articlesDropped": 4,
+    "heldArticles": 6,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:26054: Important: osbuild-composer security update"
+        "topic": "kubernetes",
+        "headline": "A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.1"
+        "topic": "platform",
+        "headline": "Anthropic Reports Claude Now Handles 95% of Internal Analytics Queries"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Java News Roundup: A2A Java SDK 1.0, Jakarta EE 12, JNoSQL, GraalVM, Micrometer, OpenXava, Gradle"
+        "topic": "kubernetes",
+        "headline": "Your agent wants to search like a 2010 quant"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:25999: Moderate: yggdrasil-worker-package-manager security update"
+        "topic": "kubernetes",
+        "headline": "&8220;An agent is an LLM and a harness&8221;: What Nvidia really thinks about OpenClaw"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic Sued Over Alleged False Advertising on Claude Max Subscription Usage Limits"
+        "topic": "kubernetes",
+        "headline": "Helm v3.21.2"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "What Changed in OWASP Top 10 2025 and Recommendations for Each Category"
+        "topic": "ai",
+        "headline": "Sam Altman says a whole generation of researchers held AI back by underestimating what scaling could do"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Quoting Matteo Wong, The Atlantic"
+        "headline": "AI is inflating student grades, and the effect points to outsourced work, not better learning"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "ISC Stormcast For Tuesday, June 16th, 2026 https://isc.sans.edu/podcastdetail/9974, Tue, Jun 16th"
+        "topic": "platform",
+        "headline": "Gemini CLI vs. Antigravity: What works, not the spec sheet"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "AI Agent Failure Detection and Root Cause Analysis with Strands Evals"
+        "topic": "platform",
+        "headline": "MongoDB-backed Spring Batch jobs and more in Spring Boot 4.1"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "How Anthropic lost the White House’s trust — and then its flagship product"
+        "headline": "AWS says AI agents lack business context and security, launches two services to patch the gaps"
       }
     ],
     "articleCount": 0
