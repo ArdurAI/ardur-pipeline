@@ -1,35 +1,26 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-04T00:00:00.000Z",
-    "windowStart": "2026-07-04T00:00:00.000Z",
-    "windowEnd": "2026-07-04T06:00:00.000Z"
+    "id": "2026-07-03T18:00:00.000Z",
+    "windowStart": "2026-07-03T18:00:00.000Z",
+    "windowEnd": "2026-07-04T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-04T00:00:00.000Z",
+  "publishedAt": "2026-07-03T21:12:53.697Z",
   "nextRefreshAt": "2026-07-04T00:00:00.000Z",
   "runIds": {
-    "aggregation": "341217d0-2fc9-477d-8635-c6b38d79c45b",
-    "ranking": "rank-324ef240",
+    "aggregation": "ed1c54ab-0f40-4418-8cb8-c31bb2f79e95",
+    "ranking": "rank-d5df91d7",
     "top10": "top10:2026-07-03T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-03T18:00:00.000Z-2026-07-03T21:07:06.884Z"
+    "articles": "synth-top10:2026-07-03T18:00:00.000Z-2026-07-03T21:13:04.169Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-04T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-04T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-04T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-03T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-03T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-03T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
-    {
-      "category": "cycle-mismatch",
-      "count": 4,
-      "sample": [
-        "aggregation cycle mismatch: expected 2026-07-04T00:00:00.000Z, got 2026-07-03T18:00:00.000Z",
-        "ranking cycle mismatch: expected 2026-07-04T00:00:00.000Z, got 2026-07-03T18:00:00.000Z",
-        "top10 cycle mismatch: expected 2026-07-04T00:00:00.000Z, got 2026-07-03T18:00:00.000Z"
-      ]
-    },
     {
       "category": "blocked-fetch",
       "count": 129,
@@ -43,8 +34,8 @@
       "category": "http-error",
       "count": 48,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
@@ -70,18 +61,18 @@
       "category": "editorial-hold",
       "count": 13,
       "sample": [
-        "AI unavailable for entry 1 (timeout) — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "AI unavailable for entry 3 (timeout) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 34,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
@@ -98,7 +89,7 @@
     "failedSources": 132,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 17,
     "usedFallback": false
   },
   "summary": {
@@ -112,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Alibaba bans staff from using Claude Code over Anthropic spyware concerns"
-      },
-      {
-        "rank": 2,
         "topic": "security",
         "headline": "New \"Bad Epoll\" Linux Kernel Flaw Lets Unprivileged Users Gain Root, Hits Android"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "topic": "ai",
         "headline": "Lucanet Unveils AI Agents to Automate Finance and Tax Processes"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "topic": "ai",
         "headline": "Security vulnerability reports have exploded since AI models started hunting for bugs"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "topic": "platform",
         "headline": "Four vulnerabilities in Guix"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Alibaba bans staff from using Claude Code over Anthropic spyware concerns"
       },
       {
         "rank": 6,
@@ -158,7 +149,7 @@
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Brave Containers v1.92: Built-In Multi-Account Browsing"
+        "headline": "NYC could lose about 30K parking spots to get trash off sidewalks — with upscale Manhattan nabes hit hard"
       }
     ],
     "articleCount": 0
