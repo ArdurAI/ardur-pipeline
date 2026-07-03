@@ -309,7 +309,9 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
       timeoutMs: 8000,
       logger: log,
     }).catch((e: unknown) => {
-      warnings.push(`projects fetch failed (non-fatal): ${e instanceof Error ? e.message : String(e)}`);
+      warnings.push(
+        `projects fetch failed (non-fatal): ${e instanceof Error ? e.message : String(e)}`,
+      );
       return undefined;
     });
 

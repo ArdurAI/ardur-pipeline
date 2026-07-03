@@ -285,7 +285,11 @@ export class ArtifactStore {
 
     // Rev 4: extract graph links from top10 (ENGINE-008 pass) for graph.json
     const graphLinks = (set.top10.data as { links?: unknown }).links;
-    const graphJson = pretty({ generatedAt: set.top10.generatedAt, cycleId: set.cycle.id, links: graphLinks ?? [] });
+    const graphJson = pretty({
+      generatedAt: set.top10.generatedAt,
+      cycleId: set.cycle.id,
+      links: graphLinks ?? [],
+    });
 
     // Archive always stores the FULL artifact (held articles included for audit).
     await Promise.all([

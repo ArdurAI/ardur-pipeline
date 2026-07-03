@@ -167,7 +167,10 @@ export interface DsHomeData {
 
 function stripEmoji(text: string): string {
   // \p{Extended_Pictographic} covers emoji glyphs without matching digits/punctuation
-  return text.replace(/\p{Extended_Pictographic}/gu, '').replace(/\s{2,}/g, ' ').trim();
+  return text
+    .replace(/\p{Extended_Pictographic}/gu, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 }
 
 // ---------------------------------------------------------------------------
@@ -349,7 +352,12 @@ function computeGraphLinksFromFacts(
 function capAt20Words(text: string): string {
   const words = text.trim().split(/\s+/);
   if (words.length <= 20) return text;
-  return words.slice(0, 20).join(' ').replace(/[,;]\s*$/, '') + '…';
+  return (
+    words
+      .slice(0, 20)
+      .join(' ')
+      .replace(/[,;]\s*$/, '') + '…'
+  );
 }
 
 function generateSummary(headline: string, refs: EngineRef[], facts: EngineFact[]): string {
@@ -372,7 +380,8 @@ function generateSummary(headline: string, refs: EngineRef[], facts: EngineFact[
       ? normProjectName(releaseRef.source.replace(/^release notes from\s+/i, ''))
       : null;
     const project =
-      projectFromSource ?? normProjectName(extractProjectFromUrl(releaseRef.url) ?? releaseRef.source);
+      projectFromSource ??
+      normProjectName(extractProjectFromUrl(releaseRef.url) ?? releaseRef.source);
     // Extract version tags from all unique ref titles
     const versions = refTitles.map(extractVersion).filter(Boolean) as string[];
     const uniqueVersions = [...new Set(versions)];
@@ -640,7 +649,8 @@ function run(): void {
   // Rev 4: load graph links from graph.json; if empty, compute ENGINE-008
   // co-mention pass directly from factsByCluster (handles stale artifacts).
   const graphLinks = loadLinks();
-  const links = graphLinks.length > 0 ? graphLinks : computeGraphLinksFromFacts(global10, factsByCluster);
+  const links =
+    graphLinks.length > 0 ? graphLinks : computeGraphLinksFromFacts(global10, factsByCluster);
   const repos = loadRepos();
 
   const output: DsHomeData = {
