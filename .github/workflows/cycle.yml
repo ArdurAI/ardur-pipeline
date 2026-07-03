@@ -171,6 +171,11 @@ jobs:
         if: steps.run.outputs.exit == '0'
         working-directory: ardur-pipeline
         run: |
+          # Skip publish if the cycle was idempotent (skipped — no new artifacts)
+          if [ ! -d ".artifacts/latest" ]; then
+            echo "No .artifacts/latest — cycle was skipped or produced no artifacts. Nothing to publish."
+            exit 0
+          fi
           git config user.name "ardur-pipeline[bot]"
           git config user.email "pipeline@ardur.ai"
           CYCLE_ID=$(node -e "const m=require('./.artifacts/manifest.json');process.stdout.write(m.cycle.id)")
