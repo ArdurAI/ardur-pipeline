@@ -146,7 +146,16 @@ function runEngineCli(
       if (code === 0) {
         resolve({ stdout, stderr });
       } else {
-        reject(new Error(`engine exited ${code}: ${cwd}\n${stderr.slice(-2000)}`));
+        // Engines emit structured JSON errors to stdout. Include both stdout
+        // and stderr in the rejection so CI logs show the actionable error
+        // detail (ZodError issues, schema gate messages) — not just stderr.
+        reject(
+          new Error(
+            `engine exited ${code}: ${cwd}\n` +
+              `--- stdout (last 2000 chars) ---\n${stdout.slice(-2000)}\n` +
+              `--- stderr (last 2000 chars) ---\n${stderr.slice(-2000)}`,
+          ),
+        );
       }
     });
   });
