@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-03T12:00:00.000Z",
-    "windowStart": "2026-07-03T12:00:00.000Z",
-    "windowEnd": "2026-07-03T18:00:00.000Z"
+    "id": "2026-07-03T18:00:00.000Z",
+    "windowStart": "2026-07-03T18:00:00.000Z",
+    "windowEnd": "2026-07-04T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-03T15:47:56.522Z",
-  "nextRefreshAt": "2026-07-03T18:00:00.000Z",
+  "publishedAt": "2026-07-03T19:36:28.989Z",
+  "nextRefreshAt": "2026-07-04T00:00:00.000Z",
   "runIds": {
-    "aggregation": "a9b326f1-40f4-4a19-8604-47c137bff082",
-    "ranking": "rank-fa79839c",
-    "top10": "top10:2026-07-03T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-03T12:00:00.000Z-2026-07-03T15:48:05.764Z"
+    "aggregation": "f604a811-855e-41a0-a508-25f048a63920",
+    "ranking": "rank-d86258fa",
+    "top10": "top10:2026-07-03T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-03T18:00:00.000Z-2026-07-03T19:37:55.179Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-03T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-03T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-03T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-03T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-03T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-03T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -41,20 +41,20 @@
     },
     {
       "category": "other",
-      "count": 31,
+      "count": 48,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[platform] source charity.wtf: charity.wtf feed exceeded 1500000 byte body limit"
+        "[ai] source news.google.com: HTTP 503 Service Unavailable",
+        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
@@ -68,28 +68,28 @@
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 3,
       "sample": [
-        "18 article(s) held (AI unavailable or grounding failed)",
-        "All 18 article(s) are held — no AI-generated content published",
-        "18 article(s) held: insufficient fact corroboration — not published to latest/"
+        "27 article(s) held (AI unavailable or grounding failed)",
+        "All 27 article(s) are held — no AI-generated content published",
+        "27 article(s) held: insufficient fact corroboration — not published to latest/"
       ]
     }
   ],
   "health": {
-    "failedSources": 132,
+    "failedSources": 144,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -104,12 +104,12 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic moves to close loopholes that allow Chinese access to Claude"
+        "headline": "Security vulnerability reports have exploded since AI models started hunting for bugs"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic reportedly explores custom chip manufacturing with Samsung while insisting Nvidia still matters"
+        "topic": "platform",
+        "headline": "Four vulnerabilities in Guix"
       },
       {
         "rank": 3,
@@ -119,7 +119,7 @@
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Alibaba bans staff from using Claude Code over Anthropic spyware concerns"
+        "headline": "Fable's judgement"
       },
       {
         "rank": 5,
@@ -128,28 +128,28 @@
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Brave Containers v1.92: Built-In Multi-Account Browsing"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "June 2026 newsletter"
-      },
-      {
-        "rank": 8,
         "topic": "platform",
         "headline": "Google Releases A2UI v0.9: Portable, Framework-Agnostic Generative UI"
       },
       {
-        "rank": 9,
+        "rank": 7,
         "topic": "kubernetes",
-        "headline": "Diagnose Kubernetes Control Plane Performance Issues with AWS DevOps Agent"
+        "headline": "Apple just turned Safari into something AI agents can control"
+      },
+      {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "June 2026 newsletter"
+      },
+      {
+        "rank": 9,
+        "topic": "ai",
+        "headline": "Microsoft follows Anthropic and OpenAI into the AI super app race with overhauled Copilot and AutoPilot agents"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "In Conversation With the Golden Kodee Winners"
+        "topic": "security",
+        "headline": "New Avalon Malware Framework Packs CrownX Ransomware Capabilities"
       }
     ],
     "articleCount": 0
