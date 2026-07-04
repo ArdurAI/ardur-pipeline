@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-04T00:00:00.000Z",
-    "windowStart": "2026-07-04T00:00:00.000Z",
-    "windowEnd": "2026-07-04T06:00:00.000Z"
+    "id": "2026-07-04T06:00:00.000Z",
+    "windowStart": "2026-07-04T06:00:00.000Z",
+    "windowEnd": "2026-07-04T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-04T03:34:24.783Z",
-  "nextRefreshAt": "2026-07-04T06:00:00.000Z",
+  "publishedAt": "2026-07-04T06:50:58.927Z",
+  "nextRefreshAt": "2026-07-04T12:00:00.000Z",
   "runIds": {
-    "aggregation": "40cfd193-049d-4d02-858d-b317a8777023",
-    "ranking": "rank-338cd3e9",
-    "top10": "top10:2026-07-04T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-04T00:00:00.000Z-2026-07-04T03:34:34.151Z"
+    "aggregation": "a34c48b4-63f5-4983-8759-e1e26a75b2c3",
+    "ranking": "rank-eac42e8c",
+    "top10": "top10:2026-07-04T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-04T06:00:00.000Z-2026-07-04T06:51:07.127Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-04T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-04T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-04T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-04T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-04T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-04T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -34,8 +34,8 @@
       "category": "http-error",
       "count": 48,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
@@ -52,9 +52,9 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     },
@@ -89,7 +89,7 @@
     "failedSources": 132,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 18,
     "usedFallback": false
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "v5.0.9: tests: integration: forward: cover idle TLS connection timeout churn"
+        "headline": "v5.0.9: gzip: read magic number endian-safely in streaming decompressor"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Open Source AI Gap Map"
+        "headline": "New changes for AI agents Doudou and Qianwen are set to discontinue their AI agent features"
       },
       {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Open Source AI Gap Map"
+      },
+      {
+        "rank": 4,
+        "topic": "platform",
+        "headline": "EPAM Systems explores digital engineering growth opportunities - Ad-hoc-news.de"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "New \"Bad Epoll\" Linux Kernel Flaw Lets Unprivileged Users Gain Root, Hits Android"
       },
       {
-        "rank": 4,
+        "rank": 6,
         "topic": "ai",
         "headline": "Lucanet Unveils AI Agents to Automate Finance and Tax Processes"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Security vulnerability reports have exploded since AI models started hunting for bugs"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Alibaba bans staff from using Claude Code over Anthropic spyware concerns"
-      },
-      {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Four vulnerabilities in Guix"
+        "topic": "ai",
+        "headline": "Anthropic in Talks With Samsung to Manufacture Its First Custom AI Chip"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Forsyth County parents questioning school district's ban of students' metal drink containers"
+        "topic": "models",
+        "headline": "Security vulnerability reports have exploded since AI models started hunting for bugs"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Red Hat build of Quarkus 3.33: Stability and performance advancements for enterprise Java"
+        "headline": "Four vulnerabilities in Guix"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "OpenTelemetry Graduates to CNCF's Highest Maturity Level"
+        "topic": "security",
+        "headline": "INTERVIEW: Mitsubishi Power gas turbine orders stretch to 2030 amid AI, security demand"
       }
     ],
     "articleCount": 0
