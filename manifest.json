@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-04T06:00:00.000Z",
-    "windowStart": "2026-07-04T06:00:00.000Z",
-    "windowEnd": "2026-07-04T12:00:00.000Z"
+    "id": "2026-07-04T12:00:00.000Z",
+    "windowStart": "2026-07-04T12:00:00.000Z",
+    "windowEnd": "2026-07-04T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-04T06:50:58.927Z",
-  "nextRefreshAt": "2026-07-04T12:00:00.000Z",
+  "publishedAt": "2026-07-04T13:43:38.218Z",
+  "nextRefreshAt": "2026-07-04T18:00:00.000Z",
   "runIds": {
-    "aggregation": "a34c48b4-63f5-4983-8759-e1e26a75b2c3",
-    "ranking": "rank-eac42e8c",
-    "top10": "top10:2026-07-04T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-04T06:00:00.000Z-2026-07-04T06:51:07.127Z"
+    "aggregation": "e2a0eb3c-2776-4e1a-90a6-6346675f2f67",
+    "ranking": "rank-79690085",
+    "top10": "top10:2026-07-04T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-04T12:00:00.000Z-2026-07-04T13:43:49.706Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-04T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-04T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-04T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-04T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-04T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-04T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -34,8 +34,8 @@
       "category": "http-error",
       "count": 48,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
@@ -52,9 +52,9 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
@@ -68,11 +68,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 32,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
@@ -89,7 +89,7 @@
     "failedSources": 132,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 19,
     "usedFallback": false
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "v5.0.9: gzip: read magic number endian-safely in streaming decompressor"
+        "topic": "ai",
+        "headline": "Anthropic developer shares prompting tips for Fable 5 that focus on finding your own blind spots first"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "New changes for AI agents Doudou and Qianwen are set to discontinue their AI agent features"
+        "headline": "Broadcom and OpenAI Unveil Jalapeño: An Early Step to Massive AI Growth Potential"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Open Source AI Gap Map"
+        "headline": "OpenAI cofounder envisions \"almost no interface\" future where nobody learns software anymore"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "EPAM Systems explores digital engineering growth opportunities - Ad-hoc-news.de"
+        "topic": "ai",
+        "headline": "Alex Karp Bashes OpenAI, Anthropic Token Model — 'Something Has Gone Completely Wrong'"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "New \"Bad Epoll\" Linux Kernel Flaw Lets Unprivileged Users Gain Root, Hits Android"
+        "topic": "kubernetes",
+        "headline": "v5.0.9: gzip: read magic number endian-safely in streaming decompressor"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Lucanet Unveils AI Agents to Automate Finance and Tax Processes"
+        "topic": "models",
+        "headline": "Mistral&039;s open-source Leanstral 1.5 aces formal math benchmarks and catches real bugs in code"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic in Talks With Samsung to Manufacture Its First Custom AI Chip"
+        "topic": "models",
+        "headline": "Open Source AI Gap Map"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Security vulnerability reports have exploded since AI models started hunting for bugs"
+        "topic": "kubernetes",
+        "headline": "Why cheaper models alone won&8217;t save your AI budget"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Four vulnerabilities in Guix"
+        "topic": "security",
+        "headline": "CrowdStrike CRWD Joins OpenID Foundation to Advance Risk-Aware Identity Security"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "INTERVIEW: Mitsubishi Power gas turbine orders stretch to 2030 amid AI, security demand"
+        "headline": "U.S. Government Entity Paid Kairos $1 Million in Data-Theft Extortion Case"
       }
     ],
     "articleCount": 0
