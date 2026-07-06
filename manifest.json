@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-06T12:00:00.000Z",
-    "windowStart": "2026-07-06T12:00:00.000Z",
-    "windowEnd": "2026-07-06T18:00:00.000Z"
+    "id": "2026-07-06T18:00:00.000Z",
+    "windowStart": "2026-07-06T18:00:00.000Z",
+    "windowEnd": "2026-07-07T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-06T13:51:56.279Z",
-  "nextRefreshAt": "2026-07-06T18:00:00.000Z",
+  "publishedAt": "2026-07-06T20:04:51.511Z",
+  "nextRefreshAt": "2026-07-07T00:00:00.000Z",
   "runIds": {
-    "aggregation": "77e75f0c-d4d3-430f-bc8b-a6a62f512395",
-    "ranking": "rank-784f5582",
-    "top10": "top10:2026-07-06T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-06T12:00:00.000Z-2026-07-06T13:52:08.516Z"
+    "aggregation": "9ce10fd8-5a66-4cfe-a52e-4666cf5da323",
+    "ranking": "rank-f1906f49",
+    "top10": "top10:2026-07-06T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-06T18:00:00.000Z-2026-07-06T20:05:01.745Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-06T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-06T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-06T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-06T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-06T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-06T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -34,7 +34,7 @@
       "category": "http-error",
       "count": 48,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
@@ -52,9 +52,9 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
@@ -68,11 +68,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
@@ -89,7 +89,7 @@
     "failedSources": 132,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 23,
     "usedFallback": false
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security updates for Monday"
+        "topic": "security",
+        "headline": "RHSA-2026:36012: Important: maven:3.9 security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:28961: Important: OpenShift Container Platform 4.15.66 packages and security update"
+        "topic": "ai",
+        "headline": "Tencent releases Hy3 open-source model that allegedly matches models up to five times its active size"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic signs lease for TeraWulf data center in Kentucky"
+        "headline": "LeRobot v0.6.0: Imagine, Evaluate, Improve"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "LeRobot v0.6.0: Imagine, Evaluate, Improve"
+        "headline": "Automatically redact PII in images with Amazon Nova"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:35837: Important: fence-agents security update"
+        "topic": "ai",
+        "headline": "TeraWulf jumps on $19 billion data center lease deal with Anthropic"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:35842: Important: nodejs22 security, bug fix, and enhancement update"
+        "headline": "Is Your AppSec Program Built to Close the OWASP Top 10 2025 Coverage Gap?"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Why OpenAI and Anthropic may struggle to float"
+        "topic": "platform",
+        "headline": "OpenSSH 10.4 released"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:35829: Important: grafana-pcp security update"
+        "headline": "16-Year-Old Linux KVM Flaw Lets Guest VMs Escape to Host on Intel and AMD x86 Systems"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "sqlite-utils 4.0rc3"
+        "topic": "security",
+        "headline": "Threat Actors Probe Gitea Docker Flaw CVE-2026-20896 13 Days After Disclosure"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Smarter data generation for faster Speculator training"
+        "headline": "InfoQ Opens AI Security & Privacy Engineering Cohort for Regulated Industries"
       }
     ],
     "articleCount": 0
