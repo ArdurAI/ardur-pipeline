@@ -53,7 +53,7 @@ env:
   ENGINES_DIR: ${{ github.workspace }}
   ARTIFACT_STORE: ${{ github.workspace }}/ardur-pipeline/.artifacts
   # Cost-guarded, pluggable provider. Default deterministic (budget=0, zero-cost).
-  ARDUR_AI_PROVIDER: ${{ vars.ARDUR_AI_PROVIDER || 'deterministic' }}
+  ARDUR_AI_PROVIDER: ${{ vars.ARDUR_AI_PROVIDER || '' }}
   # Opt into Node 24 for JS actions ahead of the June 16 2026 forced migration.
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   ARDUR_AI_MAX_GENERATIONS: ${{ vars.ARDUR_AI_MAX_GENERATIONS || '10' }}
