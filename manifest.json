@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-05T18:00:00.000Z",
-    "windowStart": "2026-07-05T18:00:00.000Z",
-    "windowEnd": "2026-07-06T00:00:00.000Z"
+    "id": "2026-07-06T00:00:00.000Z",
+    "windowStart": "2026-07-06T00:00:00.000Z",
+    "windowEnd": "2026-07-06T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-05T19:24:56.231Z",
-  "nextRefreshAt": "2026-07-06T00:00:00.000Z",
+  "publishedAt": "2026-07-06T03:59:46.253Z",
+  "nextRefreshAt": "2026-07-06T06:00:00.000Z",
   "runIds": {
-    "aggregation": "3b9f4e4f-bd51-49cd-82f3-f9fc709f16f9",
-    "ranking": "rank-8211e43a",
-    "top10": "top10:2026-07-05T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-05T18:00:00.000Z-2026-07-05T19:25:04.167Z"
+    "aggregation": "709d479b-cb15-4d07-94d2-b9a44e5fd6e1",
+    "ranking": "rank-9b4b0b5c",
+    "top10": "top10:2026-07-06T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-06T00:00:00.000Z-2026-07-06T03:59:56.484Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-05T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-05T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-05T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-06T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-06T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-06T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -34,26 +34,26 @@
       "category": "http-error",
       "count": 48,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 30,
+      "count": 24,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source the-decoder.com: HTTP 500 Internal Server Error",
-        "[models] source the-decoder.com: HTTP 500 Internal Server Error"
+        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[platform] source svelte.dev: svelte.dev feed exceeded 1500000 byte body limit"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 2 distinct domains < floor 20",
-        "[models] degraded: 2 distinct domains < floor 20",
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
         "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
@@ -68,11 +68,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 41,
+      "count": 37,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
@@ -86,10 +86,10 @@
     }
   ],
   "health": {
-    "failedSources": 136,
+    "failedSources": 132,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 10,
+    "heldArticles": 14,
     "usedFallback": false
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Chinese open-source AI model GLM-5.2 creates buzz in US tech circles"
+        "topic": "security",
+        "headline": "RHSA-2026:35845: Important: fence-agents security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens"
+        "topic": "security",
+        "headline": "RHSA-2026:35846: Moderate: edk2 security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "sqlite-utils 4.0rc2, mostly written by Claude Fable for about $149.25"
+        "headline": "Anthropic finally, officially launches Claude Sonnet 5"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "KAIST identifies the “hidden energy cost” of AI agents for the first time"
+        "topic": "security",
+        "headline": "RHSA-2026:35832: Important: golang-github-openprinting-ipp-usb security update"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "AIIMS Delhi announces results for 460 faculty posts using blockchain technology"
+        "topic": "security",
+        "headline": "RHSA-2026:35826: Important: grafana-pcp security update"
       },
       {
         "rank": 6,
         "topic": "platform",
-        "headline": "Mumbai University postpones examinations scheduled today due to heavy rainfall alert"
+        "headline": "Kolkata's Chorbagan Sarbojonin Durga Puja Committee unveils wall mural of PM Modi performing aarti"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Uganda says Ebola outbreak contained, seeks lifting of travel restrictions"
+        "topic": "ai",
+        "headline": "Trump administration restricts private AI models, boosting open-source and decentralized alternatives"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Madhya Pradesh becomes first state to reconstitute Waqf Board under new Act"
+        "topic": "ai",
+        "headline": "Trump restrictions on private AI models turn attention to open source"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "AI Agents Are Creating a New Identity Security Problem"
+        "topic": "ai",
+        "headline": "Anthropic plans to buy 1.4-GW Australian data centre capacity, AFR reports"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Microsoft, AWS and Anthropic are spending billions — and not on better models"
+        "topic": "models",
+        "headline": "🤗 Kernels: Major Updates"
       }
     ],
     "articleCount": 0
