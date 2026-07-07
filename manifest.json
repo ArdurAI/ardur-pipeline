@@ -1,33 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-07T00:00:00.000Z",
-    "windowStart": "2026-07-07T00:00:00.000Z",
-    "windowEnd": "2026-07-07T06:00:00.000Z"
+    "id": "2026-07-07T06:00:00.000Z",
+    "windowStart": "2026-07-07T06:00:00.000Z",
+    "windowEnd": "2026-07-07T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-07T03:51:03.284Z",
-  "nextRefreshAt": "2026-07-07T06:00:00.000Z",
+  "publishedAt": "2026-07-07T07:44:51.249Z",
+  "nextRefreshAt": "2026-07-07T12:00:00.000Z",
   "runIds": {
-    "aggregation": "36bb182e-93fc-4ca0-b3b6-9542a83f56b2",
-    "ranking": "rank-b8b6f4b9",
-    "top10": "top10:2026-07-07T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-07T00:00:00.000Z-2026-07-07T03:51:15.961Z"
+    "aggregation": "e373642f-844e-45ce-a5aa-d4720755ee4a",
+    "ranking": "rank-d05c8cb1",
+    "top10": "top10:2026-07-07T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-07T06:00:00.000Z-2026-07-07T07:45:10.298Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-07T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-07T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-07T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-07T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-07T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-07T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 63,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
@@ -41,10 +41,10 @@
     },
     {
       "category": "other",
-      "count": 1217,
+      "count": 1243,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1468,
+      "count": 1494,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 8,
+      "count": 6,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
+        "topic": "models",
         "headline": "tencent/Hy3"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:36049: Important: kernel-rt security, bug fix, and enhancement update"
+        "topic": "kubernetes",
+        "headline": "v1.62.0/v0.156.0"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Enhancing Goodput in Large-Scale LLM Training with Nonuniform Tensor Parallelism"
+        "topic": "security",
+        "headline": "RHSA-2026:36099: Important: ruby:3.3 security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "LeRobot v0.6.0: Imagine, Evaluate, Improve"
+        "topic": "platform",
+        "headline": "Dependency analytics 1.0: AI coding with supply chain security"
       },
       {
         "rank": 5,
+        "topic": "platform",
+        "headline": "Why your RBAC linter misses privilege escalation chains and how to fix it"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Apple Ships Stable 1.0 of its Native Container Tool for macOS"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "Top 10 Agentic AI Security Platforms for 2026"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "BeyondTrust Patches Critical Auth Bypass Flaws in Remote Support and PRA"
+      },
+      {
+        "rank": 9,
         "topic": "ai",
         "headline": "TeraWulf Soars On Signing $19 Billion AI Lease With Anthropic"
       },
       {
-        "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:35997: Important: plexus-utils security update"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Security updates for Monday"
-      },
-      {
-        "rank": 8,
-        "topic": "models",
-        "headline": "Automatically redact PII in images with Amazon Nova"
-      },
-      {
-        "rank": 9,
-        "topic": "kubernetes",
-        "headline": "A new study just debunked the biggest fear about AI and open source"
-      },
-      {
         "rank": 10,
-        "topic": "security",
-        "headline": "Is Your AppSec Program Built to Close the OWASP Top 10 2025 Coverage Gap?"
+        "topic": "platform",
+        "headline": "Node.js 26: Temporal API Enabled by Default, V8 14.6, and a Round of Deprecations"
       }
     ],
     "articleCount": 0
