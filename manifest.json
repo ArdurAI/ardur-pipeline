@@ -1,96 +1,96 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-06T18:00:00.000Z",
-    "windowStart": "2026-07-06T18:00:00.000Z",
-    "windowEnd": "2026-07-07T00:00:00.000Z"
+    "id": "2026-07-07T00:00:00.000Z",
+    "windowStart": "2026-07-07T00:00:00.000Z",
+    "windowEnd": "2026-07-07T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-06T20:04:51.511Z",
-  "nextRefreshAt": "2026-07-07T00:00:00.000Z",
+  "publishedAt": "2026-07-07T03:51:03.284Z",
+  "nextRefreshAt": "2026-07-07T06:00:00.000Z",
   "runIds": {
-    "aggregation": "9ce10fd8-5a66-4cfe-a52e-4666cf5da323",
-    "ranking": "rank-f1906f49",
-    "top10": "top10:2026-07-06T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-06T18:00:00.000Z-2026-07-06T20:05:01.745Z"
+    "aggregation": "36bb182e-93fc-4ca0-b3b6-9542a83f56b2",
+    "ranking": "rank-b8b6f4b9",
+    "top10": "top10:2026-07-07T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-07T00:00:00.000Z-2026-07-07T03:51:15.961Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-06T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-06T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-06T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-07T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-07T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-07T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
-      "category": "blocked-fetch",
-      "count": 129,
+      "category": "http-error",
+      "count": 66,
       "sample": [
-        "[ai] source microsoft.com: Blocked unsafe fetch URL: https://www.microsoft.com/en-us/research/feed/",
-        "[ai] source fast.ai: Blocked unsafe fetch URL: https://www.fast.ai/index.xml",
-        "[ai] source technologyreview.com: Blocked unsafe fetch URL: https://www.technologyreview.com/topic/artificial-intelligence/feed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
-      "category": "http-error",
-      "count": 48,
+      "category": "blocked-fetch",
+      "count": 6,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "other",
-      "count": 24,
+      "count": 1217,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[platform] source svelte.dev: svelte.dev feed exceeded 1500000 byte body limit"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 8 distinct domains < floor 20"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 13,
-      "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 28,
-      "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 41,
+      "count": 1468,
       "sample": [
-        "AI budget exhausted for entry 5 — article held",
-        "AI budget exhausted for entry 6 — article held",
-        "AI budget exhausted for entry 7 — article held"
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 8,
+      "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 27,
+      "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 132,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
-    "usedFallback": false
+    "heldArticles": 24,
+    "usedFallback": true
   },
   "summary": {
     "topicsCovered": [
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:36012: Important: maven:3.9 security update"
+        "topic": "ai",
+        "headline": "tencent/Hy3"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Tencent releases Hy3 open-source model that allegedly matches models up to five times its active size"
+        "topic": "security",
+        "headline": "RHSA-2026:36049: Important: kernel-rt security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "LeRobot v0.6.0: Imagine, Evaluate, Improve"
+        "headline": "Enhancing Goodput in Large-Scale LLM Training with Nonuniform Tensor Parallelism"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Automatically redact PII in images with Amazon Nova"
+        "headline": "LeRobot v0.6.0: Imagine, Evaluate, Improve"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "TeraWulf jumps on $19 billion data center lease deal with Anthropic"
+        "headline": "TeraWulf Soars On Signing $19 Billion AI Lease With Anthropic"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "Is Your AppSec Program Built to Close the OWASP Top 10 2025 Coverage Gap?"
+        "headline": "RHSA-2026:35997: Important: plexus-utils security update"
       },
       {
         "rank": 7,
         "topic": "platform",
-        "headline": "OpenSSH 10.4 released"
+        "headline": "Security updates for Monday"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "16-Year-Old Linux KVM Flaw Lets Guest VMs Escape to Host on Intel and AMD x86 Systems"
+        "topic": "models",
+        "headline": "Automatically redact PII in images with Amazon Nova"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Threat Actors Probe Gitea Docker Flaw CVE-2026-20896 13 Days After Disclosure"
+        "topic": "kubernetes",
+        "headline": "A new study just debunked the biggest fear about AI and open source"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "InfoQ Opens AI Security & Privacy Engineering Cohort for Regulated Industries"
+        "topic": "security",
+        "headline": "Is Your AppSec Program Built to Close the OWASP Top 10 2025 Coverage Gap?"
       }
     ],
     "articleCount": 0
