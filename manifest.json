@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-07T12:00:00.000Z",
-    "windowStart": "2026-07-07T12:00:00.000Z",
-    "windowEnd": "2026-07-07T18:00:00.000Z"
+    "id": "2026-07-08T18:00:00.000Z",
+    "windowStart": "2026-07-08T18:00:00.000Z",
+    "windowEnd": "2026-07-09T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-07T14:47:33.232Z",
-  "nextRefreshAt": "2026-07-07T18:00:00.000Z",
+  "publishedAt": "2026-07-08T21:13:10.549Z",
+  "nextRefreshAt": "2026-07-09T00:00:00.000Z",
   "runIds": {
-    "aggregation": "cf9bfc4b-9899-4c9c-b34d-d8dfe41d2686",
-    "ranking": "rank-e7745a6a",
-    "top10": "top10:2026-07-07T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-07T12:00:00.000Z-2026-07-07T14:47:48.935Z"
+    "aggregation": "878d0655-1d37-4c1c-bcfd-f01fa9988cd4",
+    "ranking": "rank-be3b2c8e",
+    "top10": "top10:2026-07-08T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-08T18:00:00.000Z-2026-07-08T21:13:32.532Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-07T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-07T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-07T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-08T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-08T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-08T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 84,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1357,
+      "count": 1643,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1593,
+      "count": 1859,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 9,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security updates for Tuesday"
+        "topic": "ai",
+        "headline": "OpenAI’s advanced GPT-5.6 models to be publicly released"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:34764: Important: OpenShift Container Platform 4.21.23 bug fix and security update"
+        "topic": "kubernetes",
+        "headline": "server/v3.7.0"
       },
       {
         "rank": 3,
         "topic": "kubernetes",
-        "headline": "v1.62.0/v0.156.0"
+        "headline": "v1.53.0-next.2"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "tencent/Hy3"
+        "topic": "security",
+        "headline": "RHSA-2026:36832: Important: libreoffice security update"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:36205: Important: 389-ds-base security update"
+        "headline": "RHSA-2026:36782: Moderate: aardvark-dns security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:36085: Important: xorg-x11-server security update"
+        "topic": "models",
+        "headline": "Grok 4.5 is so cheap compared to Fable 5 and GPT 5.5 that benchmark gaps may not matter much"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Why your RBAC linter misses privilege escalation chains and how to fix it"
+        "topic": "kubernetes",
+        "headline": "pkg/v3.7.0"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:36187: Important: perl-HTTP-Daemon security update"
+        "headline": "CVE-2026-0279 PAN-OS: Multiple Cross-Site Scripting XSS Vulnerabilities Severity: LOW"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic says Claude has carved out its own space to ponder"
+        "topic": "security",
+        "headline": "CVE-2026-0283 PAN-OS: Authentication Bypass Vulnerability in Large Scale VPN LSVPN Severity: MEDIUM"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v2.9.1"
+        "topic": "ai",
+        "headline": "Helping K–12 educators build practical AI skills"
       }
     ],
     "articleCount": 0
