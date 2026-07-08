@@ -51,9 +51,9 @@ interface SpawnResult {
 }
 
 // Safe env keys passed through from the parent process (#24).
-// process.execPath is an absolute path, so PATH is not needed.
-// AI knobs and Ollama settings come from the `env` arg (aiEnv result).
-const SAFE_PASSTHROUGH_KEYS = ['HOME', 'TMPDIR', 'TMP', 'TEMP', 'USERPROFILE'] as const;
+// process.execPath is an absolute path, so PATH is not needed for node.
+// PATH is needed so child processes can find `hermes` for AI inference.
+const SAFE_PASSTHROUGH_KEYS = ['HOME', 'TMPDIR', 'TMP', 'TEMP', 'USERPROFILE', 'PATH'] as const;
 
 // Hard output limits to prevent OOM from a runaway engine (#24).
 const MAX_STDOUT_BYTES = 128 * 1024 * 1024; // 128 MiB
