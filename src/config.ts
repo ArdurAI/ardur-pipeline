@@ -174,6 +174,14 @@ export function aiEnv(config: PipelineConfig): Record<string, string> {
     ARDUR_ETL_ENABLED: config.etl.enabled ? 'true' : 'false',
     ARDUR_ETL_TIMEOUT_MS: String(config.etl.timeoutMs),
   };
+  // Forward Hermes availability — engines auto-detect hermes on PATH.
+  // In CI (GitHub Actions), HERMES_AVAILABLE=0 so engines skip Hermes.
+  // In local cron, Hermes is on PATH and engines use it as primary LLM.
+  if (process.env['HERMES_AVAILABLE'] !== '0' && process.env['CI'] !== 'true') {
+    env['HERMES_AVAILABLE'] = '1';
+    if (process.env['HERMES_MODEL']) env['HERMES_MODEL'] = process.env['HERMES_MODEL'];
+    if (process.env['HERMES_TIMEOUT_MS']) env['HERMES_TIMEOUT_MS'] = process.env['HERMES_TIMEOUT_MS'];
+  }
   // Forward Ollama connection only when configured — engines skip it when blank.
   if (config.ollama.host) env['OLLAMA_HOST'] = config.ollama.host;
   if (config.ollama.model) env['OLLAMA_MODEL'] = config.ollama.model;
