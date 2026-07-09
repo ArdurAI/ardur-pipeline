@@ -24,7 +24,8 @@ function arg(name: string): string | undefined {
 async function main(): Promise<void> {
   const resultPath = arg('--result');
   const outPath = arg('--out') ?? '.artifacts/status.json';
-  const deployHook = (arg('--deploy-hook') as CycleStatusReport['deployHook'] | undefined) ?? 'unknown';
+  const deployHook =
+    (arg('--deploy-hook') as CycleStatusReport['deployHook'] | undefined) ?? 'unknown';
 
   let raw: Record<string, unknown> = {};
   if (resultPath) {
@@ -46,7 +47,8 @@ async function main(): Promise<void> {
         : ((raw['summary'] as { articleCount?: number } | undefined)?.articleCount ?? null),
     topicsCovered:
       (raw['topicsCovered'] as string[] | undefined) ??
-      ((raw['summary'] as { topicsCovered?: string[] } | undefined)?.topicsCovered ?? []),
+      (raw['summary'] as { topicsCovered?: string[] } | undefined)?.topicsCovered ??
+      [],
     dryRun: Boolean(raw['dryRun']),
     deployHook,
   });

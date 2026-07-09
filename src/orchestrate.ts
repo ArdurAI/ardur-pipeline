@@ -346,7 +346,11 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     }
   }
   if (cycleMismatches.length > 0) {
-    const allWarnings = [...warnings, ...cycleMismatches, 'validation failure: mixed-cycle artifacts blocked before publish'];
+    const allWarnings = [
+      ...warnings,
+      ...cycleMismatches,
+      'validation failure: mixed-cycle artifacts blocked before publish',
+    ];
     log.error('cycle failed validation before publish', { warnings: allWarnings });
     await sendAlert(
       config.observability.alertWebhookUrl,

@@ -1166,8 +1166,8 @@ test('#45: mixed-cycle artifacts hard-fail and preserve previous last-good', asy
   };
   const mixedRunners = fakeRunners(cycle2);
   const originalTop10 = mixedRunners.selectTop10;
-  mixedRunners.selectTop10 = async (ranking, previous) => {
-    const top10 = await originalTop10(ranking, previous);
+  mixedRunners.selectTop10 = async (ranking, previous, aggregation) => {
+    const top10 = await originalTop10(ranking, previous, aggregation);
     return { ...top10, cycle: wrongCycle };
   };
 

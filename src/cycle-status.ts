@@ -6,13 +6,7 @@
 
 export type CycleStatusKind = 'published' | 'degraded' | 'failed' | 'skipped';
 
-export type FailureClass =
-  | 'none'
-  | 'validation'
-  | 'stage'
-  | 'publish'
-  | 'deploy'
-  | 'unknown';
+export type FailureClass = 'none' | 'validation' | 'stage' | 'publish' | 'deploy' | 'unknown';
 
 export interface SanitizedProviderStatus {
   ai_provider: string;
@@ -53,7 +47,8 @@ export interface BuildCycleStatusInput {
 function classifyFailure(status: string, warnings: string[]): FailureClass {
   if (status === 'published' || status === 'degraded' || status === 'skipped') return 'none';
   const joined = warnings.join('\n').toLowerCase();
-  if (joined.includes('validation failure') || joined.includes('cycle mismatch')) return 'validation';
+  if (joined.includes('validation failure') || joined.includes('cycle mismatch'))
+    return 'validation';
   if (joined.includes('publish failed')) return 'publish';
   if (joined.includes('deploy') && joined.includes('fail')) return 'deploy';
   if (joined.includes('stage failed')) return 'stage';
@@ -124,9 +119,9 @@ export async function postKanbanStatus(opts: {
 
   try {
     // issueUrl can be API or html URL; only support api.github.com/repos/.../issues/N
-    const m = issueUrl.match(
-      /github\.com\/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/,
-    ) || issueUrl.match(/github\.com\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
+    const m =
+      issueUrl.match(/github\.com\/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/) ||
+      issueUrl.match(/github\.com\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
     if (!m) return opts.required ? 'failed' : 'skipped';
     const [, owner, repo, number] = m;
     const res = await fetchImpl(

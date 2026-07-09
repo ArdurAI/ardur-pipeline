@@ -185,7 +185,12 @@ export function aiEnv(config: PipelineConfig): Record<string, string> {
   }
   // Explicit Hermes proxy allowlist only (PIPE-HERMES-001 / issue #44).
   // Never forward arbitrary process.env — secrets stay limited to named keys.
-  for (const key of ['GATEWAY_PROXY_URL', 'GATEWAY_PROXY_KEY', 'HERMES_PROXY_URL', 'HERMES_PROXY_KEY'] as const) {
+  for (const key of [
+    'GATEWAY_PROXY_URL',
+    'GATEWAY_PROXY_KEY',
+    'HERMES_PROXY_URL',
+    'HERMES_PROXY_KEY',
+  ] as const) {
     const value = process.env[key];
     if (value && value.trim()) env[key] = value.trim();
   }
