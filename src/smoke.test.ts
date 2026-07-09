@@ -24,7 +24,7 @@ import {
 } from './store.ts';
 import { runCycle } from './orchestrate.ts';
 import { createLogger, type Logger } from './log.ts';
-import { loadConfig } from './config.ts';
+import { loadConfig, aiEnv } from './config.ts';
 import { SCHEMA_VERSION, SchemaVersionError, assertCompatibleArtifact } from '@ardurai/contracts';
 import type {
   AggregationArtifact,
@@ -1132,4 +1132,85 @@ test('applyLowConfidenceHold forces low-confidence published → held', () => {
   assert.equal(statuses['hi'], 'published');
   assert.equal(statuses['lo'], 'held');
   assert.equal(statuses['lo-already-held'], 'held');
+});
+
+// --- #45 mixed-cycle hard-fail before last-good publish -----------------------
+
+test('#45: mixed-cycle artifacts hard-fail and preserve previous last-good', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'ardur-mix45-'));
+  const config = testConfig(root);
+  const now1 = () => new Date('2026-06-11T06:30:00Z');
+  const cycle1 = cycleFor(now1());
+
+  // Establish a good last-good first.
+  const good = await runCycle({
+    config,
+    logger: silent,
+    now: now1,
+    runners: fakeRunners(cycle1),
+  });
+  assert.equal(good.status, 'published');
+  const store = new ArtifactStore(root);
+  const goodManifest = await store.readManifest();
+  assert.ok(goodManifest);
+  assert.equal(goodManifest.cycle.id, cycle1.id);
+
+  // Next 6h window so we are not short-circuited by same-cycle idempotent skip.
+  const now2 = () => new Date('2026-06-11T12:30:00Z');
+  const cycle2 = cycleFor(now2());
+  const wrongCycle: CycleMeta = {
+    ...cycle2,
+    id: '2099-01-01T00:00:00.000Z',
+    windowStart: '2099-01-01T00:00:00.000Z',
+    windowEnd: '2099-01-01T06:00:00.000Z',
+  };
+  const mixedRunners = fakeRunners(cycle2);
+  const originalTop10 = mixedRunners.selectTop10;
+  mixedRunners.selectTop10 = async (ranking, previous) => {
+    const top10 = await originalTop10(ranking, previous);
+    return { ...top10, cycle: wrongCycle };
+  };
+
+  const bad = await runCycle({
+    config,
+    logger: silent,
+    now: now2,
+    runners: mixedRunners,
+  });
+  assert.equal(bad.status, 'failed');
+  assert.ok(bad.warnings.some((w) => /cycle mismatch/i.test(w)));
+  assert.ok(bad.warnings.some((w) => /validation failure/i.test(w)));
+
+  const liveManifest = await store.readManifest();
+  assert.ok(liveManifest);
+  assert.equal(liveManifest.cycle.id, cycle1.id, 'previous last-good must remain live');
+  assert.equal(liveManifest.status, 'published');
+});
+
+test('aiEnv forwards Hermes proxy allowlist only', () => {
+  const config = loadConfig({
+    ARTIFACT_STORE: '/tmp/unused',
+    ARDUR_AI_PROVIDER: 'hermes',
+    ARDUR_AI_MAX_GENERATIONS: '3',
+  });
+  const prev = { ...process.env };
+  try {
+    process.env['GATEWAY_PROXY_URL'] = 'https://proxy.example/v1';
+    process.env['GATEWAY_PROXY_KEY'] = 'secret-key';
+    process.env['HERMES_PROXY_URL'] = 'https://hermes.example/v1';
+    process.env['RANDOM_SECRET'] = 'should-not-forward';
+    process.env['HERMES_AVAILABLE'] = '1';
+    process.env['CI'] = 'false';
+    const env = aiEnv(config);
+    assert.equal(env.ARDUR_AI_PROVIDER, 'hermes');
+    assert.equal(env.GATEWAY_PROXY_URL, 'https://proxy.example/v1');
+    assert.equal(env.GATEWAY_PROXY_KEY, 'secret-key');
+    assert.equal(env.HERMES_PROXY_URL, 'https://hermes.example/v1');
+    assert.equal(Object.prototype.hasOwnProperty.call(env, 'RANDOM_SECRET'), false);
+  } finally {
+    for (const k of Object.keys(process.env)) {
+      if (!(k in prev)) delete process.env[k];
+    }
+    Object.assign(process.env, prev);
+  }
 });

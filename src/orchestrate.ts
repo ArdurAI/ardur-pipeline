@@ -333,7 +333,8 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
   // Clean up per-cycle scratch dir to prevent unbounded growth (#31).
   await runners.cleanupScratch?.().catch(() => {});
 
-  // Soft cycle-consistency checks — flag drift without failing the cycle.
+  // Hard cycle-consistency gate — mixed-cycle sets must never become last-good.
+  const cycleMismatches: string[] = [];
   for (const [name, art] of [
     ['aggregation', set.aggregation],
     ['ranking', set.ranking],
@@ -341,8 +342,24 @@ export async function runCycle(deps: RunCycleDeps): Promise<RunResult> {
     ['articles', set.articles],
   ] as const) {
     if (art.cycle.id !== cycle.id) {
-      warnings.push(`${name} cycle mismatch: expected ${cycle.id}, got ${art.cycle.id}`);
+      cycleMismatches.push(`${name} cycle mismatch: expected ${cycle.id}, got ${art.cycle.id}`);
     }
+  }
+  if (cycleMismatches.length > 0) {
+    const allWarnings = [...warnings, ...cycleMismatches, 'validation failure: mixed-cycle artifacts blocked before publish'];
+    log.error('cycle failed validation before publish', { warnings: allWarnings });
+    await sendAlert(
+      config.observability.alertWebhookUrl,
+      { cycle, status: 'failed', warnings: allWarnings },
+      log,
+    );
+    return finalize({
+      cycle,
+      status: 'failed',
+      warnings: allWarnings,
+      nextRefreshAt: next,
+      timings,
+    });
   }
 
   // Upstream non-fatal warnings classify the published cycle as degraded.
