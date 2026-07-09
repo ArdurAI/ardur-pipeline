@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-08T18:00:00.000Z",
-    "windowStart": "2026-07-08T18:00:00.000Z",
-    "windowEnd": "2026-07-09T00:00:00.000Z"
+    "id": "2026-07-09T00:00:00.000Z",
+    "windowStart": "2026-07-09T00:00:00.000Z",
+    "windowEnd": "2026-07-09T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-08T21:13:10.549Z",
-  "nextRefreshAt": "2026-07-09T00:00:00.000Z",
+  "publishedAt": "2026-07-09T03:42:27.355Z",
+  "nextRefreshAt": "2026-07-09T06:00:00.000Z",
   "runIds": {
-    "aggregation": "878d0655-1d37-4c1c-bcfd-f01fa9988cd4",
-    "ranking": "rank-be3b2c8e",
-    "top10": "top10:2026-07-08T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-08T18:00:00.000Z-2026-07-08T21:13:32.532Z"
+    "aggregation": "3d6491ad-52c0-4ace-b394-5d22fc3b9925",
+    "ranking": "rank-4eac54d3",
+    "top10": "top10:2026-07-09T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-09T00:00:00.000Z-2026-07-09T03:42:54.758Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-08T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-08T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-08T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-09T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-09T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-09T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 90,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1643,
+      "count": 1591,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9pTy1HU3hITTY2UmV0dllkN1hXTDE2MmNaLUhNREEzdUxmYWllcXk3ZmNULXQ2MHFOSFRFc3h6bzk3SVhBdmpyVnRxa1cwVG53MGlCanY5bWNPTnRzNTR0V09n?oc=5",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1859,
+      "count": 1834,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI’s advanced GPT-5.6 models to be publicly released"
+        "headline": "Grok 4.5 is so cheap compared to Fable 5 and GPT 5.5 that benchmark gaps may not matter much"
       },
       {
         "rank": 2,
@@ -119,39 +119,39 @@
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:36832: Important: libreoffice security update"
+        "headline": "RHSA-2026:36879: Important: tomcat security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:36782: Moderate: aardvark-dns security update"
+        "headline": "RHSA-2026:36834: Important: gstreamer1-plugins-bad-free security update"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "Grok 4.5 is so cheap compared to Fable 5 and GPT 5.5 that benchmark gaps may not matter much"
+        "topic": "security",
+        "headline": "RHSA-2026:36798: Important: xorg-x11-server-Xwayland security update"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "pkg/v3.7.0"
+        "topic": "security",
+        "headline": "RHSA-2026:36782: Moderate: aardvark-dns security update"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "CVE-2026-0279 PAN-OS: Multiple Cross-Site Scripting XSS Vulnerabilities Severity: LOW"
+        "topic": "ai",
+        "headline": "China Says It Has Found Security Vulnerabilities in Anthropic’s Claude Code"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "CVE-2026-0283 PAN-OS: Authentication Bypass Vulnerability in Large Scale VPN LSVPN Severity: MEDIUM"
+        "topic": "ai",
+        "headline": "OpenAI to release its most powerful model after weekslong hold"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Helping K–12 educators build practical AI skills"
+        "headline": "Our approach to government and national security partnerships"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
