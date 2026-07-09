@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-09T00:00:00.000Z",
-    "windowStart": "2026-07-09T00:00:00.000Z",
-    "windowEnd": "2026-07-09T06:00:00.000Z"
+    "id": "2026-07-09T06:00:00.000Z",
+    "windowStart": "2026-07-09T06:00:00.000Z",
+    "windowEnd": "2026-07-09T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-09T03:42:27.355Z",
-  "nextRefreshAt": "2026-07-09T06:00:00.000Z",
+  "publishedAt": "2026-07-09T07:51:35.822Z",
+  "nextRefreshAt": "2026-07-09T12:00:00.000Z",
   "runIds": {
-    "aggregation": "3d6491ad-52c0-4ace-b394-5d22fc3b9925",
-    "ranking": "rank-4eac54d3",
-    "top10": "top10:2026-07-09T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-09T00:00:00.000Z-2026-07-09T03:42:54.758Z"
+    "aggregation": "eae2b725-d806-46be-8be1-b879821eb009",
+    "ranking": "rank-bbf35732",
+    "top10": "top10:2026-07-09T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-09T06:00:00.000Z-2026-07-09T07:51:57.090Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-09T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-09T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-09T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-09T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-09T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-09T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 90,
+      "count": 84,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1591,
+      "count": 1492,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9pTy1HU3hITTY2UmV0dllkN1hXTDE2MmNaLUhNREEzdUxmYWllcXk3ZmNULXQ2MHFOSFRFc3h6bzk3SVhBdmpyVnRxa1cwVG53MGlCanY5bWNPTnRzNTR0V09n?oc=5",
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTFBtSXdtZ2pLYmdZU29IRGJaOE5UM0VlODZuMGt3M3JBendPU3N4ZjVhdUs0Y25DbC1pRmc3Rm01Y2R0VXhxczREY3pnSzJPNUwxejRxX0JoR0FnTnVObHZlMldB?oc=5",
         "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1834,
+      "count": 1714,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Grok 4.5 is so cheap compared to Fable 5 and GPT 5.5 that benchmark gaps may not matter much"
-      },
-      {
-        "rank": 2,
         "topic": "kubernetes",
         "headline": "server/v3.7.0"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:37123: Important: podman security, bug fix, and enhancement update"
+      },
+      {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.53.0-next.2"
+        "topic": "security",
+        "headline": "RHSA-2026:37070: Moderate: perl:5.32 security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:36879: Important: tomcat security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "Grok 4.5 is so cheap compared to Fable 5 and GPT 5.5 that benchmark gaps may not matter much"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:36834: Important: gstreamer1-plugins-bad-free security update"
+        "topic": "ai",
+        "headline": "OpenAI launches GPT-Live voice models that listen and speak simultaneously"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:36798: Important: xorg-x11-server-Xwayland security update"
+        "topic": "kubernetes",
+        "headline": "Supermicro Simplifies Edge AI Deployments with Validated Kubernetes Appliances with Red Hat and Everpure"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:36782: Moderate: aardvark-dns security update"
+        "headline": "Microsoft patches RoguePlanet Defender zero-day vulnerability"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "China Says It Has Found Security Vulnerabilities in Anthropic’s Claude Code"
+        "topic": "kubernetes",
+        "headline": "v0.305.5"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI to release its most powerful model after weekslong hold"
+        "topic": "kubernetes",
+        "headline": "v3.5.5"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Our approach to government and national security partnerships"
+        "topic": "security",
+        "headline": "RHSA-2026:36798: Important: xorg-x11-server-Xwayland security update"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
