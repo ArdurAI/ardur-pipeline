@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-09T06:00:00.000Z",
-    "windowStart": "2026-07-09T06:00:00.000Z",
-    "windowEnd": "2026-07-09T12:00:00.000Z"
+    "id": "2026-07-09T12:00:00.000Z",
+    "windowStart": "2026-07-09T12:00:00.000Z",
+    "windowEnd": "2026-07-09T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-09T07:51:35.822Z",
-  "nextRefreshAt": "2026-07-09T12:00:00.000Z",
+  "publishedAt": "2026-07-09T15:20:26.775Z",
+  "nextRefreshAt": "2026-07-09T18:00:00.000Z",
   "runIds": {
-    "aggregation": "eae2b725-d806-46be-8be1-b879821eb009",
-    "ranking": "rank-bbf35732",
-    "top10": "top10:2026-07-09T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-09T06:00:00.000Z-2026-07-09T07:51:57.090Z"
+    "aggregation": "ea02da4b-ef06-491b-871d-07ca7c280d4e",
+    "ranking": "rank-94f99a1d",
+    "top10": "top10:2026-07-09T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-09T12:00:00.000Z-2026-07-09T15:20:54.031Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-09T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-09T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-09T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-09T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-09T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-09T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1492,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTFBtSXdtZ2pLYmdZU29IRGJaOE5UM0VlODZuMGt3M3JBendPU3N4ZjVhdUs0Y25DbC1pRmc3Rm01Y2R0VXhxczREY3pnSzJPNUwxejRxX0JoR0FnTnVObHZlMldB?oc=5",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -49,17 +40,26 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1320,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1714,
+      "count": 1557,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 24,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 26,
       "sample": [
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "server/v3.7.0"
+        "headline": "3.5.5 / 2026-07-09"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:37123: Important: podman security, bug fix, and enhancement update"
+        "topic": "platform",
+        "headline": "Announcing Rust 1.97.0"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:37070: Moderate: perl:5.32 security update"
+        "topic": "kubernetes",
+        "headline": "server/v3.7.0"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Grok 4.5 is so cheap compared to Fable 5 and GPT 5.5 that benchmark gaps may not matter much"
+        "headline": "Introducing GPT‑Live"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI launches GPT-Live voice models that listen and speak simultaneously"
+        "topic": "security",
+        "headline": "RHSA-2026:37385: Important: rh-podman-desktop security advisory update"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Supermicro Simplifies Edge AI Deployments with Validated Kubernetes Appliances with Red Hat and Everpure"
+        "topic": "security",
+        "headline": "12 Million Impacted by Data Breach at Japanese Telco KDDI"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "Microsoft patches RoguePlanet Defender zero-day vulnerability"
+        "headline": "RHSA-2026:37250: Moderate: libreoffice security update"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v0.305.5"
+        "topic": "security",
+        "headline": "Microsoft Patches Defender &8216;RoguePlanet&8217; Vulnerability"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v3.5.5"
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:36798: Important: xorg-x11-server-Xwayland security update"
+        "topic": "ai",
+        "headline": "SpaceXAI, Meta puts pricing squeeze on Anthropic, OpenAI"
       }
     ],
     "articleCount": 0
