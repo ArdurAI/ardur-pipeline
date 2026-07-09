@@ -159,6 +159,28 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+
+      - name: Emit sanitized cycle status report
+        if: always()
+        working-directory: ardur-pipeline
+        env:
+          ARDUR_KANBAN_ISSUE_URL: ${{ vars.ARDUR_KANBAN_ISSUE_URL }}
+          ARDUR_KANBAN_REQUIRED: ${{ vars.ARDUR_KANBAN_REQUIRED || 'false' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DEPLOY_STATE=not_run
+          if [ "${{ steps.run.outputs.exit }}" != "0" ]; then
+            DEPLOY_STATE=not_run
+          elif [ -z "${{ secrets.CF_PAGES_DEPLOY_HOOK }}" ]; then
+            DEPLOY_STATE=skipped_missing
+          else
+            DEPLOY_STATE=unknown
+          fi
+          node --experimental-strip-types scripts/report-cycle-status.ts \
+            --result "$RUNNER_TEMP/result.json" \
+            --out .artifacts/status.json \
+            --deploy-hook "$DEPLOY_STATE" || true
+
       - name: Upload artifact store (always, for observability)
         if: always()
         uses: actions/upload-artifact@v4
