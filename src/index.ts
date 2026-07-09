@@ -39,3 +39,4 @@ export { startMcpServer } from './mcp-server.ts';
 export { loadToolManifest, assertManifestCompatible } from './tool-manifest.ts';
 export type { ToolManifest, CliSpec, ArtifactSchema } from './tool-manifest.ts';
 export * from '@ardurai/contracts';
+export * from './cycle-status.ts';
