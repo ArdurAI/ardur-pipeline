@@ -241,3 +241,14 @@ docs/spec.md      full design spec with diagrams
 ## License
 
 [MIT](./LICENSE) © ArdurAI
+
+## Hermes provider env (safe allowlist)
+
+When `ARDUR_AI_PROVIDER=hermes`, the pipeline forwards only:
+
+- `GATEWAY_PROXY_URL` / `GATEWAY_PROXY_KEY`
+- `HERMES_PROXY_URL` / `HERMES_PROXY_KEY`
+- `HERMES_MODEL` / `HERMES_TIMEOUT_MS` / `HERMES_AVAILABLE`
+
+Arbitrary process env is never forwarded to child engines. Mixed-cycle artifacts hard-fail before last-good publication.
+

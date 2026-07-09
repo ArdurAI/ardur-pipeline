@@ -183,6 +183,12 @@ export function aiEnv(config: PipelineConfig): Record<string, string> {
     if (process.env['HERMES_TIMEOUT_MS'])
       env['HERMES_TIMEOUT_MS'] = process.env['HERMES_TIMEOUT_MS'];
   }
+  // Explicit Hermes proxy allowlist only (PIPE-HERMES-001 / issue #44).
+  // Never forward arbitrary process.env — secrets stay limited to named keys.
+  for (const key of ['GATEWAY_PROXY_URL', 'GATEWAY_PROXY_KEY', 'HERMES_PROXY_URL', 'HERMES_PROXY_KEY'] as const) {
+    const value = process.env[key];
+    if (value && value.trim()) env[key] = value.trim();
+  }
   // Forward Ollama connection only when configured — engines skip it when blank.
   if (config.ollama.host) env['OLLAMA_HOST'] = config.ollama.host;
   if (config.ollama.model) env['OLLAMA_MODEL'] = config.ollama.model;
