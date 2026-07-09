@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-09T12:00:00.000Z",
-    "windowStart": "2026-07-09T12:00:00.000Z",
-    "windowEnd": "2026-07-09T18:00:00.000Z"
+    "id": "2026-07-09T18:00:00.000Z",
+    "windowStart": "2026-07-09T18:00:00.000Z",
+    "windowEnd": "2026-07-10T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-09T15:20:26.775Z",
-  "nextRefreshAt": "2026-07-09T18:00:00.000Z",
+  "publishedAt": "2026-07-09T19:58:34.903Z",
+  "nextRefreshAt": "2026-07-10T00:00:00.000Z",
   "runIds": {
-    "aggregation": "ea02da4b-ef06-491b-871d-07ca7c280d4e",
-    "ranking": "rank-94f99a1d",
-    "top10": "top10:2026-07-09T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-09T12:00:00.000Z-2026-07-09T15:20:54.031Z"
+    "aggregation": "751629ab-344c-4d00-8d46-cf92eecfa726",
+    "ranking": "rank-726b29d8",
+    "top10": "top10:2026-07-09T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-09T18:00:00.000Z-2026-07-09T19:58:54.062Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-09T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-09T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-09T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-09T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-09T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-09T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,6 +31,15 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1619,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "blocked-fetch",
       "count": 6,
       "sample": [
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1320,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1557,
+      "count": 1815,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 25,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
+        "topic": "ai",
+        "headline": "Meta&039;s Muse Spark 1.1 API pricing squeezes OpenAI and Anthropic as the AI price war heats up"
+      },
+      {
+        "rank": 3,
+        "topic": "ai",
+        "headline": "The new GPT-5.6 family: Luna, Terra, Sol"
+      },
+      {
+        "rank": 4,
         "topic": "platform",
         "headline": "Announcing Rust 1.97.0"
       },
       {
-        "rank": 3,
+        "rank": 5,
+        "topic": "ai",
+        "headline": "OpenAI pairs its GPT-5.6 public rollout with ChatGPT Work, a new agent that handles entire workflows"
+      },
+      {
+        "rank": 6,
         "topic": "kubernetes",
         "headline": "server/v3.7.0"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Introducing GPT‑Live"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:37385: Important: rh-podman-desktop security advisory update"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "12 Million Impacted by Data Breach at Japanese Telco KDDI"
-      },
-      {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:37250: Moderate: libreoffice security update"
+        "headline": "RHSA-2026:37410: Important: buildah security update"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Microsoft Patches Defender &8216;RoguePlanet&8217; Vulnerability"
+        "headline": "RHSA-2026:37396: Moderate: compat-glibc security update"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "topic": "security",
+        "headline": "12 Million Impacted by Data Breach at Japanese Telco KDDI"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "SpaceXAI, Meta puts pricing squeeze on Anthropic, OpenAI"
+        "topic": "security",
+        "headline": "Microsoft Patches Defender &8216;RoguePlanet&8217; Vulnerability"
       }
     ],
     "articleCount": 0
