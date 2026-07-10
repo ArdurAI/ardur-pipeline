@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-10T00:00:00.000Z",
-    "windowStart": "2026-07-10T00:00:00.000Z",
-    "windowEnd": "2026-07-10T06:00:00.000Z"
+    "id": "2026-07-10T06:00:00.000Z",
+    "windowStart": "2026-07-10T06:00:00.000Z",
+    "windowEnd": "2026-07-10T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-10T03:44:24.826Z",
-  "nextRefreshAt": "2026-07-10T06:00:00.000Z",
+  "publishedAt": "2026-07-10T07:41:17.247Z",
+  "nextRefreshAt": "2026-07-10T12:00:00.000Z",
   "runIds": {
-    "aggregation": "69f41098-cae8-4dbc-bf88-cbadbbc36f77",
-    "ranking": "rank-8e445297",
-    "top10": "top10:2026-07-10T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-10T00:00:00.000Z-2026-07-10T03:45:03.253Z"
+    "aggregation": "41734769-c896-4594-ab2a-c363f93cc24e",
+    "ranking": "rank-6b8d74be",
+    "top10": "top10:2026-07-10T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-10T06:00:00.000Z-2026-07-10T07:42:06.987Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-10T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-10T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-10T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-10T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-10T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-10T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 78,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1448,
+      "count": 1320,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai] source the-decoder.com: The operation was aborted due to timeout",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
         "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1610,
+      "count": 1473,
       "sample": [
-        "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 56 URLs fetched for this cluster",
+        "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 53 URLs fetched for this cluster",
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] fetch budget exhausted (30) — 0 of 4 URLs fetched for this cluster"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
         "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 25,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -134,17 +134,17 @@
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "server/v3.7.0"
-      },
-      {
-        "rank": 8,
-        "topic": "kubernetes",
         "headline": "containerd 2.3.3"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "topic": "security",
         "headline": "RHSA-2026:34048: Important: OpenShift Container Platform 4.12.93 bug fix and security update"
+      },
+      {
+        "rank": 9,
+        "topic": "platform",
+        "headline": "WordPress 7.0 Ships with AI Foundations in Core, a Modernized Admin, and New Design Tools"
       },
       {
         "rank": 10,
@@ -152,6 +152,6 @@
         "headline": "RHSA-2026:37396: Moderate: compat-glibc security update"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
