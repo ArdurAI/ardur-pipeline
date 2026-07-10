@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-09T18:00:00.000Z",
-    "windowStart": "2026-07-09T18:00:00.000Z",
-    "windowEnd": "2026-07-10T00:00:00.000Z"
+    "id": "2026-07-10T00:00:00.000Z",
+    "windowStart": "2026-07-10T00:00:00.000Z",
+    "windowEnd": "2026-07-10T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-09T19:58:34.903Z",
-  "nextRefreshAt": "2026-07-10T00:00:00.000Z",
+  "publishedAt": "2026-07-10T03:44:24.826Z",
+  "nextRefreshAt": "2026-07-10T06:00:00.000Z",
   "runIds": {
-    "aggregation": "751629ab-344c-4d00-8d46-cf92eecfa726",
-    "ranking": "rank-726b29d8",
-    "top10": "top10:2026-07-09T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-09T18:00:00.000Z-2026-07-09T19:58:54.062Z"
+    "aggregation": "69f41098-cae8-4dbc-bf88-cbadbbc36f77",
+    "ranking": "rank-8e445297",
+    "top10": "top10:2026-07-10T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-10T00:00:00.000Z-2026-07-10T03:45:03.253Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-09T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-09T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-09T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-10T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-10T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-10T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 84,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1619,
+      "count": 1448,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,39 +54,39 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1815,
+      "count": 1610,
       "sample": [
+        "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 56 URLs fetched for this cluster",
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] fetch budget exhausted (30) — 0 of 4 URLs fetched for this cluster"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 25,
+      "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 27,
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "3.5.5 / 2026-07-09"
+        "topic": "ai",
+        "headline": "llm-meta-ai 0.1"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Meta&039;s Muse Spark 1.1 API pricing squeezes OpenAI and Anthropic as the AI price war heats up"
+        "headline": "Quoting OpenAI"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "The new GPT-5.6 family: Luna, Terra, Sol"
+        "topic": "kubernetes",
+        "headline": "Friday Five — July 10, 2026"
       },
       {
         "rank": 4,
+        "topic": "ai",
+        "headline": "Anthropic found a hidden space where Claude puzzles over concepts"
+      },
+      {
+        "rank": 5,
         "topic": "platform",
         "headline": "Announcing Rust 1.97.0"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI pairs its GPT-5.6 public rollout with ChatGPT Work, a new agent that handles entire workflows"
+        "rank": 6,
+        "topic": "security",
+        "headline": "Microsoft Reins in RoguePlanet Zero-Day Threat"
       },
       {
-        "rank": 6,
+        "rank": 7,
         "topic": "kubernetes",
         "headline": "server/v3.7.0"
       },
       {
-        "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:37410: Important: buildah security update"
-      },
-      {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:37396: Moderate: compat-glibc security update"
+        "topic": "kubernetes",
+        "headline": "containerd 2.3.3"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "12 Million Impacted by Data Breach at Japanese Telco KDDI"
+        "headline": "RHSA-2026:34048: Important: OpenShift Container Platform 4.12.93 bug fix and security update"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Microsoft Patches Defender &8216;RoguePlanet&8217; Vulnerability"
+        "headline": "RHSA-2026:37396: Moderate: compat-glibc security update"
       }
     ],
     "articleCount": 0
