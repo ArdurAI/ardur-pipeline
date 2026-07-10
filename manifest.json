@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-10T12:00:00.000Z",
-    "windowStart": "2026-07-10T12:00:00.000Z",
-    "windowEnd": "2026-07-10T18:00:00.000Z"
+    "id": "2026-07-10T18:00:00.000Z",
+    "windowStart": "2026-07-10T18:00:00.000Z",
+    "windowEnd": "2026-07-11T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-10T14:37:58.963Z",
-  "nextRefreshAt": "2026-07-10T18:00:00.000Z",
+  "publishedAt": "2026-07-10T19:39:40.848Z",
+  "nextRefreshAt": "2026-07-11T00:00:00.000Z",
   "runIds": {
-    "aggregation": "8259ab02-6b70-4532-8b1f-2c774aec35b2",
-    "ranking": "rank-4a7c37da",
-    "top10": "top10:2026-07-10T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-10T12:00:00.000Z-2026-07-10T14:38:17.683Z"
+    "aggregation": "60c0f77c-cd8c-44a5-a879-e6a02c1782ea",
+    "ranking": "rank-7b0fe856",
+    "top10": "top10:2026-07-10T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-10T18:00:00.000Z-2026-07-10T19:40:06.432Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-10T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-10T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-10T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-10T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-10T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-10T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 84,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1448,
+      "count": 1583,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,37 +59,37 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1631,
+      "count": 1787,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 20,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "llm-meta-ai 0.1"
+        "headline": "Reducing High-Bandwidth Memory Bottlenecks in JAX-Based LLM Training with Host Offloading"
       },
       {
         "rank": 2,
@@ -114,7 +114,7 @@
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:37728: Important: kernel security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:37729: Important: kernel security update"
       },
       {
         "rank": 4,
@@ -124,34 +124,34 @@
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "OpenAI kills its Atlas browser after just eight months and folds everything into ChatGPT"
+        "headline": "OpenAI&039;s GPT-5.6 Sol autonomously post-trained the smaller Luna model with a \"fairly underspecified prompt\""
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "AI Model Co-Design: Hardware-Friendly LLM Design | NVIDIA Technical Blog"
+      },
+      {
+        "rank": 7,
         "topic": "platform",
         "headline": "Security updates for Friday"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot"
-      },
-      {
         "rank": 8,
         "topic": "security",
-        "headline": "Microsoft Reins in RoguePlanet Zero-Day Threat"
+        "headline": "Hackers exploit critical auth bypass in Gitea Docker image"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "containerd 2.3.3"
+        "headline": "Dapr Runtime v1.16.17"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "The Replicant in Your Directory: AI Agents and the Identity Security Gap"
+        "headline": "URGENT - Progress Tells ShareFile Customers to Shut Down Storage Zone Controllers Over Security Threat"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
