@@ -1,29 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-11T06:00:00.000Z",
-    "windowStart": "2026-07-11T06:00:00.000Z",
-    "windowEnd": "2026-07-11T12:00:00.000Z"
+    "id": "2026-07-11T12:00:00.000Z",
+    "windowStart": "2026-07-11T12:00:00.000Z",
+    "windowEnd": "2026-07-11T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-11T06:18:21.713Z",
-  "nextRefreshAt": "2026-07-11T12:00:00.000Z",
+  "publishedAt": "2026-07-11T13:37:00.734Z",
+  "nextRefreshAt": "2026-07-11T18:00:00.000Z",
   "runIds": {
-    "aggregation": "a691a0ad-b028-46d8-8902-3868b89a7c2c",
-    "ranking": "rank-06972abc",
-    "top10": "top10:2026-07-11T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-11T06:00:00.000Z-2026-07-11T06:18:40.547Z"
+    "aggregation": "3a96cdf4-d490-4eb5-8150-4d0b902c03c6",
+    "ranking": "rank-4367c314",
+    "top10": "top10:2026-07-11T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-11T12:00:00.000Z-2026-07-11T13:37:18.937Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-11T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-11T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-11T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-11T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-11T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-11T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
+      "category": "blocked-fetch",
+      "count": 21,
+      "sample": [
+        "[ai] source microsoft.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden"
+      ]
+    },
+    {
       "category": "http-error",
-      "count": 69,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +41,7 @@
     },
     {
       "category": "other",
-      "count": 1252,
+      "count": 1199,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "blocked-fetch",
-      "count": 6,
-      "sample": [
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
         "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1489,
+      "count": 1442,
       "sample": [
         "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 61 URLs fetched for this cluster",
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 25,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 6 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 62,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -113,43 +113,43 @@
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "Wireshark 4.6.7 Released, Sat, Jul 11th"
+      },
+      {
+        "rank": 4,
         "topic": "platform",
         "headline": "Why killing pods is not enough: Testing operator reconciliation with operator-chaos"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "topic": "kubernetes",
         "headline": "v1.14.0"
       },
       {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.11.2"
-      },
-      {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "3.13.1 / 2026-07-10"
+        "topic": "ai",
+        "headline": "OpenAI admits it \"didn&039;t get everything quite right\" with ChatGPT Work launch and scrambles to fix UX and costs"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.12.2"
+        "headline": "Eco-friendly or faux pas? South Florida diners split on bringing your own takeout containers to restaurants"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "OpenAI&039;s GPT-5.6 Sol autonomously post-trained the smaller Luna model with a \"fairly underspecified prompt\""
+        "topic": "kubernetes",
+        "headline": "v1.11.2"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "AI Model Co-Design: Hardware-Friendly LLM Design"
+        "topic": "security",
+        "headline": "Hackers exploit critical auth bypass in Gitea Docker image"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Hackers exploit critical auth bypass in Gitea Docker image"
+        "topic": "kubernetes",
+        "headline": "v1.12.2"
       }
     ],
     "articleCount": 0
