@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-11T00:00:00.000Z",
-    "windowStart": "2026-07-11T00:00:00.000Z",
-    "windowEnd": "2026-07-11T06:00:00.000Z"
+    "id": "2026-07-11T06:00:00.000Z",
+    "windowStart": "2026-07-11T06:00:00.000Z",
+    "windowEnd": "2026-07-11T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-11T02:58:11.727Z",
-  "nextRefreshAt": "2026-07-11T06:00:00.000Z",
+  "publishedAt": "2026-07-11T06:18:21.713Z",
+  "nextRefreshAt": "2026-07-11T12:00:00.000Z",
   "runIds": {
-    "aggregation": "29aecec8-baee-451d-b47d-e430fb38ccfe",
-    "ranking": "rank-bcfcc551",
-    "top10": "top10:2026-07-11T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-11T00:00:00.000Z-2026-07-11T02:58:28.421Z"
+    "aggregation": "a691a0ad-b028-46d8-8902-3868b89a7c2c",
+    "ranking": "rank-06972abc",
+    "top10": "top10:2026-07-11T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-11T06:00:00.000Z-2026-07-11T06:18:40.547Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-11T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-11T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-11T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-11T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-11T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-11T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,14 +25,14 @@
       "category": "http-error",
       "count": 69,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1369,
+      "count": 1252,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1597,
+      "count": 1489,
       "sample": [
-        "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 64 URLs fetched for this cluster",
+        "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 61 URLs fetched for this cluster",
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] fetch budget exhausted (30) — 0 of 1 URLs fetched for this cluster"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 26,
+      "count": 22,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 6 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:37729: Important: kernel security update"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "Apple sues OpenAI for trade secret theft"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:37729: Important: kernel security update"
+      },
+      {
         "rank": 3,
-        "topic": "models",
-        "headline": "Reducing High-Bandwidth Memory Bottlenecks in JAX-Based LLM Training with Host Offloading"
+        "topic": "platform",
+        "headline": "Why killing pods is not enough: Testing operator reconciliation with operator-chaos"
       },
       {
         "rank": 4,
@@ -123,8 +123,8 @@
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "OpenAI&039;s GPT-5.6 Sol autonomously post-trained the smaller Luna model with a \"fairly underspecified prompt\""
+        "topic": "kubernetes",
+        "headline": "v1.11.2"
       },
       {
         "rank": 6,
@@ -134,12 +134,12 @@
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.11.2"
+        "headline": "v1.12.2"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.12.2"
+        "topic": "models",
+        "headline": "OpenAI&039;s GPT-5.6 Sol autonomously post-trained the smaller Luna model with a \"fairly underspecified prompt\""
       },
       {
         "rank": 9,
