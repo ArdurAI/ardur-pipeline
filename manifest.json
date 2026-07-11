@@ -1,38 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-11T12:00:00.000Z",
-    "windowStart": "2026-07-11T12:00:00.000Z",
-    "windowEnd": "2026-07-11T18:00:00.000Z"
+    "id": "2026-07-11T18:00:00.000Z",
+    "windowStart": "2026-07-11T18:00:00.000Z",
+    "windowEnd": "2026-07-12T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-11T13:37:00.734Z",
-  "nextRefreshAt": "2026-07-11T18:00:00.000Z",
+  "publishedAt": "2026-07-11T19:11:14.387Z",
+  "nextRefreshAt": "2026-07-12T00:00:00.000Z",
   "runIds": {
-    "aggregation": "3a96cdf4-d490-4eb5-8150-4d0b902c03c6",
-    "ranking": "rank-4367c314",
-    "top10": "top10:2026-07-11T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-11T12:00:00.000Z-2026-07-11T13:37:18.937Z"
+    "aggregation": "97b7cf0d-f660-4d27-a3fc-2a8ea70667c2",
+    "ranking": "rank-efefddbb",
+    "top10": "top10:2026-07-11T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-11T18:00:00.000Z-2026-07-11T19:11:34.605Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-11T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-11T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-11T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-11T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-11T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-11T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
-      "category": "blocked-fetch",
-      "count": 21,
-      "sample": [
-        "[ai] source microsoft.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden"
-      ]
-    },
-    {
       "category": "http-error",
-      "count": 75,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -41,55 +32,64 @@
     },
     {
       "category": "other",
-      "count": 1199,
+      "count": 1222,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
         "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1442,
+      "count": 1465,
       "sample": [
-        "[ai/cluster-ai-0] fetch budget exhausted (30) — 30 of 61 URLs fetched for this cluster",
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] fetch budget exhausted (30) — 0 of 1 URLs fetched for this cluster"
+        "[ai/cluster-ai-1] fetch budget exhausted (30) — 27 of 49 URLs fetched for this cluster",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 25,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -108,50 +108,50 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:37729: Important: kernel security update"
+        "topic": "ai",
+        "headline": "OpenAI&039;s GPT-5.6 Sol Ultra reportedly solves a 50-year-old math problem in under an hour"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "Wireshark 4.6.7 Released, Sat, Jul 11th"
+        "headline": "RHSA-2026:37729: Important: kernel security update"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Why killing pods is not enough: Testing operator reconciliation with operator-chaos"
+        "topic": "ai",
+        "headline": "Elon Musk says he was wrong about Anthropic"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.14.0"
+        "topic": "security",
+        "headline": "Wireshark 4.6.7 Released, Sat, Jul 11th"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "OpenAI admits it \"didn&039;t get everything quite right\" with ChatGPT Work launch and scrambles to fix UX and costs"
+        "headline": "OpenAI’s Head of Safety Is Leaving the Company"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Eco-friendly or faux pas? South Florida diners split on bringing your own takeout containers to restaurants"
+        "topic": "platform",
+        "headline": "Why killing pods is not enough: Testing operator reconciliation with operator-chaos"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "v1.11.2"
+        "headline": "v1.14.0"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Hackers exploit critical auth bypass in Gitea Docker image"
+        "topic": "kubernetes",
+        "headline": "South Africa seeks tariff exemption as US probes forced labor tied to imports"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.12.2"
+        "headline": "85% say code review is the new bottleneck. Here&8217;s what the AI coding narrative leaves out."
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
