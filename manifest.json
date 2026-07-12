@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-12T12:00:00.000Z",
-    "windowStart": "2026-07-12T12:00:00.000Z",
-    "windowEnd": "2026-07-12T18:00:00.000Z"
+    "id": "2026-07-12T18:00:00.000Z",
+    "windowStart": "2026-07-12T18:00:00.000Z",
+    "windowEnd": "2026-07-13T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-12T13:37:11.208Z",
-  "nextRefreshAt": "2026-07-12T18:00:00.000Z",
+  "publishedAt": "2026-07-12T19:11:52.876Z",
+  "nextRefreshAt": "2026-07-13T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c48995ae-f594-416c-8398-afd2aafb3887",
-    "ranking": "rank-12bb2fb9",
-    "top10": "top10:2026-07-12T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-12T12:00:00.000Z-2026-07-12T13:37:25.378Z"
+    "aggregation": "7de0261c-5b55-44da-949e-dccc3898df1f",
+    "ranking": "rank-d87263f1",
+    "top10": "top10:2026-07-12T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-12T18:00:00.000Z-2026-07-12T19:12:06.423Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-12T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-12T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-12T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-12T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-12T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-12T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1275,
+      "count": 1247,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE5JTS00Qi1UclZXNlMxTVdPYnE1cERrc08tSXhMNm16WWNaUEl2VXhfNVRZYVFnVUFjdG1lQ1VOVERSbkc0a2NuWko5VEFVQjViaS1LVnozbmZ4UzVsc01wOEMycVQ?oc=5",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1002,
+      "count": 1031,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 39,
+      "count": 38,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 12,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "AI Model Bias"
+        "headline": "Elon Musk and Sam Altman spar on X after Apple files OpenAI lawsuit"
       },
       {
         "rank": 2,
@@ -114,42 +114,42 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "S&038;P Global sees OpenAI as a \"key credit risk\" for Oracle and cuts its credit rating"
+        "headline": "AI Model Bias"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Claude Cowork&039;s biggest use case is the mundane office work nobody wants to own, Anthropic says"
+        "headline": "OpenAI&039;s GPT-5.6 Sol Ultra reportedly solves a 50-year-old math problem in under an hour"
       },
       {
         "rank": 5,
+        "topic": "kubernetes",
+        "headline": "APIs aren&8217;t dead. Here&8217;s where MCP fits alongside them."
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "How async processing hides latency and improves responsiveness"
+      },
+      {
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "Anthropic&8217;s newest enterprise partner is training 20,000 people on Claude — here&8217;s the shift it signals"
+      },
+      {
+        "rank": 8,
+        "topic": "kubernetes",
+        "headline": "Towering Montauk sculpture prompts East Hampton's ire"
+      },
+      {
+        "rank": 9,
         "topic": "models",
         "headline": "sqlite-utils 4.1"
       },
       {
-        "rank": 6,
-        "topic": "models",
-        "headline": "Meta kills Muse Image feature that let anyone generate AI photos of Instagram users without consent"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Cloudflare Identifies Race Condition in hyper’s HTTP/1 Implementation"
-      },
-      {
-        "rank": 8,
-        "topic": "models",
-        "headline": "OpenAI CEO Altman is now \"pretty sure\" AI is net job-creating, which is quite the pivot from predicting mass layoffs"
-      },
-      {
-        "rank": 9,
-        "topic": "kubernetes",
-        "headline": "No One Wants Mushy, Moldy Berries — These Genius Containers Keep Them Fresh for Up to ‘3 Weeks’"
-      },
-      {
         "rank": 10,
-        "topic": "models",
-        "headline": "Grades dropped from 96 to 48 percent when a Brown professor made students take the exam without AI"
+        "topic": "platform",
+        "headline": "Meet Brain, the AI that decides when Azure is officially down"
       }
     ],
     "articleCount": 0
