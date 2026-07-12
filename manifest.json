@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-12T00:00:00.000Z",
-    "windowStart": "2026-07-12T00:00:00.000Z",
-    "windowEnd": "2026-07-12T06:00:00.000Z"
+    "id": "2026-07-12T06:00:00.000Z",
+    "windowStart": "2026-07-12T06:00:00.000Z",
+    "windowEnd": "2026-07-12T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-12T03:23:51.681Z",
-  "nextRefreshAt": "2026-07-12T06:00:00.000Z",
+  "publishedAt": "2026-07-12T06:39:17.451Z",
+  "nextRefreshAt": "2026-07-12T12:00:00.000Z",
   "runIds": {
-    "aggregation": "9986a1dc-4508-47ff-b1b4-48391955f29b",
-    "ranking": "rank-f97f6aca",
-    "top10": "top10:2026-07-12T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-12T00:00:00.000Z-2026-07-12T03:24:09.604Z"
+    "aggregation": "bba490ab-8c1a-445d-b501-8a2d5ffa92f0",
+    "ranking": "rank-630f704c",
+    "top10": "top10:2026-07-12T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-12T06:00:00.000Z-2026-07-12T06:39:32.591Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-12T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-12T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-12T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-12T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-12T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-12T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -41,47 +41,47 @@
     },
     {
       "category": "other",
-      "count": 1212,
+      "count": 1275,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1295,
+      "count": 1110,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] fetch budget exhausted (30) — 28 of 29 URLs fetched for this cluster"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 34,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI&039;s GPT-5.6 Sol Ultra reportedly solves a 50-year-old math problem in under an hour"
+        "headline": "Apple challenges OpenAI’s hardware push in trade-secret lawsuit"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Apple Sues OpenAI, Accusing It of Stealing Company Secrets"
+        "headline": "OpenAI engineer’s ‘LOL’ moment set stage for legal fight with Apple"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "sqlite-utils 4.1"
+        "headline": "Claude AI Performance Decline: User Complaints of Dumber Responses Addressed by Anthropic – It’s Not the Model That’s Underperforming"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic rumored to unveil AI model surpassing GPT-5.6 SOL next week"
+        "headline": "sqlite-utils 4.1"
       },
       {
         "rank": 5,
+        "topic": "platform",
+        "headline": "Cloudflare Identifies Race Condition in hyper’s HTTP/1 Implementation"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "No One Wants Mushy, Moldy Berries — These Genius Containers Keep Them Fresh for Up to ‘3 Weeks’"
+      },
+      {
+        "rank": 7,
         "topic": "models",
         "headline": "How to Evaluate General-Purpose Robot Policies for Real-World Deployment"
       },
       {
-        "rank": 6,
+        "rank": 8,
         "topic": "models",
         "headline": "d-Matrix Highlights AI Inference Accelerator Deployment With Parasail and NVIDIA Ecosystem"
       },
       {
-        "rank": 7,
+        "rank": 9,
         "topic": "security",
         "headline": "Wireshark 4.6.7 Released, Sat, Jul 11th"
       },
       {
-        "rank": 8,
+        "rank": 10,
         "topic": "security",
         "headline": "Palo Alto Networks says AI agents are driving demand for identity security"
-      },
-      {
-        "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Smart containers saturate Coma-ruga's streets with pests before the high season"
-      },
-      {
-        "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Secure glass containers for storing chemical waste through laser welding"
       }
     ],
     "articleCount": 0
