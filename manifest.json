@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-11T18:00:00.000Z",
-    "windowStart": "2026-07-11T18:00:00.000Z",
-    "windowEnd": "2026-07-12T00:00:00.000Z"
+    "id": "2026-07-12T00:00:00.000Z",
+    "windowStart": "2026-07-12T00:00:00.000Z",
+    "windowEnd": "2026-07-12T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-11T19:11:14.387Z",
-  "nextRefreshAt": "2026-07-12T00:00:00.000Z",
+  "publishedAt": "2026-07-12T03:23:51.681Z",
+  "nextRefreshAt": "2026-07-12T06:00:00.000Z",
   "runIds": {
-    "aggregation": "97b7cf0d-f660-4d27-a3fc-2a8ea70667c2",
-    "ranking": "rank-efefddbb",
-    "top10": "top10:2026-07-11T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-11T18:00:00.000Z-2026-07-11T19:11:34.605Z"
+    "aggregation": "9986a1dc-4508-47ff-b1b4-48391955f29b",
+    "ranking": "rank-f97f6aca",
+    "top10": "top10:2026-07-12T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-12T00:00:00.000Z-2026-07-12T03:24:09.604Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-11T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-11T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-11T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-12T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-12T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-12T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1222,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -49,39 +40,48 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1212,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 5 distinct domains < floor 20",
         "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1465,
+      "count": 1295,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] fetch budget exhausted (30) — 27 of 49 URLs fetched for this cluster",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] fetch budget exhausted (30) — 28 of 29 URLs fetched for this cluster"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 35,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Apple sues OpenAI for trade secret theft"
+        "headline": "OpenAI&039;s GPT-5.6 Sol Ultra reportedly solves a 50-year-old math problem in under an hour"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI&039;s GPT-5.6 Sol Ultra reportedly solves a 50-year-old math problem in under an hour"
+        "headline": "Apple Sues OpenAI, Accusing It of Stealing Company Secrets"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:37729: Important: kernel security update"
+        "topic": "ai",
+        "headline": "sqlite-utils 4.1"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Elon Musk says he was wrong about Anthropic"
+        "headline": "Anthropic rumored to unveil AI model surpassing GPT-5.6 SOL next week"
       },
       {
         "rank": 5,
+        "topic": "models",
+        "headline": "How to Evaluate General-Purpose Robot Policies for Real-World Deployment"
+      },
+      {
+        "rank": 6,
+        "topic": "models",
+        "headline": "d-Matrix Highlights AI Inference Accelerator Deployment With Parasail and NVIDIA Ecosystem"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "Wireshark 4.6.7 Released, Sat, Jul 11th"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI’s Head of Safety Is Leaving the Company"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Why killing pods is not enough: Testing operator reconciliation with operator-chaos"
-      },
-      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.14.0"
+        "topic": "security",
+        "headline": "Palo Alto Networks says AI agents are driving demand for identity security"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "South Africa seeks tariff exemption as US probes forced labor tied to imports"
+        "headline": "Smart containers saturate Coma-ruga's streets with pests before the high season"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "85% say code review is the new bottleneck. Here&8217;s what the AI coding narrative leaves out."
+        "headline": "Secure glass containers for storing chemical waste through laser welding"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
