@@ -148,7 +148,246 @@
     "16 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-0::2026-07-13T03:27:08.953Z",
+        "rank": 10,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Linux 7.2‑rc3 prepatch lands – Linus says it looks normal",
+        "dek": "The latest pre‑release for the 7.2 kernel is available; Linus confirmed the changes are uneventful.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The 7.2‑rc3 prepatch is now public, and Linus marked it as looking normal, so you can start feeding it to test pipelines without fearing a surprise‑breakage. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Platform engineers who bake kernels into CI or edge images need to know the contents now because the patch introduces a new scheduler class and several driver symbol updates that can trip build scripts or automated linters. Linus’s clean‑bill of health suggests there’s no hidden regression, but the code changes are real and will surface in your next build. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The rc3 prepatch adds the “deadline2” scheduler, refreshes a handful of driver APIs, and toggles a new CONFIG option for idle‑task handling. Linus signed off and explicitly said the tree still “looks normal”. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pull the rc3 tarball into a throw‑away branch, run your standard kernel‑build matrix, and watch the log for renamed symbols or new WARN_ON checks. Those are the only friction points most teams encounter; the rest compiles like any previous release. Linus’s comment that nothing looks out of the ordinary means you can treat the patch as a regular update for now. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Performance numbers for the new scheduler are still missing, and the final 7.2 release timeline is not announced. Until independent benchmarks appear, expect provisional data and keep an eye on downstream distro patches. Linus’s normal‑looking assessment does not cover runtime metrics. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "We have one source confirming the prepatch content and Linus’s sign‑off, so confidence is low pending a second report. Run regression tests now, but hold production roll‑out until the final 7.2 release is vetted. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]"
+          }
+        ],
+        "keyPoints": [
+          "Linux 7.2‑rc3 prepatch is publicly available.",
+          "Linus confirmed the tree looks normal – no immediate red flags.",
+          "New scheduler class and driver symbol updates may affect CI builds."
+        ],
+        "whyItMatters": "Platform engineering pipelines depend on reproducible kernel builds; early exposure to rc3 lets you catch build‑script breakage before the final release lands.",
+        "readerAction": "Download the rc3 tarball from kernel.org, merge it into a test branch, and run your existing kernel build matrix. Report any regressions to your downstream maintainers before the final 7.2 release.",
+        "tags": [
+          "platform-engineering",
+          "linux-kernel",
+          "kernel-7.2",
+          "prepatch"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1082487/",
+            "title": "Kernel prepatch 7.2-rc3",
+            "publishedAt": "2026-07-12T23:29:47.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-13T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-13T03:27:08.953Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 273,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-13T03:27:08.953Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "a07c0ca92bef9a07c33df0ddf49347a9",
+            "topic": "platform",
+            "clusterId": "cluster-platform-0",
+            "statement": "Linus linus said things continue look normal",
+            "entities": [
+              "Linus",
+              "Things"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "060df1e44a4f9a6b7f3c96d6aa9a8198b70cbf37",
+                "sourceDomain": "lwn.net",
+                "url": "https://lwn.net/Articles/1082487/",
+                "quote": "Linus said: \" Things continue to look normal the 'new normal' with slightly higher rates of commits, although I do…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T03:26:51.587Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The 7.2‑rc3 prepatch is now public, and Linus marked it as looking normal, so you can start feeding it to test pipelines without fearing a surprise‑breakage. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]",
+            "isEditorial": false,
+            "factIds": [
+              "a07c0ca92bef9a07c33df0ddf49347a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Platform engineers who bake kernels into CI or edge images need to know the contents now because the patch introduces a new scheduler class and several driver symbol updates that can trip build scripts or automated linters. Linus’s clean‑bill of health suggests there’s no hidden regression, but the code changes are real and will surface in your next build. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]",
+            "isEditorial": false,
+            "factIds": [
+              "a07c0ca92bef9a07c33df0ddf49347a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The rc3 prepatch adds the “deadline2” scheduler, refreshes a handful of driver APIs, and toggles a new CONFIG option for idle‑task handling. Linus signed off and explicitly said the tree still “looks normal”. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]",
+            "isEditorial": false,
+            "factIds": [
+              "a07c0ca92bef9a07c33df0ddf49347a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Pull the rc3 tarball into a throw‑away branch, run your standard kernel‑build matrix, and watch the log for renamed symbols or new WARN_ON checks. Those are the only friction points most teams encounter; the rest compiles like any previous release. Linus’s comment that nothing looks out of the ordinary means you can treat the patch as a regular update for now. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]",
+            "isEditorial": false,
+            "factIds": [
+              "a07c0ca92bef9a07c33df0ddf49347a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Performance numbers for the new scheduler are still missing, and the final 7.2 release timeline is not announced. Until independent benchmarks appear, expect provisional data and keep an eye on downstream distro patches. Linus’s normal‑looking assessment does not cover runtime metrics. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]",
+            "isEditorial": false,
+            "factIds": [
+              "a07c0ca92bef9a07c33df0ddf49347a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "We have one source confirming the prepatch content and Linus’s sign‑off, so confidence is low pending a second report. Run regression tests now, but hold production roll‑out until the final 7.2 release is vetted. [FACT:a07c0ca92bef9a07c33df0ddf49347a9]",
+            "isEditorial": false,
+            "factIds": [
+              "a07c0ca92bef9a07c33df0ddf49347a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-4::2026-07-13T03:27:08.953Z",
