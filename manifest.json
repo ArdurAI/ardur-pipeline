@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-13T06:00:00.000Z",
-    "windowStart": "2026-07-13T06:00:00.000Z",
-    "windowEnd": "2026-07-13T12:00:00.000Z"
+    "id": "2026-07-13T12:00:00.000Z",
+    "windowStart": "2026-07-13T12:00:00.000Z",
+    "windowEnd": "2026-07-13T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-13T07:26:02.609Z",
-  "nextRefreshAt": "2026-07-13T12:00:00.000Z",
+  "publishedAt": "2026-07-13T14:44:48.407Z",
+  "nextRefreshAt": "2026-07-13T18:00:00.000Z",
   "runIds": {
-    "aggregation": "a01a3e2a-d756-4391-a9fe-27055089ae38",
-    "ranking": "rank-ce30ed32",
-    "top10": "top10:2026-07-13T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-13T06:00:00.000Z-2026-07-13T07:26:19.741Z"
+    "aggregation": "67ca1cc2-cbec-4a58-b1ad-f04c5857d094",
+    "ranking": "rank-5b0178fb",
+    "top10": "top10:2026-07-13T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-13T12:00:00.000Z-2026-07-13T14:45:02.591Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-13T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-13T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-13T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-13T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-13T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-13T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 66,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1195,
+      "count": 1175,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE5JTS00Qi1UclZXNlMxTVdPYnE1cERrc08tSXhMNm16WWNaUEl2VXhfNVRZYVFnVUFjdG1lQ1VOVERSbkc0a2NuWko5VEFVQjViaS1LVnozbmZ4UzVsc01wOEMycVQ?oc=5",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1048,
+      "count": 1292,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] fetch budget exhausted (30) — 29 of 35 URLs fetched for this cluster",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:38508: Moderate: libreoffice security update"
+        "headline": "RHSA-2026:38901: Important: perl-DBI:1.641 security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:38487: Important: xorg-x11-server security update"
+        "headline": "RHSA-2026:38810: Important: xorg-x11-server-Xwayland security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Apple’s ‘Thermonuclear’ Response to the OpenAI Threat"
+        "headline": "Anthropic is bringing Claude Cowork to mobile and web"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:38513: Important: perl-DBI security update"
+        "headline": "RHSA-2026:38805: Moderate: openssl security update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:38514: Important: plexus-utils security update"
+        "topic": "ai",
+        "headline": "Apple's lawsuit puts OpenAI's AI hardware dream under scrutiny"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Claude Cowork&039;s biggest use case is the mundane office work nobody wants to own, Anthropic says"
+        "headline": "Apple sues OpenAI, former employees over alleged trade secret theft tied to AI hardware"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Robot AI Model Supports Multiple Platforms"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.18.0"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "shot-scraper 1.11"
+        "topic": "security",
+        "headline": "Why cloud security is mission-critical for federal civilian and defense agencies"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Efficiently manage host content with Red Hat Satellite&039;s multi-CV"
+        "topic": "kubernetes",
+        "headline": "v2.9.2"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "sqlite-utils 4.1.1"
+        "topic": "platform",
+        "headline": "Security updates for Monday"
       }
     ],
     "articleCount": 0
