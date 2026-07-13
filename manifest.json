@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-13T00:00:00.000Z",
-    "windowStart": "2026-07-13T00:00:00.000Z",
-    "windowEnd": "2026-07-13T06:00:00.000Z"
+    "id": "2026-07-13T06:00:00.000Z",
+    "windowStart": "2026-07-13T06:00:00.000Z",
+    "windowEnd": "2026-07-13T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-13T03:26:51.401Z",
-  "nextRefreshAt": "2026-07-13T06:00:00.000Z",
+  "publishedAt": "2026-07-13T07:26:02.609Z",
+  "nextRefreshAt": "2026-07-13T12:00:00.000Z",
   "runIds": {
-    "aggregation": "83d57460-9682-4ded-a2a7-aea910c03fb3",
-    "ranking": "rank-eef392b3",
-    "top10": "top10:2026-07-13T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-13T00:00:00.000Z-2026-07-13T03:27:08.953Z"
+    "aggregation": "a01a3e2a-d756-4391-a9fe-27055089ae38",
+    "ranking": "rank-ce30ed32",
+    "top10": "top10:2026-07-13T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-13T06:00:00.000Z-2026-07-13T07:26:19.741Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-13T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-13T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-13T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-13T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-13T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-13T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,6 +31,15 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1195,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE5JTS00Qi1UclZXNlMxTVdPYnE1cERrc08tSXhMNm16WWNaUEl2VXhfNVRZYVFnVUFjdG1lQ1VOVERSbkc0a2NuWko5VEFVQjViaS1LVnozbmZ4UzVsc01wOEMycVQ?oc=5",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "blocked-fetch",
       "count": 6,
       "sample": [
@@ -40,48 +49,39 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1253,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE5JTS00Qi1UclZXNlMxTVdPYnE1cERrc08tSXhMNm16WWNaUEl2VXhfNVRZYVFnVUFjdG1lQ1VOVERSbkc0a2NuWko5VEFVQjViaS1LVnozbmZ4UzVsc01wOEMycVQ?oc=5",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1040,
+      "count": 1048,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] fetch budget exhausted (30) — 29 of 35 URLs fetched for this cluster",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Apple’s ‘Thermonuclear’ Response to the OpenAI Threat"
+        "topic": "security",
+        "headline": "RHSA-2026:38508: Moderate: libreoffice security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Palantir CEO has a blunt verdict on OpenAI and Anthropic"
+        "topic": "security",
+        "headline": "RHSA-2026:38487: Important: xorg-x11-server security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "shot-scraper 1.11"
+        "headline": "Apple’s ‘Thermonuclear’ Response to the OpenAI Threat"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "sqlite-utils 4.1.1"
+        "topic": "security",
+        "headline": "RHSA-2026:38513: Important: perl-DBI security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI&039;s GPT-5.6 Sol Ultra reportedly solves a 50-year-old math problem in under an hour"
+        "topic": "security",
+        "headline": "RHSA-2026:38514: Important: plexus-utils security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "ISC Stormcast For Monday, July 13th, 2026 https://isc.sans.edu/podcastdetail/10004, Mon, Jul 13th"
+        "topic": "ai",
+        "headline": "Claude Cowork&039;s biggest use case is the mundane office work nobody wants to own, Anthropic says"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Directly Responsible Individuals DRI"
+        "topic": "ai",
+        "headline": "Robot AI Model Supports Multiple Platforms"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Australian developers are losing half their day, most leaders have no idea"
+        "topic": "ai",
+        "headline": "shot-scraper 1.11"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Dry Box Adds Cutting Edge Delivery Equipment To Fit Shipping Containers in Tight Spaces"
+        "topic": "platform",
+        "headline": "Efficiently manage host content with Red Hat Satellite&039;s multi-CV"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Kernel prepatch 7.2-rc3"
+        "topic": "models",
+        "headline": "sqlite-utils 4.1.1"
       }
     ],
     "articleCount": 0

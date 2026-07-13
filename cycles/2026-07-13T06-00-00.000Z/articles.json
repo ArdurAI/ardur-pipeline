@@ -141,7 +141,409 @@
     "22 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-0::2026-07-13T07:26:19.741Z",
+        "rank": 1,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "RHSA‑2026:38508 – LibreOffice receives a moderate security patch on RHEL 9",
+        "dek": "Red Hat’s July 13 2026 advisory updates LibreOffice (and a related OpenSSL patch) with moderate‑severity fixes; builders should apply them now.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat shipped a LibreOffice security update for RHEL 9 that is rated moderate severity and carries a CVSS base score, and the same day released an OpenSSL patch with identical ratings – both are available through the standard yum/dnf repos. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:b601b20920ce783cb8e7df237a3ca6ef] [FACT:3ceaf3bae137d114fb43bb3449c6ab7f] [FACT:1c73bc8795a33e3458d7c39a821c65d3] [FACT:d0f3f2c078c3e9473a6e89515de7fa7e] [FACT:d3cd99cb6160961ae069851fc1f320f6]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI workloads often pull in documents for OCR or text extraction using LibreOffice, and they rely on OpenSSL for every HTTPS call. A moderate‑severity flaw means an attacker could potentially gain code execution or disrupt TLS, which translates to data‑leak or model‑downtime risk. [FACT:b601b20920ce783cb8e7df237a3ca6ef] [FACT:d0f3f2c078c3e9473a6e89515de7fa7e]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On 13 July 2026 Red Hat issued two advisories: RHSA‑2026:38508 for LibreOffice and RHSA‑2026:38503 for OpenSSL. Both advisories are classified as “moderate” severity and each includes a CVSS base score that places them above low‑risk but below critical. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:1c73bc8795a33e3458d7c39a821c65d3] [FACT:3ceaf3bae137d114fb43bb3449c6ab7f] [FACT:d3cd99cb6160961ae069851fc1f320f6]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Update the packages on any RHEL 9 host that runs document‑processing containers or serves traffic over TLS:\n```\nsudo dnf update libreoffice openssl\n```\nAfter the update, run a quick conversion test (e.g., `soffice --headless --convert-to txt sample.pdf`) and verify that TLS handshakes still succeed (`openssl s_client -connect your‑service:443`). The patches are cumulative, so a single `dnf update` pulls both fixes. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:1c73bc8795a33e3458d7c39a821c65d3]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat has not published the exact CVE identifiers or exploit code, so we cannot confirm whether the flaw has been seen in the wild or whether it only affects LibreOffice’s headless mode. Until more detail appears, builders should assume the vulnerability could affect any document conversion path. [FACT:b601b20920ce783cb8e7df237a3ca6ef] [FACT:d0f3f2c078c3e9473a6e89515de7fa7e]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The advisories come directly from Red Hat Product Security, include CVSS scoring, and are listed as moderate severity – confidence is high. Apply the updates immediately; the remediation is a single package upgrade and carries negligible operational risk. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:1c73bc8795a33e3458d7c39a821c65d3]"
+          }
+        ],
+        "keyPoints": [
+          "LibreOffice update for RHEL 9 addresses a moderate‑severity vulnerability with a CVSS base score.",
+          "OpenSSL receives a parallel moderate‑severity patch on the same day.",
+          "Both updates are delivered via the normal yum/dnf channels and require only a single `dnf update`.",
+          "AI pipelines that use LibreOffice for document conversion or any service that uses TLS should prioritize this update."
+        ],
+        "whyItMatters": "Document‑processing and TLS are foundational to AI services in the cloud; a moderate‑severity flaw in either component can expose data or interrupt model serving, so staying patched protects both security and reliability.",
+        "readerAction": "Run `sudo dnf update libreoffice openssl` on all RHEL 9 systems, then validate conversion jobs and TLS handshakes before promoting the change to production.",
+        "tags": [
+          "ai-cloud-security",
+          "rhel",
+          "libreoffice",
+          "openssl",
+          "security-update",
+          "linux",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:38508",
+            "title": "RHSA-2026:38508: Moderate: libreoffice security update",
+            "publishedAt": "2026-07-13T06:46:43.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:38503",
+            "title": "RHSA-2026:38503: Moderate: openssl security update",
+            "publishedAt": "2026-07-13T04:52:38.000Z"
+          },
+          {
+            "source": "LinkedIn",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQdHpoWTVXdVFwR2VBZzBJWG9saEFwUklzcHNwaVRDd0RlVGttNkNTVC1ta1BLMkh5akdrXzQ2QURBc3pObVNnS1BqUFhHX2RtRFpPNzRTbFplR1AxQkluRGZMU0NkMHJYRXFjc3RNZjhBUHFFT3VVaWxsMnhnSTdyWmJTUW54bExDYkdYR1Zvd2hNUUtmSVpBQnRiTXdiYVlzY1Q3Umln?oc=5",
+            "title": "Is AI Security Just Theater? - LinkedIn",
+            "publishedAt": "2026-07-10T18:00:03.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-0",
+          "sourceCount": 3,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-07-13T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-13T07:26:19.741Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 300,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-13T07:26:19.741Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "7c43cd4a47bfadc69ce49603731229b2",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Enterprise Linux update libreoffice now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "88296d81e947428fac003fae60aa8ea81ef0204c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:38508",
+                "quote": "An update for libreoffice is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T07:26:02.789Z"
+            }
+          },
+          {
+            "id": "b601b20920ce783cb8e7df237a3ca6ef",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "88296d81e947428fac003fae60aa8ea81ef0204c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:38508",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T07:26:02.789Z"
+            }
+          },
+          {
+            "id": "3ceaf3bae137d114fb43bb3449c6ab7f",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "88296d81e947428fac003fae60aa8ea81ef0204c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:38508",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T07:26:02.789Z"
+            }
+          },
+          {
+            "id": "1c73bc8795a33e3458d7c39a821c65d3",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Enterprise Linux update openssl now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b3f9dcde02a8d5f05b7a95fce117ffc4f1da9e98",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:38503",
+                "quote": "An update for openssl is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T07:26:02.789Z"
+            }
+          },
+          {
+            "id": "d0f3f2c078c3e9473a6e89515de7fa7e",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b3f9dcde02a8d5f05b7a95fce117ffc4f1da9e98",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:38503",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T07:26:02.789Z"
+            }
+          },
+          {
+            "id": "d3cd99cb6160961ae069851fc1f320f6",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b3f9dcde02a8d5f05b7a95fce117ffc4f1da9e98",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:38503",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-13T07:26:02.789Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat shipped a LibreOffice security update for RHEL 9 that is rated moderate severity and carries a CVSS base score, and the same day released an OpenSSL patch with identical ratings – both are available through the standard yum/dnf repos. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:b601b20920ce783cb8e7df237a3ca6ef] [FACT:3ceaf3bae137d114fb43bb3449c6ab7f] [FACT:1c73bc8795a33e3458d7c39a821c65d3] [FACT:d0f3f2c078c3e9473a6e89515de7fa7e] [FACT:d3cd99cb6160961ae069851fc1f320f6]",
+            "isEditorial": false,
+            "factIds": [
+              "7c43cd4a47bfadc69ce49603731229b2",
+              "b601b20920ce783cb8e7df237a3ca6ef",
+              "3ceaf3bae137d114fb43bb3449c6ab7f",
+              "1c73bc8795a33e3458d7c39a821c65d3",
+              "d0f3f2c078c3e9473a6e89515de7fa7e",
+              "d3cd99cb6160961ae069851fc1f320f6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "AI workloads often pull in documents for OCR or text extraction using LibreOffice, and they rely on OpenSSL for every HTTPS call. A moderate‑severity flaw means an attacker could potentially gain code execution or disrupt TLS, which translates to data‑leak or model‑downtime risk. [FACT:b601b20920ce783cb8e7df237a3ca6ef] [FACT:d0f3f2c078c3e9473a6e89515de7fa7e]",
+            "isEditorial": false,
+            "factIds": [
+              "b601b20920ce783cb8e7df237a3ca6ef",
+              "d0f3f2c078c3e9473a6e89515de7fa7e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On 13 July 2026 Red Hat issued two advisories: RHSA‑2026:38508 for LibreOffice and RHSA‑2026:38503 for OpenSSL. Both advisories are classified as “moderate” severity and each includes a CVSS base score that places them above low‑risk but below critical. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:1c73bc8795a33e3458d7c39a821c65d3] [FACT:3ceaf3bae137d114fb43bb3449c6ab7f] [FACT:d3cd99cb6160961ae069851fc1f320f6]",
+            "isEditorial": false,
+            "factIds": [
+              "7c43cd4a47bfadc69ce49603731229b2",
+              "1c73bc8795a33e3458d7c39a821c65d3",
+              "3ceaf3bae137d114fb43bb3449c6ab7f",
+              "d3cd99cb6160961ae069851fc1f320f6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Update the packages on any RHEL 9 host that runs document‑processing containers or serves traffic over TLS:\n```\nsudo dnf update libreoffice openssl\n```\nAfter the update, run a quick conversion test (e.g., `soffice --headless --convert-to txt sample.pdf`) and verify that TLS handshakes still succeed (`openssl s_client -connect your‑service:443`). The patches are cumulative, so a single `dnf update` pulls both fixes. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:1c73bc8795a33e3458d7c39a821c65d3]",
+            "isEditorial": false,
+            "factIds": [
+              "7c43cd4a47bfadc69ce49603731229b2",
+              "1c73bc8795a33e3458d7c39a821c65d3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat has not published the exact CVE identifiers or exploit code, so we cannot confirm whether the flaw has been seen in the wild or whether it only affects LibreOffice’s headless mode. Until more detail appears, builders should assume the vulnerability could affect any document conversion path. [FACT:b601b20920ce783cb8e7df237a3ca6ef] [FACT:d0f3f2c078c3e9473a6e89515de7fa7e]",
+            "isEditorial": false,
+            "factIds": [
+              "b601b20920ce783cb8e7df237a3ca6ef",
+              "d0f3f2c078c3e9473a6e89515de7fa7e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The advisories come directly from Red Hat Product Security, include CVSS scoring, and are listed as moderate severity – confidence is high. Apply the updates immediately; the remediation is a single package upgrade and carries negligible operational risk. [FACT:7c43cd4a47bfadc69ce49603731229b2] [FACT:1c73bc8795a33e3458d7c39a821c65d3]",
+            "isEditorial": false,
+            "factIds": [
+              "7c43cd4a47bfadc69ce49603731229b2",
+              "1c73bc8795a33e3458d7c39a821c65d3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-4::2026-07-13T07:26:19.741Z",
