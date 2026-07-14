@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-13T18:00:00.000Z",
-    "windowStart": "2026-07-13T18:00:00.000Z",
-    "windowEnd": "2026-07-14T00:00:00.000Z"
+    "id": "2026-07-14T00:00:00.000Z",
+    "windowStart": "2026-07-14T00:00:00.000Z",
+    "windowEnd": "2026-07-14T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-13T19:40:55.875Z",
-  "nextRefreshAt": "2026-07-14T00:00:00.000Z",
+  "publishedAt": "2026-07-14T02:49:58.335Z",
+  "nextRefreshAt": "2026-07-14T06:00:00.000Z",
   "runIds": {
-    "aggregation": "a1c9866f-e5be-46a2-b0c2-50647281e675",
-    "ranking": "rank-f6ba2558",
-    "top10": "top10:2026-07-13T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-13T18:00:00.000Z-2026-07-13T19:41:07.498Z"
+    "aggregation": "84d6857c-b53e-4193-b7aa-e41e5e3c3400",
+    "ranking": "rank-9cc890b7",
+    "top10": "top10:2026-07-14T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-14T00:00:00.000Z-2026-07-14T02:50:10.489Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-13T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-13T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-13T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-14T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-14T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-14T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 66,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1173,
+      "count": 1225,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMie0FVX3lxTE9mbS04bHhKejRwZ25tckdHeGxrMVh0VXVxdlVDNG9uZG1rZUlkMi1Yc1pYR251a25rWDRSWnFHN2dTMkRxaUpKU1diSjZ0Z2IzemhNSmxxRThzaDdfOHlnUDBmb2JTVXdZZ2g5N2piU1RRZE1PS2cxNllhWQ?oc=5",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 7 distinct domains < floor 20",
         "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1434,
+      "count": 1495,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 20,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:39012: Important: compat-openssl11 security update"
+        "topic": "ai",
+        "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:39006: Moderate: freeipmi security update"
+        "topic": "ai",
+        "headline": "These are the wildest claims in Apple's lawsuit against OpenAI"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:38995: Important: go-toolset:rhel8 security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:39025: Important: openexr security update"
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:39006: Moderate: freeipmi security update"
+      },
+      {
+        "rank": 5,
+        "topic": "platform",
+        "headline": "Ruby 4.0.6 Released"
+      },
+      {
+        "rank": 6,
+        "topic": "models",
+        "headline": "Google's LiteRT.js Enables On-Device AI Inference in Web Browsers"
+      },
+      {
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "Google open-sources k8s-aibom for live AI workload audits"
+      },
+      {
+        "rank": 8,
         "topic": "ai",
         "headline": "Launching UI for generative AI inference recommendations in Amazon SageMaker AI"
       },
       {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:38810: Important: xorg-x11-server-Xwayland security update"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Reading Between the Apple v. OpenAI Lawsuit Lines"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI&039;s new prompting guide tells users to stop overthinking and start with the result"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "Next.js Security Release and Our Next Patch Release"
-      },
-      {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.10.1"
+        "topic": "security",
+        "headline": "CISA warns of actively exploited RCE flaws in Joomla extensions"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.9.1"
+        "headline": "Prefect just bought Dagster, another big Airflow rival — and it&8217;s not a data pipeline story"
       }
     ],
     "articleCount": 0
