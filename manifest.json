@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-14T12:00:00.000Z",
-    "windowStart": "2026-07-14T12:00:00.000Z",
-    "windowEnd": "2026-07-14T18:00:00.000Z"
+    "id": "2026-07-14T18:00:00.000Z",
+    "windowStart": "2026-07-14T18:00:00.000Z",
+    "windowEnd": "2026-07-15T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-14T13:54:54.540Z",
-  "nextRefreshAt": "2026-07-14T18:00:00.000Z",
+  "publishedAt": "2026-07-14T19:26:14.239Z",
+  "nextRefreshAt": "2026-07-15T00:00:00.000Z",
   "runIds": {
-    "aggregation": "0d0be38b-15fc-465e-bc93-a8b7fbc3071c",
-    "ranking": "rank-e5cfc826",
-    "top10": "top10:2026-07-14T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-14T12:00:00.000Z-2026-07-14T13:55:06.045Z"
+    "aggregation": "4ecc4b90-693d-46b9-a95f-b16c0f652fdd",
+    "ranking": "rank-6a6620b0",
+    "top10": "top10:2026-07-14T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-14T18:00:00.000Z-2026-07-14T19:26:26.750Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-14T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-14T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-14T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-14T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-14T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-14T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1371,
+      "count": 1511,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1617,
+      "count": 1793,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,32 +104,32 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:39183: Important: python3.12 security update"
+        "headline": "Microsoft Patch Tuesday July 2026"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Next.js Security Release and Our Next Patch Release"
+        "topic": "security",
+        "headline": "Microsoft Patches a Record 570 Security Flaws"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:39119: Moderate: libreoffice security update"
+        "headline": "RHSA-2026:39428: Important: thunderbird security update"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock"
+        "headline": "How to manage AI investments in the agentic era"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Vulnerability in FIFA’s Network"
+        "topic": "platform",
+        "headline": "Next.js Security Release and Our Next Patch Release"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "CVE-2026-55040: Microsoft SharePoint JWT Token Authentication Bypass FIXED"
+        "headline": "RHSA-2026:39119: Moderate: libreoffice security update"
       },
       {
         "rank": 7,
@@ -138,18 +138,18 @@
       },
       {
         "rank": 8,
+        "topic": "ai",
+        "headline": "Anthropic opens Claude for Teachers with a promise not to train models on student data"
+      },
+      {
+        "rank": 9,
         "topic": "platform",
         "headline": "What&039;s new for developers in Red Hat OpenShift 4.22"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "topic": "kubernetes",
         "headline": "v1.53.0"
-      },
-      {
-        "rank": 10,
-        "topic": "ai",
-        "headline": "Apple’s accusations against OpenAI are the stuff of AI nightmares"
       }
     ],
     "articleCount": 0
