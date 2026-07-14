@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-14T00:00:00.000Z",
-    "windowStart": "2026-07-14T00:00:00.000Z",
-    "windowEnd": "2026-07-14T06:00:00.000Z"
+    "id": "2026-07-14T06:00:00.000Z",
+    "windowStart": "2026-07-14T06:00:00.000Z",
+    "windowEnd": "2026-07-14T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-14T02:49:58.335Z",
-  "nextRefreshAt": "2026-07-14T06:00:00.000Z",
+  "publishedAt": "2026-07-14T06:15:51.362Z",
+  "nextRefreshAt": "2026-07-14T12:00:00.000Z",
   "runIds": {
-    "aggregation": "84d6857c-b53e-4193-b7aa-e41e5e3c3400",
-    "ranking": "rank-9cc890b7",
-    "top10": "top10:2026-07-14T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-14T00:00:00.000Z-2026-07-14T02:50:10.489Z"
+    "aggregation": "5222c20d-30d1-427f-8b59-f87bca5507ff",
+    "ranking": "rank-9cc6d6b6",
+    "top10": "top10:2026-07-14T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-14T06:00:00.000Z-2026-07-14T06:16:09.395Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-14T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-14T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-14T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-14T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-14T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-14T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1225,
+      "count": 1210,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1495,
+      "count": 1486,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -79,9 +79,9 @@
       "category": "copyright-gate",
       "count": 26,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock"
+        "topic": "security",
+        "headline": "RHSA-2026:39082: Important: kernel-rt update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "These are the wildest claims in Apple's lawsuit against OpenAI"
+        "topic": "security",
+        "headline": "RHSA-2026:39025: Important: openexr security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:39025: Important: openexr security update"
+        "topic": "ai",
+        "headline": "These are the wildest claims in Apple's lawsuit against OpenAI"
       },
       {
         "rank": 4,
@@ -133,23 +133,23 @@
       },
       {
         "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "Weak Security Continues to Fuel Russian Cyberattacks"
+      },
+      {
+        "rank": 9,
         "topic": "kubernetes",
         "headline": "Google open-sources k8s-aibom for live AI workload audits"
       },
       {
-        "rank": 8,
+        "rank": 10,
         "topic": "ai",
         "headline": "Launching UI for generative AI inference recommendations in Amazon SageMaker AI"
-      },
-      {
-        "rank": 9,
-        "topic": "security",
-        "headline": "CISA warns of actively exploited RCE flaws in Joomla extensions"
-      },
-      {
-        "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Prefect just bought Dagster, another big Airflow rival — and it&8217;s not a data pipeline story"
       }
     ],
     "articleCount": 0
