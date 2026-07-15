@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-14T18:00:00.000Z",
-    "windowStart": "2026-07-14T18:00:00.000Z",
-    "windowEnd": "2026-07-15T00:00:00.000Z"
+    "id": "2026-07-15T00:00:00.000Z",
+    "windowStart": "2026-07-15T00:00:00.000Z",
+    "windowEnd": "2026-07-15T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-14T19:26:14.239Z",
-  "nextRefreshAt": "2026-07-15T00:00:00.000Z",
+  "publishedAt": "2026-07-15T02:48:42.290Z",
+  "nextRefreshAt": "2026-07-15T06:00:00.000Z",
   "runIds": {
-    "aggregation": "4ecc4b90-693d-46b9-a95f-b16c0f652fdd",
-    "ranking": "rank-6a6620b0",
-    "top10": "top10:2026-07-14T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-14T18:00:00.000Z-2026-07-14T19:26:26.750Z"
+    "aggregation": "88b6bb1a-43df-4150-878e-2ebce0a57d29",
+    "ranking": "rank-c8d09784",
+    "top10": "top10:2026-07-15T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-15T00:00:00.000Z-2026-07-15T02:48:55.490Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-14T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-14T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-14T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-15T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-15T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-15T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1511,
+      "count": 1468,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1793,
+      "count": 1756,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,18 +68,18 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "Microsoft Patch Tuesday July 2026"
+        "headline": "Patch Tuesday"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Microsoft Patches a Record 570 Security Flaws"
+        "headline": "RHSA-2026:39576: Important: cifs-utils security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:39428: Important: thunderbird security update"
+        "topic": "ai",
+        "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "How to manage AI investments in the agentic era"
+        "topic": "security",
+        "headline": "Versinetic Launches EV Charger Cloud Security Tool"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Next.js Security Release and Our Next Patch Release"
+        "topic": "security",
+        "headline": "RHSA-2026:39315: Moderate: libsolv security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:39119: Moderate: libreoffice security update"
+        "topic": "ai",
+        "headline": "How data science teams use ChatGPT Work"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
+        "topic": "ai",
+        "headline": "OpenAI pushes back on Apple trade secret lawsuit"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic opens Claude for Teachers with a promise not to train models on student data"
+        "topic": "kubernetes",
+        "headline": "v1.39.0"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "What&039;s new for developers in Red Hat OpenShift 4.22"
+        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.53.0"
+        "topic": "ai",
+        "headline": "How to manage AI investments in the agentic era"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
