@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-15T00:00:00.000Z",
-    "windowStart": "2026-07-15T00:00:00.000Z",
-    "windowEnd": "2026-07-15T06:00:00.000Z"
+    "id": "2026-07-15T06:00:00.000Z",
+    "windowStart": "2026-07-15T06:00:00.000Z",
+    "windowEnd": "2026-07-15T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-15T02:48:42.290Z",
-  "nextRefreshAt": "2026-07-15T06:00:00.000Z",
+  "publishedAt": "2026-07-15T08:28:47.756Z",
+  "nextRefreshAt": "2026-07-15T12:00:00.000Z",
   "runIds": {
-    "aggregation": "88b6bb1a-43df-4150-878e-2ebce0a57d29",
-    "ranking": "rank-c8d09784",
-    "top10": "top10:2026-07-15T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-15T00:00:00.000Z-2026-07-15T02:48:55.490Z"
+    "aggregation": "3e64bab3-6ce1-4750-be06-4bc76e4f7b29",
+    "ranking": "rank-f29070b7",
+    "top10": "top10:2026-07-15T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-15T06:00:00.000Z-2026-07-15T08:29:01.918Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-15T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-15T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-15T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-15T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-15T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-15T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1468,
+      "count": 1341,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
         "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1756,
+      "count": 1614,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 24,
       "sample": [
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 22,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -109,49 +109,49 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:39576: Important: cifs-utils security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:39706: Important: thunderbird security update"
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "Microsoft Patches a Record 570 Security Flaws"
+      },
+      {
+        "rank": 4,
         "topic": "ai",
         "headline": "OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock"
       },
       {
-        "rank": 4,
-        "topic": "security",
-        "headline": "Versinetic Launches EV Charger Cloud Security Tool"
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Introducing Claude for Teachers"
       },
       {
-        "rank": 5,
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Google open-sources k8s-aibom to detect shadow AI"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "RHSA-2026:39315: Moderate: libsolv security update"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "How data science teams use ChatGPT Work"
+        "rank": 8,
+        "topic": "platform",
+        "headline": "Run Claude Code locally with vLLM and OpenShift AI"
       },
       {
-        "rank": 7,
+        "rank": 9,
         "topic": "ai",
         "headline": "OpenAI pushes back on Apple trade secret lawsuit"
       },
       {
-        "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.39.0"
-      },
-      {
-        "rank": 9,
-        "topic": "platform",
-        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
-      },
-      {
         "rank": 10,
-        "topic": "ai",
-        "headline": "How to manage AI investments in the agentic era"
+        "topic": "platform",
+        "headline": "Verified boot in automotive with AutoSD"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
