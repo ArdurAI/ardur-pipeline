@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-15T18:00:00.000Z",
-    "windowStart": "2026-07-15T18:00:00.000Z",
-    "windowEnd": "2026-07-16T00:00:00.000Z"
+    "id": "2026-07-16T00:00:00.000Z",
+    "windowStart": "2026-07-16T00:00:00.000Z",
+    "windowEnd": "2026-07-16T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-15T19:18:33.477Z",
-  "nextRefreshAt": "2026-07-16T00:00:00.000Z",
+  "publishedAt": "2026-07-16T02:55:04.075Z",
+  "nextRefreshAt": "2026-07-16T06:00:00.000Z",
   "runIds": {
-    "aggregation": "09d5ce4b-9f1d-445c-b783-bff36feebf66",
-    "ranking": "rank-6bb86d13",
-    "top10": "top10:2026-07-15T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-15T18:00:00.000Z-2026-07-15T19:18:52.430Z"
+    "aggregation": "4e6628bf-e7d8-4c67-8b2c-f855afc4f9c8",
+    "ranking": "rank-a6c5599e",
+    "top10": "top10:2026-07-16T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-16T00:00:00.000Z-2026-07-16T02:55:24.357Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-15T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-15T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-15T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-16T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-16T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-16T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1542,
+      "count": 1426,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiUEFVX3lxTE80bDFjSjhhUTFVd0V5MnFGNE9BTVYxWGNUSzA5eWZwYTI0eVFFOWFkZG5rY1BaWS16d19hZ0pFVDVpSXh6eVRqU2lsQ2ZTeUpV?oc=5"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1822,
+      "count": 1753,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:40082: Important: kernel security update"
+        "headline": "RHSA-2026:40425: Important: kernel update"
       },
       {
         "rank": 2,
@@ -114,44 +114,44 @@
       {
         "rank": 3,
         "topic": "security",
-        "headline": "TuxBot v3 Evolution Shows Signs of LLM-Assisted IoT Botnet Development"
+        "headline": "RHSA-2026:39976: Important: hplip security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Meet GPT-Red: an LLM super-hacker OpenAI built to make its models safer"
+        "topic": "security",
+        "headline": "RHSA-2026:39983: Moderate: kernel-rt security update"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic has a counter to OpenAI’s ‘reverse federalism’ play"
+      },
+      {
+        "rank": 6,
         "topic": "security",
         "headline": "Microsoft and Adobe Patch Tuesday, July 2026 Security Update Review"
       },
       {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "Monitor Apigee X API traffic and security with Datadog"
-      },
-      {
         "rank": 7,
-        "topic": "security",
-        "headline": "CVE-2026-15409, CVE-2026-15410: SonicWall SMA 1000 zero-day vulnerabilities exploited in the wild"
+        "topic": "ai",
+        "headline": "Mermaid to Unicode box art grok-mermaid"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Anthropic opens Claude for Teachers with a promise not to train models on student data"
+        "headline": "Develop Lightweight USD Runtimes Faster with AI Agents"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Thinking Machines unveils Inkling, its first open model, after 18 months of stealth building"
+        "topic": "ai",
+        "headline": "xai-org/grok-build, now open source"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Anthropic Is Said to Plan IPO Investor Meetings as Listing Nears"
+        "topic": "models",
+        "headline": "Thinking Machines unveils Inkling, its first open model, after 18 months of stealth building"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
