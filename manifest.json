@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-16T12:00:00.000Z",
-    "windowStart": "2026-07-16T12:00:00.000Z",
-    "windowEnd": "2026-07-16T18:00:00.000Z"
+    "id": "2026-07-16T18:00:00.000Z",
+    "windowStart": "2026-07-16T18:00:00.000Z",
+    "windowEnd": "2026-07-17T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-16T14:03:36.294Z",
-  "nextRefreshAt": "2026-07-16T18:00:00.000Z",
+  "publishedAt": "2026-07-16T19:19:35.676Z",
+  "nextRefreshAt": "2026-07-17T00:00:00.000Z",
   "runIds": {
-    "aggregation": "bc2251f4-2f5a-49eb-80dd-89b0451bbfee",
-    "ranking": "rank-095a4d4d",
-    "top10": "top10:2026-07-16T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-16T12:00:00.000Z-2026-07-16T14:19:01.466Z"
+    "aggregation": "2f8b6a82-3473-437e-b88d-433c45e8b869",
+    "ranking": "rank-15ebebd6",
+    "top10": "top10:2026-07-16T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-16T18:00:00.000Z-2026-07-16T19:19:58.590Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-16T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-16T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-16T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-16T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-16T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-16T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1289,
+      "count": 1465,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1592,
+      "count": 1735,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:40895: Important: jackson-annotations, jackson-core, jackson-databind, jackson-jaxrs-providers, and jackson-modules-base security update"
+        "topic": "models",
+        "headline": "Inkling: Our open-weights model"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "The Developer Has Changed. So Should Developer Conferences"
+        "topic": "kubernetes",
+        "headline": "CNCF Strengthens Partnership with Broadcom as a Platinum Member to Advance AI-Ready Cloud Native Infrastructure"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Announcing Rust 1.97.1"
+        "topic": "security",
+        "headline": "RHSA-2026:41019: Important: Red Hat Edge Manager Version 1.1.3 Security Update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "CISA orders feds to patch actively exploited Oracle flaw by Saturday"
+        "topic": "models",
+        "headline": "Google Pushes AI Inference Out of the Cloud and Into the Browser"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "1Password and Anthropic Bring Secure Credential Access to Claude, Letting an AI Agent Use Approved Credentials Without Exposing the Secret to the Model"
+        "headline": "How Cars24 scales conversations and builds faster with OpenAI"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:36620: Important: OpenShift Container Platform 4.16.66 bug fix and security update"
+        "topic": "platform",
+        "headline": "AWS Continuum to Enable Agentic Code Security for Enterprises"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Nightmare Eclipse Drops &8216;LegacyHive&8217; Windows Zero-Day"
+        "topic": "ai",
+        "headline": "Integrating Context-Aware Video AI Agents Into Enterprise Workflows"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI&039;s first hardware product is a screenless AI speaker designed to feel alive"
+        "topic": "platform",
+        "headline": "The Developer Has Changed. So Should Developer Conferences"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Kubernetes won the container decade. Google&8217;s Agent Substrate wants the next one."
+        "topic": "platform",
+        "headline": "Announcing .NET Modernization for Beginners"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
+        "topic": "security",
+        "headline": "CISA orders feds to patch actively exploited Oracle flaw by Saturday"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
