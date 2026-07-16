@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-16T00:00:00.000Z",
-    "windowStart": "2026-07-16T00:00:00.000Z",
-    "windowEnd": "2026-07-16T06:00:00.000Z"
+    "id": "2026-07-16T06:00:00.000Z",
+    "windowStart": "2026-07-16T06:00:00.000Z",
+    "windowEnd": "2026-07-16T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-16T02:55:04.075Z",
-  "nextRefreshAt": "2026-07-16T06:00:00.000Z",
+  "publishedAt": "2026-07-16T06:23:07.017Z",
+  "nextRefreshAt": "2026-07-16T12:00:00.000Z",
   "runIds": {
-    "aggregation": "4e6628bf-e7d8-4c67-8b2c-f855afc4f9c8",
-    "ranking": "rank-a6c5599e",
-    "top10": "top10:2026-07-16T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-16T00:00:00.000Z-2026-07-16T02:55:24.357Z"
+    "aggregation": "1b53eb87-5d5d-46dc-8cd9-32c48c6a985c",
+    "ranking": "rank-d37fbe2c",
+    "top10": "top10:2026-07-16T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-16T06:00:00.000Z-2026-07-16T06:23:24.623Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-16T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-16T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-16T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-16T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-16T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-16T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1426,
+      "count": 1300,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1753,
+      "count": 1618,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -113,45 +113,45 @@
       },
       {
         "rank": 3,
+        "topic": "platform",
+        "headline": "Ruby 3.3.12 Released"
+      },
+      {
+        "rank": 4,
+        "topic": "platform",
+        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:39976: Important: hplip security update"
       },
       {
-        "rank": 4,
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Anthropic | History, Controversies, & Claude AI"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "RHSA-2026:39983: Moderate: kernel-rt security update"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic has a counter to OpenAI’s ‘reverse federalism’ play"
-      },
-      {
-        "rank": 6,
+        "rank": 8,
         "topic": "security",
         "headline": "Microsoft and Adobe Patch Tuesday, July 2026 Security Update Review"
       },
       {
-        "rank": 7,
+        "rank": 9,
         "topic": "ai",
         "headline": "Mermaid to Unicode box art grok-mermaid"
       },
       {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Develop Lightweight USD Runtimes Faster with AI Agents"
-      },
-      {
-        "rank": 9,
+        "rank": 10,
         "topic": "ai",
         "headline": "xai-org/grok-build, now open source"
-      },
-      {
-        "rank": 10,
-        "topic": "models",
-        "headline": "Thinking Machines unveils Inkling, its first open model, after 18 months of stealth building"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
