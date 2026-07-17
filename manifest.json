@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-17T12:00:00.000Z",
-    "windowStart": "2026-07-17T12:00:00.000Z",
-    "windowEnd": "2026-07-17T18:00:00.000Z"
+    "id": "2026-07-17T18:00:00.000Z",
+    "windowStart": "2026-07-17T18:00:00.000Z",
+    "windowEnd": "2026-07-18T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-17T13:48:07.101Z",
-  "nextRefreshAt": "2026-07-17T18:00:00.000Z",
+  "publishedAt": "2026-07-17T19:17:19.830Z",
+  "nextRefreshAt": "2026-07-18T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6ee46ffd-d8ae-44eb-84cd-adab71e9aa0e",
-    "ranking": "rank-7b46ec41",
-    "top10": "top10:2026-07-17T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-17T12:00:00.000Z-2026-07-17T13:48:28.789Z"
+    "aggregation": "1cfb623c-56d2-4cb3-b593-ad3375c0b301",
+    "ranking": "rank-6daa4e7f",
+    "top10": "top10:2026-07-17T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-17T18:00:00.000Z-2026-07-17T19:17:44.358Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-17T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-17T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-17T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-17T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-17T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-17T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1258,
+      "count": 1346,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,32 +54,32 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1486,
+      "count": 1598,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security updates for Friday"
-      },
-      {
-        "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:41234: Important: kernel-rt security update"
-      },
-      {
-        "rank": 3,
         "topic": "kubernetes",
         "headline": "CNCF Strengthens Partnership with Broadcom as a Platinum Member to Advance AI-Ready Cloud Native Infrastructure"
       },
       {
-        "rank": 4,
+        "rank": 2,
+        "topic": "platform",
+        "headline": "Security updates for Friday"
+      },
+      {
+        "rank": 3,
         "topic": "security",
-        "headline": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy"
+        "headline": "RHSA-2026:41235: Important: kernel security update"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "LLM cliché highlighter"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "China's Moonshot unveils world's largest open AI model, closing in on US rivals"
+        "headline": "Inkling: Our open-weights model"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "New Windows LegacyHive zero-day gives hackers admin privileges"
+        "headline": "CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Report: Apple Sends Legal Letters to Dozens of OpenAI Employees"
+        "headline": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Inkling: Our open-weights model"
+        "topic": "security",
+        "headline": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "CISA urges immediate action on actively exploited Fortinet flaws"
+        "topic": "ai",
+        "headline": "Apple targets dozens of OpenAI employees with legal letters"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "From intent to enforcement: Lessons from operating Kubernetes controllers at scale"
+        "headline": "Dapr Runtime v1.18.2-rc.3"
       }
     ],
     "articleCount": 0
