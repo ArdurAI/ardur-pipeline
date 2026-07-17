@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-17T00:00:00.000Z",
-    "windowStart": "2026-07-17T00:00:00.000Z",
-    "windowEnd": "2026-07-17T06:00:00.000Z"
+    "id": "2026-07-17T06:00:00.000Z",
+    "windowStart": "2026-07-17T06:00:00.000Z",
+    "windowEnd": "2026-07-17T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-17T02:57:29.200Z",
-  "nextRefreshAt": "2026-07-17T06:00:00.000Z",
+  "publishedAt": "2026-07-17T06:21:41.804Z",
+  "nextRefreshAt": "2026-07-17T12:00:00.000Z",
   "runIds": {
-    "aggregation": "b73ab535-b3fe-49eb-87aa-b5c02695d4b2",
-    "ranking": "rank-05ba8453",
-    "top10": "top10:2026-07-17T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-17T00:00:00.000Z-2026-07-17T02:57:49.919Z"
+    "aggregation": "21bd10fc-c0ee-41d2-a099-d5a7091d9f20",
+    "ranking": "rank-e1432867",
+    "top10": "top10:2026-07-17T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-17T06:00:00.000Z-2026-07-17T06:22:02.853Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-17T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-17T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-17T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-17T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-17T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-17T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1275,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1420,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiowFBVV95cUxPbExQVmpZSnZyRXRqNGJFb1VRcld1NVhuYk5uRlgyN0Z6S25KSUJlSGdIZHloZG95Mm1vcnBXMEw3RTdSOHFtUWcxMzh3LW0wRVBMU0JtZDdiZ1FLRmROUERuN0pQRE5aT3FTcGFrMUFFSmlRU0Vpd3NjdUJQaC1fSktSVkw2WktQZ2V4bkk1M2lRcUdfamN1RHZBNm90a1k0ZDRR?oc=5"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1672,
+      "count": 1524,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 6 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:41063: Important: kernel security update"
-      },
-      {
-        "rank": 2,
-        "topic": "models",
-        "headline": "Inkling: Our open-weights model"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Meet GPT-Red: an LLM super-hacker OpenAI built to make its models safer"
-      },
-      {
-        "rank": 4,
         "topic": "kubernetes",
         "headline": "CNCF Strengthens Partnership with Broadcom as a Platinum Member to Advance AI-Ready Cloud Native Infrastructure"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "China’s Moonshot unveils world’s largest open AI model, closing in on US rivals By Reuters"
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:41063: Important: kernel security update"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v1.2.8"
-      },
-      {
-        "rank": 7,
+        "rank": 3,
         "topic": "models",
-        "headline": "Google Pushes AI Inference Out of the Cloud and Into the Browser"
+        "headline": "Inkling: Our open-weights model"
       },
       {
-        "rank": 8,
+        "rank": 4,
+        "topic": "ai",
+        "headline": "China's Moonshot unveils world's largest open AI model, closing in on US rivals"
+      },
+      {
+        "rank": 5,
         "topic": "ai",
         "headline": "Anthropic Releases Teacher-Focused Version of Claude"
       },
       {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Zhipu AI shares slide over 20% after Moonshot unveils advanced AI model"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "China’s Moonshot Unveils Kimi K3, A 2.8-Trillion-Parameter AI Model"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "Okta OKTA Wins Partner Recognition For Identity Security Push In Cloud And AI"
+      },
+      {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Announcing .NET Modernization for Beginners"
+        "topic": "kubernetes",
+        "headline": "v1.2.8"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "CISA orders feds to patch actively exploited Oracle flaw by Saturday"
+        "topic": "platform",
+        "headline": "Google Cloud unveils AI security blueprint for GKE"
       }
     ],
-    "articleCount": 1
+    "articleCount": 2
   }
 }
