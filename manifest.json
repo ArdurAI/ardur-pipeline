@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-17T06:00:00.000Z",
-    "windowStart": "2026-07-17T06:00:00.000Z",
-    "windowEnd": "2026-07-17T12:00:00.000Z"
+    "id": "2026-07-17T12:00:00.000Z",
+    "windowStart": "2026-07-17T12:00:00.000Z",
+    "windowEnd": "2026-07-17T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-17T06:21:41.804Z",
-  "nextRefreshAt": "2026-07-17T12:00:00.000Z",
+  "publishedAt": "2026-07-17T13:48:07.101Z",
+  "nextRefreshAt": "2026-07-17T18:00:00.000Z",
   "runIds": {
-    "aggregation": "21bd10fc-c0ee-41d2-a099-d5a7091d9f20",
-    "ranking": "rank-e1432867",
-    "top10": "top10:2026-07-17T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-17T06:00:00.000Z-2026-07-17T06:22:02.853Z"
+    "aggregation": "6ee46ffd-d8ae-44eb-84cd-adab71e9aa0e",
+    "ranking": "rank-7b46ec41",
+    "top10": "top10:2026-07-17T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-17T12:00:00.000Z-2026-07-17T13:48:28.789Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-17T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-17T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-17T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-17T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-17T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-17T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1275,
+      "count": 1258,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1524,
+      "count": 1486,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 23,
       "sample": [
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 6 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "CNCF Strengthens Partnership with Broadcom as a Platinum Member to Advance AI-Ready Cloud Native Infrastructure"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:41063: Important: kernel security update"
+        "headline": "RHSA-2026:41234: Important: kernel-rt security update"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "Inkling: Our open-weights model"
+        "topic": "kubernetes",
+        "headline": "CNCF Strengthens Partnership with Broadcom as a Platinum Member to Advance AI-Ready Cloud Native Infrastructure"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "China's Moonshot unveils world's largest open AI model, closing in on US rivals"
+        "topic": "security",
+        "headline": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic Releases Teacher-Focused Version of Claude"
+        "headline": "China's Moonshot unveils world's largest open AI model, closing in on US rivals"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Zhipu AI shares slide over 20% after Moonshot unveils advanced AI model"
+        "topic": "security",
+        "headline": "New Windows LegacyHive zero-day gives hackers admin privileges"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "China’s Moonshot Unveils Kimi K3, A 2.8-Trillion-Parameter AI Model"
+        "headline": "Report: Apple Sends Legal Letters to Dozens of OpenAI Employees"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Okta OKTA Wins Partner Recognition For Identity Security Push In Cloud And AI"
+        "topic": "models",
+        "headline": "Inkling: Our open-weights model"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.2.8"
+        "topic": "security",
+        "headline": "CISA urges immediate action on actively exploited Fortinet flaws"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Google Cloud unveils AI security blueprint for GKE"
+        "topic": "kubernetes",
+        "headline": "From intent to enforcement: Lessons from operating Kubernetes controllers at scale"
       }
     ],
-    "articleCount": 2
+    "articleCount": 0
   }
 }
