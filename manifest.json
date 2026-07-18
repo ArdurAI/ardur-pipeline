@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-17T18:00:00.000Z",
-    "windowStart": "2026-07-17T18:00:00.000Z",
-    "windowEnd": "2026-07-18T00:00:00.000Z"
+    "id": "2026-07-18T00:00:00.000Z",
+    "windowStart": "2026-07-18T00:00:00.000Z",
+    "windowEnd": "2026-07-18T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-17T19:17:19.830Z",
-  "nextRefreshAt": "2026-07-18T00:00:00.000Z",
+  "publishedAt": "2026-07-18T02:50:13.480Z",
+  "nextRefreshAt": "2026-07-18T06:00:00.000Z",
   "runIds": {
-    "aggregation": "1cfb623c-56d2-4cb3-b593-ad3375c0b301",
-    "ranking": "rank-6daa4e7f",
-    "top10": "top10:2026-07-17T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-17T18:00:00.000Z-2026-07-17T19:17:44.358Z"
+    "aggregation": "eb39260a-93fe-4978-9742-a1b6e581daad",
+    "ranking": "rank-711e79a7",
+    "top10": "top10:2026-07-18T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-18T00:00:00.000Z-2026-07-18T02:50:31.767Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-17T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-17T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-17T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-18T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-18T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-18T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1346,
+      "count": 1231,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1598,
+      "count": 1492,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 20,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -113,45 +113,45 @@
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:41235: Important: kernel security update"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "LLM cliché highlighter"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Inkling: Our open-weights model"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild"
-      },
-      {
-        "rank": 7,
         "topic": "ai",
         "headline": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal"
       },
       {
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.18.2-rc.4"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:41235: Important: kernel security update"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild"
+      },
+      {
         "rank": 8,
+        "topic": "ai",
+        "headline": "Chinese AI model takes US tech industry by surprise with abilities rivaling Claude and ChatGPT"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy"
       },
       {
-        "rank": 9,
-        "topic": "ai",
-        "headline": "Apple targets dozens of OpenAI employees with legal letters"
-      },
-      {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.2-rc.3"
+        "topic": "ai",
+        "headline": "Apple sends legal letters to dozens of OpenAI defectors, report says"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
