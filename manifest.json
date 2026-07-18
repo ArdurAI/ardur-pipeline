@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-18T12:00:00.000Z",
-    "windowStart": "2026-07-18T12:00:00.000Z",
-    "windowEnd": "2026-07-18T18:00:00.000Z"
+    "id": "2026-07-18T18:00:00.000Z",
+    "windowStart": "2026-07-18T18:00:00.000Z",
+    "windowEnd": "2026-07-19T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-18T13:25:24.072Z",
-  "nextRefreshAt": "2026-07-18T18:00:00.000Z",
+  "publishedAt": "2026-07-18T19:11:27.031Z",
+  "nextRefreshAt": "2026-07-19T00:00:00.000Z",
   "runIds": {
-    "aggregation": "5bf19e43-1170-4977-a8a8-ab8812c38a5b",
-    "ranking": "rank-6d7c093c",
-    "top10": "top10:2026-07-18T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-18T12:00:00.000Z-2026-07-18T13:25:41.719Z"
+    "aggregation": "25a70eb8-71af-4bb7-a9f6-c5c0a855f18a",
+    "ranking": "rank-9efb6d59",
+    "top10": "top10:2026-07-18T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-18T18:00:00.000Z-2026-07-18T19:11:54.916Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-18T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-18T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-18T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-18T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-18T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-18T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1131,
+      "count": 1109,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-16] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1356,
+      "count": 1376,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -114,44 +114,44 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Musk open-sourced Grok Build to fight Anthropic. Anthropic pays him $1.25 billion a month."
+        "headline": "Meta Reportedly In Talks With Anthropic Over a $10 Billion AI Deal"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "GPT-5.6 is deleting user files when given full access, and OpenAI says it shouldn&039;t but did"
+        "topic": "platform",
+        "headline": "AI didn’t replace our security team — it multiplied it."
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Version Controlled SQL Database Dolt Releases 2.0 with Automatic Storage Cleanup and Compression"
+        "topic": "security",
+        "headline": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now"
       },
       {
         "rank": 6,
+        "topic": "platform",
+        "headline": "Platform engineering’s new job: serving environments at agent speed"
+      },
+      {
+        "rank": 7,
+        "topic": "platform",
+        "headline": "Pinecone Introduces Nexus Engine for Compiling Business Context into Structured Data for AI Agents"
+      },
+      {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "Musk open-sourced Grok Build to fight Anthropic. Anthropic pays him $1.25 billion a month."
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core"
       },
       {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.2-rc.4"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild"
-      },
-      {
-        "rank": 9,
-        "topic": "platform",
-        "headline": "Security updates for Friday"
-      },
-      {
         "rank": 10,
-        "topic": "security",
-        "headline": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy"
+        "topic": "platform",
+        "headline": "Version Controlled SQL Database Dolt Releases 2.0 with Automatic Storage Cleanup and Compression"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
