@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-18T00:00:00.000Z",
-    "windowStart": "2026-07-18T00:00:00.000Z",
-    "windowEnd": "2026-07-18T06:00:00.000Z"
+    "id": "2026-07-18T06:00:00.000Z",
+    "windowStart": "2026-07-18T06:00:00.000Z",
+    "windowEnd": "2026-07-18T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-18T02:50:13.480Z",
-  "nextRefreshAt": "2026-07-18T06:00:00.000Z",
+  "publishedAt": "2026-07-18T06:09:30.747Z",
+  "nextRefreshAt": "2026-07-18T12:00:00.000Z",
   "runIds": {
-    "aggregation": "eb39260a-93fe-4978-9742-a1b6e581daad",
-    "ranking": "rank-711e79a7",
-    "top10": "top10:2026-07-18T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-18T00:00:00.000Z-2026-07-18T02:50:31.767Z"
+    "aggregation": "d306ee03-f974-4abc-b9ea-fd241e965acc",
+    "ranking": "rank-6f1de6b9",
+    "top10": "top10:2026-07-18T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-18T06:00:00.000Z-2026-07-18T06:09:57.302Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-18T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-18T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-18T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-18T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-18T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-18T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1231,
+      "count": 1139,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1492,
+      "count": 1382,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 19,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 20,
+      "count": 22,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "CNCF Strengthens Partnership with Broadcom as a Platinum Member to Advance AI-Ready Cloud Native Infrastructure"
-      },
-      {
-        "rank": 2,
         "topic": "platform",
         "headline": "Security updates for Friday"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "topic": "ai",
         "headline": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal"
+      },
+      {
+        "rank": 3,
+        "topic": "ai",
+        "headline": "Apple sends legal letters to dozens of OpenAI defectors, report says"
       },
       {
         "rank": 4,
@@ -138,20 +138,20 @@
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Chinese AI model takes US tech industry by surprise with abilities rivaling Claude and ChatGPT"
-      },
-      {
-        "rank": 9,
         "topic": "security",
         "headline": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy"
       },
       {
+        "rank": 9,
+        "topic": "ai",
+        "headline": "Claude make Fable 5 permanent"
+      },
+      {
         "rank": 10,
         "topic": "ai",
-        "headline": "Apple sends legal letters to dozens of OpenAI defectors, report says"
+        "headline": "nascheme/quixote"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
