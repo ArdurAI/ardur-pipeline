@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-19T00:00:00.000Z",
-    "windowStart": "2026-07-19T00:00:00.000Z",
-    "windowEnd": "2026-07-19T06:00:00.000Z"
+    "id": "2026-07-19T06:00:00.000Z",
+    "windowStart": "2026-07-19T06:00:00.000Z",
+    "windowEnd": "2026-07-19T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-19T03:20:05.823Z",
-  "nextRefreshAt": "2026-07-19T06:00:00.000Z",
+  "publishedAt": "2026-07-19T06:35:12.562Z",
+  "nextRefreshAt": "2026-07-19T12:00:00.000Z",
   "runIds": {
-    "aggregation": "e5244069-cc5b-4291-b42d-cde94dcc544c",
-    "ranking": "rank-4f6cd053",
-    "top10": "top10:2026-07-19T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-19T00:00:00.000Z-2026-07-19T03:20:22.837Z"
+    "aggregation": "ed3bed92-6932-4592-b930-8d74316dd7e0",
+    "ranking": "rank-9413aa22",
+    "top10": "top10:2026-07-19T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-19T06:00:00.000Z-2026-07-19T06:35:27.847Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-19T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-19T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-19T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-19T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-19T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-19T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1042,
+      "count": 1099,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 7 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1132,
+      "count": 1054,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -71,17 +71,17 @@
       "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 37,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Claude make Fable 5 permanent"
+        "headline": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing"
       },
       {
         "rank": 2,
@@ -114,42 +114,42 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "China’s Moonshot debuts record 2.8T open AI model Kimi K3"
+        "headline": "Claude Code uses Bun written in Rust now"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Broadcom basks in CNCF ‘Platinum’ glow"
+        "topic": "ai",
+        "headline": "China’s Moonshot debuts record 2.8T open AI model Kimi K3"
       },
       {
         "rank": 5,
         "topic": "models",
-        "headline": "AI Inference Costs: Build vs. Rent"
+        "headline": "AI Mania Is Eviscerating Global Decision-Making"
       },
       {
         "rank": 6,
+        "topic": "platform",
+        "headline": "AWS Introduces CloudFormation Express Mode for Faster Infrastructure Deployments"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI's GPT-Live can keep a real conversation"
-      },
-      {
         "rank": 8,
-        "topic": "security",
-        "headline": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now"
+        "topic": "models",
+        "headline": "AI Inference Costs: Build vs. Rent"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
+        "topic": "kubernetes",
+        "headline": "Pyrex, Rubbermaid, and OXO Food Storage Containers Start at 44 Cents Apiece This Week—the Deals Won’t Last Long"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Pinecone Introduces Nexus Engine for Compiling Business Context into Structured Data for AI Agents"
+        "topic": "security",
+        "headline": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now"
       }
     ],
     "articleCount": 0
