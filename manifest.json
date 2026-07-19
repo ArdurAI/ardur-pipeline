@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-19T12:00:00.000Z",
-    "windowStart": "2026-07-19T12:00:00.000Z",
-    "windowEnd": "2026-07-19T18:00:00.000Z"
+    "id": "2026-07-19T18:00:00.000Z",
+    "windowStart": "2026-07-19T18:00:00.000Z",
+    "windowEnd": "2026-07-20T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-19T13:27:09.537Z",
-  "nextRefreshAt": "2026-07-19T18:00:00.000Z",
+  "publishedAt": "2026-07-19T19:12:43.510Z",
+  "nextRefreshAt": "2026-07-20T00:00:00.000Z",
   "runIds": {
-    "aggregation": "840e0b33-05ff-4ee7-b0fd-73e5f0578ea5",
-    "ranking": "rank-91da0fcd",
-    "top10": "top10:2026-07-19T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-19T12:00:00.000Z-2026-07-19T13:27:21.730Z"
+    "aggregation": "d90acc63-b318-4415-a604-0df3c4a1228f",
+    "ranking": "rank-40db8454",
+    "top10": "top10:2026-07-19T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-19T18:00:00.000Z-2026-07-19T19:13:01.011Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-19T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-19T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-19T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-19T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-19T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-19T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1176,
+      "count": 1162,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1029,
+      "count": 1063,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 40,
+      "count": 37,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 9,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -104,27 +104,27 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Claude make Fable 5 permanent"
+        "headline": "Qwen3.8 Max Debuts With 2.4 Trillion Parameters, Trailing Only Fable 5"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Meta And Anthropic Reportedly Discussing Potential $10 Billion AI Computing Deal"
+        "headline": "Chinese AI firm Moonshot unveils powerful model with capabilities close to Anthropic, OpenAI"
       },
       {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Why Apple’s Lawsuit Against OpenAI Over Devices Spares Jony Ive"
+      },
+      {
+        "rank": 4,
         "topic": "kubernetes",
         "headline": "Self-healing GPU nodes in Kubernetes: What we learned building the EKS node monitoring agent"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Alibaba’s Qwen Unveils Preview of Flagship AI Model"
-      },
-      {
         "rank": 5,
         "topic": "ai",
-        "headline": "Alibaba unveils Qwen3.8 Max AI model, challenging Anthropic’s dominance"
+        "headline": "Alibaba’s Qwen Unveils Preview of Flagship AI Model"
       },
       {
         "rank": 6,
@@ -138,20 +138,20 @@
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "20 New Technology Trends for 2026 | Emerging Technologies 2026"
+        "topic": "security",
+        "headline": "Scans for Hikvision Intelligent Security API, Sun, Jul 19th"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "I found the one Firefox feature Chrome desperately needs"
+        "headline": "Spark 4.2 has a feature that could retire your vector database"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Alibaba&039;s Qwen takes on Kimi K3 with open-weight Qwen 3.8, says model is \"second only to Fable 5\""
+        "topic": "security",
+        "headline": "Akamai AKAM Joins World Wide Technology’s ARMOR Framework For Enterprise AI Security"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
