@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-18T18:00:00.000Z",
-    "windowStart": "2026-07-18T18:00:00.000Z",
-    "windowEnd": "2026-07-19T00:00:00.000Z"
+    "id": "2026-07-19T00:00:00.000Z",
+    "windowStart": "2026-07-19T00:00:00.000Z",
+    "windowEnd": "2026-07-19T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-18T19:11:27.031Z",
-  "nextRefreshAt": "2026-07-19T00:00:00.000Z",
+  "publishedAt": "2026-07-19T03:20:05.823Z",
+  "nextRefreshAt": "2026-07-19T06:00:00.000Z",
   "runIds": {
-    "aggregation": "25a70eb8-71af-4bb7-a9f6-c5c0a855f18a",
-    "ranking": "rank-9efb6d59",
-    "top10": "top10:2026-07-18T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-18T18:00:00.000Z-2026-07-18T19:11:54.916Z"
+    "aggregation": "e5244069-cc5b-4291-b42d-cde94dcc544c",
+    "ranking": "rank-4f6cd053",
+    "top10": "top10:2026-07-19T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-19T00:00:00.000Z-2026-07-19T03:20:22.837Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-18T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-18T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-18T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-19T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-19T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-19T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1109,
+      "count": 1042,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-16] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1376,
+      "count": 1132,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 21,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 36,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -109,49 +109,49 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "LLM cliché highlighter"
+        "headline": "Meta Reportedly In Talks With Anthropic Over a $10 Billion AI Deal"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Meta Reportedly In Talks With Anthropic Over a $10 Billion AI Deal"
+        "headline": "China’s Moonshot debuts record 2.8T open AI model Kimi K3"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "AI didn’t replace our security team — it multiplied it."
+        "topic": "kubernetes",
+        "headline": "Broadcom basks in CNCF ‘Platinum’ glow"
       },
       {
         "rank": 5,
+        "topic": "models",
+        "headline": "AI Inference Costs: Build vs. Rent"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI's GPT-Live can keep a real conversation"
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now"
       },
       {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "Platform engineering’s new job: serving environments at agent speed"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Pinecone Introduces Nexus Engine for Compiling Business Context into Structured Data for AI Agents"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Musk open-sourced Grok Build to fight Anthropic. Anthropic pays him $1.25 billion a month."
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core"
+        "topic": "platform",
+        "headline": "Port announces AI Builder vibe coding experience for platform engineering"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Version Controlled SQL Database Dolt Releases 2.0 with Automatic Storage Cleanup and Compression"
+        "headline": "Pinecone Introduces Nexus Engine for Compiling Business Context into Structured Data for AI Agents"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
