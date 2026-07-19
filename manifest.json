@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-19T06:00:00.000Z",
-    "windowStart": "2026-07-19T06:00:00.000Z",
-    "windowEnd": "2026-07-19T12:00:00.000Z"
+    "id": "2026-07-19T12:00:00.000Z",
+    "windowStart": "2026-07-19T12:00:00.000Z",
+    "windowEnd": "2026-07-19T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-19T06:35:12.562Z",
-  "nextRefreshAt": "2026-07-19T12:00:00.000Z",
+  "publishedAt": "2026-07-19T13:27:09.537Z",
+  "nextRefreshAt": "2026-07-19T18:00:00.000Z",
   "runIds": {
-    "aggregation": "ed3bed92-6932-4592-b930-8d74316dd7e0",
-    "ranking": "rank-9413aa22",
-    "top10": "top10:2026-07-19T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-19T06:00:00.000Z-2026-07-19T06:35:27.847Z"
+    "aggregation": "840e0b33-05ff-4ee7-b0fd-73e5f0578ea5",
+    "ranking": "rank-91da0fcd",
+    "top10": "top10:2026-07-19T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-19T12:00:00.000Z-2026-07-19T13:27:21.730Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-19T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-19T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-19T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-19T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-19T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-19T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1099,
+      "count": 1176,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1054,
+      "count": 1029,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 37,
+      "count": 40,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 9,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing"
+        "headline": "Claude make Fable 5 permanent"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Meta Reportedly In Talks With Anthropic Over a $10 Billion AI Deal"
+        "headline": "Meta And Anthropic Reportedly Discussing Potential $10 Billion AI Computing Deal"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Claude Code uses Bun written in Rust now"
+        "topic": "kubernetes",
+        "headline": "Self-healing GPU nodes in Kubernetes: What we learned building the EKS node monitoring agent"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "China’s Moonshot debuts record 2.8T open AI model Kimi K3"
+        "headline": "Alibaba’s Qwen Unveils Preview of Flagship AI Model"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "AI Mania Is Eviscerating Global Decision-Making"
+        "topic": "ai",
+        "headline": "Alibaba unveils Qwen3.8 Max AI model, challenging Anthropic’s dominance"
       },
       {
         "rank": 6,
         "topic": "platform",
-        "headline": "AWS Introduces CloudFormation Express Mode for Faster Infrastructure Deployments"
+        "headline": "Google's AlphaEvolve Reaches General Availability with Evolutionary Code Optimization as a Service"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives"
+        "topic": "models",
+        "headline": "Claude Code uses Bun written in Rust now"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "AI Inference Costs: Build vs. Rent"
+        "topic": "platform",
+        "headline": "20 New Technology Trends for 2026 | Emerging Technologies 2026"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "Pyrex, Rubbermaid, and OXO Food Storage Containers Start at 44 Cents Apiece This Week—the Deals Won’t Last Long"
+        "headline": "I found the one Firefox feature Chrome desperately needs"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now"
+        "topic": "models",
+        "headline": "Alibaba&039;s Qwen takes on Kimi K3 with open-weight Qwen 3.8, says model is \"second only to Fable 5\""
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
