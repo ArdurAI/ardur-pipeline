@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-20T06:00:00.000Z",
-    "windowStart": "2026-07-20T06:00:00.000Z",
-    "windowEnd": "2026-07-20T12:00:00.000Z"
+    "id": "2026-07-20T12:00:00.000Z",
+    "windowStart": "2026-07-20T12:00:00.000Z",
+    "windowEnd": "2026-07-20T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-20T06:52:08.513Z",
-  "nextRefreshAt": "2026-07-20T12:00:00.000Z",
+  "publishedAt": "2026-07-20T14:16:47.337Z",
+  "nextRefreshAt": "2026-07-20T18:00:00.000Z",
   "runIds": {
-    "aggregation": "08c2a699-6c63-426f-88c4-4fb165778458",
-    "ranking": "rank-c8019c76",
-    "top10": "top10:2026-07-20T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-20T06:00:00.000Z-2026-07-20T06:52:36.003Z"
+    "aggregation": "aa5165cf-94a3-459d-8554-a8934ac2920e",
+    "ranking": "rank-647288a4",
+    "top10": "top10:2026-07-20T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-20T12:00:00.000Z-2026-07-20T14:17:00.995Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-20T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-20T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-20T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-20T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-20T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-20T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1165,
+      "count": 1139,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMilgFBVV95cUxNXzd1d25wR3k5LV9uVlRld0lVcUdaX3hMNGRRYWExQTNySnZva3BkOVlfVFgteVlZdTFORUh3Z3NVNVE3TFN1aXAtVTd0MDVmUnVPTk5VY1J4UGRZaGdOYXZoMmtWUUw3M0VTTnIxdnBtSGpGUzFkNEZVUXh3Z2hpalZrMENVZ0t0ZU9HY0hTRE45VTZnN3c?oc=5"
       ]
     },
     {
@@ -52,41 +52,41 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 991,
+      "count": 1245,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 19,
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:41905: Important: dovecot security update"
+        "headline": "RHSA-2026:42041: Important: pacemaker security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "WP2Shell WordPress Vulnerabilities Exploited in the Wild"
+        "headline": "wp2shell CVE-2026-63030, CVE-2026-60137: Frequently asked questions about remote code execution chain in WordPress Core"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Can an Apple lawsuit derail OpenAI’s hardware plans?"
+        "headline": "Meta weighs up to $10bn AI compute deal with Anthropic"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Quoting Sam Altman"
+        "topic": "platform",
+        "headline": "From legacy complexity to composable banking: How cloud platform engineering and BIAN enable AI-ready banking architectures"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Moonshot AI unveils Kimi K3 model, challenging Anthropic and OpenAI"
+        "headline": "Alibaba’s New AI Model Takes On Anthropic. What It Means for the Stock."
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "WAIC 2026 | ModelBest Unveils Embodied AI Model Series MiniCPM-Robot"
+        "topic": "security",
+        "headline": "An AI SOC Evaluation Guide for Security Leaders"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "World's Largest AI Model Repository Hugging Face Breached by Autonomous AI Agent"
+        "headline": "WP2Shell WordPress Vulnerabilities Exploited in the Wild"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution"
+        "topic": "ai",
+        "headline": "China's new AI model halts new subscriptions as demand swamps capacity - ABC News"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "KCD Melbourne 2026 unveils Kubernetes speaker line-up"
+        "topic": "models",
+        "headline": "AMD Shares Spike 5% As Microsoft Unveils Tie-Up To Power Frontier Model AI Inference"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "PyTorch distributed is changing and TorchComms is why"
+        "topic": "ai",
+        "headline": "Xometry Unveils AI Model Upgrades to Improve Manufacturing Recommendations and Pricing"
       }
     ],
     "articleCount": 0
