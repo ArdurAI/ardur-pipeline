@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-20T00:00:00.000Z",
-    "windowStart": "2026-07-20T00:00:00.000Z",
-    "windowEnd": "2026-07-20T06:00:00.000Z"
+    "id": "2026-07-20T06:00:00.000Z",
+    "windowStart": "2026-07-20T06:00:00.000Z",
+    "windowEnd": "2026-07-20T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-20T03:33:47.924Z",
-  "nextRefreshAt": "2026-07-20T06:00:00.000Z",
+  "publishedAt": "2026-07-20T06:52:08.513Z",
+  "nextRefreshAt": "2026-07-20T12:00:00.000Z",
   "runIds": {
-    "aggregation": "2637621d-e808-4d7d-b771-de8c9fdc4ee3",
-    "ranking": "rank-3e056e32",
-    "top10": "top10:2026-07-20T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-20T00:00:00.000Z-2026-07-20T03:34:01.036Z"
+    "aggregation": "08c2a699-6c63-426f-88c4-4fb165778458",
+    "ranking": "rank-c8019c76",
+    "top10": "top10:2026-07-20T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-20T06:00:00.000Z-2026-07-20T06:52:36.003Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-20T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-20T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-20T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-20T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-20T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-20T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1168,
+      "count": 1165,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1000,
+      "count": 991,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,16 +77,16 @@
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 19,
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:41892: Important: libtiff security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:41905: Important: dovecot security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution"
+        "headline": "WP2Shell WordPress Vulnerabilities Exploited in the Wild"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "PyTorch distributed is changing and TorchComms is why"
-      },
-      {
-        "rank": 4,
-        "topic": "platform",
-        "headline": "What 429 chaos experiments taught us about Kubernetes operator resilience"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "KCD Melbourne 2026 unveils Kubernetes speaker line-up"
-      },
-      {
-        "rank": 6,
         "topic": "ai",
         "headline": "Can an Apple lawsuit derail OpenAI’s hardware plans?"
       },
       {
-        "rank": 7,
+        "rank": 4,
         "topic": "ai",
-        "headline": "This open-source extension lets you rewrite your X algorithm using a local LLM, and it healed my timeline"
+        "headline": "Quoting Sam Altman"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Moonshot AI unveils Kimi K3 model, challenging Anthropic and OpenAI"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "WAIC 2026 | ModelBest Unveils Embodied AI Model Series MiniCPM-Robot"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "World's Largest AI Model Repository Hugging Face Breached by Autonomous AI Agent"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "ISC Stormcast For Monday, July 20th, 2026 https://isc.sans.edu/podcastdetail/10014, Mon, Jul 20th"
+        "headline": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Nozomi joins Anthropic's Project Glasswing on OT security"
+        "topic": "kubernetes",
+        "headline": "KCD Melbourne 2026 unveils Kubernetes speaker line-up"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Singapore issues transparency guidelines for generative AI chatbots"
+        "topic": "platform",
+        "headline": "PyTorch distributed is changing and TorchComms is why"
       }
     ],
     "articleCount": 0
