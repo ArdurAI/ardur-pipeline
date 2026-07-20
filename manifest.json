@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-19T18:00:00.000Z",
-    "windowStart": "2026-07-19T18:00:00.000Z",
-    "windowEnd": "2026-07-20T00:00:00.000Z"
+    "id": "2026-07-20T00:00:00.000Z",
+    "windowStart": "2026-07-20T00:00:00.000Z",
+    "windowEnd": "2026-07-20T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-19T19:12:43.510Z",
-  "nextRefreshAt": "2026-07-20T00:00:00.000Z",
+  "publishedAt": "2026-07-20T03:33:47.924Z",
+  "nextRefreshAt": "2026-07-20T06:00:00.000Z",
   "runIds": {
-    "aggregation": "d90acc63-b318-4415-a604-0df3c4a1228f",
-    "ranking": "rank-40db8454",
-    "top10": "top10:2026-07-19T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-19T18:00:00.000Z-2026-07-19T19:13:01.011Z"
+    "aggregation": "2637621d-e808-4d7d-b771-de8c9fdc4ee3",
+    "ranking": "rank-3e056e32",
+    "top10": "top10:2026-07-20T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-20T00:00:00.000Z-2026-07-20T03:34:01.036Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-19T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-19T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-19T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-20T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-20T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-20T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1162,
+      "count": 1168,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1063,
+      "count": 1000,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 37,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Qwen3.8 Max Debuts With 2.4 Trillion Parameters, Trailing Only Fable 5"
+        "topic": "security",
+        "headline": "RHSA-2026:41892: Important: libtiff security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Chinese AI firm Moonshot unveils powerful model with capabilities close to Anthropic, OpenAI"
+        "topic": "security",
+        "headline": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Why Apple’s Lawsuit Against OpenAI Over Devices Spares Jony Ive"
+        "topic": "platform",
+        "headline": "PyTorch distributed is changing and TorchComms is why"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Self-healing GPU nodes in Kubernetes: What we learned building the EKS node monitoring agent"
+        "topic": "platform",
+        "headline": "What 429 chaos experiments taught us about Kubernetes operator resilience"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Alibaba’s Qwen Unveils Preview of Flagship AI Model"
+        "topic": "kubernetes",
+        "headline": "KCD Melbourne 2026 unveils Kubernetes speaker line-up"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Google's AlphaEvolve Reaches General Availability with Evolutionary Code Optimization as a Service"
+        "topic": "ai",
+        "headline": "Can an Apple lawsuit derail OpenAI’s hardware plans?"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Claude Code uses Bun written in Rust now"
+        "topic": "ai",
+        "headline": "This open-source extension lets you rewrite your X algorithm using a local LLM, and it healed my timeline"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Scans for Hikvision Intelligent Security API, Sun, Jul 19th"
+        "headline": "ISC Stormcast For Monday, July 20th, 2026 https://isc.sans.edu/podcastdetail/10014, Mon, Jul 20th"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Spark 4.2 has a feature that could retire your vector database"
+        "topic": "ai",
+        "headline": "Nozomi joins Anthropic's Project Glasswing on OT security"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Akamai AKAM Joins World Wide Technology’s ARMOR Framework For Enterprise AI Security"
+        "topic": "ai",
+        "headline": "Singapore issues transparency guidelines for generative AI chatbots"
       }
     ],
     "articleCount": 0
