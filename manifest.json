@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-20T18:00:00.000Z",
-    "windowStart": "2026-07-20T18:00:00.000Z",
-    "windowEnd": "2026-07-21T00:00:00.000Z"
+    "id": "2026-07-21T00:00:00.000Z",
+    "windowStart": "2026-07-21T00:00:00.000Z",
+    "windowEnd": "2026-07-21T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-20T18:08:55.376Z",
-  "nextRefreshAt": "2026-07-21T00:00:00.000Z",
+  "publishedAt": "2026-07-21T03:15:12.823Z",
+  "nextRefreshAt": "2026-07-21T06:00:00.000Z",
   "runIds": {
-    "aggregation": "bf972c51-f0b2-488a-b45b-fa3642e4889b",
-    "ranking": "rank-2a86d6f8",
-    "top10": "top10:2026-07-20T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-20T18:00:00.000Z-2026-07-20T18:09:17.020Z"
+    "aggregation": "c675b163-1ca8-41ca-ad19-c5278ad77269",
+    "ranking": "rank-c61fd26a",
+    "top10": "top10:2026-07-21T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-21T00:00:00.000Z-2026-07-21T03:15:26.319Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-20T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-20T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-20T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-21T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-21T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-21T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -41,11 +41,11 @@
     },
     {
       "category": "other",
-      "count": 1157,
+      "count": 1229,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-18] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1421,
+      "count": 1460,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 14,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:42090: Important: glib2 security update"
+        "headline": "RHSA-2026:42122: Important: sssd security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "How Couchbase built a multi-model AI architecture for Capella iQ with Amazon Bedrock"
+        "topic": "kubernetes",
+        "headline": "v1.37.0-beta.0"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:42098: Moderate: Red Hat JBoss Enterprise Application Platform 8.1.7 XP 6.0.5.GA release"
+        "topic": "ai",
+        "headline": "US judge approves Anthropic's $1.5 billion settlement of copyright lawsuit"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "$100 million for open source: A milestone built by the community"
+        "topic": "ai",
+        "headline": "AI & Tech Brief: The open-source debate"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "wp2shell CVE-2026-63030, CVE-2026-60137: Frequently asked questions about remote code execution chain in WordPress Core"
+        "headline": "RHSA-2026:42098: Moderate: Red Hat JBoss Enterprise Application Platform 8.1.7 XP 6.0.5.GA release"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Nvidia&039;s grip on AI chips weakens as Microsoft turns to AMD and Anthropic may follow"
+        "topic": "security",
+        "headline": "WordPress Exploitation Underway CVE-2026-63030, Mon, Jul 20th"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Chinese Moonshot AI Kimi K3 Is the Biggest Open-Source AI Model Ever Built – Will it Rival Anthropic and OpenAI?"
+        "topic": "security",
+        "headline": "SonicWall SMA1000 flaws exploited as zero-days to push custom malware"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "WP2Shell WordPress Vulnerabilities Exploited in the Wild"
+        "topic": "ai",
+        "headline": "Safety and alignment in an era of long-horizon models"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Meta’s cloud push could get a boost from Anthropic"
+        "topic": "kubernetes",
+        "headline": "$100 million for open source: A milestone built by the community"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "AMD Shares Spike 5% As Microsoft Unveils Tie-Up To Power Frontier Model AI Inference"
+        "topic": "ai",
+        "headline": "Alibaba Stock Climbs. China AI Models Seen 'Narrowing' Gap Against Anthropic, OpenAI."
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
