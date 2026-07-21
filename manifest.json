@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-21T06:00:00.000Z",
-    "windowStart": "2026-07-21T06:00:00.000Z",
-    "windowEnd": "2026-07-21T12:00:00.000Z"
+    "id": "2026-07-21T12:00:00.000Z",
+    "windowStart": "2026-07-21T12:00:00.000Z",
+    "windowEnd": "2026-07-21T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-21T06:33:58.485Z",
-  "nextRefreshAt": "2026-07-21T12:00:00.000Z",
+  "publishedAt": "2026-07-21T14:03:25.712Z",
+  "nextRefreshAt": "2026-07-21T18:00:00.000Z",
   "runIds": {
-    "aggregation": "873019fe-6033-4b06-8bda-fdeb6e291384",
-    "ranking": "rank-d6029c71",
-    "top10": "top10:2026-07-21T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-21T06:00:00.000Z-2026-07-21T06:34:14.104Z"
+    "aggregation": "4b807f48-cf38-4fd8-a4e3-99352e13784f",
+    "ranking": "rank-3130cecd",
+    "top10": "top10:2026-07-21T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-21T12:00:00.000Z-2026-07-21T14:18:54.276Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-21T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-21T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-21T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-21T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-21T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-21T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1227,
+      "count": 1281,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-15] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1452,
+      "count": 1536,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -77,10 +77,10 @@
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:42550: Important: kernel-rt security, bug fix, and enhancement update"
+        "topic": "kubernetes",
+        "headline": "v1.63.0/v0.157.0"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic’s landmark $1.5B copyright settlement is approved"
+        "topic": "security",
+        "headline": "RHSA-2026:42668: Important: libtiff security update"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Flooding damages Prescott Valley homes, moves shipping containers"
+        "topic": "platform",
+        "headline": "Monday, July 27, 2026 Security Releases"
       },
       {
         "rank": 4,
+        "topic": "ai",
+        "headline": "A Fireside Chat with Cat and Thariq from the Claude Code team"
+      },
+      {
+        "rank": 5,
+        "topic": "platform",
+        "headline": "Platform engineering for the agentic enterprise: Managing applications, resources, and AI agents"
+      },
+      {
+        "rank": 6,
         "topic": "models",
         "headline": "AMD Shares Spike 5% As Microsoft Unveils Tie-Up To Power Frontier Model AI Inference"
       },
       {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.37.0-beta.0"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Video: OpenAI and Anthropic Are Still Beefing"
-      },
-      {
         "rank": 7,
-        "topic": "ai",
-        "headline": "AI & Tech Brief: The open-source debate"
+        "topic": "security",
+        "headline": "Estée Lauder Discloses Impact From Oracle EBS Zero-Day Hack"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:42098: Moderate: Red Hat JBoss Enterprise Application Platform 8.1.7 XP 6.0.5.GA release"
+        "topic": "ai",
+        "headline": "Anthropic’s landmark $1.5B copyright settlement is approved"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "WordPress Exploitation Underway CVE-2026-63030, Mon, Jul 20th"
+        "topic": "kubernetes",
+        "headline": "v1.12.5"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "wp2shell CVE-2026-63030, CVE-2026-60137: Frequently asked questions about remote code execution chain in WordPress Core"
+        "topic": "kubernetes",
+        "headline": "v1.11.13"
       }
     ],
     "articleCount": 0
