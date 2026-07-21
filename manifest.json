@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-21T12:00:00.000Z",
-    "windowStart": "2026-07-21T12:00:00.000Z",
-    "windowEnd": "2026-07-21T18:00:00.000Z"
+    "id": "2026-07-21T18:00:00.000Z",
+    "windowStart": "2026-07-21T18:00:00.000Z",
+    "windowEnd": "2026-07-22T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-21T14:03:25.712Z",
-  "nextRefreshAt": "2026-07-21T18:00:00.000Z",
+  "publishedAt": "2026-07-21T19:38:05.220Z",
+  "nextRefreshAt": "2026-07-22T00:00:00.000Z",
   "runIds": {
-    "aggregation": "4b807f48-cf38-4fd8-a4e3-99352e13784f",
-    "ranking": "rank-3130cecd",
-    "top10": "top10:2026-07-21T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-21T12:00:00.000Z-2026-07-21T14:18:54.276Z"
+    "aggregation": "aee51a99-ea61-4325-87d5-32d770f9072f",
+    "ranking": "rank-0d2ac5fe",
+    "top10": "top10:2026-07-21T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-21T18:00:00.000Z-2026-07-21T19:38:23.705Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-21T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-21T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-21T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-21T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-21T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-21T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1281,
+      "count": 1477,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1536,
+      "count": 1729,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 21,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "v1.63.0/v0.157.0"
+        "topic": "security",
+        "headline": "RHSA-2026:42828: Important: httpd:2.4 security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:42668: Important: libtiff security update"
+        "topic": "kubernetes",
+        "headline": "v1.63.0/v0.157.0"
       },
       {
         "rank": 3,
@@ -118,40 +118,40 @@
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "A Fireside Chat with Cat and Thariq from the Claude Code team"
+        "topic": "security",
+        "headline": "Google Launches Gemini 3.5 Flash Cyber AI to Find and Fix Software Vulnerabilities"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Introducing the ChatGPT for small business program"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Judge approves Anthropic’s $1.5 billion copyright settlement with authors"
+      },
+      {
+        "rank": 8,
         "topic": "platform",
         "headline": "Platform engineering for the agentic enterprise: Managing applications, resources, and AI agents"
       },
       {
-        "rank": 6,
-        "topic": "models",
-        "headline": "AMD Shares Spike 5% As Microsoft Unveils Tie-Up To Power Frontier Model AI Inference"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "Estée Lauder Discloses Impact From Oracle EBS Zero-Day Hack"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic’s landmark $1.5B copyright settlement is approved"
-      },
-      {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "v1.12.5"
+        "headline": "Dapr Runtime v1.18.2"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.11.13"
+        "topic": "security",
+        "headline": "RHSA-2026:42875: Important: RHEL AI 3.5 RPM runtime CVE fix"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
