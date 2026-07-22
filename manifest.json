@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-22T06:00:00.000Z",
-    "windowStart": "2026-07-22T06:00:00.000Z",
-    "windowEnd": "2026-07-22T12:00:00.000Z"
+    "id": "2026-07-22T12:00:00.000Z",
+    "windowStart": "2026-07-22T12:00:00.000Z",
+    "windowEnd": "2026-07-22T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-22T06:33:52.195Z",
-  "nextRefreshAt": "2026-07-22T12:00:00.000Z",
+  "publishedAt": "2026-07-22T14:06:19.946Z",
+  "nextRefreshAt": "2026-07-22T18:00:00.000Z",
   "runIds": {
-    "aggregation": "28a9e6d7-e8c5-4f51-9692-5ec637d3799e",
-    "ranking": "rank-fd9e68ee",
-    "top10": "top10:2026-07-22T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-22T06:00:00.000Z-2026-07-22T06:34:18.629Z"
+    "aggregation": "396f18f9-af74-4126-ab47-c8ac200d886b",
+    "ranking": "rank-a64081d5",
+    "top10": "top10:2026-07-22T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-22T12:00:00.000Z-2026-07-22T14:06:39.071Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-22T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-22T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-22T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-22T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-22T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-22T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 85,
+      "count": 96,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1312,
+      "count": 1276,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1537,
+      "count": 1528,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 23,
       "sample": [
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.0"
-      },
-      {
-        "rank": 2,
         "topic": "security",
         "headline": "Ransomware Is Accelerating, But It's Not Because of AI"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "topic": "models",
-        "headline": "AMD Helios set for Microsoft Azure AI inference"
+        "headline": "OpenAI claims responsibility for the Hugging Face hack after its own models escaped a test sandbox"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:43401: Important: Red Hat JBoss Web Server 6.2.4 release and security update"
       },
       {
         "rank": 4,
@@ -124,34 +124,34 @@
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:42946: Important: rhc-worker-playbook security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:43513: Moderate: openssl security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI says its AI technology acted on its own in an 'unprecedented' hack of another company"
+        "topic": "kubernetes",
+        "headline": "v1.54.0-next.0"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v1.63.0/v0.157.0"
+        "topic": "security",
+        "headline": "RHSA-2026:43231: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "OpenAI Admits Its Models Hacked Hugging Face On Their Own"
+        "headline": "Building AI infrastructure with the Effingham County community"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "OpenAI Says Its AI Models Escaped Sandbox, Targeted Hugging Face to Cheat Benchmark"
+        "headline": "AI agent went rogue and hacked startup by itself, OpenAI reveals"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Google Launches Gemini 3.5 Flash Cyber AI to Find and Fix Software Vulnerabilities"
+        "topic": "models",
+        "headline": "AMD Helios set for Microsoft Azure AI inference"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
