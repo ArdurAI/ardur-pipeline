@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-23T06:00:00.000Z",
-    "windowStart": "2026-07-23T06:00:00.000Z",
-    "windowEnd": "2026-07-23T12:00:00.000Z"
+    "id": "2026-07-23T12:00:00.000Z",
+    "windowStart": "2026-07-23T12:00:00.000Z",
+    "windowEnd": "2026-07-23T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-23T06:34:25.750Z",
-  "nextRefreshAt": "2026-07-23T12:00:00.000Z",
+  "publishedAt": "2026-07-23T14:11:53.989Z",
+  "nextRefreshAt": "2026-07-23T18:00:00.000Z",
   "runIds": {
-    "aggregation": "2d94a5da-b619-456d-9b98-31b64e09663b",
-    "ranking": "rank-5ba59c47",
-    "top10": "top10:2026-07-23T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-23T06:00:00.000Z-2026-07-23T06:34:46.961Z"
+    "aggregation": "06e0b508-0d9d-412f-8687-b1de08cd8309",
+    "ranking": "rank-a0a21e58",
+    "top10": "top10:2026-07-23T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-23T12:00:00.000Z-2026-07-23T14:12:21.341Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-23T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-23T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-23T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-23T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-23T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-23T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 102,
+      "count": 90,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1453,
+      "count": 1536,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1720,
+      "count": 1779,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:42887: Important: java-17-openjdk security update"
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Tech to Watch That Isn’t AI: Platform Engineering and the Next Wave of Modernization"
+        "topic": "security",
+        "headline": "What Happened Between OpenAI and Hugging Face?"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Multi-Cluster databases on Kubernetes: Architecture and deployment"
+        "topic": "security",
+        "headline": "RHSA-2026:42876: Important: java-1.8.0-openjdk security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:44066: Important: pki-deps:10.6 security update"
+        "topic": "platform",
+        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "OpenAI claims responsibility for the Hugging Face hack after its own models escaped a test sandbox"
+        "headline": "OpenAI Sued Over ChatGPT’s ‘Dangerous’ Health Advice"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Announcing new course: AI in Platform Engineering"
+        "topic": "security",
+        "headline": "RHSA-2026:44271: Important: dogtag-pki security update"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.0"
+        "topic": "platform",
+        "headline": "When Kubeflow meets Cilium: Debugging 60% idle GPUs in Kubernetes"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:44064: Important: jackson-annotations, jackson-core, jackson-databind, jackson-jaxrs-providers, and jackson-modules-base security update"
+        "topic": "kubernetes",
+        "headline": "v2.1.8"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:43702: Moderate: libpng12 security update"
+        "topic": "kubernetes",
+        "headline": "v1.20.11"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Smart containers, smarter supply chains"
+        "topic": "platform",
+        "headline": "What does a platform product manager do?"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
