@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-22T18:00:00.000Z",
-    "windowStart": "2026-07-22T18:00:00.000Z",
-    "windowEnd": "2026-07-23T00:00:00.000Z"
+    "id": "2026-07-23T00:00:00.000Z",
+    "windowStart": "2026-07-23T00:00:00.000Z",
+    "windowEnd": "2026-07-23T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-22T19:27:48.809Z",
-  "nextRefreshAt": "2026-07-23T00:00:00.000Z",
+  "publishedAt": "2026-07-23T03:20:12.287Z",
+  "nextRefreshAt": "2026-07-23T06:00:00.000Z",
   "runIds": {
-    "aggregation": "92bfb3bb-2ad6-46e9-bbe8-20b673eae686",
-    "ranking": "rank-b36f7788",
-    "top10": "top10:2026-07-22T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-22T18:00:00.000Z-2026-07-22T19:28:41.616Z"
+    "aggregation": "44a639ce-f45d-4a18-b7d0-032d801091d6",
+    "ranking": "rank-777a3cd9",
+    "top10": "top10:2026-07-23T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-23T00:00:00.000Z-2026-07-23T03:20:28.072Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-22T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-22T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-22T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-23T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-23T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-23T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 102,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1349,
+      "count": 1276,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1604,
+      "count": 1558,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,8 +103,8 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "Introducing OpenAI Presence"
+        "topic": "security",
+        "headline": "RHSA-2026:42887: Important: java-17-openjdk security update"
       },
       {
         "rank": 2,
@@ -114,44 +114,44 @@
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:43702: Moderate: libpng12 security update"
+        "headline": "RHSA-2026:44066: Important: pki-deps:10.6 security update"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "OpenAI cyber models broke out of training environment to hack Hugging Face"
+        "headline": "OpenAI claims responsibility for the Hugging Face hack after its own models escaped a test sandbox"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:43505: Important: mariadb-connector-c security update"
+        "headline": "RHSA-2026:43702: Moderate: libpng12 security update"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:40762: Important: OpenShift Container Platform 4.19.39 bug fix and security update"
+        "headline": "RHSA-2026:44064: Important: jackson-annotations, jackson-core, jackson-databind, jackson-jaxrs-providers, and jackson-modules-base security update"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Microsoft to roll out AMD Helios for AI inference on Azure"
+        "topic": "ai",
+        "headline": "NTT DATA Group cuts incident analysis to 30 minutes with Codex"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Feature Flag Security in your CI/CD Pipeline"
+        "topic": "ai",
+        "headline": "OpenAI Sued Over ChatGPT’s ‘Dangerous’ Health Advice"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:43711: Important: RHEL AI 3.5 RPM runtime CVE fix"
+        "topic": "models",
+        "headline": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "How an OpenAI model broke free and hacked into another company’s servers"
+        "topic": "kubernetes",
+        "headline": "v1.36.3"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
