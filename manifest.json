@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-23T00:00:00.000Z",
-    "windowStart": "2026-07-23T00:00:00.000Z",
-    "windowEnd": "2026-07-23T06:00:00.000Z"
+    "id": "2026-07-23T06:00:00.000Z",
+    "windowStart": "2026-07-23T06:00:00.000Z",
+    "windowEnd": "2026-07-23T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-23T03:20:12.287Z",
-  "nextRefreshAt": "2026-07-23T06:00:00.000Z",
+  "publishedAt": "2026-07-23T06:34:25.750Z",
+  "nextRefreshAt": "2026-07-23T12:00:00.000Z",
   "runIds": {
-    "aggregation": "44a639ce-f45d-4a18-b7d0-032d801091d6",
-    "ranking": "rank-777a3cd9",
-    "top10": "top10:2026-07-23T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-23T00:00:00.000Z-2026-07-23T03:20:28.072Z"
+    "aggregation": "2d94a5da-b619-456d-9b98-31b64e09663b",
+    "ranking": "rank-5ba59c47",
+    "top10": "top10:2026-07-23T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-23T06:00:00.000Z-2026-07-23T06:34:46.961Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-23T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-23T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-23T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-23T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-23T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-23T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 102,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1276,
+      "count": 1453,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1558,
+      "count": 1720,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.0"
+        "topic": "platform",
+        "headline": "Tech to Watch That Isn’t AI: Platform Engineering and the Next Wave of Modernization"
       },
       {
         "rank": 3,
+        "topic": "platform",
+        "headline": "Multi-Cluster databases on Kubernetes: Architecture and deployment"
+      },
+      {
+        "rank": 4,
         "topic": "security",
         "headline": "RHSA-2026:44066: Important: pki-deps:10.6 security update"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "topic": "ai",
         "headline": "OpenAI claims responsibility for the Hugging Face hack after its own models escaped a test sandbox"
       },
       {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:43702: Moderate: libpng12 security update"
+        "rank": 6,
+        "topic": "platform",
+        "headline": "Announcing new course: AI in Platform Engineering"
       },
       {
-        "rank": 6,
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "v1.54.0-next.0"
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "RHSA-2026:44064: Important: jackson-annotations, jackson-core, jackson-databind, jackson-jaxrs-providers, and jackson-modules-base security update"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "NTT DATA Group cuts incident analysis to 30 minutes with Codex"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI Sued Over ChatGPT’s ‘Dangerous’ Health Advice"
-      },
-      {
         "rank": 9,
-        "topic": "models",
-        "headline": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened"
+        "topic": "security",
+        "headline": "RHSA-2026:43702: Moderate: libpng12 security update"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.36.3"
+        "headline": "Smart containers, smarter supply chains"
       }
     ],
     "articleCount": 0
