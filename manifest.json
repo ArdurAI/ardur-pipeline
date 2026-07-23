@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-23T12:00:00.000Z",
-    "windowStart": "2026-07-23T12:00:00.000Z",
-    "windowEnd": "2026-07-23T18:00:00.000Z"
+    "id": "2026-07-23T18:00:00.000Z",
+    "windowStart": "2026-07-23T18:00:00.000Z",
+    "windowEnd": "2026-07-24T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-23T14:11:53.989Z",
-  "nextRefreshAt": "2026-07-23T18:00:00.000Z",
+  "publishedAt": "2026-07-23T19:24:52.849Z",
+  "nextRefreshAt": "2026-07-24T00:00:00.000Z",
   "runIds": {
-    "aggregation": "06e0b508-0d9d-412f-8687-b1de08cd8309",
-    "ranking": "rank-a0a21e58",
-    "top10": "top10:2026-07-23T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-23T12:00:00.000Z-2026-07-23T14:12:21.341Z"
+    "aggregation": "c88ed064-9ca7-4110-84a8-2b742a8da7c3",
+    "ranking": "rank-08bf3f05",
+    "top10": "top10:2026-07-23T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-23T18:00:00.000Z-2026-07-23T19:25:18.593Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-23T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-23T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-23T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-23T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-23T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-23T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 90,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1536,
+      "count": 1705,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SZ20wcWdqZlZXdjZSYXpVcHNtS1R5cVFydGdYRnpLSVV5R1pLUXRDR1hQOWpjaFRBcktWNGhjWVlxcUtRY1BjYmZBVDZtRThCWFVBY0pn?oc=5",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1779,
+      "count": 1978,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 21,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "What Happened Between OpenAI and Hugging Face?"
+        "headline": "RHSA-2026:44438: Important: compat-openssl11 security update"
       },
       {
         "rank": 3,
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:44480: Moderate: compat-openssl10 security update"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:42876: Important: java-1.8.0-openjdk security update"
       },
       {
-        "rank": 4,
-        "topic": "platform",
-        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI Sued Over ChatGPT’s ‘Dangerous’ Health Advice"
-      },
-      {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:44271: Important: dogtag-pki security update"
+        "topic": "ai",
+        "headline": "Launching Health in ChatGPT"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "When Kubeflow meets Cilium: Debugging 60% idle GPUs in Kubernetes"
+        "topic": "ai",
+        "headline": "Evaluating AI Agents: A production blueprint with Strands and AgentCore"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v2.1.8"
+        "topic": "security",
+        "headline": "Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "v1.20.11"
+        "headline": "tests/v3.6.14"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "What does a platform product manager do?"
+        "topic": "kubernetes",
+        "headline": "server/v3.6.14"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
