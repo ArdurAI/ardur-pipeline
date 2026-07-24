@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-23T18:00:00.000Z",
-    "windowStart": "2026-07-23T18:00:00.000Z",
-    "windowEnd": "2026-07-24T00:00:00.000Z"
+    "id": "2026-07-24T00:00:00.000Z",
+    "windowStart": "2026-07-24T00:00:00.000Z",
+    "windowEnd": "2026-07-24T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-23T19:24:52.849Z",
-  "nextRefreshAt": "2026-07-24T00:00:00.000Z",
+  "publishedAt": "2026-07-24T03:13:56.353Z",
+  "nextRefreshAt": "2026-07-24T06:00:00.000Z",
   "runIds": {
-    "aggregation": "c88ed064-9ca7-4110-84a8-2b742a8da7c3",
-    "ranking": "rank-08bf3f05",
-    "top10": "top10:2026-07-23T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-23T18:00:00.000Z-2026-07-23T19:25:18.593Z"
+    "aggregation": "597c125e-6fd9-471a-9948-51ae199e87b7",
+    "ranking": "rank-0f501373",
+    "top10": "top10:2026-07-24T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-24T00:00:00.000Z-2026-07-24T03:14:17.082Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-23T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-23T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-23T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-24T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-24T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-24T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 90,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1705,
+      "count": 1645,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SZ20wcWdqZlZXdjZSYXpVcHNtS1R5cVFydGdYRnpLSVV5R1pLUXRDR1hQOWpjaFRBcktWNGhjWVlxcUtRY1BjYmZBVDZtRThCWFVBY0pn?oc=5",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1978,
+      "count": 1918,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 21,
+      "count": 20,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
+        "topic": "security",
+        "headline": "RHSA-2026:44694: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:44438: Important: compat-openssl11 security update"
+        "headline": "RHSA-2026:42877: Important: java-1.8.0-openjdk security update"
       },
       {
         "rank": 3,
         "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:44480: Moderate: compat-openssl10 security update"
+        "headline": "Russian Hackers Exploit Zimbra Zero-Day Against US, Ukraine Targets"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:42876: Important: java-1.8.0-openjdk security update"
+        "topic": "models",
+        "headline": "AMD and Cerebras Launch AI Inference Solution"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Launching Health in ChatGPT"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "Evaluating AI Agents: A production blueprint with Strands and AgentCore"
-      },
-      {
-        "rank": 8,
         "topic": "security",
         "headline": "Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes"
       },
       {
+        "rank": 7,
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
+      },
+      {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "Launching Health in ChatGPT"
+      },
+      {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "tests/v3.6.14"
+        "headline": "tests/v3.7.1"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "server/v3.6.14"
+        "headline": "server/v3.7.1"
       }
     ],
     "articleCount": 0
