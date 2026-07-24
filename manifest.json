@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-24T06:00:00.000Z",
-    "windowStart": "2026-07-24T06:00:00.000Z",
-    "windowEnd": "2026-07-24T12:00:00.000Z"
+    "id": "2026-07-24T12:00:00.000Z",
+    "windowStart": "2026-07-24T12:00:00.000Z",
+    "windowEnd": "2026-07-24T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-24T06:30:33.862Z",
-  "nextRefreshAt": "2026-07-24T12:00:00.000Z",
+  "publishedAt": "2026-07-24T13:53:47.577Z",
+  "nextRefreshAt": "2026-07-24T18:00:00.000Z",
   "runIds": {
-    "aggregation": "79e33d9b-635d-4f2b-a27a-378702d56416",
-    "ranking": "rank-103bb30e",
-    "top10": "top10:2026-07-24T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-24T06:00:00.000Z-2026-07-24T06:30:53.502Z"
+    "aggregation": "2301f143-b414-45a8-ad65-92a49d805c48",
+    "ranking": "rank-2ae98f7b",
+    "top10": "top10:2026-07-24T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-24T12:00:00.000Z-2026-07-24T13:54:13.549Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-24T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-24T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-24T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-24T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-24T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-24T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1521,
+      "count": 1508,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SZ20wcWdqZlZXdjZSYXpVcHNtS1R5cVFydGdYRnpLSVV5R1pLUXRDR1hQOWpjaFRBcktWNGhjWVlxcUtRY1BjYmZBVDZtRThCWFVBY0pn?oc=5",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMioAFBVV95cUxNRHRrT0VOeUZyaVJySUFfYTdPMlJJVk1MWlBJX09rSE9IVUlwY2RjSGlaa2ZMcmRBcVNRRElVQjd2TjlKMjhMYi1VMWJoSHR4SXBheFBZWC1yZ3JWbVZWUktKYWpvc3pOb1BwbmdDaVczY0drNEpGaGQzSGJTcmEzckZxaUFHTl9sSkVzREFROWh1TEJlOTBxbUNaQ0JpTFA3?oc=5",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,18 +52,18 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1794,
+      "count": 1733,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:44694: Important: kernel security, bug fix, and enhancement update"
+        "topic": "platform",
+        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:42877: Important: java-1.8.0-openjdk security update"
+        "headline": "RHSA-2026:45115: Important: kernel security update"
       },
       {
         "rank": 3,
@@ -118,38 +118,38 @@
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Russian Hackers Exploit Zimbra Zero-Day Against US, Ukraine Targets"
+        "topic": "ai",
+        "headline": "What the OpenAI-hugging face breach reveals about AI governance failures"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
+        "topic": "ai",
+        "headline": "Claude&039;s voice mode now runs on Anthropic&039;s most capable models across all platforms"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes"
+        "topic": "kubernetes",
+        "headline": "My LFX mentorship journey with kgateway"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "What went wrong: How an OpenAI model went rogue"
+        "topic": "kubernetes",
+        "headline": "OpenTelemetry has graduated… Now what?"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "topic": "ai",
+        "headline": "OpenAI Unveils Plan for $20B Data Center Project"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "tests/v3.7.1"
+        "topic": "ai",
+        "headline": "AT&T unveils new open telco AI model"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "server/v3.7.1"
+        "topic": "security",
+        "headline": "ChatGPT AgentForger Flaw Could Deploy Rogue Workspace Agents via a Phishing Link"
       }
     ],
     "articleCount": 0
