@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-24T00:00:00.000Z",
-    "windowStart": "2026-07-24T00:00:00.000Z",
-    "windowEnd": "2026-07-24T06:00:00.000Z"
+    "id": "2026-07-24T06:00:00.000Z",
+    "windowStart": "2026-07-24T06:00:00.000Z",
+    "windowEnd": "2026-07-24T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-24T03:13:56.353Z",
-  "nextRefreshAt": "2026-07-24T06:00:00.000Z",
+  "publishedAt": "2026-07-24T06:30:33.862Z",
+  "nextRefreshAt": "2026-07-24T12:00:00.000Z",
   "runIds": {
-    "aggregation": "597c125e-6fd9-471a-9948-51ae199e87b7",
-    "ranking": "rank-0f501373",
-    "top10": "top10:2026-07-24T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-24T00:00:00.000Z-2026-07-24T03:14:17.082Z"
+    "aggregation": "79e33d9b-635d-4f2b-a27a-378702d56416",
+    "ranking": "rank-103bb30e",
+    "top10": "top10:2026-07-24T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-24T06:00:00.000Z-2026-07-24T06:30:53.502Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-24T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-24T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-24T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-24T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-24T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-24T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1645,
+      "count": 1521,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SZ20wcWdqZlZXdjZSYXpVcHNtS1R5cVFydGdYRnpLSVV5R1pLUXRDR1hQOWpjaFRBcktWNGhjWVlxcUtRY1BjYmZBVDZtRThCWFVBY0pn?oc=5",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SZ20wcWdqZlZXdjZSYXpVcHNtS1R5cVFydGdYRnpLSVV5R1pLUXRDR1hQOWpjaFRBcktWNGhjWVlxcUtRY1BjYmZBVDZtRThCWFVBY0pn?oc=5",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,21 +54,21 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1918,
+      "count": 1794,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 20,
+      "count": 22,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -113,8 +113,8 @@
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
+        "topic": "models",
+        "headline": "AMD and Cerebras Launch AI Inference Solution"
       },
       {
         "rank": 4,
@@ -123,8 +123,8 @@
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "AMD and Cerebras Launch AI Inference Solution"
+        "topic": "platform",
+        "headline": "Achieving Compliance as a Platform Engineering Team by Helping Developers"
       },
       {
         "rank": 6,
@@ -133,13 +133,13 @@
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "topic": "ai",
+        "headline": "What went wrong: How an OpenAI model went rogue"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Launching Health in ChatGPT"
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
       },
       {
         "rank": 9,
