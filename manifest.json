@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-25T12:00:00.000Z",
-    "windowStart": "2026-07-25T12:00:00.000Z",
-    "windowEnd": "2026-07-25T18:00:00.000Z"
+    "id": "2026-07-25T18:00:00.000Z",
+    "windowStart": "2026-07-25T18:00:00.000Z",
+    "windowEnd": "2026-07-26T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-25T13:44:36.661Z",
-  "nextRefreshAt": "2026-07-25T18:00:00.000Z",
+  "publishedAt": "2026-07-25T19:14:50.775Z",
+  "nextRefreshAt": "2026-07-26T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c624f062-037d-4c35-bc34-bba76fbaf8f9",
-    "ranking": "rank-f9e3c3c7",
-    "top10": "top10:2026-07-25T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-25T12:00:00.000Z-2026-07-25T13:44:53.577Z"
+    "aggregation": "db8bc235-9fd9-4d72-bf91-39edb199716a",
+    "ranking": "rank-507ac79d",
+    "top10": "top10:2026-07-25T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-25T18:00:00.000Z-2026-07-25T19:15:12.569Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-25T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-25T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-25T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-25T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-25T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-25T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 69,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1106,
+      "count": 1091,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiV0FVX3lxTE9iczRhdUZaZWkyQ2RXakhsM1ViSF8wclZFX25KdEF6WU1UTEtMQXJhYnpiZnJRUWd2LXNoSkF0TnFQWEpBZzN2b0Z5TmhNZExyTVJUZDR3cw?oc=5",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EZ0ZiaXgxeGtVUGwwaGlqajAxOWpZWjFVNWpoWkdTT19Gdm8zWGdnR3p2dzgzdTlzalRNSWtfdUd6Vi1NRTVFNTNmaEowN3RZSGFqNg?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EZ0ZiaXgxeGtVUGwwaGlqajAxOWpZWjFVNWpoWkdTT19Gdm8zWGdnR3p2dzgzdTlzalRNSWtfdUd6Vi1NRTVFNTNmaEowN3RZSGFqNg?oc=5",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 5 distinct domains < floor 20",
         "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1283,
+      "count": 1286,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Claude Opus 5 on AWS: Anthropic’s most capable Opus model"
+        "headline": "Introducing Claude Opus 5"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "AMD and Cerebras join forces on AI inference"
+        "topic": "ai",
+        "headline": "Anthropic releases new model, Opus 5"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available"
+        "topic": "models",
+        "headline": "Introducing Claude Opus 5 on AWS: Anthropic’s most capable Opus model"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Opus 5 may have solved browser-based prompt injection, the biggest security flaw haunting AI agents"
+        "headline": "OpenAI confirms ChatGPT is down worldwide"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Nebius Is Turning Into The Open Source Anthropic NASDAQ:NBIS"
+        "topic": "platform",
+        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "AI: Google Q2 leads AI Capex Ramps, Anthropic/OpenAI vs China open-source AIs & more. AI-RTZ 1158"
+        "topic": "platform",
+        "headline": "GNU C Library 2.44 released"
       },
       {
         "rank": 7,
         "topic": "models",
-        "headline": "America’s Open-Model Paradox"
+        "headline": "AMD and Cerebras join forces on AI inference"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "This wave of Trump tariffs is likely here to stay; more are coming"
+        "topic": "security",
+        "headline": "Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "New stable kernel for ext4 users"
+        "topic": "ai",
+        "headline": "South Korea Unveils AI Push as Lee Courts Nvidia, OpenAI and Samsung"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "How routing keys isolate Kafka consumer tests on a shared broker"
+        "headline": "President Trump imposes new tariffs on 80+ countries"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
