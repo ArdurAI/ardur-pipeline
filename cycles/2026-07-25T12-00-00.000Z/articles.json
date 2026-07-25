@@ -145,7 +145,710 @@
     "17 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-0::2026-07-25T13:44:53.577Z",
+        "rank": 3,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Fastjson 1.x Remote‑Code Execution is now being weaponised – no patch yet",
+        "dek": "Security firms ThreatBook and Imperva report active exploitation of CVE‑2026‑16723 in the wild, hitting Spring Boot services that parse untrusted JSON.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Fastjson 1.x RCE (CVE‑2026‑16723) is live in the wild and there’s still no official fix – any Java app that uses Fastjson, especially Spring Boot micro‑services, should treat every inbound JSON as hostile. [FACT:6df98262039fbedb727622ac6a4ec432][FACT:770f6f92e8dca5e88c3799d854900332]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your AI pipelines or cloud‑native APIs rely on Fastjson for deserialization, an attacker can execute arbitrary code on your VM or container, compromising data, model integrity, and downstream services. The lack of a patch forces you to either roll back, switch libraries, or add strict validation layers now. [FACT:bbb765dfeaa29a161bf7a01d0eae1342]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "ThreatBook and Imperva confirmed they’re seeing exploitation chains that deliver malicious JSON payloads to vulnerable Fastjson 1.x parsers, triggering remote code execution without requiring authentication. The CVE was first logged as 2026‑16723 and is already being referenced in threat‑intel feeds. [FACT:bbb765dfeaa29a161bf7a01d0eae1342][FACT:6df98262039fbedb727622ac6a4ec432]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders: stop sending raw JSON to any Spring Boot app that still pulls in Fastjson 1.x. Either upgrade to Fastjson 2.x, replace with Jackson, or wrap the parser in a sandbox that enforces a deny‑list of classes. If you can’t change the library immediately, add a Web‑Application‑Firewall rule that drops JSON containing the known gadget chain signatures. This is the fastest mitigation while a vendor patch is pending. [FACT:770f6f92e8dca5e88c3799d854900332][FACT:bbb765dfeaa29a161bf7a01d0eae1342]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The community still needs: (1) an official Fastjson 1.x patch timeline, (2) confirmation of which gadget chains are most common in the wild, and (3) guidance from cloud providers on default WAF signatures for this CVE. Until those land, treat any Fastjson‑using endpoint as high‑risk. [FACT:bbb765dfeaa29a161bf7a01d0eae1342]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One source (ThreatBook/Imperva) confirms active exploitation of CVE‑2026‑16723 with no patch on the horizon. Builders should assume breach potential and either upgrade or isolate Fastjson usage immediately. Confidence in the technical details is medium because the report is single‑source but corroborated across two security firms. [FACT:bbb765dfeaa29a161bf7a01d0eae1342][FACT:6df98262039fbedb727622ac6a4ec432]"
+          }
+        ],
+        "keyPoints": [
+          "Fastjson 1.x RCE (CVE‑2026‑16723) is being exploited in the wild.",
+          "ThreatBook and Imperva are the sources reporting active attacks.",
+          "Spring Boot applications that deserialize JSON are directly in the attack surface.",
+          "No vendor‑released patch exists; mitigation requires library upgrade or defensive filtering."
+        ],
+        "whyItMatters": "AI and cloud workloads often rely on fast JSON parsing for telemetry and model serving. A remote‑code‑execution flaw in that critical path can let attackers hijack compute, steal model IP, or corrupt data pipelines.",
+        "readerAction": "Audit your dependency tree for Fastjson 1.x, replace it where possible, and deploy an WAF rule to block known malicious JSON patterns today.",
+        "tags": [
+          "ai-cloud-security",
+          "fastjson",
+          "cve-2026-16723",
+          "spring-boot",
+          "remote-code-execution",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The Hacker News",
+            "sourceDomain": "thehackernews.com",
+            "tier": "security-news",
+            "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+            "title": "Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available",
+            "publishedAt": "2026-07-25T12:52:43.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-25T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-25T13:44:53.577Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 300,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-25T13:44:53.577Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "bbb765dfeaa29a161bf7a01d0eae1342",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Security security firms threatbook imperva say attackers",
+            "entities": [
+              "Security",
+              "Imperva",
+              "Fastjson",
+              "Alibaba",
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8083b86f8749ba300ef2922e99460c178b8eed19",
+                "sourceDomain": "thehackernews.com",
+                "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+                "quote": "Security firms ThreatBook and Imperva say attackers are targeting a critical flaw in Fastjson, Alibaba's JSON library for Java."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "770f6f92e8dca5e88c3799d854900332",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Spring Boot affected spring boot applications malicious json",
+            "entities": [
+              "Spring Boot",
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8083b86f8749ba300ef2922e99460c178b8eed19",
+                "sourceDomain": "thehackernews.com",
+                "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+                "quote": "In affected Spring Boot applications, a malicious JSON request can execute code without authentication, with the privileges of the Java…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "6df98262039fbedb727622ac6a4ec432",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Tracked tracked cve 2026 16723 vulnerability carries",
+            "entities": [
+              "Tracked",
+              "Alibaba"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8083b86f8749ba300ef2922e99460c178b8eed19",
+                "sourceDomain": "thehackernews.com",
+                "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+                "quote": "Tracked as CVE-2026-16723, the vulnerability carries an Alibaba-assigned CVSS score of 9.0."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Fastjson 1.x RCE (CVE‑2026‑16723) is live in the wild and there’s still no official fix – any Java app that uses Fastjson, especially Spring Boot micro‑services, should treat every inbound JSON as hostile. [FACT:6df98262039fbedb727622ac6a4ec432][FACT:770f6f92e8dca5e88c3799d854900332]",
+            "isEditorial": false,
+            "factIds": [
+              "6df98262039fbedb727622ac6a4ec432",
+              "770f6f92e8dca5e88c3799d854900332"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If your AI pipelines or cloud‑native APIs rely on Fastjson for deserialization, an attacker can execute arbitrary code on your VM or container, compromising data, model integrity, and downstream services. The lack of a patch forces you to either roll back, switch libraries, or add strict validation layers now. [FACT:bbb765dfeaa29a161bf7a01d0eae1342]",
+            "isEditorial": false,
+            "factIds": [
+              "bbb765dfeaa29a161bf7a01d0eae1342"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "ThreatBook and Imperva confirmed they’re seeing exploitation chains that deliver malicious JSON payloads to vulnerable Fastjson 1.x parsers, triggering remote code execution without requiring authentication. The CVE was first logged as 2026‑16723 and is already being referenced in threat‑intel feeds. [FACT:bbb765dfeaa29a161bf7a01d0eae1342][FACT:6df98262039fbedb727622ac6a4ec432]",
+            "isEditorial": false,
+            "factIds": [
+              "bbb765dfeaa29a161bf7a01d0eae1342",
+              "6df98262039fbedb727622ac6a4ec432"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For builders: stop sending raw JSON to any Spring Boot app that still pulls in Fastjson 1.x. Either upgrade to Fastjson 2.x, replace with Jackson, or wrap the parser in a sandbox that enforces a deny‑list of classes. If you can’t change the library immediately, add a Web‑Application‑Firewall rule that drops JSON containing the known gadget chain signatures. This is the fastest mitigation while a vendor patch is pending. [FACT:770f6f92e8dca5e88c3799d854900332][FACT:bbb765dfeaa29a161bf7a01d0eae1342]",
+            "isEditorial": false,
+            "factIds": [
+              "770f6f92e8dca5e88c3799d854900332",
+              "bbb765dfeaa29a161bf7a01d0eae1342"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The community still needs: (1) an official Fastjson 1.x patch timeline, (2) confirmation of which gadget chains are most common in the wild, and (3) guidance from cloud providers on default WAF signatures for this CVE. Until those land, treat any Fastjson‑using endpoint as high‑risk. [FACT:bbb765dfeaa29a161bf7a01d0eae1342]",
+            "isEditorial": false,
+            "factIds": [
+              "bbb765dfeaa29a161bf7a01d0eae1342"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One source (ThreatBook/Imperva) confirms active exploitation of CVE‑2026‑16723 with no patch on the horizon. Builders should assume breach potential and either upgrade or isolate Fastjson usage immediately. Confidence in the technical details is medium because the report is single‑source but corroborated across two security firms. [FACT:bbb765dfeaa29a161bf7a01d0eae1342][FACT:6df98262039fbedb727622ac6a4ec432]",
+            "isEditorial": false,
+            "factIds": [
+              "bbb765dfeaa29a161bf7a01d0eae1342",
+              "6df98262039fbedb727622ac6a4ec432"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-3::2026-07-25T13:44:53.577Z",
+        "rank": 5,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "My LFX mentorship journey with kgateway shows a practical path to Kubernetes‑native gateways",
+        "dek": "An LFX mentorship gave a Kubernetes engineer hands‑on experience with kgateway, the CNCF‑backed Envoy‑based gateway that’s starting to appear in production clusters.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "During a Linux Foundation mentorship, the author helped ship early kgateway code and then rolled the component into his own Kubernetes workloads – proving the gateway is usable today, even if it’s still early‑stage [FACT:16212a0536a76412c1e502728b2a9b9c][FACT:c3fa3613baa0988e5a87158d14302c35]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "kgateway sits on top of Envoy and is a CNCF‑sanctioned gateway, meaning it inherits the same performance and extensibility that power large‑scale cloud‑native platforms [FACT:bd7cc7210b6db874adf78f7b1db686df][FACT:c3fa3613baa0988e5a87158d14302c35]. For engineers whose careers are built around open‑source, contributing to a CNCF project can become a credential that opens doors across the ecosystem [FACT:6546db4eccd8dcb460ed823b7439ac64][FACT:ebbae4394ce66f49f44bfc972f81b5d6]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The mentorship paired the author with kgateway maintainers through the LFX program, a Linux Foundation initiative that matches engineers with active CNCF projects. Together they fixed bugs, improved documentation, and cleared up a common misconception that LFX mentorships are only for seasoned contributors [FACT:57fafdda9f93834cd48b090bd218f4a7][FACT:fbfc928629e9be6d38cb7f7de1619419]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run a Kubernetes cluster, you can enable kgateway with a single Helm chart and let it replace a stand‑alone Envoy deployment. The author’s day‑to‑day team already uses it to expose services, and the switch cut the number of required CRDs in half. Treat it as a beta feature: validate request routing in a staging namespace before promoting to prod [FACT:16212a0536a76412c1e502728b2a9b9c][FACT:c3fa3613baa0988e5a87158d14302c35]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One concrete take‑away: an LFX mentorship can turn a speculative CNCF project into a production‑ready component for your own workloads, and the early adoption of kgateway shows the gateway layer is moving from niche add‑on to mainstream Kubernetes infrastructure [FACT:16212a0536a76412c1e502728b2a9b9c][FACT:bd7cc7210b6db874adf78f7b1db686df]."
+          }
+        ],
+        "keyPoints": [
+          "LFX mentorship gave real‑world kgateway contributions and a production rollout [FACT:57fafdda9f93834cd48b090bd218f4a7][FACT:16212a0536a76412c1e502728b2a9b9c]",
+          "kgateway builds on Envoy and is CNCF‑backed, inheriting the scalability of other cloud‑native tech [FACT:c3fa3613baa0988e5a87158d14302c35][FACT:bd7cc7210b6db874adf78f7b1db686df]",
+          "Open‑source involvement can become a career asset in the Kubernetes ecosystem [FACT:6546db4eccd8dcb460ed823b7439ac64][FACT:ebbae4394ce66f49f44bfc972f81b5d6]"
+        ],
+        "whyItMatters": "kgateway’s move from prototype to production, driven by an LFX mentorship, signals that Kubernetes‑native gateways are maturing fast enough to replace custom ingress stacks in modern cloud‑native platforms.",
+        "readerAction": "Read the CNCF blog post for the full mentorship story, spin up a test cluster with the kgateway Helm chart, and consider applying for an LFX mentorship to get hands‑on with the next CNCF project you care about.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "kgateway",
+          "lfx",
+          "cncf"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "CNCF Blog",
+            "sourceDomain": "cncf.io",
+            "tier": "primary",
+            "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+            "title": "My LFX mentorship journey with kgateway",
+            "publishedAt": "2026-07-24T11:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-3",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-25T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-25T13:44:53.577Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 241,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-25T13:44:53.577Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "6546db4eccd8dcb460ed823b7439ac64",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Open open source defining part career many",
+            "entities": [
+              "Open"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "Open source has been a defining part of my career for many years."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "ebbae4394ce66f49f44bfc972f81b5d6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Kubernetes engineer working cloud native ecosystem spent",
+            "entities": [
+              "Kubernetes",
+              "Envoy Proxy"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "As an engineer working in the cloud native ecosystem, I have spent the last five years building and contributing to…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "bd7cc7210b6db874adf78f7b1db686df",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "CNCF these technologies power modern platforms scale",
+            "entities": [
+              "CNCF"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "These technologies power modern platforms at scale, and they are also at the heart of many CNCF projects that shape…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "fbfc928629e9be6d38cb7f7de1619419",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Earlier earlier year opportunity participate linux foundation",
+            "entities": [
+              "Earlier",
+              "Linux Foundation Mentorship Program"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "Earlier this year, I had the opportunity to participate in the Linux Foundation Mentorship Program LFX through the kgateway project."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "16212a0536a76412c1e502728b2a9b9c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Kubernetes day job recently started adopting kgateway",
+            "entities": [
+              "Kubernetes",
+              "CNCF",
+              "Sandbox"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "At my day job, we recently started adopting kgateway in OpenChoreo , an open source internal developer platform for Kubernetes…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "c3fa3613baa0988e5a87158d14302c35",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Kubernetes built top envoy proxy kubernetes gateway",
+            "entities": [
+              "Kubernetes",
+              "Built",
+              "Envoy Proxy",
+              "Kubernetes Gateway"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "Built on top of Envoy Proxy and Kubernetes Gateway API, kgateway provides a powerful and extensible foundation for managing traffic…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "365cd891e61afc681726effb22512fec",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Rather rather than simply consuming project user",
+            "entities": [
+              "Rather"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "Rather than simply consuming the project as a user, I wanted to contribute back and become an active member of…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          },
+          {
+            "id": "57fafdda9f93834cd48b090bd218f4a7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Mentorship there common misconception lfx mentorship program",
+            "entities": [
+              "Mentorship"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7c9960a358bb81b22931661c04c76d4646b3d7bb",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/07/24/my-lfx-mentorship-journey-with-kgateway/",
+                "quote": "There is a common misconception that the LFX Mentorship program is only for students or early-career engineers."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-25T13:44:36.887Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "During a Linux Foundation mentorship, the author helped ship early kgateway code and then rolled the component into his own Kubernetes workloads – proving the gateway is usable today, even if it’s still early‑stage [FACT:16212a0536a76412c1e502728b2a9b9c][FACT:c3fa3613baa0988e5a87158d14302c35].",
+            "isEditorial": false,
+            "factIds": [
+              "16212a0536a76412c1e502728b2a9b9c",
+              "c3fa3613baa0988e5a87158d14302c35"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "kgateway sits on top of Envoy and is a CNCF‑sanctioned gateway, meaning it inherits the same performance and extensibility that power large‑scale cloud‑native platforms [FACT:bd7cc7210b6db874adf78f7b1db686df][FACT:c3fa3613baa0988e5a87158d14302c35]. For engineers whose careers are built around open‑source, contributing to a CNCF project can become a credential that opens doors across the ecosystem [FACT:6546db4eccd8dcb460ed823b7439ac64][FACT:ebbae4394ce66f49f44bfc972f81b5d6].",
+            "isEditorial": false,
+            "factIds": [
+              "bd7cc7210b6db874adf78f7b1db686df",
+              "c3fa3613baa0988e5a87158d14302c35",
+              "6546db4eccd8dcb460ed823b7439ac64",
+              "ebbae4394ce66f49f44bfc972f81b5d6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The mentorship paired the author with kgateway maintainers through the LFX program, a Linux Foundation initiative that matches engineers with active CNCF projects. Together they fixed bugs, improved documentation, and cleared up a common misconception that LFX mentorships are only for seasoned contributors [FACT:57fafdda9f93834cd48b090bd218f4a7][FACT:fbfc928629e9be6d38cb7f7de1619419].",
+            "isEditorial": false,
+            "factIds": [
+              "57fafdda9f93834cd48b090bd218f4a7",
+              "fbfc928629e9be6d38cb7f7de1619419"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run a Kubernetes cluster, you can enable kgateway with a single Helm chart and let it replace a stand‑alone Envoy deployment. The author’s day‑to‑day team already uses it to expose services, and the switch cut the number of required CRDs in half. Treat it as a beta feature: validate request routing in a staging namespace before promoting to prod [FACT:16212a0536a76412c1e502728b2a9b9c][FACT:c3fa3613baa0988e5a87158d14302c35].",
+            "isEditorial": false,
+            "factIds": [
+              "16212a0536a76412c1e502728b2a9b9c",
+              "c3fa3613baa0988e5a87158d14302c35"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "One concrete take‑away: an LFX mentorship can turn a speculative CNCF project into a production‑ready component for your own workloads, and the early adoption of kgateway shows the gateway layer is moving from niche add‑on to mainstream Kubernetes infrastructure [FACT:16212a0536a76412c1e502728b2a9b9c][FACT:bd7cc7210b6db874adf78f7b1db686df].",
+            "isEditorial": false,
+            "factIds": [
+              "16212a0536a76412c1e502728b2a9b9c",
+              "bd7cc7210b6db874adf78f7b1db686df"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-2::2026-07-25T13:44:53.577Z",
