@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-24T18:00:00.000Z",
-    "windowStart": "2026-07-24T18:00:00.000Z",
-    "windowEnd": "2026-07-25T00:00:00.000Z"
+    "id": "2026-07-25T00:00:00.000Z",
+    "windowStart": "2026-07-25T00:00:00.000Z",
+    "windowEnd": "2026-07-25T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-24T19:36:08.899Z",
-  "nextRefreshAt": "2026-07-25T00:00:00.000Z",
+  "publishedAt": "2026-07-25T02:58:40.933Z",
+  "nextRefreshAt": "2026-07-25T06:00:00.000Z",
   "runIds": {
-    "aggregation": "0dd27557-4296-4ea8-a6e9-d07a4d1d7753",
-    "ranking": "rank-05243ae6",
-    "top10": "top10:2026-07-24T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-24T18:00:00.000Z-2026-07-24T19:36:33.469Z"
+    "aggregation": "634875c6-79f1-4fc5-ab95-60bdcde9a41d",
+    "ranking": "rank-1b409f9a",
+    "top10": "top10:2026-07-25T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-25T00:00:00.000Z-2026-07-25T02:59:00.626Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-24T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-24T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-24T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-25T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-25T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-25T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 69,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1396,
+      "count": 1239,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiV0FVX3lxTE9iczRhdUZaZWkyQ2RXakhsM1ViSF8wclZFX25KdEF6WU1UTEtMQXJhYnpiZnJRUWd2LXNoSkF0TnFQWEpBZzN2b0Z5TmhNZExyTVJUZDR3cw?oc=5",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMibEFVX3lxTE5HM2hTbEJyVC1kVUZuekJnS2pqMThSQXZNSm5qbVB6aHp4VzlvTDd2T2gzOU5pSFhGRHUtSkUxcmhTdWQ5cjlNazhkRFQwOEVNMzBxbjVqQVpsZ21ROHVDVU5qbFJZM05TRERtaw?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiV0FVX3lxTE9iczRhdUZaZWkyQ2RXakhsM1ViSF8wclZFX25KdEF6WU1UTEtMQXJhYnpiZnJRUWd2LXNoSkF0TnFQWEpBZzN2b0Z5TmhNZExyTVJUZDR3cw?oc=5",
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMibEFVX3lxTE5HM2hTbEJyVC1kVUZuekJnS2pqMThSQXZNSm5qbVB6aHp4VzlvTDd2T2gzOU5pSFhGRHUtSkUxcmhTdWQ5cjlNazhkRFQwOEVNMzBxbjVqQVpsZ21ROHVDVU5qbFJZM05TRERtaw?oc=5"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1630,
+      "count": 1476,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 26,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Get started with OpenAI GPT-5.6 Sol, Terra, and Luna on Amazon Bedrock"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic rolls out Opus 5 AI model in efficiency upgrade"
-      },
-      {
-        "rank": 4,
         "topic": "security",
         "headline": "RHSA-2026:45192: Important: kernel security, bug fix, and enhancement update"
       },
       {
-        "rank": 5,
+        "rank": 3,
+        "topic": "ai",
+        "headline": "Get started with OpenAI GPT-5.6 Sol, Terra, and Luna on Amazon Bedrock"
+      },
+      {
+        "rank": 4,
         "topic": "models",
         "headline": "AMD and Cerebras Launch AI Inference Solution"
       },
       {
+        "rank": 5,
+        "topic": "models",
+        "headline": "America’s Open-Model Paradox"
+      },
+      {
         "rank": 6,
-        "topic": "security",
-        "headline": "Hermes AI agent used to automate attack on Thai Finance Ministry"
+        "topic": "kubernetes",
+        "headline": "What is a remote MCP server?"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic debuts Claude Opus 5 with feature that lets users toggle between cost and capability"
+        "headline": "Anthropic Releases New Claude Model, Positions It as a Cost-Efficient Version of Fable 5"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "OpenTelemetry has graduated… Now what?"
+        "topic": "ai",
+        "headline": "Anthropic debuts Opus 5 model as company preps for IPO later this year"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "My LFX mentorship journey with kgateway"
+        "topic": "security",
+        "headline": "Hermes AI agent used to automate attack on Thai Finance Ministry"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
+        "topic": "models",
+        "headline": "Quoting Boris Cherny"
       }
     ],
     "articleCount": 0
