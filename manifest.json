@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-26T12:00:00.000Z",
-    "windowStart": "2026-07-26T12:00:00.000Z",
-    "windowEnd": "2026-07-26T18:00:00.000Z"
+    "id": "2026-07-26T18:00:00.000Z",
+    "windowStart": "2026-07-26T18:00:00.000Z",
+    "windowEnd": "2026-07-27T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-26T13:38:59.487Z",
-  "nextRefreshAt": "2026-07-26T18:00:00.000Z",
+  "publishedAt": "2026-07-26T19:18:07.017Z",
+  "nextRefreshAt": "2026-07-27T00:00:00.000Z",
   "runIds": {
-    "aggregation": "75dc4d75-4d3d-420f-a7dc-bc0a21b456a6",
-    "ranking": "rank-086d2a28",
-    "top10": "top10:2026-07-26T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-26T12:00:00.000Z-2026-07-26T13:39:16.286Z"
+    "aggregation": "7f24f1a8-722b-4384-a71a-4e455a6c3fa4",
+    "ranking": "rank-d4258192",
+    "top10": "top10:2026-07-26T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-26T18:00:00.000Z-2026-07-26T19:18:26.262Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-26T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-26T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-26T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-26T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-26T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-26T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 60,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1240,
+      "count": 1181,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,28 +59,28 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1006,
+      "count": 1034,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 37,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI and Anthropic Accused of Lobbying to Block Open-Source Models as Silicon Valley Witnesses a 'Battle for Open Source'"
+        "headline": "OpenAI agent went rogue, escaped, and hacked Hugging Face"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic&039;s Opus 5 blows past Fable 5 and GPT-5.6 Sol on the benchmark designed to measure real intelligence"
+        "headline": "For some, so-called 'Skynet Day' came too close to sci-fi after a rogue agent hacked into a startup"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Hundreds asked ChatGPT for poison and bioweapon recipes and some got step-by-step high school level guides"
+        "headline": "Mira Murati’s Inkling AI Model Review: Best Open-Source Model in the West"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic&039;s Claude Opus 5 delivers near-Fable 5 performance at half the token price"
+        "headline": "OpenAI and Anthropic Accused of Lobbying to Block Open-Source Models as Silicon Valley Witnesses a 'Battle for Open Source'"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "A forced-labor crackdown or an end-run around Congress? Dissecting Trump’s new tariffs"
+        "topic": "models",
+        "headline": "Hundreds asked ChatGPT for poison and bioweapon recipes and some got step-by-step high school level guides"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Ruff v0.16.0"
+        "topic": "security",
+        "headline": "Scans for ESAFENET CDG 3 Document Management System Weak Logins, Sun, Jul 26th"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "How to Secure AI Applications in Production"
+        "topic": "kubernetes",
+        "headline": "MCP’s biggest update removes the machinery many servers were built around"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Weekly Update 514: This Week in Data Breaches"
+        "topic": "kubernetes",
+        "headline": "ELEKTROS Reviews About 10-15 EV Charging Sites; One Is Near a Pizzeria"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "15 Cascading Flowers That Spill Beautifully From Containers"
+        "headline": "Microsoft and Google DeepMind agree on AI control — but not on who holds it"
       }
     ],
     "articleCount": 0
