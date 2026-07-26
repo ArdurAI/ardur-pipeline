@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-25T18:00:00.000Z",
-    "windowStart": "2026-07-25T18:00:00.000Z",
-    "windowEnd": "2026-07-26T00:00:00.000Z"
+    "id": "2026-07-26T00:00:00.000Z",
+    "windowStart": "2026-07-26T00:00:00.000Z",
+    "windowEnd": "2026-07-26T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-25T19:14:50.775Z",
-  "nextRefreshAt": "2026-07-26T00:00:00.000Z",
+  "publishedAt": "2026-07-26T03:25:07.914Z",
+  "nextRefreshAt": "2026-07-26T06:00:00.000Z",
   "runIds": {
-    "aggregation": "db8bc235-9fd9-4d72-bf91-39edb199716a",
-    "ranking": "rank-507ac79d",
-    "top10": "top10:2026-07-25T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-25T18:00:00.000Z-2026-07-25T19:15:12.569Z"
+    "aggregation": "7ee733ec-5edb-4c44-8093-823a0582da41",
+    "ranking": "rank-11873b0c",
+    "top10": "top10:2026-07-26T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-26T00:00:00.000Z-2026-07-26T03:25:28.547Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-25T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-25T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-25T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-26T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-26T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-26T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1091,
+      "count": 1075,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EZ0ZiaXgxeGtVUGwwaGlqajAxOWpZWjFVNWpoWkdTT19Gdm8zWGdnR3p2dzgzdTlzalRNSWtfdUd6Vi1NRTVFNTNmaEowN3RZSGFqNg?oc=5",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-15] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 5 distinct domains < floor 20",
         "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1286,
+      "count": 1156,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -70,18 +70,18 @@
       "category": "editorial-hold",
       "count": 20,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 32,
       "sample": [
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -104,27 +104,27 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Claude Opus 5"
+        "headline": "Anthropic releases new model, Opus 5"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic releases new model, Opus 5"
+        "headline": "Ruff v0.16.0"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "Introducing Claude Opus 5 on AWS: Anthropic’s most capable Opus model"
+        "topic": "ai",
+        "headline": "Anthropic&039;s Claude Opus 5 delivers near-Fable 5 performance at half the token price"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "OpenAI confirms ChatGPT is down worldwide"
+        "headline": "Chinese Open-Source AI Repels Rogue OpenAI Attack on Hugging Face"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
+        "topic": "models",
+        "headline": "Introducing Claude Opus 5 on AWS: Anthropic’s most capable Opus model"
       },
       {
         "rank": 6,
@@ -143,13 +143,13 @@
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "South Korea Unveils AI Push as Lee Courts Nvidia, OpenAI and Samsung"
+        "topic": "platform",
+        "headline": "A Debian general resolution on LLM usage"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "President Trump imposes new tariffs on 80+ countries"
+        "topic": "platform",
+        "headline": "Did Nutanix’s NTNX Portable Edge AI “Suitcase” Just Reframe Its Hybrid-Cloud Ambitions?"
       }
     ],
     "articleCount": 1
