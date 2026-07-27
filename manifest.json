@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-27T00:00:00.000Z",
-    "windowStart": "2026-07-27T00:00:00.000Z",
-    "windowEnd": "2026-07-27T06:00:00.000Z"
+    "id": "2026-07-27T06:00:00.000Z",
+    "windowStart": "2026-07-27T06:00:00.000Z",
+    "windowEnd": "2026-07-27T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-27T03:35:02.655Z",
-  "nextRefreshAt": "2026-07-27T06:00:00.000Z",
+  "publishedAt": "2026-07-27T07:37:56.106Z",
+  "nextRefreshAt": "2026-07-27T12:00:00.000Z",
   "runIds": {
-    "aggregation": "5b456682-e31a-4e6c-9796-c88f63432b2b",
-    "ranking": "rank-1e4247e4",
-    "top10": "top10:2026-07-27T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-27T00:00:00.000Z-2026-07-27T03:35:19.473Z"
+    "aggregation": "4ff8045f-e4aa-4f0a-9ed1-d1ac82b00064",
+    "ranking": "rank-3c35c073",
+    "top10": "top10:2026-07-27T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-27T06:00:00.000Z-2026-07-27T07:38:11.775Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-27T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-27T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-27T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-27T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-27T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-27T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1170,
+      "count": 1121,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 960,
+      "count": 953,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,10 +68,10 @@
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 25,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
@@ -79,9 +79,9 @@
       "category": "copyright-gate",
       "count": 35,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:46389: Important: freerdp security update"
+        "headline": "RHSA-2026:46460: Important: tigervnc security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Exclusive | Nvidia in Talks With OpenAI to Guarantee $250 Billion Financing for Data Center"
+        "topic": "models",
+        "headline": "Open-Model Platforms"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "David Sacks not happy with ‘Chinese’ tag for Open source AI models that Anthropic wants banned"
+        "headline": "Anthropic releases ‘more efficient’ Claude Opus 5 AI model"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "How to use LVM with shared storage"
+        "topic": "ai",
+        "headline": "Exclusive | Nvidia in Talks With OpenAI to Guarantee $250 Billion Financing for Data Center"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "MangoBoost Unveils AI Inference Service 'Mango Inference'"
+        "topic": "ai",
+        "headline": "OpenAI agent went rogue, escaped, and hacked Hugging Face"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic releases ‘more efficient’ Claude Opus 5 AI model"
+        "topic": "security",
+        "headline": "RHSA-2026:46461: Moderate: kernel-rt security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "OpenAI took days to realize its own AI agent breached Hugging Face"
+        "headline": "Nono: Open-source sandbox for AI agents"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "ISC Stormcast For Monday, July 27th, 2026 https://isc.sans.edu/podcastdetail/10024, Mon, Jul 27th"
+        "topic": "platform",
+        "headline": "How we designed customizable dashboards in OpenShift"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "NVIDIA Nemotron 3 Ultra Leads Open Models on Accuracy and Efficiency in Agentic RTL Coding"
+        "topic": "platform",
+        "headline": "Standardize project context with AGENTS.md and Agent Skills"
       },
       {
         "rank": 10,
         "topic": "models",
-        "headline": "Advancing Semiconductor Innovation Across Materials Engineering and Manufacturing"
+        "headline": "MangoBoost Unveils AI Inference Service 'Mango Inference'"
       }
     ],
     "articleCount": 0
