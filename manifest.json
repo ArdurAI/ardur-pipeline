@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-28T00:00:00.000Z",
-    "windowStart": "2026-07-28T00:00:00.000Z",
-    "windowEnd": "2026-07-28T06:00:00.000Z"
+    "id": "2026-07-28T06:00:00.000Z",
+    "windowStart": "2026-07-28T06:00:00.000Z",
+    "windowEnd": "2026-07-28T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-28T02:51:11.763Z",
-  "nextRefreshAt": "2026-07-28T06:00:00.000Z",
+  "publishedAt": "2026-07-28T06:31:31.177Z",
+  "nextRefreshAt": "2026-07-28T12:00:00.000Z",
   "runIds": {
-    "aggregation": "c3bd0f8a-d1bb-4928-905f-2757de804b24",
-    "ranking": "rank-c640a51b",
-    "top10": "top10:2026-07-28T00:00:00.000Z",
-    "articles": "synth-top10:2026-07-28T00:00:00.000Z-2026-07-28T02:51:27.095Z"
+    "aggregation": "4f6f8350-bd81-4fb1-802f-7fbf64217f48",
+    "ranking": "rank-cfa9e76d",
+    "top10": "top10:2026-07-28T06:00:00.000Z",
+    "articles": "synth-top10:2026-07-28T06:00:00.000Z-2026-07-28T06:31:43.647Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-28T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-28T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-28T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-28T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-28T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-28T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1218,
+      "count": 1190,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMia0FVX3lxTE44MUljeGRwWUdlanZWVlFxeV9zenktdFFiOVppbzh2QkI2Rlh4bFV2bjRCZEJ5UEtxbHRLRFVnYjFkUldXUjJpSEFnd25oTnZza0QteXV1ZVdXSExfckhSMF9Md01Zd1JIcjZn?oc=5",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-19] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1431,
+      "count": 1412,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 33,
       "sample": [
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:46990: Important: sssd security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:47011: Important: kernel security update"
       },
       {
         "rank": 2,
@@ -118,13 +118,13 @@
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Microsoft launches its own cybersecurity model MAI-Cyber-1-Flash but still depends on OpenAI for the toughest tasks"
+        "topic": "security",
+        "headline": "Hackers target US firms in FastJson RCE zero-day attacks"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Hackers target US firms in FastJson RCE zero-day attacks"
+        "headline": "Arista patches VeloCloud Orchestrator zero-day exploited in attacks"
       },
       {
         "rank": 6,
@@ -133,18 +133,18 @@
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Arista patches VeloCloud Orchestrator zero-day exploited in attacks"
-      },
-      {
-        "rank": 8,
         "topic": "ai",
         "headline": "Microsoft Unveils Project Perception, Expands Runtime Security for AI Agents"
       },
       {
+        "rank": 8,
+        "topic": "models",
+        "headline": "Anthropic’s Amodei Rejects Open Model Ban But Calls for Testing"
+      },
+      {
         "rank": 9,
         "topic": "ai",
-        "headline": "Anthropic CEO Dario Amodei says he does not support open-weight AI ban"
+        "headline": "Microsoft launches its own cybersecurity model MAI-Cyber-1-Flash but still depends on OpenAI for the toughest tasks"
       },
       {
         "rank": 10,
