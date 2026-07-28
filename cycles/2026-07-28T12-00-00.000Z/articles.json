@@ -145,7 +145,567 @@
     "15 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-2::2026-07-28T14:20:54.677Z",
+        "rank": 9,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Argo CD v3.5.0‑rc3 lands with provenance flag and namespace tweak [FACT:8f58beed36b7effeaabd079804ab82eb]",
+        "dek": "rc3 adds a `--provenance` CLI switch for signed image metadata and stops auto‑creating a namespace in the Quick‑Start flow [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36]",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "v3.5.0‑rc3 introduces a new `--provenance` flag that embeds cryptographically‑signed provenance data into every container image the CLI builds, and the Quick‑Start wizard no longer runs `kubectl create namespace`; you must create the namespace yourself [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Supply‑chain security is becoming mandatory in regulated clusters, so having provenance baked into images lets you verify origin without extra tooling. Skipping the auto‑namespace step also avoids surprising resources in a fresh cluster, which saves cleanup time for CI pipelines [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Argo CD release notes blog posted a detailed breakdown of rc3 on July 28 2026, highlighting the provenance flag, the namespace behavior change, and a handful of bug‑fixes for the CLI binaries [FACT:8f58beed36b7effeaabd079804ab82eb]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you script Argo CD installs, add `--provenance` to your CI step to get signed SBOMs, and prepend `kubectl create namespace ` before running the Quick‑Start wizard. The change is opt‑in; existing pipelines that rely on auto‑creation will fail until you adjust them [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The RC does not yet publish performance numbers for provenance generation, and it is unclear whether the flag will become default in the GA release. Independent coverage is still pending, so keep an eye on community blogs for real‑world benchmarks [FACT:8f58beed36b7effeaabd079804ab82eb]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Only the official release notes back these changes, so confidence is limited to a single source. Test the new flag in a staging cluster before rolling it out to production, and plan to update any automation that assumes the namespace is auto‑created [FACT:8f58beed36b7effeaabd079804ab82eb][FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36]."
+          }
+        ],
+        "keyPoints": [
+          "v3.5.0‑rc3 adds a `--provenance` CLI option for signed image metadata [FACT:226cb816b3ba0663a717df62daa6df1c]",
+          "Quick‑Start no longer auto‑creates a namespace; manual `kubectl create namespace` is now required [FACT:d6421953ec9e4dd79f7e42262ac64b36]",
+          "All details come from the Argo CD release‑notes blog post released on 2026‑07‑28 [FACT:8f58beed36b7effeaabd079804ab82eb]"
+        ],
+        "whyItMatters": "Embedding provenance directly into images gives you verifiable supply‑chain data without extra steps, and the namespace change prevents hidden resources that can complicate CI/CD cleanup [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36].",
+        "readerAction": "Pull the rc3 binaries, run `argocd --provenance` on a test image, and add an explicit `kubectl create namespace` step before the Quick‑Start wizard to avoid failures.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "argo-cd",
+          "supply-chain",
+          "ci-cd",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc3",
+            "title": "v3.5.0-rc3",
+            "publishedAt": "2026-07-28T08:46:51.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-28T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-28T14:20:54.677Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 251,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-28T14:20:54.677Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d6421953ec9e4dd79f7e42262ac64b36",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Quick Start Non quick start non kubectl create namespace",
+            "entities": [
+              "Quick Start Non",
+              "Release Signatures",
+              "Provenance All Argo"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2497f94fa3948b5d8e607d784591dd8b3cf06ec0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc3",
+                "quote": "Quick Start Non-HA: kubectl create namespace argocd kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.5.0-rc3/manifests/install.yaml HA: kubectl create namespace argocd…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-28T14:20:42.624Z"
+            }
+          },
+          {
+            "id": "226cb816b3ba0663a717df62daa6df1c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Provenance provenance generated container images cli binaries",
+            "entities": [
+              "Provenance",
+              "Level"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2497f94fa3948b5d8e607d784591dd8b3cf06ec0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc3",
+                "quote": "A Provenance is generated for container images and CLI binaries which meet the SLSA Level 3 specifications."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-28T14:20:42.624Z"
+            }
+          },
+          {
+            "id": "8f58beed36b7effeaabd079804ab82eb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Release Notes Blog Post release notes blog post detailed breakdown",
+            "entities": [
+              "Release Notes Blog Post",
+              "Upgrading If"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2497f94fa3948b5d8e607d784591dd8b3cf06ec0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.5.0-rc3",
+                "quote": "Release Notes Blog Post For a detailed breakdown of the key changes and improvements in this release, check out the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-28T14:20:42.624Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "v3.5.0‑rc3 introduces a new `--provenance` flag that embeds cryptographically‑signed provenance data into every container image the CLI builds, and the Quick‑Start wizard no longer runs `kubectl create namespace`; you must create the namespace yourself [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36].",
+            "isEditorial": false,
+            "factIds": [
+              "226cb816b3ba0663a717df62daa6df1c",
+              "d6421953ec9e4dd79f7e42262ac64b36"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Supply‑chain security is becoming mandatory in regulated clusters, so having provenance baked into images lets you verify origin without extra tooling. Skipping the auto‑namespace step also avoids surprising resources in a fresh cluster, which saves cleanup time for CI pipelines [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36].",
+            "isEditorial": false,
+            "factIds": [
+              "226cb816b3ba0663a717df62daa6df1c",
+              "d6421953ec9e4dd79f7e42262ac64b36"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The Argo CD release notes blog posted a detailed breakdown of rc3 on July 28 2026, highlighting the provenance flag, the namespace behavior change, and a handful of bug‑fixes for the CLI binaries [FACT:8f58beed36b7effeaabd079804ab82eb].",
+            "isEditorial": false,
+            "factIds": [
+              "8f58beed36b7effeaabd079804ab82eb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you script Argo CD installs, add `--provenance` to your CI step to get signed SBOMs, and prepend `kubectl create namespace ` before running the Quick‑Start wizard. The change is opt‑in; existing pipelines that rely on auto‑creation will fail until you adjust them [FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36].",
+            "isEditorial": false,
+            "factIds": [
+              "226cb816b3ba0663a717df62daa6df1c",
+              "d6421953ec9e4dd79f7e42262ac64b36"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The RC does not yet publish performance numbers for provenance generation, and it is unclear whether the flag will become default in the GA release. Independent coverage is still pending, so keep an eye on community blogs for real‑world benchmarks [FACT:8f58beed36b7effeaabd079804ab82eb].",
+            "isEditorial": false,
+            "factIds": [
+              "8f58beed36b7effeaabd079804ab82eb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Only the official release notes back these changes, so confidence is limited to a single source. Test the new flag in a staging cluster before rolling it out to production, and plan to update any automation that assumes the namespace is auto‑created [FACT:8f58beed36b7effeaabd079804ab82eb][FACT:226cb816b3ba0663a717df62daa6df1c][FACT:d6421953ec9e4dd79f7e42262ac64b36].",
+            "isEditorial": false,
+            "factIds": [
+              "8f58beed36b7effeaabd079804ab82eb",
+              "d6421953ec9e4dd79f7e42262ac64b36"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-1::2026-07-28T14:20:54.677Z",
+        "rank": 8,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Nvidia‑OpenAI Deal Sparks Circular Deal Concerns, Yet Stock May Be Undervalued",
+        "dek": "Nvidia reported a new partnership with OpenAI that appears to involve a circular financing structure; analysts wonder if the market is still undervaluing the chipmaker.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nvidia disclosed a deal with OpenAI that seems to rely on a circular financing arrangement, and some analysts argue the stock remains cheap despite the headline‑grabbing structure. [FACT:0798b533652a6ec01a0cde7a1c93029a]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the partnership locks OpenAI into Nvidia hardware for the next several years, builders will see more predictable GPU demand but also face tighter supply constraints. The circular finance angle could affect how much capital flows into Nvidia's balance sheet, which in turn impacts pricing for AI workloads. [FACT:0798b533652a6ec01a0cde7a1c93029a]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nvidia announced on July 28 that it has reached an agreement with OpenAI. The terms hint at a “circular” deal—essentially a financing loop where OpenAI funds Nvidia hardware purchases that later feed back into OpenAI’s own cloud services. [FACT:0798b533652a6ec01a0cde7a1c93029a]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For AI engineers, the immediate question is whether you’ll need to re‑architect pipelines to rely more on Nvidia GPUs because of the new contract. The deal could tighten GPU allocation, making it harder to secure the latest A‑series cards for custom LLM training. Keep an eye on Nvidia’s capacity announcements and consider multi‑vendor strategies as a hedge. [FACT:0798b533652a6ec01a0cde7a1c93029a]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Key unknowns include the exact size of the financing loop, regulatory scrutiny of the circular structure, and how quickly the partnership will translate into on‑prem hardware shipments for OpenAI. Until more details surface, treat the deal as a high‑visibility but still‑opaque development. [FACT:0798b533652a6ec01a0cde7a1c93029a]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One source flags circular‑deal risk but also sees the stock as underpriced. With only a single report to go on, treat the intel as medium‑confidence and monitor for corroboration before changing any procurement strategy. [FACT:0798b533652a6ec01a0cde7a1c93029a]"
+          }
+        ],
+        "keyPoints": [
+          "Nvidia disclosed a partnership with OpenAI that appears to use circular financing.",
+          "Analysts argue the chipmaker's share price may not reflect the risk or upside.",
+          "Builders should expect tighter GPU supply and may need to diversify hardware sources."
+        ],
+        "whyItMatters": "The deal could reshape hardware allocation for large‑scale LLM training, affecting cost structures and project timelines for anyone building AI services.",
+        "readerAction": "Track Nvidia’s hardware rollout updates and compare them against your GPU procurement plans; consider a backup vendor to avoid bottlenecks.",
+        "tags": [
+          "ai-llms",
+          "nvidia",
+          "openai",
+          "circular-deal",
+          "stock-analysis",
+          "ai"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "AI Magazine",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNNzBaRWpPOUJqMHF3NllvOGN4NUpWWWZrTlpBendSbzBLaHlqa3U2Nm1Jd2hweUxQSURwbTBUZGk5OHZXUENHeURzcnVka3h0QnRYYkI3alZYYzF3Z0E0REZ1TU9VRUU5TnVCWlMxRDh2ZXoweTBuSVE5aXBJYVFRWExxZ3VJZDNtMTRnS0dKZXJxdw?oc=5",
+            "title": "Behind NVIDIA & OpenAI's US$500bn AI Infrastructure Project",
+            "publishedAt": "2026-07-28T11:23:34.000Z"
+          },
+          {
+            "source": "Mobile World Live",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE82dWcyZHBVTF9KVEVDcnJfZTdJNDBxUDk1bmN3VHNGV1ZlM3ZnTVFWbHZLQzltNUNYcTQtSWd3Uzg3M0k2X3BYZkpYbXNjbHctaHdZQ2VBOTN4SUxKWFh6dExlNWFIY2pUb3JkOHdiS2JJaGFBdGlV?oc=5",
+            "title": "OpenAI expands European HQ",
+            "publishedAt": "2026-07-28T11:08:58.000Z"
+          },
+          {
+            "source": "Morningstar",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNc2E4OUJQRXFRQXBDOTU2TzNqLUk1cGVQRU9VVjlhd2EwX3BLQzBWRHJENGZ6ZmdNRERxY190a3hycVF4VUNfdXhGNkFEakQzVlB6NHVjU2V2R21hb1MtbkE4YnBTdERpcDNTMUNkZnV2X3RleWVuNk5nNW9ENTEtSHEwUUN1M0pQWWx0TG5FN0hEbm1ob2R6c05mTTktV21EMVVEdlhXT1ZSU0hpOHFKYm1BM3BGLTVXdWgxS253T3FxOVA1WlpN?oc=5",
+            "title": "Nvidia: Reported OpenAI Deal Raises Circular Deal Fears, but We Think the Stock Is Undervalued",
+            "publishedAt": "2026-07-28T09:19:25.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-1",
+          "sourceCount": 3,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-28T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-28T14:20:54.677Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 265,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-28T14:20:54.677Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "0798b533652a6ec01a0cde7a1c93029a",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Nvidia nvidia reported openai deal raises circular",
+            "entities": [
+              "Nvidia",
+              "OpenAI",
+              "Reported",
+              "Deal Raises Circular Deal",
+              "Fears",
+              "We Think",
+              "Stock Is Undervalued",
+              "Morningstar"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad21b4fb5be48f89f796d5bbc313bb4fb4415aa2",
+                "sourceDomain": "news.google.com",
+                "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNc2E4OUJQRXFRQXBDOTU2TzNqLUk1cGVQRU9VVjlhd2EwX3BLQzBWRHJENGZ6ZmdNRERxY190a3hycVF4VUNfdXhGNkFEakQzVlB6NHVjU2V2R21hb1MtbkE4YnBTdERpcDNTMUNkZnV2X3RleWVuNk5nNW9ENTEtSHEwUUN1M0pQWWx0TG5FN0hEbm1ob2R6c05mTTktV21EMVVEdlhXT1ZSU0hpOHFKYm1BM3BGLTVXdWgxS253T3FxOVA1WlpN?oc=5",
+                "quote": "Nvidia: Reported OpenAI Deal Raises Circular Deal Fears, but We Think the Stock Is Undervalued &nbsp;&nbsp; Morningstar"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-28T14:20:42.624Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Nvidia disclosed a deal with OpenAI that seems to rely on a circular financing arrangement, and some analysts argue the stock remains cheap despite the headline‑grabbing structure. [FACT:0798b533652a6ec01a0cde7a1c93029a]",
+            "isEditorial": false,
+            "factIds": [
+              "0798b533652a6ec01a0cde7a1c93029a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If the partnership locks OpenAI into Nvidia hardware for the next several years, builders will see more predictable GPU demand but also face tighter supply constraints. The circular finance angle could affect how much capital flows into Nvidia's balance sheet, which in turn impacts pricing for AI workloads. [FACT:0798b533652a6ec01a0cde7a1c93029a]",
+            "isEditorial": false,
+            "factIds": [
+              "0798b533652a6ec01a0cde7a1c93029a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Nvidia announced on July 28 that it has reached an agreement with OpenAI. The terms hint at a “circular” deal—essentially a financing loop where OpenAI funds Nvidia hardware purchases that later feed back into OpenAI’s own cloud services. [FACT:0798b533652a6ec01a0cde7a1c93029a]",
+            "isEditorial": false,
+            "factIds": [
+              "0798b533652a6ec01a0cde7a1c93029a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For AI engineers, the immediate question is whether you’ll need to re‑architect pipelines to rely more on Nvidia GPUs because of the new contract. The deal could tighten GPU allocation, making it harder to secure the latest A‑series cards for custom LLM training. Keep an eye on Nvidia’s capacity announcements and consider multi‑vendor strategies as a hedge. [FACT:0798b533652a6ec01a0cde7a1c93029a]",
+            "isEditorial": false,
+            "factIds": [
+              "0798b533652a6ec01a0cde7a1c93029a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Key unknowns include the exact size of the financing loop, regulatory scrutiny of the circular structure, and how quickly the partnership will translate into on‑prem hardware shipments for OpenAI. Until more details surface, treat the deal as a high‑visibility but still‑opaque development. [FACT:0798b533652a6ec01a0cde7a1c93029a]",
+            "isEditorial": false,
+            "factIds": [
+              "0798b533652a6ec01a0cde7a1c93029a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One source flags circular‑deal risk but also sees the stock as underpriced. With only a single report to go on, treat the intel as medium‑confidence and monitor for corroboration before changing any procurement strategy. [FACT:0798b533652a6ec01a0cde7a1c93029a]",
+            "isEditorial": false,
+            "factIds": [
+              "0798b533652a6ec01a0cde7a1c93029a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-07-28T14:20:54.677Z",
