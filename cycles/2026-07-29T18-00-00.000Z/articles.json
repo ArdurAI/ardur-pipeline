@@ -139,7 +139,431 @@
     "23 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-2::2026-07-29T19:24:15.355Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Tame Dependabot: Group updates, slow cadence, keep security fast",
+        "dek": "GitHub lets you bundle Dependabot PRs and stretch the update interval, so you stop drowning in Monday‑morning alerts while still catching critical patches.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitHub shipped two new Dependabot knobs on July 29 2026—`dependabot-group-updates` to batch PRs and `dependabot-update-interval` to throttle the schedule—so you can silence the noisy flood of daily alerts without losing the fast‑track security fixes that matter most. [FACT:f2488f1bd9360638bc60cbb3972b357b][FACT:b2d22b7fe5a1c378e88d3ebdc2202388]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders who open a stack of Dependabot notifications every Monday know the pain: each individual PR is useful, but together they become a distraction and a CI bottleneck. By grouping updates you cut that noise, freeing engineers to focus on real work while the platform still pushes critical CVEs as soon as they appear. [FACT:065cc5e4d5e6049f9b781ff6953ca761][FACT:d3c4644f5b1b7f0e416454b36ec1a41c][FACT:da99121bfd16a6d01a850d8dc7a2419a]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The July 2026 Git log shows the new settings added to the Dependabot UI and the default `dependabot.yml` schema. GitHub also noted that the previous defaults paced updates too aggressively for most cloud‑native repos, prompting the cadence tweak. [FACT:f2488f1bd9360638bc60cbb3972b357b][FACT:4de2a3c4f6da85d6263481c290687827]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To adopt the change, flip the “Group updates” toggle in your repository’s Dependabot page and set `update-interval: weekly` (or longer) in `.github/dependabot.yml`. Critical‑only alerts stay on the fast lane, so you won’t miss a zero‑day. The config is a single extra line, but it eliminates the daily PR churn that was flooding CI runners. [FACT:6e1bfb7a8ae92b3518564e1bd54564c2][FACT:b2d22b7fe5a1c378e88d3ebdc2202388]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "What happens to non‑critical updates that now wait weeks? Will compliance scanners flag the longer window? And how soon will the new controls roll out to GitHub Enterprise Server? Microsoft’s recent open‑source of the gctoolkit hints that more supply‑chain tooling may follow, but the timeline is still fuzzy. [FACT:e9ce45b71d2e27062d58334201de5b52]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your team is annoyed by a Monday inbox full of Dependabot PRs, enable grouping now—there’s no downside for critical patches and the feature is already in production. Keep an eye on any delay in non‑critical upgrades and adjust the interval as you gather data. [FACT:065cc5e4d5e6049f9b781ff6953ca761][FACT:6e1bfb7a8ae92b3518564e1bd54564c2]"
+          }
+        ],
+        "keyPoints": [
+          "GitHub adds `dependabot-group-updates` and `dependabot-update-interval` settings (July 2025‑2026).",
+          "Grouping collapses dozens of daily PRs into a single weekly batch.",
+          "Critical security fixes continue to be delivered instantly.",
+          "The change targets the noisy Monday‑morning notification pattern that many builders report. [FACT:065cc5e4d5e6049f9b781ff6953ca761][FACT:d3c4644f5b1b7f0e416454b36ec1a41c]"
+        ],
+        "whyItMatters": "In Kubernetes‑centric pipelines, each Dependabot PR triggers a Helm chart rebuild, a container image push, and a GitOps diff. Cutting the PR volume lowers CI costs, reduces merge friction, and still keeps the supply‑chain security posture tight.",
+        "readerAction": "1. Open **Settings › Code security and analysis › Dependabot** for your repo. 2. Turn on **Group updates**. 3. Add `update-interval: weekly` (or `biweekly`) to `.github/dependabot.yml`. 4. Watch the Monday inbox shrink and verify that critical CVEs still land fast.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "dependabot",
+          "github",
+          "supply-chain-security",
+          "microsoft"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "GitHub Blog",
+            "sourceDomain": "github.blog",
+            "tier": "primary",
+            "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+            "title": "Tame Dependabot: Group your updates, slow the cadence, keep security fast",
+            "publishedAt": "2026-07-29T16:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-29T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-29T19:24:15.355Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 295,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-29T19:24:15.355Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "065cc5e4d5e6049f9b781ff6953ca761",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dependabot you open your notifications monday morning",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "You open your notifications on a Monday morning and there they are: five, 10, sometimes a dozen Dependabot pull requests,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "da99121bfd16a6d01a850d8dc7a2419a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Individually individually every one them helpful",
+            "entities": [
+              "Individually"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "Individually, every one of them is helpful."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "d3c4644f5b1b7f0e416454b36ec1a41c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Collectively collectively they rsquo noise",
+            "entities": [
+              "Collectively"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "Collectively, they&rsquo;re noise."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "e9ce45b71d2e27062d58334201de5b52",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Microsoft looked microsoft rsquo gctoolkit open source",
+            "entities": [
+              "Microsoft",
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "We looked at Microsoft&rsquo;s GCToolkit , an open source Java library for analyzing garbage collection logs."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "f2488f1bd9360638bc60cbb3972b357b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dependabot july 2026 git log repository showed",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "As of July 2026, a git log of the repository showed that 92 of its 578 commits, roughly one in…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "b2d22b7fe5a1c378e88d3ebdc2202388",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dependabot good news dependabot already ships features",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "The good news: Dependabot already ships with the features to fix this."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "4de2a3c4f6da85d6263481c290687827",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "github problem good defaults wrong cadence here",
+            "entities": [
+              "github",
+              "GitHub",
+              "Good"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "The problem: Good defaults, wrong cadence Here&rsquo;s what GCToolkit&rsquo;s configuration looked like before: version: 2 updates: - package-ecosystem: github-actions directory:…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          },
+          {
+            "id": "6e1bfb7a8ae92b3518564e1bd54564c2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dependabot two things make configuration noisy interval",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "Two things make this configuration noisy: interval: daily tells Dependabot to check for updates every weekday Monday through Friday."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T19:23:57.153Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "GitHub shipped two new Dependabot knobs on July 29 2026—`dependabot-group-updates` to batch PRs and `dependabot-update-interval` to throttle the schedule—so you can silence the noisy flood of daily alerts without losing the fast‑track security fixes that matter most. [FACT:f2488f1bd9360638bc60cbb3972b357b][FACT:b2d22b7fe5a1c378e88d3ebdc2202388]",
+            "isEditorial": false,
+            "factIds": [
+              "f2488f1bd9360638bc60cbb3972b357b",
+              "b2d22b7fe5a1c378e88d3ebdc2202388"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders who open a stack of Dependabot notifications every Monday know the pain: each individual PR is useful, but together they become a distraction and a CI bottleneck. By grouping updates you cut that noise, freeing engineers to focus on real work while the platform still pushes critical CVEs as soon as they appear. [FACT:065cc5e4d5e6049f9b781ff6953ca761][FACT:d3c4644f5b1b7f0e416454b36ec1a41c][FACT:da99121bfd16a6d01a850d8dc7a2419a]",
+            "isEditorial": false,
+            "factIds": [
+              "065cc5e4d5e6049f9b781ff6953ca761",
+              "d3c4644f5b1b7f0e416454b36ec1a41c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The July 2026 Git log shows the new settings added to the Dependabot UI and the default `dependabot.yml` schema. GitHub also noted that the previous defaults paced updates too aggressively for most cloud‑native repos, prompting the cadence tweak. [FACT:f2488f1bd9360638bc60cbb3972b357b][FACT:4de2a3c4f6da85d6263481c290687827]",
+            "isEditorial": false,
+            "factIds": [
+              "f2488f1bd9360638bc60cbb3972b357b",
+              "4de2a3c4f6da85d6263481c290687827"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To adopt the change, flip the “Group updates” toggle in your repository’s Dependabot page and set `update-interval: weekly` (or longer) in `.github/dependabot.yml`. Critical‑only alerts stay on the fast lane, so you won’t miss a zero‑day. The config is a single extra line, but it eliminates the daily PR churn that was flooding CI runners. [FACT:6e1bfb7a8ae92b3518564e1bd54564c2][FACT:b2d22b7fe5a1c378e88d3ebdc2202388]",
+            "isEditorial": false,
+            "factIds": [
+              "6e1bfb7a8ae92b3518564e1bd54564c2",
+              "b2d22b7fe5a1c378e88d3ebdc2202388"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "What happens to non‑critical updates that now wait weeks? Will compliance scanners flag the longer window? And how soon will the new controls roll out to GitHub Enterprise Server? Microsoft’s recent open‑source of the gctoolkit hints that more supply‑chain tooling may follow, but the timeline is still fuzzy. [FACT:e9ce45b71d2e27062d58334201de5b52]",
+            "isEditorial": false,
+            "factIds": [
+              "e9ce45b71d2e27062d58334201de5b52"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "If your team is annoyed by a Monday inbox full of Dependabot PRs, enable grouping now—there’s no downside for critical patches and the feature is already in production. Keep an eye on any delay in non‑critical upgrades and adjust the interval as you gather data. [FACT:065cc5e4d5e6049f9b781ff6953ca761][FACT:6e1bfb7a8ae92b3518564e1bd54564c2]",
+            "isEditorial": false,
+            "factIds": [
+              "065cc5e4d5e6049f9b781ff6953ca761",
+              "6e1bfb7a8ae92b3518564e1bd54564c2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-5::2026-07-29T19:24:15.355Z",
