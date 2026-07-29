@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-29T06:00:00.000Z",
-    "windowStart": "2026-07-29T06:00:00.000Z",
-    "windowEnd": "2026-07-29T12:00:00.000Z"
+    "id": "2026-07-29T12:00:00.000Z",
+    "windowStart": "2026-07-29T12:00:00.000Z",
+    "windowEnd": "2026-07-29T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-29T06:36:14.056Z",
-  "nextRefreshAt": "2026-07-29T12:00:00.000Z",
+  "publishedAt": "2026-07-29T14:21:39.030Z",
+  "nextRefreshAt": "2026-07-29T18:00:00.000Z",
   "runIds": {
-    "aggregation": "cf8f211a-c451-40dd-b10d-885d36764b65",
-    "ranking": "rank-c2397891",
-    "top10": "top10:2026-07-29T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-29T06:00:00.000Z-2026-07-29T06:36:27.108Z"
+    "aggregation": "a19089a3-f38a-49e5-bf05-e5ed15045c11",
+    "ranking": "rank-3c7f5447",
+    "top10": "top10:2026-07-29T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-29T12:00:00.000Z-2026-07-29T14:21:56.645Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-29T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-29T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-29T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-29T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-29T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-29T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1328,
+      "count": 1357,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMie0FVX3lxTFAxQVhwcTk0YVQzU1BUeEwzX1d2RVJ4aVJydVY4eGxYbFlxMTVqdHd2UExnR01LYzZkWk1CNTEzR21PN0NJcFd1TWxid0Z0VmU1MnVxaEhwblpNaFZqa0VJUllNaWhLRHlvNWZlVVdSRjduZDlaU1NieXVlMA?oc=5",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1583,
+      "count": 1592,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 19,
+      "category": "copyright-gate",
+      "count": 30,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 22,
+      "category": "editorial-hold",
+      "count": 20,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.1"
+        "topic": "platform",
+        "headline": "Security updates for Wednesday"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "CNCF Announces Schedule for Debut Observability Summit Europe"
+        "topic": "security",
+        "headline": "RHSA-2026:47869: Important: kernel security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:47103: Important: libXfont2 security update"
+        "headline": "JFrog Zero-Days Exploited in OpenAI-Hugging Face Hack"
       },
       {
         "rank": 4,
+        "topic": "ai",
+        "headline": "OpenAI open-sources Codex Security CLI to help developers find and fix vulnerabilities from the command line"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "OpenAI AI Model Used JFrog Artifactory Zero-Day Before Hugging Face Breach"
+      },
+      {
+        "rank": 6,
         "topic": "security",
         "headline": "How AI is Rewriting the Zero-Day Playbook for Preemptive Security"
       },
       {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "CNCF and SlashData Report Finds Japan’s Cloud Native Community Reaches Nearly 1 Million Developers"
-      },
-      {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Subaru Wins CNCF End User Case Study Contest for Accelerating AI Development with Cloud Native Infrastructure"
-      },
-      {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Announcing v2.0 of the official MCP C SDK"
+        "topic": "security",
+        "headline": "Long-Lived Vulnerability in Microsoft Secure Boot"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Ghost Credentials Expose Cloud Systems to Hidden Identity Risks"
+        "topic": "kubernetes",
+        "headline": "v1.54.0-next.1"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Lima v2.2: Windows guests and TPM 2.0 emulation"
+        "topic": "ai",
+        "headline": "Rogue OpenAI agent that hacked startup tried to attack other firms"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "OpenAI’s rogue agent hacked an account at a second technology firm: Report"
+        "headline": "Deepmind dismantles its AlphaFold team as key authors leave for Anthropic"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }

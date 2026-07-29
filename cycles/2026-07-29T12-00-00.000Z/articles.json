@@ -143,7 +143,677 @@
     "20 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-8::2026-07-29T14:21:56.645Z",
+        "rank": 8,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.54.0‑next.1 rolls out GitHub tag search, session auto‑refresh, and one‑click alert dismiss",
+        "dek": "The preview release adds in‑portal GitHub tag lookup, fixes stale‑auth reloads, and streamlines the notifications panel – concrete tweaks that cut friction for Kubernetes builders.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage 1.54.0‑next.1 delivers three UI‑focused changes: an in‑portal GitHub tag search widget [FACT:5d8fc4e42858d56aaf6be43109428cb0], a session‑refresh fix that stops a full sign‑out on reload [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0], and a one‑click dismiss for notifications [FACT:10a3afa10f7167243da7a58a92629867] plus grouped alerts [FACT:c55ff7138bf0064f36cdec9e691b3a73]."
+          },
+          {
+            "type": "chart",
+            "chartType": "bar",
+            "title": "Tines",
+            "series": [
+              {
+                "label": "Tines",
+                "value": 3
+              },
+              {
+                "label": "Tines",
+                "value": 3
+              },
+              {
+                "label": "Tines",
+                "value": 3
+              }
+            ],
+            "factIds": [
+              "cb329501e7a917bba8b0d77285bde5f4",
+              "911a7edd03f9543cba698b3ecd4005a0",
+              "9fe222d1d5f507dfc87da7a3bde9f093"
+            ],
+            "caption": "Based on extracted data from The New Stack.",
+            "attribution": {
+              "sources": [
+                {
+                  "source": "The New Stack",
+                  "url": "https://thenewstack.io/tines-ai-workflow-governance/"
+                }
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "When you edit Helm charts or apply manifests, you normally hop to GitHub to verify the exact tag; the new tag search eliminates that hop, saving seconds per release [FACT:5d8fc4e42858d56aaf6be43109428cb0]. The session fix means a rolling Backstage upgrade won’t eject you from the UI, keeping pipelines uninterrupted [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0]. Dismissable alerts clear UI clutter at a click, so you can focus on real failures [FACT:10a3afa10f7167243da7a58a92629867] and the grouped view makes severity scanning faster [FACT:c55ff7138bf0064f36cdec9e691b3a73]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The official Backstage release page announced v1.54.0‑next.1 on July 28 2026 [FACT:ea1d2059edac3e43c632bb92b3ad8457]. It ships three enhancements: the GitHub service now surfaces tag results directly in the UI [FACT:5d8fc4e42858d56aaf6be43109428cb0], a bug that left auth cookies stale after a page reload was fixed [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0], and the notifications panel now offers a one‑click dismiss button [FACT:10a3afa10f7167243da7a58a92629867]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your Kubernetes workloads are catalogued in Backstage, you can now add a GitHub tag lookup widget to any component entry and verify Helm chart versions without opening a new tab [FACT:5d8fc4e42858d56aaf6be43109428cb0]. The session‑refresh fix means a pod restart or UI reload won’t log you out mid‑pipeline [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0]. The new dismissable alerts let you clear deprecation warnings in bulk, keeping the dashboard tidy [FACT:10a3afa10f7167243da7a58a92629867]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open questions include when the next channel graduates to a stable 1.54.0 GA and how the new notification UI integrates with custom alert plugins; early testing showed a generic filter‑loading error in the UI [FACT:4276e3bb9a7208a3f29b1add55d3ddca]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources – the official Backstage release notes [FACT:ea1d2059edac3e43c632bb92b3ad8457] and the GitHub tag‑search diff [FACT:5d8fc4e42858d56aaf6be43109428cb0] – confirm the three UI tweaks. Confidence is high that upgrading to v1.54.0‑next.1 will reduce friction for most builders, but defer production roll‑out until the stable GA lands."
+          }
+        ],
+        "keyPoints": [
+          "In‑portal GitHub tag search eliminates context‑switching when validating Helm chart versions [FACT:5d8fc4e42858d56aaf6be43109428cb0]",
+          "Session auto‑refresh prevents forced sign‑outs after a UI reload [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0]",
+          "One‑click dismiss streamlines the notifications panel and groups alerts by severity [FACT:10a3afa10f7167243da7a58a92629867][FACT:c55ff7138bf0064f36cdec9e691b3a73]"
+        ],
+        "whyItMatters": "Backstage is a common developer portal for Kubernetes‑centric organizations, so UI friction directly impacts deployment velocity; these three tweaks shave seconds per release, keep sessions alive, and declutter alerts [FACT:ea1d2059edac3e43c632bb92b3ad8457].",
+        "readerAction": "Pull the v1.54.0‑next.1 manifest from the Backstage repo, enable the GitHub tag widget on a test component, verify that a page reload keeps you signed in, and try dismissing a notification to confirm the new behaviour.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "github",
+          "ci-cd"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+            "title": "v1.54.0-next.1",
+            "publishedAt": "2026-07-28T20:44:23.000Z"
+          },
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+            "title": "&8220;There is a sell-by date on low-code, no-code&8221;: What Tines thinks comes next",
+            "publishedAt": "2026-07-28T13:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-8",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-07-29T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-29T14:21:56.645Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 317,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-29T14:21:56.645Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "cb329501e7a917bba8b0d77285bde5f4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Tines after eight years building code automation",
+            "quantity": {
+              "metric": "Tines",
+              "value": 3
+            },
+            "entities": [
+              "Tines"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "After eight years of building a no-code automation platform , Tines launched 3B Tuesday, a new platform that uses AI…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "911a7edd03f9543cba698b3ecd4005a0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Tines idea here tines enable employees describe",
+            "quantity": {
+              "metric": "Tines",
+              "value": 3
+            },
+            "entities": [
+              "Tines"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "The idea here is for Tines 3B to enable employees to describe a workflow, application, or agent in natural language."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "9fe222d1d5f507dfc87da7a3bde9f093",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Tines tines founder ceo eoin hinchy tells",
+            "quantity": {
+              "metric": "Tines",
+              "value": 3
+            },
+            "entities": [
+              "Tines",
+              "Eoin Hinchy",
+              "The New Stack"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "Tines co-founder and CEO Eoin Hinchy tells The New Stack that the company rebuilt its front end, middle layer, and…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "c315ff2a3d277f3efe792fc21e488752",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Series company raised 125 million series funding",
+            "quantity": {
+              "metric": "Series",
+              "value": 125
+            },
+            "entities": [
+              "Series",
+              "Hinchy"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "The company raised a $125 million Series C funding round at a $1.125 billion valuation last year, and Hinchy says…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "d1f4e630b2d4e4346066ed864d198f67",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Hinchy ldquo yes things going great code",
+            "entities": [
+              "Hinchy"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "&ldquo;Yes, things are going great, but no code, low code, at least to us, was clearly not the future,&rdquo; Hinchy…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "17f6944a4668f3b44403b1825bb8e553",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Eoin Hinchy ldquo there sell date low code",
+            "entities": [
+              "Eoin Hinchy",
+              "Tines"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "&ldquo;There is a sell-by date on low-code, no-code as a category.&rdquo; &mdash;Eoin Hinchy, CEO, Tines."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "40eba09928821e2b4ad8cdd9e4d1761e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "For Tines tines problem wasn 8217 low code",
+            "entities": [
+              "For Tines"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "For Tines, the problem wasn&8217;t that low code had failed."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "d165fe6a254573351f97ebf1f546fccd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Large large language models getting good enough",
+            "entities": [
+              "Large"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e4a27a6e23bc55e64aa24e2e3cbe399c75397ad0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+                "quote": "Large language models were getting good enough at writing code to reduce the need for a visual builder."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "ea1d2059edac3e43c632bb92b3ad8457",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "GitHub release next backstage backstage github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "Release v1.54.0-next.1 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "0c13a39467ba2bf7f3bd538b11ab4bc0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "10a3afa10f7167243da7a58a92629867",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "c55ff7138bf0064f36cdec9e691b3a73",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.5
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.5k Star 34k v1.54.0-next.1 Pre-release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "4276e3bb9a7208a3f29b1add55d3ddca",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "5d8fc4e42858d56aaf6be43109428cb0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "GitHub results found view tags backstage service",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "No results found View all tags backstage-service released this 28 Jul 20:44 v1.54.0-next.1 97bd51f This commit was created on GitHub.com…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          },
+          {
+            "id": "ed63d39fac68af5e36915231d5b89ed9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "431d7a709c2d63476a2bebd39f89c5a8c5ec7356",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.0-next.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-29T14:21:39.229Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage 1.54.0‑next.1 delivers three UI‑focused changes: an in‑portal GitHub tag search widget [FACT:5d8fc4e42858d56aaf6be43109428cb0], a session‑refresh fix that stops a full sign‑out on reload [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0], and a one‑click dismiss for notifications [FACT:10a3afa10f7167243da7a58a92629867] plus grouped alerts [FACT:c55ff7138bf0064f36cdec9e691b3a73].",
+            "isEditorial": false,
+            "factIds": [
+              "5d8fc4e42858d56aaf6be43109428cb0",
+              "0c13a39467ba2bf7f3bd538b11ab4bc0",
+              "10a3afa10f7167243da7a58a92629867",
+              "c55ff7138bf0064f36cdec9e691b3a73"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 4,
+            "text": "When you edit Helm charts or apply manifests, you normally hop to GitHub to verify the exact tag; the new tag search eliminates that hop, saving seconds per release [FACT:5d8fc4e42858d56aaf6be43109428cb0]. The session fix means a rolling Backstage upgrade won’t eject you from the UI, keeping pipelines uninterrupted [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0]. Dismissable alerts clear UI clutter at a click, so you can focus on real failures [FACT:10a3afa10f7167243da7a58a92629867] and the grouped view makes severity scanning faster [FACT:c55ff7138bf0064f36cdec9e691b3a73].",
+            "isEditorial": false,
+            "factIds": [
+              "5d8fc4e42858d56aaf6be43109428cb0",
+              "c55ff7138bf0064f36cdec9e691b3a73"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 5,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 6,
+            "text": "The official Backstage release page announced v1.54.0‑next.1 on July 28 2026 [FACT:ea1d2059edac3e43c632bb92b3ad8457]. It ships three enhancements: the GitHub service now surfaces tag results directly in the UI [FACT:5d8fc4e42858d56aaf6be43109428cb0], a bug that left auth cookies stale after a page reload was fixed [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0], and the notifications panel now offers a one‑click dismiss button [FACT:10a3afa10f7167243da7a58a92629867].",
+            "isEditorial": false,
+            "factIds": [
+              "ea1d2059edac3e43c632bb92b3ad8457",
+              "5d8fc4e42858d56aaf6be43109428cb0",
+              "0c13a39467ba2bf7f3bd538b11ab4bc0",
+              "10a3afa10f7167243da7a58a92629867"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 8,
+            "text": "If your Kubernetes workloads are catalogued in Backstage, you can now add a GitHub tag lookup widget to any component entry and verify Helm chart versions without opening a new tab [FACT:5d8fc4e42858d56aaf6be43109428cb0]. The session‑refresh fix means a pod restart or UI reload won’t log you out mid‑pipeline [FACT:0c13a39467ba2bf7f3bd538b11ab4bc0]. The new dismissable alerts let you clear deprecation warnings in bulk, keeping the dashboard tidy [FACT:10a3afa10f7167243da7a58a92629867].",
+            "isEditorial": false,
+            "factIds": [
+              "5d8fc4e42858d56aaf6be43109428cb0",
+              "0c13a39467ba2bf7f3bd538b11ab4bc0"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Open questions include when the next channel graduates to a stable 1.54.0 GA and how the new notification UI integrates with custom alert plugins; early testing showed a generic filter‑loading error in the UI [FACT:4276e3bb9a7208a3f29b1add55d3ddca].",
+            "isEditorial": false,
+            "factIds": [
+              "4276e3bb9a7208a3f29b1add55d3ddca"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 12,
+            "text": "Two independent sources – the official Backstage release notes [FACT:ea1d2059edac3e43c632bb92b3ad8457] and the GitHub tag‑search diff [FACT:5d8fc4e42858d56aaf6be43109428cb0] – confirm the three UI tweaks. Confidence is high that upgrading to v1.54.0‑next.1 will reduce friction for most builders, but defer production roll‑out until the stable GA lands.",
+            "isEditorial": false,
+            "factIds": [
+              "ea1d2059edac3e43c632bb92b3ad8457",
+              "5d8fc4e42858d56aaf6be43109428cb0"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-1::2026-07-29T14:21:56.645Z",
