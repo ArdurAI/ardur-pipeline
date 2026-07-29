@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-28T18:00:00.000Z",
-    "windowStart": "2026-07-28T18:00:00.000Z",
-    "windowEnd": "2026-07-29T00:00:00.000Z"
+    "id": "2026-07-29T00:00:00.000Z",
+    "windowStart": "2026-07-29T00:00:00.000Z",
+    "windowEnd": "2026-07-29T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-28T19:39:35.946Z",
-  "nextRefreshAt": "2026-07-29T00:00:00.000Z",
+  "publishedAt": "2026-07-29T02:58:00.212Z",
+  "nextRefreshAt": "2026-07-29T06:00:00.000Z",
   "runIds": {
-    "aggregation": "563f701a-ad23-4bea-9ffc-595262ba7f61",
-    "ranking": "rank-7ce44146",
-    "top10": "top10:2026-07-28T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-28T18:00:00.000Z-2026-07-28T19:39:48.135Z"
+    "aggregation": "00866a2b-f74e-4eb7-996c-fc89ae4ca67a",
+    "ranking": "rank-40345781",
+    "top10": "top10:2026-07-29T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-29T00:00:00.000Z-2026-07-29T02:58:15.924Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-28T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-28T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-28T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-29T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-29T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-29T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1424,
+      "count": 1415,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-21] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,16 +54,16 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 12 distinct domains < floor 20"
+        "[kubernetes] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1690,
+      "count": 1685,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 18,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 32,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "CNCF Announces Schedule for Debut Observability Summit Europe"
+        "headline": "v1.54.0-next.1"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Microsoft launches its own cybersecurity model MAI-Cyber-1-Flash but still depends on OpenAI for the toughest tasks"
+        "topic": "kubernetes",
+        "headline": "CNCF Announces Schedule for Debut Observability Summit Europe"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:47176: Important: gstreamer1-plugins-bad-free security update"
+        "headline": "RHSA-2026:47103: Important: libXfont2 security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "vBulletin fixes critical pre-auth RCE flaw with public exploit"
+        "topic": "kubernetes",
+        "headline": "CNCF and SlashData Report Finds Japan’s Cloud Native Community Reaches Nearly 1 Million Developers"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Microsoft Unveils MAI-Cyber-1-Flash, Its First Cybersecurity AI Model"
+        "topic": "kubernetes",
+        "headline": "Subaru Wins CNCF End User Case Study Contest for Accelerating AI Development with Cloud Native Infrastructure"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:44262: Important: OpenShift Container Platform 4.21.26 bug fix and security update"
+        "headline": "How AI is Rewriting the Zero-Day Playbook for Preemptive Security"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Scientific computing in the age of agentic AI"
+        "topic": "platform",
+        "headline": "Announcing v2.0 of the official MCP C SDK"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Investigate every security event with an AI agent, without the frontier bill"
+        "topic": "security",
+        "headline": "Microsoft Unveils MAI-Cyber-1-Flash, Its First Cybersecurity AI Model"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Market surveillance agent with LangGraph and Strands on AgentCore"
+        "headline": "OpenAI’s Rogue AI Agent Hacked More Than Just Hugging Face"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach"
+        "topic": "platform",
+        "headline": "Lima v2.2: Windows guests and TPM 2.0 emulation"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
