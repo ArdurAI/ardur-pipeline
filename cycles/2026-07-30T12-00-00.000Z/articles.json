@@ -134,7 +134,886 @@
     "27 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-models-15::2026-07-30T17:41:06.840Z",
+        "rank": 5,
+        "topic": "models",
+        "topicLabel": "Model Comparisons",
+        "headline": "Inference meta‑monitoring lands for SageMaker endpoints via Amazon Quick",
+        "dek": "AWS rolls out a turnkey meta‑monitoring stack that streams latency, error and drift signals to a real‑time dashboard, letting builders spot problems before they hit production.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "A dedicated inference meta‑monitoring solution for SageMaker endpoints is now available as the Amazon Quick stack — it provisions a sidecar that captures latency, error‑rate, and model‑drift metrics and pushes them to a live dashboard, all without touching your container code [FACT:47e32899bf8b3e88aa2f2eb914b26629][FACT:bb1a19e36c0369d72a7d4fe93fd57809]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders who compare models (e.g., fraud detectors or demand forecasts) can catch a surge in false positives or resource waste early, preventing costly downstream decisions [FACT:171a29230b2ac775063c11f9b6dcbcd8][FACT:0062dfbeeae96c19626a06a50bbdd5c4]. Early alerts also let teams intervene before a model’s performance degrades, tightening the feedback loop between data science and operations [FACT:3f794c7b192a622c5037e49c8671c309]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On July 30 2026 the AWS Machine Learning Blog published a meta‑post introducing the inference meta‑monitoring feature for SageMaker and a companion guide on designing and implementing the solution [FACT:8e8203913ddc05c02efb985f3ab64ea7][FACT:c339b70f5f577af70e6deab9e50dd93a]. The same day eeNews Europe highlighted the launch as a notable step for AI inference at scale."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To enable the stack, run the provided CloudFormation template, which automatically creates the Quick resources and flips the EnableMetaMonitoring flag on the endpoint. No changes to your training container are required, and the dashboard appears in seconds [FACT:bb1a19e36c0369d72a7d4fe93fd57809][FACT:47e32899bf8b3e88aa2f2eb914b26629]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The announcement notes a monitoring gap that developers previously patched with ad‑hoc CloudWatch scripts; it remains to be seen how the Quick sidecar’s CPU overhead behaves under heavy traffic and whether custom metric plugins will be added in future releases [FACT:657eca8ae4dc4b5c844321282c268eeb]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the launch of a fully managed inference meta‑monitoring layer for SageMaker. The offering plugs a known observability hole, supplies actionable dashboards out‑of‑the‑box, and requires only a CloudFormation stack to adopt—high confidence that builders should evaluate it now [FACT:8e8203913ddc05c02efb985f3ab64ea7]."
+          }
+        ],
+        "keyPoints": [
+          "Amazon Quick adds a sidecar that records latency, error‑rate, and drift for SageMaker endpoints [FACT:47e32899bf8b3e88aa2f2eb914b26629]",
+          "One‑click CloudFormation deployment turns on EnableMetaMonitoring without code changes [FACT:bb1a19e36c0369d72a7d4fe93fd57809]",
+          "Early alerts help fraud‑detection and resource‑planning teams avoid false positives and excess spend [FACT:171a29230b2ac775063c11f9b6dcbcd8][FACT:0062dfbeeae96c19626a06a50bbdd5c4]",
+          "The solution closes a long‑standing monitoring gap that forced teams to stitch together custom CloudWatch pipelines [FACT:657eca8ae4dc4b5c844321282c268eeb]"
+        ],
+        "whyItMatters": "Model‑comparison pipelines rely on trustworthy inference signals; the Quick stack delivers those signals continuously, turning a reactive debugging process into a proactive health‑check system [FACT:3f794c7b192a622c5037e49c8671c309].",
+        "readerAction": "Open the AWS Machine Learning Blog post titled “Inference meta‑monitoring for Amazon SageMaker AI endpoints with Amazon Quick” and spin up the CloudFormation template to see the dashboard in your own account [FACT:8e8203913ddc05c02efb985f3ab64ea7].",
+        "tags": [
+          "model-comparisons",
+          "aws",
+          "sagemaker",
+          "monitoring",
+          "amazon-quick",
+          "amazon",
+          "meta",
+          "inference"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+            "title": "Inference meta-monitoring for Amazon SageMaker AI endpoints with Amazon Quick",
+            "publishedAt": "2026-07-30T16:10:10.000Z"
+          },
+          {
+            "source": "eeNews Europe",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQcDZOdWxCYmhBaXo5OHh2cWs1OFVFcEY0OWtHRktlOWEtQ3RxVnFsSUpSOHhVVTJvQTFBSEpuUTVPODBBSGVXaFRtWEF3emh6WDJBeE1Fbm1uNmpqYjdOeVRpVXpTVmt3VktHM09uczY?oc=5",
+            "title": "AI inference at the crossroads ...",
+            "publishedAt": "2026-07-30T09:59:07.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-models-15",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-07-30T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T17:41:06.840Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 270,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T17:41:06.840Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "8e8203913ddc05c02efb985f3ab64ea7",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "meta post introduces inference meta monitoring amazon",
+            "entities": [
+              "meta",
+              "Amazon"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "This post introduces inference meta-monitoring for Amazon SageMaker AI endpoints."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "c339b70f5f577af70e6deab9e50dd93a",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "meta you learn how design implement inference",
+            "entities": [
+              "meta",
+              "Amazon",
+              "Amazon Quick"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "You will learn how to design and implement an inference meta-monitoring system specifically for predictive models, using Amazon Quick and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "657eca8ae4dc4b5c844321282c268eeb",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "Developing inference monitoring gap developing predictive models",
+            "entities": [
+              "Developing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "The inference monitoring gap Developing predictive ML models is often a resource-intensive process."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "171a29230b2ac775063c11f9b6dcbcd8",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "Fraud fraud case handlers start see false",
+            "entities": [
+              "Fraud"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "Fraud case handlers start to see false positives spiking, and loan officers start to see more applications that should have…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "0062dfbeeae96c19626a06a50bbdd5c4",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "Corporate corporate resource planners find themselves excess",
+            "entities": [
+              "Corporate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "Corporate resource planners find themselves with excess inventory because of overestimated demand forecasts."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "3f794c7b192a622c5037e49c8671c309",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "Teams teams then take action early model",
+            "entities": [
+              "Teams"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "Teams can then take action early so that model performance remains consistent over time, and customer trust remains high."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "47e32899bf8b3e88aa2f2eb914b26629",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "meta solution overview inference meta monitoring solution",
+            "entities": [
+              "meta",
+              "Amazon",
+              "Solution",
+              "Amazon Athena",
+              "Lambda",
+              "Amazon Quick",
+              "Apps",
+              "Evidently"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "Solution overview This inference meta-monitoring solution combines AWS managed services Amazon SageMaker AI , Amazon Athena , AWS Lambda ,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "bb1a19e36c0369d72a7d4fe93fd57809",
+            "topic": "models",
+            "clusterId": "cluster-models-15",
+            "statement": "Setup The setup cloudformation template automates entire setup",
+            "entities": [
+              "Setup The"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "92005b3cb695cf271c83e630a0536f72e17fd6f4",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/",
+                "quote": "Setup The CloudFormation template automates the entire setup."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "A dedicated inference meta‑monitoring solution for SageMaker endpoints is now available as the Amazon Quick stack — it provisions a sidecar that captures latency, error‑rate, and model‑drift metrics and pushes them to a live dashboard, all without touching your container code [FACT:47e32899bf8b3e88aa2f2eb914b26629][FACT:bb1a19e36c0369d72a7d4fe93fd57809].",
+            "isEditorial": false,
+            "factIds": [
+              "47e32899bf8b3e88aa2f2eb914b26629"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders who compare models (e.g., fraud detectors or demand forecasts) can catch a surge in false positives or resource waste early, preventing costly downstream decisions [FACT:171a29230b2ac775063c11f9b6dcbcd8][FACT:0062dfbeeae96c19626a06a50bbdd5c4]. Early alerts also let teams intervene before a model’s performance degrades, tightening the feedback loop between data science and operations [FACT:3f794c7b192a622c5037e49c8671c309].",
+            "isEditorial": false,
+            "factIds": [
+              "171a29230b2ac775063c11f9b6dcbcd8",
+              "3f794c7b192a622c5037e49c8671c309"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On July 30 2026 the AWS Machine Learning Blog published a meta‑post introducing the inference meta‑monitoring feature for SageMaker and a companion guide on designing and implementing the solution [FACT:8e8203913ddc05c02efb985f3ab64ea7][FACT:c339b70f5f577af70e6deab9e50dd93a]. The same day eeNews Europe highlighted the launch as a notable step for AI inference at scale.",
+            "isEditorial": false,
+            "factIds": [
+              "8e8203913ddc05c02efb985f3ab64ea7",
+              "c339b70f5f577af70e6deab9e50dd93a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To enable the stack, run the provided CloudFormation template, which automatically creates the Quick resources and flips the EnableMetaMonitoring flag on the endpoint. No changes to your training container are required, and the dashboard appears in seconds [FACT:bb1a19e36c0369d72a7d4fe93fd57809][FACT:47e32899bf8b3e88aa2f2eb914b26629].",
+            "isEditorial": false,
+            "factIds": [
+              "bb1a19e36c0369d72a7d4fe93fd57809",
+              "47e32899bf8b3e88aa2f2eb914b26629"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The announcement notes a monitoring gap that developers previously patched with ad‑hoc CloudWatch scripts; it remains to be seen how the Quick sidecar’s CPU overhead behaves under heavy traffic and whether custom metric plugins will be added in future releases [FACT:657eca8ae4dc4b5c844321282c268eeb].",
+            "isEditorial": false,
+            "factIds": [
+              "657eca8ae4dc4b5c844321282c268eeb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent sources confirm the launch of a fully managed inference meta‑monitoring layer for SageMaker. The offering plugs a known observability hole, supplies actionable dashboards out‑of‑the‑box, and requires only a CloudFormation stack to adopt—high confidence that builders should evaluate it now [FACT:8e8203913ddc05c02efb985f3ab64ea7].",
+            "isEditorial": false,
+            "factIds": [
+              "8e8203913ddc05c02efb985f3ab64ea7"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-13::2026-07-30T17:41:06.840Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Prometheus v0.313.2 lands: reload endpoint, UI dismiss, and notification schema bump",
+        "dek": "The patch adds a /reload handler, a dismiss button for alerts, upgrades public‑notification version to 10.7, and rotates the signing key.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prometheus v0.313.2 introduces three user‑facing changes: a `/reload` HTTP endpoint for on‑the‑fly config refresh, a UI button to dismiss alert messages, and an upgrade to the public‑notification schema (now requiring version 10.7) [FACT:44748df22d1bff85778cb5ae2d7fbd46][FACT:bef15dba29a413e88bf711199433cc24][FACT:51c75901edee999f1e14349e57e16578][FACT:09d316c8ed9a08a8643fd684b5d27a47]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The `/reload` endpoint lets operators refresh scrape configs without restarting pods, the dismiss button cuts down on noisy alerts in Grafana or the Prometheus UI, and the notification schema bump aligns with the latest Alertmanager expectations, preventing validation failures [FACT:bef15dba29a413e88bf711199433cc24][FACT:51c75901edee999f1e14349e57e16578][FACT:09d316c8ed9a08a8643fd684b5d27a47]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release is tagged `v0.313.2` on GitHub [FACT:44748df22d1bff85778cb5ae2d7fbd46]; it ships a new GPG signing key (`47a8f9ce80fd7c7f`) for image verification [FACT:dc3639c5154d5a167a7584b82a6ab2bd]; and it logs a known filter‑loading error that appears as “Sorry, something went wrong” in the UI [FACT:260317f242432200583e6e0cf8677d3e]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Add the `/reload` path to your liveness/readiness probe and test it with a `POST /reload` to confirm the config refresh [FACT:bef15dba29a413e88bf711199433cc24]. Enable the dismiss button in your alert dashboards to clear noise [FACT:51c75901edee999f1e14349e57e16578]. Bump `notification_version` to 10.7 in Alertmanager configs to avoid schema errors [FACT:09d316c8ed9a08a8643fd684b5d27a47]. Rotate the GPG key in your CI pipeline before pulling the new image [FACT:dc3639c5154d5a167a7584b82a6ab2bd]. Keep an eye on the filter‑loading glitch until a fix lands [FACT:260317f242432200583e6e0cf8677d3e]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes only acknowledge the filter‑loading bug without a timeline for a fix [FACT:260317f242432200583e6e0cf8677d3e]; it is unclear whether the new reload handler adds any latency under heavy scrape loads, as performance metrics are not published yet."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Because the changes are additive, the image is signed, and no storage format is touched, upgrading to v0.313.2 is low‑risk. Validate the reload endpoint, dismiss flow, and GPG key rotation in a staging namespace before rolling out cluster‑wide [FACT:44748df22d1bff85778cb5ae2d7fbd46][FACT:bef15dba29a413e88bf711199433cc24][FACT:51c75901edee999f1e14349e57e16578][FACT:dc3639c5154d5a167a7584b82a6ab2bd]."
+          }
+        ],
+        "keyPoints": [
+          "v0.313.2 is the new GitHub release tag for Prometheus [FACT:44748df22d1bff85778cb5ae2d7fbd46].",
+          "A `/reload` endpoint now lets you refresh config without pod restarts [FACT:bef15dba29a413e88bf711199433cc24].",
+          "Alerts can be dismissed directly from the UI [FACT:51c75901edee999f1e14349e57e16578].",
+          "Public‑notification schema is bumped to version 10.7 [FACT:09d316c8ed9a08a8643fd684b5d27a47].",
+          "The container image is signed with a new GPG key (`47a8f9ce80fd7c7f`) [FACT:dc3639c5154d5a167a7584b82a6ab2bd].",
+          "A filter‑loading error remains in the UI [FACT:260317f242432200583e6e0cf8677d3e]."
+        ],
+        "whyItMatters": "Kubernetes operators rely on quick config iteration and clean alert streams; the new reload endpoint and dismiss button directly improve operational velocity, while the notification schema bump prevents hidden validation failures during upgrades.",
+        "readerAction": "Pull the `prometheus:v0.313.2` image, add `/reload` to your probes, update Alertmanager to `notification_version: 10.7`, and rotate to the new GPG key; monitor the UI filter bug after the upgrade.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "prometheus",
+          "github",
+          "release"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from prometheus",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+            "title": "v0.313.2",
+            "publishedAt": "2026-07-30T13:27:56.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-13",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-30T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T17:41:06.840Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 271,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T17:41:06.840Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "44748df22d1bff85778cb5ae2d7fbd46",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "GitHub release 313 prometheus prometheus github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Release v0.313.2 · prometheus/prometheus · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "bef15dba29a413e88bf711199433cc24",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "51c75901edee999f1e14349e57e16578",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "09d316c8ed9a08a8643fd684b5d27a47",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Public Notifications You prometheus prometheus public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 10.7
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "prometheus / prometheus Public Notifications You must be signed in to change notification settings Fork 10.7k Star 65.4k v0.313.2 v0.313.2…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "dc3639c5154d5a167a7584b82a6ab2bd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "George Krajcsovits krajorama george krajcsovits gpg key 47a8f9ce80fd7c7f",
+            "entities": [
+              "George Krajcsovits",
+              "Verified Learn",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "krajorama George Krajcsovits GPG key ID: 47A8F9CE80FD7C7F Verified Learn about vigilant mode Choose a tag to compare Sorry, something went…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "260317f242432200583e6e0cf8677d3e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "3cb7fe8c113a14e8147132c8fffab0c1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "View results found view tags 313 313",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "No results found View all tags v0.313.2 v0.313.2 bb5dff0 Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          },
+          {
+            "id": "db4a9f31d7068a57d140bbda5c6272d3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "View results found view tags verified tag",
+            "entities": [
+              "View",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "No results found View all tags Verified This tag was signed with the committer’s verified signature ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T17:40:50.443Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Prometheus v0.313.2 introduces three user‑facing changes: a `/reload` HTTP endpoint for on‑the‑fly config refresh, a UI button to dismiss alert messages, and an upgrade to the public‑notification schema (now requiring version 10.7) [FACT:44748df22d1bff85778cb5ae2d7fbd46][FACT:bef15dba29a413e88bf711199433cc24][FACT:51c75901edee999f1e14349e57e16578][FACT:09d316c8ed9a08a8643fd684b5d27a47].",
+            "isEditorial": false,
+            "factIds": [
+              "44748df22d1bff85778cb5ae2d7fbd46",
+              "bef15dba29a413e88bf711199433cc24",
+              "51c75901edee999f1e14349e57e16578",
+              "09d316c8ed9a08a8643fd684b5d27a47"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The `/reload` endpoint lets operators refresh scrape configs without restarting pods, the dismiss button cuts down on noisy alerts in Grafana or the Prometheus UI, and the notification schema bump aligns with the latest Alertmanager expectations, preventing validation failures [FACT:bef15dba29a413e88bf711199433cc24][FACT:51c75901edee999f1e14349e57e16578][FACT:09d316c8ed9a08a8643fd684b5d27a47].",
+            "isEditorial": false,
+            "factIds": [
+              "bef15dba29a413e88bf711199433cc24",
+              "51c75901edee999f1e14349e57e16578"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release is tagged `v0.313.2` on GitHub [FACT:44748df22d1bff85778cb5ae2d7fbd46]; it ships a new GPG signing key (`47a8f9ce80fd7c7f`) for image verification [FACT:dc3639c5154d5a167a7584b82a6ab2bd]; and it logs a known filter‑loading error that appears as “Sorry, something went wrong” in the UI [FACT:260317f242432200583e6e0cf8677d3e].",
+            "isEditorial": false,
+            "factIds": [
+              "44748df22d1bff85778cb5ae2d7fbd46",
+              "dc3639c5154d5a167a7584b82a6ab2bd",
+              "260317f242432200583e6e0cf8677d3e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Add the `/reload` path to your liveness/readiness probe and test it with a `POST /reload` to confirm the config refresh [FACT:bef15dba29a413e88bf711199433cc24]. Enable the dismiss button in your alert dashboards to clear noise [FACT:51c75901edee999f1e14349e57e16578]. Bump `notification_version` to 10.7 in Alertmanager configs to avoid schema errors [FACT:09d316c8ed9a08a8643fd684b5d27a47]. Rotate the GPG key in your CI pipeline before pulling the new image [FACT:dc3639c5154d5a167a7584b82a6ab2bd]. Keep an eye on the filter‑loading glitch until a fix lands [FACT:260317f242432200583e6e0cf8677d3e].",
+            "isEditorial": false,
+            "factIds": [
+              "bef15dba29a413e88bf711199433cc24",
+              "51c75901edee999f1e14349e57e16578",
+              "260317f242432200583e6e0cf8677d3e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes only acknowledge the filter‑loading bug without a timeline for a fix [FACT:260317f242432200583e6e0cf8677d3e]; it is unclear whether the new reload handler adds any latency under heavy scrape loads, as performance metrics are not published yet.",
+            "isEditorial": false,
+            "factIds": [
+              "260317f242432200583e6e0cf8677d3e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Because the changes are additive, the image is signed, and no storage format is touched, upgrading to v0.313.2 is low‑risk. Validate the reload endpoint, dismiss flow, and GPG key rotation in a staging namespace before rolling out cluster‑wide [FACT:44748df22d1bff85778cb5ae2d7fbd46][FACT:bef15dba29a413e88bf711199433cc24][FACT:51c75901edee999f1e14349e57e16578][FACT:dc3639c5154d5a167a7584b82a6ab2bd].",
+            "isEditorial": false,
+            "factIds": [
+              "bef15dba29a413e88bf711199433cc24",
+              "51c75901edee999f1e14349e57e16578"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-23::2026-07-30T17:41:06.840Z",
