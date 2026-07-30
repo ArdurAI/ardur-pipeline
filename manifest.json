@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-30T12:00:00.000Z",
-    "windowStart": "2026-07-30T12:00:00.000Z",
-    "windowEnd": "2026-07-30T18:00:00.000Z"
+    "id": "2026-07-30T18:00:00.000Z",
+    "windowStart": "2026-07-30T18:00:00.000Z",
+    "windowEnd": "2026-07-31T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-30T17:40:50.257Z",
-  "nextRefreshAt": "2026-07-30T18:00:00.000Z",
+  "publishedAt": "2026-07-30T19:40:19.791Z",
+  "nextRefreshAt": "2026-07-31T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b9e7f1da-a871-4b6d-a911-7d5334f3e19f",
-    "ranking": "rank-81656a97",
-    "top10": "top10:2026-07-30T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-30T12:00:00.000Z-2026-07-30T17:41:06.840Z"
+    "aggregation": "cd7bb360-73fc-4562-b4ae-cad8793746d1",
+    "ranking": "rank-711980f3",
+    "top10": "top10:2026-07-30T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-30T18:00:00.000Z-2026-07-30T19:40:34.273Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-30T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-30T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-30T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-30T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-30T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-30T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,44 +31,44 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1464,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "blocked-fetch",
-      "count": 9,
+      "count": 6,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[security] source bleepingcomputer.com: HTTP 403 Forbidden"
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1521,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMie0FVX3lxTFAxQVhwcTk0YVQzU1BUeEwzX1d2RVJ4aVJydVY4eGxYbFlxMTVqdHd2UExnR01LYzZkWk1CNTEzR21PN0NJcFd1TWxid0Z0VmU1MnVxaEhwblpNaFZqa0VJUllNaWhLRHlvNWZlVVdSRjduZDlaU1NieXVlMA?oc=5"
       ]
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[kubernetes] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1728,
+      "count": 1779,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 27,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
@@ -77,19 +77,19 @@
     },
     {
       "category": "editorial-hold",
-      "count": 16,
+      "count": 14,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 500) and no facts — article held",
+        "Ungrounded claims persist after re-ask for entry 6 — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
-    "degradedTopics": 5,
+    "failedSources": 66,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -118,18 +118,18 @@
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:48845: Important: OpenJDK 25.0.4 Security Update for Windows Builds"
+      },
+      {
+        "rank": 5,
         "topic": "ai",
         "headline": "Advancing the price-performance frontier with GPT-5.6"
       },
       {
-        "rank": 5,
-        "topic": "models",
-        "headline": "Inference meta-monitoring for Amazon SageMaker AI endpoints with Amazon Quick"
-      },
-      {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:48605: Important: fence-agents security update"
+        "topic": "ai",
+        "headline": "OpenAI goes full China pricing mode with an 80 percent cut to its most affordable GPT-5.6 model"
       },
       {
         "rank": 7,
@@ -149,7 +149,7 @@
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Exclusive: Upwind adds context scanning for AI agents as AI DR hits general availability"
+        "headline": "Exclusive | Banks in Talks to Lend $15 Billion for Anthropic Data Center Backed by Google"
       }
     ],
     "articleCount": 0

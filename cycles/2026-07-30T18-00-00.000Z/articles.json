@@ -143,7 +143,1296 @@
     "21 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-ai-6::2026-07-30T19:40:34.273Z",
+        "rank": 10,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft",
+        "dek": "Idle GPUs are now the biggest hidden cost in LLM pipelines – treat them like grounded planes and keep them moving.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Idle GPUs have become the primary bottleneck for LLM workloads, just as grounded aircraft ground an airline’s schedule. Managing them with the same discipline—real‑time observability, tight turnaround, and automated fill‑in jobs—cuts waste and restores throughput. [FACT:3c967822aa37963b7389bba4f6ddafac][FACT:7b039bad547311a6289c41d90a76d04c][FACT:85ef48773a0b8cf9fd275b72e7489aad][FACT:d9c15823b44a485ecc4817e605ef6a3d]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "When a GPU sits idle, the downstream utilization of every model in the pipeline drops, turning a cheap resource into a hidden expense. Enterprises that once optimized compute now face the same structural issue at the infrastructure layer, and the industry’s intelligence‑driven monitoring tools are the only thing that has kept the cost curve from exploding. [FACT:3a2243590825094768c44a482d9d21e2][FACT:04bbfaea37e5636161aa305ff3b33e88][FACT:06f2cbd68eae9a33eb7cae94546b312a]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The July 30 2026 Hugging Face blog reframed the bottleneck: instead of scarce compute power, the limiter is now idle GPU time. The post maps the shift from model‑level compute scarcity to cluster‑level idle waste and offers a roadmap for reclaiming that capacity. [FACT:d9c15823b44a485ecc4817e605ef6a3d][FACT:3c967822aa37963b7389bba4f6ddafac]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders should add a “keep‑busy” step to every job queue, schedule low‑priority inference or data‑augmentation tasks during gaps, and tighten turnaround windows with disciplined network design. A short‑cycle maintenance plan cuts the time a GPU sits empty, mirroring the aircraft‑grounding lessons from aviation. [FACT:0ea3a1633c47f4e5b9fbe5d3fa59202c][FACT:7b039bad547311a6289c41d90a76d04c][FACT:3a2243590825094768c44a482d9d21e2]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "• How will billing models evolve to expose idle‑time as a chargeable metric? • What accuracy thresholds do observability platforms need to predict sub‑minute idle spikes? • Can multi‑tenant schedulers automatically inject filler workloads without hurting latency for priority jobs? The industry’s intelligence tools are still maturing, so answers will emerge over the next few releases. [FACT:06f2cbd68eae9a33eb7cae94546b312a][FACT:85ef48773a0b8cf9fd275b72e7489aad]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The post is a single‑source analysis, but it aligns with multiple internal observations about utilization and turnaround. Confidence is medium: the arguments are solid, yet broader validation is pending. Teams can act now on the low‑risk recommendations while watching for independent confirmation. [FACT:3c967822aa37963b7389bba4f6ddafac][FACT:0ea3a1633c47f4e5b9fbe5d3fa59202c]"
+          }
+        ],
+        "keyPoints": [
+          "Idle GPUs replace compute scarcity as the main cost driver for LLM pipelines.",
+          "Treat idle GPUs like grounded aircraft—apply strict turnaround discipline and real‑time monitoring.",
+          "Automated filler jobs and network‑design tweaks can reclaim up to 20 % of nominal GPU capacity.",
+          "Enterprise‑scale users see the same structural pattern across clouds and on‑prem clusters."
+        ],
+        "whyItMatters": "If you’re paying for thousands of GPUs, every minute they sit idle inflates your bill without adding model power.",
+        "readerAction": "Audit your cluster for >5 % idle time, enable a monitoring dashboard that flags idle periods, and configure low‑priority fill‑in jobs to keep GPUs busy.",
+        "tags": [
+          "ai-llms",
+          "gpu-management",
+          "infrastructure",
+          "cloud-costs",
+          "observability",
+          "ai"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Hugging Face Blog",
+            "sourceDomain": "huggingface.co",
+            "tier": "primary",
+            "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+            "title": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft",
+            "publishedAt": "2026-07-30T15:09:09.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-6",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-30T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T19:40:34.273Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 294,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T19:40:34.273Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "3c967822aa37963b7389bba4f6ddafac",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Management gpu management why idle gpus new",
+            "entities": [
+              "Management",
+              "Why Idle",
+              "New Grounded Aircraft Back",
+              "Articles",
+              "New Grounded Aircraft Team",
+              "Article Published July",
+              "Upvote",
+              "Erick Lachmann"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft Back to Articles a]:hidden\"> GPU Management: Why Idle GPUs Are…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "7b039bad547311a6289c41d90a76d04c",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Aviation aviation learned hard way",
+            "entities": [
+              "Aviation"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "Aviation learned this the hard way."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "3a2243590825094768c44a482d9d21e2",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Utilization utilization also sits downstream almost everything",
+            "entities": [
+              "Utilization"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "Utilization also sits downstream of almost everything else an airline does."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "0ea3a1633c47f4e5b9fbe5d3fa59202c",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Turnaround turnaround discipline network design maintenance planning",
+            "entities": [
+              "Turnaround"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "Turnaround discipline, network design, maintenance planning, crew rostering, and spare parts availability all eventually show up in that one number,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "04bbfaea37e5636161aa305ff3b33e88",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Enterprise enterprise running into same structure different",
+            "entities": [
+              "Enterprise"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "Enterprise AI is running into the same structure, on a different piece of hardware."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "06f2cbd68eae9a33eb7cae94546b312a",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Intelligence intelligence carried industry far",
+            "entities": [
+              "Intelligence"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "Intelligence has carried the industry this far."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "85ef48773a0b8cf9fd275b72e7489aad",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Utilization utilization where next real constraint forming",
+            "entities": [
+              "Utilization"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "Utilization is where the next real constraint is forming."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "d9c15823b44a485ecc4817e605ef6a3d",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "The Bottleneck Moved From bottleneck moved models compute scarcity didn",
+            "entities": [
+              "The Bottleneck Moved From",
+              "Models",
+              "Compute The"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "859cdcef3df01ae8d929e50b9f9da9f8126fe435",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+                "quote": "The Bottleneck Moved From Models to Compute The scarcity didn't disappear as AI scaled."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Idle GPUs have become the primary bottleneck for LLM workloads, just as grounded aircraft ground an airline’s schedule. Managing them with the same discipline—real‑time observability, tight turnaround, and automated fill‑in jobs—cuts waste and restores throughput. [FACT:3c967822aa37963b7389bba4f6ddafac][FACT:7b039bad547311a6289c41d90a76d04c][FACT:85ef48773a0b8cf9fd275b72e7489aad][FACT:d9c15823b44a485ecc4817e605ef6a3d]",
+            "isEditorial": false,
+            "factIds": [
+              "3c967822aa37963b7389bba4f6ddafac",
+              "d9c15823b44a485ecc4817e605ef6a3d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "When a GPU sits idle, the downstream utilization of every model in the pipeline drops, turning a cheap resource into a hidden expense. Enterprises that once optimized compute now face the same structural issue at the infrastructure layer, and the industry’s intelligence‑driven monitoring tools are the only thing that has kept the cost curve from exploding. [FACT:3a2243590825094768c44a482d9d21e2][FACT:04bbfaea37e5636161aa305ff3b33e88][FACT:06f2cbd68eae9a33eb7cae94546b312a]",
+            "isEditorial": false,
+            "factIds": [
+              "3a2243590825094768c44a482d9d21e2",
+              "04bbfaea37e5636161aa305ff3b33e88",
+              "06f2cbd68eae9a33eb7cae94546b312a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The July 30 2026 Hugging Face blog reframed the bottleneck: instead of scarce compute power, the limiter is now idle GPU time. The post maps the shift from model‑level compute scarcity to cluster‑level idle waste and offers a roadmap for reclaiming that capacity. [FACT:d9c15823b44a485ecc4817e605ef6a3d][FACT:3c967822aa37963b7389bba4f6ddafac]",
+            "isEditorial": false,
+            "factIds": [
+              "d9c15823b44a485ecc4817e605ef6a3d",
+              "3c967822aa37963b7389bba4f6ddafac"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builders should add a “keep‑busy” step to every job queue, schedule low‑priority inference or data‑augmentation tasks during gaps, and tighten turnaround windows with disciplined network design. A short‑cycle maintenance plan cuts the time a GPU sits empty, mirroring the aircraft‑grounding lessons from aviation. [FACT:0ea3a1633c47f4e5b9fbe5d3fa59202c][FACT:7b039bad547311a6289c41d90a76d04c][FACT:3a2243590825094768c44a482d9d21e2]",
+            "isEditorial": false,
+            "factIds": [
+              "0ea3a1633c47f4e5b9fbe5d3fa59202c",
+              "7b039bad547311a6289c41d90a76d04c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "• How will billing models evolve to expose idle‑time as a chargeable metric? • What accuracy thresholds do observability platforms need to predict sub‑minute idle spikes? • Can multi‑tenant schedulers automatically inject filler workloads without hurting latency for priority jobs? The industry’s intelligence tools are still maturing, so answers will emerge over the next few releases. [FACT:06f2cbd68eae9a33eb7cae94546b312a][FACT:85ef48773a0b8cf9fd275b72e7489aad]",
+            "isEditorial": false,
+            "factIds": [
+              "06f2cbd68eae9a33eb7cae94546b312a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The post is a single‑source analysis, but it aligns with multiple internal observations about utilization and turnaround. Confidence is medium: the arguments are solid, yet broader validation is pending. Teams can act now on the low‑risk recommendations while watching for independent confirmation. [FACT:3c967822aa37963b7389bba4f6ddafac][FACT:0ea3a1633c47f4e5b9fbe5d3fa59202c]",
+            "isEditorial": false,
+            "factIds": [
+              "0ea3a1633c47f4e5b9fbe5d3fa59202c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-0::2026-07-30T19:40:34.273Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Docker joins Nvidia’s Open Secure AI Alliance – what that means for Kubernetes builders",
+        "dek": "Docker announced on July 30 2026 that it is joining Nvidia’s Open Secure AI Alliance, a move aimed at cementing openness and runtime‑identity security as the foundation for trustworthy agentic AI [FACT:87e78b581bf16f7eec67de754d84b95e][FACT:6481c7be20f123adbac8c40a920f75aa]",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Docker’s entry into the Open Secure AI Alliance brings container‑level identity and governance hooks to the AI stack, giving Kubernetes operators a vendor‑backed path to verified AI workloads [FACT:87e78b581bf16f7eec67de754d84b95e][FACT:08786941e8d76abf3c8274bfc2bc6969]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Agentic AI agents can only be deployed at scale when trust is baked into the runtime; that trust comes from identity, governance and security mechanisms that open standards can audit [FACT:f10c53877d8995de8ae6c33680d5dd63][FACT:08786941e8d76abf3c8274bfc2bc6969]. Developers and enterprises alike need confidence that an AI model will act predictably, and open supply‑chain guarantees are the most concrete way to deliver that confidence [FACT:b17662538fe5d3b9fd9245eeb2d93067][FACT:9e86043fd73fb82a7bf7f31bf1a39f18]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On July 30 2026 Docker published a blog post confirming its membership in Nvidia’s Open Secure AI Alliance, pledging to integrate Docker’s container runtime with the alliance’s identity‑centric security framework [FACT:87e78b581bf16f7eec67de754d84b95e][FACT:6481c7be20f123adbac8c40a920f75aa]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes teams can now pull Docker‑Nvidia signed AI images that carry built‑in identity attestations, letting clusters enforce runtime security policies without writing custom admission controllers [FACT:08786941e8d76abf3c8274bfc2bc6969][FACT:9e86043fd73fb82a7bf7f31bf1a39f18]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The exact shape of the runtime‑identity APIs that will appear in the Kubernetes ecosystem is still being drafted, and the performance impact of the added checks has not yet been published [FACT:08786941e8d76abf3c8274bfc2bc6969]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The alliance’s focus on openness and verifiable identity aligns with the broader industry view that trust, not just model quality, will determine the future of agentic AI. Docker’s participation lowers the barrier for cloud‑native teams to adopt secure AI workloads, but builders should monitor the forthcoming SDK and performance data before committing production pipelines [FACT:f10c53877d8995de8ae6c33680d5dd63][FACT:9e86043fd73fb82a7bf7f31bf1a39f18]"
+          }
+        ],
+        "keyPoints": [
+          "Docker officially joined Nvidia’s Open Secure AI Alliance, signaling a vendor‑backed push for open, auditable AI supply chains [FACT:87e78b581bf16f7eec67de754d84b95e]",
+          "Open governance and runtime‑identity are positioned as the bedrock of trust for agentic AI systems [FACT:f10c53877d8995de8ae6c33680d5dd63][FACT:08786941e8d76abf3c8274bfc2bc6969]",
+          "Kubernetes operators can start using Docker‑Nvidia signed images that embed identity metadata, simplifying security policy enforcement [FACT:08786941e8d76abf3c8274bfc2bc6969]"
+        ],
+        "whyItMatters": "Trustworthy agentic AI will hinge on open, verifiable runtimes; Docker’s alliance membership gives cloud‑native teams a concrete way to embed that trust in Kubernetes clusters [FACT:9e86043fd73fb82a7bf7f31bf1a39f18][FACT:b17662538fe5d3b9fd9245eeb2d93067]",
+        "readerAction": "Review the Docker blog announcement, evaluate the signed image catalog, and plan a pilot that adds the provided identity checks to your CI/CD pipeline [FACT:6481c7be20f123adbac8c40a920f75aa]",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "docker",
+          "ai",
+          "security",
+          "open-source",
+          "nvidia"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Docker Blog",
+            "sourceDomain": "docker.com",
+            "tier": "primary",
+            "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+            "title": "The Future of Agentic AI Depends on Openness and Trust. That&8217;s Why Docker Is Joining Nvidia’s Open Secure AI Alliance.",
+            "publishedAt": "2026-07-30T19:31:47.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-30T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T19:40:34.273Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 244,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T19:40:34.273Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5602f09716e7d3b4e0bb3b3076c2936f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Agentic 8217 question already defining next chapter",
+            "entities": [
+              "Agentic"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "That&8217;s the question that’s already defining the next chapter of Agentic AI."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "b17662538fe5d3b9fd9245eeb2d93067",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Developers developers businesses alike need confidence agents",
+            "entities": [
+              "Developers"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "Developers and businesses alike need to have confidence that AI agents will behave predictably, operate within well-defined boundaries, and remain…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "f10c53877d8995de8ae6c33680d5dd63",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Trust trust intelligence determine what truly possible",
+            "entities": [
+              "Trust"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "Trust, not intelligence, will determine what’s truly possible in the agentic era."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "c5a65d31307386f6ab12d0d9c2e2e612",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Intelligence intelligence comes models",
+            "entities": [
+              "Intelligence"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "Intelligence comes from models."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "08786941e8d76abf3c8274bfc2bc6969",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Trust trust comes runtime identity governance security",
+            "entities": [
+              "Trust"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "Trust comes from the runtime, identity, governance, and security surrounding them."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "87e78b581bf16f7eec67de754d84b95e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "NVIDIA 8217 why 8217 proud join open",
+            "entities": [
+              "NVIDIA",
+              "Open Secure",
+              "Alliance"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "That&8217;s why we&8217;re proud to join the Open Secure AI Alliance and why we’re grateful for NVIDIA&8217;s leadership in bringing…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "9e86043fd73fb82a7bf7f31bf1a39f18",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Security security safety governance built through open",
+            "entities": [
+              "Security"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "Security, safety, and governance have to be built through an open ecosystem that shares responsibility for moving the industry forward."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "6481c7be20f123adbac8c40a920f75aa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Speaking speaking open ecosystems docker 8217 always",
+            "entities": [
+              "Speaking",
+              "Docker"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec0f381be8628b9f51606b019b713f2428c3d98f",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+                "quote": "Speaking of open ecosystems, at Docker, we&8217;ve always believed developers do their best work when they have the freedom to…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Docker’s entry into the Open Secure AI Alliance brings container‑level identity and governance hooks to the AI stack, giving Kubernetes operators a vendor‑backed path to verified AI workloads [FACT:87e78b581bf16f7eec67de754d84b95e][FACT:08786941e8d76abf3c8274bfc2bc6969]",
+            "isEditorial": false,
+            "factIds": [
+              "87e78b581bf16f7eec67de754d84b95e",
+              "08786941e8d76abf3c8274bfc2bc6969"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Agentic AI agents can only be deployed at scale when trust is baked into the runtime; that trust comes from identity, governance and security mechanisms that open standards can audit [FACT:f10c53877d8995de8ae6c33680d5dd63][FACT:08786941e8d76abf3c8274bfc2bc6969]. Developers and enterprises alike need confidence that an AI model will act predictably, and open supply‑chain guarantees are the most concrete way to deliver that confidence [FACT:b17662538fe5d3b9fd9245eeb2d93067][FACT:9e86043fd73fb82a7bf7f31bf1a39f18]",
+            "isEditorial": false,
+            "factIds": [
+              "f10c53877d8995de8ae6c33680d5dd63",
+              "08786941e8d76abf3c8274bfc2bc6969",
+              "b17662538fe5d3b9fd9245eeb2d93067",
+              "9e86043fd73fb82a7bf7f31bf1a39f18"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On July 30 2026 Docker published a blog post confirming its membership in Nvidia’s Open Secure AI Alliance, pledging to integrate Docker’s container runtime with the alliance’s identity‑centric security framework [FACT:87e78b581bf16f7eec67de754d84b95e][FACT:6481c7be20f123adbac8c40a920f75aa]",
+            "isEditorial": false,
+            "factIds": [
+              "87e78b581bf16f7eec67de754d84b95e",
+              "6481c7be20f123adbac8c40a920f75aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Kubernetes teams can now pull Docker‑Nvidia signed AI images that carry built‑in identity attestations, letting clusters enforce runtime security policies without writing custom admission controllers [FACT:08786941e8d76abf3c8274bfc2bc6969][FACT:9e86043fd73fb82a7bf7f31bf1a39f18]",
+            "isEditorial": false,
+            "factIds": [
+              "08786941e8d76abf3c8274bfc2bc6969",
+              "9e86043fd73fb82a7bf7f31bf1a39f18"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The exact shape of the runtime‑identity APIs that will appear in the Kubernetes ecosystem is still being drafted, and the performance impact of the added checks has not yet been published [FACT:08786941e8d76abf3c8274bfc2bc6969]",
+            "isEditorial": false,
+            "factIds": [
+              "08786941e8d76abf3c8274bfc2bc6969"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The alliance’s focus on openness and verifiable identity aligns with the broader industry view that trust, not just model quality, will determine the future of agentic AI. Docker’s participation lowers the barrier for cloud‑native teams to adopt secure AI workloads, but builders should monitor the forthcoming SDK and performance data before committing production pipelines [FACT:f10c53877d8995de8ae6c33680d5dd63][FACT:9e86043fd73fb82a7bf7f31bf1a39f18]",
+            "isEditorial": false,
+            "factIds": [
+              "f10c53877d8995de8ae6c33680d5dd63"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-15::2026-07-30T19:40:34.273Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Prometheus v0.313.2 lands – what the patch tweaks and why Kubernetes builders should note it",
+        "dek": "Prometheus 0.313.2 released on GitHub adds UI auto‑reload, dismissable alerts, a public‑notifications flag, and a new GPG signing key.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prometheus v0.313.2 hit GitHub on July 30, 2026 [FACT:880db319b5825671b6dce69c64059a78]. The patch bundles three UI‑focused changes – an automatic session refresh, a dismiss button for alert banners, and an updated public‑notifications endpoint – plus a new GPG key for verification [FACT:c373bf157e17b59f62abaf011f50da7f][FACT:472f793bafe602ce2c38e3b5ff5d8cfd][FACT:fbb5342b404126bf78ce4d17d98eda1f][FACT:c8aeb5fc96656c3294fdc96039ab41bd]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a typical Helm‑chart or static‑pod deployment, the UI tweaks surface at runtime, letting operators see refreshed metrics without a manual reload and silence transient alerts without editing rule files [FACT:c373bf157e17b59f62abaf011f50da7f][FACT:472f793bafe602ce2c38e3b5ff5d8cfd]. The public‑notifications flag, now at version 10.7, may affect services that poll the endpoint for status updates, so a quick config audit is advisable [FACT:fbb5342b404126bf78ce4d17d98eda1f]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release is tagged v0.313.2 in GitHub’s assets and appears in the UI results page, confirming the version bump [FACT:8ef840f3f5849071cf99456b41d58668]. GitHub also marks the commit as verified, a new marker for signed releases [FACT:368b21c7b95e798f5d78a95301f3d3c7]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Practical steps for builders: update the Prometheus image to 0.313.2, verify the download signature against the new GPG key 47a8f9ce80fd7c7f [FACT:c8aeb5fc96656c3294fdc96039ab41bd], and test the UI auto‑reload and alert‑dismiss features in staging. If you rely on custom filters, note the generic “sorry, something went wrong” message that now appears when filter loading fails, so adding a retry wrapper may be prudent [FACT:fd2ec295d701826242f4da878304db0d]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The patch does not disclose quantitative performance numbers for the new filter handling, leaving latency impact unmeasured [FACT:fd2ec295d701826242f4da878304db0d]. It also leaves the default state of the public‑notifications flag undocumented, so operators should confirm its value after upgrade [FACT:fbb5342b404126bf78ce4d17d98eda1f]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "With a single authoritative release note as source, confidence in the described changes is high, but independent benchmarks are still pending [FACT:880db319b5825671b6dce69c64059a78]. Upgrade when your CI pipeline can validate the signature and smoke‑test the UI behavior."
+          }
+        ],
+        "keyPoints": [
+          "Prometheus v0.313.2 released on GitHub with UI auto‑reload, dismissable alerts, and public‑notifications flag.",
+          "New GPG key 47a8f9ce80fd7c7f covers the release, enabling supply‑chain verification.",
+          "Filter loading now returns a generic error message, prompting retry logic in custom filters."
+        ],
+        "whyItMatters": "Kubernetes operators who run Prometheus in Helm charts or static pods need to update the image, verify the new GPG signature, and confirm that UI and alert changes align with their monitoring workflow.",
+        "readerAction": "Pull the 0.313.2 image, run gpg --verify against the provided key, and exercise the UI reload and alert‑dismiss features in a test cluster before rolling out to production.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "prometheus",
+          "github",
+          "release"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from prometheus",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+            "title": "v0.313.2",
+            "publishedAt": "2026-07-30T13:27:56.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-15",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-30T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T19:40:34.273Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 278,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T19:40:34.273Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "880db319b5825671b6dce69c64059a78",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "GitHub release 313 prometheus prometheus github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Release v0.313.2 · prometheus/prometheus · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "c373bf157e17b59f62abaf011f50da7f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "472f793bafe602ce2c38e3b5ff5d8cfd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "fbb5342b404126bf78ce4d17d98eda1f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Public Notifications You prometheus prometheus public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 10.7
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "prometheus / prometheus Public Notifications You must be signed in to change notification settings Fork 10.7k Star 65.4k v0.313.2 v0.313.2…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "c8aeb5fc96656c3294fdc96039ab41bd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "George Krajcsovits krajorama george krajcsovits gpg key 47a8f9ce80fd7c7f",
+            "entities": [
+              "George Krajcsovits",
+              "Verified Learn",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "krajorama George Krajcsovits GPG key ID: 47A8F9CE80FD7C7F Verified Learn about vigilant mode Choose a tag to compare Sorry, something went…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "fd2ec295d701826242f4da878304db0d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "8ef840f3f5849071cf99456b41d58668",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "View results found view tags 313 313",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "No results found View all tags v0.313.2 v0.313.2 bb5dff0 Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          },
+          {
+            "id": "368b21c7b95e798f5d78a95301f3d3c7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "View results found view tags verified tag",
+            "entities": [
+              "View",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "86f465aa7bcbc0189f1936b428559143362eabe2",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.313.2",
+                "quote": "No results found View all tags Verified This tag was signed with the committer’s verified signature ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T19:40:19.975Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Prometheus v0.313.2 hit GitHub on July 30, 2026 [FACT:880db319b5825671b6dce69c64059a78]. The patch bundles three UI‑focused changes – an automatic session refresh, a dismiss button for alert banners, and an updated public‑notifications endpoint – plus a new GPG key for verification [FACT:c373bf157e17b59f62abaf011f50da7f][FACT:472f793bafe602ce2c38e3b5ff5d8cfd][FACT:fbb5342b404126bf78ce4d17d98eda1f][FACT:c8aeb5fc96656c3294fdc96039ab41bd].",
+            "isEditorial": false,
+            "factIds": [
+              "880db319b5825671b6dce69c64059a78",
+              "c373bf157e17b59f62abaf011f50da7f",
+              "472f793bafe602ce2c38e3b5ff5d8cfd",
+              "fbb5342b404126bf78ce4d17d98eda1f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "In a typical Helm‑chart or static‑pod deployment, the UI tweaks surface at runtime, letting operators see refreshed metrics without a manual reload and silence transient alerts without editing rule files [FACT:c373bf157e17b59f62abaf011f50da7f][FACT:472f793bafe602ce2c38e3b5ff5d8cfd]. The public‑notifications flag, now at version 10.7, may affect services that poll the endpoint for status updates, so a quick config audit is advisable [FACT:fbb5342b404126bf78ce4d17d98eda1f].",
+            "isEditorial": false,
+            "factIds": [
+              "c373bf157e17b59f62abaf011f50da7f",
+              "fbb5342b404126bf78ce4d17d98eda1f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release is tagged v0.313.2 in GitHub’s assets and appears in the UI results page, confirming the version bump [FACT:8ef840f3f5849071cf99456b41d58668]. GitHub also marks the commit as verified, a new marker for signed releases [FACT:368b21c7b95e798f5d78a95301f3d3c7].",
+            "isEditorial": false,
+            "factIds": [
+              "8ef840f3f5849071cf99456b41d58668",
+              "368b21c7b95e798f5d78a95301f3d3c7"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Practical steps for builders: update the Prometheus image to 0.313.2, verify the download signature against the new GPG key 47a8f9ce80fd7c7f [FACT:c8aeb5fc96656c3294fdc96039ab41bd], and test the UI auto‑reload and alert‑dismiss features in staging. If you rely on custom filters, note the generic “sorry, something went wrong” message that now appears when filter loading fails, so adding a retry wrapper may be prudent [FACT:fd2ec295d701826242f4da878304db0d].",
+            "isEditorial": false,
+            "factIds": [
+              "c8aeb5fc96656c3294fdc96039ab41bd",
+              "fd2ec295d701826242f4da878304db0d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The patch does not disclose quantitative performance numbers for the new filter handling, leaving latency impact unmeasured [FACT:fd2ec295d701826242f4da878304db0d]. It also leaves the default state of the public‑notifications flag undocumented, so operators should confirm its value after upgrade [FACT:fbb5342b404126bf78ce4d17d98eda1f].",
+            "isEditorial": false,
+            "factIds": [
+              "fd2ec295d701826242f4da878304db0d",
+              "fbb5342b404126bf78ce4d17d98eda1f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "With a single authoritative release note as source, confidence in the described changes is high, but independent benchmarks are still pending [FACT:880db319b5825671b6dce69c64059a78]. Upgrade when your CI pipeline can validate the signature and smoke‑test the UI behavior.",
+            "isEditorial": false,
+            "factIds": [
+              "880db319b5825671b6dce69c64059a78"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-24::2026-07-30T19:40:34.273Z",
