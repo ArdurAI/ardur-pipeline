@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-29T18:00:00.000Z",
-    "windowStart": "2026-07-29T18:00:00.000Z",
-    "windowEnd": "2026-07-30T00:00:00.000Z"
+    "id": "2026-07-30T00:00:00.000Z",
+    "windowStart": "2026-07-30T00:00:00.000Z",
+    "windowEnd": "2026-07-30T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-29T19:23:56.982Z",
-  "nextRefreshAt": "2026-07-30T00:00:00.000Z",
+  "publishedAt": "2026-07-30T02:43:03.382Z",
+  "nextRefreshAt": "2026-07-30T06:00:00.000Z",
   "runIds": {
-    "aggregation": "c1e8b289-5435-4294-9197-af7d29cd1908",
-    "ranking": "rank-e568ab3f",
-    "top10": "top10:2026-07-29T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-29T18:00:00.000Z-2026-07-29T19:24:15.355Z"
+    "aggregation": "862f7178-a928-4b5b-a50e-715ef6474f2d",
+    "ranking": "rank-c0a8f817",
+    "top10": "top10:2026-07-30T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-30T00:00:00.000Z-2026-07-30T02:43:28.394Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-29T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-29T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-29T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-30T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-30T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-30T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 90,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1521,
+      "count": 1471,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1773,
+      "count": 1711,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "RHSA-2026:48225: Important: perl:5.32 security update"
+      },
+      {
+        "rank": 2,
         "topic": "kubernetes",
         "headline": "v1.54.0-next.1"
       },
       {
-        "rank": 2,
+        "rank": 3,
         "topic": "platform",
         "headline": "Tame Dependabot: Group your updates, slow the cadence, keep security fast"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI admits its autonomous AI models also compromised credentials on other platforms during security eval"
-      },
-      {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:48033: Important: nodejs22 security update"
+        "headline": "Microsoft Unveils AI Security Stack, Low-Cost Cyber Model"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Nvidia AI security tent, Microsoft cyber sprinter to MDASH, Fairlife ransomware"
+        "topic": "ai",
+        "headline": "OpenAI open-sources Codex Security CLI to help developers find and fix vulnerabilities from the command line"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "JFrog Zero-Days Exploited in OpenAI-Hugging Face Hack"
+        "headline": "Russian hackers exploit Exchange OWA zero-day for long-term mailbox access"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Accelerating scientific discovery with ChatGPT for Academic Researchers"
+        "headline": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "CVE-2026-63077: Critical unauthenticated remote code execution in JetBrains TeamCity"
+        "headline": "Cisco warns of FMC static credential flaw exploited in zero-day attacks"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "CNCF Announces Schedule for Debut Observability Summit Europe"
+        "topic": "ai",
+        "headline": "Rogue OpenAI agent that hacked startup tried to attack other firms"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Rails Versions 7.2.3.2, 8.0.5.1, and 8.1.3.1 have been released"
+        "topic": "ai",
+        "headline": "How GPT-5.6 fuses frontier intelligence with frontier efficiency"
       }
     ],
     "articleCount": 0

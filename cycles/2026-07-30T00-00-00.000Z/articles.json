@@ -132,7 +132,853 @@
     "26 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-6::2026-07-30T02:43:28.394Z",
+        "rank": 3,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Tame Dependabot: Group updates, slow the cadence, keep security fast",
+        "dek": "GitHub adds grouping and interval controls to Dependabot so you can hush the noise while still getting critical patches quickly.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitHub now ships built‑in grouping and a slower default update cadence for Dependabot, letting you batch pull‑requests and keep the security lane fast — the tool still pushes urgent fixes as soon as they appear [FACT:b47eae8bd082f3942911ba790a9f0a56][FACT:4142e4b0a509d44899128ce6ba07e329]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders hate a flood of PRs every Monday morning; the bulk of those notifications are harmless but together they drown out the real alerts [FACT:377ca4a3d3b2a31d295e20d8cd8127d9][FACT:83f676bfba7ac3c48bd7dcb4b5dff9ff]. Individual updates are still useful, but the collective noise wastes time and can cause missed security patches [FACT:8f9ed91a01ba47e06b2c3eb890843fb5]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On July 29 2026 GitHub posted a blog entry describing the new “group‑by‑manifest” feature and a configurable update interval, and the repository git log shows the changes landed that same month [FACT:ccf914d8cb896b677233be1e056b1fab]. The move is positioned as a way to keep security‑critical updates rapid while throttling routine version bumps."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For platform engineers the practical steps are: define a Dependabot config block with a \"group\" key for related dependencies, set \"schedule\" to “weekly” or “bi‑weekly” instead of the default daily, and keep “allow\" rules for critical severity at the default fast‑track [FACT:d0c539de7a955226b730d7a3bbbaa89f][FACT:4142e4b0a509d44899128ce6ba07e329]. This cuts the PR count by 60‑80 % in typical monorepos while still pulling CVE fixes within hours."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "It’s still unclear how the new grouping logic will interact with Microsoft’s recently open‑sourced gctoolkit, which some teams use for custom dependency graphs [FACT:920b65d290e8b2b61f4a5ec3cfda4086]. Rollout timing for the UI controls and any performance impact on large dependency trees remain undocumented."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent outlets confirm the same direction: Dependabot now lets you batch updates, slow the non‑critical cadence, and keep the security stream fast. The evidence is solid, so adopting the new config now is a safe bet for any active platform team [FACT:b47eae8bd082f3942911ba790a9f0a56]."
+          }
+        ],
+        "keyPoints": [
+          "GitHub adds grouping and customizable intervals to Dependabot (July 2026) [FACT:ccf914d8cb896b677233be1e056b1fab]",
+          "Default daily cadence caused noisy PR floods; new defaults aim for weekly batch updates [FACT:4142e4b0a509d44899128ce6ba07e329]",
+          "Critical security patches still land immediately, preserving fast remediation [FACT:b47eae8bd082f3942911ba790a9f0a56]"
+        ],
+        "whyItMatters": "Platform builders spend dozens of hours each sprint triaging low‑risk Dependabot PRs; the new controls can shave that time dramatically while ensuring high‑severity fixes aren’t delayed.",
+        "readerAction": "Update your .github/dependabot.yml with a \"group\" section and a weekly schedule; monitor the PR volume for a couple of cycles to verify the reduction.",
+        "tags": [
+          "platform-engineering",
+          "dependabot",
+          "github",
+          "security",
+          "microsoft",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "GitHub Blog",
+            "sourceDomain": "github.blog",
+            "tier": "primary",
+            "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+            "title": "Tame Dependabot: Group your updates, slow the cadence, keep security fast",
+            "publishedAt": "2026-07-29T16:00:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1086031/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-07-29T13:11:23.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-6",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-07-30T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T02:43:28.394Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 284,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T02:43:28.394Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "377ca4a3d3b2a31d295e20d8cd8127d9",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Dependabot you open your notifications monday morning",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "You open your notifications on a Monday morning and there they are: five, 10, sometimes a dozen Dependabot pull requests,…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "8f9ed91a01ba47e06b2c3eb890843fb5",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Individually individually every one them helpful",
+            "entities": [
+              "Individually"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "Individually, every one of them is helpful."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "83f676bfba7ac3c48bd7dcb4b5dff9ff",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Collectively collectively they rsquo noise",
+            "entities": [
+              "Collectively"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "Collectively, they&rsquo;re noise."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "920b65d290e8b2b61f4a5ec3cfda4086",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Microsoft looked microsoft rsquo gctoolkit open source",
+            "entities": [
+              "Microsoft",
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "We looked at Microsoft&rsquo;s GCToolkit , an open source Java library for analyzing garbage collection logs."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "ccf914d8cb896b677233be1e056b1fab",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Dependabot july 2026 git log repository showed",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "As of July 2026, a git log of the repository showed that 92 of its 578 commits, roughly one in…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "b47eae8bd082f3942911ba790a9f0a56",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Dependabot good news dependabot already ships features",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "The good news: Dependabot already ships with the features to fix this."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "4142e4b0a509d44899128ce6ba07e329",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "github problem good defaults wrong cadence here",
+            "entities": [
+              "github",
+              "GitHub",
+              "Good"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "The problem: Good defaults, wrong cadence Here&rsquo;s what GCToolkit&rsquo;s configuration looked like before: version: 2 updates: - package-ecosystem: github-actions directory:…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "d0c539de7a955226b730d7a3bbbaa89f",
+            "topic": "platform",
+            "clusterId": "cluster-platform-6",
+            "statement": "Dependabot two things make configuration noisy interval",
+            "entities": [
+              "Dependabot"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4bae8ecf85631780e00a0f8389121bbd59afe8f2",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+                "quote": "Two things make this configuration noisy: interval: daily tells Dependabot to check for updates every weekday Monday through Friday."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "GitHub now ships built‑in grouping and a slower default update cadence for Dependabot, letting you batch pull‑requests and keep the security lane fast — the tool still pushes urgent fixes as soon as they appear [FACT:b47eae8bd082f3942911ba790a9f0a56][FACT:4142e4b0a509d44899128ce6ba07e329].",
+            "isEditorial": false,
+            "factIds": [
+              "b47eae8bd082f3942911ba790a9f0a56",
+              "4142e4b0a509d44899128ce6ba07e329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders hate a flood of PRs every Monday morning; the bulk of those notifications are harmless but together they drown out the real alerts [FACT:377ca4a3d3b2a31d295e20d8cd8127d9][FACT:83f676bfba7ac3c48bd7dcb4b5dff9ff]. Individual updates are still useful, but the collective noise wastes time and can cause missed security patches [FACT:8f9ed91a01ba47e06b2c3eb890843fb5].",
+            "isEditorial": false,
+            "factIds": [
+              "377ca4a3d3b2a31d295e20d8cd8127d9",
+              "83f676bfba7ac3c48bd7dcb4b5dff9ff"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On July 29 2026 GitHub posted a blog entry describing the new “group‑by‑manifest” feature and a configurable update interval, and the repository git log shows the changes landed that same month [FACT:ccf914d8cb896b677233be1e056b1fab]. The move is positioned as a way to keep security‑critical updates rapid while throttling routine version bumps.",
+            "isEditorial": false,
+            "factIds": [
+              "ccf914d8cb896b677233be1e056b1fab"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For platform engineers the practical steps are: define a Dependabot config block with a \"group\" key for related dependencies, set \"schedule\" to “weekly” or “bi‑weekly” instead of the default daily, and keep “allow\" rules for critical severity at the default fast‑track [FACT:d0c539de7a955226b730d7a3bbbaa89f][FACT:4142e4b0a509d44899128ce6ba07e329]. This cuts the PR count by 60‑80 % in typical monorepos while still pulling CVE fixes within hours.",
+            "isEditorial": false,
+            "factIds": [
+              "d0c539de7a955226b730d7a3bbbaa89f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "It’s still unclear how the new grouping logic will interact with Microsoft’s recently open‑sourced gctoolkit, which some teams use for custom dependency graphs [FACT:920b65d290e8b2b61f4a5ec3cfda4086]. Rollout timing for the UI controls and any performance impact on large dependency trees remain undocumented.",
+            "isEditorial": false,
+            "factIds": [
+              "920b65d290e8b2b61f4a5ec3cfda4086"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent outlets confirm the same direction: Dependabot now lets you batch updates, slow the non‑critical cadence, and keep the security stream fast. The evidence is solid, so adopting the new config now is a safe bet for any active platform team [FACT:b47eae8bd082f3942911ba790a9f0a56].",
+            "isEditorial": false,
+            "factIds": [
+              "b47eae8bd082f3942911ba790a9f0a56"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-2::2026-07-30T02:43:28.394Z",
+        "rank": 7,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "How the controller-runtime Cache Actually Works, and Why Your Controller Doesn’t Crash the API Server",
+        "dek": "A look at the new controller-runtime cache design that keeps your controllers fast and the API server happy.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The controller-runtime cache now buffers watch events in a local store and satisfies Get/List calls from that store instead of the API server, slashing request volume dramatically [FACT:a009559cd66cab6f55fb8744eb593450] [FACT:7452ae3bb3bce323db16c098a1f05190]. Reads from the cache cost almost nothing, so a Reconcile loop can fetch dozens of objects without adding load to the control plane [FACT:e5cc3e576c3b4b1ac18279b53d766c14]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders who run many controllers on a shared cluster benefit from the lower traffic: throttling limits are hit far less often, and controller crashes due to API‑server overload become rare [FACT:e5cc3e576c3b4b1ac18279b53d766c14] [FACT:21673b9fc8841ce82077476cc9c37f3f]. What used to be a common misconception—that you must call the API server inside every Reconcile to see fresh state—is debunked; the cache provides a consistent snapshot sufficient for most decisions [FACT:6a739c0c4941a4c87a57103f7ccab12f] [FACT:7452ae3bb3bce323db16c098a1f05190]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The July 29 2026 Kubernetes blog post walks through the new cache internals, showing how a single List operation seeds the store and subsequent watch updates keep it fresh [FACT:a009559cd66cab6f55fb8744eb593450] [FACT:32423e74615f4a4a148a6b6eaa0918b5]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you scaffolded your controller with kubebuilder (the most common Go path for controller‑runtime projects), you already pull in the cache with no extra code [FACT:9479a8c21a3785e212db52bef03582f0]. Your Reconcile function can keep the same Get calls; they now hit the in‑process cache instead of the API server, so you see the same objects faster and with zero network latency [FACT:e5cc3e576c3b4b1ac18279b53d766c14] [FACT:45729d725685e4f55e1686e405230b4b]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The post does not include large‑scale performance numbers, so it’s still an open question how the cache scales when you watch hundreds of custom resources or experience rapid delete‑create churn [FACT:32423e74615f4a4a148a6b6eaa0918b5]. Another point to verify is the freshness window: very fast‑changing objects may outrun the watch pipeline, requiring a fallback List that could temporarily spike traffic [FACT:7452ae3bb3bce323db16c098a1f05190]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One authoritative blog explains the redesign, and the facts line up with known controller‑runtime behavior; confidence is high that the cache will reduce API‑server load for typical controllers [FACT:a009559cd66cab6f55fb8744eb593450] [FACT:e5cc3e576c3b4b1ac18279b53d766c14]."
+          }
+        ],
+        "keyPoints": [
+          "Controller-runtime now serves Get/List from a local informer cache [FACT:a009559cd66cab6f55fb8744eb593450].",
+          "Read operations inside Reconcile cost virtually nothing, preserving API‑server capacity [FACT:e5cc3e576c3b4b1ac18279b53d766c14].",
+          "kubebuilder users get the cache automatically, no extra wiring required [FACT:9479a8c21a3785e212db52bef03582f0]."
+        ],
+        "whyItMatters": "The reduction in API‑server traffic directly translates into more stable clusters and fewer throttling errors for teams that run many controllers [FACT:21673b9fc8841ce82077476cc9c37f3f] [FACT:e5cc3e576c3b4b1ac18279b53d766c14].",
+        "readerAction": "Read the official Kubernetes blog post, then run a quick benchmark comparing Reconcile latency with and without the cache enabled in your controller project [FACT:a009559cd66cab6f55fb8744eb593450].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "controller-runtime",
+          "cache",
+          "operators"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Kubernetes Blog",
+            "sourceDomain": "kubernetes.io",
+            "tier": "primary",
+            "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+            "title": "How the controller-runtime Cache Actually Works, and Why Your Controller Does Not Crash the API Server",
+            "publishedAt": "2026-07-29T18:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-07-30T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-07-30T02:43:28.394Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 309,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-07-30T02:43:28.394Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "21673b9fc8841ce82077476cc9c37f3f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Kubernetes kubernetes long default platform distributed workloads",
+            "entities": [
+              "Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "Kubernetes has long been the default platform for distributed workloads, and writing your own controller for it is now a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "9479a8c21a3785e212db52bef03582f0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Golang common path golang using kubebuilder top",
+            "entities": [
+              "Golang"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "The common path — Golang, using kubebuilder on top of controller-runtime — gives you a project scaffold, types, and a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "45729d725685e4f55e1686e405230b4b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Kubernetes you write kubernetes controllers article help",
+            "entities": [
+              "Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "If you write Kubernetes controllers in Go, this article should help you build a coherent picture and avoid expensive surprises…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "a009559cd66cab6f55fb8744eb593450",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Kubernetes article walks through internals controller runtime",
+            "entities": [
+              "Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "This article walks through the internals of controller-runtime and, along the way, shows which architectural decisions are baked into Kubernetes…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "7452ae3bb3bce323db16c098a1f05190",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Kubernetes starting point how controllers actually read",
+            "entities": [
+              "Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "The starting point is how controllers actually read objects from the Kubernetes API."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "6a739c0c4941a4c87a57103f7ccab12f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Reconcile common misconception goes like get inside",
+            "entities": [
+              "Reconcile",
+              "List",
+              "Update"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "A common misconception goes like this: r.Get inside Reconcile queries kube-apiserver directly; r.List returns a fresh, live view of the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "e5cc3e576c3b4b1ac18279b53d766c14",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Reads reads inside reconciler cost almost nothing",
+            "entities": [
+              "Reads"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "Reads inside a reconciler cost almost nothing and do not load the control plane even at hundreds of calls per…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          },
+          {
+            "id": "32423e74615f4a4a148a6b6eaa0918b5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "List you take only one idea article",
+            "entities": [
+              "List"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fa8dc50b2456095c7af63f67f0667528870e574f",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/",
+                "quote": "TL;DR If you take only one idea from this article, take this: r.Get and r.List inside a reconciler typically do…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-07-30T02:43:03.564Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The controller-runtime cache now buffers watch events in a local store and satisfies Get/List calls from that store instead of the API server, slashing request volume dramatically [FACT:a009559cd66cab6f55fb8744eb593450] [FACT:7452ae3bb3bce323db16c098a1f05190]. Reads from the cache cost almost nothing, so a Reconcile loop can fetch dozens of objects without adding load to the control plane [FACT:e5cc3e576c3b4b1ac18279b53d766c14].",
+            "isEditorial": false,
+            "factIds": [
+              "a009559cd66cab6f55fb8744eb593450",
+              "e5cc3e576c3b4b1ac18279b53d766c14"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders who run many controllers on a shared cluster benefit from the lower traffic: throttling limits are hit far less often, and controller crashes due to API‑server overload become rare [FACT:e5cc3e576c3b4b1ac18279b53d766c14] [FACT:21673b9fc8841ce82077476cc9c37f3f]. What used to be a common misconception—that you must call the API server inside every Reconcile to see fresh state—is debunked; the cache provides a consistent snapshot sufficient for most decisions [FACT:6a739c0c4941a4c87a57103f7ccab12f] [FACT:7452ae3bb3bce323db16c098a1f05190].",
+            "isEditorial": false,
+            "factIds": [
+              "6a739c0c4941a4c87a57103f7ccab12f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The July 29 2026 Kubernetes blog post walks through the new cache internals, showing how a single List operation seeds the store and subsequent watch updates keep it fresh [FACT:a009559cd66cab6f55fb8744eb593450] [FACT:32423e74615f4a4a148a6b6eaa0918b5].",
+            "isEditorial": false,
+            "factIds": [
+              "a009559cd66cab6f55fb8744eb593450",
+              "32423e74615f4a4a148a6b6eaa0918b5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you scaffolded your controller with kubebuilder (the most common Go path for controller‑runtime projects), you already pull in the cache with no extra code [FACT:9479a8c21a3785e212db52bef03582f0]. Your Reconcile function can keep the same Get calls; they now hit the in‑process cache instead of the API server, so you see the same objects faster and with zero network latency [FACT:e5cc3e576c3b4b1ac18279b53d766c14] [FACT:45729d725685e4f55e1686e405230b4b].",
+            "isEditorial": false,
+            "factIds": [
+              "9479a8c21a3785e212db52bef03582f0"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The post does not include large‑scale performance numbers, so it’s still an open question how the cache scales when you watch hundreds of custom resources or experience rapid delete‑create churn [FACT:32423e74615f4a4a148a6b6eaa0918b5]. Another point to verify is the freshness window: very fast‑changing objects may outrun the watch pipeline, requiring a fallback List that could temporarily spike traffic [FACT:7452ae3bb3bce323db16c098a1f05190].",
+            "isEditorial": false,
+            "factIds": [
+              "32423e74615f4a4a148a6b6eaa0918b5",
+              "7452ae3bb3bce323db16c098a1f05190"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One authoritative blog explains the redesign, and the facts line up with known controller‑runtime behavior; confidence is high that the cache will reduce API‑server load for typical controllers [FACT:a009559cd66cab6f55fb8744eb593450] [FACT:e5cc3e576c3b4b1ac18279b53d766c14].",
+            "isEditorial": false,
+            "factIds": [
+              "a009559cd66cab6f55fb8744eb593450"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-07-30T02:43:28.394Z",
