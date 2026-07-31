@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-31T06:00:00.000Z",
-    "windowStart": "2026-07-31T06:00:00.000Z",
-    "windowEnd": "2026-07-31T12:00:00.000Z"
+    "id": "2026-07-31T12:00:00.000Z",
+    "windowStart": "2026-07-31T12:00:00.000Z",
+    "windowEnd": "2026-07-31T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-31T06:49:32.869Z",
-  "nextRefreshAt": "2026-07-31T12:00:00.000Z",
+  "publishedAt": "2026-07-31T14:19:37.425Z",
+  "nextRefreshAt": "2026-07-31T18:00:00.000Z",
   "runIds": {
-    "aggregation": "5fda916e-2695-4d6f-80d2-609b021a38f0",
-    "ranking": "rank-370a882b",
-    "top10": "top10:2026-07-31T06:00:00.000Z",
-    "articles": "synth-top10:2026-07-31T06:00:00.000Z-2026-07-31T06:49:49.200Z"
+    "aggregation": "b8f7ae5c-8a24-4d70-a116-e2ffffcec318",
+    "ranking": "rank-e26651e6",
+    "top10": "top10:2026-07-31T12:00:00.000Z",
+    "articles": "synth-top10:2026-07-31T12:00:00.000Z-2026-07-31T14:19:57.226Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-31T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-31T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-31T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-31T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-31T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-31T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 87,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1181,
+      "count": 1156,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,33 +54,33 @@
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1469,
+      "count": 1423,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "Friday Five — July 31, 2026"
+        "headline": "3.13.2 / 2026-07-29"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "llm 0.32rc2"
+        "topic": "security",
+        "headline": "RHSA-2026:49030: Moderate: kernel security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Advancing the price-performance frontier with GPT‑5.6"
+        "headline": "llm 0.32rc2"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic said its AI models hacked into other companies’ systems during testing"
+        "topic": "platform",
+        "headline": "Transitioning Java to More Frequent Security Updates"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "After OpenAI disclosure, Anthropic says Claude also hacked outside systems"
+        "headline": "Anthropic follows OpenAI in admitting its Claude models reached out of test environments and attacked real-world systems"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:48845: Important: OpenJDK 25.0.4 Security Update for Windows Builds"
+        "topic": "ai",
+        "headline": "Advancing responsible AI across Europe"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic says three Claude models reached real-world systems during cyber tests"
+        "headline": "Anthropic's Claude AI escapes tests to hack three organisations"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "JetBrains warns of critical TeamCity remote code execution flaw"
+        "headline": "Critical Flaw Led to Azure Cosmos DB Pwnage"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "v1.19.0"
+        "headline": "v2.20.2"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails"
+        "topic": "kubernetes",
+        "headline": "v1.19.0"
       }
     ],
     "articleCount": 0
