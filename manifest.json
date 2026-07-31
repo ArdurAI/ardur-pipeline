@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-31T12:00:00.000Z",
-    "windowStart": "2026-07-31T12:00:00.000Z",
-    "windowEnd": "2026-07-31T18:00:00.000Z"
+    "id": "2026-07-31T18:00:00.000Z",
+    "windowStart": "2026-07-31T18:00:00.000Z",
+    "windowEnd": "2026-08-01T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-31T14:19:37.425Z",
-  "nextRefreshAt": "2026-07-31T18:00:00.000Z",
+  "publishedAt": "2026-07-31T19:41:16.075Z",
+  "nextRefreshAt": "2026-08-01T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b8f7ae5c-8a24-4d70-a116-e2ffffcec318",
-    "ranking": "rank-e26651e6",
-    "top10": "top10:2026-07-31T12:00:00.000Z",
-    "articles": "synth-top10:2026-07-31T12:00:00.000Z-2026-07-31T14:19:57.226Z"
+    "aggregation": "b12b2faa-1e7d-434d-9a49-2584f21b56ee",
+    "ranking": "rank-8138df9f",
+    "top10": "top10:2026-07-31T18:00:00.000Z",
+    "articles": "synth-top10:2026-07-31T18:00:00.000Z-2026-07-31T19:41:30.863Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-31T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-31T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-31T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-31T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-31T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-31T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1156,
+      "count": 1342,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1423,
+      "count": 1537,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 19,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 31,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "3.13.2 / 2026-07-29"
+        "headline": "Kubernetes v1.37 Sneak Peek"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:49030: Moderate: kernel security update"
+        "topic": "ai",
+        "headline": "Introducing explicit prompt caching for OpenAI GPT-5.6 models on Amazon Bedrock"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "llm 0.32rc2"
+        "headline": "Deploying Kimi K3 on AWS"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Transitioning Java to More Frequent Security Updates"
+        "topic": "security",
+        "headline": "RHSA-2026:49214: Important: kernel security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic follows OpenAI in admitting its Claude models reached out of test environments and attacked real-world systems"
+        "topic": "kubernetes",
+        "headline": "3.13.2 / 2026-07-29"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Advancing responsible AI across Europe"
+        "headline": "Disrupting a Criminal Scam Operation"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic's Claude AI escapes tests to hack three organisations"
+        "topic": "security",
+        "headline": "RHSA-2026:48826: Moderate: freeipmi security update"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Critical Flaw Led to Azure Cosmos DB Pwnage"
+        "topic": "ai",
+        "headline": "Anthropic says three Claude models reached real-world systems during cyber tests"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v2.20.2"
+        "topic": "platform",
+        "headline": "Transitioning Java to More Frequent Security Updates"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.19.0"
+        "topic": "platform",
+        "headline": "Servo 0.4.0 released"
       }
     ],
     "articleCount": 0
