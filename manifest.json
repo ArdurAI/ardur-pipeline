@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-30T18:00:00.000Z",
-    "windowStart": "2026-07-30T18:00:00.000Z",
-    "windowEnd": "2026-07-31T00:00:00.000Z"
+    "id": "2026-07-31T00:00:00.000Z",
+    "windowStart": "2026-07-31T00:00:00.000Z",
+    "windowEnd": "2026-07-31T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-30T19:40:19.791Z",
-  "nextRefreshAt": "2026-07-31T00:00:00.000Z",
+  "publishedAt": "2026-07-31T03:24:59.175Z",
+  "nextRefreshAt": "2026-07-31T06:00:00.000Z",
   "runIds": {
-    "aggregation": "cd7bb360-73fc-4562-b4ae-cad8793746d1",
-    "ranking": "rank-711980f3",
-    "top10": "top10:2026-07-30T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-30T18:00:00.000Z-2026-07-30T19:40:34.273Z"
+    "aggregation": "2ad57c4a-d172-4b73-9cea-7b0babc9c77d",
+    "ranking": "rank-611db412",
+    "top10": "top10:2026-07-31T00:00:00.000Z",
+    "articles": "synth-top10:2026-07-31T00:00:00.000Z-2026-07-31T03:25:14.070Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-30T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-30T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-30T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-07-31T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-07-31T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-07-31T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1381,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1521,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMie0FVX3lxTFAxQVhwcTk0YVQzU1BUeEwzX1d2RVJ4aVJydVY4eGxYbFlxMTVqdHd2UExnR01LYzZkWk1CNTEzR21PN0NJcFd1TWxid0Z0VmU1MnVxaEhwblpNaFZqa0VJUllNaWhLRHlvNWZlVVdSRjduZDlaU1NieXVlMA?oc=5"
-      ]
-    },
-    {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 13 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1779,
+      "count": 1675,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,29 +67,29 @@
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 27,
+      "category": "editorial-hold",
+      "count": 19,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 14,
+      "category": "copyright-gate",
+      "count": 28,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 500) and no facts — article held",
-        "Ungrounded claims persist after re-ask for entry 6 — article held"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
-    "degradedTopics": 4,
+    "failedSources": 68,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "3.13.2 / 2026-07-29"
+        "headline": "Friday Five — July 31, 2026"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Introducing explicit prompt caching for OpenAI GPT-5.6 models on Amazon Bedrock"
+        "topic": "models",
+        "headline": "llm 0.32rc2"
       },
       {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Advancing the price-performance frontier with GPT‑5.6"
+      },
+      {
+        "rank": 4,
         "topic": "platform",
         "headline": "Tame Dependabot: Group your updates, slow the cadence, keep security fast"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:48845: Important: OpenJDK 25.0.4 Security Update for Windows Builds"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Advancing the price-performance frontier with GPT-5.6"
-      },
-      {
         "rank": 6,
         "topic": "ai",
-        "headline": "OpenAI goes full China pricing mode with an 80 percent cut to its most affordable GPT-5.6 model"
+        "headline": "Anthropic's AI models hacked 3 organizations during testing"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "NVIDIA and tech firms launch Open Secure AI Alliance for AI security"
+        "topic": "ai",
+        "headline": "Anthropic says three Claude models reached real-world systems during cyber tests"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:48606: Important: hplip security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "Investigating three real-world incidents in our cybersecurity evaluations"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails"
+        "headline": "JetBrains warns of critical TeamCity remote code execution flaw"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Exclusive | Banks in Talks to Lend $15 Billion for Anthropic Data Center Backed by Google"
+        "topic": "kubernetes",
+        "headline": "v1.19.0"
       }
     ],
-    "articleCount": 0
+    "articleCount": 2
   }
 }
