@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-01T12:00:00.000Z",
-    "windowStart": "2026-08-01T12:00:00.000Z",
-    "windowEnd": "2026-08-01T18:00:00.000Z"
+    "id": "2026-08-01T18:00:00.000Z",
+    "windowStart": "2026-08-01T18:00:00.000Z",
+    "windowEnd": "2026-08-02T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-01T13:37:24.671Z",
-  "nextRefreshAt": "2026-08-01T18:00:00.000Z",
+  "publishedAt": "2026-08-01T19:15:25.529Z",
+  "nextRefreshAt": "2026-08-02T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c4c115cf-ab82-4deb-8930-c1e208d4d2bb",
-    "ranking": "rank-9a2dcc3b",
-    "top10": "top10:2026-08-01T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-01T12:00:00.000Z-2026-08-01T13:37:42.768Z"
+    "aggregation": "e8c9dfd4-f249-4367-b86b-55c8ddc77b08",
+    "ranking": "rank-f8f7a1a1",
+    "top10": "top10:2026-08-01T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-01T18:00:00.000Z-2026-08-01T19:15:37.831Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-01T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-01T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-01T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-01T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-01T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-01T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 92,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1149,
+      "count": 1133,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -59,37 +59,37 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1293,
+      "count": 1329,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "Kubernetes v1.37 Sneak Peek"
+        "headline": "Kubernetes upgrades don’t have to break things: How EKS is making cluster lifecycle management simpler and safer"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Why did OpenAI's and Anthropic's AI models hack other companies?"
+        "headline": "datasette-agent 0.4a0"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Ruby on Rails Patches Critical Vulnerability"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic release Claude Opus 5, its 'safest model yet'"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:49212: Important: kernel security update"
-      },
-      {
-        "rank": 6,
         "topic": "ai",
         "headline": "Ten advances in mathematics and theoretical computer science"
       },
       {
-        "rank": 7,
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Why did OpenAI's and Anthropic's AI models hack other companies?"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "Ruby on Rails Patches Critical Vulnerability"
+      },
+      {
+        "rank": 6,
         "topic": "security",
         "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
       },
       {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:49212: Important: kernel security update"
+      },
+      {
         "rank": 8,
+        "topic": "security",
+        "headline": "Rails patches critical Active Storage flaw with RCE potential"
+      },
+      {
+        "rank": 9,
         "topic": "ai",
         "headline": "Meta META Unveils Personal AI Agents And A New Instagram Vision"
       },
       {
-        "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:48817: Moderate: libsolv security update"
-      },
-      {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Servo 0.4.0 released"
+        "topic": "kubernetes",
+        "headline": "City of Norman offering waste containers to help with storm cleanup"
       }
     ],
     "articleCount": 1

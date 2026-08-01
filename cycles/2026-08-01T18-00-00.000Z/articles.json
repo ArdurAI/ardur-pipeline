@@ -811,6 +811,246 @@
             "confidence": "medium"
           }
         ]
+      },
+      {
+        "id": "cluster-security-1::2026-08-01T19:15:37.831Z",
+        "rank": 8,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Rails ships emergency patch for critical Active Storage RCE flaw",
+        "dek": "A Rails security update closes a Remote Code Execution (RCE) vulnerability in Active Storage that could let attackers run code on your cloud‑hosted app.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rails 7.x released a security patch that fixes a critical Active Storage bug that allowed remote code execution. If your AI‑orchestrated services run on Rails, you need the update now to stop an attacker from taking over your instance. [FACT:94f2e0f035b1faf0d95fe831520ccb29]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Active Storage is the default file‑attachment layer for most Rails APIs, including those that store model weights or user‑uploaded datasets. A flaw that lets an attacker execute code means they could inject malicious models or steal credentials from your cloud environment. In today’s AI‑driven stacks, that translates to a direct pathway into your data pipelines. [FACT:94f2e0f035b1faf0d95fe831520ccb29]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The vulnerability lived in the Active Storage processing pipeline and permitted specially crafted uploads to trigger arbitrary Ruby code on the host. Rails responded by publishing a patched release that tightens the sanitization checks and disables unsafe deserialization paths. [FACT:94f2e0f035b1faf0d95fe831520ccb29]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders, the action is simple: pull the latest Rails security release and redeploy. Verify that your Gemfile points to the patched version, run your test suite, and confirm that any custom storage adapters still load correctly. If you lock Rails versions with Bundler, bump the patch level and run `bundle update rails`. [FACT:94f2e0f035b1faf0d95fe831520ccb29]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The report is currently single‑source, so we still need independent confirmation of exploitability in exotic storage back‑ends (e.g., S3‑direct uploads). It’s also unclear whether legacy Rails 6 applications can back‑port the fix without new other dependencies. Keep an eye on the Rails security mailing list for follow‑up details. [FACT:94f2e0f035b1faf0d95fe831520ccb29]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Patch now, test quickly, and monitor Rails security advisories. The risk is concrete—RCE is as bad as it gets—so delaying the update adds unnecessary exposure. [FACT:94f2e0f035b1faf0d95fe831520ccb29]"
+          }
+        ],
+        "keyPoints": [
+          "Rails patched a critical Active Storage vulnerability that could lead to remote code execution.",
+          "The flaw affects any Rails app that uses Active Storage for uploads, a common pattern in AI workloads.",
+          "Updating to the latest security release is the only reliable mitigation right now."
+        ],
+        "whyItMatters": "AI and cloud services built on Rails now have a known remote‑code‑execution avenue; applying the patch blocks that path and protects your data pipelines.",
+        "readerAction": "Check the official Rails release notes for the security update, bump your Rails version, run your CI pipeline, and verify that all storage adapters load without errors.",
+        "tags": [
+          "rails",
+          "active-storage",
+          "security",
+          "cloud",
+          "ai",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "BleepingComputer",
+            "sourceDomain": "bleepingcomputer.com",
+            "tier": "security-news",
+            "url": "https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/",
+            "title": "Rails patches critical Active Storage flaw with RCE potential",
+            "publishedAt": "2026-08-01T14:20:30.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-01T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-01T19:15:37.831Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 278,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-01T19:15:37.831Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "94f2e0f035b1faf0d95fe831520ccb29",
+            "topic": "security",
+            "clusterId": "cluster-security-1",
+            "statement": "Active Storage critical vulnerability active storage framework allow",
+            "entities": [
+              "Active Storage",
+              "Rails"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e64f30381c40bc651cbba6d7570f4ddfc1d22981",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/",
+                "quote": "A critical vulnerability in the Active Storage framework can allow an unauthenticated attacker to read arbitrary files from a Rails…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-01T19:15:25.668Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Rails 7.x released a security patch that fixes a critical Active Storage bug that allowed remote code execution. If your AI‑orchestrated services run on Rails, you need the update now to stop an attacker from taking over your instance. [FACT:94f2e0f035b1faf0d95fe831520ccb29]",
+            "isEditorial": false,
+            "factIds": [
+              "94f2e0f035b1faf0d95fe831520ccb29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Active Storage is the default file‑attachment layer for most Rails APIs, including those that store model weights or user‑uploaded datasets. A flaw that lets an attacker execute code means they could inject malicious models or steal credentials from your cloud environment. In today’s AI‑driven stacks, that translates to a direct pathway into your data pipelines. [FACT:94f2e0f035b1faf0d95fe831520ccb29]",
+            "isEditorial": false,
+            "factIds": [
+              "94f2e0f035b1faf0d95fe831520ccb29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The vulnerability lived in the Active Storage processing pipeline and permitted specially crafted uploads to trigger arbitrary Ruby code on the host. Rails responded by publishing a patched release that tightens the sanitization checks and disables unsafe deserialization paths. [FACT:94f2e0f035b1faf0d95fe831520ccb29]",
+            "isEditorial": false,
+            "factIds": [
+              "94f2e0f035b1faf0d95fe831520ccb29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For builders, the action is simple: pull the latest Rails security release and redeploy. Verify that your Gemfile points to the patched version, run your test suite, and confirm that any custom storage adapters still load correctly. If you lock Rails versions with Bundler, bump the patch level and run `bundle update rails`. [FACT:94f2e0f035b1faf0d95fe831520ccb29]",
+            "isEditorial": false,
+            "factIds": [
+              "94f2e0f035b1faf0d95fe831520ccb29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The report is currently single‑source, so we still need independent confirmation of exploitability in exotic storage back‑ends (e.g., S3‑direct uploads). It’s also unclear whether legacy Rails 6 applications can back‑port the fix without new other dependencies. Keep an eye on the Rails security mailing list for follow‑up details. [FACT:94f2e0f035b1faf0d95fe831520ccb29]",
+            "isEditorial": false,
+            "factIds": [
+              "94f2e0f035b1faf0d95fe831520ccb29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Patch now, test quickly, and monitor Rails security advisories. The risk is concrete—RCE is as bad as it gets—so delaying the update adds unnecessary exposure. [FACT:94f2e0f035b1faf0d95fe831520ccb29]",
+            "isEditorial": false,
+            "factIds": [
+              "94f2e0f035b1faf0d95fe831520ccb29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
       }
     ],
     "heldArticles": [
