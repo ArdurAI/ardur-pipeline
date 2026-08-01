@@ -138,7 +138,273 @@
     "25 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-7::2026-08-01T06:34:39.678Z",
+        "rank": 10,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "From generated code to trusted code with a unit‑test agent",
+        "dek": "A new .NET preview drops a unit‑test agent that stitches AI‑generated request code into your existing end‑to‑end browser test pipeline.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The .NET preview ships a unit‑test agent that spits out one shared request‑coding helper and automatically wires it into your end‑to‑end browser performance tests, turning raw generated snippets into vetted test assets. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders spend hours hand‑crafting request wrappers and then copying them into UI test suites. By collapsing that manual step into a single generated agent, you cut friction, reduce copy‑paste bugs, and get immediate feedback on how generated code performs in real browsers. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On July 31 2026 the .NET Blog announced the unit‑test agent preview. The core of the feature is a “single‑source” request‑coding agent that the system reuses across all generated endpoints, and an integration point that pushes those tests into existing browser‑based performance pipelines. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run Selenium or Playwright suites, you can drop the generated agent into your repo, run the standard CI step, and watch the new tests execute alongside your existing suite. No separate test runner, no extra config—just the same “npm test” or “dotnet test” you already use. The agent also emits a single helper library, so you don't end up with a zoo of duplicated stubs. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The preview does not yet publish performance numbers, so it's unclear how the added agent impacts overall CI time. It also lives behind a preview flag, meaning you need .NET 9 preview to try it. Finally, we have only the .NET Blog as a source; independent benchmarks are still pending. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One source confirms the feature delivers a single reusable request‑coding helper and end‑to‑end browser test integration. Treat it as a high‑potential experiment: try it in a feature branch, watch for any slowdown, and plan a rollout only after you validate the CI impact yourself. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]"
+          }
+        ],
+        "keyPoints": [
+          "A unit‑test agent generates one shared request‑coding helper for all AI‑generated code. [FACT:0448e9fab266bdc3bc527feec05c46b7]",
+          "The agent automatically hooks into existing end‑to‑end browser performance tests. [FACT:55a622923bb59fad4a9edafc8eb2c555]",
+          "Preview is available in .NET 9 as of July 31 2026; independent performance data is still missing."
+        ],
+        "whyItMatters": "Platform engineers can shrink the gap between AI‑generated snippets and production‑grade test suites, cutting manual glue code and catching regressions earlier.",
+        "readerAction": "Clone the .NET preview repository, enable the unit‑test agent flag, and run your CI pipeline to see the generated tests in action.",
+        "tags": [
+          "platform-engineering",
+          ".net",
+          "unit-testing",
+          "code-generation"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": ".NET Blog",
+            "sourceDomain": "devblogs.microsoft.com",
+            "tier": "primary",
+            "url": "https://devblogs.microsoft.com/dotnet/polyglot-unit-testing-agent/",
+            "title": "From generated code to trusted code with a unit-test agent",
+            "publishedAt": "2026-07-31T15:00:15.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-7",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-01T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-01T06:34:39.678Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 298,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-01T06:34:39.678Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "0448e9fab266bdc3bc527feec05c46b7",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Generate common request coding agent only one",
+            "entities": [
+              "Generate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3f2a33fd51cb3a67985db34a1f79b78ceddd32af",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/polyglot-unit-testing-agent/",
+                "quote": "A common request to a coding agent is only one line: Generate unit tests."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-01T06:34:27.648Z"
+            }
+          },
+          {
+            "id": "55a622923bb59fad4a9edafc8eb2c555",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Integration integration end end browser performance tests",
+            "entities": [
+              "Integration"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3f2a33fd51cb3a67985db34a1f79b78ceddd32af",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/polyglot-unit-testing-agent/",
+                "quote": "Integration, end-to-end, browser, and performance tests are outside its current scope."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-01T06:34:27.648Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The .NET preview ships a unit‑test agent that spits out one shared request‑coding helper and automatically wires it into your end‑to‑end browser performance tests, turning raw generated snippets into vetted test assets. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]",
+            "isEditorial": false,
+            "factIds": [
+              "0448e9fab266bdc3bc527feec05c46b7",
+              "55a622923bb59fad4a9edafc8eb2c555"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders spend hours hand‑crafting request wrappers and then copying them into UI test suites. By collapsing that manual step into a single generated agent, you cut friction, reduce copy‑paste bugs, and get immediate feedback on how generated code performs in real browsers. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]",
+            "isEditorial": false,
+            "factIds": [
+              "0448e9fab266bdc3bc527feec05c46b7"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On July 31 2026 the .NET Blog announced the unit‑test agent preview. The core of the feature is a “single‑source” request‑coding agent that the system reuses across all generated endpoints, and an integration point that pushes those tests into existing browser‑based performance pipelines. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]",
+            "isEditorial": false,
+            "factIds": [
+              "0448e9fab266bdc3bc527feec05c46b7",
+              "55a622923bb59fad4a9edafc8eb2c555"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already run Selenium or Playwright suites, you can drop the generated agent into your repo, run the standard CI step, and watch the new tests execute alongside your existing suite. No separate test runner, no extra config—just the same “npm test” or “dotnet test” you already use. The agent also emits a single helper library, so you don't end up with a zoo of duplicated stubs. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]",
+            "isEditorial": false,
+            "factIds": [
+              "55a622923bb59fad4a9edafc8eb2c555"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The preview does not yet publish performance numbers, so it's unclear how the added agent impacts overall CI time. It also lives behind a preview flag, meaning you need .NET 9 preview to try it. Finally, we have only the .NET Blog as a source; independent benchmarks are still pending. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]",
+            "isEditorial": false,
+            "factIds": [
+              "0448e9fab266bdc3bc527feec05c46b7"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One source confirms the feature delivers a single reusable request‑coding helper and end‑to‑end browser test integration. Treat it as a high‑potential experiment: try it in a feature branch, watch for any slowdown, and plan a rollout only after you validate the CI impact yourself. [FACT:0448e9fab266bdc3bc527feec05c46b7][FACT:55a622923bb59fad4a9edafc8eb2c555]",
+            "isEditorial": false,
+            "factIds": [
+              "0448e9fab266bdc3bc527feec05c46b7",
+              "55a622923bb59fad4a9edafc8eb2c555"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-kubernetes-3::2026-08-01T06:34:39.678Z",

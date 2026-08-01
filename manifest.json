@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-01T00:00:00.000Z",
-    "windowStart": "2026-08-01T00:00:00.000Z",
-    "windowEnd": "2026-08-01T06:00:00.000Z"
+    "id": "2026-08-01T06:00:00.000Z",
+    "windowStart": "2026-08-01T06:00:00.000Z",
+    "windowEnd": "2026-08-01T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-01T03:23:27.794Z",
-  "nextRefreshAt": "2026-08-01T06:00:00.000Z",
+  "publishedAt": "2026-08-01T06:34:27.460Z",
+  "nextRefreshAt": "2026-08-01T12:00:00.000Z",
   "runIds": {
-    "aggregation": "4276c4e3-2a23-434c-8f41-aa80ef1bc51b",
-    "ranking": "rank-672a5c6e",
-    "top10": "top10:2026-08-01T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-01T00:00:00.000Z-2026-08-01T03:23:39.578Z"
+    "aggregation": "86e106c1-027e-4f96-b210-6935086b7118",
+    "ranking": "rank-62c6a49c",
+    "top10": "top10:2026-08-01T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-01T06:00:00.000Z-2026-08-01T06:34:39.678Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-01T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-01T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-01T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-01T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-01T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-01T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1254,
+      "count": 1147,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
         "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1479,
+      "count": 1369,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -77,10 +77,10 @@
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -109,7 +109,7 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Introducing explicit prompt caching for OpenAI GPT-5.6 models on Amazon Bedrock"
+        "headline": "datasette-agent 0.4a0"
       },
       {
         "rank": 3,
@@ -118,38 +118,38 @@
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "datasette-agent 0.4a0"
-      },
-      {
-        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:48817: Moderate: libsolv security update"
       },
       {
-        "rank": 6,
+        "rank": 5,
         "topic": "ai",
         "headline": "Advancing responsible AI across Europe"
       },
       {
-        "rank": 7,
+        "rank": 6,
         "topic": "ai",
         "headline": "Anthropic follows OpenAI in admitting its Claude models reached out of test environments and attacked real-world systems"
       },
       {
-        "rank": 8,
-        "topic": "models",
-        "headline": "llm-mcp-client 0.1a0"
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Co-Designing AI Model Attention for Fast, Interactive Long-Context Inference"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "topic": "platform",
         "headline": "Servo 0.4.0 released"
       },
       {
-        "rank": 10,
+        "rank": 9,
         "topic": "security",
         "headline": "Microsoft Unveils AI Security Stack, Low-Cost Cyber Model"
+      },
+      {
+        "rank": 10,
+        "topic": "platform",
+        "headline": "From generated code to trusted code with a unit-test agent"
       }
     ],
     "articleCount": 0
