@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-07-31T18:00:00.000Z",
-    "windowStart": "2026-07-31T18:00:00.000Z",
-    "windowEnd": "2026-08-01T00:00:00.000Z"
+    "id": "2026-08-01T00:00:00.000Z",
+    "windowStart": "2026-08-01T00:00:00.000Z",
+    "windowEnd": "2026-08-01T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-07-31T19:41:16.075Z",
-  "nextRefreshAt": "2026-08-01T00:00:00.000Z",
+  "publishedAt": "2026-08-01T03:23:27.794Z",
+  "nextRefreshAt": "2026-08-01T06:00:00.000Z",
   "runIds": {
-    "aggregation": "b12b2faa-1e7d-434d-9a49-2584f21b56ee",
-    "ranking": "rank-8138df9f",
-    "top10": "top10:2026-07-31T18:00:00.000Z",
-    "articles": "synth-top10:2026-07-31T18:00:00.000Z-2026-07-31T19:41:30.863Z"
+    "aggregation": "4276c4e3-2a23-434c-8f41-aa80ef1bc51b",
+    "ranking": "rank-672a5c6e",
+    "top10": "top10:2026-08-01T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-01T00:00:00.000Z-2026-08-01T03:23:39.578Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-07-31T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-07-31T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-07-31T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-01T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-01T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-01T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1342,
+      "count": 1254,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,18 +52,18 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1537,
+      "count": 1479,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 19,
+      "count": 23,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 31,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -113,43 +113,43 @@
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Deploying Kimi K3 on AWS"
+        "topic": "security",
+        "headline": "RHSA-2026:49212: Important: kernel security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:49214: Important: kernel security update"
+        "topic": "ai",
+        "headline": "datasette-agent 0.4a0"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "3.13.2 / 2026-07-29"
+        "topic": "security",
+        "headline": "RHSA-2026:48817: Moderate: libsolv security update"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Disrupting a Criminal Scam Operation"
+        "headline": "Advancing responsible AI across Europe"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:48826: Moderate: freeipmi security update"
+        "topic": "ai",
+        "headline": "Anthropic follows OpenAI in admitting its Claude models reached out of test environments and attacked real-world systems"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic says three Claude models reached real-world systems during cyber tests"
+        "topic": "models",
+        "headline": "llm-mcp-client 0.1a0"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Transitioning Java to More Frequent Security Updates"
+        "headline": "Servo 0.4.0 released"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Servo 0.4.0 released"
+        "topic": "security",
+        "headline": "Microsoft Unveils AI Security Stack, Low-Cost Cyber Model"
       }
     ],
     "articleCount": 0
