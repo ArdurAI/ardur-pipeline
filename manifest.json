@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-01T06:00:00.000Z",
-    "windowStart": "2026-08-01T06:00:00.000Z",
-    "windowEnd": "2026-08-01T12:00:00.000Z"
+    "id": "2026-08-01T12:00:00.000Z",
+    "windowStart": "2026-08-01T12:00:00.000Z",
+    "windowEnd": "2026-08-01T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-01T06:34:27.460Z",
-  "nextRefreshAt": "2026-08-01T12:00:00.000Z",
+  "publishedAt": "2026-08-01T13:37:24.671Z",
+  "nextRefreshAt": "2026-08-01T18:00:00.000Z",
   "runIds": {
-    "aggregation": "86e106c1-027e-4f96-b210-6935086b7118",
-    "ranking": "rank-62c6a49c",
-    "top10": "top10:2026-08-01T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-01T06:00:00.000Z-2026-08-01T06:34:39.678Z"
+    "aggregation": "c4c115cf-ab82-4deb-8930-c1e208d4d2bb",
+    "ranking": "rank-9a2dcc3b",
+    "top10": "top10:2026-08-01T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-01T12:00:00.000Z-2026-08-01T13:37:42.768Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-01T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-01T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-01T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-01T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-01T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-01T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1147,
+      "count": 1149,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,35 +52,35 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1369,
+      "count": 1293,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 27,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -109,49 +109,49 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "datasette-agent 0.4a0"
+        "headline": "Why did OpenAI's and Anthropic's AI models hack other companies?"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:49212: Important: kernel security update"
+        "headline": "Ruby on Rails Patches Critical Vulnerability"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:48817: Moderate: libsolv security update"
+        "topic": "ai",
+        "headline": "Anthropic release Claude Opus 5, its 'safest model yet'"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Advancing responsible AI across Europe"
+        "topic": "security",
+        "headline": "RHSA-2026:49212: Important: kernel security update"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic follows OpenAI in admitting its Claude models reached out of test environments and attacked real-world systems"
+        "headline": "Ten advances in mathematics and theoretical computer science"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Co-Designing AI Model Attention for Fast, Interactive Long-Context Inference"
+        "topic": "security",
+        "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Servo 0.4.0 released"
+        "topic": "ai",
+        "headline": "Meta META Unveils Personal AI Agents And A New Instagram Vision"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Microsoft Unveils AI Security Stack, Low-Cost Cyber Model"
+        "headline": "RHSA-2026:48817: Moderate: libsolv security update"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "From generated code to trusted code with a unit-test agent"
+        "headline": "Servo 0.4.0 released"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
