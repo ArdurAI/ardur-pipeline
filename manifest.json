@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-02T00:00:00.000Z",
-    "windowStart": "2026-08-02T00:00:00.000Z",
-    "windowEnd": "2026-08-02T06:00:00.000Z"
+    "id": "2026-08-02T06:00:00.000Z",
+    "windowStart": "2026-08-02T06:00:00.000Z",
+    "windowEnd": "2026-08-02T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-02T03:23:07.829Z",
-  "nextRefreshAt": "2026-08-02T06:00:00.000Z",
+  "publishedAt": "2026-08-02T06:38:06.454Z",
+  "nextRefreshAt": "2026-08-02T12:00:00.000Z",
   "runIds": {
-    "aggregation": "cb7dd26e-b7bc-4e6f-93bd-7d5c065a7ca6",
-    "ranking": "rank-368a4130",
-    "top10": "top10:2026-08-02T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-02T00:00:00.000Z-2026-08-02T03:23:20.301Z"
+    "aggregation": "f0c477a0-aa3b-4a50-910d-81a91e6ce7bf",
+    "ranking": "rank-4c15e111",
+    "top10": "top10:2026-08-02T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-02T06:00:00.000Z-2026-08-02T06:39:33.043Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-02T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-02T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-02T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-02T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-02T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-02T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1136,
+      "count": 66,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-16] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-17] no extractable bodies — 0 facts for this cluster"
+        "[ai] source news.google.com: HTTP 503 Service Unavailable",
+        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 2 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1189,
+      "count": 227,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 16,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 18,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Kubernetes upgrades don’t have to break things: How EKS is making cluster lifecycle management simpler and safer"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "Ten advances in mathematics and theoretical computer science"
       },
       {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Open letters about AI development"
+      },
+      {
         "rank": 3,
         "topic": "ai",
-        "headline": "Why did OpenAI's and Anthropic's AI models hack other companies?"
+        "headline": "July 2026 newsletter"
       },
       {
         "rank": 4,
@@ -123,13 +123,13 @@
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "MyDecisive Sharpened GitOps Observability and Open-Source Telemetry Focus This Week"
+        "topic": "security",
+        "headline": "Atomic MacOS AMOS stealer infection, Sun, Aug 2nd"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "When rogue AI launches a cyberattack, who is legally responsible?"
+        "topic": "platform",
+        "headline": "Cloudflare Introduces Meerkat for Strongly Consistent Global Coordination"
       },
       {
         "rank": 7,
@@ -138,18 +138,18 @@
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI announces its \"next major model\" Astra by dropping ten previously unsolved math solutions"
+        "topic": "security",
+        "headline": "Rails patches critical Active Storage flaw with RCE potential"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:49212: Important: kernel security update"
+        "topic": "ai",
+        "headline": "Quoting Greg Brockman"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "What to Use Instead of Plastic Food Containers, According to Food Safety Experts"
+        "topic": "models",
+        "headline": "datasette-apps 0.2a0"
       }
     ],
     "articleCount": 0
