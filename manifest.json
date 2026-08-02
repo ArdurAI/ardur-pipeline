@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-01T18:00:00.000Z",
-    "windowStart": "2026-08-01T18:00:00.000Z",
-    "windowEnd": "2026-08-02T00:00:00.000Z"
+    "id": "2026-08-02T00:00:00.000Z",
+    "windowStart": "2026-08-02T00:00:00.000Z",
+    "windowEnd": "2026-08-02T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-01T19:15:25.529Z",
-  "nextRefreshAt": "2026-08-02T00:00:00.000Z",
+  "publishedAt": "2026-08-02T03:23:07.829Z",
+  "nextRefreshAt": "2026-08-02T06:00:00.000Z",
   "runIds": {
-    "aggregation": "e8c9dfd4-f249-4367-b86b-55c8ddc77b08",
-    "ranking": "rank-f8f7a1a1",
-    "top10": "top10:2026-08-01T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-01T18:00:00.000Z-2026-08-01T19:15:37.831Z"
+    "aggregation": "cb7dd26e-b7bc-4e6f-93bd-7d5c065a7ca6",
+    "ranking": "rank-368a4130",
+    "top10": "top10:2026-08-02T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-02T00:00:00.000Z-2026-08-02T03:23:20.301Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-01T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-01T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-01T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-02T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-02T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-02T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 92,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1133,
+      "count": 1136,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-16] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-17] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1329,
+      "count": 1189,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 21,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -109,49 +109,49 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "datasette-agent 0.4a0"
+        "headline": "Ten advances in mathematics and theoretical computer science"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Ten advances in mathematics and theoretical computer science"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
         "headline": "Why did OpenAI's and Anthropic's AI models hack other companies?"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "topic": "security",
         "headline": "Ruby on Rails Patches Critical Vulnerability"
       },
       {
+        "rank": 5,
+        "topic": "platform",
+        "headline": "MyDecisive Sharpened GitOps Observability and Open-Source Telemetry Focus This Week"
+      },
+      {
         "rank": 6,
-        "topic": "security",
-        "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
+        "topic": "ai",
+        "headline": "When rogue AI launches a cyberattack, who is legally responsible?"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:49212: Important: kernel security update"
+        "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Rails patches critical Active Storage flaw with RCE potential"
+        "topic": "ai",
+        "headline": "OpenAI announces its \"next major model\" Astra by dropping ten previously unsolved math solutions"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Meta META Unveils Personal AI Agents And A New Instagram Vision"
+        "topic": "security",
+        "headline": "RHSA-2026:49212: Important: kernel security update"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "City of Norman offering waste containers to help with storm cleanup"
+        "headline": "What to Use Instead of Plastic Food Containers, According to Food Safety Experts"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
