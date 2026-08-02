@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-02T06:00:00.000Z",
-    "windowStart": "2026-08-02T06:00:00.000Z",
-    "windowEnd": "2026-08-02T12:00:00.000Z"
+    "id": "2026-08-02T12:00:00.000Z",
+    "windowStart": "2026-08-02T12:00:00.000Z",
+    "windowEnd": "2026-08-02T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-02T06:38:06.454Z",
-  "nextRefreshAt": "2026-08-02T12:00:00.000Z",
+  "publishedAt": "2026-08-02T13:37:54.202Z",
+  "nextRefreshAt": "2026-08-02T18:00:00.000Z",
   "runIds": {
-    "aggregation": "f0c477a0-aa3b-4a50-910d-81a91e6ce7bf",
-    "ranking": "rank-4c15e111",
-    "top10": "top10:2026-08-02T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-02T06:00:00.000Z-2026-08-02T06:39:33.043Z"
+    "aggregation": "246456c6-3aa1-4ae2-bc3e-5e982f5d08e3",
+    "ranking": "rank-c89aeec4",
+    "top10": "top10:2026-08-02T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-02T12:00:00.000Z-2026-08-02T13:38:04.714Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-02T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-02T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-02T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-02T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-02T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-02T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 66,
+      "count": 1195,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source news.google.com: HTTP 503 Service Unavailable",
-        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 2 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 227,
+      "count": 985,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 16,
+      "count": 17,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 18,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 78,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Ten advances in mathematics and theoretical computer science"
+        "headline": "OpenAI Presence wants to make AI agents production-ready for businesses"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Open letters about AI development"
+        "headline": "Anthropic said its artificial intelligence models hacked into three other organizations during testing, just days after ChatGPT maker OpenAI raised concerns over AI controls after it disclosed its rogue models hacked another company. https://wapo.st/4hbcfbh"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "July 2026 newsletter"
+        "headline": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Ruby on Rails Patches Critical Vulnerability"
+        "topic": "ai",
+        "headline": "More than one in three Canadian workers used generative AI at work"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Atomic MacOS AMOS stealer infection, Sun, Aug 2nd"
+        "topic": "models",
+        "headline": "Meta AI uses a second AI agent as a memory coach to keep long tasks on track"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Cloudflare Introduces Meerkat for Strongly Consistent Global Coordination"
+        "topic": "models",
+        "headline": "A real macOS flaw worth $200K went unreported because Apple&039;s bug bounty inbox was full of AI slop"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
+        "topic": "kubernetes",
+        "headline": "Microwave Mistakes That Could Damage Your Appliance"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Rails patches critical Active Storage flaw with RCE potential"
+        "headline": "Ruby on Rails Patches Critical Vulnerability"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Quoting Greg Brockman"
+        "topic": "platform",
+        "headline": "MyDecisive Sharpened GitOps Observability and Open-Source Telemetry Focus This Week"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "datasette-apps 0.2a0"
+        "topic": "security",
+        "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
       }
     ],
-    "articleCount": 0
+    "articleCount": 2
   }
 }
