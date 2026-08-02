@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-02T12:00:00.000Z",
-    "windowStart": "2026-08-02T12:00:00.000Z",
-    "windowEnd": "2026-08-02T18:00:00.000Z"
+    "id": "2026-08-02T18:00:00.000Z",
+    "windowStart": "2026-08-02T18:00:00.000Z",
+    "windowEnd": "2026-08-03T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-02T13:37:54.202Z",
-  "nextRefreshAt": "2026-08-02T18:00:00.000Z",
+  "publishedAt": "2026-08-02T19:17:39.408Z",
+  "nextRefreshAt": "2026-08-03T00:00:00.000Z",
   "runIds": {
-    "aggregation": "246456c6-3aa1-4ae2-bc3e-5e982f5d08e3",
-    "ranking": "rank-c89aeec4",
-    "top10": "top10:2026-08-02T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-02T12:00:00.000Z-2026-08-02T13:38:04.714Z"
+    "aggregation": "8a51d638-b2a6-42a7-b14a-8340470c22f5",
+    "ranking": "rank-3e135462",
+    "top10": "top10:2026-08-02T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-02T18:00:00.000Z-2026-08-02T19:17:52.305Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-02T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-02T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-02T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-02T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-02T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-02T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,17 +25,17 @@
       "category": "http-error",
       "count": 63,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1195,
+      "count": 1232,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 985,
+      "count": 989,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 20,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 34,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -104,37 +104,37 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI Presence wants to make AI agents production-ready for businesses"
+        "headline": "Anthropic Says Claude Breached Three Real Companies During Safety Test"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic said its artificial intelligence models hacked into three other organizations during testing, just days after ChatGPT maker OpenAI raised concerns over AI controls after it disclosed its rogue models hacked another company. https://wapo.st/4hbcfbh"
+        "headline": "OpenAI Presence wants to make AI agents production-ready for businesses"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior"
+        "headline": "OpenAI Smuggled the Announcement of Astra, Its Next AI Model, Into a Blog Post About Math"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "More than one in three Canadian workers used generative AI at work"
+        "headline": "The Death of the Soundstage: How Generative AI is Rewriting the ROI of Micro-Dramas"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "Meta AI uses a second AI agent as a memory coach to keep long tasks on track"
+        "topic": "platform",
+        "headline": "Startup Perk Programs"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "A real macOS flaw worth $200K went unreported because Apple&039;s bug bounty inbox was full of AI slop"
+        "topic": "kubernetes",
+        "headline": "Camping Portable Spice Jars Set With Bag - 9 Condiment Containers For Outdoor Travel, BBQ, Picnic"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Microwave Mistakes That Could Damage Your Appliance"
+        "topic": "platform",
+        "headline": "MicroTech’s Strategic Moves Signal a Shift in Government Contracting Dynamics"
       },
       {
         "rank": 8,
@@ -143,15 +143,15 @@
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "MyDecisive Sharpened GitOps Observability and Open-Source Telemetry Focus This Week"
+        "topic": "security",
+        "headline": "Google Chrome may soon block New Tab hijacker extensions by default"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction"
+        "topic": "kubernetes",
+        "headline": "Microwave Mistakes That Could Damage Your Appliance"
       }
     ],
-    "articleCount": 2
+    "articleCount": 0
   }
 }
