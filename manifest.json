@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-03T12:00:00.000Z",
-    "windowStart": "2026-08-03T12:00:00.000Z",
-    "windowEnd": "2026-08-03T18:00:00.000Z"
+    "id": "2026-08-03T18:00:00.000Z",
+    "windowStart": "2026-08-03T18:00:00.000Z",
+    "windowEnd": "2026-08-04T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-03T17:56:09.584Z",
-  "nextRefreshAt": "2026-08-03T18:00:00.000Z",
+  "publishedAt": "2026-08-03T19:44:11.353Z",
+  "nextRefreshAt": "2026-08-04T00:00:00.000Z",
   "runIds": {
-    "aggregation": "823f2f89-636f-4d82-9ba5-c938048804ac",
-    "ranking": "rank-151694f6",
-    "top10": "top10:2026-08-03T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-03T12:00:00.000Z-2026-08-03T17:56:30.767Z"
+    "aggregation": "c549a56d-0043-496b-819b-a7959db6773b",
+    "ranking": "rank-da743658",
+    "top10": "top10:2026-08-03T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-03T18:00:00.000Z-2026-08-03T19:44:33.807Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-03T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-03T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-03T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-03T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-03T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-03T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1121,
+      "count": 1143,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-15] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiggFBVV95cUxQbzJzNDdaQkw0bk9zWWZJQkZCVFZ4S19rS1pQamRnVVI4a3RXV1hPVTFiUmJhTFF4aVQzbklheFFQMmRuTFlrT3lXZmc3WUhoaUZxZE5WdWljUEEzdzV2b0plY0hVMmp5STFDVkdmT1MyMkVtYWRsVVBoRUtiMFAtd3FR?oc=5"
+        "[ai/cluster-ai-10] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiggFBVV95cUxQbzJzNDdaQkw0bk9zWWZJQkZCVFZ4S19rS1pQamRnVVI4a3RXV1hPVTFiUmJhTFF4aVQzbklheFFQMmRuTFlrT3lXZmc3WUhoaUZxZE5WdWljUEEzdzV2b0plY0hVMmp5STFDVkdmT1MyMkVtYWRsVVBoRUtiMFAtd3FR?oc=5",
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 7 distinct domains < floor 20",
         "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1355,
+      "count": 1407,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,19 +68,19 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 16,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
         "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 17,
+      "count": 19,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 31,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -103,23 +103,23 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Cortex completes OSTIF security audit"
-      },
-      {
-        "rank": 2,
         "topic": "security",
         "headline": "RHSA-2026:49703: Important: delve security, bug fix, and enhancement update"
       },
       {
+        "rank": 2,
+        "topic": "platform",
+        "headline": "Strengthening NuGet Supply Chain Security: Reducing API Key Lifetime"
+      },
+      {
         "rank": 3,
-        "topic": "security",
-        "headline": "More on the OpenAI Agent’s Attack on Hugging Face"
+        "topic": "ai",
+        "headline": "Alibaba&039;s new Qwen model is also taking your job, but this time it&039;s great"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Alibaba&039;s new Qwen model is also taking your job, but this time it&039;s great"
+        "topic": "security",
+        "headline": "More on the OpenAI Agent’s Attack on Hugging Face"
       },
       {
         "rank": 5,
@@ -129,27 +129,27 @@
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:49608: Important: xorg-x11-server security update"
+        "headline": "Zero-Day Remediation Meets Operational Resiliency"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Orchard: An open framework for scalable agentic AI"
+        "topic": "kubernetes",
+        "headline": "Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Devtools must be open source exe.dev"
+        "headline": "Orchard: An open framework for scalable agentic AI"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.19.0-rc.1"
+        "topic": "ai",
+        "headline": "Devtools must be open source exe.dev"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "NetBSD 11.0 released"
+        "topic": "kubernetes",
+        "headline": "v1.19.0-rc.1"
       }
     ],
     "articleCount": 0
