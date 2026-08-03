@@ -1,51 +1,51 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-03T00:00:00.000Z",
-    "windowStart": "2026-08-03T00:00:00.000Z",
-    "windowEnd": "2026-08-03T06:00:00.000Z"
+    "id": "2026-08-03T06:00:00.000Z",
+    "windowStart": "2026-08-03T06:00:00.000Z",
+    "windowEnd": "2026-08-03T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-03T03:24:50.795Z",
-  "nextRefreshAt": "2026-08-03T06:00:00.000Z",
+  "publishedAt": "2026-08-03T07:34:21.718Z",
+  "nextRefreshAt": "2026-08-03T12:00:00.000Z",
   "runIds": {
-    "aggregation": "969cf171-6f77-4ffb-a225-edeeb6d51266",
-    "ranking": "rank-4e66e9cc",
-    "top10": "top10:2026-08-03T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-03T00:00:00.000Z-2026-08-03T03:25:03.548Z"
+    "aggregation": "d53ff595-4b30-4238-af5b-657d224ec000",
+    "ranking": "rank-664492ea",
+    "top10": "top10:2026-08-03T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-03T06:00:00.000Z-2026-08-03T07:34:35.774Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-03T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-03T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-03T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-03T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-03T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-03T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
-      "category": "other",
-      "count": 1232,
+      "category": "http-error",
+      "count": 66,
       "sample": [
-        "[ai] source huggingface.co: HTTP 429 Too Many Requests",
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
-      "category": "http-error",
-      "count": 63,
+      "category": "other",
+      "count": 1137,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE0za1U5cXlCbnMxZ3V0ZEQ4aHFHRk5uWUs1dF9lSExUcHZlcXFzNnIxZVBkN0g4VXlKVk1uTUpiOVJHTi1GVFR2MXU3ZVNUNEpZOFp0UTFYcHRUbGZV?oc=5",
+        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "blocked-fetch",
-      "count": 12,
+      "count": 6,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[platform] source blog.jetbrains.com: HTTP 403 Forbidden"
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 910,
+      "count": 970,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 25,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 76,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "RHSA-2026:49602: Important: gstreamer1-plugins-good security update"
+      },
+      {
+        "rank": 2,
         "topic": "ai",
         "headline": "OpenAI’s amazing — but vastly oversold — new model Astra"
       },
       {
-        "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:49509: Important: rhc security update"
-      },
-      {
         "rank": 3,
-        "topic": "ai",
-        "headline": "condense-json 1.0"
+        "topic": "security",
+        "headline": "RHSA-2026:49523: Important: perl-Archive-Tar security update"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Alibaba unveils Qwen 3.8-MAX AI model; shares jump"
+        "headline": "Alibaba Releases AI Model With Performance Rivaling Anthropic"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Palantir debuts 'war' data center in a container, full of Nvidia's B300 AI accelerators and open-weight models"
+        "topic": "security",
+        "headline": "RHSA-2026:47183: Important: compat-libtiff3 security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "ISC Stormcast For Monday, August 3rd, 2026 https://isc.sans.edu/podcastdetail/10034, Mon, Aug 3rd"
+        "topic": "ai",
+        "headline": "Alibaba unveils Qwen 3.8-MAX AI model; shares jump"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Empty containers pile up at ICDs as import-export gap widens"
+        "topic": "ai",
+        "headline": "Alibaba unveils its most capable AI model to date, not far behind Moonshot's in size"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Weekly Update 515"
+        "headline": "RHSA-2026:49526: Important: osbuild-composer security update"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI Presence wants to make AI agents production-ready for businesses"
+        "topic": "platform",
+        "headline": "Embabel Agent Framework Reaches 1.0"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Kernel prepatch 7.2-rc6"
+        "topic": "models",
+        "headline": "condense-json 1.0"
       }
     ],
     "articleCount": 0
