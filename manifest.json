@@ -1,26 +1,35 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-02T18:00:00.000Z",
-    "windowStart": "2026-08-02T18:00:00.000Z",
-    "windowEnd": "2026-08-03T00:00:00.000Z"
+    "id": "2026-08-03T00:00:00.000Z",
+    "windowStart": "2026-08-03T00:00:00.000Z",
+    "windowEnd": "2026-08-03T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-02T19:17:39.408Z",
-  "nextRefreshAt": "2026-08-03T00:00:00.000Z",
+  "publishedAt": "2026-08-03T03:24:50.795Z",
+  "nextRefreshAt": "2026-08-03T06:00:00.000Z",
   "runIds": {
-    "aggregation": "8a51d638-b2a6-42a7-b14a-8340470c22f5",
-    "ranking": "rank-3e135462",
-    "top10": "top10:2026-08-02T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-02T18:00:00.000Z-2026-08-02T19:17:52.305Z"
+    "aggregation": "969cf171-6f77-4ffb-a225-edeeb6d51266",
+    "ranking": "rank-4e66e9cc",
+    "top10": "top10:2026-08-03T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-03T00:00:00.000Z-2026-08-03T03:25:03.548Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-02T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-02T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-02T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-03T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-03T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-03T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
+    {
+      "category": "other",
+      "count": 1232,
+      "sample": [
+        "[ai] source huggingface.co: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
     {
       "category": "http-error",
       "count": 63,
@@ -31,21 +40,12 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1232,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "blocked-fetch",
-      "count": 6,
+      "count": 12,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[platform] source blog.jetbrains.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 989,
+      "count": 910,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 25,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -79,17 +79,17 @@
       "category": "copyright-gate",
       "count": 34,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 76,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic Says Claude Breached Three Real Companies During Safety Test"
+        "headline": "OpenAI’s amazing — but vastly oversold — new model Astra"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI Presence wants to make AI agents production-ready for businesses"
+        "topic": "security",
+        "headline": "RHSA-2026:49509: Important: rhc security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "OpenAI Smuggled the Announcement of Astra, Its Next AI Model, Into a Blog Post About Math"
+        "headline": "condense-json 1.0"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "The Death of the Soundstage: How Generative AI is Rewriting the ROI of Micro-Dramas"
+        "headline": "Alibaba unveils Qwen 3.8-MAX AI model; shares jump"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Startup Perk Programs"
+        "topic": "kubernetes",
+        "headline": "Palantir debuts 'war' data center in a container, full of Nvidia's B300 AI accelerators and open-weight models"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Camping Portable Spice Jars Set With Bag - 9 Condiment Containers For Outdoor Travel, BBQ, Picnic"
+        "topic": "security",
+        "headline": "ISC Stormcast For Monday, August 3rd, 2026 https://isc.sans.edu/podcastdetail/10034, Mon, Aug 3rd"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "MicroTech’s Strategic Moves Signal a Shift in Government Contracting Dynamics"
+        "topic": "kubernetes",
+        "headline": "Empty containers pile up at ICDs as import-export gap widens"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Ruby on Rails Patches Critical Vulnerability"
+        "headline": "Weekly Update 515"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Google Chrome may soon block New Tab hijacker extensions by default"
+        "topic": "ai",
+        "headline": "OpenAI Presence wants to make AI agents production-ready for businesses"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Microwave Mistakes That Could Damage Your Appliance"
+        "topic": "platform",
+        "headline": "Kernel prepatch 7.2-rc6"
       }
     ],
     "articleCount": 0
