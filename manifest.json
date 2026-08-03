@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-03T06:00:00.000Z",
-    "windowStart": "2026-08-03T06:00:00.000Z",
-    "windowEnd": "2026-08-03T12:00:00.000Z"
+    "id": "2026-08-03T12:00:00.000Z",
+    "windowStart": "2026-08-03T12:00:00.000Z",
+    "windowEnd": "2026-08-03T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-03T07:34:21.718Z",
-  "nextRefreshAt": "2026-08-03T12:00:00.000Z",
+  "publishedAt": "2026-08-03T17:56:09.584Z",
+  "nextRefreshAt": "2026-08-03T18:00:00.000Z",
   "runIds": {
-    "aggregation": "d53ff595-4b30-4238-af5b-657d224ec000",
-    "ranking": "rank-664492ea",
-    "top10": "top10:2026-08-03T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-03T06:00:00.000Z-2026-08-03T07:34:35.774Z"
+    "aggregation": "823f2f89-636f-4d82-9ba5-c938048804ac",
+    "ranking": "rank-151694f6",
+    "top10": "top10:2026-08-03T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-03T12:00:00.000Z-2026-08-03T17:56:30.767Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-03T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-03T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-03T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-03T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-03T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-03T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 66,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1137,
+      "count": 1121,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE0za1U5cXlCbnMxZ3V0ZEQ4aHFHRk5uWUs1dF9lSExUcHZlcXFzNnIxZVBkN0g4VXlKVk1uTUpiOVJHTi1GVFR2MXU3ZVNUNEpZOFp0UTFYcHRUbGZV?oc=5",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-15] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiggFBVV95cUxQbzJzNDdaQkw0bk9zWWZJQkZCVFZ4S19rS1pQamRnVVI4a3RXV1hPVTFiUmJhTFF4aVQzbklheFFQMmRuTFlrT3lXZmc3WUhoaUZxZE5WdWljUEEzdzV2b0plY0hVMmp5STFDVkdmT1MyMkVtYWRsVVBoRUtiMFAtd3FR?oc=5"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 970,
+      "count": 1355,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 18,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
         "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 17,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 31,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:49602: Important: gstreamer1-plugins-good security update"
+        "topic": "platform",
+        "headline": "Cortex completes OSTIF security audit"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI’s amazing — but vastly oversold — new model Astra"
+        "topic": "security",
+        "headline": "RHSA-2026:49703: Important: delve security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:49523: Important: perl-Archive-Tar security update"
+        "headline": "More on the OpenAI Agent’s Attack on Hugging Face"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Alibaba Releases AI Model With Performance Rivaling Anthropic"
+        "headline": "Alibaba&039;s new Qwen model is also taking your job, but this time it&039;s great"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:47183: Important: compat-libtiff3 security update"
+        "headline": "RHSA-2026:49612: Important: perl-DBI security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Alibaba unveils Qwen 3.8-MAX AI model; shares jump"
+        "topic": "security",
+        "headline": "RHSA-2026:49608: Important: xorg-x11-server security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Alibaba unveils its most capable AI model to date, not far behind Moonshot's in size"
+        "headline": "Orchard: An open framework for scalable agentic AI"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:49526: Important: osbuild-composer security update"
+        "topic": "ai",
+        "headline": "Devtools must be open source exe.dev"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Embabel Agent Framework Reaches 1.0"
+        "topic": "kubernetes",
+        "headline": "v1.19.0-rc.1"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "condense-json 1.0"
+        "topic": "platform",
+        "headline": "NetBSD 11.0 released"
       }
     ],
     "articleCount": 0
