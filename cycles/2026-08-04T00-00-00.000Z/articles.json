@@ -131,7 +131,1275 @@
     "30 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-5::2026-08-04T02:54:09.224Z",
+        "rank": 8,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "NuGet API keys get a shorter lifespan—what platform engineers need to know",
+        "dek": "Starting August 2026 Microsoft will trim Personal Access Token lifetimes for NuGet publishing and push Trusted Publishing as the preferred flow.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Microsoft is cutting the maximum lifetime of NuGet Personal Access Tokens (PATs) and urging teams to switch to Trusted Publishing. The change lands in August and will force any long‑lived keys to expire, shrinking the attack surface for stolen tokens. [FACT:16b2b34659cb7d97a00aded53466e6a9] [FACT:5f254fc5bff7d107b1fe276671bd6780] [FACT:c611cfc7bf305a57bd48c69b9a924065] [FACT:9da59af4082088ef856bb923a7d6107d]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Convenient, long‑lived credentials give attackers a larger window to act – a recent console‑package hijack used a compromised token to push malicious code to the feed. Reducing key lifetimes cuts that window dramatically. [FACT:86e50edf27059be572985628099e6428] [FACT:2a067b19106e74618aec8540f3ac700c]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The .NET Blog announced that, starting August 2026, the default expiration for NuGet API keys will be shortened. Microsoft’s Key Reduction Plan has two parts: (1) shrink the default PAT lifetime and (2) promote Trusted Publishing, a two‑pronged flow that eliminates the need for a PAT in CI pipelines. The move follows a supply‑chain breach where a stolen console token was used to publish a malicious package. [FACT:16b2b34659cb7d97a00aded53466e6a9] [FACT:9da59af4082088ef856bb923a7d6107d] [FACT:c611cfc7bf305a57bd48c69b9a924065] [FACT:86e50edf27059be572985628099e6428]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your CI pipelines still reference a PAT for nuget push, builds will start failing once the new defaults hit. Switch to Trusted Publishing – it lets Azure DevOps generate short‑lived tokens that rotate automatically, removing the need for long‑lived secrets. Expect to audit existing keys, revoke any older than the new limit, and update pipeline configs. [FACT:278a0e0e41b6455c956e38143c210605] [FACT:2a067b19106e74618aec8540f3ac700c] [FACT:c611cfc7bf305a57bd48c69b9a924065]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Microsoft has not disclosed the exact new expiration period nor provided a bulk‑rotation tool, leaving teams to guess the precise cut‑over timeline. The two‑part reduction plan is confirmed, but whether a grace period will be offered before enforcement remains unclear. [FACT:9da59af4082088ef856bb923a7d6107d] [FACT:16b2b34659cb7d97a00aded53466e6a9]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the policy shift and the recommended migration path. Confidence is high; platform engineers should treat the August rollout as a mandatory upgrade window and begin migration now to avoid surprise breakages. [FACT:16b2b34659cb7d97a00aded53466e6a9] [FACT:9da59af4082088ef856bb923a7d6107d]"
+          }
+        ],
+        "keyPoints": [
+          "NuGet PAT default lifetime shrinks in August 2026.",
+          "Trusted Publishing is the recommended replacement for CI pipelines.",
+          "Long‑lived tokens are a known vector for supply‑chain attacks."
+        ],
+        "whyItMatters": "Shorter token lifetimes directly reduce the risk of compromised credentials being used to inject malicious packages into your feed.",
+        "readerAction": "Audit your existing NuGet PATs, revoke any that exceed the new limits, and update pipelines to use Trusted Publishing before the August rollout.",
+        "tags": [
+          "platform-engineering",
+          "nuget",
+          "security",
+          "supply-chain",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": ".NET Blog",
+            "sourceDomain": "devblogs.microsoft.com",
+            "tier": "primary",
+            "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+            "title": "Strengthening NuGet Supply Chain Security: Reducing API Key Lifetime",
+            "publishedAt": "2026-08-03T18:10:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1086897/",
+            "title": "Security updates for Monday",
+            "publishedAt": "2026-08-03T13:12:40.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-5",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-08-04T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-04T02:54:09.224Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 302,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-04T02:54:09.224Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5f254fc5bff7d107b1fe276671bd6780",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Personal Access Tokens recent years api keys personal access",
+            "entities": [
+              "Personal Access Tokens"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "In recent years, API keys and Personal Access Tokens PATs have been frequently used as an attack vector to gain…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "c611cfc7bf305a57bd48c69b9a924065",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Trusted Publishing two pronged solution cut api key",
+            "entities": [
+              "Trusted Publishing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "We have a two-pronged solution to this: cut the API key duration and encourage developers to use NuGet Trusted Publishing."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "16b2b34659cb7d97a00aded53466e6a9",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Starting August api key lifetime changes starting august",
+            "entities": [
+              "Starting August"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "API key lifetime changes Starting August 17, 2026, new API keys will be limited to 30 days."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "278a0e0e41b6455c956e38143c210605",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Trusted Publishing strongly recommend moving nuget trusted publishing",
+            "entities": [
+              "Trusted Publishing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "We strongly recommend moving to NuGet Trusted Publishing."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "2a067b19106e74618aec8540f3ac700c",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Long long lived credentials convenient they also",
+            "entities": [
+              "Long"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "Long-lived credentials are convenient, but they also significantly increase the impact of accidental disclosure."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "86e50edf27059be572985628099e6428",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Console attacker published malicious console package using",
+            "entities": [
+              "Console"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "The attacker published a malicious NX Console package using the stolen credentials."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "95a7ffe18684af07cef21a547d85c97b",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Dev Team according dev team package activated 6000",
+            "entities": [
+              "Dev Team"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "According to the NX Dev Team, the package was activated 6000 times in 36 minutes, before it was taken down."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "9da59af4082088ef856bb923a7d6107d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Key Reduction Plan We api key reduction plan two part",
+            "entities": [
+              "Key Reduction Plan We"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9f663bf9a700dfc102a5204a4ce7274fa67743e0",
+                "sourceDomain": "devblogs.microsoft.com",
+                "url": "https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/",
+                "quote": "API Key Reduction Plan We have a two-part plan for reducing API key duration that will start on August 17,…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Microsoft is cutting the maximum lifetime of NuGet Personal Access Tokens (PATs) and urging teams to switch to Trusted Publishing. The change lands in August and will force any long‑lived keys to expire, shrinking the attack surface for stolen tokens. [FACT:16b2b34659cb7d97a00aded53466e6a9] [FACT:5f254fc5bff7d107b1fe276671bd6780] [FACT:c611cfc7bf305a57bd48c69b9a924065] [FACT:9da59af4082088ef856bb923a7d6107d]",
+            "isEditorial": false,
+            "factIds": [
+              "16b2b34659cb7d97a00aded53466e6a9",
+              "5f254fc5bff7d107b1fe276671bd6780",
+              "c611cfc7bf305a57bd48c69b9a924065"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Convenient, long‑lived credentials give attackers a larger window to act – a recent console‑package hijack used a compromised token to push malicious code to the feed. Reducing key lifetimes cuts that window dramatically. [FACT:86e50edf27059be572985628099e6428] [FACT:2a067b19106e74618aec8540f3ac700c]",
+            "isEditorial": false,
+            "factIds": [
+              "86e50edf27059be572985628099e6428",
+              "2a067b19106e74618aec8540f3ac700c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The .NET Blog announced that, starting August 2026, the default expiration for NuGet API keys will be shortened. Microsoft’s Key Reduction Plan has two parts: (1) shrink the default PAT lifetime and (2) promote Trusted Publishing, a two‑pronged flow that eliminates the need for a PAT in CI pipelines. The move follows a supply‑chain breach where a stolen console token was used to publish a malicious package. [FACT:16b2b34659cb7d97a00aded53466e6a9] [FACT:9da59af4082088ef856bb923a7d6107d] [FACT:c611cfc7bf305a57bd48c69b9a924065] [FACT:86e50edf27059be572985628099e6428]",
+            "isEditorial": false,
+            "factIds": [
+              "16b2b34659cb7d97a00aded53466e6a9",
+              "9da59af4082088ef856bb923a7d6107d",
+              "c611cfc7bf305a57bd48c69b9a924065",
+              "86e50edf27059be572985628099e6428"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your CI pipelines still reference a PAT for nuget push, builds will start failing once the new defaults hit. Switch to Trusted Publishing – it lets Azure DevOps generate short‑lived tokens that rotate automatically, removing the need for long‑lived secrets. Expect to audit existing keys, revoke any older than the new limit, and update pipeline configs. [FACT:278a0e0e41b6455c956e38143c210605] [FACT:2a067b19106e74618aec8540f3ac700c] [FACT:c611cfc7bf305a57bd48c69b9a924065]",
+            "isEditorial": false,
+            "factIds": [
+              "278a0e0e41b6455c956e38143c210605",
+              "2a067b19106e74618aec8540f3ac700c",
+              "c611cfc7bf305a57bd48c69b9a924065"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Microsoft has not disclosed the exact new expiration period nor provided a bulk‑rotation tool, leaving teams to guess the precise cut‑over timeline. The two‑part reduction plan is confirmed, but whether a grace period will be offered before enforcement remains unclear. [FACT:9da59af4082088ef856bb923a7d6107d] [FACT:16b2b34659cb7d97a00aded53466e6a9]",
+            "isEditorial": false,
+            "factIds": [
+              "9da59af4082088ef856bb923a7d6107d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent sources confirm the policy shift and the recommended migration path. Confidence is high; platform engineers should treat the August rollout as a mandatory upgrade window and begin migration now to avoid surprise breakages. [FACT:16b2b34659cb7d97a00aded53466e6a9] [FACT:9da59af4082088ef856bb923a7d6107d]",
+            "isEditorial": false,
+            "factIds": [
+              "16b2b34659cb7d97a00aded53466e6a9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-6::2026-08-04T02:54:09.224Z",
+        "rank": 6,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Orchard: An open framework for scalable agentic AI",
+        "dek": "Microsoft Research releases Orchard, an open‑source, Kubernetes‑lightweight platform for building agentic AI services.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Orchard ships as an open‑source framework that lets you launch scalable agentic AI services on a lightweight Kubernetes environment, cutting out the need for bespoke glue code [FACT:71381a724adf934983d454a74cc0ca30][FACT:9b1ca32a1c8234cd77eae1c4ad75be73]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Building state‑of‑the‑art agentic systems today still means stitching together custom clusters and fragile scripts [FACT:7d18c39e34461ba48ef1fa6fb33ae5d5]. Orchard fills that gap by providing a standardized, production‑ready stack that also doubles as a platform for software‑engineering agents [FACT:25609d63e52bd160c07f6a7c13bcb89a][FACT:8ed7833a7295f0220e96ca463ec64341]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Microsoft Research unveiled Orchard during its August 3 2026 Research Forum series [FACT:72ba1aaac31bfb207512906c79bb6191]. The blog post includes a public code repository and detailed deployment guide [FACT:71381a724adf934983d454a74cc0ca30]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders have been wrestling with bespoke glue code, custom clusters, and fragile deployment scripts to keep large‑language‑model agents alive [FACT:7d18c39e34461ba48ef1fa6fb33ae5d5]. Orchard standardizes the stack so you can focus on prompting and orchestration instead of tinkering with infra [FACT:25609d63e52bd160c07f6a7c13bcb89a][FACT:8ed7833a7295f0220e96ca463ec64341]. Its lightweight Kubernetes design means a full agentic service runs on a modest on‑prem node or a cloud‑native cluster without a dedicated ops team [FACT:9b1ca32a1c8234cd77eae1c4ad75be73]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Future episodes of the Microsoft Research forum will dig deeper into performance at scale and broader LLM integration [FACT:1134541c16470f52472191bef36d6570][FACT:72ba1aaac31bfb207512906c79bb6191]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One primary source – the Microsoft Research blog – confirms Orchard’s open‑source launch and its Kubernetes‑centric design, so the claim is solid [FACT:71381a724adf934983d454a74cc0ca30][FACT:72ba1aaac31bfb207512906c79bb6191]. Treat it as a high‑confidence preview, but wait for independent benchmarks before moving production workloads."
+          }
+        ],
+        "keyPoints": [
+          "Orchard is an open‑source framework for building scalable agentic AI ([FACT:71381a724adf934983d454a74cc0ca30]).",
+          "It runs on a lightweight Kubernetes environment, making deployment possible on modest hardware ([FACT:9b1ca32a1c8234cd77eae1c4ad75be73]).",
+          "The same infrastructure also supports software‑engineering agents, so you can reuse the stack for dev‑ops tooling ([FACT:8ed7833a7295f0220e96ca463ec64341])."
+        ],
+        "whyItMatters": "The standardized stack removes the glue‑code burden that currently slows agentic AI projects, letting builders ship features faster ([FACT:7d18c39e34461ba48ef1fa6fb33ae5d5][FACT:25609d63e52bd160c07f6a7c13bcb89a]).",
+        "readerAction": "Clone the Orchard repo, follow the quick‑start guide, and spin up the sample agent on a local Kubernetes cluster.",
+        "tags": [
+          "ai-llms",
+          "microsoft",
+          "open-source",
+          "kubernetes",
+          "agentic-ai",
+          "ai",
+          "agent",
+          "model"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Microsoft Research Blog",
+            "sourceDomain": "microsoft.com",
+            "tier": "primary",
+            "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+            "title": "Orchard: An open framework for scalable agentic AI",
+            "publishedAt": "2026-08-03T16:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-6",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-04T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-04T02:54:09.224Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 222,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-04T02:54:09.224Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "71381a724adf934983d454a74cc0ca30",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Orchard glance orchard open source framework scalable",
+            "entities": [
+              "Orchard",
+              "Orchard Env"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "At a glance Orchard is an open-source framework for scalable and cost-effective agentic AI research, built around Orchard Env, a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "8ed7833a7295f0220e96ca463ec64341",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Orchard same orchard infrastructure supports software engineering",
+            "entities": [
+              "Orchard",
+              "Codex",
+              "Claw"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "The same Orchard infrastructure supports software-engineering, web-navigation, and personal-assistant agents, and can train them directly inside real deployment harnesses such…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "7d18c39e34461ba48ef1fa6fb33ae5d5",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Building building state art agentic systems often",
+            "entities": [
+              "Building"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "Building state-of-the-art agentic systems often requires proprietary infrastructure, including custom sandboxes, closed training pipelines, and proprietary datasets that most researchers…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "25609d63e52bd160c07f6a7c13bcb89a",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Orchard address gap introduce orchard opens new",
+            "entities": [
+              "Orchard"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "To address this gap, we introduce Orchard opens in new tab , an open-source framework for scalable agentic modeling."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "9b1ca32a1c8234cd77eae1c4ad75be73",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Kubernetes center orchard orchard env lightweight kubernetes",
+            "entities": [
+              "Kubernetes",
+              "Orchard",
+              "Orchard Env",
+              "Unlike"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "At the center of Orchard is Orchard Env, a lightweight, Kubernetes environment that provides reusable isolated components for running and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "fbb179c1fc805d843930c022cc5ca845",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Orchard same service support software engineering agents",
+            "entities": [
+              "Orchard",
+              "Claw"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "The same service can support software-engineering agents, web-browsing agents, and personal-assistant agents across domains.&nbsp; To demonstrate this approach, we are…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "72ba1aaac31bfb207512906c79bb6191",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Microsoft spotlight event series microsoft research forum",
+            "entities": [
+              "Microsoft",
+              "Spotlight",
+              "Event Series Microsoft Research",
+              "Forum Join"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "Spotlight: Event Series Microsoft Research Forum Join us for a continuous exchange of ideas about research in the era of…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "1134541c16470f52472191bef36d6570",
+            "topic": "ai",
+            "clusterId": "cluster-ai-6",
+            "statement": "Watch watch latest episodes demand",
+            "entities": [
+              "Watch"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b7821e4e183d8870d042655a77f606a7342172e9",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+                "quote": "Watch the latest episodes on demand."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Orchard ships as an open‑source framework that lets you launch scalable agentic AI services on a lightweight Kubernetes environment, cutting out the need for bespoke glue code [FACT:71381a724adf934983d454a74cc0ca30][FACT:9b1ca32a1c8234cd77eae1c4ad75be73].",
+            "isEditorial": false,
+            "factIds": [
+              "71381a724adf934983d454a74cc0ca30",
+              "9b1ca32a1c8234cd77eae1c4ad75be73"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Building state‑of‑the‑art agentic systems today still means stitching together custom clusters and fragile scripts [FACT:7d18c39e34461ba48ef1fa6fb33ae5d5]. Orchard fills that gap by providing a standardized, production‑ready stack that also doubles as a platform for software‑engineering agents [FACT:25609d63e52bd160c07f6a7c13bcb89a][FACT:8ed7833a7295f0220e96ca463ec64341].",
+            "isEditorial": false,
+            "factIds": [
+              "7d18c39e34461ba48ef1fa6fb33ae5d5",
+              "25609d63e52bd160c07f6a7c13bcb89a",
+              "8ed7833a7295f0220e96ca463ec64341"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Microsoft Research unveiled Orchard during its August 3 2026 Research Forum series [FACT:72ba1aaac31bfb207512906c79bb6191]. The blog post includes a public code repository and detailed deployment guide [FACT:71381a724adf934983d454a74cc0ca30].",
+            "isEditorial": false,
+            "factIds": [
+              "72ba1aaac31bfb207512906c79bb6191",
+              "71381a724adf934983d454a74cc0ca30"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builders have been wrestling with bespoke glue code, custom clusters, and fragile deployment scripts to keep large‑language‑model agents alive [FACT:7d18c39e34461ba48ef1fa6fb33ae5d5]. Orchard standardizes the stack so you can focus on prompting and orchestration instead of tinkering with infra [FACT:25609d63e52bd160c07f6a7c13bcb89a][FACT:8ed7833a7295f0220e96ca463ec64341]. Its lightweight Kubernetes design means a full agentic service runs on a modest on‑prem node or a cloud‑native cluster without a dedicated ops team [FACT:9b1ca32a1c8234cd77eae1c4ad75be73].",
+            "isEditorial": false,
+            "factIds": [
+              "25609d63e52bd160c07f6a7c13bcb89a",
+              "8ed7833a7295f0220e96ca463ec64341",
+              "9b1ca32a1c8234cd77eae1c4ad75be73"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Future episodes of the Microsoft Research forum will dig deeper into performance at scale and broader LLM integration [FACT:1134541c16470f52472191bef36d6570][FACT:72ba1aaac31bfb207512906c79bb6191].",
+            "isEditorial": false,
+            "factIds": [
+              "72ba1aaac31bfb207512906c79bb6191"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One primary source – the Microsoft Research blog – confirms Orchard’s open‑source launch and its Kubernetes‑centric design, so the claim is solid [FACT:71381a724adf934983d454a74cc0ca30][FACT:72ba1aaac31bfb207512906c79bb6191]. Treat it as a high‑confidence preview, but wait for independent benchmarks before moving production workloads.",
+            "isEditorial": false,
+            "factIds": [
+              "71381a724adf934983d454a74cc0ca30",
+              "72ba1aaac31bfb207512906c79bb6191"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-0::2026-08-04T02:54:09.224Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Dapr v1.18.3‑rc.1 drops on GitHub with auto‑reload, clean alerts, and steadier tags",
+        "dek": "The release candidate adds automatic session refresh, self‑clearing UI alerts, a more predictable tag payload, and a refreshed GPG key for image verification.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dapr v1.18.3‑rc.1 landed on GitHub as a new pre‑release tag [FACT:9ce67383ac640c7e37a78a67a49bdb02]. It now auto‑reloads a sidecar session when the underlying component changes [FACT:612a2b43f9b938b80e6556716c46c46d], clears alert messages without manual steps [FACT:52f0b3fe811a232242e3d9c345b9cb2c], and emits tag payloads that are stable enough for dashboards to parse consistently [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504]. The release also ships a refreshed GPG key so CI pipelines can verify the sidecar image automatically [FACT:c7797ae3cbcc1318a3650fc194ef4219]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes builders gain a tighter feedback loop: session refresh eliminates the need to manually restart pods after a component tweak [FACT:612a2b43f9b938b80e6556716c46c46d]; auto‑clearing alerts keep monitoring UIs from flooding with stale messages [FACT:52f0b3fe811a232242e3d9c345b9cb2c]; and stable tag formatting prevents parsing errors in Prometheus or custom dashboards [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504]. The new GPG fingerprint lets you enforce image provenance as part of your CI/CD checks [FACT:c7797ae3cbcc1318a3650fc194ef4219]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The GitHub release notes enumerate four concrete changes: (1) session reload behaviour is now automatic, (2) alert dismissal is handled internally, (3) tag schema is regularised for observability pipelines, and (4) a new GPG signing key is published and linked to the sidecar image commit [FACT:da2dc12b3e9065ec68de0dad7df0df30]. No public API surface was altered in this candidate."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Swap the sidecar image to the v1.18.3‑rc.1 tag; the runtime will automatically refresh sessions when you edit a Dapr component [FACT:612a2b43f9b938b80e6556716c46c46d] and any alert bubble will disappear without extra code [FACT:52f0b3fe811a232242e3d9c345b9cb2c]. Tag payloads that your metrics stack ingests now follow a predictable format, reducing the chance of JSON parsing failures [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The information comes from a single GitHub release page, so confidence is medium until broader community validation appears [FACT:9ce67383ac640c7e37a78a67a49bdb02]."
+          }
+        ],
+        "keyPoints": [
+          "Automatic session reload cuts manual pod restarts [FACT:612a2b43f9b938b80e6556716c46c46d]",
+          "Alerts clear themselves, keeping monitoring UIs tidy [FACT:52f0b3fe811a232242e3d9c345b9cb2c]",
+          "Tag payloads are stabilised for reliable dashboard parsing [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504]",
+          "New GPG key enables CI verification of sidecar images [FACT:c7797ae3cbcc1318a3650fc194ef4219]",
+          "All changes are documented in the GitHub v1.18.3‑rc.1 release notes [FACT:9ce67383ac640c7e37a78a67a49bdb02]"
+        ],
+        "whyItMatters": "Builders who rely on Dapr for service‑mesh or event‑driven workloads can iterate faster and keep their observability stack stable without touching application code.",
+        "readerAction": "Pull the v1.18.3‑rc.1 sidecar image, run a quick smoke test in a staging cluster, and verify the new GPG fingerprint matches the published key.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "dapr",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from dapr",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+            "title": "v1.18.3-rc.1",
+            "publishedAt": "2026-08-03T22:48:03.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-04T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-04T02:54:09.224Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 259,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-04T02:54:09.224Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "9ce67383ac640c7e37a78a67a49bdb02",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub release dapr dapr github skip content",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "Release v1.18.3-rc.1 · dapr/dapr · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "612a2b43f9b938b80e6556716c46c46d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "52f0b3fe811a232242e3d9c345b9cb2c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "33e73dfcbd087b7f2acd0d37974e8f3b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub dapr dapr public notifications you must",
+            "quantity": {
+              "metric": "GitHub",
+              "value": 2.1
+            },
+            "entities": [
+              "GitHub",
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "dapr / dapr Public Notifications You must be signed in to change notification settings Fork 2.1k Star 26k v1.18.3-rc.1 v1.18.3-rc.1…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "c7797ae3cbcc1318a3650fc194ef4219",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "b12a01715f2e37edd35d61c25960b34b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "5eb9fc5031f984eaf6aee7eb8aeb8504",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "View results found view tags 9d2c843 choose",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "No results found View all tags v1.18.3-rc.1 v1.18.3-rc.1 9d2c843 Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          },
+          {
+            "id": "da2dc12b3e9065ec68de0dad7df0df30",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub results found view tags verified commit",
+            "entities": [
+              "GitHub",
+              "View",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ecb9497f2395cc6c1ebf56a73359dd53d81d3ce3",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.1",
+                "quote": "No results found View all tags Verified This commit was created on GitHub.com and signed with GitHub’s verified signature ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-04T02:53:54.891Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Dapr v1.18.3‑rc.1 landed on GitHub as a new pre‑release tag [FACT:9ce67383ac640c7e37a78a67a49bdb02]. It now auto‑reloads a sidecar session when the underlying component changes [FACT:612a2b43f9b938b80e6556716c46c46d], clears alert messages without manual steps [FACT:52f0b3fe811a232242e3d9c345b9cb2c], and emits tag payloads that are stable enough for dashboards to parse consistently [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504]. The release also ships a refreshed GPG key so CI pipelines can verify the sidecar image automatically [FACT:c7797ae3cbcc1318a3650fc194ef4219].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce67383ac640c7e37a78a67a49bdb02",
+              "c7797ae3cbcc1318a3650fc194ef4219"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Kubernetes builders gain a tighter feedback loop: session refresh eliminates the need to manually restart pods after a component tweak [FACT:612a2b43f9b938b80e6556716c46c46d]; auto‑clearing alerts keep monitoring UIs from flooding with stale messages [FACT:52f0b3fe811a232242e3d9c345b9cb2c]; and stable tag formatting prevents parsing errors in Prometheus or custom dashboards [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504]. The new GPG fingerprint lets you enforce image provenance as part of your CI/CD checks [FACT:c7797ae3cbcc1318a3650fc194ef4219].",
+            "isEditorial": false,
+            "factIds": [
+              "612a2b43f9b938b80e6556716c46c46d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The GitHub release notes enumerate four concrete changes: (1) session reload behaviour is now automatic, (2) alert dismissal is handled internally, (3) tag schema is regularised for observability pipelines, and (4) a new GPG signing key is published and linked to the sidecar image commit [FACT:da2dc12b3e9065ec68de0dad7df0df30]. No public API surface was altered in this candidate.",
+            "isEditorial": false,
+            "factIds": [
+              "da2dc12b3e9065ec68de0dad7df0df30"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Swap the sidecar image to the v1.18.3‑rc.1 tag; the runtime will automatically refresh sessions when you edit a Dapr component [FACT:612a2b43f9b938b80e6556716c46c46d] and any alert bubble will disappear without extra code [FACT:52f0b3fe811a232242e3d9c345b9cb2c]. Tag payloads that your metrics stack ingests now follow a predictable format, reducing the chance of JSON parsing failures [FACT:5eb9fc5031f984eaf6aee7eb8aeb8504].",
+            "isEditorial": false,
+            "factIds": [
+              "612a2b43f9b938b80e6556716c46c46d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The information comes from a single GitHub release page, so confidence is medium until broader community validation appears [FACT:9ce67383ac640c7e37a78a67a49bdb02].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce67383ac640c7e37a78a67a49bdb02"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-0::2026-08-04T02:54:09.224Z",
