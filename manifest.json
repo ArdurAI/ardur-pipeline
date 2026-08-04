@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-04T00:00:00.000Z",
-    "windowStart": "2026-08-04T00:00:00.000Z",
-    "windowEnd": "2026-08-04T06:00:00.000Z"
+    "id": "2026-08-04T06:00:00.000Z",
+    "windowStart": "2026-08-04T06:00:00.000Z",
+    "windowEnd": "2026-08-04T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-04T02:53:54.701Z",
-  "nextRefreshAt": "2026-08-04T06:00:00.000Z",
+  "publishedAt": "2026-08-04T06:31:52.792Z",
+  "nextRefreshAt": "2026-08-04T12:00:00.000Z",
   "runIds": {
-    "aggregation": "5a2dec27-204b-4734-b391-cb66a4907cf7",
-    "ranking": "rank-eb975952",
-    "top10": "top10:2026-08-04T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-04T00:00:00.000Z-2026-08-04T02:54:09.224Z"
+    "aggregation": "0a9d04e5-bc47-42d7-8cbc-62805daf0825",
+    "ranking": "rank-4c2686a9",
+    "top10": "top10:2026-08-04T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-04T06:00:00.000Z-2026-08-04T06:32:10.550Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-04T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-04T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-04T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-04T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-04T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-04T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 87,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1239,
+      "count": 1226,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1461,
+      "count": 1487,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 22,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 18,
+      "count": 19,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 32,
     "usedFallback": true
   },
   "summary": {
@@ -104,37 +104,37 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:49843: Important: sssd security update"
+        "headline": "RHSA-2026:49839: Important: sssd security update"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Meta, Anthropic, Google, OpenAI to meet Trump officials about AI safety testing"
+        "headline": "Apple is getting this wrong"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:49851: Moderate: kernel-rt security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:49870: Low: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Alibaba&039;s new Qwen model is also taking your job, but this time it&039;s great"
+        "topic": "kubernetes",
+        "headline": "Fluent Bit 4.2.8"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic: AI Issues Result of Security Gaps, Not Model Issues"
+        "headline": "Meta, Anthropic, Google, OpenAI to meet Trump officials about AI safety testing"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Anthropic: Claude Attacks Result of Security Gaps, Not Model Issues"
+        "topic": "kubernetes",
+        "headline": "Analyze and remediate technical debt autonomously with AWS Transform – continuous modernization"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "How we built a realtime system for responsive voice AI in six months"
+        "topic": "security",
+        "headline": "Zero-Day Remediation Meets Operational Resiliency"
       },
       {
         "rank": 8,
@@ -143,13 +143,13 @@
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Analyze and remediate technical debt autonomously with AWS Transform – continuous modernization"
+        "topic": "security",
+        "headline": "RHSA-2026:49775: Moderate: libsolv security update"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Zero-Day Remediation Meets Operational Resiliency"
+        "topic": "ai",
+        "headline": "Alibaba Unveils 2.4T-Parameter AI Model, Boosting Shares｜Daily News Digest｜2026-08-04｜web only"
       }
     ],
     "articleCount": 0
