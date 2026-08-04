@@ -1,51 +1,51 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-04T06:00:00.000Z",
-    "windowStart": "2026-08-04T06:00:00.000Z",
-    "windowEnd": "2026-08-04T12:00:00.000Z"
+    "id": "2026-08-04T12:00:00.000Z",
+    "windowStart": "2026-08-04T12:00:00.000Z",
+    "windowEnd": "2026-08-04T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-04T06:31:52.792Z",
-  "nextRefreshAt": "2026-08-04T12:00:00.000Z",
+  "publishedAt": "2026-08-04T17:53:07.475Z",
+  "nextRefreshAt": "2026-08-04T18:00:00.000Z",
   "runIds": {
-    "aggregation": "0a9d04e5-bc47-42d7-8cbc-62805daf0825",
-    "ranking": "rank-4c2686a9",
-    "top10": "top10:2026-08-04T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-04T06:00:00.000Z-2026-08-04T06:32:10.550Z"
+    "aggregation": "15a59dff-d093-4d80-92a0-091271187050",
+    "ranking": "rank-53d67c19",
+    "top10": "top10:2026-08-04T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-04T12:00:00.000Z-2026-08-04T17:53:28.061Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-04T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-04T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-04T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-04T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-04T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-04T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
-      "category": "http-error",
-      "count": 87,
+      "category": "other",
+      "count": 1444,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source huggingface.co: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "http-error",
+      "count": 78,
+      "sample": [
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
-      "category": "other",
-      "count": 1226,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "blocked-fetch",
-      "count": 6,
+      "count": 12,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[platform] source blog.jetbrains.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1487,
+      "count": 1657,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 19,
+      "count": 36,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 32,
+    "heldArticles": 12,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:49839: Important: sssd security update"
+        "topic": "kubernetes",
+        "headline": "v1.54.0-next.2"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Apple is getting this wrong"
+        "topic": "security",
+        "headline": "RHSA-2026:50318: Important: Red Hat Ansible Automation Platform 2.7 Product Security and Bug Fix Update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:49870: Low: kernel security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "Apple seeks preliminary injunction against OpenAI in trade secrets case"
       },
       {
         "rank": 4,
         "topic": "kubernetes",
-        "headline": "Fluent Bit 4.2.8"
+        "headline": "v1.64.0/v0.158.0"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Meta, Anthropic, Google, OpenAI to meet Trump officials about AI safety testing"
+        "topic": "security",
+        "headline": "RHSA-2026:50077: Moderate: systemd security update"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Analyze and remediate technical debt autonomously with AWS Transform – continuous modernization"
+        "topic": "ai",
+        "headline": "OpenAI fires back at Apple&039;s trade secret lawsuit with chat logs showing Apple employees kept texting their former colleague"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Zero-Day Remediation Meets Operational Resiliency"
-      },
-      {
-        "rank": 8,
         "topic": "platform",
         "headline": "Strengthening NuGet Supply Chain Security: Reducing API Key Lifetime"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:49775: Moderate: libsolv security update"
+        "headline": "The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software"
+      },
+      {
+        "rank": 9,
+        "topic": "platform",
+        "headline": "Python 3.15.0 candidate 1 is here"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Alibaba Unveils 2.4T-Parameter AI Model, Boosting Shares｜Daily News Digest｜2026-08-04｜web only"
+        "topic": "security",
+        "headline": "RHSA-2026:50100: Important: xorg-x11-server-Xwayland security update"
       }
     ],
     "articleCount": 0
