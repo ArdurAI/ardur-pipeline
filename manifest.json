@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-04T18:00:00.000Z",
-    "windowStart": "2026-08-04T18:00:00.000Z",
-    "windowEnd": "2026-08-05T00:00:00.000Z"
+    "id": "2026-08-05T00:00:00.000Z",
+    "windowStart": "2026-08-05T00:00:00.000Z",
+    "windowEnd": "2026-08-05T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-04T19:42:50.147Z",
-  "nextRefreshAt": "2026-08-05T00:00:00.000Z",
+  "publishedAt": "2026-08-05T02:51:02.443Z",
+  "nextRefreshAt": "2026-08-05T06:00:00.000Z",
   "runIds": {
-    "aggregation": "2c90095f-511f-4a6e-ad7e-df5af3366d54",
-    "ranking": "rank-2f64da41",
-    "top10": "top10:2026-08-04T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-04T18:00:00.000Z-2026-08-04T19:43:09.901Z"
+    "aggregation": "bedd2d43-4ba6-46c6-a1bd-de2632675ce8",
+    "ranking": "rank-eca038e9",
+    "top10": "top10:2026-08-05T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-05T00:00:00.000Z-2026-08-05T02:51:33.847Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-04T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-04T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-04T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-05T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-05T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-05T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1434,
+      "count": 1366,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-15] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,39 +54,39 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1671,
+      "count": 1585,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 38,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 11,
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Introducing Web Search on Amazon Bedrock for foundation model grounding"
+        "topic": "security",
+        "headline": "RHSA-2026:50538: Important: modhttp2 security update"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.2"
-      },
-      {
-        "rank": 3,
         "topic": "ai",
         "headline": "Apple is getting this wrong"
       },
       {
+        "rank": 3,
+        "topic": "kubernetes",
+        "headline": "v1.54.0-next.2"
+      },
+      {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:50262: Important: perl:5.32 security update"
+        "headline": "RHSA-2026:50147: Moderate: libgcrypt security update"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging"
+      },
+      {
+        "rank": 6,
         "topic": "kubernetes",
         "headline": "v1.64.0/v0.158.0"
       },
       {
-        "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:50077: Moderate: systemd security update"
-      },
-      {
         "rank": 7,
-        "topic": "ai",
-        "headline": "New ways to learn and teach with ChatGPT Work and Codex"
+        "topic": "kubernetes",
+        "headline": "containerd API 1.12.0-beta.0"
       },
       {
         "rank": 8,
+        "topic": "ai",
+        "headline": "Third-party cyber evaluations involving OpenAI models"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software"
       },
       {
-        "rank": 9,
-        "topic": "platform",
-        "headline": "Strengthening NuGet Supply Chain Security: Reducing API Key Lifetime"
-      },
-      {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Meta, Anthropic, Google, OpenAI to meet with Trump advisers amid rogue AI agent fallout"
+        "topic": "models",
+        "headline": "Runware Unveils the Sonic Inference Pod, a Modular Data Center Built Specifically for AI Inference"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
