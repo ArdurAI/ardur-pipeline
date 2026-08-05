@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-05T06:00:00.000Z",
-    "windowStart": "2026-08-05T06:00:00.000Z",
-    "windowEnd": "2026-08-05T12:00:00.000Z"
+    "id": "2026-08-05T12:00:00.000Z",
+    "windowStart": "2026-08-05T12:00:00.000Z",
+    "windowEnd": "2026-08-05T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-05T06:32:30.152Z",
-  "nextRefreshAt": "2026-08-05T12:00:00.000Z",
+  "publishedAt": "2026-08-05T14:20:21.828Z",
+  "nextRefreshAt": "2026-08-05T18:00:00.000Z",
   "runIds": {
-    "aggregation": "9d1889ec-912f-431f-85e3-630ad369acf6",
-    "ranking": "rank-e030a906",
-    "top10": "top10:2026-08-05T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-05T06:00:00.000Z-2026-08-05T06:32:46.016Z"
+    "aggregation": "dfa2e738-f2bf-49bf-b80a-d0c41679ba7f",
+    "ranking": "rank-213297b5",
+    "top10": "top10:2026-08-05T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-05T12:00:00.000Z-2026-08-05T14:20:54.274Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-05T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-05T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-05T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-05T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-05T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-05T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1269,
+      "count": 1289,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,23 +52,23 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1476,
+      "count": 1535,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 37,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:50653: Important: fence-agents security update"
+        "headline": "RHSA-2026:50808: Moderate: libpng security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Apple is getting this wrong"
+        "topic": "security",
+        "headline": "RHSA-2026:50774: Important: libtiff security update"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.2"
+        "topic": "platform",
+        "headline": "Evo Continuous Offensive Security Is Here Pentesting Grade Coverage For The 350 Days A Year You Aren't Testing"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:50147: Moderate: libgcrypt security update"
+        "topic": "platform",
+        "headline": "Every software company will become a dev tools company"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:50141: Important: sg3utils security, bug fix, and enhancement update"
+        "headline": "CISA Flags Langflow RCE, Tomcat, and N-central Flaws as Actively Exploited"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging"
+        "topic": "ai",
+        "headline": "Black Forest Labs makes FLUX 3 Video generally available and claims it beats Seedance 2.0"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "v1.64.0/v0.158.0"
+        "headline": "v1.54.0-next.2"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "containerd API 1.12.0-beta.0"
+        "topic": "security",
+        "headline": "AI Security Institute Reports Anthropic and OpenAI Models Going Rogue Against Organizations"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "15 U.S. Attorneys General Demand OpenAI Halt High-Risk AI Tests"
+        "topic": "models",
+        "headline": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging"
       }
     ],
     "articleCount": 0
