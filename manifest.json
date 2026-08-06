@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-06T00:00:00.000Z",
-    "windowStart": "2026-08-06T00:00:00.000Z",
-    "windowEnd": "2026-08-06T06:00:00.000Z"
+    "id": "2026-08-06T06:00:00.000Z",
+    "windowStart": "2026-08-06T06:00:00.000Z",
+    "windowEnd": "2026-08-06T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-06T02:54:06.308Z",
-  "nextRefreshAt": "2026-08-06T06:00:00.000Z",
+  "publishedAt": "2026-08-06T06:35:56.431Z",
+  "nextRefreshAt": "2026-08-06T12:00:00.000Z",
   "runIds": {
-    "aggregation": "bd9d16ab-fde4-4ee3-aff0-4e472773a2d9",
-    "ranking": "rank-19192739",
-    "top10": "top10:2026-08-06T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-06T00:00:00.000Z-2026-08-06T02:54:49.266Z"
+    "aggregation": "9407c198-acfa-4957-89b1-afd8ec81da32",
+    "ranking": "rank-ee046df7",
+    "top10": "top10:2026-08-06T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-06T06:00:00.000Z-2026-08-06T06:36:11.161Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-06T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-06T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-06T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-06T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-06T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-06T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1312,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -49,17 +40,26 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1236,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-15] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
         "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1564,
+      "count": 1494,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -70,17 +70,17 @@
       "category": "editorial-hold",
       "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -108,13 +108,13 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:50964: Important: postfix security update"
+        "topic": "ai",
+        "headline": "Meta says its AI model breached a third-party company during testing"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "An AI model from Meta also hacked another company during testing"
+        "topic": "security",
+        "headline": "RHSA-2026:50978: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 4,
@@ -128,28 +128,28 @@
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "OpenAI asks US judge to dismiss Apple's trade secrets case"
+      },
+      {
+        "rank": 7,
+        "topic": "models",
+        "headline": "AI inference is driving NAND into the era of long-term agreements SanDisk SNDK.US sees revenue surge by 372%, with HBF poised to take over as the next super catalyst in memory storage."
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "RHSA-2026:50808: Moderate: libpng security update"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "Third-party cyber evaluations involving OpenAI models"
-      },
-      {
-        "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Red Hat named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms for the Third Consecutive Year"
-      },
-      {
         "rank": 9,
-        "topic": "platform",
-        "headline": "b4 0.16.0 released"
+        "topic": "security",
+        "headline": "Saviynt launches Zuma AI identity security platform"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant Bug"
+        "topic": "models",
+        "headline": "Third-party cyber evaluations involving OpenAI models"
       }
     ],
     "articleCount": 1
