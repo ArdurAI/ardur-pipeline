@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-07T00:00:00.000Z",
-    "windowStart": "2026-08-07T00:00:00.000Z",
-    "windowEnd": "2026-08-07T06:00:00.000Z"
+    "id": "2026-08-07T06:00:00.000Z",
+    "windowStart": "2026-08-07T06:00:00.000Z",
+    "windowEnd": "2026-08-07T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-07T00:06:33.870Z",
-  "nextRefreshAt": "2026-08-07T06:00:00.000Z",
+  "publishedAt": "2026-08-07T07:23:18.407Z",
+  "nextRefreshAt": "2026-08-07T12:00:00.000Z",
   "runIds": {
-    "aggregation": "4aa83218-142b-4bcc-918a-f0c5e5bd894d",
-    "ranking": "rank-5cf14012",
-    "top10": "top10:2026-08-07T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-07T00:00:00.000Z-2026-08-07T00:06:47.491Z"
+    "aggregation": "a279bfbd-e247-410e-aa6a-a43c013e8bd6",
+    "ranking": "rank-0ab46986",
+    "top10": "top10:2026-08-07T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-07T06:00:00.000Z-2026-08-07T07:23:39.612Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-07T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-07T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-07T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-07T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-07T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-07T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,9 @@
       "category": "http-error",
       "count": 81,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1478,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
@@ -49,26 +40,35 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1386,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[kubernetes] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1706,
+      "count": 1614,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 24,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 70,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:51436: Important: postfix security update"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "Meta says AI model hacked into another company's systems during cybersecurity testing; 3rd company to report similar incident"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:51436: Important: postfix security update"
+      },
+      {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Meta says its AI model hacked another company, adding to worries about bots going rogue"
+      },
+      {
+        "rank": 4,
         "topic": "security",
         "headline": "RHSA-2026:51295: Moderate: kernel security, bug fix, and enhancement update"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users"
+        "rank": 5,
+        "topic": "models",
+        "headline": "AMD deepens AI inference bet with Taalas deal as chip race heats up"
       },
       {
-        "rank": 5,
+        "rank": 6,
         "topic": "platform",
         "headline": "JFrog earnings loom as AI boom meets zero-day scrutiny"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.17.12"
-      },
-      {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Securing AI agents with temporal policies in Amazon Bedrock AgentCore"
+        "topic": "security",
+        "headline": "RHSA-2026:51358: Important: RHEL AI 3.6 RPM runtime CVE fix"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Six stable kernels with a security fix"
+        "topic": "security",
+        "headline": "Akamai Technologies AKAM Debuts Workforce Protector For Enterprise AI Security"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Rust Coreutils 0.10 released"
+        "topic": "ai",
+        "headline": "Black Hat 2026: Open-source tool makes red teaming AI agents up to 125x cheaper"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:51157: Moderate: fence-agents security update"
+        "topic": "ai",
+        "headline": "Exclusive-Alibaba plans to charge big users of its next open-source AI model, sources say"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
