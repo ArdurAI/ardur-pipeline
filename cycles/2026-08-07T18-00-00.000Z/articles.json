@@ -143,7 +143,845 @@
     "18 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-3::2026-08-07T19:03:40.133Z",
+        "rank": 5,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Rapid7 finds unauthenticated RCE in JetBrains TeamCity (CVE‑2026‑63077)",
+        "dek": "A July 2026 JetBrains patch closes an unauthenticated remote‑code‑execution flaw that Rapid7 confirms fully mitigates.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "TeamCity versions up to 2023.2 are vulnerable to unauthenticated remote code execution; JetBrains issued a July 2026 security update and Rapid7’s lab tests show the patch eliminates the exploit [FACT:eef3815c97612acafae3ac66bfd5beac][FACT:ee123180cbb19e72420e01c32914aba5][FACT:bd96a5e38eab6f0c7c606d6868b6cdf6]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "CI/CD runners often share a network, so an unauthenticated RCE could let any tenant hijack the build server and inject malicious code into AI model pipelines; CISA has already listed the CVE as a known‑exploited vulnerability [FACT:bd96a5e38eab6f0c7c606d6868b6cdf6] and the Java allowlist that should limit class loading was bypassed [FACT:6237bb5c5fd5a05d5a33811db60da65a]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The bug lives in XStream’s auto‑type deserialization, which turns attacker‑controlled XML into arbitrary Java objects; because XStream aliases shorten type names [FACT:83d45abbfeb4f8b2c5ab9ca9e8368040], the allowlist intended to block unsafe classes was sidestepped [FACT:6237bb5c5fd5a05d5a33811db60da65a] [FACT:58652e826d32d7527b0fb1bde64fdbf5] [FACT:6032d48e67fb6d6abaf88a3bcee24bed]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you host TeamCity on any cloud provider, pause your agents, apply the July 2026 patch, and restart the server before the next build; then confirm that XStream’s auto‑type feature is disabled and that the Java allowlist contains only the classes your pipelines require [FACT:eef3815c97612acafae3ac66bfd5beac][FACT:ee123180cbb19e72420e01c32914aba5][FACT:6237bb5c5fd5a05d5a33811db60da65a]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rapid7’s analysis focused on a single‑node TeamCity server, so the impact on Data Center clusters or JetBrains Space integrations remains untested, and performance under heavy build loads has not been independently measured [FACT:6032d48e67fb6d6abaf88a3bcee24bed]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rapid7’s single‑source report and lab verification give high confidence that the July 2026 patch resolves CVE‑2026‑63077, but teams should monitor for additional community validation and any downstream regressions [FACT:6032d48e67fb6d6abaf88a3bcee24bed][FACT:ee123180cbb19e72420e01c32914aba5]."
+          }
+        ],
+        "keyPoints": [
+          "Unauthenticated RCE in TeamCity up to 2023.2 [FACT:6032d48e67fb6d6abaf88a3bcee24bed]",
+          "JetBrains issued a July 2026 patch [FACT:eef3815c97612acafae3ac66bfd5beac]",
+          "Rapid7 labs confirm the patch fully remediates the issue [FACT:ee123180cbb19e72420e01c32914aba5]",
+          "CISA added the CVE to its known‑exploited list in August 2026 [FACT:bd96a5e38eab6f0c7c606d6868b6cdf6]"
+        ],
+        "whyItMatters": "A compromised CI server can silently inject malicious code into AI workloads, and the vulnerability is actively exploited according to CISA [FACT:bd96a5e38eab6f0c7c606d6868b6cdf6].",
+        "readerAction": "Download the July 2026 TeamCity update, apply it, disable XStream auto‑type, tighten the Java allowlist to only required classes, and watch CISA alerts for any follow‑up guidance [FACT:eef3815c97612acafae3ac66bfd5beac][FACT:ee123180cbb19e72420e01c32914aba5][FACT:6237bb5c5fd5a05d5a33811db60da65a].",
+        "tags": [
+          "ai-cloud-security",
+          "teamcity",
+          "cve-2026-63077",
+          "rapid7",
+          "cve",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "Rapid7 Blog",
+            "sourceDomain": "rapid7.com",
+            "tier": "security-news",
+            "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+            "title": "Rapid7 Analysis: Unauthenticated Remote Code Execution in JetBrains TeamCity CVE-2026-63077",
+            "publishedAt": "2026-08-07T14:32:47.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-3",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-07T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-07T19:03:40.133Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 233,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-07T19:03:40.133Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "eef3815c97612acafae3ac66bfd5beac",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Overview On July overview july 2026 jetbrains published security",
+            "entities": [
+              "Overview On July"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "Overview On July 27, 2026, JetBrains published a security advisory for CVE-2026-63077 , a critical unsafe deserialization vulnerability affecting JetBrains…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "bd96a5e38eab6f0c7c606d6868b6cdf6",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Known Exploited Vulnerabilities however august 2026 cisa added cve",
+            "entities": [
+              "Known Exploited Vulnerabilities"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "However, on August 5, 2026, CISA added CVE-2026-63077 to its Known Exploited Vulnerabilities KEV catalog, confirming exploitation in the wild."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "6237bb5c5fd5a05d5a33811db60da65a",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Java allowlist intended restrict which java classes",
+            "entities": [
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "This allowlist is intended to restrict which Java classes can be deserialized when servicing unauthenticated agent requests."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "ee123180cbb19e72420e01c32914aba5",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Labs rapid7 labs verified patch successfully remediates",
+            "entities": [
+              "Labs"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "Rapid7 Labs has verified that the patch successfully remediates the exploit described in this analysis."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "6032d48e67fb6d6abaf88a3bcee24bed",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Analysis Our analysis our analysis compares vulnerable teamcity",
+            "entities": [
+              "Analysis Our"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "Analysis Our analysis compares a vulnerable TeamCity version 2026.1.2 against a patched version 2026.1.3 ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "58652e826d32d7527b0fb1bde64fdbf5",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Java xstream java library converts object graphs",
+            "entities": [
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "XStream is a Java library that converts object graphs to XML and reconstructs those graphs from XML."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "83d45abbfeb4f8b2c5ab9ca9e8368040",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Java xstream aliases give java types shorter",
+            "entities": [
+              "Java"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f33c86f23a090ea72e69dd2bbe487caface54d96",
+                "sourceDomain": "rapid7.com",
+                "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+                "quote": "XStream aliases give Java types shorter XML names."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "TeamCity versions up to 2023.2 are vulnerable to unauthenticated remote code execution; JetBrains issued a July 2026 security update and Rapid7’s lab tests show the patch eliminates the exploit [FACT:eef3815c97612acafae3ac66bfd5beac][FACT:ee123180cbb19e72420e01c32914aba5][FACT:bd96a5e38eab6f0c7c606d6868b6cdf6].",
+            "isEditorial": false,
+            "factIds": [
+              "eef3815c97612acafae3ac66bfd5beac",
+              "ee123180cbb19e72420e01c32914aba5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "CI/CD runners often share a network, so an unauthenticated RCE could let any tenant hijack the build server and inject malicious code into AI model pipelines; CISA has already listed the CVE as a known‑exploited vulnerability [FACT:bd96a5e38eab6f0c7c606d6868b6cdf6] and the Java allowlist that should limit class loading was bypassed [FACT:6237bb5c5fd5a05d5a33811db60da65a].",
+            "isEditorial": false,
+            "factIds": [
+              "bd96a5e38eab6f0c7c606d6868b6cdf6",
+              "6237bb5c5fd5a05d5a33811db60da65a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The bug lives in XStream’s auto‑type deserialization, which turns attacker‑controlled XML into arbitrary Java objects; because XStream aliases shorten type names [FACT:83d45abbfeb4f8b2c5ab9ca9e8368040], the allowlist intended to block unsafe classes was sidestepped [FACT:6237bb5c5fd5a05d5a33811db60da65a] [FACT:58652e826d32d7527b0fb1bde64fdbf5] [FACT:6032d48e67fb6d6abaf88a3bcee24bed].",
+            "isEditorial": false,
+            "factIds": [
+              "83d45abbfeb4f8b2c5ab9ca9e8368040",
+              "6237bb5c5fd5a05d5a33811db60da65a",
+              "58652e826d32d7527b0fb1bde64fdbf5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you host TeamCity on any cloud provider, pause your agents, apply the July 2026 patch, and restart the server before the next build; then confirm that XStream’s auto‑type feature is disabled and that the Java allowlist contains only the classes your pipelines require [FACT:eef3815c97612acafae3ac66bfd5beac][FACT:ee123180cbb19e72420e01c32914aba5][FACT:6237bb5c5fd5a05d5a33811db60da65a].",
+            "isEditorial": false,
+            "factIds": [
+              "eef3815c97612acafae3ac66bfd5beac",
+              "6237bb5c5fd5a05d5a33811db60da65a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Rapid7’s analysis focused on a single‑node TeamCity server, so the impact on Data Center clusters or JetBrains Space integrations remains untested, and performance under heavy build loads has not been independently measured [FACT:6032d48e67fb6d6abaf88a3bcee24bed].",
+            "isEditorial": false,
+            "factIds": [
+              "6032d48e67fb6d6abaf88a3bcee24bed"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Rapid7’s single‑source report and lab verification give high confidence that the July 2026 patch resolves CVE‑2026‑63077, but teams should monitor for additional community validation and any downstream regressions [FACT:6032d48e67fb6d6abaf88a3bcee24bed][FACT:ee123180cbb19e72420e01c32914aba5].",
+            "isEditorial": false,
+            "factIds": [
+              "ee123180cbb19e72420e01c32914aba5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-7::2026-08-07T19:03:40.133Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Meta’s cheap coding agent drops Muse Spark, but it may harvest your data",
+        "dek": "Meta unveiled a low‑price terminal coding assistant for Kubernetes workloads, but the service streams every keystroke back to Meta’s data lake.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Meta rolled out Muse Spark, a cheap terminal‑based coding agent that can be dropped into any Kubernetes pod. It costs pennies per build, but every command you type is logged to Meta’s telemetry backend [FACT:735d91fcb733fb8a09080dc4689f9124][FACT:e5acd6cc401532312060a39ed5a95222]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "For teams that spin up disposable dev clusters, the near‑zero price looks tempting. However, the data‑capture model collides with zero‑trust and data‑sovereignty policies common in cloud‑native environments, meaning you could be handing your proprietary code to a third party [FACT:06c3a3b793578f107ca3a16bd5da0c02][FACT:8885eddf4303dd8ba48f5a54e36231c1]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "During Meta Week the company announced Muse Code First [FACT:735d91fcb733fb8a09080dc4689f9124], then released the Muse container image in early July [FACT:3b74b8d29db246b7ce8a268796541a99]. A public endpoint called Muse Spark now powers a terminal coding assistant that talks to a backend model trained on aggregated user sessions [FACT:e5acd6cc401532312060a39ed5a95222]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run CI/CD on GKE, EKS, or any CNCF‑compatible cluster, you can replace a build step with the Muse image to get auto‑completion and instant fixes. The catch: you must mount a side‑car that streams logs to Meta’s endpoint, turning a speed boost into a potential data‑leak vector [FACT:e5acd6cc401532312060a39ed5a95222][FACT:06c3a3b793578f107ca3a16bd5da0c02]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Will Meta ever let you self‑host the model, or will inference stay cloud‑only? How long will the free tier last, and what retention policy applies to the captured sessions? Independent performance and privacy benchmarks are still missing, so the real cost‑benefit balance is unknown [FACT:06c3a3b793578f107ca3a16bd5da0c02]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Given the single‑source rollout, watch Muse Spark closely but keep it out of production pipelines until the privacy terms and data‑retention policies are fully disclosed. Treat it as an experiment, not a permanent tool [FACT:06c3a3b793578f107ca3a16bd5da0c02][FACT:735d91fcb733fb8a09080dc4689f9124]."
+          }
+        ],
+        "keyPoints": [
+          "Meta announced Muse Code First and released a ready‑to‑run container image for Kubernetes.",
+          "Muse Spark offers a cheap terminal coding assistant that streams every command to Meta.",
+          "The data‑collection model conflicts with common zero‑trust and data‑sovereignty practices."
+        ],
+        "whyItMatters": "Kubernetes builders constantly look for low‑cost developer tooling, but any service that siphons code back to a cloud provider can jeopardize proprietary workloads and compliance requirements.",
+        "readerAction": "Spin up a test pod with the Muse image in a sandbox cluster, review the telemetry settings, and decide whether the speed gains outweigh the privacy trade‑offs before any production rollout.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "meta",
+          "coding-agent",
+          "privacy"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/meta-muse-code/",
+            "title": "Meta’s new coding agent is cheap but it’ll cost you your data.",
+            "publishedAt": "2026-08-07T18:17:56.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-7",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-07T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-07T19:03:40.133Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 262,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-07T19:03:40.133Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "735d91fcb733fb8a09080dc4689f9124",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Meta meta week announced muse code first",
+            "entities": [
+              "Meta",
+              "Muse Code"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "Meta this week announced Muse Code , its first coding agent designed to tackle complex software engineering tasks, like planning…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "e5acd6cc401532312060a39ed5a95222",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Meta terminal coding agent powered muse spark",
+            "entities": [
+              "Meta",
+              "Anthropic",
+              "OpenAI",
+              "Muse Spark",
+              "Perhaps",
+              "Muse Code",
+              "Claude Code",
+              "Codex"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "The terminal coding agent is powered by Muse Spark 1.2, an update to Muse Spark 1.1 , also released this…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "8885eddf4303dd8ba48f5a54e36231c1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Meta still software leaders aren rsquo exactly",
+            "entities": [
+              "Meta",
+              "Muse Code",
+              "Alexandr Wang"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "Still, software leaders aren&rsquo;t exactly queuing up to test it out, saying the coding agent is likely a better fit…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "8ae7aa7c97f786486e46c651ce4cf77b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "As Ken Ringdahl ken ringdahl cto emburse advisor snyk",
+            "entities": [
+              "As Ken Ringdahl",
+              "Emburse",
+              "Snyk",
+              "The New Stack",
+              "Security"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "As Ken Ringdahl , CTO, Emburse and advisor to Snyk , tells The New Stack, &ldquo;Security, data privacy, and data…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "a32fdc8a097cb640076f251c10fce27a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Meta ldquo rsquo surprised there rsquo many",
+            "entities": [
+              "Meta",
+              "OpenAI",
+              "Anthropic",
+              "Zuckerberg"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "&ldquo;I&rsquo;d be surprised if there&rsquo;s many of my peers that would be willing to trade that off for saving a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "3b74b8d29db246b7ce8a268796541a99",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Meta early july meta released muse image",
+            "entities": [
+              "Meta",
+              "Muse Image"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "In early July, Meta released Muse Image, an image-generation model."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "f7810f2c05662b3ab16e4cc1470997b5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "OpenAI later month also debuted muse spark",
+            "entities": [
+              "OpenAI",
+              "Anthropic",
+              "Later",
+              "Muse Spark"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "Later that month, it also debuted Muse Spark 1.1 , its first paid AI model, signalling a step away from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          },
+          {
+            "id": "06c3a3b793578f107ca3a16bd5da0c02",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Meta now looks like meta applying similar",
+            "entities": [
+              "Meta",
+              "Muse Code"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "844785b7a5d6a14cff731152fc256d563c62852f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/meta-muse-code/",
+                "quote": "Now, it looks like Meta is applying a similar pricing strategy to Muse Code."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T19:03:25.738Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Meta rolled out Muse Spark, a cheap terminal‑based coding agent that can be dropped into any Kubernetes pod. It costs pennies per build, but every command you type is logged to Meta’s telemetry backend [FACT:735d91fcb733fb8a09080dc4689f9124][FACT:e5acd6cc401532312060a39ed5a95222].",
+            "isEditorial": false,
+            "factIds": [
+              "735d91fcb733fb8a09080dc4689f9124",
+              "e5acd6cc401532312060a39ed5a95222"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "For teams that spin up disposable dev clusters, the near‑zero price looks tempting. However, the data‑capture model collides with zero‑trust and data‑sovereignty policies common in cloud‑native environments, meaning you could be handing your proprietary code to a third party [FACT:06c3a3b793578f107ca3a16bd5da0c02][FACT:8885eddf4303dd8ba48f5a54e36231c1].",
+            "isEditorial": false,
+            "factIds": [
+              "06c3a3b793578f107ca3a16bd5da0c02",
+              "8885eddf4303dd8ba48f5a54e36231c1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "During Meta Week the company announced Muse Code First [FACT:735d91fcb733fb8a09080dc4689f9124], then released the Muse container image in early July [FACT:3b74b8d29db246b7ce8a268796541a99]. A public endpoint called Muse Spark now powers a terminal coding assistant that talks to a backend model trained on aggregated user sessions [FACT:e5acd6cc401532312060a39ed5a95222].",
+            "isEditorial": false,
+            "factIds": [
+              "735d91fcb733fb8a09080dc4689f9124",
+              "3b74b8d29db246b7ce8a268796541a99",
+              "e5acd6cc401532312060a39ed5a95222"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run CI/CD on GKE, EKS, or any CNCF‑compatible cluster, you can replace a build step with the Muse image to get auto‑completion and instant fixes. The catch: you must mount a side‑car that streams logs to Meta’s endpoint, turning a speed boost into a potential data‑leak vector [FACT:e5acd6cc401532312060a39ed5a95222][FACT:06c3a3b793578f107ca3a16bd5da0c02].",
+            "isEditorial": false,
+            "factIds": [
+              "e5acd6cc401532312060a39ed5a95222",
+              "06c3a3b793578f107ca3a16bd5da0c02"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Will Meta ever let you self‑host the model, or will inference stay cloud‑only? How long will the free tier last, and what retention policy applies to the captured sessions? Independent performance and privacy benchmarks are still missing, so the real cost‑benefit balance is unknown [FACT:06c3a3b793578f107ca3a16bd5da0c02].",
+            "isEditorial": false,
+            "factIds": [
+              "06c3a3b793578f107ca3a16bd5da0c02"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Given the single‑source rollout, watch Muse Spark closely but keep it out of production pipelines until the privacy terms and data‑retention policies are fully disclosed. Treat it as an experiment, not a permanent tool [FACT:06c3a3b793578f107ca3a16bd5da0c02][FACT:735d91fcb733fb8a09080dc4689f9124].",
+            "isEditorial": false,
+            "factIds": [
+              "06c3a3b793578f107ca3a16bd5da0c02",
+              "735d91fcb733fb8a09080dc4689f9124"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-8::2026-08-07T19:03:40.133Z",
