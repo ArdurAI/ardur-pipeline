@@ -144,7 +144,358 @@
     "19 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-1::2026-08-07T13:13:52.037Z",
+        "rank": 10,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Does Kubernetes DRA Replace HAMi?",
+        "dek": "Kubernetes is moving GPU allocation into the built‑in DRA webhook, which may make NVIDIA's HAMi custom resources obsolete.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes is shifting GPU allocation to the native Device Resource Allocation (DRA) webhook, a move that could retire the separate NVIDIA HAMi CRDs for most workloads [FACT:eb68f38a5668129f5e9f27940eb193e3][FACT:f2a1ae18c549801f7215a318f229532a]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders now using HAMi vGPU CRDs can switch to a standard \"gpu\" extended resource, dropping custom operator code and staying inside the core API surface [FACT:af8ad6b3003efac695cb884be5eb23a1][FACT:6bdfb14c04fbc1702a170386fdf1a65c]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The CNCF blog explains that the DRA webhook hands out device IDs as opaque integers, while the NVIDIA device plugin still reports whole‑device counts [FACT:6bdfb14c04fbc1702a170386fdf1a65c][FACT:d1dd0df8a81b3ab2c31d395b7fb8f76d]. In HAMi, a vGPU might be allocated as device [NVIDIA: 8000] – a pattern DRA will emulate [FACT:67fafec14fc0008a5985f5ae05e06835]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To adopt DRA, keep your pod spec unchanged but replace the custom HAMi resource name with the generic \"gpu\" extended resource; the webhook then binds the pod to a specific vGPU ID behind the scenes [FACT:f2a1ae18c549801f7215a318f229532a][FACT:6bdfb14c04fbc1702a170386fdf1a65c]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The shift is documented in a single CNCF blog post, so confidence is moderate, but the alignment with Kubernetes’ own resource model suggests it’s worth testing DRA in a staging cluster before deprecating HAMi [FACT:eb68f38a5668129f5e9f27940eb193e3][FACT:f2a1ae18c549801f7215a318f229532a]."
+          }
+        ],
+        "keyPoints": [
+          "DRA webhook now allocates GPU device IDs as opaque integers [FACT:6bdfb14c04fbc1702a170386fdf1a65c]",
+          "NVIDIA device plugin still reports whole‑device counts, a mismatch DRA aims to resolve [FACT:d1dd0df8a81b3ab2c31d395b7fb8f76d]",
+          "HAMi vGPU allocations (e.g., [NVIDIA: 8000]) illustrate the pattern DRA will replace [FACT:67fafec14fc0008a5985f5ae05e06835]"
+        ],
+        "whyItMatters": "GPU‑heavy workloads can move to a standard Kubernetes resource, reducing custom code and future‑proofing clusters against upstream changes [FACT:af8ad6b3003efac695cb884be5eb23a1].",
+        "readerAction": "Read the CNCF blog, enable the DRA feature gate in a test cluster, and verify that your GPU pods schedule with the generic \"gpu\" resource instead of HAMi CRDs [FACT:f2a1ae18c549801f7215a318f229532a].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "gpu",
+          "dra",
+          "hami",
+          "cncf",
+          "nvidia"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "CNCF Blog",
+            "sourceDomain": "cncf.io",
+            "tier": "primary",
+            "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+            "title": "Does Kubernetes DRA Replace HAMi?",
+            "publishedAt": "2026-08-07T11:30:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-07T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-07T13:13:52.037Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 178,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-07T13:13:52.037Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "eb68f38a5668129f5e9f27940eb193e3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Kubernetes projects want share gpu kubernetes work",
+            "entities": [
+              "Kubernetes",
+              "Projects"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f37876dddacc5849b4d444ea61f6e6fc9dce44ab",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+                "quote": "Projects that want to share a GPU on Kubernetes have to work around an API instead of with it."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T13:13:40.668Z"
+            }
+          },
+          {
+            "id": "d1dd0df8a81b3ab2c31d395b7fb8f76d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "nvidia device plugin interface count devices whole",
+            "entities": [
+              "nvidia"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f37876dddacc5849b4d444ea61f6e6fc9dce44ab",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+                "quote": "The device plugin interface could count devices, and that was the whole vocabulary:&nbsp; nvidia.com/gpu: 1 ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T13:13:40.668Z"
+            }
+          },
+          {
+            "id": "af8ad6b3003efac695cb884be5eb23a1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "nvidia hami user writes extended resources resources",
+            "entities": [
+              "nvidia",
+              "None"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f37876dddacc5849b4d444ea61f6e6fc9dce44ab",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+                "quote": "A HAMi user writes 3 extended resources: resources: limits: nvidia.com/gpuhttps://nvidia.com/gpu: 1 device IDs from 1 physical card nvidia.com/gpumemhttps://nvidia.com/gpumem: 8000 MiB…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T13:13:40.668Z"
+            }
+          },
+          {
+            "id": "6bdfb14c04fbc1702a170386fdf1a65c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Kubernetes extended resources opaque integers kubernetes subtract",
+            "entities": [
+              "Kubernetes",
+              "Extended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f37876dddacc5849b4d444ea61f6e6fc9dce44ab",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+                "quote": "Extended resources are opaque integers to Kubernetes: it can subtract them from a node total, and that’s all."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T13:13:40.668Z"
+            }
+          },
+          {
+            "id": "67fafec14fc0008a5985f5ae05e06835",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "NVIDIA hami vgpu devices allocated gpu device",
+            "quantity": {
+              "metric": "NVIDIA",
+              "value": 8000
+            },
+            "entities": [
+              "NVIDIA",
+              "Allocate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f37876dddacc5849b4d444ea61f6e6fc9dce44ab",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+                "quote": "hami.io/vgpu-devices-allocated: GPU-&lt;device-uuid&gt;,NVIDIA,8000,10: The device plugin on the node later reads that annotation inside&nbsp; Allocate , injects&nbsp; CUDADEVICEMEMORYLIMIT0=8000m &nbsp;and&nbsp; CUDADEVICESMLIMIT=10 &nbsp;into…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T13:13:40.668Z"
+            }
+          },
+          {
+            "id": "f2a1ae18c549801f7215a318f229532a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Notice notice how much design workaround webhook",
+            "entities": [
+              "Notice"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f37876dddacc5849b4d444ea61f6e6fc9dce44ab",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/",
+                "quote": "Notice how much of the design is a workaround: the webhook exists because the scheduler can’t parse the request, the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-07T13:13:40.668Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Kubernetes is shifting GPU allocation to the native Device Resource Allocation (DRA) webhook, a move that could retire the separate NVIDIA HAMi CRDs for most workloads [FACT:eb68f38a5668129f5e9f27940eb193e3][FACT:f2a1ae18c549801f7215a318f229532a].",
+            "isEditorial": false,
+            "factIds": [
+              "eb68f38a5668129f5e9f27940eb193e3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders now using HAMi vGPU CRDs can switch to a standard \"gpu\" extended resource, dropping custom operator code and staying inside the core API surface [FACT:af8ad6b3003efac695cb884be5eb23a1][FACT:6bdfb14c04fbc1702a170386fdf1a65c].",
+            "isEditorial": false,
+            "factIds": [
+              "af8ad6b3003efac695cb884be5eb23a1",
+              "6bdfb14c04fbc1702a170386fdf1a65c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The CNCF blog explains that the DRA webhook hands out device IDs as opaque integers, while the NVIDIA device plugin still reports whole‑device counts [FACT:6bdfb14c04fbc1702a170386fdf1a65c][FACT:d1dd0df8a81b3ab2c31d395b7fb8f76d]. In HAMi, a vGPU might be allocated as device [NVIDIA: 8000] – a pattern DRA will emulate [FACT:67fafec14fc0008a5985f5ae05e06835].",
+            "isEditorial": false,
+            "factIds": [
+              "6bdfb14c04fbc1702a170386fdf1a65c",
+              "d1dd0df8a81b3ab2c31d395b7fb8f76d",
+              "67fafec14fc0008a5985f5ae05e06835"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To adopt DRA, keep your pod spec unchanged but replace the custom HAMi resource name with the generic \"gpu\" extended resource; the webhook then binds the pod to a specific vGPU ID behind the scenes [FACT:f2a1ae18c549801f7215a318f229532a][FACT:6bdfb14c04fbc1702a170386fdf1a65c].",
+            "isEditorial": false,
+            "factIds": [
+              "6bdfb14c04fbc1702a170386fdf1a65c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The shift is documented in a single CNCF blog post, so confidence is moderate, but the alignment with Kubernetes’ own resource model suggests it’s worth testing DRA in a staging cluster before deprecating HAMi [FACT:eb68f38a5668129f5e9f27940eb193e3][FACT:f2a1ae18c549801f7215a318f229532a].",
+            "isEditorial": false,
+            "factIds": [
+              "eb68f38a5668129f5e9f27940eb193e3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-08-07T13:13:52.037Z",

@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-07T06:00:00.000Z",
-    "windowStart": "2026-08-07T06:00:00.000Z",
-    "windowEnd": "2026-08-07T12:00:00.000Z"
+    "id": "2026-08-07T12:00:00.000Z",
+    "windowStart": "2026-08-07T12:00:00.000Z",
+    "windowEnd": "2026-08-07T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-07T07:23:18.407Z",
-  "nextRefreshAt": "2026-08-07T12:00:00.000Z",
+  "publishedAt": "2026-08-07T13:13:40.486Z",
+  "nextRefreshAt": "2026-08-07T18:00:00.000Z",
   "runIds": {
-    "aggregation": "a279bfbd-e247-410e-aa6a-a43c013e8bd6",
-    "ranking": "rank-0ab46986",
-    "top10": "top10:2026-08-07T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-07T06:00:00.000Z-2026-08-07T07:23:39.612Z"
+    "aggregation": "38f98e03-1b8a-4b8f-9bf1-7bceee586655",
+    "ranking": "rank-028f126c",
+    "top10": "top10:2026-08-07T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-07T12:00:00.000Z-2026-08-07T13:13:52.037Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-07T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-07T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-07T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-07T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-07T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-07T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,6 +31,15 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1363,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "blocked-fetch",
       "count": 6,
       "sample": [
@@ -40,48 +49,39 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1386,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1614,
+      "count": 1561,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Meta says AI model hacked into another company's systems during cybersecurity testing; 3rd company to report similar incident"
+        "topic": "security",
+        "headline": "RHSA-2026:51603: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:51436: Important: postfix security update"
+        "headline": "Microsoft, Apple Release Fresh Security Updates"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Meta says its AI model hacked another company, adding to worries about bots going rogue"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:51295: Moderate: kernel security, bug fix, and enhancement update"
+        "headline": "AI-Assisted HTTP Terminator Finds Novel HTTP Desync Techniques and Apache Zero-Day"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic Hires ‘Head of Claude For Legal’"
+      },
+      {
+        "rank": 6,
         "topic": "models",
         "headline": "AMD deepens AI inference bet with Taalas deal as chip race heats up"
       },
       {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "JFrog earnings loom as AI boom meets zero-day scrutiny"
-      },
-      {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:51358: Important: RHEL AI 3.6 RPM runtime CVE fix"
+        "topic": "models",
+        "headline": "Google Endorses SK hynix HBF For AI Inference"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Akamai Technologies AKAM Debuts Workforce Protector For Enterprise AI Security"
+        "headline": "Agentic AI for Cyber Defenders: What Security Teams Built at Black Hat USA 2026"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Black Hat 2026: Open-source tool makes red teaming AI agents up to 125x cheaper"
+        "headline": "Alibaba wants to charge the biggest users of its ‘open’ AI model"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Exclusive-Alibaba plans to charge big users of its next open-source AI model, sources say"
+        "topic": "kubernetes",
+        "headline": "Does Kubernetes DRA Replace HAMi?"
       }
     ],
     "articleCount": 0
