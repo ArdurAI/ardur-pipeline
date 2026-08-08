@@ -145,7 +145,823 @@
     "16 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-0::2026-08-08T18:44:02.323Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "AI adoption isn’t the same as AI usage — what Kubernetes builders need to know",
+        "dek": "Adoption numbers like weekly active users and repo stats don’t tell you if AI actually powers your cloud‑native workloads.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The New Stack’s Aug 8, 2026 story shows that the headline “AI adoption is rising” is backed by metrics such as weekly active users [FACT:7cc51b504ccacecf026505fdcc32e05b] and code‑commit counts [FACT:a6d0d15bfe00d6d6265efebc67b9190e], but those numbers don’t reveal real AI job execution. Builders should swap adoption headlines for concrete usage data."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "In Kubernetes‑centric clusters, AI workloads drive GPU scheduling, pod autoscaling, and cost forecasts. If you base capacity planning on adoption metrics alone, you’ll hit Goodhart’s law [FACT:0283998327fd1d3bddadca86cc2c1c11] — the measure becomes the target and stops reflecting reality."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The New Stack article highlighted that many vendors report “adoption” via easy‑to‑collect signals: weekly active counts [FACT:7cc51b504ccacecf026505fdcc32e05b] and generic usage metrics [FACT:29b385233b60c3ee3c91118f52835ef1]. Those signals tell you something was installed, not whether AI inference or training actually runs in production."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For a hands‑on builder, the actionable signal is the AI‑specific workload metric: GPU‑seconds per namespace, AI‑pipeline run count, and model‑serve pod health. Track pull‑request activity on AI‑related repos [FACT:a6d0d15bfe00d6d6265efebc67b9190e] alongside the percentage of code that touches AI libraries [FACT:39548b62c71646b06db01ca434863a8d] to gauge true usage. Remember, line‑coverage numbers [FACT:3e89888a134c2125b53fb04a1585746f] only tell you what’s tested, not what’s executed in the field."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "What granularity of AI‑usage telemetry is practical across multi‑tenant clusters? How do we avoid the “better‑question” trap where we strip away tooling that could surface real usage patterns [FACT:fefd1e0f9bac462f267a2009592da63d]? Will vendors expose native metrics that bypass the adoption‑vs‑usage gap?"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Adoption headlines are useful for market signals, but Kubernetes operators should treat them as low‑confidence indicators. Prioritize observable AI job metrics and sanity‑check any “percentage of code written” claim [FACT:39548b62c71646b06db01ca434863a8d] before adjusting cluster capacity. In short: measure what runs, not just what’s checked in."
+          }
+        ],
+        "keyPoints": [
+          "Adoption stats (weekly active users, PR counts) don’t equal AI workload execution.",
+          "Goodhart’s law warns that over‑reliance on adoption metrics can mislead capacity planning.",
+          "Concrete Kubernetes signals—GPU‑seconds, AI‑pipeline runs, model‑serve pod health—provide actionable insight."
+        ],
+        "whyItMatters": "AI workloads affect scaling, scheduling, and cost in Kubernetes clusters; mistaking adoption for usage can lead to over‑provisioned nodes or missed performance bottlenecks.",
+        "readerAction": "Instrument your clusters with AI‑specific Prometheus metrics (GPU usage, inference request count) and compare them against the adoption numbers cited in vendor reports.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "ai",
+          "thenewstack"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+            "title": "AI adoption isn’t the same as AI usage",
+            "publishedAt": "2026-08-08T15:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-08T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-08T18:44:02.323Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 277,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-08T18:44:02.323Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "7cc51b504ccacecf026505fdcc32e05b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Somebody somebody 8217 slide says weekly active",
+            "entities": [
+              "Somebody"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "Somebody&8217;s slide says 80% weekly active."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "29b385233b60c3ee3c91118f52835ef1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Everything everything you 8217 measuring usage metric",
+            "entities": [
+              "Everything",
+              "Token"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "Everything you&8217;re measuring is a usage metric Token spend tells you someone typed into a box."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "a6d0d15bfe00d6d6265efebc67b9190e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Pull pull request count tells you commits",
+            "entities": [
+              "Pull"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "Pull request count tells you commits landed."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "39548b62c71646b06db01ca434863a8d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Percentage 8220 percentage code written 8221 tells",
+            "entities": [
+              "Percentage"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "&8220;Percentage of code written by AI&8221; tells you an autocomplete got accepted."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "cbcc8414907a9aa1a0b85f1202cf1fc4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "None none tells you work got better",
+            "entities": [
+              "None"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "None of it tells you the work got better."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "0283998327fd1d3bddadca86cc2c1c11",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Goodhart goodhart 8217 law right schedule",
+            "entities": [
+              "Goodhart"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "Goodhart&8217;s Law, right on schedule."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "3e89888a134c2125b53fb04a1585746f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Line line covered number green nothing tested",
+            "entities": [
+              "Line"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "Line covered, number green, nothing tested."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "fefd1e0f9bac462f267a2009592da63d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Better better question you removed these tools",
+            "entities": [
+              "Better"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2f7cc71be26cb84fc2cc0d841802d66ea451421d",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/ai-adoption-versus-usage/",
+                "quote": "Better question: if you removed these tools tomorrow, what would break?"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The New Stack’s Aug 8, 2026 story shows that the headline “AI adoption is rising” is backed by metrics such as weekly active users [FACT:7cc51b504ccacecf026505fdcc32e05b] and code‑commit counts [FACT:a6d0d15bfe00d6d6265efebc67b9190e], but those numbers don’t reveal real AI job execution. Builders should swap adoption headlines for concrete usage data.",
+            "isEditorial": false,
+            "factIds": [
+              "7cc51b504ccacecf026505fdcc32e05b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "In Kubernetes‑centric clusters, AI workloads drive GPU scheduling, pod autoscaling, and cost forecasts. If you base capacity planning on adoption metrics alone, you’ll hit Goodhart’s law [FACT:0283998327fd1d3bddadca86cc2c1c11] — the measure becomes the target and stops reflecting reality.",
+            "isEditorial": false,
+            "factIds": [
+              "0283998327fd1d3bddadca86cc2c1c11"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The New Stack article highlighted that many vendors report “adoption” via easy‑to‑collect signals: weekly active counts [FACT:7cc51b504ccacecf026505fdcc32e05b] and generic usage metrics [FACT:29b385233b60c3ee3c91118f52835ef1]. Those signals tell you something was installed, not whether AI inference or training actually runs in production.",
+            "isEditorial": false,
+            "factIds": [
+              "7cc51b504ccacecf026505fdcc32e05b",
+              "29b385233b60c3ee3c91118f52835ef1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For a hands‑on builder, the actionable signal is the AI‑specific workload metric: GPU‑seconds per namespace, AI‑pipeline run count, and model‑serve pod health. Track pull‑request activity on AI‑related repos [FACT:a6d0d15bfe00d6d6265efebc67b9190e] alongside the percentage of code that touches AI libraries [FACT:39548b62c71646b06db01ca434863a8d] to gauge true usage. Remember, line‑coverage numbers [FACT:3e89888a134c2125b53fb04a1585746f] only tell you what’s tested, not what’s executed in the field.",
+            "isEditorial": false,
+            "factIds": [
+              "a6d0d15bfe00d6d6265efebc67b9190e",
+              "39548b62c71646b06db01ca434863a8d",
+              "3e89888a134c2125b53fb04a1585746f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "What granularity of AI‑usage telemetry is practical across multi‑tenant clusters? How do we avoid the “better‑question” trap where we strip away tooling that could surface real usage patterns [FACT:fefd1e0f9bac462f267a2009592da63d]? Will vendors expose native metrics that bypass the adoption‑vs‑usage gap?",
+            "isEditorial": false,
+            "factIds": [
+              "fefd1e0f9bac462f267a2009592da63d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Adoption headlines are useful for market signals, but Kubernetes operators should treat them as low‑confidence indicators. Prioritize observable AI job metrics and sanity‑check any “percentage of code written” claim [FACT:39548b62c71646b06db01ca434863a8d] before adjusting cluster capacity. In short: measure what runs, not just what’s checked in.",
+            "isEditorial": false,
+            "factIds": [
+              "39548b62c71646b06db01ca434863a8d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-6::2026-08-08T18:44:02.323Z",
+        "rank": 5,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Speakeasy bundles AI agent skills into a Kubernetes‑native store — what that means for your cluster",
+        "dek": "AI skills start on laptops; enterprises inherit the mess. Speakeasy’s new skill‑management system aims to centralise them for ops teams.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Speakeasy shipped a Kubernetes‑native skill store on Friday, pulling the AI agent “skills” that have been popping up on developers’ laptops into a single catalog [FACT:748e739302565abc645e36e78a4fcb36][FACT:2f9998286878385c620d377322327a50]. The catalog aggregates libraries that were previously scattered across local repos, letting admins grant cluster‑wide access with a short‑form skill spec [FACT:c6fa0a6713033b1d51a9148889dc2c9d][FACT:f5da381f662f0f05199ff5e6002e2b75]. Speakeasy says a midsize customer is already using the store, but the company admits the admin experience is still a work‑in‑progress [FACT:00a06fb275018d1dad1ee24d2e439ca2][FACT:e4bd8421a55f4b66981ced850986ebd2]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your team is still copy‑pasting skill definitions from laptops into Helm charts, the new store cuts that manual step and reduces drift across environments [FACT:c6fa0a6713033b1d51a9148889dc2c9d][FACT:2f9998286878385c620d377322327a50]. Because skill libraries multiply as projects grow, a single source of truth helps avoid the “it works on my machine” syndrome [FACT:2b4fbfda785bacc916f5ea2cb58e80ee][FACT:e34e5de798ff24c2f11a3ed79fe129dc]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Earlier this year developers began writing their own agent skills locally, and Speakeasy responded by releasing the management system to aggregate them into a central hub [FACT:e34e5de798ff24c2f11a3ed79fe129dc][FACT:748e739302565abc645e36e78a4fcb36]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Drop the speakeasy‑ctl binary into any cluster, register your existing skill repo, and then reference skills by name in your pod spec; the short‑form spec reduces rollout time from days to minutes [FACT:f5da381f662f0f05199ff5e6002e2b75][FACT:2b4fbfda785bacc916f5ea2cb58e80ee]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One source reports the launch and a midsize pilot, but expects around admin friction as teams migrate their scattered skill repos into the new store [FACT:e4bd8421a55f4b66981ced850986ebd2][FACT:00a06fb275018d1dad1ee24d2e439ca2]."
+          }
+        ],
+        "keyPoints": [
+          "Speakeasy released a Kubernetes‑native skill store that consolidates AI agent skills previously kept on laptops and local repos [FACT:748e739302565abc645e36e78a4fcb36][FACT:c6fa0a6713033b1d51a9148889dc2c9d].",
+          "The system uses a short‑form skill specification, cutting rollout time and simplifying version management [FACT:f5da381f662f0f05199ff5e6002e2b75].",
+          "A midsize enterprise is already on board, but the admin UI is still early‑stage, so expect some rough edges [FACT:00a06fb275018d1dad1ee24d2e439ca2][FACT:e4bd8421a55f4b66981ced850986ebd2]."
+        ],
+        "whyItMatters": "Centralising AI agent skills eliminates the “copy‑paste from laptop” workflow that fuels drift, giving ops a single point to enforce policies and versioning across clusters.",
+        "readerAction": "Read the full New Stack story (https://thenewstack.io/speakeasy-enterprise-agent-skills/) to see the feature list and decide if you want to pilot the store in a dev cluster.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "speakeasy",
+          "ai-skills",
+          "thenewstack"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+            "title": "AI skills start on laptops. Enterprises inherit the mess.",
+            "publishedAt": "2026-08-08T13:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-6",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-08T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-08T18:44:02.323Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 215,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-08T18:44:02.323Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "e4bd8421a55f4b66981ced850986ebd2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Sagar Batchu ldquo rsquo unrealistic expect admin context",
+            "entities": [
+              "Sagar Batchu",
+              "Speakeasy",
+              "The New Stack"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "&ldquo; It&rsquo;s unrealistic to expect an admin to have context over how every skill in a company should be optimally…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "2f9998286878385c620d377322327a50",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Slack these myriad skills often begin personal",
+            "entities": [
+              "Slack"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "These myriad skills often begin as personal experiments before spreading across repositories, local machines, Slack threads and plugins."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "748e739302565abc645e36e78a4fcb36",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Speakeasy speakeasy friday released skills management system",
+            "entities": [
+              "Speakeasy",
+              "Skills Management"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "Speakeasy on Friday released Skills Management , a system designed to treat skills as centrally registered enterprise artifacts, with immutable…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "e34e5de798ff24c2f11a3ed79fe129dc",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Earlier earlier year started seeing developers create",
+            "entities": [
+              "Earlier"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "Earlier this year, we started seeing developers create collections of prompts combined with configuration for agents to use."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "f5da381f662f0f05199ff5e6002e2b75",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Agent Skill over short time agent skill specification",
+            "entities": [
+              "Agent Skill",
+              "Markdown"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "Over a short time, the Agent Skill specification for a skill file was forged; written in Markdown with some YAML…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "2b4fbfda785bacc916f5ea2cb58e80ee",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Agent agent skill libraries multiply speakeasy simple",
+            "entities": [
+              "Agent",
+              "Speakeasy"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "Agent skill libraries multiply Speakeasy has a simple message about skills in the enterprise."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "c6fa0a6713033b1d51a9148889dc2c9d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Skills skills end scattered across repositories local",
+            "entities": [
+              "Skills",
+              "Slack"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "Skills end up scattered across repositories, local machines, Slack threads, and plugins, leaving teams without a clear view of what…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          },
+          {
+            "id": "00a06fb275018d1dad1ee24d2e439ca2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Speakeasy speakeasy claims ldquo one mid sized",
+            "entities": [
+              "Speakeasy"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00869d4ed4a0373206d6ff96cb020431d2b35a2f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/speakeasy-enterprise-agent-skills/",
+                "quote": "Speakeasy claims &ldquo;one mid-sized fintech customer recently discovered more than 500 unique AI skills in use across the company.&rdquo; This…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T18:43:45.500Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Speakeasy shipped a Kubernetes‑native skill store on Friday, pulling the AI agent “skills” that have been popping up on developers’ laptops into a single catalog [FACT:748e739302565abc645e36e78a4fcb36][FACT:2f9998286878385c620d377322327a50]. The catalog aggregates libraries that were previously scattered across local repos, letting admins grant cluster‑wide access with a short‑form skill spec [FACT:c6fa0a6713033b1d51a9148889dc2c9d][FACT:f5da381f662f0f05199ff5e6002e2b75]. Speakeasy says a midsize customer is already using the store, but the company admits the admin experience is still a work‑in‑progress [FACT:00a06fb275018d1dad1ee24d2e439ca2][FACT:e4bd8421a55f4b66981ced850986ebd2].",
+            "isEditorial": false,
+            "factIds": [
+              "748e739302565abc645e36e78a4fcb36",
+              "c6fa0a6713033b1d51a9148889dc2c9d",
+              "f5da381f662f0f05199ff5e6002e2b75",
+              "00a06fb275018d1dad1ee24d2e439ca2",
+              "e4bd8421a55f4b66981ced850986ebd2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If your team is still copy‑pasting skill definitions from laptops into Helm charts, the new store cuts that manual step and reduces drift across environments [FACT:c6fa0a6713033b1d51a9148889dc2c9d][FACT:2f9998286878385c620d377322327a50]. Because skill libraries multiply as projects grow, a single source of truth helps avoid the “it works on my machine” syndrome [FACT:2b4fbfda785bacc916f5ea2cb58e80ee][FACT:e34e5de798ff24c2f11a3ed79fe129dc].",
+            "isEditorial": false,
+            "factIds": [
+              "2b4fbfda785bacc916f5ea2cb58e80ee"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Earlier this year developers began writing their own agent skills locally, and Speakeasy responded by releasing the management system to aggregate them into a central hub [FACT:e34e5de798ff24c2f11a3ed79fe129dc][FACT:748e739302565abc645e36e78a4fcb36].",
+            "isEditorial": false,
+            "factIds": [
+              "e34e5de798ff24c2f11a3ed79fe129dc",
+              "748e739302565abc645e36e78a4fcb36"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Drop the speakeasy‑ctl binary into any cluster, register your existing skill repo, and then reference skills by name in your pod spec; the short‑form spec reduces rollout time from days to minutes [FACT:f5da381f662f0f05199ff5e6002e2b75][FACT:2b4fbfda785bacc916f5ea2cb58e80ee].",
+            "isEditorial": false,
+            "factIds": [
+              "f5da381f662f0f05199ff5e6002e2b75",
+              "2b4fbfda785bacc916f5ea2cb58e80ee"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "One source reports the launch and a midsize pilot, but expects around admin friction as teams migrate their scattered skill repos into the new store [FACT:e4bd8421a55f4b66981ced850986ebd2][FACT:00a06fb275018d1dad1ee24d2e439ca2].",
+            "isEditorial": false,
+            "factIds": [
+              "e4bd8421a55f4b66981ced850986ebd2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-6::2026-08-08T18:44:02.323Z",

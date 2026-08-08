@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-08T12:00:00.000Z",
-    "windowStart": "2026-08-08T12:00:00.000Z",
-    "windowEnd": "2026-08-08T18:00:00.000Z"
+    "id": "2026-08-08T18:00:00.000Z",
+    "windowStart": "2026-08-08T18:00:00.000Z",
+    "windowEnd": "2026-08-09T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-08T12:57:01.201Z",
-  "nextRefreshAt": "2026-08-08T18:00:00.000Z",
+  "publishedAt": "2026-08-08T18:43:45.319Z",
+  "nextRefreshAt": "2026-08-09T00:00:00.000Z",
   "runIds": {
-    "aggregation": "eb4f210c-f2ef-4f68-803c-72d0462be994",
-    "ranking": "rank-c641c395",
-    "top10": "top10:2026-08-08T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-08T12:00:00.000Z-2026-08-08T12:57:35.955Z"
+    "aggregation": "18523162-d87d-4391-bcde-c437e665e858",
+    "ranking": "rank-42075073",
+    "top10": "top10:2026-08-08T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-08T18:00:00.000Z-2026-08-08T18:44:02.323Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-08T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-08T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-08T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-08T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-08T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-08T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1120,
+      "count": 1132,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1348,
+      "count": 1381,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -70,26 +70,26 @@
       "category": "editorial-hold",
       "count": 20,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -103,43 +103,43 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "OpenAI to pause some work on AI model Astra due to security concerns"
+      },
+      {
+        "rank": 2,
         "topic": "security",
         "headline": "RHSA-2026:51746: Important: kernel security, bug fix, and enhancement update"
       },
       {
-        "rank": 2,
+        "rank": 3,
         "topic": "ai",
         "headline": "OpenAI Pauses Astra After Tests Reveal Autonomous Zero-Day Exploit of Hardened Systems"
       },
       {
-        "rank": 3,
+        "rank": 4,
         "topic": "security",
         "headline": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "topic": "security",
         "headline": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts"
       },
       {
-        "rank": 5,
-        "topic": "models",
-        "headline": "Google Endorses SK hynix HBF For AI Inference"
-      },
-      {
         "rank": 6,
         "topic": "ai",
-        "headline": "Fields Medalist who published a paper on AI-driven human extinction now works for OpenAI"
+        "headline": "UK caught AI agents inventing fake people to sneak malicious code into open-source software"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "AI agents use roughly 600 times more energy than a simple chat prompt"
+        "headline": "Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI flags its new Astra model as potentially reaching the highest cybersecurity risk level for the first time"
+        "topic": "models",
+        "headline": "Google Endorses SK hynix HBF For AI Inference"
       },
       {
         "rank": 9,
@@ -148,8 +148,8 @@
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "LightDM lives: version 1.33.0 released"
+        "topic": "kubernetes",
+        "headline": "Wafer Storage Containers Market to Reach USD 6.1 Billion by 2035 on Sic and Gan Fab Expansion"
       }
     ],
     "articleCount": 0
