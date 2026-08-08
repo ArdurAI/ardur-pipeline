@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-08T06:00:00.000Z",
-    "windowStart": "2026-08-08T06:00:00.000Z",
-    "windowEnd": "2026-08-08T12:00:00.000Z"
+    "id": "2026-08-08T12:00:00.000Z",
+    "windowStart": "2026-08-08T12:00:00.000Z",
+    "windowEnd": "2026-08-08T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-08T07:00:21.580Z",
-  "nextRefreshAt": "2026-08-08T12:00:00.000Z",
+  "publishedAt": "2026-08-08T12:57:01.201Z",
+  "nextRefreshAt": "2026-08-08T18:00:00.000Z",
   "runIds": {
-    "aggregation": "d0bbb879-cba2-4917-a5fe-a1a8409347fa",
-    "ranking": "rank-663aeeb1",
-    "top10": "top10:2026-08-08T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-08T06:00:00.000Z-2026-08-08T07:00:56.871Z"
+    "aggregation": "eb4f210c-f2ef-4f68-803c-72d0462be994",
+    "ranking": "rank-c641c395",
+    "top10": "top10:2026-08-08T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-08T12:00:00.000Z-2026-08-08T12:57:35.955Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-08T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-08T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-08T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-08T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-08T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-08T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1180,
+      "count": 1120,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1417,
+      "count": 1348,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
         "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI flags its new Astra model as potentially reaching the highest cybersecurity risk level for the first time"
+        "headline": "OpenAI Pauses Astra After Tests Reveal Autonomous Zero-Day Exploit of Hardened Systems"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI flags possible critical cybersecurity risk in upcoming model, tightens controls"
+        "topic": "security",
+        "headline": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "Metabase SQLi zero-day exploited in customer data-theft attacks"
+        "headline": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Microsoft, Apple Release Fresh Security Updates"
+        "topic": "models",
+        "headline": "Google Endorses SK hynix HBF For AI Inference"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Rapid7 Analysis: Unauthenticated Remote Code Execution in JetBrains TeamCity CVE-2026-63077"
+        "topic": "ai",
+        "headline": "Fields Medalist who published a paper on AI-driven human extinction now works for OpenAI"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "LightDM lives: version 1.33.0 released"
+        "topic": "ai",
+        "headline": "AI agents use roughly 600 times more energy than a simple chat prompt"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "OpenAI unveils more advanced versions of ChatGPT"
+        "headline": "OpenAI flags its new Astra model as potentially reaching the highest cybersecurity risk level for the first time"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "How TReNDS automates root-cause analysis with Amazon Bedrock"
+        "topic": "security",
+        "headline": "Metabase SQLi zero-day exploited in customer data-theft attacks"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Cloudflare Launches Persistent, Stateful, Computer-like Environments for Agents"
+        "headline": "LightDM lives: version 1.33.0 released"
       }
     ],
     "articleCount": 0

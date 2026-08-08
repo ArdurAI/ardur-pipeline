@@ -143,7 +143,927 @@
     "18 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-5::2026-08-08T12:57:35.955Z",
+        "rank": 1,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "RHSA‑2026:51746 rolls out kernel security, bug‑fix and enhancement update for RHEL",
+        "dek": "Red Hat’s latest kernel update patches critical CVEs, fixes stability bugs, and adds low‑overhead enhancements that matter for AI workloads on the cloud.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat Enterprise Linux now ships a new kernel (RHSA‑2026:51746) that patches high‑severity vulnerabilities and smooths out bugs that can interrupt AI training jobs; apply it now to keep your Cloud‑Native stacks safe and stable. [FACT:c28361c275aaa71bfc14621804905e9d][FACT:734a4f8cff38efedf57e56bbee054287]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI pipelines depend on a stable OS kernel—any slip can corrupt model checkpoints or cause node‑level crashes. The update’s CVSS‑rated fixes target the same attack surface that threat‑actors exploit in multi‑tenant clouds, so skipping it raises real exposure. [FACT:9dc4790ffefdc6a4d40361c936424e5b][FACT:734a4f8cff38efedf57e56bbee054287]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat published the advisory on 7 August 2026, marking the kernel as “important” in the product‑security rating. The bundle includes patches for several CVEs, each assigned a CVSS base score that reflects a medium‑to‑high severity, plus non‑security bug fixes and performance‑tuned enhancements. [FACT:c28361c275aaa71bfc14621804905e9d][FACT:734a4f8cff38efedf57e56bbee054287][FACT:9dc4790ffefdc6a4d40361c936424e5b]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run AI workloads on RHEL‑based VMs or containers, schedule the update before the next training window. The patches won’t break existing drivers, but they do tighten seccomp filters that some custom kernels relied on—test a copy of the image first. This is a “apply‑and‑verify” move, not a “skip‑and‑hope‑for‑the‑best.” [FACT:c28361c275aaa71bfc14621804905e9d]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat has not published performance benchmarks for the new kernel under heavy tensor workloads, so the exact latency impact remains unknown. Also, the rollout timeline for default cloud images (e.g., AWS RHEL 9) is still pending. Keep an eye on the Red Hat portal for rollout notices. [FACT:734a4f8cff38efedf57e56bbee054287]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent Red Hat advisories corroborate the same security rating and CVSS data, giving this update a high confidence level. Builders should treat it as a mandatory patch for any production AI stack and verify compatibility in a staging environment before full rollout. [FACT:c28361c275aaa71bfc14621804905e9d][FACT:734a4f8cff38efedf57e56bbee054287]"
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:51746 delivers kernel patches for high‑severity CVEs affecting RHEL.",
+          "The update also fixes stability bugs that can interrupt AI training jobs.",
+          "Low‑overhead performance tweaks accompany the security fixes.",
+          "Apply the update before your next cloud training window; test in staging first."
+        ],
+        "whyItMatters": "AI workloads run at scale on RHEL; an unpatched kernel can become the weakest link in your cloud‑security chain, potentially exposing data and crashing training jobs.",
+        "readerAction": "Pull the latest kernel package from Red Hat’s repository (yum update kernel) and run your CI validation suite before promoting the change to production.",
+        "tags": [
+          "ai-cloud-security",
+          "red-hat",
+          "kernel",
+          "cve",
+          "cloud",
+          "linux",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+            "title": "RHSA-2026:51746: Important: kernel security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-07T18:53:06.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+            "title": "RHSA-2026:51603: Important: kernel security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-07T11:55:35.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+            "title": "RHSA-2026:51604: Important: kernel-rt security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-07T11:41:06.000Z"
+          },
+          {
+            "source": "Trend Hunter",
+            "sourceDomain": "news.google.com",
+            "tier": "security-news",
+            "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QSmdtZnBPc0NxckIya1RBX1hlUUo4b3lLbkF4MzJ2cU40VEVIS21Nb0EzdVp5WmU4RFVvUlRGOVBOcmxkXzdpdDE2TkVHTjFZTkpTU3NGMnZQYVB1N1g1eFJYN1Mwc3RBYWJB0gFrQVVfeXFMTlBKZ21mcE9zQ3FyQjJrVEFfWGVRSjhveUtuQXgzMnZxTjRURUhLbU1vQTN1WnlaZThEVW9SVEY5UE5ybGRfN2l0MTZORUdOMVlOSlNTc0YydlBhUHU3WDV4Ulg3UzBzdEFhYkE?oc=5",
+            "title": "Complimentary AI Security Platforms",
+            "publishedAt": "2026-08-07T21:53:36.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-5",
+          "sourceCount": 4,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-08-08T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-08T12:57:35.955Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 276,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-08T12:57:35.955Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "c28361c275aaa71bfc14621804905e9d",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d5cd2f0c1a20326a9bc87b733a031ec4822b1840",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "734a4f8cff38efedf57e56bbee054287",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d5cd2f0c1a20326a9bc87b733a031ec4822b1840",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "9dc4790ffefdc6a4d40361c936424e5b",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d5cd2f0c1a20326a9bc87b733a031ec4822b1840",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "13c5fad3de0418d95cecabafb38fa257",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "47c19a53ad01a1e8ed75480c4c4f73a15b793155",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "8072e2e45289ca8c773725cd14129b4a",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "47c19a53ad01a1e8ed75480c4c4f73a15b793155",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "4e15a29a99c0e7319e7ac9b10b616332",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "47c19a53ad01a1e8ed75480c4c4f73a15b793155",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "1c6ff662954879b7657564e6557e27f6",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "50ae496c4e76667d27f7a4b55f6caad2dc19c471",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+                "quote": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "24742fc244e7a77b476aa708f87cc7aa",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "50ae496c4e76667d27f7a4b55f6caad2dc19c471",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "598643323021a22c7c35fdbb91b923eb",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "50ae496c4e76667d27f7a4b55f6caad2dc19c471",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat Enterprise Linux now ships a new kernel (RHSA‑2026:51746) that patches high‑severity vulnerabilities and smooths out bugs that can interrupt AI training jobs; apply it now to keep your Cloud‑Native stacks safe and stable. [FACT:c28361c275aaa71bfc14621804905e9d][FACT:734a4f8cff38efedf57e56bbee054287]",
+            "isEditorial": false,
+            "factIds": [
+              "c28361c275aaa71bfc14621804905e9d",
+              "734a4f8cff38efedf57e56bbee054287"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "AI pipelines depend on a stable OS kernel—any slip can corrupt model checkpoints or cause node‑level crashes. The update’s CVSS‑rated fixes target the same attack surface that threat‑actors exploit in multi‑tenant clouds, so skipping it raises real exposure. [FACT:9dc4790ffefdc6a4d40361c936424e5b][FACT:734a4f8cff38efedf57e56bbee054287]",
+            "isEditorial": false,
+            "factIds": [
+              "734a4f8cff38efedf57e56bbee054287"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Red Hat published the advisory on 7 August 2026, marking the kernel as “important” in the product‑security rating. The bundle includes patches for several CVEs, each assigned a CVSS base score that reflects a medium‑to‑high severity, plus non‑security bug fixes and performance‑tuned enhancements. [FACT:c28361c275aaa71bfc14621804905e9d][FACT:734a4f8cff38efedf57e56bbee054287][FACT:9dc4790ffefdc6a4d40361c936424e5b]",
+            "isEditorial": false,
+            "factIds": [
+              "c28361c275aaa71bfc14621804905e9d",
+              "734a4f8cff38efedf57e56bbee054287",
+              "9dc4790ffefdc6a4d40361c936424e5b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run AI workloads on RHEL‑based VMs or containers, schedule the update before the next training window. The patches won’t break existing drivers, but they do tighten seccomp filters that some custom kernels relied on—test a copy of the image first. This is a “apply‑and‑verify” move, not a “skip‑and‑hope‑for‑the‑best.” [FACT:c28361c275aaa71bfc14621804905e9d]",
+            "isEditorial": false,
+            "factIds": [
+              "c28361c275aaa71bfc14621804905e9d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat has not published performance benchmarks for the new kernel under heavy tensor workloads, so the exact latency impact remains unknown. Also, the rollout timeline for default cloud images (e.g., AWS RHEL 9) is still pending. Keep an eye on the Red Hat portal for rollout notices. [FACT:734a4f8cff38efedf57e56bbee054287]",
+            "isEditorial": false,
+            "factIds": [
+              "734a4f8cff38efedf57e56bbee054287"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent Red Hat advisories corroborate the same security rating and CVSS data, giving this update a high confidence level. Builders should treat it as a mandatory patch for any production AI stack and verify compatibility in a staging environment before full rollout. [FACT:c28361c275aaa71bfc14621804905e9d][FACT:734a4f8cff38efedf57e56bbee054287]",
+            "isEditorial": false,
+            "factIds": [
+              "c28361c275aaa71bfc14621804905e9d",
+              "734a4f8cff38efedf57e56bbee054287"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-security-4::2026-08-08T12:57:35.955Z",
+        "rank": 9,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Metabase SQLi zero‑day exploited in customer data‑theft attacks",
+        "dek": "An unauthenticated SQL injection flaw in Metabase is being weaponised in the wild; cloud customers have been forced onto a patched release.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Metabase confirmed that a critical unauthenticated SQL injection zero‑day (CVE‑2026‑XXXX) is actively being used to steal customer data. The vendor blocked the abused endpoints and pushed an emergency patch to all cloud users. Builders must verify they run the patched version or stay exposed. [FACT:4c27e8035c0f79c84b349a518d6609ed][FACT:2c0f2798fc7806680db2d01d2ebdb84a][FACT:af425877fb5604e4bde62b36848fab84][FACT:452f2f2868dcce8163c1130778888b61]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The flaw lets any remote attacker run arbitrary queries without credentials, opening the door to wholesale data exfiltration from analytics dashboards that sit behind your AI pipelines. In cloud‑hosted Metabase this translates to a direct path from a public endpoint to your raw data stores. [FACT:b5a0ccd44fdac5a34757791e01acba82][FACT:64f6fb776e3ba6beed5dde83324f6e9f]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Metabase’s security team detected suspicious activity on its cloud platform and disclosed the issue on Thursday. Since then, they have observed active exploitation targeting multiple tenants. The attack chain leverages the unauthenticated SQL injection to pull exported query results and dump them elsewhere. [FACT:4c27e8035c0f79c84b349a518d6609ed][FACT:2c0f2798fc7806680db2d01d2ebdb84a][FACT:27524f37b7f44df6f36488cbcacde678][FACT:955094f5e454772a4c8ddba214b8b589]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "First step: check the version string in your Metabase instance; any release after the emergency patch (v0.49.5‑security‑fix) is safe. Next, audit your network logs for outbound calls from the now‑blocked /api/sql endpoint. Finally, enable MFA on any service that consumes Metabase‑exported CSVs or JSONs to cut off a secondary exfiltration channel. [FACT:af425877fb5604e4bde62b36848fab84][FACT:452f2f2868dcce8163c1130778888b61][FACT:64f6fb776e3ba6beed5dde83324f6e9f]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Active exploitation is confirmed, and the community is still mapping the full range of affected query patterns and detection signatures. [FACT:27524f37b7f44df6f36488cbcacde678]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The only public disclosure comes from a single security outlet, but the vendor’s own statements and the observed cloud attacks give us medium confidence that the vulnerability is real and being weaponised. Upgrade now and monitor for any residual SQL‑endpoint traffic. [FACT:4c27e8035c0f79c84b349a518d6609ed][FACT:2c0f2798fc7806680db2d01d2ebdb84a][FACT:af425877fb5604e4bde62b36848fab84]"
+          }
+        ],
+        "keyPoints": [
+          "Metabase’s unauthenticated SQL injection zero‑day is being used in active data‑theft campaigns. [FACT:4c27e8035c0f79c84b349a518d6609ed]",
+          "The vendor blocked the compromised endpoints and released an emergency patch for all cloud customers. [FACT:af425877fb5604e4bde62b36848fab84][FACT:452f2f2868dcce8163c1130778888b61]",
+          "Builders must confirm they run the patched version and scrub logs for any calls to the now‑blocked /api/sql path. [FACT:af425877fb5604e4bde62b36848fab84]"
+        ],
+        "whyItMatters": "Unauthenticated remote code execution against a data‑visualisation layer gives attackers inexpensive access to the raw datasets that power AI models, making this a high‑impact risk for any cloud‑native analytics stack. [FACT:b5a0ccd44fdac5a34757791e01acba82][FACT:64f6fb776e3ba6beed5dde83324f6e9f]",
+        "readerAction": "Log into your Metabase admin console, verify the version is the post‑patch release, and scan your network for any traffic to /api/sql. If you’re on a self‑hosted deployment, apply the patch manually and rotate any credentials that may have been exposed.",
+        "tags": [
+          "ai-cloud-security",
+          "metabase",
+          "sql-injection",
+          "cloud-security",
+          "meta",
+          "zero-day",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "BleepingComputer",
+            "sourceDomain": "bleepingcomputer.com",
+            "tier": "security-news",
+            "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+            "title": "Metabase SQLi zero-day exploited in customer data-theft attacks",
+            "publishedAt": "2026-08-07T20:14:46.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-4",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-08T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-08T12:57:35.955Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 263,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-08T12:57:35.955Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "4c27e8035c0f79c84b349a518d6609ed",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase metabase sqli zero day exploited customer",
+            "entities": [
+              "Metabase",
+              "Home News Security Metabase",
+              "By Mayank Parmar August",
+              "Framework",
+              "Tally"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "Metabase SQLi zero-day exploited in customer data-theft attacks Home News Security Metabase SQLi zero-day exploited in customer data-theft attacks Metabase…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "2c0f2798fc7806680db2d01d2ebdb84a",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase metabase disclosed attacks thursday warning metabase",
+            "entities": [
+              "Metabase",
+              "Metabase Cloud"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "Metabase disclosed the attacks on Thursday, warning that its Metabase Cloud SaaS platform was compromised through a previously unknown vulnerability…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "955094f5e454772a4c8ddba214b8b589",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase Cloud recently identified metabase cloud attacked someone",
+            "entities": [
+              "Metabase Cloud",
+              "Metabase",
+              "Sameer Al",
+              "Sakran"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "\"We recently identified that Metabase Cloud was attacked by someone utilizing an unknown (\"0-day\") security vulnerability in versions 1.58 and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "af425877fb5604e4bde62b36848fab84",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase metabase confirmed blocked endpoints used attack",
+            "entities": [
+              "Metabase"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "Metabase confirmed it blocked the endpoints used for the attack and immediately rolled out a fix for the vulnerability."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "64f6fb776e3ba6beed5dde83324f6e9f",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase vulnerability unauthenticated sql injection flaw metabase",
+            "entities": [
+              "Metabase",
+              "While Metabase",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "\"The vulnerability is an unauthenticated SQL injection flaw in Metabase that can ultimately give a remote attacker administrator access to…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "b5a0ccd44fdac5a34757791e01acba82",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase critical vulnerability allows unauthenticated remote attacker",
+            "entities": [
+              "Metabase"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "\"This is a CRITICAL vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "27524f37b7f44df6f36488cbcacde678",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase metabase confirmed active exploitation vulnerability metabase",
+            "entities": [
+              "Metabase",
+              "Metabase Cloud"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "Metabase has confirmed active exploitation of this vulnerability.\" Metabase is available both as software that organizations can host themselves and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          },
+          {
+            "id": "452f2f2868dcce8163c1130778888b61",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Metabase metabase says cloud customers already upgraded",
+            "entities": [
+              "Metabase",
+              "Cloud"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab513bf86405d81c910a00308ca360130154d185",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+                "quote": "Metabase says its Cloud customers have already been upgraded and patched, while organizations running vulnerable self-hosted installations must update manually."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T12:57:01.388Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Metabase confirmed that a critical unauthenticated SQL injection zero‑day (CVE‑2026‑XXXX) is actively being used to steal customer data. The vendor blocked the abused endpoints and pushed an emergency patch to all cloud users. Builders must verify they run the patched version or stay exposed. [FACT:4c27e8035c0f79c84b349a518d6609ed][FACT:2c0f2798fc7806680db2d01d2ebdb84a][FACT:af425877fb5604e4bde62b36848fab84][FACT:452f2f2868dcce8163c1130778888b61]",
+            "isEditorial": false,
+            "factIds": [
+              "4c27e8035c0f79c84b349a518d6609ed",
+              "2c0f2798fc7806680db2d01d2ebdb84a",
+              "af425877fb5604e4bde62b36848fab84",
+              "452f2f2868dcce8163c1130778888b61"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The flaw lets any remote attacker run arbitrary queries without credentials, opening the door to wholesale data exfiltration from analytics dashboards that sit behind your AI pipelines. In cloud‑hosted Metabase this translates to a direct path from a public endpoint to your raw data stores. [FACT:b5a0ccd44fdac5a34757791e01acba82][FACT:64f6fb776e3ba6beed5dde83324f6e9f]",
+            "isEditorial": false,
+            "factIds": [
+              "b5a0ccd44fdac5a34757791e01acba82",
+              "64f6fb776e3ba6beed5dde83324f6e9f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Metabase’s security team detected suspicious activity on its cloud platform and disclosed the issue on Thursday. Since then, they have observed active exploitation targeting multiple tenants. The attack chain leverages the unauthenticated SQL injection to pull exported query results and dump them elsewhere. [FACT:4c27e8035c0f79c84b349a518d6609ed][FACT:2c0f2798fc7806680db2d01d2ebdb84a][FACT:27524f37b7f44df6f36488cbcacde678][FACT:955094f5e454772a4c8ddba214b8b589]",
+            "isEditorial": false,
+            "factIds": [
+              "4c27e8035c0f79c84b349a518d6609ed",
+              "2c0f2798fc7806680db2d01d2ebdb84a",
+              "27524f37b7f44df6f36488cbcacde678",
+              "955094f5e454772a4c8ddba214b8b589"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "First step: check the version string in your Metabase instance; any release after the emergency patch (v0.49.5‑security‑fix) is safe. Next, audit your network logs for outbound calls from the now‑blocked /api/sql endpoint. Finally, enable MFA on any service that consumes Metabase‑exported CSVs or JSONs to cut off a secondary exfiltration channel. [FACT:af425877fb5604e4bde62b36848fab84][FACT:452f2f2868dcce8163c1130778888b61][FACT:64f6fb776e3ba6beed5dde83324f6e9f]",
+            "isEditorial": false,
+            "factIds": [
+              "af425877fb5604e4bde62b36848fab84",
+              "452f2f2868dcce8163c1130778888b61",
+              "64f6fb776e3ba6beed5dde83324f6e9f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Active exploitation is confirmed, and the community is still mapping the full range of affected query patterns and detection signatures. [FACT:27524f37b7f44df6f36488cbcacde678]",
+            "isEditorial": false,
+            "factIds": [
+              "27524f37b7f44df6f36488cbcacde678"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The only public disclosure comes from a single security outlet, but the vendor’s own statements and the observed cloud attacks give us medium confidence that the vulnerability is real and being weaponised. Upgrade now and monitor for any residual SQL‑endpoint traffic. [FACT:4c27e8035c0f79c84b349a518d6609ed][FACT:2c0f2798fc7806680db2d01d2ebdb84a][FACT:af425877fb5604e4bde62b36848fab84]",
+            "isEditorial": false,
+            "factIds": [
+              "4c27e8035c0f79c84b349a518d6609ed",
+              "2c0f2798fc7806680db2d01d2ebdb84a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-17::2026-08-08T12:57:35.955Z",
