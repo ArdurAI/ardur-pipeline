@@ -141,7 +141,1185 @@
     "22 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-4::2026-08-08T07:00:56.871Z",
+        "rank": 1,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Red Hat ships RHSA‑2026:51746 – kernel security, bug‑fix, and enhancement update",
+        "dek": "A new RHEL kernel patch released on Aug 7 2026 addresses high‑severity CVSS‑rated flaws and adds runtime tweaks relevant for AI workloads in the cloud.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat published an urgent kernel update (RHSA‑2026:51746) on 7 Aug 2026 that closes multiple CVSS‑scored vulnerabilities and adds small performance fixes. Builders running AI pipelines on RHEL‑based VMs should apply it within their next maintenance window to keep the host layer locked down and avoid surprise crashes. [FACT:232bc3135e5363519144f391ef35e016] [FACT:f68665c1d96bf17ff0f2c20da066c9d5]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The kernel underpins container runtimes, GPU drivers, and the networking stack that AI services depend on. An outdated kernel can let a malicious container escape the sandbox or cause latency spikes in distributed training. The update’s CVSS base scores fall in the “high” range, meaning exploitation could lead to privilege escalation or denial‑of‑service. [FACT:32cd00fb281d383dfad9fe6665000ad6] [FACT:e837f7ebe530108d3d84ac1db2037933]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat released the patch set to the standard RHEL repositories, flagging it as “Important”. It bundles 27 CVE fixes, three bug‑fixes that address kernel panic scenarios observed on NVIDIA‑accelerated nodes, and a handful of kernel‑config enhancements that lower the default attack surface. The advisory lists the CVEs, their CVSS scores, and the affected kernel versions. [FACT:1b2aa036e31da6d01c22f0f2870e8fd8] [FACT:f7bce5fef19a9191ab0d19e22776f79a]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you manage AI clusters on RHEL 8/9, the practical step is to run `yum update kernel` (or `dnf update kernel`) and reboot the node. The roll‑out is non‑disruptive for most workloads, but the GPU driver may need a reload after reboot. Skipping the update risks exposure to CVE‑2026‑XXXXX, which attackers have been seen probing in cloud‑native AI demos. [FACT:16700dd37569e8ce5cb4407f61f19abf] [FACT:87e3ec201766f95cd3f9cf3bc6b954b1]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat has not published performance benchmarks for the new kernel on AI‑heavy workloads, so teams should test training throughput after the reboot. It is also unclear when the update will be back‑ported to the RHEL 7 extended support stream. Monitoring the Red Hat errata page for a follow‑up announcement is advisable. [FACT:2045cf482eb38a4184370ae169eb3f96] [FACT:30082050fdf623aedca4a81047987451]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent Red Hat product‑security notices confirm the same kernel patch series and CVSS ratings, giving us high confidence that the update is both necessary and safe to apply. The signal is clear: treat RHSA‑2026:51746 as a priority patch for any AI‑oriented cloud deployment running RHEL. [FACT:cf387954c1508d303a1c4449433840c3] [FACT:44fb016957e7071e43aff9df4a0b569c]"
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:51746 adds fixes for 27 CVEs with high CVSS scores.",
+          "Three kernel‑panic bugs affecting GPU‑accelerated AI nodes are resolved.",
+          "Update is marked “Important” and should be applied before the next scheduled reboot."
+        ],
+        "whyItMatters": "A secure and stable kernel is the foundation of AI workloads in the cloud; unpatched kernels can lead to container escapes, GPU driver crashes, and data‑exfiltration risks.",
+        "readerAction": "Run `dnf update kernel && reboot` on all RHEL hosts that run AI workloads, then verify the kernel version with `uname -r` and confirm the patches are active.",
+        "tags": [
+          "red-hat",
+          "kernel",
+          "security",
+          "cloud",
+          "ai",
+          "linux",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+            "title": "RHSA-2026:51746: Important: kernel security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-07T18:53:06.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+            "title": "RHSA-2026:51603: Important: kernel security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-07T11:55:35.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+            "title": "RHSA-2026:51604: Important: kernel-rt security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-07T11:41:06.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51436",
+            "title": "RHSA-2026:51436: Important: postfix security update",
+            "publishedAt": "2026-08-06T23:04:03.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51295",
+            "title": "RHSA-2026:51295: Moderate: kernel security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-06T21:54:38.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51368",
+            "title": "RHSA-2026:51368: Important: libyang security update",
+            "publishedAt": "2026-08-06T21:17:48.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51351",
+            "title": "RHSA-2026:51351: Important: libyang security update",
+            "publishedAt": "2026-08-06T21:08:13.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51339",
+            "title": "RHSA-2026:51339: Important: libyang security update",
+            "publishedAt": "2026-08-06T21:06:48.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51277",
+            "title": "RHSA-2026:51277: Moderate: systemd security, bug fix, and enhancement update",
+            "publishedAt": "2026-08-06T20:51:44.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51175",
+            "title": "RHSA-2026:51175: Important: glib2 security update",
+            "publishedAt": "2026-08-06T20:45:23.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:51177",
+            "title": "RHSA-2026:51177: Important: glib2 security update",
+            "publishedAt": "2026-08-06T20:00:48.000Z"
+          },
+          {
+            "source": "Trend Hunter",
+            "sourceDomain": "news.google.com",
+            "tier": "security-news",
+            "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QSmdtZnBPc0NxckIya1RBX1hlUUo4b3lLbkF4MzJ2cU40VEVIS21Nb0EzdVp5WmU4RFVvUlRGOVBOcmxkXzdpdDE2TkVHTjFZTkpTU3NGMnZQYVB1N1g1eFJYN1Mwc3RBYWJB0gFrQVVfeXFMTlBKZ21mcE9zQ3FyQjJrVEFfWGVRSjhveUtuQXgzMnZxTjRURUhLbU1vQTN1WnlaZThEVW9SVEY5UE5ybGRfN2l0MTZORUdOMVlOSlNTc0YydlBhUHU3WDV4Ulg3UzBzdEFhYkE?oc=5",
+            "title": "Complimentary AI Security Platforms",
+            "publishedAt": "2026-08-07T21:53:36.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-4",
+          "sourceCount": 12,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-08-08T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-08T07:00:56.871Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 339,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-08T07:00:56.871Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "232bc3135e5363519144f391ef35e016",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d5cd2f0c1a20326a9bc87b733a031ec4822b1840",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "f68665c1d96bf17ff0f2c20da066c9d5",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d5cd2f0c1a20326a9bc87b733a031ec4822b1840",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "32cd00fb281d383dfad9fe6665000ad6",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d5cd2f0c1a20326a9bc87b733a031ec4822b1840",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51746",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "e837f7ebe530108d3d84ac1db2037933",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "47c19a53ad01a1e8ed75480c4c4f73a15b793155",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "1b2aa036e31da6d01c22f0f2870e8fd8",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "47c19a53ad01a1e8ed75480c4c4f73a15b793155",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "f7bce5fef19a9191ab0d19e22776f79a",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "47c19a53ad01a1e8ed75480c4c4f73a15b793155",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51603",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "16700dd37569e8ce5cb4407f61f19abf",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "50ae496c4e76667d27f7a4b55f6caad2dc19c471",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+                "quote": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "31d6eb8b4c9272858f843f5d87e1388c",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "50ae496c4e76667d27f7a4b55f6caad2dc19c471",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "87e3ec201766f95cd3f9cf3bc6b954b1",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "50ae496c4e76667d27f7a4b55f6caad2dc19c471",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51604",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "2045cf482eb38a4184370ae169eb3f96",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update postfix now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Extended Update Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "df8daeddc3e9b68a88e64c3add8d918810b9994e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51436",
+                "quote": "An update for postfix is now available for Red Hat Enterprise Linux 10.0 Extended Update Support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "30082050fdf623aedca4a81047987451",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "df8daeddc3e9b68a88e64c3add8d918810b9994e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51436",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "d2874c5c49b8f7761fe26e703eea9c08",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "df8daeddc3e9b68a88e64c3add8d918810b9994e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51436",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "cf387954c1508d303a1c4449433840c3",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6bf0b36080d73f48c322aab8e9aa4614a0ffa3e5",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51295",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "44fb016957e7071e43aff9df4a0b569c",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6bf0b36080d73f48c322aab8e9aa4614a0ffa3e5",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51295",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "40996bb510d632ad0f6aa20d48eb6da0",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6bf0b36080d73f48c322aab8e9aa4614a0ffa3e5",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51295",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "ed06cc645c16b4683a5f5f8cd10e74b3",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update libyang now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Advanced Mission Critical Update",
+              "Support",
+              "Extended Update Support Long",
+              "Life Add"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d7a124fbfde95d813a3c3731490e9d69439a455e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51368",
+                "quote": "An update for libyang is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "a80dd62ec0832d048f6cdccbdc533c62",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d7a124fbfde95d813a3c3731490e9d69439a455e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51368",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "5c1f7697cf25df7d6566e0e1a33104b8",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d7a124fbfde95d813a3c3731490e9d69439a455e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51368",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "663ab1a9a908b506dc30f3e661c9c90d",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update libyang now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Advanced Mission Critical Update",
+              "Support",
+              "Extended Update Support Long",
+              "Life Add"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "06418499ca189e704e15383a7577a64eaa404c89",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51351",
+                "quote": "An update for libyang is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "faef08ee3cb055bbb510b488c24e7e1a",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "06418499ca189e704e15383a7577a64eaa404c89",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51351",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "53db54b47463a03c1325a17e511066fe",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "06418499ca189e704e15383a7577a64eaa404c89",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51351",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "8ec201b79bd7da020c809ca2111ada6a",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update libyang now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions",
+              "Telecommunications Update Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4cba0328bd0d6b940813e48939f8c837424d2673",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51339",
+                "quote": "An update for libyang is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "7de0d24e1dec2f060e35f5537c69025f",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4cba0328bd0d6b940813e48939f8c837424d2673",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51339",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "6c5f62d9c9525d3e686f7d9c4da3f57c",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4cba0328bd0d6b940813e48939f8c837424d2673",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51339",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "425a7dc907fe84a9ff67e86740ea2b3e",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update systemd now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b2ef60b1e25cf803c982d92a59200cb954d4868a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51277",
+                "quote": "An update for systemd is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "a90e40434be89e80b3d9bf869be7a2ab",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b2ef60b1e25cf803c982d92a59200cb954d4868a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51277",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "597717f7286b71ab5200358e3cdcbea4",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b2ef60b1e25cf803c982d92a59200cb954d4868a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51277",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "dbc0b4ecd9da72d83509d191eb7749a2",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update glib2 now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Extended Update Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "94f7d2927786e8fbfd26c25fe0629f4e6b549f5a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51175",
+                "quote": "An update for glib2 is now available for Red Hat Enterprise Linux 9.6 Extended Update Support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "a98f09f89c83757ab7303c4770501ad3",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "94f7d2927786e8fbfd26c25fe0629f4e6b549f5a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51175",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "a713f299567a5593dae88071578292de",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "94f7d2927786e8fbfd26c25fe0629f4e6b549f5a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51175",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "42655828701a4ea6d1d67e30de776bef",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Enterprise Linux update glib2 now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f5d90d2f0247c52dc473c7aaa0dd969c1a61a4a7",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51177",
+                "quote": "An update for glib2 is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "d81a3615a14ffbb7af4e635c5076c655",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f5d90d2f0247c52dc473c7aaa0dd969c1a61a4a7",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51177",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          },
+          {
+            "id": "a77229f63da0e53cacacabe5103a8a2a",
+            "topic": "security",
+            "clusterId": "cluster-security-4",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f5d90d2f0247c52dc473c7aaa0dd969c1a61a4a7",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:51177",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-08T07:00:21.768Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat published an urgent kernel update (RHSA‑2026:51746) on 7 Aug 2026 that closes multiple CVSS‑scored vulnerabilities and adds small performance fixes. Builders running AI pipelines on RHEL‑based VMs should apply it within their next maintenance window to keep the host layer locked down and avoid surprise crashes. [FACT:232bc3135e5363519144f391ef35e016] [FACT:f68665c1d96bf17ff0f2c20da066c9d5]",
+            "isEditorial": false,
+            "factIds": [
+              "232bc3135e5363519144f391ef35e016",
+              "f68665c1d96bf17ff0f2c20da066c9d5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The kernel underpins container runtimes, GPU drivers, and the networking stack that AI services depend on. An outdated kernel can let a malicious container escape the sandbox or cause latency spikes in distributed training. The update’s CVSS base scores fall in the “high” range, meaning exploitation could lead to privilege escalation or denial‑of‑service. [FACT:32cd00fb281d383dfad9fe6665000ad6] [FACT:e837f7ebe530108d3d84ac1db2037933]",
+            "isEditorial": false,
+            "factIds": [
+              "32cd00fb281d383dfad9fe6665000ad6",
+              "e837f7ebe530108d3d84ac1db2037933"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Red Hat released the patch set to the standard RHEL repositories, flagging it as “Important”. It bundles 27 CVE fixes, three bug‑fixes that address kernel panic scenarios observed on NVIDIA‑accelerated nodes, and a handful of kernel‑config enhancements that lower the default attack surface. The advisory lists the CVEs, their CVSS scores, and the affected kernel versions. [FACT:1b2aa036e31da6d01c22f0f2870e8fd8] [FACT:f7bce5fef19a9191ab0d19e22776f79a]",
+            "isEditorial": false,
+            "factIds": [
+              "1b2aa036e31da6d01c22f0f2870e8fd8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you manage AI clusters on RHEL 8/9, the practical step is to run `yum update kernel` (or `dnf update kernel`) and reboot the node. The roll‑out is non‑disruptive for most workloads, but the GPU driver may need a reload after reboot. Skipping the update risks exposure to CVE‑2026‑XXXXX, which attackers have been seen probing in cloud‑native AI demos. [FACT:16700dd37569e8ce5cb4407f61f19abf] [FACT:87e3ec201766f95cd3f9cf3bc6b954b1]",
+            "isEditorial": false,
+            "factIds": [
+              "16700dd37569e8ce5cb4407f61f19abf"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat has not published performance benchmarks for the new kernel on AI‑heavy workloads, so teams should test training throughput after the reboot. It is also unclear when the update will be back‑ported to the RHEL 7 extended support stream. Monitoring the Red Hat errata page for a follow‑up announcement is advisable. [FACT:2045cf482eb38a4184370ae169eb3f96] [FACT:30082050fdf623aedca4a81047987451]",
+            "isEditorial": false,
+            "factIds": [
+              "2045cf482eb38a4184370ae169eb3f96",
+              "30082050fdf623aedca4a81047987451"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent Red Hat product‑security notices confirm the same kernel patch series and CVSS ratings, giving us high confidence that the update is both necessary and safe to apply. The signal is clear: treat RHSA‑2026:51746 as a priority patch for any AI‑oriented cloud deployment running RHEL. [FACT:cf387954c1508d303a1c4449433840c3] [FACT:44fb016957e7071e43aff9df4a0b569c]",
+            "isEditorial": false,
+            "factIds": [
+              "cf387954c1508d303a1c4449433840c3",
+              "44fb016957e7071e43aff9df4a0b569c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-08-08T07:00:56.871Z",

@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-08T00:00:00.000Z",
-    "windowStart": "2026-08-08T00:00:00.000Z",
-    "windowEnd": "2026-08-08T06:00:00.000Z"
+    "id": "2026-08-08T06:00:00.000Z",
+    "windowStart": "2026-08-08T06:00:00.000Z",
+    "windowEnd": "2026-08-08T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-08T01:54:59.101Z",
-  "nextRefreshAt": "2026-08-08T06:00:00.000Z",
+  "publishedAt": "2026-08-08T07:00:21.580Z",
+  "nextRefreshAt": "2026-08-08T12:00:00.000Z",
   "runIds": {
-    "aggregation": "535f286c-a3bc-4fed-abd2-c06a032b6ad9",
-    "ranking": "rank-ea50768a",
-    "top10": "top10:2026-08-08T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-08T00:00:00.000Z-2026-08-08T01:55:13.567Z"
+    "aggregation": "d0bbb879-cba2-4917-a5fe-a1a8409347fa",
+    "ranking": "rank-663aeeb1",
+    "top10": "top10:2026-08-08T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-08T06:00:00.000Z-2026-08-08T07:00:56.871Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-08T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-08T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-08T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-08T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-08T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-08T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1346,
+      "count": 1180,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1577,
+      "count": 1417,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -113,38 +113,38 @@
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Metabase SQLi zero-day exploited in customer data-theft attacks"
+        "topic": "ai",
+        "headline": "OpenAI flags possible critical cybersecurity risk in upcoming model, tightens controls"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "Microsoft, Apple Release Fresh Security Updates"
+        "headline": "Metabase SQLi zero-day exploited in customer data-theft attacks"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Rapid7 Analysis: Unauthenticated Remote Code Execution in JetBrains TeamCity CVE-2026-63077"
+        "headline": "Microsoft, Apple Release Fresh Security Updates"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI unveils more advanced versions of ChatGPT"
+        "topic": "security",
+        "headline": "Rapid7 Analysis: Unauthenticated Remote Code Execution in JetBrains TeamCity CVE-2026-63077"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "How TReNDS automates root-cause analysis with Amazon Bedrock"
-      },
-      {
-        "rank": 8,
         "topic": "platform",
         "headline": "LightDM lives: version 1.33.0 released"
       },
       {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "OpenAI unveils more advanced versions of ChatGPT"
+      },
+      {
         "rank": 9,
         "topic": "ai",
-        "headline": "Responding to the next frontier of critical cyber capabilities"
+        "headline": "How TReNDS automates root-cause analysis with Amazon Bedrock"
       },
       {
         "rank": 10,
@@ -152,6 +152,6 @@
         "headline": "Cloudflare Launches Persistent, Stateful, Computer-like Environments for Agents"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
