@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-09T00:00:00.000Z",
-    "windowStart": "2026-08-09T00:00:00.000Z",
-    "windowEnd": "2026-08-09T06:00:00.000Z"
+    "id": "2026-08-09T06:00:00.000Z",
+    "windowStart": "2026-08-09T06:00:00.000Z",
+    "windowEnd": "2026-08-09T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-09T02:02:29.653Z",
-  "nextRefreshAt": "2026-08-09T06:00:00.000Z",
+  "publishedAt": "2026-08-09T07:03:08.349Z",
+  "nextRefreshAt": "2026-08-09T12:00:00.000Z",
   "runIds": {
-    "aggregation": "78ddd3f1-c039-4bff-90b6-f1c442e95c7d",
-    "ranking": "rank-0ecde78c",
-    "top10": "top10:2026-08-09T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-09T00:00:00.000Z-2026-08-09T02:02:46.271Z"
+    "aggregation": "60be03b4-530f-42fa-a3e9-46daa5ef4b7b",
+    "ranking": "rank-ba963308",
+    "top10": "top10:2026-08-09T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-09T06:00:00.000Z-2026-08-09T07:03:21.923Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-09T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-09T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-09T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-09T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-09T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-09T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1136,
+      "count": 1210,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMigAFBVV95cUxQVTlkeWc5RXc4LUUwU0RlRG5BcEdmcTQ1R2N2WUhwSEhRRnVVVFZvX2hPMUFsZ2gtcFFaYm9McWp4Z0xaZU8zQzhkZUVyYlhpRVdVQ2VaRVpvTEVsNzFLNXcxQ0FlZnUtcE5IYm1yN1RaZU95TUlNeW9nRHJwZ1F4Wg?oc=5",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1283,
+      "count": 1093,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 34,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -109,32 +109,32 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI Pauses Astra After Tests Reveal Autonomous Zero-Day Exploit of Hardened Systems"
+        "headline": "OpenAI Tightens Controls as Astra AI Hits High-Risk Safety Threshold"
       },
       {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Kimi K3 vs DeepSeek V4 Pro: Best Open Source LLM in 2026?"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Chinese Open-Source AI Breach Sparks Hacking Fears"
+      },
+      {
+        "rank": 5,
+        "topic": "platform",
+        "headline": "Stripe Uses Graph Search and State Machines to Automate Database Remediation"
+      },
+      {
+        "rank": 6,
         "topic": "security",
         "headline": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication"
       },
       {
-        "rank": 4,
-        "topic": "security",
-        "headline": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Exclusive: OpenAI slows release of Astra model citing cyber capabilities"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI Unveils Proactive AI Smart Speaker for 2027"
-      },
-      {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:51746: Important: kernel security, bug fix, and enhancement update"
+        "headline": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts"
       },
       {
         "rank": 8,
