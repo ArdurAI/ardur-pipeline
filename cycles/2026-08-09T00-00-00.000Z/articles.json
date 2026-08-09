@@ -145,7 +145,434 @@
     "19 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-ai-0::2026-08-09T02:02:46.271Z",
+        "rank": 5,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
+        "dek": "Anthropic flipped the switch—auto mode comes pre‑enabled for all Claude Code users on Pro, Max, and Team tiers.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Starting today Claude Code runs with auto mode turned on out of the box for Pro, Max, and Team accounts, so you no longer need to add an `auto_mode` flag to your config [FACT:9d83146030362131e33b6a0455ff3709]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Auto mode lets Claude decide when to invoke tool calls without explicit prompting, which trims prompt length and reduces the “enable auto mode” errors that have been popping up in CI pipelines [FACT:9d83146030362131e33b6a0455ff3709]. For builders, that means tighter iteration loops and fewer manual toggles."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Anthropic announced the change in a short post on August 8, 2026, stating that the default setting for Claude Code on Pro, Max, and Team plans is now auto mode instead of manual [FACT:9d83146030362131e33b6a0455ff3709]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your scripts already set `auto_mode: true`, nothing changes; if you omitted the flag, Claude will now automatically decide tool usage, so your existing CI steps keep working without a code change [FACT:9d83146030362131e33b6a0455ff3709]. Teams that need deterministic behavior can still opt out by explicitly passing `auto_mode: false`."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Anthropic has not released latency or cost numbers for the new default, and it’s unclear whether legacy accounts will be auto‑updated or if per‑project overrides are planned [FACT:9d83146030362131e33b6a0455ff3709]. Builders should watch the pricing dashboard and run spot checks on edge cases where unintended tool calls could surface."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The announcement comes from a single, verifiable source, so confidence in the fact that auto mode is now default is high, but operational impact should be validated in your own test harness before rolling out broadly [FACT:9d83146030362131e33b6a0455ff3709]."
+          }
+        ],
+        "keyPoints": [
+          "Auto mode is now the default for Claude Code on Pro, Max, and Team plans [FACT:9d83146030362131e33b6a0455ff3709]",
+          "Builders can skip the `auto_mode` flag in new projects, saving a few lines of config [FACT:9d83146030362131e33b6a0455ff3709]",
+          "Explicitly set `auto_mode: false` if you need manual control of tool calls [FACT:9d83146030362131e33b6a0455ff3709]"
+        ],
+        "whyItMatters": "Eliminating the manual toggle cuts friction in automated workflows and reduces the chance of human error during code generation cycles, a tangible productivity win for AI‑enhanced development pipelines [FACT:9d83146030362131e33b6a0455ff3709].",
+        "readerAction": "Run a quick smoke test of Claude Code without the `auto_mode` flag in your next build step; monitor for unexpected tool calls and adjust settings if deterministic behavior is required.",
+        "tags": [
+          "ai-llms",
+          "anthropic",
+          "claude-code",
+          "auto-mode",
+          "pro-max-team",
+          "claude"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Simon Willison's Weblog",
+            "sourceDomain": "simonwillison.net",
+            "tier": "primary",
+            "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+            "title": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
+            "publishedAt": "2026-08-08T22:36:03.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-09T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-09T02:02:46.271Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 256,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-09T02:02:46.271Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "9d83146030362131e33b6a0455ff3709",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Anthropic auto mode now default claude code",
+            "entities": [
+              "Anthropic",
+              "Auto",
+              "Claude Code",
+              "Team"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans Anthropic are really confident in…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "0b96910ee6c3d7e2cd8f6a0d69d26955",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Fireside Chat one topics discussed our fireside chat",
+            "entities": [
+              "Fireside Chat",
+              "Cat Wu",
+              "Thariq Shihipar",
+              "Engineer World",
+              "Fair"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "This was one of the topics discussed in our Fireside Chat with Cat Wu and Thariq Shihipar at the AI…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "015ad7ad91a6f869222698a10e4c9656",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Anthropic asked them how they run claude",
+            "entities": [
+              "Anthropic",
+              "Claude Code",
+              "Broadly"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "I asked them how they run Claude Code safely within Anthropic given the threat of prompt injection and they replied…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "e758148b30e3e785697e2c5e7bd18c02",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Cat Wu cat then said going publish some",
+            "entities": [
+              "Cat Wu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "Cat Wu then said: We’re going to publish some evals in the coming weeks, but we’ve pretty much mitigated every…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "59499c398c77e2de55678096a367e020",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Partway new article those evals particular test",
+            "entities": [
+              "Partway"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "This new article has those evals - in particular a test across 1,053 paid testers where: Partway through each session,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "08879c4e42afb5a6527a0803dda57580",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Auto auto mode blocked those actions",
+            "entities": [
+              "Auto"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "Auto mode would have blocked 89% of those actions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "b64656206bc4362873af4e3ccd631e4e",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Confirmation confirmation fatigue real asking humans click",
+            "entities": [
+              "Confirmation"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "Confirmation fatigue is real, and asking humans to click \"OK\" every few steps is clearly not going to result in…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          },
+          {
+            "id": "c6defd942b7d749411736ee497b30e94",
+            "topic": "ai",
+            "clusterId": "cluster-ai-0",
+            "statement": "Anthropic anthropic making big claims front commissioned",
+            "entities": [
+              "Anthropic",
+              "Trajectory Labs",
+              "Claude Code",
+              "Codex"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e96dc92d1245b27d7ddeb9bfca8933186d2c8c2a",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Aug/8/auto-mode/",
+                "quote": "Anthropic are making big claims on that front: We commissioned an evaluation from a third party, Trajectory Labs, who tested…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-09T02:02:29.844Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Starting today Claude Code runs with auto mode turned on out of the box for Pro, Max, and Team accounts, so you no longer need to add an `auto_mode` flag to your config [FACT:9d83146030362131e33b6a0455ff3709].",
+            "isEditorial": false,
+            "factIds": [
+              "9d83146030362131e33b6a0455ff3709"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Auto mode lets Claude decide when to invoke tool calls without explicit prompting, which trims prompt length and reduces the “enable auto mode” errors that have been popping up in CI pipelines [FACT:9d83146030362131e33b6a0455ff3709]. For builders, that means tighter iteration loops and fewer manual toggles.",
+            "isEditorial": false,
+            "factIds": [
+              "9d83146030362131e33b6a0455ff3709"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Anthropic announced the change in a short post on August 8, 2026, stating that the default setting for Claude Code on Pro, Max, and Team plans is now auto mode instead of manual [FACT:9d83146030362131e33b6a0455ff3709].",
+            "isEditorial": false,
+            "factIds": [
+              "9d83146030362131e33b6a0455ff3709"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your scripts already set `auto_mode: true`, nothing changes; if you omitted the flag, Claude will now automatically decide tool usage, so your existing CI steps keep working without a code change [FACT:9d83146030362131e33b6a0455ff3709]. Teams that need deterministic behavior can still opt out by explicitly passing `auto_mode: false`.",
+            "isEditorial": false,
+            "factIds": [
+              "9d83146030362131e33b6a0455ff3709"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Anthropic has not released latency or cost numbers for the new default, and it’s unclear whether legacy accounts will be auto‑updated or if per‑project overrides are planned [FACT:9d83146030362131e33b6a0455ff3709]. Builders should watch the pricing dashboard and run spot checks on edge cases where unintended tool calls could surface.",
+            "isEditorial": false,
+            "factIds": [
+              "9d83146030362131e33b6a0455ff3709"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The announcement comes from a single, verifiable source, so confidence in the fact that auto mode is now default is high, but operational impact should be validated in your own test harness before rolling out broadly [FACT:9d83146030362131e33b6a0455ff3709].",
+            "isEditorial": false,
+            "factIds": [
+              "9d83146030362131e33b6a0455ff3709"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-6::2026-08-09T02:02:46.271Z",

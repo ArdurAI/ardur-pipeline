@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-08T18:00:00.000Z",
-    "windowStart": "2026-08-08T18:00:00.000Z",
-    "windowEnd": "2026-08-09T00:00:00.000Z"
+    "id": "2026-08-09T00:00:00.000Z",
+    "windowStart": "2026-08-09T00:00:00.000Z",
+    "windowEnd": "2026-08-09T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-08T18:43:45.319Z",
-  "nextRefreshAt": "2026-08-09T00:00:00.000Z",
+  "publishedAt": "2026-08-09T02:02:29.653Z",
+  "nextRefreshAt": "2026-08-09T06:00:00.000Z",
   "runIds": {
-    "aggregation": "18523162-d87d-4391-bcde-c437e665e858",
-    "ranking": "rank-42075073",
-    "top10": "top10:2026-08-08T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-08T18:00:00.000Z-2026-08-08T18:44:02.323Z"
+    "aggregation": "78ddd3f1-c039-4bff-90b6-f1c442e95c7d",
+    "ranking": "rank-0ecde78c",
+    "top10": "top10:2026-08-09T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-09T00:00:00.000Z-2026-08-09T02:02:46.271Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-08T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-08T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-08T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-09T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-09T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-09T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1132,
+      "count": 1136,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMigAFBVV95cUxQVTlkeWc5RXc4LUUwU0RlRG5BcEdmcTQ1R2N2WUhwSEhRRnVVVFZvX2hPMUFsZ2gtcFFaYm9McWp4Z0xaZU8zQzhkZUVyYlhpRVdVQ2VaRVpvTEVsNzFLNXcxQ0FlZnUtcE5IYm1yN1RaZU95TUlNeW9nRHJwZ1F4Wg?oc=5",
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 7 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1381,
+      "count": 1283,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -71,17 +71,17 @@
       "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,42 +104,42 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI to pause some work on AI model Astra due to security concerns"
+        "headline": "OpenAI acquires presentation startup NextSlide"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:51746: Important: kernel security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 3,
         "topic": "ai",
         "headline": "OpenAI Pauses Astra After Tests Reveal Autonomous Zero-Day Exploit of Hardened Systems"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "topic": "security",
         "headline": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "topic": "security",
         "headline": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts"
       },
       {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Exclusive: OpenAI slows release of Astra model citing cyber capabilities"
+      },
+      {
         "rank": 6,
         "topic": "ai",
-        "headline": "UK caught AI agents inventing fake people to sneak malicious code into open-source software"
+        "headline": "OpenAI Unveils Proactive AI Smart Speaker for 2027"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals"
+        "topic": "security",
+        "headline": "RHSA-2026:51746: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 8,
         "topic": "models",
-        "headline": "Google Endorses SK hynix HBF For AI Inference"
+        "headline": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans"
       },
       {
         "rank": 9,
@@ -148,8 +148,8 @@
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Wafer Storage Containers Market to Reach USD 6.1 Billion by 2035 on Sic and Gan Fab Expansion"
+        "topic": "models",
+        "headline": "AMD AMD Buys Taalas: Is AI Inference the Next Battleground With Nvidia?"
       }
     ],
     "articleCount": 0
