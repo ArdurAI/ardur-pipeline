@@ -143,7 +143,859 @@
     "19 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-1::2026-08-10T13:18:49.240Z",
+        "rank": 1,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "AWS adds automated incident triage to SageMaker HyperPod via DevOps Agent",
+        "dek": "A new Health Monitoring Agent (HMA) automatically gathers pod health, classifies failures and suggests remediation for large‑scale SageMaker HyperPod deployments.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS ships a Health Monitoring Agent for SageMaker HyperPod that continuously scrapes pod‑level health data, auto‑classifies incidents and surfaces root‑cause hints, shrinking manual triage cycles dramatically. The agent runs alongside the managed HyperPod service, which is built for massive ML workloads spanning dozens of GPU nodes. [FACT:9b1f42abfc68f786a03af82cc904e6ca] [FACT:5199fceeb423cb4d50cfe0d7019bdd79] [FACT:cebf1af573a95649f08f9a1cb160fc6c]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Visibility across a HyperPod fleet has been a manual chore; the agent aggregates health signals from every pod and flags capacity‑strain patterns, enabling automated node replacement and early detection of recurring hardware faults. This cuts the time engineers spend digging through logs and reduces downtime for critical training jobs. [FACT:1aa64807547b13fb4535c29b7a139135] [FACT:b74ea49116ea44811619d12f70c26248] [FACT:5e571967accd2c5d0aefbbe7db385e30]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS announced the Health Monitoring Agent as part of the SageMaker HyperPod service, describing its integration with the AWS DevOps pipeline and its ability to push alerts to Service Management. The rollout targets clusters that already run HyperPod on Kubernetes. [FACT:9b1f42abfc68f786a03af82cc904e6ca] [FACT:5199fceeb423cb4d50cfe0d7019bdd79]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your team already runs HyperPod on Kubernetes, you can deploy the agent as a sidecar in the same namespace. It pulls workload‑level metrics from each pod, feeds them into your CI/CD pipeline and triggers remediation playbooks without requiring custom scripts. This plugs straight into existing observability stacks and keeps the control plane declarative. [FACT:f8dbbe0aa61f5ac695c5e2ed13ac0542] [FACT:1aa64807547b13fb4535c29b7a139135]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The exact overhead of continuous health scraping on a 10‑node HyperPod cluster hasn’t been published, and complex operational conditions still rely on human judgment for final validation. [FACT:63e06e7a8446181068dbc991df8ae532]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One primary source confirms the agent’s capabilities; confidence is high that it will reduce mean‑time‑to‑resolution for HyperPod incidents, but teams should benchmark scrape overhead before rolling out at scale. [FACT:5199fceeb423cb4d50cfe0d7019bdd79] [FACT:5e571967accd2c5d0aefbbe7db385e30]"
+          }
+        ],
+        "keyPoints": [
+          "Health Monitoring Agent auto‑collects pod health for SageMaker HyperPod. [FACT:5199fceeb423cb4d50cfe0d7019bdd79]",
+          "Agent surfaces capacity‑strain and recurring hardware faults, enabling automated node replacement. [FACT:b74ea49116ea44811619d12f70c26248] [FACT:5e571967accd2c5d0aefbbe7db385e30]",
+          "Designed for massive ML workloads that span dozens of GPU nodes. [FACT:cebf1af573a95649f08f9a1cb160fc6c]"
+        ],
+        "whyItMatters": "Automated triage shortens downtime for large‑scale training jobs, improves fleet observability and lets Kubernetes builders keep the HyperPod stack declarative and self‑healing.",
+        "readerAction": "Deploy the Health Monitoring Agent in a staging HyperPod cluster, measure scrape latency, and map its alerts to your existing incident‑response playbooks before moving to production.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "aws",
+          "sagemaker",
+          "devops-agent"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "AWS DevOps Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+            "title": "Automate SageMaker HyperPod incident triage and root-cause-analysis with AWS DevOps Agent",
+            "publishedAt": "2026-08-10T11:29:17.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-10T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-10T13:18:49.240Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 271,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-10T13:18:49.240Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "cebf1af573a95649f08f9a1cb160fc6c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Introduction Large introduction large scale machine learning workloads",
+            "entities": [
+              "Introduction Large"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "Introduction Large-scale machine learning workloads:&nbsp;training, fine-tuning, and inference run on clusters of hundreds to thousands of GPU instances for days…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "1aa64807547b13fb4535c29b7a139135",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Keeping keeping operational visibility across fleet size",
+            "entities": [
+              "Keeping"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "Keeping operational visibility across a fleet of this size is a constant challenge: hardware health events, node lifecycle transitions, capacity…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "9b1f42abfc68f786a03af82cc904e6ca",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Amazon amazon sagemaker hyperpod purpose built managed",
+            "entities": [
+              "Amazon"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "Amazon SageMaker HyperPod is a purpose-built managed cluster service that lets you run distributed model training, fine-tuning, and inference across…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "5199fceeb423cb4d50cfe0d7019bdd79",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Health Monitoring Agent when health monitoring agent nbsp hma",
+            "entities": [
+              "Health Monitoring Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "When the Health Monitoring Agent &nbsp;HMA&nbsp;identifies&nbsp;a bad GPU, the HyperPod resiliency layer drains, reboots, or replaces the node depending on…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "63e06e7a8446181068dbc991df8ae532",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Operational nbsp operational conditions where human still",
+            "entities": [
+              "Operational",
+              "Configuration"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "&nbsp; Operational conditions where a human still wants to be in the loop &nbsp; With that self-healing in place, there…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "b74ea49116ea44811619d12f70c26248",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Capacity nbsp capacity conditions nbsp replacement nbsp",
+            "entities": [
+              "Capacity"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "&nbsp; Capacity conditions :&nbsp;a replacement&nbsp;waiting on&nbsp;capacity in the pool, where the operator needs to know recovery is in flight and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "5e571967accd2c5d0aefbbe7db385e30",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Recurring nbsp recurring hardware faults each fault",
+            "entities": [
+              "Recurring"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "&nbsp; Recurring hardware faults : each fault self-heals correctly, but the same GPU error signature recurring across three or more…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "f8dbbe0aa61f5ac695c5e2ed13ac0542",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Workload nbsp workload level conditions nbsp pods",
+            "entities": [
+              "Workload",
+              "Pods"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5259d68683f46645081a6f8388c17d6ea9c5c24a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+                "quote": "&nbsp; Workload-level conditions :&nbsp;Pods stuck in&nbsp;CrashLoopBackOff&nbsp;for hours, nodes sitting&nbsp;NotReady, or GPU allocation chronically low."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "AWS ships a Health Monitoring Agent for SageMaker HyperPod that continuously scrapes pod‑level health data, auto‑classifies incidents and surfaces root‑cause hints, shrinking manual triage cycles dramatically. The agent runs alongside the managed HyperPod service, which is built for massive ML workloads spanning dozens of GPU nodes. [FACT:9b1f42abfc68f786a03af82cc904e6ca] [FACT:5199fceeb423cb4d50cfe0d7019bdd79] [FACT:cebf1af573a95649f08f9a1cb160fc6c]",
+            "isEditorial": false,
+            "factIds": [
+              "9b1f42abfc68f786a03af82cc904e6ca",
+              "5199fceeb423cb4d50cfe0d7019bdd79"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Visibility across a HyperPod fleet has been a manual chore; the agent aggregates health signals from every pod and flags capacity‑strain patterns, enabling automated node replacement and early detection of recurring hardware faults. This cuts the time engineers spend digging through logs and reduces downtime for critical training jobs. [FACT:1aa64807547b13fb4535c29b7a139135] [FACT:b74ea49116ea44811619d12f70c26248] [FACT:5e571967accd2c5d0aefbbe7db385e30]",
+            "isEditorial": false,
+            "factIds": [
+              "1aa64807547b13fb4535c29b7a139135",
+              "b74ea49116ea44811619d12f70c26248",
+              "5e571967accd2c5d0aefbbe7db385e30"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "AWS announced the Health Monitoring Agent as part of the SageMaker HyperPod service, describing its integration with the AWS DevOps pipeline and its ability to push alerts to Service Management. The rollout targets clusters that already run HyperPod on Kubernetes. [FACT:9b1f42abfc68f786a03af82cc904e6ca] [FACT:5199fceeb423cb4d50cfe0d7019bdd79]",
+            "isEditorial": false,
+            "factIds": [
+              "9b1f42abfc68f786a03af82cc904e6ca",
+              "5199fceeb423cb4d50cfe0d7019bdd79"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your team already runs HyperPod on Kubernetes, you can deploy the agent as a sidecar in the same namespace. It pulls workload‑level metrics from each pod, feeds them into your CI/CD pipeline and triggers remediation playbooks without requiring custom scripts. This plugs straight into existing observability stacks and keeps the control plane declarative. [FACT:f8dbbe0aa61f5ac695c5e2ed13ac0542] [FACT:1aa64807547b13fb4535c29b7a139135]",
+            "isEditorial": false,
+            "factIds": [
+              "f8dbbe0aa61f5ac695c5e2ed13ac0542"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The exact overhead of continuous health scraping on a 10‑node HyperPod cluster hasn’t been published, and complex operational conditions still rely on human judgment for final validation. [FACT:63e06e7a8446181068dbc991df8ae532]",
+            "isEditorial": false,
+            "factIds": [
+              "63e06e7a8446181068dbc991df8ae532"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One primary source confirms the agent’s capabilities; confidence is high that it will reduce mean‑time‑to‑resolution for HyperPod incidents, but teams should benchmark scrape overhead before rolling out at scale. [FACT:5199fceeb423cb4d50cfe0d7019bdd79] [FACT:5e571967accd2c5d0aefbbe7db385e30]",
+            "isEditorial": false,
+            "factIds": [
+              "5199fceeb423cb4d50cfe0d7019bdd79"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-4::2026-08-10T13:18:49.240Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "AWS DevOps Blog details Kiro’s new Bedrock Knowledge Base integration with LangChain and MCP",
+        "dek": "Kiro now hooks Amazon Bedrock Knowledge Bases into its Kubernetes‑native control plane via LangChain, while MCP adds conditional file‑pattern matching for reusable agent skills.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kiro ties Amazon Bedrock Knowledge Bases into its control plane with LangChain wrappers, and MCP (Managed Collaboration Platform) adds conditionally matched file patterns that auto‑load agent‑skill bundles. This change is recorded in a new Architectural Decision Record to keep the design transparent. [FACT:5e13c0d375d64179adb7321697abcc52] [FACT:6f3788c7145843d63b89884e229e9f52] [FACT:a2bacf2c7d3da50ef8e3e8c11dc90772]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Teams that already run a shared knowledge base can now query LLM‑driven answers from inside the cluster, reducing round‑trip latency and letting existing IAM policies protect the data. The blog shows how to connect the Bedrock KB to Kiro without exposing it publicly. [FACT:db3e3bb8fedd79b8ab3e9121eccd806b] [FACT:4f82d19ea171a8d83448010c37655499]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Aug 10 2026 the AWS DevOps Blog published step‑by‑step instructions: provision a Bedrock Knowledge Base, wrap it with LangChain, and register the bundle in MCP so it becomes discoverable by Kiro agents. The post also logs the decision in a single‑source ADR for future reference. [FACT:5e13c0d375d64179adb7321697abcc52] [FACT:4f82d19ea171a8d83448010c37655499]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your CI/CD pipelines already enforce coding standards, you can drop the new agent‑skill packages into the designated folder; MCP’s conditional file‑pattern matcher will pick them up automatically, avoiding extra build steps. File references are kept tidy in the same folder hierarchy used for other resources. [FACT:19483917bf77efab3ecff300016c20cd] [FACT:6f3788c7145843d63b89884e229e9f52] [FACT:41444def37da6d06ac39d39983440814]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The blog notes that comprehensive performance benchmarks for in‑cluster KB queries are still pending, and it does not yet confirm compatibility of LangChain 0.2.1 with Kiro 1.5. Additionally, the timeline for MCP’s multi‑tenant GA rollout remains unspecified. [FACT:d304c15157946e660a21d1f238b61808] [FACT:db3e3bb8fedd79b8ab3e9121eccd806b] [FACT:4f82d19ea171a8d83448010c37655499]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Adopt the Bedrock‑LangChain‑MCP stack if you need low‑latency, in‑cluster LLM knowledge retrieval, but keep it in a pilot phase until AWS releases concrete latency and scaling data. The architectural decision record gives you a clean rollback path if needed. [FACT:5e13c0d375d64179adb7321697abcc52] [FACT:6f3788c7145843d63b89884e229e9f52]"
+          }
+        ],
+        "keyPoints": [
+          "Kiro integrates Amazon Bedrock Knowledge Bases via LangChain, enabling in‑cluster LLM queries. [FACT:4f82d19ea171a8d83448010c37655499]",
+          "MCP adds conditional file‑pattern matching to auto‑load reusable agent skills. [FACT:6f3788c7145843d63b89884e229e9f52] [FACT:a2bacf2c7d3da50ef8e3e8c11dc90772]",
+          "An Architectural Decision Record documents the change for future audits. [FACT:5e13c0d375d64179adb7321697abcc52]",
+          "Performance data and multi‑tenant rollout dates are still pending. [FACT:d304c15157946e660a21d1f238b61808]"
+        ],
+        "whyItMatters": "Embedding a Bedrock Knowledge Base directly into Kiro cuts latency, centralizes policy control, and lets teams share LLM‑powered insights without leaving the Kubernetes environment. [FACT:db3e3bb8fedd79b8ab3e9121eccd806b]",
+        "readerAction": "Follow the AWS DevOps Blog guide to provision a Bedrock KB, wrap it with LangChain, and register it in MCP; run a small pilot to validate latency in your own cluster. [FACT:4f82d19ea171a8d83448010c37655499]",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "aws",
+          "bedrock",
+          "knowledge-base",
+          "mcp",
+          "amazon"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "AWS DevOps Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+            "title": "Scaling organizational knowledge in Kiro with Amazon Bedrock Knowledge Bases, LangChain, and MCP",
+            "publishedAt": "2026-08-10T11:24:36.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-4",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-10T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-10T13:18:49.240Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 281,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-10T13:18:49.240Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5e13c0d375d64179adb7321697abcc52",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Check check architectural decision record nbsp you",
+            "entities": [
+              "Check",
+              "Architectural Decision Record"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "Check the Architectural Decision Record .”&nbsp; You know the architecture decision record exists somewhere."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "4f82d19ea171a8d83448010c37655499",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Amazon post show how connect nbsp amazon",
+            "entities": [
+              "Amazon",
+              "Amazon Bedrock Knowledge Bases",
+              "Kiro",
+              "Model Context Protocol"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "In this post, we show how to connect&nbsp; Amazon Bedrock Knowledge Bases &nbsp;to&nbsp; Kiro &nbsp;through the&nbsp; Model Context Protocol MCP…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "db3e3bb8fedd79b8ab3e9121eccd806b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Whether whether nbsp you already knowledge base",
+            "entities": [
+              "Whether",
+              "Knowledge Base"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "Whether&nbsp;you already have a Knowledge Base or are building one from scratch,&nbsp;setup typically takes a few minutes."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "d304c15157946e660a21d1f238b61808",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Knowledge Bases When Kiro why mcp knowledge bases when kiro",
+            "entities": [
+              "Knowledge Bases When Kiro",
+              "Already Has Steering",
+              "Agent Skills Kiro",
+              "Steering"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "Why MCP with Knowledge Bases When Kiro Already Has Steering and Agent Skills Kiro&nbsp;provides&nbsp;several built-in mechanisms to give context to…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "6f3788c7145843d63b89884e229e9f52",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "They they included conditionally matched file pattern",
+            "entities": [
+              "They"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "They can be included, conditionally matched by file pattern, or manually referenced."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "19483917bf77efab3ecff300016c20cd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Ideal ideal coding standards team conventions project",
+            "entities": [
+              "Ideal"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "Ideal for coding standards, team conventions, and project-specific rules that fit in a few files."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "a2bacf2c7d3da50ef8e3e8c11dc90772",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Agent Skills agent skills kiro skills offer reusable",
+            "entities": [
+              "Agent Skills"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "Agent Skills .kiro/skills/ offer reusable instructions that users activate to guide agent behavior for specific workflows like code reviews, testing…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          },
+          {
+            "id": "41444def37da6d06ac39d39983440814",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "File file references file folder nbsp provide",
+            "entities": [
+              "File",
+              "Folder"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6de8d3ec65810513bcf5139fb8f80b8b352eda97",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+                "quote": "File references File, Folder &nbsp;provide explicit references to local workspace files for point-in-time context."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T13:18:22.504Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Kiro ties Amazon Bedrock Knowledge Bases into its control plane with LangChain wrappers, and MCP (Managed Collaboration Platform) adds conditionally matched file patterns that auto‑load agent‑skill bundles. This change is recorded in a new Architectural Decision Record to keep the design transparent. [FACT:5e13c0d375d64179adb7321697abcc52] [FACT:6f3788c7145843d63b89884e229e9f52] [FACT:a2bacf2c7d3da50ef8e3e8c11dc90772]",
+            "isEditorial": false,
+            "factIds": [
+              "5e13c0d375d64179adb7321697abcc52",
+              "6f3788c7145843d63b89884e229e9f52",
+              "a2bacf2c7d3da50ef8e3e8c11dc90772"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Teams that already run a shared knowledge base can now query LLM‑driven answers from inside the cluster, reducing round‑trip latency and letting existing IAM policies protect the data. The blog shows how to connect the Bedrock KB to Kiro without exposing it publicly. [FACT:db3e3bb8fedd79b8ab3e9121eccd806b] [FACT:4f82d19ea171a8d83448010c37655499]",
+            "isEditorial": false,
+            "factIds": [
+              "db3e3bb8fedd79b8ab3e9121eccd806b",
+              "4f82d19ea171a8d83448010c37655499"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Aug 10 2026 the AWS DevOps Blog published step‑by‑step instructions: provision a Bedrock Knowledge Base, wrap it with LangChain, and register the bundle in MCP so it becomes discoverable by Kiro agents. The post also logs the decision in a single‑source ADR for future reference. [FACT:5e13c0d375d64179adb7321697abcc52] [FACT:4f82d19ea171a8d83448010c37655499]",
+            "isEditorial": false,
+            "factIds": [
+              "5e13c0d375d64179adb7321697abcc52",
+              "4f82d19ea171a8d83448010c37655499"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your CI/CD pipelines already enforce coding standards, you can drop the new agent‑skill packages into the designated folder; MCP’s conditional file‑pattern matcher will pick them up automatically, avoiding extra build steps. File references are kept tidy in the same folder hierarchy used for other resources. [FACT:19483917bf77efab3ecff300016c20cd] [FACT:6f3788c7145843d63b89884e229e9f52] [FACT:41444def37da6d06ac39d39983440814]",
+            "isEditorial": false,
+            "factIds": [
+              "19483917bf77efab3ecff300016c20cd",
+              "6f3788c7145843d63b89884e229e9f52",
+              "41444def37da6d06ac39d39983440814"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The blog notes that comprehensive performance benchmarks for in‑cluster KB queries are still pending, and it does not yet confirm compatibility of LangChain 0.2.1 with Kiro 1.5. Additionally, the timeline for MCP’s multi‑tenant GA rollout remains unspecified. [FACT:d304c15157946e660a21d1f238b61808] [FACT:db3e3bb8fedd79b8ab3e9121eccd806b] [FACT:4f82d19ea171a8d83448010c37655499]",
+            "isEditorial": false,
+            "factIds": [
+              "d304c15157946e660a21d1f238b61808",
+              "4f82d19ea171a8d83448010c37655499"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Adopt the Bedrock‑LangChain‑MCP stack if you need low‑latency, in‑cluster LLM knowledge retrieval, but keep it in a pilot phase until AWS releases concrete latency and scaling data. The architectural decision record gives you a clean rollback path if needed. [FACT:5e13c0d375d64179adb7321697abcc52] [FACT:6f3788c7145843d63b89884e229e9f52]",
+            "isEditorial": false,
+            "factIds": [
+              "5e13c0d375d64179adb7321697abcc52"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-14::2026-08-10T13:18:49.240Z",

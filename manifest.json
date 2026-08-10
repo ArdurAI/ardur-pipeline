@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-10T06:00:00.000Z",
-    "windowStart": "2026-08-10T06:00:00.000Z",
-    "windowEnd": "2026-08-10T12:00:00.000Z"
+    "id": "2026-08-10T12:00:00.000Z",
+    "windowStart": "2026-08-10T12:00:00.000Z",
+    "windowEnd": "2026-08-10T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-10T07:49:32.740Z",
-  "nextRefreshAt": "2026-08-10T12:00:00.000Z",
+  "publishedAt": "2026-08-10T13:18:22.306Z",
+  "nextRefreshAt": "2026-08-10T18:00:00.000Z",
   "runIds": {
-    "aggregation": "38836e0d-9ddb-4481-ba7b-672f6e2debd3",
-    "ranking": "rank-4db32332",
-    "top10": "top10:2026-08-10T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-10T06:00:00.000Z-2026-08-10T07:49:44.889Z"
+    "aggregation": "be1af78b-520e-4bcb-b51e-82b2d7314e77",
+    "ranking": "rank-f5c18ee0",
+    "top10": "top10:2026-08-10T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-10T12:00:00.000Z-2026-08-10T13:18:49.240Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-10T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-10T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-10T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-10T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-10T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-10T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 63,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1262,
+      "count": 1142,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 989,
+      "count": 1227,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 18,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Anthropic is turning Claude Code’s auto mode on by default"
+        "topic": "security",
+        "headline": "RHSA-2026:52772: Important: perl-DBI:1.641 security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:52649: Important: kernel security update"
+        "headline": "RHSA-2026:52765: Moderate: kernel security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "OSL debuts AgentPay to enable stablecoin payments by AI agents"
+        "headline": "Meta launches new AI model as Zuckerberg champions open-weight push"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:52393: Moderate: modmd security update"
+        "topic": "ai",
+        "headline": "Meta to open source its most powerful AI model as it takes swipe at OpenAI, Anthropic"
       },
       {
         "rank": 5,
         "topic": "platform",
-        "headline": "MiDojo: Improve AI agent security with real-world red-teaming"
+        "headline": "Security updates for Monday"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Harden local container base images in Podman Desktop"
+        "topic": "security",
+        "headline": "RHSA-2026:52832: Important: RHELAI 3.0 Backport fixes for CVE-2026-64835 and CVE-2026-58049"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Cathie Wood Says Open Source AI Is Making OpenAI and Anthropic Richer, Not Poorer"
+        "topic": "security",
+        "headline": "Metabase Patches Vulnerability Exploited as Zero-Day"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI unveils new ChatGPT models, adds security features for teens"
+        "topic": "models",
+        "headline": "AMD acquires Taalas to reshape AI inference"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Kernel prepatch 7.2-rc7"
+        "topic": "ai",
+        "headline": "Meta Debuts New AI Model as CEO Shares ‘AI for Everyone’ Vision"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Fecal Sample Containers Livestock Market to Reach Index 200 by 2035 on Automated Diagnostics Demand"
+        "topic": "ai",
+        "headline": "Meta Announces New AI Model That Can Run Without an Internet Connection"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
