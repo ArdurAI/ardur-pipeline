@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-09T18:00:00.000Z",
-    "windowStart": "2026-08-09T18:00:00.000Z",
-    "windowEnd": "2026-08-10T00:00:00.000Z"
+    "id": "2026-08-10T00:00:00.000Z",
+    "windowStart": "2026-08-10T00:00:00.000Z",
+    "windowEnd": "2026-08-10T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-09T18:48:07.063Z",
-  "nextRefreshAt": "2026-08-10T00:00:00.000Z",
+  "publishedAt": "2026-08-10T02:07:01.703Z",
+  "nextRefreshAt": "2026-08-10T06:00:00.000Z",
   "runIds": {
-    "aggregation": "0f2c5521-3d98-4168-bf3a-149cc3ba4540",
-    "ranking": "rank-a6b3b693",
-    "top10": "top10:2026-08-09T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-09T18:00:00.000Z-2026-08-09T18:48:21.018Z"
+    "aggregation": "0fdbf1be-4c9f-445a-b9a2-74be5e875d63",
+    "ranking": "rank-f6c75e2e",
+    "top10": "top10:2026-08-10T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-10T00:00:00.000Z-2026-08-10T02:07:21.593Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-09T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-09T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-09T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-10T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-10T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-10T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1252,
+      "count": 1273,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1030,
+      "count": 976,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 18,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 40,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 10,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Weekly Cyber Security Newsletter — OWASP Top 10 for LLM, Cisco IOS XE Flaw, and 1-Click Cursor RCE +20..."
+        "headline": "Anthropic is turning Claude Code’s auto mode on by default"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI Pauses Development on Powerful Astra Model Over Autonomous Cyberattack Risks"
+        "topic": "security",
+        "headline": "RHSA-2026:52389: Important: osbuild-composer security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "How a small Israeli startup was linked to rogue AI hacks at OpenAI, Anthropic and Meta"
+        "topic": "security",
+        "headline": "RHSA-2026:52397: Important: xorg-x11-server-Xwayland security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI acquires presentation startup NextSlide"
+        "topic": "security",
+        "headline": "RHSA-2026:52393: Moderate: modmd security update"
       },
       {
         "rank": 5,
         "topic": "platform",
-        "headline": "Platform Engineering ROI: What it costs to build your own platform"
+        "headline": "Kernel prepatch 7.2-rc7"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "Google Deepmind&039;s WeatherNext predicts cyclone tracks and intensity at the same time"
+        "topic": "ai",
+        "headline": "OpenAI Picks Up AI Presentation Creator NextSlide"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "OpenRelay launches from YC S26 with distributed GPU cloud for AI inference"
+        "topic": "security",
+        "headline": "ISC Stormcast For Monday, August 10th, 2026 https://isc.sans.edu/podcastdetail/10044, Mon, Aug 10th"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Coding agents can be evaluated. We just have to evaluate the work."
+        "topic": "ai",
+        "headline": "Cloudflare unveils Kitesurf, browser designed for AI agents"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "AI coding got faster. Why didn’t engineering?"
+        "topic": "ai",
+        "headline": "Quoting Claude Opus 5 system prompt"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication"
+        "topic": "platform",
+        "headline": "Platform Engineering ROI: What it costs to build your own platform"
       }
     ],
     "articleCount": 0

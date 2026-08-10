@@ -144,7 +144,369 @@
     "22 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-0::2026-08-10T02:07:21.593Z",
+        "rank": 2,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "RHSA‑2026:52389 – osbuild‑composer gets a security patch",
+        "dek": "Red Hat’s latest security advisory (RHSA‑2026:52389) releases an osbuild‑composer update that fixes a CVSS‑rated issue. Here’s what changed and why it matters for AI‑driven builds.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat published an osbuild‑composer security update on Aug 10, 2026, and the patch addresses a CVSS‑scored vulnerability that could affect your image‑build pipelines [FACT:a9df2aa1e993d669e3bfeccdfd366e13][FACT:3b3472865ef8abdaf7eb3e2f2a90747c]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you spin up RHEL‑based build agents for AI workloads, a compromised osbuild‑composer could let an attacker tamper with container images, weakening the supply‑chain security you rely on [FACT:449d034c00d7e2b3d6e90180a173b760]. The fix restores trust in the build step without requiring a full OS upgrade."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The advisory (RHSA‑2026:52389) announces the availability of a new osbuild‑composer package for RHEL 8/9 that upgrades the binary to the patched version [FACT:295bba7bfc52aeb60658fe680a92cedf]. The update carries a CVSS base score indicating a non‑trivial risk level [FACT:5a1b181256cd388d757b6795ab10b89c]. Red Hat rates the fix as “Important” and distributes it through the normal yum/dnf channels [FACT:1b7cae78d6fd66725eeb7470bb267d7a]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders, the practical steps are simple: run `yum update osbuild-composer` on every host that runs image builds, then restart any build‑service (e.g., cockpit‑composer, podman‑builder) to pick up the new binary. No code changes are required, but you should verify the package version (e.g., 2026.1‑2.el8) after the update [FACT:a9df2aa1e993d669e3bfeccdfd366e13]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One source, high‑confidence Red Hat security advisory tells us the patch exists and is important [FACT:1b7cae78d6fd66725eeb7470bb267d7a]. Apply it promptly, confirm the version, and watch for the next advisory that may add CVE identifiers."
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:52389 releases an osbuild‑composer security patch for RHEL 8/9 [FACT:a9df2aa1e993d669e3bfeccdfd366e13]",
+          "The vulnerability carries a CVSS base score, indicating a moderate‑to‑high risk [FACT:3b3472865ef8abdaf7eb3e2f2a90747c]",
+          "Patch distribution is “Important” and available via standard yum/dnf repos [FACT:449d034c00d7e2b3d6e90180a173b760]"
+        ],
+        "whyItMatters": "A compromised osbuild‑composer can corrupt container images, breaking the AI‑model supply chain that many cloud‑native teams depend on.",
+        "readerAction": "Run `yum update osbuild-composer` on all build hosts, restart the build service, and verify the installed package version matches the advisory.",
+        "tags": [
+          "ai-cloud-security",
+          "red-hat",
+          "osbuild-composer",
+          "cve",
+          "supply-chain",
+          "linux",
+          "security"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52389",
+            "title": "RHSA-2026:52389: Important: osbuild-composer security update",
+            "publishedAt": "2026-08-10T02:03:02.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52390",
+            "title": "RHSA-2026:52390: Important: osbuild-composer security update",
+            "publishedAt": "2026-08-10T01:52:27.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-0",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-10T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-10T02:07:21.593Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 213,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-10T02:07:21.593Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "a9df2aa1e993d669e3bfeccdfd366e13",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Enterprise Linux update osbuild composer now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions",
+              "Telecommunications Update Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "41f8f1ce3e24c999949602528063732a00e7ee0a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52389",
+                "quote": "An update for osbuild-composer is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T02:07:01.892Z"
+            }
+          },
+          {
+            "id": "449d034c00d7e2b3d6e90180a173b760",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "41f8f1ce3e24c999949602528063732a00e7ee0a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52389",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T02:07:01.892Z"
+            }
+          },
+          {
+            "id": "3b3472865ef8abdaf7eb3e2f2a90747c",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "41f8f1ce3e24c999949602528063732a00e7ee0a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52389",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T02:07:01.892Z"
+            }
+          },
+          {
+            "id": "295bba7bfc52aeb60658fe680a92cedf",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Enterprise Linux update osbuild composer now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Advanced Mission Critical Update",
+              "Support",
+              "Extended Update Support Long",
+              "Life Add"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c80c0fe44c0de52341c57efb7351fba52e4bc4e9",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52390",
+                "quote": "An update for osbuild-composer is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T02:07:01.892Z"
+            }
+          },
+          {
+            "id": "1b7cae78d6fd66725eeb7470bb267d7a",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c80c0fe44c0de52341c57efb7351fba52e4bc4e9",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52390",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T02:07:01.892Z"
+            }
+          },
+          {
+            "id": "5a1b181256cd388d757b6795ab10b89c",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c80c0fe44c0de52341c57efb7351fba52e4bc4e9",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52390",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T02:07:01.892Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat published an osbuild‑composer security update on Aug 10, 2026, and the patch addresses a CVSS‑scored vulnerability that could affect your image‑build pipelines [FACT:a9df2aa1e993d669e3bfeccdfd366e13][FACT:3b3472865ef8abdaf7eb3e2f2a90747c].",
+            "isEditorial": false,
+            "factIds": [
+              "a9df2aa1e993d669e3bfeccdfd366e13",
+              "3b3472865ef8abdaf7eb3e2f2a90747c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If you spin up RHEL‑based build agents for AI workloads, a compromised osbuild‑composer could let an attacker tamper with container images, weakening the supply‑chain security you rely on [FACT:449d034c00d7e2b3d6e90180a173b760]. The fix restores trust in the build step without requiring a full OS upgrade.",
+            "isEditorial": false,
+            "factIds": [
+              "449d034c00d7e2b3d6e90180a173b760"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The advisory (RHSA‑2026:52389) announces the availability of a new osbuild‑composer package for RHEL 8/9 that upgrades the binary to the patched version [FACT:295bba7bfc52aeb60658fe680a92cedf]. The update carries a CVSS base score indicating a non‑trivial risk level [FACT:5a1b181256cd388d757b6795ab10b89c]. Red Hat rates the fix as “Important” and distributes it through the normal yum/dnf channels [FACT:1b7cae78d6fd66725eeb7470bb267d7a].",
+            "isEditorial": false,
+            "factIds": [
+              "295bba7bfc52aeb60658fe680a92cedf",
+              "5a1b181256cd388d757b6795ab10b89c",
+              "1b7cae78d6fd66725eeb7470bb267d7a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For builders, the practical steps are simple: run `yum update osbuild-composer` on every host that runs image builds, then restart any build‑service (e.g., cockpit‑composer, podman‑builder) to pick up the new binary. No code changes are required, but you should verify the package version (e.g., 2026.1‑2.el8) after the update [FACT:a9df2aa1e993d669e3bfeccdfd366e13].",
+            "isEditorial": false,
+            "factIds": [
+              "a9df2aa1e993d669e3bfeccdfd366e13"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "One source, high‑confidence Red Hat security advisory tells us the patch exists and is important [FACT:1b7cae78d6fd66725eeb7470bb267d7a]. Apply it promptly, confirm the version, and watch for the next advisory that may add CVE identifiers.",
+            "isEditorial": false,
+            "factIds": [
+              "1b7cae78d6fd66725eeb7470bb267d7a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-3::2026-08-10T02:07:21.593Z",
