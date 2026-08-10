@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-10T00:00:00.000Z",
-    "windowStart": "2026-08-10T00:00:00.000Z",
-    "windowEnd": "2026-08-10T06:00:00.000Z"
+    "id": "2026-08-10T06:00:00.000Z",
+    "windowStart": "2026-08-10T06:00:00.000Z",
+    "windowEnd": "2026-08-10T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-10T02:07:01.703Z",
-  "nextRefreshAt": "2026-08-10T06:00:00.000Z",
+  "publishedAt": "2026-08-10T07:49:32.740Z",
+  "nextRefreshAt": "2026-08-10T12:00:00.000Z",
   "runIds": {
-    "aggregation": "0fdbf1be-4c9f-445a-b9a2-74be5e875d63",
-    "ranking": "rank-f6c75e2e",
-    "top10": "top10:2026-08-10T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-10T00:00:00.000Z-2026-08-10T02:07:21.593Z"
+    "aggregation": "38836e0d-9ddb-4481-ba7b-672f6e2debd3",
+    "ranking": "rank-4db32332",
+    "top10": "top10:2026-08-10T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-10T06:00:00.000Z-2026-08-10T07:49:44.889Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-10T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-10T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-10T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-10T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-10T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-10T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1273,
+      "count": 1262,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 976,
+      "count": 989,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -109,12 +109,12 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:52389: Important: osbuild-composer security update"
+        "headline": "RHSA-2026:52649: Important: kernel security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:52397: Important: xorg-x11-server-Xwayland security update"
+        "topic": "ai",
+        "headline": "OSL debuts AgentPay to enable stablecoin payments by AI agents"
       },
       {
         "rank": 4,
@@ -124,34 +124,34 @@
       {
         "rank": 5,
         "topic": "platform",
-        "headline": "Kernel prepatch 7.2-rc7"
+        "headline": "MiDojo: Improve AI agent security with real-world red-teaming"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI Picks Up AI Presentation Creator NextSlide"
+        "topic": "platform",
+        "headline": "Harden local container base images in Podman Desktop"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "ISC Stormcast For Monday, August 10th, 2026 https://isc.sans.edu/podcastdetail/10044, Mon, Aug 10th"
+        "topic": "ai",
+        "headline": "Cathie Wood Says Open Source AI Is Making OpenAI and Anthropic Richer, Not Poorer"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Cloudflare unveils Kitesurf, browser designed for AI agents"
+        "headline": "OpenAI unveils new ChatGPT models, adds security features for teens"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Quoting Claude Opus 5 system prompt"
+        "topic": "platform",
+        "headline": "Kernel prepatch 7.2-rc7"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Platform Engineering ROI: What it costs to build your own platform"
+        "topic": "kubernetes",
+        "headline": "Fecal Sample Containers Livestock Market to Reach Index 200 by 2035 on Automated Diagnostics Demand"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
