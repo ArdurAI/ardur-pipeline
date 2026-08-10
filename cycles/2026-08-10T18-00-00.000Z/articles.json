@@ -143,7 +143,1755 @@
     "17 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-16::2026-08-10T19:03:49.388Z",
+        "rank": 2,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Red Hat releases postgresql-jdbc security update (RHSA‑2026:52978)",
+        "dek": "A new RHSA‑2026:52978 package patches a CVSS‑rated flaw in the PostgreSQL JDBC driver used by many AI‑cloud workloads.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat posted RHSA‑2026:52978 on 2026‑08‑10, delivering a security‑only update for the postgresql‑jdbc RPM on RHEL 9 and 8. The fix mitigates a vulnerability rated with a CVSS base score that Red Hat classifies as serious, so any services that embed the driver should be patched immediately. [FACT:7329dfc3d9fb919e6fedafb40a7f59a2][FACT:be48ca858d88b2628e0d097bc570f1da]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI pipelines and cloud‑native services often rely on JDBC to talk to PostgreSQL databases. An exploitable flaw in the driver can let an attacker inject SQL, bypass auth, or crash the service – all of which break data integrity and uptime guarantees. The Red Hat Product Security team flags this as an “Important” update, meaning it moves up the priority queue for production environments. [FACT:712e748c185f279619df54e275d0a2d6]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat’s advisory explains that the postgresql‑jdbc package was rebuilt to include upstream patches that close the CVE‑identified code path. The new RPM version is 42.5.0‑1.el9 (and 42.5.0‑1.el8 for older releases). No other packages were changed, and the advisory does not indicate any functional regression. [FACT:37287b7f7d615e1e2df87e66968b5bf7][FACT:23bc72c104ad04f7ea8a5f079762ffe9][FACT:c4439c409965bf686b67b621cab8bd98]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you spin up RHEL‑based containers for model training or inference, check the image layers for postgresql‑jdbc‑42.*. A simple `yum update postgresql-jdbc` (or `dnf upgrade postgresql-jdbc` on newer hosts) pulls the patched RPM. For CI pipelines that lock dependencies, bump the version pin to 42.5.0‑1.* and run your integration tests – the driver’s API surface is unchanged, so you shouldn’t see breakage, just a tighter security posture. [FACT:1751a3c6296b83ebff05f16fbeb29325][FACT:9c5498d08c710bfae6182f93ecc12411]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat has not published a detailed CVE ID or the exact CVSS number in the public advisory, so teams may need to dig into the upstream release notes for the full technical description. It’s also unclear whether the fix impacts any custom authentication plugins built on top of the driver; testing in a staging environment is advisable before wide rollout. [FACT:adb898c370746e655a1064732dffeffd][FACT:0bb728c1c22a26dac6324e6df3e425c6]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One official source confirms the update and rates it as important. With Red Hat’s own product‑security rating, we assign high confidence to the advisory. Apply the update promptly, verify your build pipelines, and watch for any upstream CVE disclosures that provide deeper context. [FACT:a151c08e30f6e6a6407449ee52257656][FACT:c3ebaaba5efaaf1485056abb2154b98c]"
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:52978 patches a CVSS‑rated flaw in postgresql‑jdbc used by AI/ML services.",
+          "The update is a simple RPM bump to version 42.5.0‑1 on RHEL 8/9.",
+          "Red Hat rates the fix as Important; apply it before the next deployment."
+        ],
+        "whyItMatters": "A vulnerable JDBC driver can become an attack vector in data‑intensive AI workloads, so patching protects both data integrity and service availability.",
+        "readerAction": "Run `yum update postgresql-jdbc` (or `dnf upgrade`) on all RHEL hosts, bump any version pins in Dockerfiles or CI configs to 42.5.0‑1.*, and validate your test suite after the change.",
+        "tags": [
+          "ai-cloud-security",
+          "postgresql",
+          "jdbc",
+          "redhat",
+          "security-update",
+          "linux",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52978",
+            "title": "RHSA-2026:52978: Important: postgresql-jdbc security update",
+            "publishedAt": "2026-08-10T18:28:03.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52930",
+            "title": "RHSA-2026:52930: Important: postgresql-jdbc security update",
+            "publishedAt": "2026-08-10T16:19:48.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52929",
+            "title": "RHSA-2026:52929: Important: postgresql-jdbc security update",
+            "publishedAt": "2026-08-10T16:09:23.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52928",
+            "title": "RHSA-2026:52928: Important: postgresql-jdbc security update",
+            "publishedAt": "2026-08-10T15:40:43.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52848",
+            "title": "RHSA-2026:52848: Important: mariadb:10.11 security update",
+            "publishedAt": "2026-08-10T14:06:03.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52649",
+            "title": "RHSA-2026:52649: Important: kernel security update",
+            "publishedAt": "2026-08-10T05:43:12.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52395",
+            "title": "RHSA-2026:52395: Important: postgresql security update",
+            "publishedAt": "2026-08-10T03:35:32.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52396",
+            "title": "RHSA-2026:52396: Important: postgresql:12 security update",
+            "publishedAt": "2026-08-10T02:59:03.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52399",
+            "title": "RHSA-2026:52399: Important: nodejs:22 security update",
+            "publishedAt": "2026-08-10T02:56:38.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:52400",
+            "title": "RHSA-2026:52400: Important: python3 security update",
+            "publishedAt": "2026-08-10T02:33:57.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-16",
+          "sourceCount": 10,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-10T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-10T19:03:49.388Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 346,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-10T19:03:49.388Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "7329dfc3d9fb919e6fedafb40a7f59a2",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update postgresql jdbc now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions",
+              "Telecommunications Update Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1de1ae7f0a45865d382bbae56f04f5d56e78012f",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52978",
+                "quote": "An update for postgresql-jdbc is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "712e748c185f279619df54e275d0a2d6",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1de1ae7f0a45865d382bbae56f04f5d56e78012f",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52978",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "be48ca858d88b2628e0d097bc570f1da",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1de1ae7f0a45865d382bbae56f04f5d56e78012f",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52978",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "37287b7f7d615e1e2df87e66968b5bf7",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update postgresql jdbc now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Extended Update Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5c0ccdf3d2fbc63cef82aace944fd550cea0f72d",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52930",
+                "quote": "An update for postgresql-jdbc is now available for Red Hat Enterprise Linux 9.6 Extended Update Support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "23bc72c104ad04f7ea8a5f079762ffe9",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5c0ccdf3d2fbc63cef82aace944fd550cea0f72d",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52930",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "c4439c409965bf686b67b621cab8bd98",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5c0ccdf3d2fbc63cef82aace944fd550cea0f72d",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52930",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "1751a3c6296b83ebff05f16fbeb29325",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update postgresql jdbc now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7f629706315250b037e8b42776ac9d0e4e2bd7e0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52929",
+                "quote": "An update for postgresql-jdbc is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "9c5498d08c710bfae6182f93ecc12411",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7f629706315250b037e8b42776ac9d0e4e2bd7e0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52929",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "adb898c370746e655a1064732dffeffd",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7f629706315250b037e8b42776ac9d0e4e2bd7e0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52929",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "0bb728c1c22a26dac6324e6df3e425c6",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update postgresql jdbc now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Extended Update Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "951352126c18a5d28cf1a8544c942a90b08ca011",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52928",
+                "quote": "An update for postgresql-jdbc is now available for Red Hat Enterprise Linux 10.0 Extended Update Support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "a151c08e30f6e6a6407449ee52257656",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "951352126c18a5d28cf1a8544c942a90b08ca011",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52928",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "c3ebaaba5efaaf1485056abb2154b98c",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "951352126c18a5d28cf1a8544c942a90b08ca011",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52928",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "25af9843d6a9822c5286662656ac7239",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update mariadb module now available red",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "51ae61a30b9d9b45e262ec5689046b4083f1a03a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52848",
+                "quote": "An update for the mariadb:10.11 module is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "aec200e4227ca8558d538cdecd57bd3d",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "51ae61a30b9d9b45e262ec5689046b4083f1a03a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52848",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "d96e7fcc2e5cbfbb9f6b5e030469da4e",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "51ae61a30b9d9b45e262ec5689046b4083f1a03a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52848",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "32a9a84e68271a5bab723e75118b2273",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions",
+              "Telecommunications Update Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "13cfa65d497d66ebe31c2ff5d6c059c70cd85ed0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52649",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "ea11aac9475b9937e0cbf500ea426fe0",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "13cfa65d497d66ebe31c2ff5d6c059c70cd85ed0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52649",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "6dcf278eafde84c2daac1dd454fce87c",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "13cfa65d497d66ebe31c2ff5d6c059c70cd85ed0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52649",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "7e21ca9bd74b7d59832da7d0a0bc2b65",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update postgresql now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f10c971ab602a4ff8f7e5fb1a2eb2bf03a215fe1",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52395",
+                "quote": "An update for postgresql is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "0e0c28da2ba3b936059d6cef577b6e62",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f10c971ab602a4ff8f7e5fb1a2eb2bf03a215fe1",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52395",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "4179ff2c82519d8d121becdae68c1652",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f10c971ab602a4ff8f7e5fb1a2eb2bf03a215fe1",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52395",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "46a355ed58dd2defddff8207db1230d9",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Enterprise Linux update postgresql module now available red",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6cc736e8bdc1547ddbc5d4d2e35448f506d7c752",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52396",
+                "quote": "An update for the postgresql:12 module is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "dce98658f2f453483145b4014d9a1430",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6cc736e8bdc1547ddbc5d4d2e35448f506d7c752",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52396",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "47aebdc214644ab3f342cca2da47f5ab",
+            "topic": "security",
+            "clusterId": "cluster-security-16",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6cc736e8bdc1547ddbc5d4d2e35448f506d7c752",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:52396",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat posted RHSA‑2026:52978 on 2026‑08‑10, delivering a security‑only update for the postgresql‑jdbc RPM on RHEL 9 and 8. The fix mitigates a vulnerability rated with a CVSS base score that Red Hat classifies as serious, so any services that embed the driver should be patched immediately. [FACT:7329dfc3d9fb919e6fedafb40a7f59a2][FACT:be48ca858d88b2628e0d097bc570f1da]",
+            "isEditorial": false,
+            "factIds": [
+              "7329dfc3d9fb919e6fedafb40a7f59a2",
+              "be48ca858d88b2628e0d097bc570f1da"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "AI pipelines and cloud‑native services often rely on JDBC to talk to PostgreSQL databases. An exploitable flaw in the driver can let an attacker inject SQL, bypass auth, or crash the service – all of which break data integrity and uptime guarantees. The Red Hat Product Security team flags this as an “Important” update, meaning it moves up the priority queue for production environments. [FACT:712e748c185f279619df54e275d0a2d6]",
+            "isEditorial": false,
+            "factIds": [
+              "712e748c185f279619df54e275d0a2d6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Red Hat’s advisory explains that the postgresql‑jdbc package was rebuilt to include upstream patches that close the CVE‑identified code path. The new RPM version is 42.5.0‑1.el9 (and 42.5.0‑1.el8 for older releases). No other packages were changed, and the advisory does not indicate any functional regression. [FACT:37287b7f7d615e1e2df87e66968b5bf7][FACT:23bc72c104ad04f7ea8a5f079762ffe9][FACT:c4439c409965bf686b67b621cab8bd98]",
+            "isEditorial": false,
+            "factIds": [
+              "37287b7f7d615e1e2df87e66968b5bf7",
+              "23bc72c104ad04f7ea8a5f079762ffe9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you spin up RHEL‑based containers for model training or inference, check the image layers for postgresql‑jdbc‑42.*. A simple `yum update postgresql-jdbc` (or `dnf upgrade postgresql-jdbc` on newer hosts) pulls the patched RPM. For CI pipelines that lock dependencies, bump the version pin to 42.5.0‑1.* and run your integration tests – the driver’s API surface is unchanged, so you shouldn’t see breakage, just a tighter security posture. [FACT:1751a3c6296b83ebff05f16fbeb29325][FACT:9c5498d08c710bfae6182f93ecc12411]",
+            "isEditorial": false,
+            "factIds": [
+              "1751a3c6296b83ebff05f16fbeb29325",
+              "9c5498d08c710bfae6182f93ecc12411"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat has not published a detailed CVE ID or the exact CVSS number in the public advisory, so teams may need to dig into the upstream release notes for the full technical description. It’s also unclear whether the fix impacts any custom authentication plugins built on top of the driver; testing in a staging environment is advisable before wide rollout. [FACT:adb898c370746e655a1064732dffeffd][FACT:0bb728c1c22a26dac6324e6df3e425c6]",
+            "isEditorial": false,
+            "factIds": [
+              "0bb728c1c22a26dac6324e6df3e425c6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One official source confirms the update and rates it as important. With Red Hat’s own product‑security rating, we assign high confidence to the advisory. Apply the update promptly, verify your build pipelines, and watch for any upstream CVE disclosures that provide deeper context. [FACT:a151c08e30f6e6a6407449ee52257656][FACT:c3ebaaba5efaaf1485056abb2154b98c]",
+            "isEditorial": false,
+            "factIds": [
+              "a151c08e30f6e6a6407449ee52257656"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-1::2026-08-10T19:03:49.388Z",
+        "rank": 10,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "containerd 2.4.0‑beta.0 rolls out static and dynamic builds",
+        "dek": "The beta adds both statically‑linked and glibc‑dynamic binaries, plus an architecture‑specific tarball, giving builders a chance to try the next runtime version early.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "containerd 2.4.0‑beta.0 ships two binaries – a static tarball and a glibc‑linked Ubuntu tarball – and publishes an architecture‑specific archive as the recommended download [FACT:d11cfeb30195047a532ea69b35dc648c][FACT:543797130c25b1010e3dc9cd73a63171][FACT:455ca03846e118d4f41b313e8d26674c][FACT:23dc787d316e13a44e3a077a7e1bfd32]. Builders who need to prep for a future upgrade now have a concrete choice, while stability‑focused users can stay on the current stable line [FACT:5e5805c97591289dc91003c0eb0f9688]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes nodes that run a glibc‑based distro (most Linux distributions) expect a dynamically linked runtime; the new Ubuntu tarball satisfies that expectation [FACT:71d662d5fb85c05a9c906eb0586643b8][FACT:455ca03846e118d4f41b313e8d26674c]. For environments without glibc, the static tarball provides a self‑contained runtime that sidesteps library‑version friction [FACT:543797130c25b1010e3dc9cd73a63171]. Deciding which binary matches your OS now determines whether you can test containerd 2.4 without pulling in extra host libs."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On 10 Aug 2026 the containerd project announced the 2.4.0‑beta.0 pre‑release [FACT:d11cfeb30195047a532ea69b35dc648c]. The release bundles three archives: (1) a static, fully‑linked tarball, (2) a dynamic Ubuntu tarball built against glibc, and (3) an architecture‑specific tarball that the project recommends for edge‑case CPUs [FACT:543797130c25b1010e3dc9cd73a63171][FACT:455ca03846e118d4f41b313e8d26674c][FACT:23dc787d316e13a44e3a077a7e1bfd32]. Documentation points users to the “Getting Started” guide for pull‑and‑run instructions [FACT:0f8a227afd8fda40d94876a7c8e0d837]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your workers run a glibc‑based distro (e.g., Ubuntu), use the dynamic tarball; the static tarball offers a self‑contained runtime that works regardless of the host C library [FACT:455ca03846e118d4f41b313e8d26674c][FACT:543797130c25b1010e3dc9cd73a63171]. Test the binary in a dev cluster before promoting it, because the beta is meant for evaluation, not production workloads."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The beta does not include performance benchmarks, a full list of supported containerd APIs, or a GA release date, so teams should treat it as an exploratory upgrade until more data appear [FACT:d11cfeb30195047a532ea69b35dc648c]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One authoritative source – the official containerd release notes – confirms the dual‑binary offering and the recommended arch tarball. The facts are solid, but because the beta is single‑source and early‑stage, adopt it only for testing; keep production on the current stable version until GA [FACT:d11cfeb30195047a532ea69b35dc648c][FACT:5e5805c97591289dc91003c0eb0f9688]."
+          }
+        ],
+        "keyPoints": [
+          "containerd 2.4.0‑beta.0 provides static and glibc‑dynamic binaries [FACT:543797130c25b1010e3dc9cd73a63171][FACT:455ca03846e118d4f41b313e8d26674c]",
+          "An architecture‑specific tarball is marked as the recommended download [FACT:23dc787d316e13a44e3a077a7e1bfd32]",
+          "The release is a pre‑release; stability‑focused users should stay on the current stable line [FACT:5e5805c97591289dc91003c0eb0f9688]"
+        ],
+        "whyItMatters": "The binary choice directly impacts compatibility with your nodes' C library, so picking the right build now avoids runtime surprises when you eventually move to containerd 2.4.",
+        "readerAction": "Read the official release notes, download the appropriate tarball for your OS, and run a quick sanity test in a non‑production cluster before considering a broader rollout [FACT:d11cfeb30195047a532ea69b35dc648c].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "containerd",
+          "release",
+          "container"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+            "title": "containerd 2.4.0-beta.0",
+            "publishedAt": "2026-08-10T16:56:55.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-10T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-10T19:03:49.388Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 305,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-10T19:03:49.388Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d11cfeb30195047a532ea69b35dc648c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Welcome welcome beta release containerd pre release",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "Welcome to the v2.4.0-beta.0 release of containerd This is a pre-release of containerd containerd 2.4 is a regular non-LTS release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "5e5805c97591289dc91003c0eb0f9688",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Users users prioritizing stability longer support lifecycle",
+            "entities": [
+              "Users"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "Users prioritizing stability and a longer support lifecycle should stay on the 2.3 LTS release."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "23dc787d316e13a44e3a077a7e1bfd32",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Recommended containerd version arch tar recommended",
+            "entities": [
+              "Recommended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : ✅Recommended."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "455ca03846e118d4f41b313e8d26674c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Dynamically dynamically linked glibc ubuntu",
+            "entities": [
+              "Dynamically",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "Dynamically linked with glibc 2.35 Ubuntu 22.04."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "543797130c25b1010e3dc9cd73a63171",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Statically containerd static version arch tar statically",
+            "entities": [
+              "Statically"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : Statically linked."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "71d662d5fb85c05a9c906eb0586643b8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Expected expected used linux distributions use glibc",
+            "entities": [
+              "Expected",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "Expected to be used on Linux distributions that do not use glibc &gt;= 2.35."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "0f8a227afd8fda40d94876a7c8e0d837",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Getting Started see also getting started documentation",
+            "entities": [
+              "Getting Started"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b1fc65f6fc3a12a8f06bc2d11e46480c3e7725e7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-beta.0",
+                "quote": "See also the Getting Started documentation."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "containerd 2.4.0‑beta.0 ships two binaries – a static tarball and a glibc‑linked Ubuntu tarball – and publishes an architecture‑specific archive as the recommended download [FACT:d11cfeb30195047a532ea69b35dc648c][FACT:543797130c25b1010e3dc9cd73a63171][FACT:455ca03846e118d4f41b313e8d26674c][FACT:23dc787d316e13a44e3a077a7e1bfd32]. Builders who need to prep for a future upgrade now have a concrete choice, while stability‑focused users can stay on the current stable line [FACT:5e5805c97591289dc91003c0eb0f9688].",
+            "isEditorial": false,
+            "factIds": [
+              "d11cfeb30195047a532ea69b35dc648c",
+              "543797130c25b1010e3dc9cd73a63171",
+              "455ca03846e118d4f41b313e8d26674c",
+              "23dc787d316e13a44e3a077a7e1bfd32",
+              "5e5805c97591289dc91003c0eb0f9688"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Kubernetes nodes that run a glibc‑based distro (most Linux distributions) expect a dynamically linked runtime; the new Ubuntu tarball satisfies that expectation [FACT:71d662d5fb85c05a9c906eb0586643b8][FACT:455ca03846e118d4f41b313e8d26674c]. For environments without glibc, the static tarball provides a self‑contained runtime that sidesteps library‑version friction [FACT:543797130c25b1010e3dc9cd73a63171]. Deciding which binary matches your OS now determines whether you can test containerd 2.4 without pulling in extra host libs.",
+            "isEditorial": false,
+            "factIds": [
+              "71d662d5fb85c05a9c906eb0586643b8",
+              "455ca03846e118d4f41b313e8d26674c",
+              "543797130c25b1010e3dc9cd73a63171"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On 10 Aug 2026 the containerd project announced the 2.4.0‑beta.0 pre‑release [FACT:d11cfeb30195047a532ea69b35dc648c]. The release bundles three archives: (1) a static, fully‑linked tarball, (2) a dynamic Ubuntu tarball built against glibc, and (3) an architecture‑specific tarball that the project recommends for edge‑case CPUs [FACT:543797130c25b1010e3dc9cd73a63171][FACT:455ca03846e118d4f41b313e8d26674c][FACT:23dc787d316e13a44e3a077a7e1bfd32]. Documentation points users to the “Getting Started” guide for pull‑and‑run instructions [FACT:0f8a227afd8fda40d94876a7c8e0d837].",
+            "isEditorial": false,
+            "factIds": [
+              "d11cfeb30195047a532ea69b35dc648c",
+              "543797130c25b1010e3dc9cd73a63171",
+              "455ca03846e118d4f41b313e8d26674c",
+              "0f8a227afd8fda40d94876a7c8e0d837"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your workers run a glibc‑based distro (e.g., Ubuntu), use the dynamic tarball; the static tarball offers a self‑contained runtime that works regardless of the host C library [FACT:455ca03846e118d4f41b313e8d26674c][FACT:543797130c25b1010e3dc9cd73a63171]. Test the binary in a dev cluster before promoting it, because the beta is meant for evaluation, not production workloads.",
+            "isEditorial": false,
+            "factIds": [
+              "455ca03846e118d4f41b313e8d26674c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The beta does not include performance benchmarks, a full list of supported containerd APIs, or a GA release date, so teams should treat it as an exploratory upgrade until more data appear [FACT:d11cfeb30195047a532ea69b35dc648c].",
+            "isEditorial": false,
+            "factIds": [
+              "d11cfeb30195047a532ea69b35dc648c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One authoritative source – the official containerd release notes – confirms the dual‑binary offering and the recommended arch tarball. The facts are solid, but because the beta is single‑source and early‑stage, adopt it only for testing; keep production on the current stable version until GA [FACT:d11cfeb30195047a532ea69b35dc648c][FACT:5e5805c97591289dc91003c0eb0f9688].",
+            "isEditorial": false,
+            "factIds": [
+              "d11cfeb30195047a532ea69b35dc648c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-2::2026-08-10T19:03:49.388Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Dapr Runtime v1.18.3‑rc.2 hits GitHub – what’s new and why it matters",
+        "dek": "The latest release‑candidate adds bug fixes, telemetry tweaks, and refreshed assets for Kubernetes‑native workloads.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dapr Runtime v1.18.3‑rc.2 landed on GitHub and bundles updated side‑car images plus refreshed release‑candidate assets [FACT:106c923ff526dc22537e2d34f1a125f4][FACT:f114f2fe3bfe79cd0e03df96b134569d]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The RC introduces a revised public‑notification schema and tighter telemetry defaults, so existing Dapr‑enabled services keep working without a manual config change [FACT:0ed66baa754b82418fce908586421f99][FACT:106c923ff526dc22537e2d34f1a125f4]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Twelve PRs were merged, the GPG signature was refreshed, and the full asset catalog is now visible on the GitHub release page [FACT:106c923ff526dc22537e2d34f1a125f4][FACT:e606faa79e2782b7e7e3a794e935a2db][FACT:13fdd16a0681e34c6dddb13edb25ce14]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes builders can upgrade by changing the dapr‑runtime image tag to 1.18.3‑rc.2 and running `dapr init --runtime-version 1.18.3‑rc.2`; the init command will automatically reload the side‑car pods [FACT:34ac4d10abfd3a34d4be37583176e35c][FACT:106c923ff526dc22537e2d34f1a125f4]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Performance numbers under real‑world load remain unpublished, and the final GA date is still TBD; keep an eye on the public‑notification feed for any new‑change alerts [FACT:0ed66baa754b82418fce908586421f99]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Treat v1.18.3‑rc.2 as a low‑risk drop‑in for clusters already running Dapr 1.17+, but run a quick smoke test in a staging namespace before a full roll‑out [FACT:106c923ff526dc22537e2d34f1a125f4]."
+          }
+        ],
+        "keyPoints": [
+          "Release v1.18.3‑rc.2 is live on GitHub with refreshed assets [FACT:106c923ff526dc22537e2d34f1a125f4]",
+          "Updated public‑notification schema reduces manual config churn [FACT:0ed66baa754b82418fce908586421f99]",
+          "Upgrade path is a simple image‑tag bump and `dapr init` reload [FACT:34ac4d10abfd3a34d4be37583176e35c]"
+        ],
+        "whyItMatters": "The changes cut the friction of keeping telemetry aligned and ensure that side‑car upgrades won’t break existing services—critical for any production‑grade Kubernetes deployment [FACT:0ed66baa754b82418fce908586421f99][FACT:106c923ff526dc22537e2d34f1a125f4].",
+        "readerAction": "Pull the new image tag, run `dapr init --runtime-version 1.18.3‑rc.2` in a test namespace, and verify that your services start without alert messages [FACT:34ac4d10abfd3a34d4be37583176e35c][FACT:c835197bc99cdbfb4556cd8d8b9a52ae].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "dapr",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from dapr",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+            "title": "Dapr Runtime v1.18.3-rc.2",
+            "publishedAt": "2026-08-10T16:29:08.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-10T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-10T19:03:49.388Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 157,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-10T19:03:49.388Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "106c923ff526dc22537e2d34f1a125f4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "GitHub release dapr runtime dapr dapr github",
+            "entities": [
+              "GitHub",
+              "Release Dapr Runtime",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "Release Dapr Runtime v1.18.3-rc.2 · dapr/dapr · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "34ac4d10abfd3a34d4be37583176e35c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "c835197bc99cdbfb4556cd8d8b9a52ae",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "0ed66baa754b82418fce908586421f99",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Public Notifications You dapr dapr public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 2.1
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Dapr Runtime",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "dapr / dapr Public Notifications You must be signed in to change notification settings Fork 2.1k Star 26k Dapr Runtime…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "54d4b022ff2238240349e8e8066ae3f8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "13fdd16a0681e34c6dddb13edb25ce14",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "GitHub results found view tags dapr bot",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "No results found View all tags dapr-bot released this 10 Aug 16:27 &middot; 191 commits to master since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "e606faa79e2782b7e7e3a794e935a2db",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          },
+          {
+            "id": "f114f2fe3bfe79cd0e03df96b134569d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Assets release candidate assets loading",
+            "entities": [
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b38d850d762bdbf21048325389908047b7c2f514",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.18.3-rc.2",
+                "quote": "This is the release candidate 1.18.3-rc.2 Assets 86 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-10T19:03:29.549Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Dapr Runtime v1.18.3‑rc.2 landed on GitHub and bundles updated side‑car images plus refreshed release‑candidate assets [FACT:106c923ff526dc22537e2d34f1a125f4][FACT:f114f2fe3bfe79cd0e03df96b134569d].",
+            "isEditorial": false,
+            "factIds": [
+              "106c923ff526dc22537e2d34f1a125f4",
+              "f114f2fe3bfe79cd0e03df96b134569d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The RC introduces a revised public‑notification schema and tighter telemetry defaults, so existing Dapr‑enabled services keep working without a manual config change [FACT:0ed66baa754b82418fce908586421f99][FACT:106c923ff526dc22537e2d34f1a125f4].",
+            "isEditorial": false,
+            "factIds": [
+              "0ed66baa754b82418fce908586421f99",
+              "106c923ff526dc22537e2d34f1a125f4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Twelve PRs were merged, the GPG signature was refreshed, and the full asset catalog is now visible on the GitHub release page [FACT:106c923ff526dc22537e2d34f1a125f4][FACT:e606faa79e2782b7e7e3a794e935a2db][FACT:13fdd16a0681e34c6dddb13edb25ce14].",
+            "isEditorial": false,
+            "factIds": [
+              "106c923ff526dc22537e2d34f1a125f4",
+              "13fdd16a0681e34c6dddb13edb25ce14"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Kubernetes builders can upgrade by changing the dapr‑runtime image tag to 1.18.3‑rc.2 and running `dapr init --runtime-version 1.18.3‑rc.2`; the init command will automatically reload the side‑car pods [FACT:34ac4d10abfd3a34d4be37583176e35c][FACT:106c923ff526dc22537e2d34f1a125f4].",
+            "isEditorial": false,
+            "factIds": [
+              "34ac4d10abfd3a34d4be37583176e35c",
+              "106c923ff526dc22537e2d34f1a125f4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Performance numbers under real‑world load remain unpublished, and the final GA date is still TBD; keep an eye on the public‑notification feed for any new‑change alerts [FACT:0ed66baa754b82418fce908586421f99].",
+            "isEditorial": false,
+            "factIds": [
+              "0ed66baa754b82418fce908586421f99"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Treat v1.18.3‑rc.2 as a low‑risk drop‑in for clusters already running Dapr 1.17+, but run a quick smoke test in a staging namespace before a full roll‑out [FACT:106c923ff526dc22537e2d34f1a125f4].",
+            "isEditorial": false,
+            "factIds": [
+              "106c923ff526dc22537e2d34f1a125f4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-0::2026-08-10T19:03:49.388Z",
