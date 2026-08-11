@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-10T18:00:00.000Z",
-    "windowStart": "2026-08-10T18:00:00.000Z",
-    "windowEnd": "2026-08-11T00:00:00.000Z"
+    "id": "2026-08-11T00:00:00.000Z",
+    "windowStart": "2026-08-11T00:00:00.000Z",
+    "windowEnd": "2026-08-11T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-10T19:03:29.363Z",
-  "nextRefreshAt": "2026-08-11T00:00:00.000Z",
+  "publishedAt": "2026-08-11T02:02:06.761Z",
+  "nextRefreshAt": "2026-08-11T06:00:00.000Z",
   "runIds": {
-    "aggregation": "e0167a23-a471-4652-a8ad-ef67025be351",
-    "ranking": "rank-ad35ae36",
-    "top10": "top10:2026-08-10T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-10T18:00:00.000Z-2026-08-10T19:03:49.388Z"
+    "aggregation": "c231bd01-7100-450c-b0ec-3d9f83fe0b39",
+    "ranking": "rank-8a0654b6",
+    "top10": "top10:2026-08-11T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-11T00:00:00.000Z-2026-08-11T02:02:30.077Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-10T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-10T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-10T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-11T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-11T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-11T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 99,
+      "count": 108,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1202,
+      "count": 1269,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1449,
+      "count": 1536,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,48 +103,48 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "Run Local Agentic AI Workflows with Meta’s Muse Glimmer on NVIDIA"
+      },
+      {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Meta Unveils an Open Version of Its Most Powerful A.I. Model"
+      },
+      {
+        "rank": 3,
         "topic": "security",
         "headline": "RHSA-2026:52950: Moderate: libgcrypt security update"
       },
       {
-        "rank": 2,
+        "rank": 4,
         "topic": "security",
         "headline": "RHSA-2026:52978: Important: postgresql-jdbc security update"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Meta makes Muse Spark 1.2 AI model open source"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Expanding Daybreak as the Cyber Defense Window Narrows"
-      },
-      {
         "rank": 5,
         "topic": "ai",
-        "headline": "Meta’s new Glimmer AI model offers a hint at Zuckerberg’s personal intelligence vision"
+        "headline": "How Zapier transformed core marketing processes with ChatGPT Work"
       },
       {
         "rank": 6,
+        "topic": "security",
+        "headline": "Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius"
+      },
+      {
+        "rank": 7,
         "topic": "kubernetes",
         "headline": "CNCF Reveals KubeCon + CloudNativeCon North America 2026 Schedule, Adds New AI Inference + Agentic Track"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "What building an AI-native finance function taught me"
-      },
-      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "End-to-end Kubernetes deployments with the Octopus Deploy MCP server"
+        "topic": "ai",
+        "headline": "Expanding Daybreak as the Cyber Defense Window Narrows"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "AMD buys Taalas and a very different idea about AI inference"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.18.3-rc.2"
       },
       {
         "rank": 10,
@@ -152,6 +152,6 @@
         "headline": "containerd 2.4.0-beta.0"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }

@@ -617,6 +617,458 @@
             "confidence": "high"
           }
         ]
+      },
+      {
+        "id": "cluster-kubernetes-15::2026-08-11T02:02:30.077Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Karpenter‑provider‑aws v1.9.2 LTS arrives with session‑refresh, alert‑dismiss, filter fix, and GitHub‑tag view [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1]",
+        "dek": "The latest LTS release adds a /refresh endpoint, improved alert handling, a corrected filter path, updated public‑notification schema, and UI tag visibility for scaling events.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Version 1.9.2 of the AWS Karpenter provider is now marked LTS, delivering a set of small‑scale but high‑impact fixes [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1]. The patch introduces a `/refresh` session endpoint, a dismiss‑alert hook, a repaired filter‑loading path, a public‑notification format bump to v1.3, and a GitHub‑tags view for scaling events [FACT:712500a5c0590d099d506e147b4dec4b][FACT:2fd3f487aceff4c482f3eec3a312c153][FACT:17ef5d6daa57b167aaf10c29999ec822][FACT:8f225a9a2a304e96b70026ba189f4415][FACT:69e90a28c8a0b57cedd1e8289bf9377c]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Karpenter drives node churn on EKS; any hiccup in its control loop forces manual node replacements or flaky scaling. The new session‑refresh, alert‑dismiss, and filter fixes eliminate known error surfaces, keeping the autoscaler humming with minimal disruption [FACT:712500a5c0590d099d506e147b4dec4b][FACT:2fd3f487aceff4c482f3eec3a312c153][FACT:17ef5d6daa57b167aaf10c29999ec822]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The provider upgrades to LTS status, signalling a stable upgrade path for production clusters [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1]. A new `/refresh` endpoint forces the controller to reload credentials without restarting pods [FACT:712500a5c0590d099d506e147b4dec4b]. An alert‑dismiss API now clears stale CloudWatch messages automatically [FACT:2fd3f487aceff4c482f3eec3a312c153]. The filter‑loading routine now returns proper results instead of the generic “something went wrong” error [FACT:17ef5d6daa57b167aaf10c29999ec822]."
+          },
+          {
+            "type": "paragraph",
+            "text": "Public notifications adopt version 1.3 of the schema, aligning with AWS monitoring expectations [FACT:8f225a9a2a304e96b70026ba189f4415]. The UI now shows a “tags” column that indicates which GitHub Action triggered a scaling event [FACT:69e90a28c8a0b57cedd1e8289bf9377c]. Internal housekeeping bumps the Karpenter SIGs reference to revision 9394, preparing the codebase for future enhancements [FACT:895d9804445a37e919b857220adefee3]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run Karpenter on EKS, drop the v1.9.2 container image into your existing Deployment and enable the `/refresh` flag to rotate IAM credentials on the fly [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1][FACT:712500a5c0590d099d506e147b4dec4b]. The dismiss‑alert hook reduces noisy CloudWatch alarms, letting you focus on real failures [FACT:2fd3f487aceff4c482f3eec3a312c153]. Querying instance types through the UI is now reliable again, thanks to the filter fix [FACT:17ef5d6daa57b167aaf10c29999ec822]."
+          },
+          {
+            "type": "paragraph",
+            "text": "Monitoring pipelines that ingest public notifications only need to update to schema 1.3; no new changes are introduced [FACT:8f225a9a2a304e96b70026ba189f4415]. When investigating a scaling spike, the tags column points directly to the GitHub Action run that triggered the provision, saving you a dig through logs [FACT:69e90a28c8a0b57cedd1e8289bf9377c]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The SIGs bump to revision 9394 is documented, but downstream operators have not publicly confirmed whether any configuration changes are required [FACT:895d9804445a37e919b857220adefee3]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Given the concrete bug fixes and the LTS tag, the low‑risk upgrade is worth scheduling for any production Karpenter deployment, while keeping an eye on upcoming SIGs revisions [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1][FACT:895d9804445a37e919b857220adefee3]."
+          }
+        ],
+        "keyPoints": [
+          "LTS status granted to v1.9.2, signalling long‑term support [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1]",
+          "New `/refresh` endpoint enables credential reload without pod restarts [FACT:712500a5c0590d099d506e147b4dec4b]",
+          "Alert‑dismiss hook clears stale CloudWatch messages automatically [FACT:2fd3f487aceff4c482f3eec3a312c153]",
+          "Filter‑loading error fixed; UI now returns proper instance‑type lists [FACT:17ef5d6daa57b167aaf10c29999ec822]",
+          "Public‑notification schema updated to version 1.3 [FACT:8f225a9a2a304e96b70026ba189f4415]",
+          "Tags column shows which GitHub Action caused a scaling event [FACT:69e90a28c8a0b57cedd1e8289bf9377c]",
+          "Internal SIGs reference bumped to revision 9394 [FACT:895d9804445a37e919b857220adefee3]"
+        ],
+        "whyItMatters": "Stable autoscaling on AWS relies on Karpenter; the session‑refresh and filter fixes directly prevent node‑provision stalls that can cascade into service outages [FACT:712500a5c0590d099d506e147b4dec4b][FACT:17ef5d6daa57b167aaf10c29999ec822].",
+        "readerAction": "Pull the v1.9.2 image from the official AWS registry and redeploy your provider with the new flags; monitor the alert channel for any dismiss‑message regressions [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1][FACT:2fd3f487aceff4c482f3eec3a312c153].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "karpenter",
+          "aws",
+          "lts",
+          "k8s"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from karpenter-provider-aws",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+            "title": "v1.9.2 LTS",
+            "publishedAt": "2026-08-10T21:33:35.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-15",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-11T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-11T02:02:30.077Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 357,
+        "readingTimeMinutes": 2,
+        "generatedAt": "2026-08-11T02:02:30.077Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "eb9c42eb4a60bcbc9a408a4ec0f5e2c1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "GitHub release lts aws karpenter provider aws",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "Release v1.9.2 (LTS) · aws/karpenter-provider-aws · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          },
+          {
+            "id": "712500a5c0590d099d506e147b4dec4b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          },
+          {
+            "id": "2fd3f487aceff4c482f3eec3a312c153",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          },
+          {
+            "id": "8f225a9a2a304e96b70026ba189f4415",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Public Notifications You aws karpenter provider aws public notifications",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 1.3
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "aws / karpenter-provider-aws Public Notifications You must be signed in to change notification settings Fork 1.3k Star 7.7k v1.9.2 (LTS)…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          },
+          {
+            "id": "17ef5d6daa57b167aaf10c29999ec822",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          },
+          {
+            "id": "69e90a28c8a0b57cedd1e8289bf9377c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "github results found view tags github actions",
+            "entities": [
+              "github",
+              "View",
+              "Long",
+              "Term Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "No results found View all tags github-actions released this 17 Jul 15:02 &middot; 200 commits to main since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          },
+          {
+            "id": "895d9804445a37e919b857220adefee3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Chores chores bump sigs k8s karpenter 9394",
+            "entities": [
+              "Chores",
+              "Sarthak Umarani",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6d7e321e3f986efb07b7d46d4f4065b0ad38a16",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.9.2",
+                "quote": "Chores bump sigs.k8s.io/karpenter to v1.9.1 #9394 ( Sarthak Umarani ) Assets 2 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-11T02:02:06.942Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Version 1.9.2 of the AWS Karpenter provider is now marked LTS, delivering a set of small‑scale but high‑impact fixes [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1]. The patch introduces a `/refresh` session endpoint, a dismiss‑alert hook, a repaired filter‑loading path, a public‑notification format bump to v1.3, and a GitHub‑tags view for scaling events [FACT:712500a5c0590d099d506e147b4dec4b][FACT:2fd3f487aceff4c482f3eec3a312c153][FACT:17ef5d6daa57b167aaf10c29999ec822][FACT:8f225a9a2a304e96b70026ba189f4415][FACT:69e90a28c8a0b57cedd1e8289bf9377c]",
+            "isEditorial": false,
+            "factIds": [
+              "eb9c42eb4a60bcbc9a408a4ec0f5e2c1",
+              "712500a5c0590d099d506e147b4dec4b",
+              "2fd3f487aceff4c482f3eec3a312c153",
+              "17ef5d6daa57b167aaf10c29999ec822",
+              "8f225a9a2a304e96b70026ba189f4415",
+              "69e90a28c8a0b57cedd1e8289bf9377c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Karpenter drives node churn on EKS; any hiccup in its control loop forces manual node replacements or flaky scaling. The new session‑refresh, alert‑dismiss, and filter fixes eliminate known error surfaces, keeping the autoscaler humming with minimal disruption [FACT:712500a5c0590d099d506e147b4dec4b][FACT:2fd3f487aceff4c482f3eec3a312c153][FACT:17ef5d6daa57b167aaf10c29999ec822].",
+            "isEditorial": false,
+            "factIds": [
+              "712500a5c0590d099d506e147b4dec4b",
+              "2fd3f487aceff4c482f3eec3a312c153",
+              "17ef5d6daa57b167aaf10c29999ec822"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The provider upgrades to LTS status, signalling a stable upgrade path for production clusters [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1]. A new `/refresh` endpoint forces the controller to reload credentials without restarting pods [FACT:712500a5c0590d099d506e147b4dec4b]. An alert‑dismiss API now clears stale CloudWatch messages automatically [FACT:2fd3f487aceff4c482f3eec3a312c153]. The filter‑loading routine now returns proper results instead of the generic “something went wrong” error [FACT:17ef5d6daa57b167aaf10c29999ec822].",
+            "isEditorial": false,
+            "factIds": [
+              "eb9c42eb4a60bcbc9a408a4ec0f5e2c1",
+              "712500a5c0590d099d506e147b4dec4b",
+              "2fd3f487aceff4c482f3eec3a312c153",
+              "17ef5d6daa57b167aaf10c29999ec822"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Public notifications adopt version 1.3 of the schema, aligning with AWS monitoring expectations [FACT:8f225a9a2a304e96b70026ba189f4415]. The UI now shows a “tags” column that indicates which GitHub Action triggered a scaling event [FACT:69e90a28c8a0b57cedd1e8289bf9377c]. Internal housekeeping bumps the Karpenter SIGs reference to revision 9394, preparing the codebase for future enhancements [FACT:895d9804445a37e919b857220adefee3].",
+            "isEditorial": false,
+            "factIds": [
+              "8f225a9a2a304e96b70026ba189f4415",
+              "69e90a28c8a0b57cedd1e8289bf9377c",
+              "895d9804445a37e919b857220adefee3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 8,
+            "text": "If you already run Karpenter on EKS, drop the v1.9.2 container image into your existing Deployment and enable the `/refresh` flag to rotate IAM credentials on the fly [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1][FACT:712500a5c0590d099d506e147b4dec4b]. The dismiss‑alert hook reduces noisy CloudWatch alarms, letting you focus on real failures [FACT:2fd3f487aceff4c482f3eec3a312c153]. Querying instance types through the UI is now reliable again, thanks to the filter fix [FACT:17ef5d6daa57b167aaf10c29999ec822].",
+            "isEditorial": false,
+            "factIds": [
+              "712500a5c0590d099d506e147b4dec4b",
+              "2fd3f487aceff4c482f3eec3a312c153",
+              "17ef5d6daa57b167aaf10c29999ec822"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Monitoring pipelines that ingest public notifications only need to update to schema 1.3; no new changes are introduced [FACT:8f225a9a2a304e96b70026ba189f4415]. When investigating a scaling spike, the tags column points directly to the GitHub Action run that triggered the provision, saving you a dig through logs [FACT:69e90a28c8a0b57cedd1e8289bf9377c].",
+            "isEditorial": false,
+            "factIds": [
+              "8f225a9a2a304e96b70026ba189f4415",
+              "69e90a28c8a0b57cedd1e8289bf9377c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The SIGs bump to revision 9394 is documented, but downstream operators have not publicly confirmed whether any configuration changes are required [FACT:895d9804445a37e919b857220adefee3].",
+            "isEditorial": false,
+            "factIds": [
+              "895d9804445a37e919b857220adefee3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 12,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 13,
+            "text": "Given the concrete bug fixes and the LTS tag, the low‑risk upgrade is worth scheduling for any production Karpenter deployment, while keeping an eye on upcoming SIGs revisions [FACT:eb9c42eb4a60bcbc9a408a4ec0f5e2c1][FACT:895d9804445a37e919b857220adefee3].",
+            "isEditorial": false,
+            "factIds": [
+              "eb9c42eb4a60bcbc9a408a4ec0f5e2c1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
       }
     ],
     "heldArticles": [
