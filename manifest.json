@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-11T06:00:00.000Z",
-    "windowStart": "2026-08-11T06:00:00.000Z",
-    "windowEnd": "2026-08-11T12:00:00.000Z"
+    "id": "2026-08-11T12:00:00.000Z",
+    "windowStart": "2026-08-11T12:00:00.000Z",
+    "windowEnd": "2026-08-11T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-11T07:14:53.338Z",
-  "nextRefreshAt": "2026-08-11T12:00:00.000Z",
+  "publishedAt": "2026-08-11T13:15:32.733Z",
+  "nextRefreshAt": "2026-08-11T18:00:00.000Z",
   "runIds": {
-    "aggregation": "9d426b41-ef57-4f34-aec6-e78bbf2ab0b4",
-    "ranking": "rank-2329baf0",
-    "top10": "top10:2026-08-11T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-11T06:00:00.000Z-2026-08-11T07:16:20.275Z"
+    "aggregation": "1afca0b9-3929-45f8-8c02-d5a14ceb5e6f",
+    "ranking": "rank-6f7f90e6",
+    "top10": "top10:2026-08-11T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-11T12:00:00.000Z-2026-08-11T13:15:55.758Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-11T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-11T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-11T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-11T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-11T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-11T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 120,
+      "count": 93,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 255,
+      "count": 1358,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source news.google.com: HTTP 503 Service Unavailable",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
         "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 498,
+      "count": 1571,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 21,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 80,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:52950: Moderate: libgcrypt security update"
+        "topic": "kubernetes",
+        "headline": "3.14.0-rc.0 / 2026-08-06"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:52978: Important: postgresql-jdbc security update"
+        "headline": "RHSA-2026:53450: Important: xorg-x11-server-Xwayland security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius"
+        "topic": "platform",
+        "headline": "Security updates for Tuesday"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.0-beta.0"
+        "topic": "security",
+        "headline": "RHSA-2026:53329: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.3-rc.2"
+        "topic": "ai",
+        "headline": "Route AI Agent Workloads Across Models with NVIDIA NeMo Switchyard"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Metabase Patches Vulnerability Exploited as Zero-Day"
+        "topic": "ai",
+        "headline": "Anthropic signs $9.1 billion data center deal with Bitcoin miner Riot Platforms"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v1.9.2 LTS"
+        "topic": "security",
+        "headline": "OpenAI Unveils New Cybersecurity Model GPT-5.6-Cyber"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Just-in-time access to HashiCorp Vault using the Red&nbsp;Hat&nbsp;Ansible Automation Platform OIDC provider"
+        "topic": "security",
+        "headline": "RHSA-2026:53415: Important: opentelemetry-collector security update"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Run Local Agentic AI Workflows with Meta’s Muse Glimmer on NVIDIA"
+        "topic": "kubernetes",
+        "headline": "v1.19.0-rc.2"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Old OCR text cripples language model training, and FineBooks wants to fix that at scale"
+        "topic": "kubernetes",
+        "headline": "v0.314.0-rc.0"
       }
     ],
     "articleCount": 0
