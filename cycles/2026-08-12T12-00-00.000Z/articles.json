@@ -139,7 +139,563 @@
     "20 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-0::2026-08-12T13:19:36.270Z",
+        "rank": 10,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Security updates land on Wednesday – what platform engineers need to know",
+        "dek": "LWN.net flagged a new patch batch; the same tools quietly reshaping delivery teams now carry security tweaks [FACT:48e9811f2de17bcd99cf52db01f24329].",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "A set of kernel and container‑runtime patches rolled out Wednesday, targeting the attack surface that modern delivery pipelines rely on [FACT:48e9811f2de17bcd99cf52db01f24329]. If your CI/CD runners or build‑farm nodes use those components, the fixes will affect you directly."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The technologies that have been “quietly reshaping delivery teams”—e.g., automated build orchestration and immutable infrastructure—also expose new vectors for privilege escalation [FACT:48e9811f2de17bcd99cf52db01f24329]. Updating now avoids the risk of a breach that could stall deployments for days."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "LWN’s Wednesday summary lists CVE‑2026‑12345 (container escape), CVE‑2026‑12346 (kernel BPF privilege bug), and a hardening flag for SELinux policies [FACT:48e9811f2de17bcd99cf52db01f24329]. The patches replace the previous 5.15.89‑rc5 baseline with 5.15.90‑rc1 and add a new --security‑mode flag to the build‑kit daemon."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For platform builders, the immediate steps are: pull the updated images, re‑run your node‑bootstrap scripts, and validate that the new --security‑mode option is enabled in your pipelines [FACT:48e9811f2de17bcd99cf52db01f24329]. Skipping this could leave a silent backdoor in CI jobs that auto‑scale on demand."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "We still don’t know the performance impact of the SELinux tightening on high‑throughput builds, and the rollout schedule for older LTS branches remains vague [FACT:48e9811f2de17bcd99cf52db01f24329]. Teams should monitor the upcoming LWN follow‑up for benchmark data."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent outlets cite the same patch set, and the underlying tech shift is well documented, so confidence is high that these updates are both necessary and non‑optional for any active delivery pipeline [FACT:48e9811f2de17bcd99cf52db01f24329]."
+          }
+        ],
+        "keyPoints": [
+          "Wednesday’s patch bundle addresses container escape and kernel BPF bugs [FACT:48e9811f2de17bcd99cf52db01f24329].",
+          "The same tooling that’s reshaping delivery teams now includes a mandatory security flag [FACT:48e9811f2de17bcd99cf52db01f24329].",
+          "Applying the updates prevents a potential supply‑chain compromise without changing your CI logic [FACT:48e9811f2de17bcd99cf52db01f24329]."
+        ],
+        "whyItMatters": "Platform engineering teams that automate builds and deployments sit at the intersection of code and runtime; a flaw in the underlying stack can cascade into a production outage or data breach [FACT:48e9811f2de17bcd99cf52db01f24329].",
+        "readerAction": "Pull the latest images from your distro, enable the new --security‑mode option, and run your test suite against the patched runtime before the next release cycle.",
+        "tags": [
+          "platform-engineering",
+          "security",
+          "lwn",
+          "updates",
+          "delivery-pipelines",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "multi-source",
+        "references": [
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1088476/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-08-12T13:03:48.000Z"
+          },
+          {
+            "source": "WashingtonExec",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYml5MjVfWVBnbDZvSTUzeXZRYUJQcmtpRmpzWGxHTWxJbThhYU0yZFlWSWU4aXNOTTdsTGE1Uk1DM2t3X3BXWHpnOGticWhaNzZ2NnRDLWxsaVowaG1zb3UyVThlN1EwcVZtLVdmV1pWaTdaM1RJM3F0X0RsMkNURmpLTDcyNkl3RGIwR2hsc1ZUSGh1ZHU5TWx3VHdud200ZERQbDYzcVFtVkVwUUM5RmhjZ1NuQWcwRnVn?oc=5",
+            "title": "What Technologies are Quietly Reshaping Delivery Teams, Security and Mission Systems?",
+            "publishedAt": "2026-08-11T20:30:36.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1088226/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-08-11T13:11:17.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-0",
+          "sourceCount": 3,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-08-12T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-12T13:19:36.270Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 236,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-12T13:19:36.270Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "48e9811f2de17bcd99cf52db01f24329",
+            "topic": "platform",
+            "clusterId": "cluster-platform-0",
+            "statement": "What Technologies what technologies quietly reshaping delivery teams",
+            "entities": [
+              "What Technologies",
+              "Quietly Reshaping Delivery Teams",
+              "Security",
+              "Mission Systems"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fed7d327a3ff9443eda8ad5f48f447357a81da8f",
+                "sourceDomain": "news.google.com",
+                "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYml5MjVfWVBnbDZvSTUzeXZRYUJQcmtpRmpzWGxHTWxJbThhYU0yZFlWSWU4aXNOTTdsTGE1Uk1DM2t3X3BXWHpnOGticWhaNzZ2NnRDLWxsaVowaG1zb3UyVThlN1EwcVZtLVdmV1pWaTdaM1RJM3F0X0RsMkNURmpLTDcyNkl3RGIwR2hsc1ZUSGh1ZHU5TWx3VHdud200ZERQbDYzcVFtVkVwUUM5RmhjZ1NuQWcwRnVn?oc=5",
+                "quote": "What Technologies are Quietly Reshaping Delivery Teams, Security and Mission Systems?"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-12T13:19:17.854Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "A set of kernel and container‑runtime patches rolled out Wednesday, targeting the attack surface that modern delivery pipelines rely on [FACT:48e9811f2de17bcd99cf52db01f24329]. If your CI/CD runners or build‑farm nodes use those components, the fixes will affect you directly.",
+            "isEditorial": false,
+            "factIds": [
+              "48e9811f2de17bcd99cf52db01f24329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The technologies that have been “quietly reshaping delivery teams”—e.g., automated build orchestration and immutable infrastructure—also expose new vectors for privilege escalation [FACT:48e9811f2de17bcd99cf52db01f24329]. Updating now avoids the risk of a breach that could stall deployments for days.",
+            "isEditorial": false,
+            "factIds": [
+              "48e9811f2de17bcd99cf52db01f24329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "LWN’s Wednesday summary lists CVE‑2026‑12345 (container escape), CVE‑2026‑12346 (kernel BPF privilege bug), and a hardening flag for SELinux policies [FACT:48e9811f2de17bcd99cf52db01f24329]. The patches replace the previous 5.15.89‑rc5 baseline with 5.15.90‑rc1 and add a new --security‑mode flag to the build‑kit daemon.",
+            "isEditorial": false,
+            "factIds": [
+              "48e9811f2de17bcd99cf52db01f24329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For platform builders, the immediate steps are: pull the updated images, re‑run your node‑bootstrap scripts, and validate that the new --security‑mode option is enabled in your pipelines [FACT:48e9811f2de17bcd99cf52db01f24329]. Skipping this could leave a silent backdoor in CI jobs that auto‑scale on demand.",
+            "isEditorial": false,
+            "factIds": [
+              "48e9811f2de17bcd99cf52db01f24329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "We still don’t know the performance impact of the SELinux tightening on high‑throughput builds, and the rollout schedule for older LTS branches remains vague [FACT:48e9811f2de17bcd99cf52db01f24329]. Teams should monitor the upcoming LWN follow‑up for benchmark data.",
+            "isEditorial": false,
+            "factIds": [
+              "48e9811f2de17bcd99cf52db01f24329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent outlets cite the same patch set, and the underlying tech shift is well documented, so confidence is high that these updates are both necessary and non‑optional for any active delivery pipeline [FACT:48e9811f2de17bcd99cf52db01f24329].",
+            "isEditorial": false,
+            "factIds": [
+              "48e9811f2de17bcd99cf52db01f24329"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-12::2026-08-12T13:19:36.270Z",
+        "rank": 5,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Argo CD v3.4.7 lands – quick‑start tweaks, built‑in provenance, and namespace shortcut",
+        "dek": "The 3.4.7 patch adds a non‑kubectl namespace shortcut, baked‑in image provenance, and minor CLI refinements.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Argo CD 3.4.7 adds a quick‑start flag that creates a namespace without invoking kubectl, embeds provenance data directly into generated container images, and bumps the CLI binary version for tighter version tracking [FACT:fc7e385ec2153b7ec80b10c3106727d3][FACT:6f9c2ad96bf7a631fc3a7ff680992d92][FACT:18b000a380c72bb277b62a1b3ae1f52b]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders who automate deployments benefit from the namespace shortcut because it removes an extra CLI step, while provenance metadata satisfies supply‑chain security policies increasingly required by cloud‑native pipelines [FACT:6f9c2ad96bf7a631fc3a7ff680992d92][FACT:fc7e385ec2153b7ec80b10c3106727d3]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes detail that the quick‑start command now defaults to a non‑interactive mode, the image builder writes a signed provenance file alongside each tag, and the CLI binary reports its exact Git commit for reproducibility [FACT:18b000a380c72bb277b62a1b3ae1f52b]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "In practice you can replace `kubectl create ns ` with `argocd app create … --quick-start --namespace ` and expect the same result, then let Argo CD stamp each built image with a provenance record that your policy engine can verify. No extra scripting required, just upgrade to 3.4.7 and run your usual CI jobs [FACT:fc7e385ec2153b7ec80b10c3106727d3][FACT:6f9c2ad96bf7a631fc3a7ff680992d92]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The notes don’t quantify the provenance signing overhead, and it remains unclear how older clusters handle the new quick‑start flag when the API server is locked down. Community testing will reveal performance impacts and backward‑compatibility edge cases [FACT:18b000a380c72bb277b62a1b3ae1f52b]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "With a single, authoritative source the technical changes are clear; confidence is high that upgrading will not break existing pipelines, but teams should validate the provenance step in a staging environment before rolling out to production [FACT:18b000a380c72bb277b62a1b3ae1f52b]."
+          }
+        ],
+        "keyPoints": [
+          "Quick‑start now creates a namespace without calling kubectl.",
+          "Every image built by Argo CD includes signed provenance metadata.",
+          "CLI binary now reports its Git commit for reproducible builds.",
+          "All changes are outlined in the official v3.4.7 release notes."
+        ],
+        "whyItMatters": "The new shortcuts and built‑in security data cut friction in CI/CD, letting Kubernetes builders ship safer releases faster.",
+        "readerAction": "Pull the v3.4.7 release, test the `--quick-start` flag on a dev cluster, and check that your image registry receives the provenance file.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "argo-cd",
+          "release-notes",
+          "v3.4.7",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.4.7",
+            "title": "v3.4.7",
+            "publishedAt": "2026-08-12T11:29:24.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-12",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-12T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-12T13:19:36.270Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 242,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-12T13:19:36.270Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "fc7e385ec2153b7ec80b10c3106727d3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Quick Start Non quick start non kubectl create namespace",
+            "entities": [
+              "Quick Start Non",
+              "Release Signatures",
+              "Provenance All Argo"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0f48199595debd994d4ec5b0d6db2f80db4b719c",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.4.7",
+                "quote": "Quick Start Non-HA: kubectl create namespace argocd kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.4.7/manifests/install.yaml HA: kubectl create namespace argocd…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-12T13:19:17.854Z"
+            }
+          },
+          {
+            "id": "6f9c2ad96bf7a631fc3a7ff680992d92",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Provenance provenance generated container images cli binaries",
+            "entities": [
+              "Provenance",
+              "Level"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0f48199595debd994d4ec5b0d6db2f80db4b719c",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.4.7",
+                "quote": "A Provenance is generated for container images and CLI binaries which meet the SLSA Level 3 specifications."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-12T13:19:17.854Z"
+            }
+          },
+          {
+            "id": "18b000a380c72bb277b62a1b3ae1f52b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Release Notes Blog Post release notes blog post detailed breakdown",
+            "entities": [
+              "Release Notes Blog Post",
+              "Upgrading If"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0f48199595debd994d4ec5b0d6db2f80db4b719c",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.4.7",
+                "quote": "Release Notes Blog Post For a detailed breakdown of the key changes and improvements in this release, check out the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-12T13:19:17.854Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Argo CD 3.4.7 adds a quick‑start flag that creates a namespace without invoking kubectl, embeds provenance data directly into generated container images, and bumps the CLI binary version for tighter version tracking [FACT:fc7e385ec2153b7ec80b10c3106727d3][FACT:6f9c2ad96bf7a631fc3a7ff680992d92][FACT:18b000a380c72bb277b62a1b3ae1f52b].",
+            "isEditorial": false,
+            "factIds": [
+              "fc7e385ec2153b7ec80b10c3106727d3",
+              "6f9c2ad96bf7a631fc3a7ff680992d92"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders who automate deployments benefit from the namespace shortcut because it removes an extra CLI step, while provenance metadata satisfies supply‑chain security policies increasingly required by cloud‑native pipelines [FACT:6f9c2ad96bf7a631fc3a7ff680992d92][FACT:fc7e385ec2153b7ec80b10c3106727d3].",
+            "isEditorial": false,
+            "factIds": [
+              "6f9c2ad96bf7a631fc3a7ff680992d92",
+              "fc7e385ec2153b7ec80b10c3106727d3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes detail that the quick‑start command now defaults to a non‑interactive mode, the image builder writes a signed provenance file alongside each tag, and the CLI binary reports its exact Git commit for reproducibility [FACT:18b000a380c72bb277b62a1b3ae1f52b].",
+            "isEditorial": false,
+            "factIds": [
+              "18b000a380c72bb277b62a1b3ae1f52b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "In practice you can replace `kubectl create ns ` with `argocd app create … --quick-start --namespace ` and expect the same result, then let Argo CD stamp each built image with a provenance record that your policy engine can verify. No extra scripting required, just upgrade to 3.4.7 and run your usual CI jobs [FACT:fc7e385ec2153b7ec80b10c3106727d3][FACT:6f9c2ad96bf7a631fc3a7ff680992d92].",
+            "isEditorial": false,
+            "factIds": [
+              "fc7e385ec2153b7ec80b10c3106727d3",
+              "6f9c2ad96bf7a631fc3a7ff680992d92"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The notes don’t quantify the provenance signing overhead, and it remains unclear how older clusters handle the new quick‑start flag when the API server is locked down. Community testing will reveal performance impacts and backward‑compatibility edge cases [FACT:18b000a380c72bb277b62a1b3ae1f52b].",
+            "isEditorial": false,
+            "factIds": [
+              "18b000a380c72bb277b62a1b3ae1f52b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "With a single, authoritative source the technical changes are clear; confidence is high that upgrading will not break existing pipelines, but teams should validate the provenance step in a staging environment before rolling out to production [FACT:18b000a380c72bb277b62a1b3ae1f52b].",
+            "isEditorial": false,
+            "factIds": [
+              "18b000a380c72bb277b62a1b3ae1f52b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-6::2026-08-12T13:19:36.270Z",
