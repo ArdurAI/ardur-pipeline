@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-12T12:00:00.000Z",
-    "windowStart": "2026-08-12T12:00:00.000Z",
-    "windowEnd": "2026-08-12T18:00:00.000Z"
+    "id": "2026-08-12T18:00:00.000Z",
+    "windowStart": "2026-08-12T18:00:00.000Z",
+    "windowEnd": "2026-08-13T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-12T13:19:17.667Z",
-  "nextRefreshAt": "2026-08-12T18:00:00.000Z",
+  "publishedAt": "2026-08-12T19:06:59.528Z",
+  "nextRefreshAt": "2026-08-13T00:00:00.000Z",
   "runIds": {
-    "aggregation": "68172b2e-7a0f-47cd-b81e-18655336c897",
-    "ranking": "rank-a660d03a",
-    "top10": "top10:2026-08-12T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-12T12:00:00.000Z-2026-08-12T13:19:36.270Z"
+    "aggregation": "fb396c88-8972-4bb3-be7b-bd4c029c3b6f",
+    "ranking": "rank-a2688d9d",
+    "top10": "top10:2026-08-12T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-12T18:00:00.000Z-2026-08-12T19:07:16.727Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-12T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-12T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-12T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-12T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-12T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-12T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1370,
+      "count": 1561,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,26 +52,26 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1586,
+      "count": 1792,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
@@ -79,9 +79,9 @@
       "category": "copyright-gate",
       "count": 29,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:54254: Important: ldns security update"
+        "topic": "kubernetes",
+        "headline": "Code that passes every test can still break the next AI agent that touches it"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges"
+        "topic": "kubernetes",
+        "headline": "3.14.0-rc.0 / 2026-08-06"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:54246: Moderate: kernel security update"
+        "topic": "ai",
+        "headline": "Anthropic | History, Controversies, & Claude AI"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Deploying Anthropic Claude apps gateway for AWS for enterprise workloads"
+        "topic": "security",
+        "headline": "RHSA-2026:54417: Important: python-pillow security update"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "From assistance to execution: How enterprises put AI to work"
+        "headline": "Daybreak models are now available on AWS"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Microsoft and Adobe Patch Tuesday, August 2026 Security Update Review"
+        "topic": "platform",
+        "headline": "A new security baseline for enterprise agentic adoption"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "IBM Lands a $240 Million AI Inference Deal"
+        "topic": "security",
+        "headline": "RHSA-2026:47117: Moderate: libgcrypt security update"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Nvidia Releases New Open Model"
+        "topic": "security",
+        "headline": "RHSA-2026:54343: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.54.0-next.3"
+        "topic": "security",
+        "headline": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Security updates for Wednesday"
+        "topic": "models",
+        "headline": "Serve Qwen3.8-2.4T-A95B, a 2.4T-Parameter Model, with Configurable Reasoning on NVIDIA GB300 NVL72"
       }
     ],
     "articleCount": 0
