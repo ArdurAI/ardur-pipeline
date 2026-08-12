@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-11T18:00:00.000Z",
-    "windowStart": "2026-08-11T18:00:00.000Z",
-    "windowEnd": "2026-08-12T00:00:00.000Z"
+    "id": "2026-08-12T00:00:00.000Z",
+    "windowStart": "2026-08-12T00:00:00.000Z",
+    "windowEnd": "2026-08-12T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-11T19:07:45.570Z",
-  "nextRefreshAt": "2026-08-12T00:00:00.000Z",
+  "publishedAt": "2026-08-12T02:17:08.116Z",
+  "nextRefreshAt": "2026-08-12T06:00:00.000Z",
   "runIds": {
-    "aggregation": "ab3bb103-24cd-46ef-b316-a59f8fb85154",
-    "ranking": "rank-8bd074ad",
-    "top10": "top10:2026-08-11T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-11T18:00:00.000Z-2026-08-11T19:08:02.406Z"
+    "aggregation": "eed0a035-d9e5-4885-b457-54e4026866aa",
+    "ranking": "rank-e9c65d89",
+    "top10": "top10:2026-08-12T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-12T00:00:00.000Z-2026-08-12T02:17:33.862Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-11T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-11T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-11T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-12T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-12T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-12T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1439,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-21] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1441,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1678,
+      "count": 1697,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 35,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "3.14.0-rc.0 / 2026-08-06"
+        "topic": "security",
+        "headline": "Microsoft Patch Tuesday, August 2026 Security Update Review"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day"
+        "topic": "kubernetes",
+        "headline": "v1.54.0-next.3"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:53475: Important: thunderbird security update"
+        "headline": "Microsoft Patch Tuesday for August 2026 — Snort rules and prominent vulnerabilities"
       },
       {
         "rank": 4,
+        "topic": "kubernetes",
+        "headline": "3.14.0-rc.0 / 2026-08-06"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "OpenAI launches GPT-5.6-Cyber to help defenders find vulnerabilities before attackers do"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Accelerate cyber defense with OpenAI and AWS: Daybreak Red & Daybreak Blue now available to eligible customers on Amazon Bedrock"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:53845: Important: iscsi-initiator-utils security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day"
+      },
+      {
+        "rank": 9,
         "topic": "models",
         "headline": "IBM, Together AI ink $240 million deal for Nvidia-powered AI inference cluster"
       },
       {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:53452: Moderate: gstreamer1-plugins-good security update"
-      },
-      {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "CNCF Announces Graduation of Cloud Native Buildpacks, Advancing the Standard for Container Builds"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "Deploying Anthropic Claude apps gateway for AWS for enterprise workloads"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic signs $9.1 billion data center deal with Riot Platforms"
-      },
-      {
-        "rank": 9,
-        "topic": "security",
-        "headline": "OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development"
-      },
-      {
         "rank": 10,
-        "topic": "models",
-        "headline": "Nvidia Releases New Open Model"
+        "topic": "ai",
+        "headline": "OpenAI CFO touts move toward ‘zero-day close’"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
