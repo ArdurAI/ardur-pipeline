@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-12T18:00:00.000Z",
-    "windowStart": "2026-08-12T18:00:00.000Z",
-    "windowEnd": "2026-08-13T00:00:00.000Z"
+    "id": "2026-08-13T00:00:00.000Z",
+    "windowStart": "2026-08-13T00:00:00.000Z",
+    "windowEnd": "2026-08-13T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-12T19:06:59.528Z",
-  "nextRefreshAt": "2026-08-13T00:00:00.000Z",
+  "publishedAt": "2026-08-13T02:21:00.412Z",
+  "nextRefreshAt": "2026-08-13T06:00:00.000Z",
   "runIds": {
-    "aggregation": "fb396c88-8972-4bb3-be7b-bd4c029c3b6f",
-    "ranking": "rank-a2688d9d",
-    "top10": "top10:2026-08-12T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-12T18:00:00.000Z-2026-08-12T19:07:16.727Z"
+    "aggregation": "d813ffa7-f241-400f-8138-779a24d908b5",
+    "ranking": "rank-eed6064e",
+    "top10": "top10:2026-08-13T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-13T00:00:00.000Z-2026-08-13T02:21:18.361Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-12T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-12T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-12T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-13T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-13T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-13T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1561,
+      "count": 1551,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,16 +59,16 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1792,
+      "count": 1797,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,27 +104,27 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "Code that passes every test can still break the next AI agent that touches it"
+        "headline": "v1.54.0-next.3"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "3.14.0-rc.0 / 2026-08-06"
+        "topic": "security",
+        "headline": "RHSA-2026:54443: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic | History, Controversies, & Claude AI"
+        "topic": "security",
+        "headline": "ShieldBreak Zero-Day PoC Claims Microsoft Defender Patch Bypass With SYSTEM Access"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:54417: Important: python-pillow security update"
+        "topic": "ai",
+        "headline": "How RingCentral builds AI-native work from engineering to ops"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Daybreak models are now available on AWS"
+        "topic": "models",
+        "headline": "Nvidia launches Nemotron 3.5 Lightning as US open model momentum picks up"
       },
       {
         "rank": 6,
@@ -133,18 +133,18 @@
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:47117: Moderate: libgcrypt security update"
+        "topic": "kubernetes",
+        "headline": "containerd 2.3.4"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:54343: Important: kernel security, bug fix, and enhancement update"
+        "headline": "Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges"
+        "headline": "Microsoft Plugs Nearly 400 Security Holes"
       },
       {
         "rank": 10,

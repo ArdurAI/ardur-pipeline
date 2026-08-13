@@ -142,7 +142,438 @@
     "20 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-0::2026-08-13T02:21:18.361Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "GitHub availability report: July 2026 – Actions outage, Azure‑backed migration, and what builders need to know",
+        "dek": "GitHub’s July 2026 report details an “unacceptable” GitHub Actions outage and an accelerated move of the core Actions service onto Azure to improve reliability for Kubernetes‑centric CI/CD pipelines.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitHub’s July 2026 availability report documents an “unacceptable” GitHub Actions outage on Thursday, Aug 8 2026, and says the company is fast‑tracking a move of the core Actions service onto Azure to harden redundancy [FACT:3d70a1182684e0c8b4f8aa66d3242a76][FACT:3473ea8cddf9ceece3ad9178b799baf3][FACT:1bd1f135a229b4293a2964bdf3f580e5]. The plan swaps the current mixed‑cloud routing for a dedicated Azure back‑end that runs the majority of Action jobs, aiming to cut the cascading failures described in the report [FACT:56188d5d66e16ce421c68091f41ca7d5][FACT:55ca88eebeebe2609d4d208ddc2e1a53]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitHub states that platform availability is a top priority across its services, so any extended downtime hits CI pipelines that push Docker images or Helm charts to Kubernetes clusters directly [FACT:ef37e74558363a07cfc6ba8c1b38b86c]. The outage highlights a single point of failure in the Actions service core, which many cloud‑native teams rely on for automated builds and deployments [FACT:1bd1f135a229b4293a2964bdf3f580e5]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Aug 8 2026, GitHub Actions experienced a multi‑region outage that the report calls “unacceptable” and attributes to cascading failures in the existing routing architecture [FACT:3d70a1182684e0c8b4f8aa66d3242a76][FACT:55ca88eebeebe2609d4d208ddc2e1a53]. Immediate repair items were identified, and the incident prompted GitHub to accelerate its migration of Actions workloads to Azure for better redundancy [FACT:c71a5b2275b6455f43d373d21add0688][FACT:3473ea8cddf9ceece3ad9178b799baf3]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For Kubernetes builders, the shift to Azure means most Action jobs will now traverse Azure data centers, so any network policies that block Azure traffic need revisiting [FACT:56188d5d66e16ce421c68091f41ca7d5]. Existing self‑hosted runners will continue to operate, but the underlying endpoint they contact will change as the Azure back‑end comes online."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitHub has not released performance benchmarks for the new Azure path, and the report only notes that the broader Azure rollout was shared last month, leaving the exact cut‑over schedule ambiguous [FACT:31994493d996319f9bc9bf7f014e3bda]. Builders should watch for follow‑up reports that detail latency impacts and the timeline for full migration."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The outage and Azure migration are confirmed by the single‑source GitHub report, so confidence is medium: the facts are solid, but the lack of independent verification means teams should monitor future updates before hard‑coding Azure endpoints or adjusting CI configurations beyond what is already recommended [FACT:3d70a1182684e0c8b4f8aa66d3242a76][FACT:3473ea8cddf9ceece3ad9178b799baf3]."
+          }
+        ],
+        "keyPoints": [
+          "GitHub Actions suffered an “unacceptable” multi‑region outage on Aug 8 2026 [FACT:3d70a1182684e0c8b4f8aa66d3242a76].",
+          "GitHub is accelerating a migration of the core Actions service onto Azure to add redundancy and stop cascading failures [FACT:3473ea8cddf9ceece3ad9178b799baf3][FACT:55ca88eebeebe2609d4d208ddc2e1a53].",
+          "The majority of Action jobs will now run in Azure, so network policies may need updates for Kubernetes‑centric CI/CD pipelines [FACT:56188d5d66e16ce421c68091f41ca7d5].",
+          "Performance metrics for the new Azure route and the exact migration timeline have not been published yet [FACT:31994493d996319f9bc9bf7f014e3bda]."
+        ],
+        "whyItMatters": "Kubernetes and cloud‑native teams depend on GitHub Actions for fast, reliable CI/CD; an outage directly stalls deployments, and the Azure migration changes traffic patterns that affect network security and performance considerations.",
+        "readerAction": "Read the full GitHub availability report (Aug 12 2026) and audit your CI/CD pipelines for Azure‑related network rules or hard‑coded endpoints.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "github",
+          "github-actions",
+          "azure"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "GitHub Blog",
+            "sourceDomain": "github.blog",
+            "tier": "primary",
+            "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+            "title": "GitHub availability report: July 2026",
+            "publishedAt": "2026-08-12T22:17:32.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-13T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-13T02:21:18.361Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 326,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-13T02:21:18.361Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "3d70a1182684e0c8b4f8aa66d3242a76",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub github actions incident thursday august unacceptable",
+            "entities": [
+              "GitHub",
+              "Actions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "The GitHub Actions incident on Thursday, August 6, was unacceptable in both its impact and particularity of its duration."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "ef37e74558363a07cfc6ba8c1b38b86c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub availability continues our top priority across",
+            "entities": [
+              "GitHub",
+              "Availability"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "Availability continues to be our top priority across all of GitHub."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "c71a5b2275b6455f43d373d21add0688",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub aside immediate repair items discovered through",
+            "entities": [
+              "GitHub",
+              "Aside",
+              "Actions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "Aside from immediate repair items discovered through our investigation, we are accelerating our architectural roadmap in GitHub Actions, aligned to…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "1bd1f135a229b4293a2964bdf3f580e5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub worth noting github actions service core",
+            "entities": [
+              "GitHub",
+              "Actions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "It’s worth noting that the GitHub Actions service at the core of the aforementioned incident is still fully running in…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "56188d5d66e16ce421c68091f41ca7d5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Azure while majority actions runs azure hadn",
+            "entities": [
+              "Azure"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "While the majority of actions runs on Azure, we hadn’t yet prioritized migrating launch service, the component that bridges the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "55ca88eebeebe2609d4d208ddc2e1a53",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Unfortunately unfortunately outlined public summary cascading failures",
+            "entities": [
+              "Unfortunately"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "Unfortunately, as outlined in the public summary, cascading failures led to an unacceptable delay in recovery."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "3473ea8cddf9ceece3ad9178b799baf3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub why accelerating our move github actions",
+            "entities": [
+              "GitHub",
+              "Actions",
+              "Azure"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "This is why we are accelerating our move of GitHub Actions to Azure, where we will have more headroom and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          },
+          {
+            "id": "31994493d996319f9bc9bf7f014e3bda",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Azure our broader efforts last month shared",
+            "entities": [
+              "Azure"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a867b54089923a36f1cc6ad332fe722a73c0c380",
+                "sourceDomain": "github.blog",
+                "url": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+                "quote": "On our broader efforts, last month , we shared how a deliberate pause and stronger stability controls changed the way…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-13T02:21:00.616Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "GitHub’s July 2026 availability report documents an “unacceptable” GitHub Actions outage on Thursday, Aug 8 2026, and says the company is fast‑tracking a move of the core Actions service onto Azure to harden redundancy [FACT:3d70a1182684e0c8b4f8aa66d3242a76][FACT:3473ea8cddf9ceece3ad9178b799baf3][FACT:1bd1f135a229b4293a2964bdf3f580e5]. The plan swaps the current mixed‑cloud routing for a dedicated Azure back‑end that runs the majority of Action jobs, aiming to cut the cascading failures described in the report [FACT:56188d5d66e16ce421c68091f41ca7d5][FACT:55ca88eebeebe2609d4d208ddc2e1a53].",
+            "isEditorial": false,
+            "factIds": [
+              "3d70a1182684e0c8b4f8aa66d3242a76",
+              "3473ea8cddf9ceece3ad9178b799baf3",
+              "1bd1f135a229b4293a2964bdf3f580e5",
+              "56188d5d66e16ce421c68091f41ca7d5",
+              "55ca88eebeebe2609d4d208ddc2e1a53"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "GitHub states that platform availability is a top priority across its services, so any extended downtime hits CI pipelines that push Docker images or Helm charts to Kubernetes clusters directly [FACT:ef37e74558363a07cfc6ba8c1b38b86c]. The outage highlights a single point of failure in the Actions service core, which many cloud‑native teams rely on for automated builds and deployments [FACT:1bd1f135a229b4293a2964bdf3f580e5].",
+            "isEditorial": false,
+            "factIds": [
+              "ef37e74558363a07cfc6ba8c1b38b86c",
+              "1bd1f135a229b4293a2964bdf3f580e5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Aug 8 2026, GitHub Actions experienced a multi‑region outage that the report calls “unacceptable” and attributes to cascading failures in the existing routing architecture [FACT:3d70a1182684e0c8b4f8aa66d3242a76][FACT:55ca88eebeebe2609d4d208ddc2e1a53]. Immediate repair items were identified, and the incident prompted GitHub to accelerate its migration of Actions workloads to Azure for better redundancy [FACT:c71a5b2275b6455f43d373d21add0688][FACT:3473ea8cddf9ceece3ad9178b799baf3].",
+            "isEditorial": false,
+            "factIds": [
+              "3d70a1182684e0c8b4f8aa66d3242a76",
+              "55ca88eebeebe2609d4d208ddc2e1a53",
+              "c71a5b2275b6455f43d373d21add0688",
+              "3473ea8cddf9ceece3ad9178b799baf3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For Kubernetes builders, the shift to Azure means most Action jobs will now traverse Azure data centers, so any network policies that block Azure traffic need revisiting [FACT:56188d5d66e16ce421c68091f41ca7d5]. Existing self‑hosted runners will continue to operate, but the underlying endpoint they contact will change as the Azure back‑end comes online.",
+            "isEditorial": false,
+            "factIds": [
+              "56188d5d66e16ce421c68091f41ca7d5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "GitHub has not released performance benchmarks for the new Azure path, and the report only notes that the broader Azure rollout was shared last month, leaving the exact cut‑over schedule ambiguous [FACT:31994493d996319f9bc9bf7f014e3bda]. Builders should watch for follow‑up reports that detail latency impacts and the timeline for full migration.",
+            "isEditorial": false,
+            "factIds": [
+              "31994493d996319f9bc9bf7f014e3bda"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The outage and Azure migration are confirmed by the single‑source GitHub report, so confidence is medium: the facts are solid, but the lack of independent verification means teams should monitor future updates before hard‑coding Azure endpoints or adjusting CI configurations beyond what is already recommended [FACT:3d70a1182684e0c8b4f8aa66d3242a76][FACT:3473ea8cddf9ceece3ad9178b799baf3].",
+            "isEditorial": false,
+            "factIds": [
+              "3d70a1182684e0c8b4f8aa66d3242a76",
+              "3473ea8cddf9ceece3ad9178b799baf3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-0::2026-08-13T02:21:18.361Z",
