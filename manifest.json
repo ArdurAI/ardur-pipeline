@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-13T12:00:00.000Z",
-    "windowStart": "2026-08-13T12:00:00.000Z",
-    "windowEnd": "2026-08-13T18:00:00.000Z"
+    "id": "2026-08-13T18:00:00.000Z",
+    "windowStart": "2026-08-13T18:00:00.000Z",
+    "windowEnd": "2026-08-14T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-13T13:21:20.093Z",
-  "nextRefreshAt": "2026-08-13T18:00:00.000Z",
+  "publishedAt": "2026-08-13T19:08:02.843Z",
+  "nextRefreshAt": "2026-08-14T00:00:00.000Z",
   "runIds": {
-    "aggregation": "67ef2707-428e-4738-a4c0-5d8f7f8dacf5",
-    "ranking": "rank-e98dda75",
-    "top10": "top10:2026-08-13T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-13T12:00:00.000Z-2026-08-13T13:21:38.075Z"
+    "aggregation": "0db4d8e7-c995-4b8a-912c-eabb8bd6078a",
+    "ranking": "rank-253dfffd",
+    "top10": "top10:2026-08-13T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-13T18:00:00.000Z-2026-08-13T19:08:25.639Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-13T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-13T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-13T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-13T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-13T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-13T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 84,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1302,
+      "count": 1399,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-18] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1584,
+      "count": 1725,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 24,
-      "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 13,
+      "sample": [
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "headline": "What 50 open source projects taught us about security in the AI era"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:54538: Important: .NET 8.0 security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:54650: Moderate: nghttp2 security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:54528: Important: python-pillow security update"
+        "headline": "RHSA-2026:54667: Important: freerdp security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:54512: Moderate: gnome-remote-desktop security update"
+        "topic": "ai",
+        "headline": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Monitor on-premises and multi-cloud AI agents with AgentCore Observability"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "v2.5.0-rc.0"
+      },
+      {
+        "rank": 7,
         "topic": "models",
         "headline": "Saturn Cloud integrates NVIDIA DSX OS for AI inference"
       },
       {
-        "rank": 6,
-        "topic": "security",
-        "headline": "WordPress 7.0.4 Patches Remote Code Execution Vulnerability"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic Said in Talks to Buy Startup Decart for $6 Billion"
-      },
-      {
         "rank": 8,
-        "topic": "ai",
-        "headline": "SpaceX Stock Slips as Grok Release Ramps Up AI War With Anthropic and OpenAI"
+        "topic": "security",
+        "headline": "Microsoft patches LegacyHive Windows zero-day vulnerability"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Anthropic Will Embed Watermarks in AI Outputs"
+        "headline": "OpenAI appoints Dali Rajic as Chief Revenue Officer"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "AMD Buying Taalas To Strengthen Its AI Inference Strategy"
+        "topic": "kubernetes",
+        "headline": "Packer v1.16.0 brings verifiable provenance to machine images"
       }
     ],
     "articleCount": 0
