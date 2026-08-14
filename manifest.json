@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-14T12:00:00.000Z",
-    "windowStart": "2026-08-14T12:00:00.000Z",
-    "windowEnd": "2026-08-14T18:00:00.000Z"
+    "id": "2026-08-14T18:00:00.000Z",
+    "windowStart": "2026-08-14T18:00:00.000Z",
+    "windowEnd": "2026-08-15T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-14T13:15:40.164Z",
-  "nextRefreshAt": "2026-08-14T18:00:00.000Z",
+  "publishedAt": "2026-08-14T19:00:18.936Z",
+  "nextRefreshAt": "2026-08-15T00:00:00.000Z",
   "runIds": {
-    "aggregation": "8988bcf1-8069-460f-82df-cb3ce4743924",
-    "ranking": "rank-79c91cf0",
-    "top10": "top10:2026-08-14T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-14T12:00:00.000Z-2026-08-14T13:16:00.478Z"
+    "aggregation": "ff857431-5772-430e-b26d-6ed2bd24fda8",
+    "ranking": "rank-e9aff009",
+    "top10": "top10:2026-08-14T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-14T18:00:00.000Z-2026-08-14T19:00:45.279Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-14T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-14T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-14T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-14T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-14T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-14T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1299,
+      "count": 1356,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMieEFVX3lxTE9oWmdzRjNiV3hKUEN5QUs3STdXTFRScGJXVlgtWkVDeXdIUjBRRmZaNXJveFVwa0Z4cFE1aVlVeFM3SlFyLThERGhpNDU4QWJoUVFHWUNBS3hycG5oQ1NlcTRPal9jVDg1ZmN4dU9aTF9wNjh1RWo3cA?oc=5",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 7 distinct domains < floor 20",
         "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1548,
+      "count": 1622,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 9,
+      "count": 10,
       "sample": [
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 64,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
+        "topic": "platform",
+        "headline": "Security updates for Friday"
+      },
+      {
+        "rank": 3,
         "topic": "ai",
         "headline": "The builder’s guide to GPT‑5.6"
       },
       {
-        "rank": 3,
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Apple trains China-specific AI model with Alibaba's help"
+      },
+      {
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "v2.4.0-rc.1"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "Top 10 cloud security threats every business should know"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Study contradicts Anthropic and OpenAI claims that autonomous AI research is within reach"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "Eleven minutes, zero humans: Building a self-healing Kubernetes upgrade pipeline on Kairos"
       },
       {
-        "rank": 4,
-        "topic": "security",
-        "headline": "If the Markets Reject OpenAI and Anthropic, the US Should Nationalize Them"
-      },
-      {
-        "rank": 5,
+        "rank": 9,
         "topic": "models",
         "headline": "The most important LLM benchmark today: Price"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Z.ai to Rival Anthropic, OpenAI in Coding With New AI Model"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:54752: Important: gstreamer1-plugins-bad-free security update"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "What 50 open source projects taught us about security in the AI era"
-      },
-      {
-        "rank": 9,
-        "topic": "security",
-        "headline": "Hackers Exploiting Unpatched GeoServer Zero-Day"
-      },
-      {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Developer experience improvements you can apply to your own projects"
+        "topic": "security",
+        "headline": "If the Markets Reject OpenAI and Anthropic, the US Should Nationalize Them"
       }
     ],
     "articleCount": 0
