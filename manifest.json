@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-14T06:00:00.000Z",
-    "windowStart": "2026-08-14T06:00:00.000Z",
-    "windowEnd": "2026-08-14T12:00:00.000Z"
+    "id": "2026-08-14T12:00:00.000Z",
+    "windowStart": "2026-08-14T12:00:00.000Z",
+    "windowEnd": "2026-08-14T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-14T07:38:46.256Z",
-  "nextRefreshAt": "2026-08-14T12:00:00.000Z",
+  "publishedAt": "2026-08-14T13:15:40.164Z",
+  "nextRefreshAt": "2026-08-14T18:00:00.000Z",
   "runIds": {
-    "aggregation": "8c3c5ccb-af2a-4ca0-ac61-6829d0aee27e",
-    "ranking": "rank-af1ce99c",
-    "top10": "top10:2026-08-14T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-14T06:00:00.000Z-2026-08-14T07:39:09.253Z"
+    "aggregation": "8988bcf1-8069-460f-82df-cb3ce4743924",
+    "ranking": "rank-79c91cf0",
+    "top10": "top10:2026-08-14T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-14T12:00:00.000Z-2026-08-14T13:16:00.478Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-14T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-14T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-14T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-14T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-14T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-14T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1307,
+      "count": 1299,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 7 distinct domains < floor 20",
         "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1560,
+      "count": 1548,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 9,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 64,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed"
+        "headline": "llm-gemini 0.33"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI’s Revenue Run Rate Tops $40 Billion Ahead of IPO"
+        "headline": "The builder’s guide to GPT‑5.6"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Gemini 3.7 Flash lands with coding gains and undercuts its three-week-old predecessor&039;s price by 50%"
+        "topic": "kubernetes",
+        "headline": "Eleven minutes, zero humans: Building a self-healing Kubernetes upgrade pipeline on Kairos"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:54752: Important: gstreamer1-plugins-bad-free security update"
+        "headline": "If the Markets Reject OpenAI and Anthropic, the US Should Nationalize Them"
       },
       {
         "rank": 5,
+        "topic": "models",
+        "headline": "The most important LLM benchmark today: Price"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Z.ai to Rival Anthropic, OpenAI in Coding With New AI Model"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:54752: Important: gstreamer1-plugins-bad-free security update"
+      },
+      {
+        "rank": 8,
         "topic": "platform",
         "headline": "What 50 open source projects taught us about security in the AI era"
       },
       {
-        "rank": 6,
+        "rank": 9,
         "topic": "security",
         "headline": "Hackers Exploiting Unpatched GeoServer Zero-Day"
       },
       {
-        "rank": 7,
+        "rank": 10,
         "topic": "platform",
         "headline": "Developer experience improvements you can apply to your own projects"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: Apple trains its own AI model for China market with Alibaba's support, sources say"
-      },
-      {
-        "rank": 9,
-        "topic": "kubernetes",
-        "headline": "apis/v2.5.0-rc.0"
-      },
-      {
-        "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:54662: Moderate: nghttp2 security update"
       }
     ],
     "articleCount": 0
