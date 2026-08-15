@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-15T06:00:00.000Z",
-    "windowStart": "2026-08-15T06:00:00.000Z",
-    "windowEnd": "2026-08-15T12:00:00.000Z"
+    "id": "2026-08-15T12:00:00.000Z",
+    "windowStart": "2026-08-15T12:00:00.000Z",
+    "windowEnd": "2026-08-15T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-15T06:44:49.236Z",
-  "nextRefreshAt": "2026-08-15T12:00:00.000Z",
+  "publishedAt": "2026-08-15T12:45:37.721Z",
+  "nextRefreshAt": "2026-08-15T18:00:00.000Z",
   "runIds": {
-    "aggregation": "0cee9b09-e9f5-4b6e-991a-a9c968ac3a1c",
-    "ranking": "rank-626b7d34",
-    "top10": "top10:2026-08-15T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-15T06:00:00.000Z-2026-08-15T06:45:09.403Z"
+    "aggregation": "3f47d8f2-b4e6-4dbe-939c-fd30fa874fa6",
+    "ranking": "rank-2448ff93",
+    "top10": "top10:2026-08-15T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-15T12:00:00.000Z-2026-08-15T12:47:10.072Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-15T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-15T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-15T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-15T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-15T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-15T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 81,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai] source news.google.com: HTTP 503 Service Unavailable",
+        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit"
       ]
     },
     {
@@ -40,56 +49,47 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1156,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1443,
+      "count": 345,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 13,
-      "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 3,
+      "sample": [
+        "26 article(s) held (AI unavailable or grounding failed)",
+        "All 26 article(s) are held — no AI-generated content published",
+        "26 article(s) held: insufficient fact corroboration — not published to latest/"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "llm-gemini 0.33"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic | History, Controversies, & Claude AI"
-      },
-      {
-        "rank": 3,
         "topic": "kubernetes",
         "headline": "Dapr Runtime v1.16.19"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Nvidia scales back $250 billion OpenAI data center guarantee, WSJ reports"
-      },
-      {
-        "rank": 5,
+        "rank": 2,
         "topic": "kubernetes",
         "headline": "v5.1.1: tests: internal: validate storage limit chunk size"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: Anthropic IPO valuation hinges on $190-200 billion 2028 revenue forecast, sources say"
+        "rank": 3,
+        "topic": "platform",
+        "headline": "Presentation: From Models to Agents: Building Context-Aware Consumer AI at Scale at DoorDash"
       },
       {
-        "rank": 7,
-        "topic": "security",
-        "headline": "Top 10 cloud security threats every business should know"
+        "rank": 4,
+        "topic": "platform",
+        "headline": "Cloudflare Adds Agent Tracing, with Truncation Limits and Uneven Payload Defaults"
       },
       {
-        "rank": 8,
+        "rank": 5,
         "topic": "kubernetes",
         "headline": "v2.4.0-rc.1"
       },
       {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "AI-generated books are flooding Amazon and tanking sales for human authors"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "Hackers Exploiting Unpatched GeoServer Zero-Day"
+      },
+      {
+        "rank": 8,
+        "topic": "platform",
+        "headline": "Cloudflare Introduces Cache Response Rules for Post-Origin Cache Control"
+      },
+      {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "No More Funky Potato Salad: Walmart Just Slashed Prices on Food Storage Containers for Late-Summer Cookouts"
+        "headline": "Helm v4.2.4"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Cloudflare Introduces Cache Response Rules for Post-Origin Cache Control"
+        "topic": "ai",
+        "headline": "Northern Gannet"
       }
     ],
     "articleCount": 0
