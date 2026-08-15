@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-15T12:00:00.000Z",
-    "windowStart": "2026-08-15T12:00:00.000Z",
-    "windowEnd": "2026-08-15T18:00:00.000Z"
+    "id": "2026-08-15T18:00:00.000Z",
+    "windowStart": "2026-08-15T18:00:00.000Z",
+    "windowEnd": "2026-08-16T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-15T12:45:37.721Z",
-  "nextRefreshAt": "2026-08-15T18:00:00.000Z",
+  "publishedAt": "2026-08-15T18:36:08.604Z",
+  "nextRefreshAt": "2026-08-16T00:00:00.000Z",
   "runIds": {
-    "aggregation": "3f47d8f2-b4e6-4dbe-939c-fd30fa874fa6",
-    "ranking": "rank-2448ff93",
-    "top10": "top10:2026-08-15T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-15T12:00:00.000Z-2026-08-15T12:47:10.072Z"
+    "aggregation": "e0dd35bd-a70a-49fb-985b-1c958f2fbafb",
+    "ranking": "rank-10486ff0",
+    "top10": "top10:2026-08-15T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-15T18:00:00.000Z-2026-08-15T18:36:26.617Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-15T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-15T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-15T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-15T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-15T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-15T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 81,
+      "count": 1145,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source news.google.com: HTTP 503 Service Unavailable",
-        "[models] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 345,
+      "count": 1347,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 3,
+      "count": 17,
       "sample": [
-        "26 article(s) held (AI unavailable or grounding failed)",
-        "All 26 article(s) are held — no AI-generated content published",
-        "26 article(s) held: insufficient fact corroboration — not published to latest/"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 78,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.16.19"
+        "topic": "ai",
+        "headline": "Investor pressure forces Nvidia to shrink its OpenAI bet just as Anthropic&039;s numbers defy bubble warnings"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "v5.1.1: tests: internal: validate storage limit chunk size"
+        "topic": "ai",
+        "headline": "Anthropic revenue reportedly jumps to more than $11.5 billion in second quarter"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Presentation: From Models to Agents: Building Context-Aware Consumer AI at Scale at DoorDash"
+        "topic": "ai",
+        "headline": "How Claude's text watermarking works"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Cloudflare Adds Agent Tracing, with Truncation Limits and Uneven Payload Defaults"
+        "topic": "ai",
+        "headline": "Apple Turns to Alibaba to Help Build AI Model for China"
       },
       {
         "rank": 5,
         "topic": "kubernetes",
-        "headline": "v2.4.0-rc.1"
+        "headline": "Dapr Runtime v1.16.19"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "AI-generated books are flooding Amazon and tanking sales for human authors"
+        "topic": "kubernetes",
+        "headline": "5 NFV deployment lessons Kubernetes training doesn’t prepare you for"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Hackers Exploiting Unpatched GeoServer Zero-Day"
+        "topic": "kubernetes",
+        "headline": "Manhattan residents who tasted NYC's trash revolution want their street bins back"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Cloudflare Introduces Cache Response Rules for Post-Origin Cache Control"
+        "topic": "kubernetes",
+        "headline": "v5.1.1: tests: internal: validate storage limit chunk size"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Helm v4.2.4"
+        "topic": "platform",
+        "headline": "Per-developer environments were the goal. Agents moved the goalposts."
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Northern Gannet"
+        "topic": "security",
+        "headline": "New Evooo1Bot Linux botnet turns routers into traffic relay nodes"
       }
     ],
     "articleCount": 0
