@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-14T18:00:00.000Z",
-    "windowStart": "2026-08-14T18:00:00.000Z",
-    "windowEnd": "2026-08-15T00:00:00.000Z"
+    "id": "2026-08-15T00:00:00.000Z",
+    "windowStart": "2026-08-15T00:00:00.000Z",
+    "windowEnd": "2026-08-15T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-14T19:00:18.936Z",
-  "nextRefreshAt": "2026-08-15T00:00:00.000Z",
+  "publishedAt": "2026-08-15T01:27:26.235Z",
+  "nextRefreshAt": "2026-08-15T06:00:00.000Z",
   "runIds": {
-    "aggregation": "ff857431-5772-430e-b26d-6ed2bd24fda8",
-    "ranking": "rank-e9aff009",
-    "top10": "top10:2026-08-14T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-14T18:00:00.000Z-2026-08-14T19:00:45.279Z"
+    "aggregation": "37b84f39-14f9-4be1-8822-f6d733bc36c6",
+    "ranking": "rank-4fa6ab22",
+    "top10": "top10:2026-08-15T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-15T00:00:00.000Z-2026-08-15T01:27:41.175Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-14T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-14T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-14T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-15T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-15T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-15T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1356,
+      "count": 1313,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMieEFVX3lxTE9oWmdzRjNiV3hKUEN5QUs3STdXTFRScGJXVlgtWkVDeXdIUjBRRmZaNXJveFVwa0Z4cFE1aVlVeFM3SlFyLThERGhpNDU4QWJoUVFHWUNBS3hycG5oQ1NlcTRPal9jVDg1ZmN4dU9aTF9wNjh1RWo3cA?oc=5",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
         "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1622,
+      "count": 1586,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
@@ -77,19 +77,19 @@
     },
     {
       "category": "editorial-hold",
-      "count": 10,
+      "count": 12,
       "sample": [
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 64,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -114,32 +114,32 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "The builder’s guide to GPT‑5.6"
+        "headline": "Nvidia scales back $250 billion OpenAI data center guarantee, WSJ reports"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Apple trains China-specific AI model with Alibaba's help"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v2.4.0-rc.1"
-      },
-      {
-        "rank": 6,
         "topic": "security",
         "headline": "Top 10 cloud security threats every business should know"
       },
       {
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.18.3"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "v1.16.19: 1.16 add in azure auth spiffee cred contrib fix 10359"
+      },
+      {
         "rank": 7,
         "topic": "ai",
-        "headline": "Study contradicts Anthropic and OpenAI claims that autonomous AI research is within reach"
+        "headline": "Anthropic announces watermark detection API that will let third parties detect Claude&039;s AI texts"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "Eleven minutes, zero humans: Building a self-healing Kubernetes upgrade pipeline on Kairos"
+        "headline": "v2.4.0-rc.1"
       },
       {
         "rank": 9,
@@ -148,8 +148,8 @@
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "If the Markets Reject OpenAI and Anthropic, the US Should Nationalize Them"
+        "topic": "ai",
+        "headline": "Study contradicts Anthropic and OpenAI claims that autonomous AI research is within reach"
       }
     ],
     "articleCount": 0
