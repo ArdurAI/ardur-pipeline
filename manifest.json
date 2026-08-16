@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-16T06:00:00.000Z",
-    "windowStart": "2026-08-16T06:00:00.000Z",
-    "windowEnd": "2026-08-16T12:00:00.000Z"
+    "id": "2026-08-16T12:00:00.000Z",
+    "windowStart": "2026-08-16T12:00:00.000Z",
+    "windowEnd": "2026-08-16T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-16T06:46:40.642Z",
-  "nextRefreshAt": "2026-08-16T12:00:00.000Z",
+  "publishedAt": "2026-08-16T12:47:45.903Z",
+  "nextRefreshAt": "2026-08-16T18:00:00.000Z",
   "runIds": {
-    "aggregation": "e70dacc1-e687-4bb1-9df3-ad2609ae3618",
-    "ranking": "rank-b722241c",
-    "top10": "top10:2026-08-16T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-16T06:00:00.000Z-2026-08-16T06:46:52.462Z"
+    "aggregation": "f895d0e2-4ed4-4064-a25f-af04e010f1db",
+    "ranking": "rank-9d4e8136",
+    "top10": "top10:2026-08-16T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-16T12:00:00.000Z-2026-08-16T12:47:58.860Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-16T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-16T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-16T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-16T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-16T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-16T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 63,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1219,
+      "count": 1262,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-16] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1116,
+      "count": 1053,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 36,
+      "category": "editorial-hold",
+      "count": 11,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 1 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 13,
+      "category": "copyright-gate",
+      "count": 38,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Investor pressure forces Nvidia to shrink its OpenAI bet just as Anthropic&039;s numbers defy bubble warnings"
+        "headline": "Nvidia eyes investing $3 billion in SB Energy under OpenAI data center deal, Information says"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Nvidia eyes investing $3 billion in SB Energy under OpenAI data center deal, Information says"
+        "headline": "Alibaba’s open-source AI model Qwen overtakes Meta, Google to claim top spot globally: report"
       },
       {
         "rank": 3,
+        "topic": "platform",
+        "headline": "AWS Open-Sources Dogwood, Extending Cedar to Govern Sequences of Agent Tool Calls"
+      },
+      {
+        "rank": 4,
         "topic": "kubernetes",
         "headline": "Fluent Bit 5.1.1"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "topic": "platform",
         "headline": "How PGSimCity Turns PostgreSQL Complexity Into a Virtual City 3D Simulation"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic CEO’s wife asked Epstein to invest in ‘luxury porn’ business, emails reveal"
-      },
-      {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic revenue reportedly jumps to more than $11.5 billion in second quarter"
+        "headline": "Apple Turns to Alibaba to Help Build AI Model for China"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "NEA rebuts ‘misplaced’ accusations of misappropriation, corruption over recycling scheme refunds"
+        "topic": "ai",
+        "headline": "Anthropic&039;s bio-weapons filter was down for nearly a year, exposing 133 million requests"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "5 NFV deployment lessons Kubernetes training doesn’t prepare you for"
+        "topic": "models",
+        "headline": "When AI models aren&039;t allowed to reflect on themselves, it changes their entire worldview"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Ban Mushy, Slimy Cucumbers From Your Fridge—These Clever Containers Will Help Them Last Longer"
+        "topic": "platform",
+        "headline": "AWS Introduces Native Vector Search for DynamoDB"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Optima tackles AI benchmarking&039;s biggest flaw by letting users test models against their own data"
+        "topic": "security",
+        "headline": "Stopping a cyberattack while walking your dog - defensive AI security CEO says it's not ruff to do"
       }
     ],
     "articleCount": 0
