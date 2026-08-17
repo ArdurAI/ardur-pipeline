@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-17T06:00:00.000Z",
-    "windowStart": "2026-08-17T06:00:00.000Z",
-    "windowEnd": "2026-08-17T12:00:00.000Z"
+    "id": "2026-08-17T12:00:00.000Z",
+    "windowStart": "2026-08-17T12:00:00.000Z",
+    "windowEnd": "2026-08-17T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-17T07:03:33.538Z",
-  "nextRefreshAt": "2026-08-17T12:00:00.000Z",
+  "publishedAt": "2026-08-17T12:52:26.530Z",
+  "nextRefreshAt": "2026-08-17T18:00:00.000Z",
   "runIds": {
-    "aggregation": "f7f0328a-5bda-4aaf-a56d-ba33e9181b2f",
-    "ranking": "rank-9b885ddf",
-    "top10": "top10:2026-08-17T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-17T06:00:00.000Z-2026-08-17T07:03:47.596Z"
+    "aggregation": "ae048850-9380-4a3e-8df6-750acecaeb67",
+    "ranking": "rank-50e0f77b",
+    "top10": "top10:2026-08-17T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-17T12:00:00.000Z-2026-08-17T12:52:39.301Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-17T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-17T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-17T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-17T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-17T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-17T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 69,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1199,
+      "count": 1239,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiWkFVX3lxTFBLQlJTY0ZsRElpT2xCTXk5N0RXX1ptdmhadm4tM1NxZDQzZ3BIVi1fcm1EdnFsZFExZFVQZ3pRdGlJbWhONy1NM3ZFLXBvRDB1UG1IWHlkUmZldw?oc=5",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 962,
+      "count": 1152,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] fetch budget exhausted (30) — 28 of 55 URLs fetched for this cluster"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "The hyping of Anthropic’s IPO"
+        "topic": "security",
+        "headline": "RHSA-2026:54515: Important: kernel security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:55439: Important: curl security update"
+        "topic": "ai",
+        "headline": "Anthropic watermarks Claude&039;s output, but critics question the tradeoffs"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:55440: Moderate: glib2 security update"
+        "headline": "RHSA-2026:55525: Moderate: butane security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Hazmat: Open-source containment for AI agents"
+        "topic": "security",
+        "headline": "Microsoft working on Defender patch for ShieldBreak zero-day"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Chinese scientists unveil soybean-specific AI model ‘Fengshu’ 2.0"
+        "headline": "Cloudways Launches Managed AI Agents With General Availability of OpenClaw and Hermes"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Nvidia reportedly eyes $3B investment in SB Energy tied to OpenAI data center deal"
+        "topic": "kubernetes",
+        "headline": "Release v1.19.1"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Top Cloud Security Threats of 2026 - cybersecurity-insiders.com"
+        "topic": "kubernetes",
+        "headline": "v2.15.2"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Wireshark 4.6.8 Released, Sun, Aug 16th"
+        "topic": "platform",
+        "headline": "Grafana's gcx and MCP Server Reach GA for Telemetry-Driven Agent Development"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Stripe is reportedly acquiring AI startup OpenRouter for more than $7 billion"
+        "topic": "security",
+        "headline": "Top Cloud Security Threats of 2026"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Community Labs Launches Open-Source Platform for Distributed AI Inference on Intel Hardware"
+        "topic": "ai",
+        "headline": "Anthropic explains how Claude’s invisible text watermarks will work"
       }
     ],
     "articleCount": 1
