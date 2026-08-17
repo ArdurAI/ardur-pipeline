@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-17T00:00:00.000Z",
-    "windowStart": "2026-08-17T00:00:00.000Z",
-    "windowEnd": "2026-08-17T06:00:00.000Z"
+    "id": "2026-08-17T06:00:00.000Z",
+    "windowStart": "2026-08-17T06:00:00.000Z",
+    "windowEnd": "2026-08-17T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-17T01:36:29.110Z",
-  "nextRefreshAt": "2026-08-17T06:00:00.000Z",
+  "publishedAt": "2026-08-17T07:03:33.538Z",
+  "nextRefreshAt": "2026-08-17T12:00:00.000Z",
   "runIds": {
-    "aggregation": "48ab1628-fcf4-43cb-a31d-460e736bc7e6",
-    "ranking": "rank-af00aa85",
-    "top10": "top10:2026-08-17T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-17T00:00:00.000Z-2026-08-17T01:36:58.908Z"
+    "aggregation": "f7f0328a-5bda-4aaf-a56d-ba33e9181b2f",
+    "ranking": "rank-9b885ddf",
+    "top10": "top10:2026-08-17T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-17T06:00:00.000Z-2026-08-17T07:03:47.596Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-17T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-17T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-17T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-17T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-17T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-17T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,6 +31,15 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1199,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "blocked-fetch",
       "count": 6,
       "sample": [
@@ -40,53 +49,44 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1316,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1010,
+      "count": 962,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] fetch budget exhausted (30) — 28 of 55 URLs fetched for this cluster"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
         "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 18,
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Investor pressure forces Nvidia to shrink its OpenAI bet just as Anthropic&039;s numbers defy bubble warnings"
+        "headline": "The hyping of Anthropic’s IPO"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:55425: Important: 389-ds-base security update"
+        "headline": "RHSA-2026:55439: Important: curl security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic | History, Controversies, & Claude AI"
+        "topic": "security",
+        "headline": "RHSA-2026:55440: Moderate: glib2 security update"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Alibaba Overtakes Google and Meta With 3 Billion AI Model Downloads"
+        "headline": "Hazmat: Open-source containment for AI agents"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Wireshark 4.6.8 Released, Sun, Aug 16th"
+        "topic": "ai",
+        "headline": "Chinese scientists unveil soybean-specific AI model ‘Fengshu’ 2.0"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’"
+        "headline": "Nvidia reportedly eyes $3B investment in SB Energy tied to OpenAI data center deal"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things"
+        "topic": "security",
+        "headline": "Top Cloud Security Threats of 2026 - cybersecurity-insiders.com"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Markdown SVG upgrades"
+        "topic": "security",
+        "headline": "Wireshark 4.6.8 Released, Sun, Aug 16th"
       },
       {
         "rank": 9,
         "topic": "models",
-        "headline": "Community Labs Launches Open-Source Platform for Distributed AI Inference on Intel Hardware"
+        "headline": "Stripe is reportedly acquiring AI startup OpenRouter for more than $7 billion"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "The 7.2 kernel has been released"
+        "topic": "models",
+        "headline": "Community Labs Launches Open-Source Platform for Distributed AI Inference on Intel Hardware"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
