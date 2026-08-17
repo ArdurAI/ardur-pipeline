@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-16T18:00:00.000Z",
-    "windowStart": "2026-08-16T18:00:00.000Z",
-    "windowEnd": "2026-08-17T00:00:00.000Z"
+    "id": "2026-08-17T00:00:00.000Z",
+    "windowStart": "2026-08-17T00:00:00.000Z",
+    "windowEnd": "2026-08-17T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-16T18:35:10.706Z",
-  "nextRefreshAt": "2026-08-17T00:00:00.000Z",
+  "publishedAt": "2026-08-17T01:36:29.110Z",
+  "nextRefreshAt": "2026-08-17T06:00:00.000Z",
   "runIds": {
-    "aggregation": "184b3e6b-7288-4bc5-bb5c-8ce9e13da6d3",
-    "ranking": "rank-03bd3ce0",
-    "top10": "top10:2026-08-16T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-16T18:00:00.000Z-2026-08-16T18:35:24.284Z"
+    "aggregation": "48ab1628-fcf4-43cb-a31d-460e736bc7e6",
+    "ranking": "rank-af00aa85",
+    "top10": "top10:2026-08-17T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-17T00:00:00.000Z-2026-08-17T01:36:58.908Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-16T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-16T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-16T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-17T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-17T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-17T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,15 +31,6 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1295,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "blocked-fetch",
       "count": 6,
       "sample": [
@@ -49,47 +40,56 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1316,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1019,
+      "count": 1010,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 37,
-      "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 12,
+      "count": 19,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 31,
+      "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "How AI Models From OpenAI and Anthropic Went Rogue"
+        "headline": "Investor pressure forces Nvidia to shrink its OpenAI bet just as Anthropic&039;s numbers defy bubble warnings"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Nvidia scales back funding guarantee for OpenAI center"
+        "topic": "security",
+        "headline": "RHSA-2026:55425: Important: 389-ds-base security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Alibaba Earnings Preview: AI Model Downloads Surge, Passing Meta, Google"
+        "headline": "Anthropic | History, Controversies, & Claude AI"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "Community Labs Launches Open-Source Platform for Distributed AI Inference on Intel Hardware"
+        "topic": "ai",
+        "headline": "Alibaba Overtakes Google and Meta With 3 Billion AI Model Downloads"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "AWS Open-Sources Dogwood, Extending Cedar to Govern Sequences of Agent Tool Calls"
+        "topic": "security",
+        "headline": "Wireshark 4.6.8 Released, Sun, Aug 16th"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Quoting Dario Amodei"
+        "headline": "Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "How PGSimCity Turns PostgreSQL Complexity Into a Virtual City 3D Simulation"
+        "topic": "models",
+        "headline": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Fluent Bit 5.1.1"
+        "topic": "models",
+        "headline": "Markdown SVG upgrades"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Large-scale DDoS attacks disrupted Threema secure messaging service"
+        "topic": "models",
+        "headline": "Community Labs Launches Open-Source Platform for Distributed AI Inference on Intel Hardware"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "6 Ways to End Food Container Chaos and Lost Lids for Good"
+        "topic": "platform",
+        "headline": "The 7.2 kernel has been released"
       }
     ],
     "articleCount": 0
