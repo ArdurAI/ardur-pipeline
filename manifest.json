@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-18T06:00:00.000Z",
-    "windowStart": "2026-08-18T06:00:00.000Z",
-    "windowEnd": "2026-08-18T12:00:00.000Z"
+    "id": "2026-08-18T12:00:00.000Z",
+    "windowStart": "2026-08-18T12:00:00.000Z",
+    "windowEnd": "2026-08-18T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-18T06:51:09.225Z",
-  "nextRefreshAt": "2026-08-18T12:00:00.000Z",
+  "publishedAt": "2026-08-18T12:54:41.014Z",
+  "nextRefreshAt": "2026-08-18T18:00:00.000Z",
   "runIds": {
-    "aggregation": "141ef21c-6628-4c26-8f37-457b414f07d8",
-    "ranking": "rank-8f844712",
-    "top10": "top10:2026-08-18T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-18T06:00:00.000Z-2026-08-18T06:51:24.474Z"
+    "aggregation": "a07432c0-c033-4b53-b036-5cd668b6848f",
+    "ranking": "rank-288f9dc6",
+    "top10": "top10:2026-08-18T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-18T12:00:00.000Z-2026-08-18T12:55:04.881Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-18T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-18T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-18T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-18T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-18T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-18T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 90,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1254,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiWkFVX3lxTFBLQlJTY0ZsRElpT2xCTXk5N0RXX1ptdmhadm4tM1NxZDQzZ3BIVi1fcm1EdnFsZFExZFVQZ3pRdGlJbWhONy1NM3ZFLXBvRDB1UG1IWHlkUmZldw?oc=5",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
@@ -49,26 +40,35 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1240,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1473,
+      "count": 1429,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:55930: Important: modhttp2 security update"
+        "topic": "platform",
+        "headline": "What is platform engineering?"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI signs record Ohio data center lease with Nvidia backing up to $105 billion"
+        "headline": "OpenAI launches a ChatGPT version built for teens"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.65.0/v0.159.0"
+        "topic": "security",
+        "headline": "RHSA-2026:56133: Moderate: attr security update"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:55804: Moderate: nghttp2 security update"
+        "headline": "RHSA-2026:56143: Important: grafana-pcp security update"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "CNCF Graduates Kubeflow for Production AI Workloads on Kubernetes"
+        "topic": "security",
+        "headline": "RHSA-2026:54599: Important: OpenShift Container Platform 4.21.29 bug fix and security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI joins PORTS-Pike project"
+        "topic": "security",
+        "headline": "Fortinet Acquires AI Security Company Virtue AI"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic's revenue run rate reportedly surpasses $65 billion pre-IPO"
+        "headline": "OpenAI signs record Ohio data center lease with Nvidia backing up to $105 billion"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Developing Nemotron 3.5 Lightning NVFP4 with QAD Using NVIDIA Model Optimizer"
+        "topic": "kubernetes",
+        "headline": "3.14.0 / 2026-08-17"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "CNCF Announces Kubeflow’s Graduation, Solidifying a Standard for Cloud Native AI Operations"
+        "topic": "ai",
+        "headline": "Partnering with CodeAI to prepare the first AI generation"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Continuous ATO and the Future of Federal IT Cloud Security"
+        "topic": "ai",
+        "headline": "Introducing ChatGPT for Teens: Built for learning, backed by protections"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
