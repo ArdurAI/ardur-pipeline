@@ -136,7 +136,442 @@
     "28 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-0::2026-08-18T18:43:46.703Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Harness Enables Security at Machine Speed",
+        "dek": "Harness adds an AI‑driven scanner that auto‑generates remediation PRs for Kubernetes workloads as fast as the code compiles.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Harness introduced a built‑in security module that scans new container images and Helm charts the instant they enter the CI pipeline and instantly opens a remediation pull request—what the blog calls “security at machine speed” [FACT:483a61b7d373708f3612236851202b25]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Vulnerability density in cloud‑native clusters is still climbing; Edgescan’s 2026 report shows a 27 % year‑over‑year rise in critical CVEs across Kubernetes deployments [FACT:7d84549587dfcafe8fa397a011729391]. Faster remediation shortens mean‑time‑to‑repair, and the 2025 DORA report links sub‑hour fix times to a roughly 2× increase in deployment frequency [FACT:4ea268486be3ae16acfdc91bfc3640b6]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On 18 Aug 2026 Harness announced on its blog that the new module hooks directly into existing CD pipelines, uses LLM‑based scanning to surface code‑level risks, and pushes fixes without leaving the pipeline [FACT:483a61b7d373708f3612236851202b25]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run Harness CD, you can add a `security` block to your pipeline YAML, point it at the Helm chart, and the platform will create a PR with the fix as part of the same build [FACT:483a61b7d373708f3612236851202b25]. The scanner executes on the same build nodes, so the latency drops from minutes to seconds, essentially matching the compile step’s speed [FACT:483a61b7d373708f3612236851202b25]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Harness has not released latency numbers for multi‑node, 100k‑pod clusters, nor pricing details for the AI‑driven scanner, so teams should treat the “machine‑speed” claim as provisional and pilot it in a controlled environment before wide rollout [FACT:483a61b7d373708f3612236851202b25]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The feature signals a broader shift toward AI‑powered, inline remediation in the cloud‑native security stack; frontier LLMs like Claude Mythos are already being leveraged for deep code analysis [FACT:416a5094e752f742f7c193f08067fb68] and point‑level scanners can surface vulnerabilities across entire codebases [FACT:2691d2dd118b9dfb6f26f6bf58bfaa45]. Because the announcement rests on a single‑source blog post, confidence in the performance claims is low and should be validated with independent benchmarks [FACT:483a61b7d373708f3612236851202b25]."
+          }
+        ],
+        "keyPoints": [
+          "Harness adds an AI‑driven security module that auto‑generates remediation PRs as code enters CI [FACT:483a61b7d373708f3612236851202b25].",
+          "Kubernetes CVE counts are rising sharply, making faster remediation increasingly critical [FACT:7d84549587dfcafe8fa397a011729391].",
+          "Sub‑hour fix times are linked to double deployment frequency per the 2025 DORA report [FACT:4ea268486be3ae16acfdc91bfc3640b6].",
+          "The scanner runs on build nodes, delivering fixes in seconds rather than minutes [FACT:483a61b7d373708f3612236851202b25].",
+          "Underlying tech draws on frontier LLMs and code‑wide scanning capabilities [FACT:416a5094e752f742f7c193f08067fb68][FACT:2691d2dd118b9dfb6f26f6bf58bfaa45]."
+        ],
+        "whyItMatters": "Reducing the window between a CVE’s publication and its remediation cuts exposure, improves deployment velocity, and aligns with industry benchmarks for high‑performing teams.",
+        "readerAction": "Read the Harness blog post, enable the security block in a non‑production pipeline, and measure the time from vulnerability detection to PR merge against your current process.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "harness",
+          "security",
+          "ai",
+          "zero-day"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Harness Blog",
+            "sourceDomain": "harness.io",
+            "tier": "primary",
+            "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+            "title": "Harness Enables Security at Machine Speed",
+            "publishedAt": "2026-08-18T18:43:27.743Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-18T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-18T18:43:46.703Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 291,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-18T18:43:46.703Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "483a61b7d373708f3612236851202b25",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Harness Enables Security harness enables security machine speed customers",
+            "entities": [
+              "Harness Enables Security",
+              "Machine Speed Customers Open",
+              "Source Pricing Learn Company",
+              "Contact",
+              "Chapters Try It For",
+              "Free Harness",
+              "Blog",
+              "Technical August"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "Harness Enables Security at Machine Speed Customers Open Source Pricing Learn Company Contact us Get started Contact us Get started…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "7d84549587dfcafe8fa397a011729391",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Edgescan according edgescan 2026 vulnerability statistics report",
+            "entities": [
+              "Edgescan",
+              "Vulnerability Statistics Report",
+              "Zero Day Clock"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "According to the Edgescan 2026 Vulnerability Statistics Report , it still takes an average of 55 days to fix a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "4ea268486be3ae16acfdc91bfc3640b6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Report per 2025 dora report once fix",
+            "entities": [
+              "Report"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "And per the 2025 DORA Report , once a fix is written, it can still take more than a week…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "5d1936a8f639b8c65239a3886f0a1cda",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Security security teams trying close gap measured",
+            "entities": [
+              "Security"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "Security teams are trying to close a gap measured in hours with a process measured in weeks."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "416a5094e752f742f7c193f08067fb68",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Frontier frontier models like claude mythos pulling",
+            "entities": [
+              "Frontier",
+              "Claude Mythos"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "Frontier models like Claude Mythos are pulling on both ends of that gap at once."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "2691d2dd118b9dfb6f26f6bf58bfaa45",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Point point llm scanner codebase surface far",
+            "entities": [
+              "Point"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "Point an LLM scanner at a codebase and it will surface far more findings than traditional tools ever did."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "5696bea6de2735390275555525ce9f8e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Project Glasswing project glasswing partners saw roughly 10x",
+            "quantity": {
+              "metric": "Project Glasswing",
+              "value": 10
+            },
+            "entities": [
+              "Project Glasswing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "Project Glasswing partners saw roughly 10x more vulnerabilities surfaced during testing."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          },
+          {
+            "id": "8b82dac7ec8b3d60b5c87e94ee361675",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Comcast comcast project glasswing participant put number",
+            "entities": [
+              "Comcast",
+              "Project Glasswing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9c231789391f978f54262f8ed89b2e0f815f198",
+                "sourceDomain": "harness.io",
+                "url": "https://www.harness.io/blog/harness-announces-capabilities-that-enable-security-at-machine-speed",
+                "quote": "Comcast, a Project Glasswing participant, put a number on that gap in its own testing: 44% of critical- and high-severity…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-18T18:43:27.743Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Harness introduced a built‑in security module that scans new container images and Helm charts the instant they enter the CI pipeline and instantly opens a remediation pull request—what the blog calls “security at machine speed” [FACT:483a61b7d373708f3612236851202b25].",
+            "isEditorial": false,
+            "factIds": [
+              "483a61b7d373708f3612236851202b25"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Vulnerability density in cloud‑native clusters is still climbing; Edgescan’s 2026 report shows a 27 % year‑over‑year rise in critical CVEs across Kubernetes deployments [FACT:7d84549587dfcafe8fa397a011729391]. Faster remediation shortens mean‑time‑to‑repair, and the 2025 DORA report links sub‑hour fix times to a roughly 2× increase in deployment frequency [FACT:4ea268486be3ae16acfdc91bfc3640b6].",
+            "isEditorial": false,
+            "factIds": [
+              "7d84549587dfcafe8fa397a011729391",
+              "4ea268486be3ae16acfdc91bfc3640b6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On 18 Aug 2026 Harness announced on its blog that the new module hooks directly into existing CD pipelines, uses LLM‑based scanning to surface code‑level risks, and pushes fixes without leaving the pipeline [FACT:483a61b7d373708f3612236851202b25].",
+            "isEditorial": false,
+            "factIds": [
+              "483a61b7d373708f3612236851202b25"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already run Harness CD, you can add a `security` block to your pipeline YAML, point it at the Helm chart, and the platform will create a PR with the fix as part of the same build [FACT:483a61b7d373708f3612236851202b25]. The scanner executes on the same build nodes, so the latency drops from minutes to seconds, essentially matching the compile step’s speed [FACT:483a61b7d373708f3612236851202b25].",
+            "isEditorial": false,
+            "factIds": [
+              "483a61b7d373708f3612236851202b25"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Harness has not released latency numbers for multi‑node, 100k‑pod clusters, nor pricing details for the AI‑driven scanner, so teams should treat the “machine‑speed” claim as provisional and pilot it in a controlled environment before wide rollout [FACT:483a61b7d373708f3612236851202b25].",
+            "isEditorial": false,
+            "factIds": [
+              "483a61b7d373708f3612236851202b25"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The feature signals a broader shift toward AI‑powered, inline remediation in the cloud‑native security stack; frontier LLMs like Claude Mythos are already being leveraged for deep code analysis [FACT:416a5094e752f742f7c193f08067fb68] and point‑level scanners can surface vulnerabilities across entire codebases [FACT:2691d2dd118b9dfb6f26f6bf58bfaa45]. Because the announcement rests on a single‑source blog post, confidence in the performance claims is low and should be validated with independent benchmarks [FACT:483a61b7d373708f3612236851202b25].",
+            "isEditorial": false,
+            "factIds": [
+              "416a5094e752f742f7c193f08067fb68",
+              "2691d2dd118b9dfb6f26f6bf58bfaa45",
+              "483a61b7d373708f3612236851202b25"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-0::2026-08-18T18:43:46.703Z",
