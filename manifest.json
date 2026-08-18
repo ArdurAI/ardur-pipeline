@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-17T18:00:00.000Z",
-    "windowStart": "2026-08-17T18:00:00.000Z",
-    "windowEnd": "2026-08-18T00:00:00.000Z"
+    "id": "2026-08-18T00:00:00.000Z",
+    "windowStart": "2026-08-18T00:00:00.000Z",
+    "windowEnd": "2026-08-18T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-17T18:45:19.832Z",
-  "nextRefreshAt": "2026-08-18T00:00:00.000Z",
+  "publishedAt": "2026-08-18T01:26:32.729Z",
+  "nextRefreshAt": "2026-08-18T06:00:00.000Z",
   "runIds": {
-    "aggregation": "53ca7425-f8aa-4ef0-be96-d6e6a3fb7be2",
-    "ranking": "rank-079f91bd",
-    "top10": "top10:2026-08-17T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-17T18:00:00.000Z-2026-08-17T18:45:50.323Z"
+    "aggregation": "1b9ab656-225c-4f62-8600-fa17f41f4292",
+    "ranking": "rank-11f6c433",
+    "top10": "top10:2026-08-18T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-18T00:00:00.000Z-2026-08-18T01:26:50.461Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-17T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-17T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-17T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-18T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-18T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-18T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1276,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiWkFVX3lxTFBLQlJTY0ZsRElpT2xCTXk5N0RXX1ptdmhadm4tM1NxZDQzZ3BIVi1fcm1EdnFsZFExZFVQZ3pRdGlJbWhONy1NM3ZFLXBvRDB1UG1IWHlkUmZldw?oc=5"
       ]
     },
     {
@@ -40,53 +49,44 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1242,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiWkFVX3lxTFBLQlJTY0ZsRElpT2xCTXk5N0RXX1ptdmhadm4tM1NxZDQzZ3BIVi1fcm1EdnFsZFExZFVQZ3pRdGlJbWhONy1NM3ZFLXBvRDB1UG1IWHlkUmZldw?oc=5"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1410,
+      "count": 1483,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 26,
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "v1.65.0/v0.159.0"
+        "topic": "security",
+        "headline": "RHSA-2026:55856: Important: .NET 9.0 security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:55784: Important: unbound security update"
+        "headline": "RHSA-2026:55865: Important: gstreamer1-plugins-bad-free and gstreamer1-plugins-ugly-free security update"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "CNCF Announces Kubeflow’s Graduation, Solidifying a Standard for Cloud Native AI Operations"
+        "topic": "kubernetes",
+        "headline": "v1.65.0/v0.159.0"
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:55758: Important: 389-ds-base security update"
+      },
+      {
+        "rank": 5,
         "topic": "ai",
         "headline": "OpenAI signs record Ohio data center lease with Nvidia backing up to $105 billion"
       },
       {
-        "rank": 5,
-        "topic": "models",
-        "headline": "Developing Nemotron 3.5 Lightning NVFP4 with QAD Using NVIDIA Model Optimizer"
-      },
-      {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:55525: Moderate: butane security update"
+        "headline": "RHSA-2026:55804: Moderate: nghttp2 security update"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Continuous ATO and the Future of Federal IT Cloud Security"
+        "topic": "kubernetes",
+        "headline": "CNCF Graduates Kubeflow for Production AI Workloads on Kubernetes"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v0.314.0"
+        "topic": "ai",
+        "headline": "Developing Nemotron 3.5 Lightning NVFP4 with QAD Using NVIDIA Model Optimizer"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v3.14.0"
+        "topic": "ai",
+        "headline": "OpenAI joins PORTS-Pike project"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI joins PORTS-Pike project"
+        "topic": "platform",
+        "headline": "CNCF Announces Kubeflow’s Graduation, Solidifying a Standard for Cloud Native AI Operations"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
