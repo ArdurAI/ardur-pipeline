@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-19T12:00:00.000Z",
-    "windowStart": "2026-08-19T12:00:00.000Z",
-    "windowEnd": "2026-08-19T18:00:00.000Z"
+    "id": "2026-08-19T18:00:00.000Z",
+    "windowStart": "2026-08-19T18:00:00.000Z",
+    "windowEnd": "2026-08-20T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-19T12:54:53.005Z",
-  "nextRefreshAt": "2026-08-19T18:00:00.000Z",
+  "publishedAt": "2026-08-19T18:41:09.438Z",
+  "nextRefreshAt": "2026-08-20T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c6329cc3-62b6-48e7-a6ba-2d93fdf30ea7",
-    "ranking": "rank-9d878421",
-    "top10": "top10:2026-08-19T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-19T12:00:00.000Z-2026-08-19T12:55:11.442Z"
+    "aggregation": "339404bb-d9f8-4d13-99c8-2b952c0e536a",
+    "ranking": "rank-bc86697f",
+    "top10": "top10:2026-08-19T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-19T18:00:00.000Z-2026-08-19T18:41:29.963Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-19T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-19T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-19T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-19T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-19T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-19T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 99,
+      "count": 96,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1238,
+      "count": 1337,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1451,
+      "count": 1598,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 21,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Kyverno is a platform primitive, not a security tool"
+        "headline": "Go 1.27 released"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Cerebras launches CS-4 for faster AI inference"
+        "topic": "security",
+        "headline": "RHSA-2026:55774: Moderate: java-1.8.0-openjdk security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic passes OpenAI on revenue for the first time"
+        "topic": "kubernetes",
+        "headline": "CNCF Graduates Kubeflow for Cloud-Native AI on Kubernetes"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:56772: Important: gstreamer1-plugins-bad-free security update"
+        "headline": "RHSA-2026:54553: Important: OpenShift Container Platform 4.19.43 bug fix and security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI launches a ChatGPT version built for teens"
+        "topic": "platform",
+        "headline": "Kyverno is a platform primitive, not a security tool"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:56574: Moderate: kernel security, bug fix, and enhancement update"
+        "topic": "models",
+        "headline": "Cerebras launches CS-4 for faster AI inference"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "Critical RCE flaw in Windows IKE Extension now actively exploited"
+        "headline": "CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.54.0"
+        "topic": "security",
+        "headline": "Oracle Critical Patch Update, August 2026 Security Update Review"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "OpenAI Is Slowing Down Its AI Training"
+        "headline": "Stock winners and losers as Anthropic passes OpenAI as hottest AI upstart"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Fortinet Acquires AI Security Company Virtue AI"
+        "topic": "kubernetes",
+        "headline": "v1.54.0"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
