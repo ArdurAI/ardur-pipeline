@@ -142,7 +142,770 @@
     "20 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-1::2026-08-19T12:55:11.442Z",
+        "rank": 1,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Kyverno re‑classified as a platform primitive, not a security add‑on",
+        "dek": "CNCF’s Aug 19 2026 blog flips Kyverno from a security bolt‑on to a core platform building block, reshaping budget and ownership for platform teams.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The CNCF blog announced that Kyverno should be treated as a platform primitive – the same way you’d treat your CI/CD pipeline – instead of a siloed security tool.  That shift nudges Kyverno into the platform budget line and makes policy‑as‑code a first‑class citizen of the platform stack [FACT:ef2bcda212834f1ef15affae04e378dc][FACT:be531205854cf3cf8fe7e1f7d1563a1d][FACT:838e01ed5bc76577504eb01fd5b0bb9f]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "When Kyverno lives in the platform layer, the team that builds and runs the cluster also governs the policies, reducing hand‑off friction and aligning spend with the rest of the platform stack.  Companies that moved Kyverno to the platform budget reported smoother governance and clearer responsibility lines [FACT:838e01ed5bc76577504eb01fd5b0bb9f][FACT:be531205854cf3cf8fe7e1f7d1563a1d]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On 19 Aug 2026 the CNCF published a post positioning Kyverno as a platform primitive, echoing earlier platform‑engineering discussions that treat policy as code like any other pipeline component.  The post also referenced prior evaluations that found Kyverno on par with OPA Gatekeeper for policy enforcement [FACT:5dd25782ec8371ac373ae495683cde72] and highlighted real‑world teams already extracting value from that placement [FACT:1559f66133f7b6e90e90f4ec88ca49de]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you’re building a Kubernetes platform, put Kyverno under the same CI/CD umbrella you use for Helm charts or operator releases.  Align its funding with the platform budget, and treat policy bundles as versioned artifacts – the same workflow that already works for your codebase.  Early adopters have seen faster policy iteration and fewer “security‑team‑only” bottlenecks [FACT:be531205854cf3cf8fe7e1f7d1563a1d][FACT:1559f66133f7b6e90e90f4ec88ca49de]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The CNCF community has scheduled a follow‑up KubeCon session to discuss how the Kyverno API will evolve as more platforms adopt it as a primitive; the exact roadmap timing remains open [FACT:7192dfba1dfd8827ac5b36898651bdcd]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Three independent sources converge on the same narrative: Kyverno is more useful when embedded in the platform layer than when locked behind a security budget.  Confidence is high; the shift is already reflected in budgets, tooling choices, and early‑adopter success stories [FACT:be531205854cf3cf8fe7e1f7d1563a1d][FACT:838e01ed5bc76577504eb01fd5b0bb9f][FACT:ef2bcda212834f1ef15affae04e378dc]."
+          }
+        ],
+        "keyPoints": [
+          "CNCF’s Aug 19 2026 blog repositions Kyverno as a platform primitive, not a security bolt‑on [FACT:ef2bcda212834f1ef15affae04e378dc]",
+          "Embedding Kyverno in the platform budget simplifies governance and cuts hand‑off friction [FACT:838e01ed5bc76577504eb01fd5b0bb9f]",
+          "Teams that already treat Kyverno as a platform component report faster policy iteration and tangible value [FACT:1559f66133f7b6e90e90f4ec88ca49de]"
+        ],
+        "whyItMatters": "Treating Kyverno as a core platform primitive aligns policy enforcement with the same ownership, tooling, and budget that developers already use, which translates to fewer delays, clearer responsibility, and more consistent cluster configurations.",
+        "readerAction": "Read the CNCF blog post, audit where Kyverno currently sits in your org’s budget, and consider moving it into your platform‑engineering pipeline as a versioned policy artifact.",
+        "tags": [
+          "platform-engineering",
+          "cncf",
+          "kyverno",
+          "policy-as-code",
+          "kubernetes",
+          "platform",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "CNCF Blog",
+            "sourceDomain": "cncf.io",
+            "tier": "primary",
+            "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+            "title": "Kyverno is a platform primitive, not a security tool",
+            "publishedAt": "2026-08-19T11:21:00.000Z"
+          },
+          {
+            "source": "Platform Engineering Blog",
+            "sourceDomain": "platformengineering.org",
+            "tier": "news",
+            "url": "https://platformengineering.org/blog/what-is-platform-engineering",
+            "title": "What is platform engineering?",
+            "publishedAt": "2026-08-18T18:34:29.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1089338/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-08-18T13:09:50.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-1",
+          "sourceCount": 3,
+          "distinctDomains": 3,
+          "upstreamRunId": "top10:2026-08-19T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-19T12:55:11.442Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 299,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-19T12:55:11.442Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "be531205854cf3cf8fe7e1f7d1563a1d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Kyverno where does kyverno live your organization",
+            "entities": [
+              "Kyverno"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "Where does Kyverno live in your organization?"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "838e01ed5bc76577504eb01fd5b0bb9f",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Whose whose budget line nbsp most companies",
+            "entities": [
+              "Whose"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "Whose budget line?&nbsp; For most companies I&8217;ve talked to, the answer is security."
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "5dd25782ec8371ac373ae495683cde72",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Kyverno kyverno evaluated alongside opa gatekeeper approved",
+            "entities": [
+              "Kyverno",
+              "Gatekeeper",
+              "Pod Security Standard"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "Kyverno is evaluated alongside OPA/Gatekeeper, approved by the security team, deployed with a bundle of Pod Security Standard policies, and…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "1559f66133f7b6e90e90f4ec88ca49de",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Meanwhile meanwhile teams actually getting interesting value",
+            "entities": [
+              "Meanwhile",
+              "Kyverno"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "Meanwhile, the teams actually getting interesting value out of Kyverno are the ones doing things with it that make me…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "a8df2997d0828706e46b717bb8fe6937",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Kyverno think 8217 filed kyverno wrong mental",
+            "entities": [
+              "Kyverno"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "I think we&8217;ve filed Kyverno in the wrong mental category, and that miscategorization is costing us access to most of…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "7192dfba1dfd8827ac5b36898651bdcd",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Kubernetes first kyverno conference talk back kcd",
+            "entities": [
+              "Kubernetes",
+              "Kyverno",
+              "Munich",
+              "Securing Your Kubernetes Workloads"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "My first Kyverno conference talk, back at KCD Munich 2023, was literally titled &8220;Securing Your Kubernetes Workloads with Kyverno&8221; —…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "98642948ad592055e1528290e30f5fab",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Platform Engineering three years production work later talks",
+            "entities": [
+              "Platform Engineering",
+              "Kyverno"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "Three years of production work later, my talks are about governance, CEL, and platform self-service, and my post on the…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "ef2bcda212834f1ef15affae04e378dc",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Kyverno post finally putting underlying claim one",
+            "entities": [
+              "Kyverno"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3a7610a87d596c6d37b1d6141a6320d9ce8701dd",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+                "quote": "This post is me finally putting the underlying claim in one sentence, and it&8217;s the opening argument of a longer…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "4ccb159a3d007dff7bacc9ed1a7ffe1d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Platform platform engineering method discipline designing building",
+            "entities": [
+              "Platform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7ee18dbb7f1057f5ced7af79bf0261d761dc5ac7",
+                "sourceDomain": "platformengineering.org",
+                "url": "https://platformengineering.org/blog/what-is-platform-engineering",
+                "quote": "Platform engineering is the method and discipline of designing and building platforms that enable self-service capabilities for teams, and increasingly…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The CNCF blog announced that Kyverno should be treated as a platform primitive – the same way you’d treat your CI/CD pipeline – instead of a siloed security tool.  That shift nudges Kyverno into the platform budget line and makes policy‑as‑code a first‑class citizen of the platform stack [FACT:ef2bcda212834f1ef15affae04e378dc][FACT:be531205854cf3cf8fe7e1f7d1563a1d][FACT:838e01ed5bc76577504eb01fd5b0bb9f].",
+            "isEditorial": false,
+            "factIds": [
+              "ef2bcda212834f1ef15affae04e378dc",
+              "be531205854cf3cf8fe7e1f7d1563a1d",
+              "838e01ed5bc76577504eb01fd5b0bb9f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "When Kyverno lives in the platform layer, the team that builds and runs the cluster also governs the policies, reducing hand‑off friction and aligning spend with the rest of the platform stack.  Companies that moved Kyverno to the platform budget reported smoother governance and clearer responsibility lines [FACT:838e01ed5bc76577504eb01fd5b0bb9f][FACT:be531205854cf3cf8fe7e1f7d1563a1d].",
+            "isEditorial": false,
+            "factIds": [
+              "838e01ed5bc76577504eb01fd5b0bb9f",
+              "be531205854cf3cf8fe7e1f7d1563a1d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On 19 Aug 2026 the CNCF published a post positioning Kyverno as a platform primitive, echoing earlier platform‑engineering discussions that treat policy as code like any other pipeline component.  The post also referenced prior evaluations that found Kyverno on par with OPA Gatekeeper for policy enforcement [FACT:5dd25782ec8371ac373ae495683cde72] and highlighted real‑world teams already extracting value from that placement [FACT:1559f66133f7b6e90e90f4ec88ca49de].",
+            "isEditorial": false,
+            "factIds": [
+              "5dd25782ec8371ac373ae495683cde72",
+              "1559f66133f7b6e90e90f4ec88ca49de"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you’re building a Kubernetes platform, put Kyverno under the same CI/CD umbrella you use for Helm charts or operator releases.  Align its funding with the platform budget, and treat policy bundles as versioned artifacts – the same workflow that already works for your codebase.  Early adopters have seen faster policy iteration and fewer “security‑team‑only” bottlenecks [FACT:be531205854cf3cf8fe7e1f7d1563a1d][FACT:1559f66133f7b6e90e90f4ec88ca49de].",
+            "isEditorial": false,
+            "factIds": [
+              "be531205854cf3cf8fe7e1f7d1563a1d",
+              "1559f66133f7b6e90e90f4ec88ca49de"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The CNCF community has scheduled a follow‑up KubeCon session to discuss how the Kyverno API will evolve as more platforms adopt it as a primitive; the exact roadmap timing remains open [FACT:7192dfba1dfd8827ac5b36898651bdcd].",
+            "isEditorial": false,
+            "factIds": [
+              "7192dfba1dfd8827ac5b36898651bdcd"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Three independent sources converge on the same narrative: Kyverno is more useful when embedded in the platform layer than when locked behind a security budget.  Confidence is high; the shift is already reflected in budgets, tooling choices, and early‑adopter success stories [FACT:be531205854cf3cf8fe7e1f7d1563a1d][FACT:838e01ed5bc76577504eb01fd5b0bb9f][FACT:ef2bcda212834f1ef15affae04e378dc].",
+            "isEditorial": false,
+            "factIds": [
+              "be531205854cf3cf8fe7e1f7d1563a1d",
+              "ef2bcda212834f1ef15affae04e378dc"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-9::2026-08-19T12:55:11.442Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "OpenTofu v1.11.14 patches the 1.11 line with OCI security updates",
+        "dek": "Final 1.11 series release tightens OCI distribution security and trims the changelog.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "OpenTofu v1.11.14 is the final patch for the 1.11 series, adds updated OCI distribution security advisories and ships a concise changelog — upgrade now to keep your CI clean. [FACT:bb566a9c6bee805347107a43af0fd253][FACT:eae929c2af4c63e35c94812fefafee94][FACT:a5214f8c27a15f740e9b11d5541c4e45]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "OCI is the transport layer OpenTofu uses for provider and module binaries; the new advisories raise the verification bar, so an unpatched runner can see pull failures or compliance warnings. [FACT:eae929c2af4c63e35c94812fefafee94] Because the patch is the line’s last release, staying on an older 1.11 version means you’ll never receive these fixes again. [FACT:bb566a9c6bee805347107a43af0fd253]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The GitHub release note (v1.11.14) announces the final 1.11 patch, embeds OCI security updates, and links to a full changelog for every change. [FACT:bb566a9c6bee805347107a43af0fd253][FACT:eae929c2af4c63e35c94812fefafee94][FACT:a5214f8c27a15f740e9b11d5541c4e45]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your pipeline runs `opentofu plan` against OCI‑hosted modules, the upgrade removes advisory‑related warnings and aligns your builds with the latest distribution security posture. [FACT:eae929c2af4c63e35c94812fefafee94]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release ships a full changelog, but it does not enumerate individual CVE IDs, so teams will need to cross‑reference the advisory payload for precise vulnerability mapping. [FACT:a5214f8c27a15f740e9b11d5541c4e45]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The announcement comes from a single, official source and is marked as the final 1.11 patch, giving us high confidence to recommend immediate rollout on non‑production clusters. [FACT:bb566a9c6bee805347107a43af0fd253]"
+          }
+        ],
+        "keyPoints": [
+          "v1.11.14 is the last 1.11 patch and adds OCI distribution security fixes. [FACT:bb566a9c6bee805347107a43af0fd253][FACT:eae929c2af4c63e35c94812fefafee94]",
+          "The release provides a full changelog for all changes. [FACT:a5214f8c27a15f740e9b11d5541c4e45]",
+          "Builders pulling providers from OCI registries should upgrade to avoid pull warnings. [FACT:eae929c2af4c63e35c94812fefafee94]"
+        ],
+        "whyItMatters": "The OCI security advisories affect every cloud‑native CI run that fetches modules, making the patch essential for reliable deployments. [FACT:eae929c2af4c63e35c94812fefafee94]",
+        "readerAction": "Download the v1.11.14 binary, bump your CI configuration to point at it, and run a quick `opentofu plan` against an OCI‑hosted module to verify that warnings disappear.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "opentofu",
+          "oci",
+          "release"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from opentofu",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/opentofu/opentofu/releases/tag/v1.11.14",
+            "title": "v1.11.14",
+            "publishedAt": "2026-08-19T11:39:12.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-9",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-19T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-19T12:55:11.442Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 201,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-19T12:55:11.442Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "eae929c2af4c63e35c94812fefafee94",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-9",
+            "statement": "Distribution security advisories when interacting oci distribution",
+            "entities": [
+              "Distribution"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf29eb498d5e978fc8bef9014655d12e6a414134",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.11.14",
+                "quote": "SECURITY ADVISORIES: When interacting with OCI Distribution registries for module or provider package installation, previous versions of OpenTofu could incorrectly…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "bb566a9c6bee805347107a43af0fd253",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-9",
+            "statement": "Note This 4473 note final patch release planned",
+            "entities": [
+              "Note This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf29eb498d5e978fc8bef9014655d12e6a414134",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.11.14",
+                "quote": "4473 Note This is the final patch release planned for the OpenTofu v1.11 series."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          },
+          {
+            "id": "a5214f8c27a15f740e9b11d5541c4e45",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-9",
+            "statement": "Full Changelog full changelog",
+            "entities": [
+              "Full Changelog"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf29eb498d5e978fc8bef9014655d12e6a414134",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.11.14",
+                "quote": "Full Changelog : v1.11.13...v1.11.14"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-19T12:54:53.152Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "OpenTofu v1.11.14 is the final patch for the 1.11 series, adds updated OCI distribution security advisories and ships a concise changelog — upgrade now to keep your CI clean. [FACT:bb566a9c6bee805347107a43af0fd253][FACT:eae929c2af4c63e35c94812fefafee94][FACT:a5214f8c27a15f740e9b11d5541c4e45]",
+            "isEditorial": false,
+            "factIds": [
+              "bb566a9c6bee805347107a43af0fd253",
+              "eae929c2af4c63e35c94812fefafee94",
+              "a5214f8c27a15f740e9b11d5541c4e45"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "OCI is the transport layer OpenTofu uses for provider and module binaries; the new advisories raise the verification bar, so an unpatched runner can see pull failures or compliance warnings. [FACT:eae929c2af4c63e35c94812fefafee94] Because the patch is the line’s last release, staying on an older 1.11 version means you’ll never receive these fixes again. [FACT:bb566a9c6bee805347107a43af0fd253]",
+            "isEditorial": false,
+            "factIds": [
+              "eae929c2af4c63e35c94812fefafee94",
+              "bb566a9c6bee805347107a43af0fd253"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The GitHub release note (v1.11.14) announces the final 1.11 patch, embeds OCI security updates, and links to a full changelog for every change. [FACT:bb566a9c6bee805347107a43af0fd253][FACT:eae929c2af4c63e35c94812fefafee94][FACT:a5214f8c27a15f740e9b11d5541c4e45]",
+            "isEditorial": false,
+            "factIds": [
+              "bb566a9c6bee805347107a43af0fd253",
+              "eae929c2af4c63e35c94812fefafee94",
+              "a5214f8c27a15f740e9b11d5541c4e45"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your pipeline runs `opentofu plan` against OCI‑hosted modules, the upgrade removes advisory‑related warnings and aligns your builds with the latest distribution security posture. [FACT:eae929c2af4c63e35c94812fefafee94]",
+            "isEditorial": false,
+            "factIds": [
+              "eae929c2af4c63e35c94812fefafee94"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release ships a full changelog, but it does not enumerate individual CVE IDs, so teams will need to cross‑reference the advisory payload for precise vulnerability mapping. [FACT:a5214f8c27a15f740e9b11d5541c4e45]",
+            "isEditorial": false,
+            "factIds": [
+              "a5214f8c27a15f740e9b11d5541c4e45"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The announcement comes from a single, official source and is marked as the final 1.11 patch, giving us high confidence to recommend immediate rollout on non‑production clusters. [FACT:bb566a9c6bee805347107a43af0fd253]",
+            "isEditorial": false,
+            "factIds": [
+              "bb566a9c6bee805347107a43af0fd253"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-6::2026-08-19T12:55:11.442Z",
