@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-19T00:00:00.000Z",
-    "windowStart": "2026-08-19T00:00:00.000Z",
-    "windowEnd": "2026-08-19T06:00:00.000Z"
+    "id": "2026-08-19T06:00:00.000Z",
+    "windowStart": "2026-08-19T06:00:00.000Z",
+    "windowEnd": "2026-08-19T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-19T01:27:57.253Z",
-  "nextRefreshAt": "2026-08-19T06:00:00.000Z",
+  "publishedAt": "2026-08-19T06:52:05.095Z",
+  "nextRefreshAt": "2026-08-19T12:00:00.000Z",
   "runIds": {
-    "aggregation": "4f19f04a-3dcb-47b5-8e1c-f98c75d30aee",
-    "ranking": "rank-acda1b6b",
-    "top10": "top10:2026-08-19T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-19T00:00:00.000Z-2026-08-19T01:28:35.675Z"
+    "aggregation": "48016703-1c49-4453-b688-8326ce4b3db4",
+    "ranking": "rank-739004a8",
+    "top10": "top10:2026-08-19T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-19T06:00:00.000Z-2026-08-19T06:52:19.837Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-19T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-19T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-19T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-19T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-19T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-19T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1348,
+      "count": 1266,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,34 +52,34 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1582,
+      "count": 1479,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -108,33 +108,33 @@
       },
       {
         "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:56658: Important: gstreamer1-plugins-bad-free security update"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:56574: Moderate: kernel security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 4,
         "topic": "ai",
         "headline": "OpenAI launches a ChatGPT version built for teens"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "How NVIDIA scales expertise with ChatGPT Work"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:56223: Important: grafana-pcp security update"
-      },
-      {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:56007: Important: mysql8.4 security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "ChatGPT Ads expands across Europe"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI Is Slowing Down Its AI Training"
+        "topic": "models",
+        "headline": "OpenAI pauses frontier model training to strengthen safeguards"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "3.14.0 / 2026-08-17"
+        "topic": "security",
+        "headline": "Fortinet Acquires AI Security Company Virtue AI"
       },
       {
         "rank": 8,
@@ -144,12 +144,12 @@
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Firefox 154.0 released"
+        "headline": "React Router v8: A Deliberately Boring Release with ESM-Only Builds and Default Middleware"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Amazon Bedrock AgentCore payments is now generally available: Enabling agents to transact safely and autonomously at scale"
+        "topic": "models",
+        "headline": "Cerebras Systems CBRS Powers 14x Faster Ultrafast AI Inference"
       }
     ],
     "articleCount": 0
