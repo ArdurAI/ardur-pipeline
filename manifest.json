@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-19T18:00:00.000Z",
-    "windowStart": "2026-08-19T18:00:00.000Z",
-    "windowEnd": "2026-08-20T00:00:00.000Z"
+    "id": "2026-08-20T00:00:00.000Z",
+    "windowStart": "2026-08-20T00:00:00.000Z",
+    "windowEnd": "2026-08-20T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-19T18:41:09.438Z",
-  "nextRefreshAt": "2026-08-20T00:00:00.000Z",
+  "publishedAt": "2026-08-20T01:27:06.577Z",
+  "nextRefreshAt": "2026-08-20T06:00:00.000Z",
   "runIds": {
-    "aggregation": "339404bb-d9f8-4d13-99c8-2b952c0e536a",
-    "ranking": "rank-bc86697f",
-    "top10": "top10:2026-08-19T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-19T18:00:00.000Z-2026-08-19T18:41:29.963Z"
+    "aggregation": "83544891-6261-483c-a2c0-2ec3e2b1eb45",
+    "ranking": "rank-d8984766",
+    "top10": "top10:2026-08-20T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-20T00:00:00.000Z-2026-08-20T01:27:23.490Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-19T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-19T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-19T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-20T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-20T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-20T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 96,
+      "count": 87,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1337,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
@@ -49,26 +40,35 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1382,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1598,
+      "count": 1610,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 21,
+      "count": 17,
       "sample": [
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 34,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Go 1.27 released"
+        "headline": "Go 1.27 is released"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:55774: Moderate: java-1.8.0-openjdk security update"
+        "headline": "RHSA-2026:57174: Important: postfix security update"
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:55778: Moderate: Java 11 OpenJDK ELS Security Update"
+      },
+      {
+        "rank": 4,
         "topic": "kubernetes",
         "headline": "CNCF Graduates Kubeflow for Cloud-Native AI on Kubernetes"
       },
       {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:54553: Important: OpenShift Container Platform 4.19.43 bug fix and security update"
-      },
-      {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Kyverno is a platform primitive, not a security tool"
-      },
-      {
-        "rank": 6,
         "topic": "models",
         "headline": "Cerebras launches CS-4 for faster AI inference"
       },
       {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "apis/v2.4.0"
+      },
+      {
         "rank": 7,
-        "topic": "security",
-        "headline": "CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway"
+        "topic": "kubernetes",
+        "headline": "v2.4.0"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Oracle Critical Patch Update, August 2026 Security Update Review"
+        "topic": "models",
+        "headline": "OpenAI pauses frontier model training to strengthen safeguards"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Stock winners and losers as Anthropic passes OpenAI as hottest AI upstart"
+        "headline": "Offering Zero Data Retention for frontier models"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.54.0"
+        "topic": "platform",
+        "headline": "Kyverno is a platform primitive, not a security tool"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
