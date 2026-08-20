@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-20T12:00:00.000Z",
-    "windowStart": "2026-08-20T12:00:00.000Z",
-    "windowEnd": "2026-08-20T18:00:00.000Z"
+    "id": "2026-08-20T18:00:00.000Z",
+    "windowStart": "2026-08-20T18:00:00.000Z",
+    "windowEnd": "2026-08-21T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-20T12:57:13.477Z",
-  "nextRefreshAt": "2026-08-20T18:00:00.000Z",
+  "publishedAt": "2026-08-20T18:46:31.848Z",
+  "nextRefreshAt": "2026-08-21T00:00:00.000Z",
   "runIds": {
-    "aggregation": "4f0881e5-b9ff-4148-b462-3873472f9bcf",
-    "ranking": "rank-7aaebb07",
-    "top10": "top10:2026-08-20T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-20T12:00:00.000Z-2026-08-20T12:57:35.349Z"
+    "aggregation": "46dcf35b-683d-431c-92fc-6d7a6c859732",
+    "ranking": "rank-092248cb",
+    "top10": "top10:2026-08-20T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-20T18:00:00.000Z-2026-08-20T18:46:52.300Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-20T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-20T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-20T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-20T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-20T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-20T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1254,
+      "count": 1497,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,18 +52,18 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1518,
+      "count": 1719,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -71,17 +71,17 @@
       "count": 24,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 22,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:55779: Moderate: OpenJDK 11.0.32.1 ELS Security Update For Portable Linux Builds"
+        "topic": "models",
+        "headline": "Up to 3.2x Faster Inference with LFM2.5-DSpark"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Cerebras launches CS-4 for faster AI inference"
+        "topic": "security",
+        "headline": "RHSA-2026:57633: Important: postgresql security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:57417: Important: yelp security update"
+        "headline": "Is Cyber missing the Marque?"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Flux Mirror Uses Gitless GitOps to Keep Software Supply Chain Under Control"
+        "topic": "ai",
+        "headline": "OpenAI builds safety system that catches misuse without storing customer data"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI 'will be a public company in 2027' or sooner, CFO Friar tells employees"
+        "topic": "security",
+        "headline": "RHSA-2026:55779: Moderate: OpenJDK 11.0.32.1 ELS Security Update For Portable Linux Builds"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Critical Zimbra RCE flaw now actively exploited in attacks"
+        "topic": "platform",
+        "headline": "Kyverno is a platform primitive, not a security tool"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Top 10: Cloud Security Vendors"
+        "topic": "platform",
+        "headline": "Supply chain attack on arrayref"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.19.0"
+        "topic": "ai",
+        "headline": "Offering Zero Data Retention for frontier models"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.36.4"
+        "topic": "security",
+        "headline": "CVE-2026-69414 ShieldBreak Zero-Day: No Patch, and CISA BOD 26-04 Gives You 14 Days"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "CNCF Graduates Kubeflow for Cloud-Native AI on Kubernetes"
+        "headline": "Announcing H1 2027 KCDs"
       }
     ],
     "articleCount": 0
