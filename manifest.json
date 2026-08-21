@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-20T18:00:00.000Z",
-    "windowStart": "2026-08-20T18:00:00.000Z",
-    "windowEnd": "2026-08-21T00:00:00.000Z"
+    "id": "2026-08-21T00:00:00.000Z",
+    "windowStart": "2026-08-21T00:00:00.000Z",
+    "windowEnd": "2026-08-21T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-20T18:46:31.848Z",
-  "nextRefreshAt": "2026-08-21T00:00:00.000Z",
+  "publishedAt": "2026-08-21T01:37:39.231Z",
+  "nextRefreshAt": "2026-08-21T06:00:00.000Z",
   "runIds": {
-    "aggregation": "46dcf35b-683d-431c-92fc-6d7a6c859732",
-    "ranking": "rank-092248cb",
-    "top10": "top10:2026-08-20T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-20T18:00:00.000Z-2026-08-20T18:46:52.300Z"
+    "aggregation": "02ca81d8-e3f9-4533-86f9-b9527f789177",
+    "ranking": "rank-0a80e76d",
+    "top10": "top10:2026-08-21T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-21T00:00:00.000Z-2026-08-21T01:38:05.391Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-20T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-20T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-20T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-21T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-21T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-21T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 84,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1497,
+      "count": 1536,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pZlh4LWwzcDRQZW1LZHFOeDdkZ0h2aFFVbmF1U3VnRzN3NzR6d1VBZjZBODBfWVlId1BQOFR2anNwVWxCd2huNDBTdUNFaVBBSzA5Rm9FYnhIY0NI?oc=5",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,21 +54,21 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1719,
+      "count": 1770,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:57633: Important: postgresql security update"
+        "headline": "RHSA-2026:57844: Moderate: modmd security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "Is Cyber missing the Marque?"
+        "headline": "RHSA-2026:57772: Important: dracut security update"
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "Calling on Cyber Pros to Help Defend City Hall"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic Expects to Match or Top SpaceX’s Record IPO Size"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Introducing cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock"
+      },
+      {
+        "rank": 7,
         "topic": "ai",
         "headline": "OpenAI builds safety system that catches misuse without storing customer data"
       },
       {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:55779: Moderate: OpenJDK 11.0.32.1 ELS Security Update For Portable Linux Builds"
-      },
-      {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "Kyverno is a platform primitive, not a security tool"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Supply chain attack on arrayref"
-      },
-      {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Offering Zero Data Retention for frontier models"
+        "topic": "platform",
+        "headline": "Upcoming Next.js August Security Release"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "CVE-2026-69414 ShieldBreak Zero-Day: No Patch, and CISA BOD 26-04 Gives You 14 Days"
+        "topic": "platform",
+        "headline": "Spring Cloud 2025.1.3 aka Oakwood Has Been Released"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Announcing H1 2027 KCDs"
+        "headline": "v2.4.0"
       }
     ],
     "articleCount": 0
