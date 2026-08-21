@@ -144,7 +144,408 @@
     "20 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-2::2026-08-21T12:56:20.033Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "AWS adds native CloudFormation drift detection – what builders need to know",
+        "dek": "A new built‑in drift‑scan lets you compare live resources to the stored template and generate an up‑to‑date CloudFormation file, closing the gap between console clicks and IaC.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS now offers a built‑in drift‑scan for CloudFormation stacks that compares live resources to the stored definition and can emit an updated template reflecting the current state [FACT:ea247c3fb7569e75574fbf9070e67368][FACT:25d698d53e9bc10f688c2a56b076c47b]. Builders get a shortcut to pull accidental console edits back under version control."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS accounts often grow organically, with teams making manual edits through the Management Console over time [FACT:80434c29cb30e942989248f74cc7a06c][FACT:b34160d270e1c6c3bedefe0dc5a1ecaf][FACT:5f2eb0441a206254b3a163dfe2811fcf]. Those ad‑hoc changes create drift that makes stacks unpredictable and forces “click‑ops” instead of Git‑ops [FACT:84f3434d8510b540aed956f4e6015131][FACT:38f7ee6d5adf2aa6c08053294bc0cfb3]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The AWS DevOps Blog announced on Aug 21 2026 that the drift‑scan is generally available and is powered by the same IaC generator that produces CloudFormation templates [FACT:633562543207720b749a64c0c792eb39][FACT:ea247c3fb7569e75574fbf9070e67368]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run Kubernetes on AWS, add the drift‑scan as a cheap validation step in your staging pipeline. Run the scan, review the generated template, and commit any differences – this keeps your IaC catalog aligned with reality and avoids technical debt from ad‑hoc console changes [FACT:ea247c3fb7569e75574fbf9070e67368][FACT:25d698d53e9bc10f688c2a56b076c47b]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The announcement is a single‑source AWS release, but the feature is production‑ready and matches best practices for IaC governance. Early adoption of the scan helps keep drift under control [FACT:ea247c3fb7569e75574fbf9070e67368]."
+          }
+        ],
+        "keyPoints": [
+          "Native drift‑scan detects live‑resource vs. template mismatches and can generate a fresh CloudFormation file [FACT:ea247c3fb7569e75574fbf9070e67368][FACT:25d698d53e9bc10f688c2a56b076c47b].",
+          "Manual console edits accumulate over time, creating hidden drift that the new tool surfaces [FACT:80434c29cb30e942989248f74cc7a06c][FACT:5f2eb0441a206254b3a163dfe2811fcf].",
+          "The feature is built into the same IaC generator that AWS already uses for template creation [FACT:633562543207720b749a64c0c792eb39]."
+        ],
+        "whyItMatters": "Drift makes infrastructure unpredictable and forces teams to “click around” instead of using version‑controlled IaC; the new scan gives builders a way to keep CloudFormation stacks honest.",
+        "readerAction": "Run `aws cloudformation detect-drift --stack-name <your-stack>` in a staging environment, inspect the generated template, and commit any changes to your Git repository.",
+        "tags": [
+          "kubernetes-cloud-native",
+          "aws",
+          "cloudformation",
+          "infrastructure-as-code"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "AWS DevOps Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+            "title": "From clickops to governed IaC: CloudFormation drift detection in practice",
+            "publishedAt": "2026-08-21T10:48:22.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-21T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-21T12:56:20.033Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 190,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-21T12:56:20.033Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "80434c29cb30e942989248f74cc7a06c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Management Console aws environments grown organically over time",
+            "entities": [
+              "Management Console",
+              "Infrastructure",
+              "Code"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "AWS environments that have grown organically over time often share a common characteristic: infrastructure provisioned through the AWS Management Console,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "b34160d270e1c6c3bedefe0dc5a1ecaf",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Whether whether changes happen through console aws",
+            "entities": [
+              "Whether"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "Whether changes happen through the console, the AWS CLI, or&nbsp;application&nbsp;SDKs, the result is the same: resources exist without a declarative…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "5f2eb0441a206254b3a163dfe2811fcf",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Amazon nbsp over time these manual changes",
+            "entities": [
+              "Amazon",
+              "Amazon Virtual Private Cloud",
+              "Amazon Elastic Compute Cloud",
+              "Amazon Simple Storage Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "&nbsp; Over time, these manual changes accumulate, creating environments where&nbsp; Amazon Virtual Private Cloud Amazon VPC &nbsp;configurations,&nbsp; Amazon Elastic Compute…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "84f3434d8510b540aed956f4e6015131",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Organizations nbsp organizations find themselves position clear",
+            "entities": [
+              "Organizations"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "&nbsp; Organizations that find themselves in this position have a clear opportunity."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "633562543207720b749a64c0c792eb39",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Generator cloudformation nbsp iac generator nbsp provides",
+            "entities": [
+              "Generator"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "CloudFormation’s&nbsp; IaC Generator &nbsp;provides a practical starting point for bringing existing infrastructure under declarative management."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "38f7ee6d5adf2aa6c08053294bc0cfb3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Amazon nbsp iac nbsp generator making invisible",
+            "entities": [
+              "Amazon",
+              "Generator",
+              "Identity",
+              "Access Management"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "&nbsp; IaC&nbsp;Generator: making the invisible visible &nbsp; CloudFormation’s&nbsp; IaC Generator &nbsp;scans an AWS account and produces CloudFormation templates from existing…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "ea247c3fb7569e75574fbf9070e67368",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Scan nbsp how works nbsp high level",
+            "entities": [
+              "Scan",
+              "Generator",
+              "Cloud Control"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "&nbsp; How it works at&nbsp;a high level &nbsp; Scan &nbsp;—&nbsp;IaC&nbsp;Generator discovers resources in the account by querying&nbsp; AWS Cloud Control…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          },
+          {
+            "id": "25d698d53e9bc10f688c2a56b076c47b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Generate nbsp generate nbsp produces cloudformation templates",
+            "entities": [
+              "Generate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ea5b1df2e6afc9eb03d4f0d2f6ab119b7972025b",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+                "quote": "&nbsp; Generate &nbsp;— It produces CloudFormation templates that&nbsp;represent&nbsp;the current state of those resources, mapping properties, dependencies, and relationships."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T12:55:58.450Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "AWS now offers a built‑in drift‑scan for CloudFormation stacks that compares live resources to the stored definition and can emit an updated template reflecting the current state [FACT:ea247c3fb7569e75574fbf9070e67368][FACT:25d698d53e9bc10f688c2a56b076c47b]. Builders get a shortcut to pull accidental console edits back under version control.",
+            "isEditorial": false,
+            "factIds": [
+              "ea247c3fb7569e75574fbf9070e67368"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "AWS accounts often grow organically, with teams making manual edits through the Management Console over time [FACT:80434c29cb30e942989248f74cc7a06c][FACT:b34160d270e1c6c3bedefe0dc5a1ecaf][FACT:5f2eb0441a206254b3a163dfe2811fcf]. Those ad‑hoc changes create drift that makes stacks unpredictable and forces “click‑ops” instead of Git‑ops [FACT:84f3434d8510b540aed956f4e6015131][FACT:38f7ee6d5adf2aa6c08053294bc0cfb3].",
+            "isEditorial": false,
+            "factIds": [
+              "80434c29cb30e942989248f74cc7a06c",
+              "b34160d270e1c6c3bedefe0dc5a1ecaf",
+              "5f2eb0441a206254b3a163dfe2811fcf",
+              "38f7ee6d5adf2aa6c08053294bc0cfb3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The AWS DevOps Blog announced on Aug 21 2026 that the drift‑scan is generally available and is powered by the same IaC generator that produces CloudFormation templates [FACT:633562543207720b749a64c0c792eb39][FACT:ea247c3fb7569e75574fbf9070e67368].",
+            "isEditorial": false,
+            "factIds": [
+              "633562543207720b749a64c0c792eb39",
+              "ea247c3fb7569e75574fbf9070e67368"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run Kubernetes on AWS, add the drift‑scan as a cheap validation step in your staging pipeline. Run the scan, review the generated template, and commit any differences – this keeps your IaC catalog aligned with reality and avoids technical debt from ad‑hoc console changes [FACT:ea247c3fb7569e75574fbf9070e67368][FACT:25d698d53e9bc10f688c2a56b076c47b].",
+            "isEditorial": false,
+            "factIds": [
+              "ea247c3fb7569e75574fbf9070e67368"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The announcement is a single‑source AWS release, but the feature is production‑ready and matches best practices for IaC governance. Early adoption of the scan helps keep drift under control [FACT:ea247c3fb7569e75574fbf9070e67368].",
+            "isEditorial": false,
+            "factIds": [
+              "ea247c3fb7569e75574fbf9070e67368"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-13::2026-08-21T12:56:20.033Z",

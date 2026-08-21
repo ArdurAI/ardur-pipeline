@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-21T06:00:00.000Z",
-    "windowStart": "2026-08-21T06:00:00.000Z",
-    "windowEnd": "2026-08-21T12:00:00.000Z"
+    "id": "2026-08-21T12:00:00.000Z",
+    "windowStart": "2026-08-21T12:00:00.000Z",
+    "windowEnd": "2026-08-21T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-21T06:54:44.912Z",
-  "nextRefreshAt": "2026-08-21T12:00:00.000Z",
+  "publishedAt": "2026-08-21T12:55:58.253Z",
+  "nextRefreshAt": "2026-08-21T18:00:00.000Z",
   "runIds": {
-    "aggregation": "eb6d2b88-c691-4aa1-b348-c84ec79c335b",
-    "ranking": "rank-d39fce35",
-    "top10": "top10:2026-08-21T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-21T06:00:00.000Z-2026-08-21T06:55:17.460Z"
+    "aggregation": "69981a1c-1e9b-44e6-ac50-d100cb9c344b",
+    "ranking": "rank-77344977",
+    "top10": "top10:2026-08-21T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-21T12:00:00.000Z-2026-08-21T12:56:20.033Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-21T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-21T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-21T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-21T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-21T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-21T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1370,
+      "count": 1214,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pZlh4LWwzcDRQZW1LZHFOeDdkZ0h2aFFVbmF1U3VnRzN3NzR6d1VBZjZBODBfWVlId1BQOFR2anNwVWxCd2huNDBTdUNFaVBBSzA5Rm9FYnhIY0NI?oc=5",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pZlh4LWwzcDRQZW1LZHFOeDdkZ0h2aFFVbmF1U3VnRzN3NzR6d1VBZjZBODBfWVlId1BQOFR2anNwVWxCd2huNDBTdUNFaVBBSzA5Rm9FYnhIY0NI?oc=5"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1622,
+      "count": 1505,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Anthropic Expects to Match or Top SpaceX’s Record IPO Size"
+        "topic": "security",
+        "headline": "Microsoft warns of max severity Entra ID flaw exploited in attacks"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:57844: Moderate: modmd security update"
+        "topic": "models",
+        "headline": "Up to 3.2x Faster Inference with LFM2.5-DSpark"
       },
       {
         "rank": 3,
@@ -119,37 +119,37 @@
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:57772: Important: dracut security update"
+        "headline": "CISA orders feds to patch actively exploited TrueConf Server flaws"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Microsoft Entra ID Flaw CVSS 10.0 Exploited in Wild, Allows Remote Code Execution"
+        "topic": "ai",
+        "headline": "Anthropic Aims for SpaceX’s IPO Record"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI builds safety system that catches misuse without storing customer data"
+        "topic": "security",
+        "headline": "Palo Alto Networks and NTT DATA target $1B in AI security sales by 2029"
       },
       {
         "rank": 7,
         "topic": "models",
-        "headline": "Up to 3.2x Faster Inference with LFM2.5-DSpark"
+        "headline": "OpenAI Pauses Frontier Model Training for Safety Review"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v2.4.0"
+        "topic": "ai",
+        "headline": "DeepSeek Unveils Test Model to Rival Anthropic’s Opus 4.8"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Introducing cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock"
+        "headline": "China’s Acorn Robot Secures Angel Funding, Unveils ‘Instinctive’ Physical AI Model"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Upcoming Next.js August Security Release"
+        "headline": "Azure DevOps Remote MCP Server Reaches GA, Without Support for Claude, ChatGPT, or Cursor"
       }
     ],
     "articleCount": 0
