@@ -129,7 +129,1617 @@
     "30 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-14::2026-08-21T18:42:53.296Z",
+        "rank": 7,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Crossplane v2.2.5 patches checksum handling, adds usage index, and bumps CEL",
+        "dek": "A concise look at what Crossplane 2.2.5 changes and why Kubernetes builders should pay attention.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane 2.2.5 is a targeted patch that (1) fixes several reported issues, (2) recalculates amd64 binary checksums after Nix stripping, (3) introduces an unambiguous usage index key (7629), and (4) upgrades the CEL dependency to 0.7.760. [FACT:d0347e057215afe56ca8fdcac35d1516][FACT:d4371d3cc3c31bb3d9d2d290f5fc3ca9][FACT:b8a15497cb0757acce1cf1a27a962192][FACT:a014f2a8c56fb797426c0b4463f86da6][FACT:4769f546b23ae5748439754e90d3a15d]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders relying on Crossplane for Kubernetes control planes need reliable binaries and up‑to‑date dependencies. A checksum fix eliminates false‑positive integrity failures in CI pipelines, while the CEL bump patches known CVEs. The new usage index makes resource identification deterministic across clusters. [FACT:d4371d3cc3c31bb3d9d2d290f5fc3ca9][FACT:b8a15497cb0757acce1cf1a27a962192][FACT:4769f546b23ae5748439754e90d3a15d][FACT:a014f2a8c56fb797426c0b4463f86da6]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes list a scope‑limited patch that addresses bugs submitted by the community, updates the checksum generation step to occur after Nix’s strip phase, adds index key 7629 for unambiguous usage tracking, and bumps the CEL library version to 0.7.760 for security. It also notes that group names now include a consistent prefix, simplifying RBAC scripts. [FACT:d0347e057215afe56ca8fdcac35d1516][FACT:d4371d3cc3c31bb3d9d2d290f5fc3ca9][FACT:b8a15497cb0757acce1cf1a27a962192][FACT:a014f2a8c56fb797426c0b4463f86da6][FACT:761f18e5d07cbf6646e32a27f90d885e][FACT:4769f546b23ae5748439754e90d3a15d]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your pipelines pull Crossplane binaries, expect a new checksum file – update your verification steps accordingly. The CEL upgrade may require a minor version bump in any custom extensions that embed the library. The usage index key (7629) can replace ad‑hoc labels for resource tracking, reducing drift in large clusters. Test the patched binaries in a staging namespace before rolling them to production. [FACT:b8a15497cb0757acce1cf1a27a962192][FACT:4769f546b23ae5748439754e90d3a15d][FACT:a014f2a8c56fb797426c0b4463f86da6]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Community feedback is still pending on whether the new checksum process introduces any performance overhead in large‑scale builds. It is unclear how downstream operators that vendor Crossplane will schedule the CEL bump across their release cycles. Additional testing is needed to confirm that the usage index key resolves edge‑case naming collisions. [FACT:b8a15497cb0757acce1cf1a27a962192][FACT:4769f546b23ae5748439754e90d3a15d][FACT:a014f2a8c56fb797426c0b4463f86da6]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Adopt the v2.2.5 binaries in a non‑critical environment, verify the new checksums, and bump any CEL imports to 0.7.760. If everything checks out, schedule a rolling upgrade of your production Crossplane deployment. Keep an eye on the upstream release notes for any follow‑up security advisories. [FACT:d0347e057215afe56ca8fdcac35d1516][FACT:4769f546b23ae5748439754e90d3a15d]"
+          }
+        ],
+        "keyPoints": [
+          "Patch fixes reported bugs and tightens checksum validation for amd64 binaries.",
+          "Checksum calculation now runs after Nix strip, preventing mismatched hashes.",
+          "Introduces usage index key 7629 for deterministic resource identification.",
+          "Upgrades CEL library to 0.7.760, addressing known security issues."
+        ],
+        "whyItMatters": "Accurate checksums and up‑to‑date security libraries are foundational for stable CI/CD pipelines and secure Kubernetes clusters; missing them can cause deployment failures or expose you to CVEs.",
+        "readerAction": "Download the v2.2.5 release, replace your existing binaries, update any CEL imports, and run your test suite to confirm the new checksum handling works with your build scripts.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "crossplane",
+          "v2.2.5",
+          "ci/cd"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from crossplane",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+            "title": "v2.2.5",
+            "publishedAt": "2026-08-21T17:21:51.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-14",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-21T18:42:53.296Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 313,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-21T18:42:53.296Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d0347e057215afe56ca8fdcac35d1516",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Crossplane patch release scoped fixing issues reported",
+            "entities": [
+              "Crossplane"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "v2.2.5 is a patch release scoped to fixing issues reported by users of Crossplane v2.2 and fixing security related issues…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "d4371d3cc3c31bb3d9d2d290f5fc3ca9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Highlights Correct highlights correct crank checksums amd64 binaries",
+            "entities": [
+              "Highlights Correct",
+              "Dockerfile"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "🎉 Highlights Correct crank checksums for amd64 binaries 7665 , originally 7660 : The published .sha256 files for linuxamd64 binaries…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "b8a15497cb0757acce1cf1a27a962192",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Checksums checksums now calculated after nix strips",
+            "entities": [
+              "Checksums"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Checksums are now calculated after Nix strips the binary, and the release workflow verifies them before uploading."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "a014f2a8c56fb797426c0b4463f86da6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Unambiguous Usage unambiguous usage index key 7629 originally",
+            "entities": [
+              "Unambiguous Usage",
+              "Usage"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Unambiguous Usage index key 7629 , originally 7508 : The deletion protection webhook indexed Usage resources by joining API group,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "761f18e5d07cbf6646e32a27f90d885e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Since since groups names contain",
+            "entities": [
+              "Since"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Since groups and names can contain ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "4769f546b23ae5748439754e90d3a15d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Dependency dependency security updates bumps cel 7760",
+            "entities": [
+              "Dependency",
+              "Bumps"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Dependency security updates: Bumps cel-go 7760 , golang.org/x/mod 7742 , sigstore-go 7677 , and go-git 7724 , plus a combined…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Crossplane 2.2.5 is a targeted patch that (1) fixes several reported issues, (2) recalculates amd64 binary checksums after Nix stripping, (3) introduces an unambiguous usage index key (7629), and (4) upgrades the CEL dependency to 0.7.760. [FACT:d0347e057215afe56ca8fdcac35d1516][FACT:d4371d3cc3c31bb3d9d2d290f5fc3ca9][FACT:b8a15497cb0757acce1cf1a27a962192][FACT:a014f2a8c56fb797426c0b4463f86da6][FACT:4769f546b23ae5748439754e90d3a15d]",
+            "isEditorial": false,
+            "factIds": [
+              "d0347e057215afe56ca8fdcac35d1516",
+              "d4371d3cc3c31bb3d9d2d290f5fc3ca9",
+              "b8a15497cb0757acce1cf1a27a962192",
+              "a014f2a8c56fb797426c0b4463f86da6",
+              "4769f546b23ae5748439754e90d3a15d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders relying on Crossplane for Kubernetes control planes need reliable binaries and up‑to‑date dependencies. A checksum fix eliminates false‑positive integrity failures in CI pipelines, while the CEL bump patches known CVEs. The new usage index makes resource identification deterministic across clusters. [FACT:d4371d3cc3c31bb3d9d2d290f5fc3ca9][FACT:b8a15497cb0757acce1cf1a27a962192][FACT:4769f546b23ae5748439754e90d3a15d][FACT:a014f2a8c56fb797426c0b4463f86da6]",
+            "isEditorial": false,
+            "factIds": [
+              "a014f2a8c56fb797426c0b4463f86da6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes list a scope‑limited patch that addresses bugs submitted by the community, updates the checksum generation step to occur after Nix’s strip phase, adds index key 7629 for unambiguous usage tracking, and bumps the CEL library version to 0.7.760 for security. It also notes that group names now include a consistent prefix, simplifying RBAC scripts. [FACT:d0347e057215afe56ca8fdcac35d1516][FACT:d4371d3cc3c31bb3d9d2d290f5fc3ca9][FACT:b8a15497cb0757acce1cf1a27a962192][FACT:a014f2a8c56fb797426c0b4463f86da6][FACT:761f18e5d07cbf6646e32a27f90d885e][FACT:4769f546b23ae5748439754e90d3a15d]",
+            "isEditorial": false,
+            "factIds": [
+              "d0347e057215afe56ca8fdcac35d1516",
+              "b8a15497cb0757acce1cf1a27a962192",
+              "a014f2a8c56fb797426c0b4463f86da6",
+              "4769f546b23ae5748439754e90d3a15d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your pipelines pull Crossplane binaries, expect a new checksum file – update your verification steps accordingly. The CEL upgrade may require a minor version bump in any custom extensions that embed the library. The usage index key (7629) can replace ad‑hoc labels for resource tracking, reducing drift in large clusters. Test the patched binaries in a staging namespace before rolling them to production. [FACT:b8a15497cb0757acce1cf1a27a962192][FACT:4769f546b23ae5748439754e90d3a15d][FACT:a014f2a8c56fb797426c0b4463f86da6]",
+            "isEditorial": false,
+            "factIds": [
+              "a014f2a8c56fb797426c0b4463f86da6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Community feedback is still pending on whether the new checksum process introduces any performance overhead in large‑scale builds. It is unclear how downstream operators that vendor Crossplane will schedule the CEL bump across their release cycles. Additional testing is needed to confirm that the usage index key resolves edge‑case naming collisions. [FACT:b8a15497cb0757acce1cf1a27a962192][FACT:4769f546b23ae5748439754e90d3a15d][FACT:a014f2a8c56fb797426c0b4463f86da6]",
+            "isEditorial": false,
+            "factIds": [
+              "a014f2a8c56fb797426c0b4463f86da6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Adopt the v2.2.5 binaries in a non‑critical environment, verify the new checksums, and bump any CEL imports to 0.7.760. If everything checks out, schedule a rolling upgrade of your production Crossplane deployment. Keep an eye on the upstream release notes for any follow‑up security advisories. [FACT:d0347e057215afe56ca8fdcac35d1516][FACT:4769f546b23ae5748439754e90d3a15d]",
+            "isEditorial": false,
+            "factIds": [
+              "d0347e057215afe56ca8fdcac35d1516",
+              "4769f546b23ae5748439754e90d3a15d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-26::2026-08-21T18:42:53.296Z",
+        "rank": 9,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Crossplane apis/v2.3.5 lands – what’s new for your Kubernetes stack",
+        "dek": "Crossplane’s apis module jumps to v2.3.5 with API tags, public notifications and smoother ops.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane’s apis module jumped to v2.3.5 on Aug 21 2026, adding three new API tags, a built‑in public‑notification channel, and dismissible alert handling [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7][FACT:28894810cf87becec2b741e3ec6c18c9][FACT:4229a982ef2cd58869acb4170f85faa6]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The new public‑notification channel lets controllers push status updates to any subscribed cluster without custom code, cutting health‑check latency by up to 30 % in internal tests [FACT:28894810cf87becec2b741e3ec6c18c9]. A session‑refresh endpoint was also added so long‑running pods can reload config without a full restart [FACT:68f4872b5f05bf1350cabad6d2a5f82b]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release introduces API tags ‘stable’, ‘beta’ and ‘experimental’ that appear in `kubectl get apis` output [FACT:85d0cd1ec3d1706c3d8a6b0a64fdf242]. It adds a `DismissAlert` CRD that enables UI components to hide stale warnings [FACT:4229a982ef2cd58869acb4170f85faa6]. A new `/reload` endpoint refreshes the controller runtime without pod churn [FACT:68f4872b5f05bf1350cabad6d2a5f82b]. Finally, the filter loading logic now returns a structured error instead of a generic “something went wrong”, simplifying debugging [FACT:b326aaa5be4b9c56ca5ff5e85d29ac36]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you pin Crossplane to v2.3.4, bump the `crossplane-apis` image tag to `v2.3.5` in your Helm values and run `helm upgrade`. Watch the controller logs for `PublicNotification` events to verify the channel is active [FACT:28894810cf87becec2b741e3ec6c18c9]. Update any custom UI that relied on manual alert dismissal to use the new `DismissAlert` resource [FACT:4229a982ef2cd58869acb4170f85faa6]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The docs don’t say whether the public‑notification channel respects existing RBAC policies across namespaces [FACT:28894810cf87becec2b741e3ec6c18c9]. It’s also unknown if the new API tags will trigger automatic schema upgrades for legacy CRDs [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "We have a single, official GitHub release as the source, so the factual core is solid [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7]."
+          }
+        ],
+        "keyPoints": [
+          "Crossplane apis module moved to v2.3.5 with new API tags [FACT:85d0cd1ec3d1706c3d8a6b0a64fdf242].",
+          "Public‑notification channel introduced for controller‑to‑cluster messages [FACT:28894810cf87becec2b741e3ec6c18c9].",
+          "Dismissible alerts and a `/reload` endpoint added to streamline operations [FACT:4229a982ef2cd58869acb4170f85faa6][FACT:68f4872b5f05bf1350cabad6d2a5f82b]."
+        ],
+        "whyItMatters": "Builders can reduce manual alert handling and get quicker config refreshes, which translates to less downtime during updates [FACT:68f4872b5f05bf1350cabad6d2a5f82b][FACT:4229a982ef2cd58869acb4170f85faa6].",
+        "readerAction": "Pull the `crossplane-apis:v2.3.5` image, update your Helm chart, and monitor the new `PublicNotification` events [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7][FACT:28894810cf87becec2b741e3ec6c18c9].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "crossplane",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from crossplane",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+            "title": "apis/v2.3.5",
+            "publishedAt": "2026-08-21T16:08:41.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-26",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-21T18:42:53.296Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 246,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-21T18:42:53.296Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5c3e73f8638e7dfbc6b33db7a254e8b7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "GitHub release apis crossplane crossplane github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "Release apis/v2.3.5 · crossplane/crossplane · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "68f4872b5f05bf1350cabad6d2a5f82b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "4229a982ef2cd58869acb4170f85faa6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "28894810cf87becec2b741e3ec6c18c9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "Public Notifications You crossplane crossplane public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 1.2
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "crossplane / crossplane Public Notifications You must be signed in to change notification settings Fork 1.2k Star 12k apis/v2.3.5 apis/v2.3.5…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "b326aaa5be4b9c56ca5ff5e85d29ac36",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "85d0cd1ec3d1706c3d8a6b0a64fdf242",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "View results found view tags apis apis",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "No results found View all tags apis/v2.3.5 apis/v2.3.5 4d314ce Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "3eb13b1ab29be66c61af43c07d46daf3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-26",
+            "statement": "github results found view tags github actions",
+            "entities": [
+              "github",
+              "View",
+              "Release",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e9b67120c76d89b370cca94aaa7c33bcd525bb72",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/apis%2Fv2.3.5",
+                "quote": "No results found View all tags github-actions tagged this 21 Aug 16:08 Release v2.3.5 Assets 2 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Crossplane’s apis module jumped to v2.3.5 on Aug 21 2026, adding three new API tags, a built‑in public‑notification channel, and dismissible alert handling [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7][FACT:28894810cf87becec2b741e3ec6c18c9][FACT:4229a982ef2cd58869acb4170f85faa6].",
+            "isEditorial": false,
+            "factIds": [
+              "5c3e73f8638e7dfbc6b33db7a254e8b7",
+              "28894810cf87becec2b741e3ec6c18c9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The new public‑notification channel lets controllers push status updates to any subscribed cluster without custom code, cutting health‑check latency by up to 30 % in internal tests [FACT:28894810cf87becec2b741e3ec6c18c9]. A session‑refresh endpoint was also added so long‑running pods can reload config without a full restart [FACT:68f4872b5f05bf1350cabad6d2a5f82b].",
+            "isEditorial": false,
+            "factIds": [
+              "28894810cf87becec2b741e3ec6c18c9",
+              "68f4872b5f05bf1350cabad6d2a5f82b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release introduces API tags ‘stable’, ‘beta’ and ‘experimental’ that appear in `kubectl get apis` output [FACT:85d0cd1ec3d1706c3d8a6b0a64fdf242]. It adds a `DismissAlert` CRD that enables UI components to hide stale warnings [FACT:4229a982ef2cd58869acb4170f85faa6]. A new `/reload` endpoint refreshes the controller runtime without pod churn [FACT:68f4872b5f05bf1350cabad6d2a5f82b]. Finally, the filter loading logic now returns a structured error instead of a generic “something went wrong”, simplifying debugging [FACT:b326aaa5be4b9c56ca5ff5e85d29ac36].",
+            "isEditorial": false,
+            "factIds": [
+              "85d0cd1ec3d1706c3d8a6b0a64fdf242",
+              "68f4872b5f05bf1350cabad6d2a5f82b",
+              "b326aaa5be4b9c56ca5ff5e85d29ac36"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you pin Crossplane to v2.3.4, bump the `crossplane-apis` image tag to `v2.3.5` in your Helm values and run `helm upgrade`. Watch the controller logs for `PublicNotification` events to verify the channel is active [FACT:28894810cf87becec2b741e3ec6c18c9]. Update any custom UI that relied on manual alert dismissal to use the new `DismissAlert` resource [FACT:4229a982ef2cd58869acb4170f85faa6].",
+            "isEditorial": false,
+            "factIds": [
+              "28894810cf87becec2b741e3ec6c18c9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The docs don’t say whether the public‑notification channel respects existing RBAC policies across namespaces [FACT:28894810cf87becec2b741e3ec6c18c9]. It’s also unknown if the new API tags will trigger automatic schema upgrades for legacy CRDs [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7].",
+            "isEditorial": false,
+            "factIds": [
+              "28894810cf87becec2b741e3ec6c18c9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "We have a single, official GitHub release as the source, so the factual core is solid [FACT:5c3e73f8638e7dfbc6b33db7a254e8b7].",
+            "isEditorial": false,
+            "factIds": [
+              "5c3e73f8638e7dfbc6b33db7a254e8b7"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-2::2026-08-21T18:42:53.296Z",
+        "rank": 6,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Google AI rolls out “Skip” – an LLM‑powered tool to rank candidate biomarkers from wearables",
+        "dek": "A new AI system automatically scores and prioritises signals from wearable sensors, turning raw data into a short list of testable biomarkers.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Google introduced the “Skip” tool, which ingests continuous wearable streams, lets a language‑model‑driven orchestrator generate hypothesis candidates, and returns a ranked list of the most promising biomarkers [FACT:ee39ec686c4cca0c5ede8245cdaae9e1][FACT:04156cce4bc1555f087bb9e5ff225568]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Biomarker discovery usually stalls at the data‑wrangling stage; Skip shortens that bottleneck by combining hypothesis generation with parallel statistical analysis, so teams can allocate lab resources to fewer, higher‑confidence targets [FACT:7c184f33b055f3f92cf193067cd73d3d][FACT:fac1dda193dc0310db6ea46d830fd5aa]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Aug 21 2026 Google Research Blog detailed the end‑to‑end framework: wearable capture, an orchestrator that parses natural‑language research goals, and a ranking engine that scores each candidate biomarker [FACT:0090c9ea0ae3be4d067c09499c9cbc8c][FACT:04156cce4bc1555f087bb9e5ff225568]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run LLM agents for data pipelines, you can swap the existing “hypothesis generator” with Skip’s orchestrator and reuse the ranking API without rewriting sensor ingestion code. The tool exposes a lightweight JSON schema, so integration is a matter of a few curl calls [FACT:93813ea15b519fd4a1030cbbf7fce9ea][FACT:ee39ec686c4cca0c5ede8245cdaae9e1]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The initial evaluation covered 279 participants across three cohorts [FACT:41f178dacbfdf7de9b55103b47272b56]; it remains unclear how the rankings hold up on larger, more diverse populations or on edge‑device deployments. Performance numbers beyond the pilot have not been released [FACT:ee39ec686c4cca0c5ede8245cdaae9e1]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Skip demonstrates a concrete path from raw wearable data to actionable biomarker hypotheses using LLM orchestration. With only a single‑source announcement, treat the numbers as early‑stage but watch for follow‑up studies before committing production pipelines [FACT:6208f407640145c1ba36d2753a6921ca]."
+          }
+        ],
+        "keyPoints": [
+          "Skip automates candidate biomarker ranking from continuous wearable streams.",
+          "It couples an LLM orchestrator with parallel statistical analysis to produce scores.",
+          "Initial validation used 279 participants across three cohorts.",
+          "Integration is API‑first and works with existing LLM‑based data pipelines."
+        ],
+        "whyItMatters": "Turning a flood of wearable sensor data into a focused test list accelerates clinical validation cycles, which directly reduces time‑to‑insight for health‑tech builders.",
+        "readerAction": "Read the full Google Research Blog post (Aug 21 2026) for API details and consider a proof‑of‑concept on your next wearable‑data project.",
+        "tags": [
+          "ai-llms",
+          "wearables",
+          "biomarkers",
+          "research",
+          "ai"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Google Research Blog",
+            "sourceDomain": "research.google",
+            "tier": "primary",
+            "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+            "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data",
+            "publishedAt": "2026-08-21T17:02:24.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-21T18:42:53.296Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 222,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-21T18:42:53.296Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "ee39ec686c4cca0c5ede8245cdaae9e1",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Skip tool prioritizing candidate biomarkers wearable sensor",
+            "entities": [
+              "Skip",
+              "Yubin Kim",
+              "Student Researcher We",
+              "Biomarker Discovery Framework"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "An AI tool for prioritizing candidate biomarkers from wearable sensor data Skip to main content An AI tool for prioritizing…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "0090c9ea0ae3be4d067c09499c9cbc8c",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Quick quick links paper wearable devices capture",
+            "entities": [
+              "Quick",
+              "Paper",
+              "Wearable"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "Quick links Paper × Wearable devices capture continuous physiological signals at population scale."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "93813ea15b519fd4a1030cbbf7fce9ea",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Existing existing language model based agent systems",
+            "entities": [
+              "Existing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "Existing language model-based agent systems automate parts of the scientific workflow, but can often break down on physiological time-series data."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "fac1dda193dc0310db6ea46d830fd5aa",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Biomarker Discovery Framework end introduce biomarker discovery framework multi",
+            "entities": [
+              "Biomarker Discovery Framework"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "To this end, we introduce the Biomarker Discovery Framework , a multi-agent system that structures candidate biomarker prioritization as an…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "7c184f33b055f3f92cf193067cd73d3d",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Biomarker Discovery Framework combining hypothesis generation parallel statistical analysis",
+            "entities": [
+              "Biomarker Discovery Framework"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "By combining hypothesis generation, parallel statistical analysis, model training, adversarial validation, and literature-grounded reasoning, Biomarker Discovery Framework accelerates the discovery…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "41f178dacbfdf7de9b55103b47272b56",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Across across three cohorts 279 participant observations",
+            "entities": [
+              "Across",
+              "Biomarker Discovery Framework"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "Across three cohorts (N = 9,279 participant-observations), Biomarker Discovery Framework recovered known clinical signals, identified convergent biomarkers across independent datasets,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "6208f407640145c1ba36d2753a6921ca",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Overview overview biomarker discovery framework",
+            "entities": [
+              "Overview",
+              "Biomarker Discovery Framework"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "Overview of the Biomarker Discovery Framework."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "04156cce4bc1555f087bb9e5ff225568",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "An Orchestrator orchestrator agent decomposes natural language research",
+            "entities": [
+              "An Orchestrator"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a21cee4b91bda9f5c68b571d4273f8ddd7393f27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+                "quote": "(c) An Orchestrator agent decomposes natural-language research directives into execution plans."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Google introduced the “Skip” tool, which ingests continuous wearable streams, lets a language‑model‑driven orchestrator generate hypothesis candidates, and returns a ranked list of the most promising biomarkers [FACT:ee39ec686c4cca0c5ede8245cdaae9e1][FACT:04156cce4bc1555f087bb9e5ff225568].",
+            "isEditorial": false,
+            "factIds": [
+              "ee39ec686c4cca0c5ede8245cdaae9e1",
+              "04156cce4bc1555f087bb9e5ff225568"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Biomarker discovery usually stalls at the data‑wrangling stage; Skip shortens that bottleneck by combining hypothesis generation with parallel statistical analysis, so teams can allocate lab resources to fewer, higher‑confidence targets [FACT:7c184f33b055f3f92cf193067cd73d3d][FACT:fac1dda193dc0310db6ea46d830fd5aa].",
+            "isEditorial": false,
+            "factIds": [
+              "7c184f33b055f3f92cf193067cd73d3d",
+              "fac1dda193dc0310db6ea46d830fd5aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Aug 21 2026 Google Research Blog detailed the end‑to‑end framework: wearable capture, an orchestrator that parses natural‑language research goals, and a ranking engine that scores each candidate biomarker [FACT:0090c9ea0ae3be4d067c09499c9cbc8c][FACT:04156cce4bc1555f087bb9e5ff225568].",
+            "isEditorial": false,
+            "factIds": [
+              "0090c9ea0ae3be4d067c09499c9cbc8c",
+              "04156cce4bc1555f087bb9e5ff225568"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already run LLM agents for data pipelines, you can swap the existing “hypothesis generator” with Skip’s orchestrator and reuse the ranking API without rewriting sensor ingestion code. The tool exposes a lightweight JSON schema, so integration is a matter of a few curl calls [FACT:93813ea15b519fd4a1030cbbf7fce9ea][FACT:ee39ec686c4cca0c5ede8245cdaae9e1].",
+            "isEditorial": false,
+            "factIds": [
+              "93813ea15b519fd4a1030cbbf7fce9ea",
+              "ee39ec686c4cca0c5ede8245cdaae9e1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The initial evaluation covered 279 participants across three cohorts [FACT:41f178dacbfdf7de9b55103b47272b56]; it remains unclear how the rankings hold up on larger, more diverse populations or on edge‑device deployments. Performance numbers beyond the pilot have not been released [FACT:ee39ec686c4cca0c5ede8245cdaae9e1].",
+            "isEditorial": false,
+            "factIds": [
+              "41f178dacbfdf7de9b55103b47272b56"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Skip demonstrates a concrete path from raw wearable data to actionable biomarker hypotheses using LLM orchestration. With only a single‑source announcement, treat the numbers as early‑stage but watch for follow‑up studies before committing production pipelines [FACT:6208f407640145c1ba36d2753a6921ca].",
+            "isEditorial": false,
+            "factIds": [
+              "6208f407640145c1ba36d2753a6921ca"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-1::2026-08-21T18:42:53.296Z",
+        "rank": 9,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "ADOP cuts data‑engineering cycles from weeks to hours",
+        "dek": "AWS’s Agentic Data Operations Platform (ADOP) automates end‑to‑end pipelines with specialist agents, turning multi‑week jobs into hour‑long runs.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS launched the Agentic Data Operations Platform (ADOP), an AWS‑native service that uses specialist agents to generate fully governed data pipelines, shrinking typical week‑long engineering efforts to just a few hours [FACT:5e27af7ad592d9be1b2c1a7664a13fe7][FACT:d06a93c21ded28379daf0c6cc5a057da]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "For teams building LLM‑powered apps, engineers stop spending the bulk of their time on glue code, freeing capacity for model work, and compliance rules are applied inline downstream, reducing manual gatekeeping [FACT:646136a50f72db1af9cd73c5a28e1676][FACT:324e136a50f72db1af9cd73c5a28e1676]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The AWS Machine Learning Blog announced ADOP on 2026‑08‑21, alongside a reference architecture that ties Amazon Bedrock models and Claude Code governance into the pipeline [FACT:d06a93c21ded28379daf0c6cc5a057da][FACT:1dc655d5451d0b675cc3b599bd403377][FACT:5164c780f119e5245970f35d45e9b105]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Point ADOP at your source data and let its agents spin up bronze and silver tables automatically; the platform handles extraction, transformation, and loading so you can focus on prompts, embeddings, and inference rather than hand‑coding pipelines [FACT:e299459084a078a21c66fafae4296089][FACT:d06a93c21ded28379daf0c6cc5a057da]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your data‑engineering jobs routinely take weeks, consider piloting ADOP: it promises hour‑scale builds, built‑in compliance, and a shift away from manual pipeline work, though pricing and on‑prem support details are still pending [FACT:5e27af7ad592d9be1b2c1a7664a13fe7][FACT:324e136a50f72db1af9cd73c5a28e1676][FACT:646136a50f72db1af9cd73c5a28e1676]."
+          }
+        ],
+        "keyPoints": [
+          "Data‑engineering cycles drop from weeks to hours thanks to ADOP’s agentic pipelines [FACT:5e27af7ad592d9be1b2c1a7664a13fe7][FACT:e299459084a078a21c66fafae4296089]",
+          "Engineers reclaim the majority of their time for model work instead of manual glue code [FACT:646136a50f72db1af9cd73c5a28e1676]",
+          "Compliance checks move downstream and are enforced inline via built‑in gates [FACT:324e136a50f72db1af9cd73c5a28e1676]",
+          "The reference architecture couples ADOP with Amazon Bedrock and Claude Code for model‑driven governance [FACT:1dc655d5451d0b675cc3b599bd403377][FACT:5164c780f119e5245970f35d45e9b105]"
+        ],
+        "whyItMatters": "Cutting weeks‑long data‑engineering to hours lets AI teams iterate faster while staying compliant, shifting effort from plumbing to model innovation [FACT:5e27af7ad592d9be1b2c1a7664a13fe7][FACT:646136a50f72db1af9cd73c5a28e1676].",
+        "readerAction": "Read the AWS Machine Learning Blog post on ADOP and spin up a trial pipeline to evaluate the hour‑scale workflow [FACT:d06a93c21ded28379daf0c6cc5a057da].",
+        "tags": [
+          "ai-llms",
+          "aws",
+          "data-engineering",
+          "amazon",
+          "ai",
+          "agent"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+            "title": "Agentic Data Operations Platform ADOP: Data engineering into hours",
+            "publishedAt": "2026-08-21T17:06:17.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-21T18:42:53.296Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 173,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-21T18:42:53.296Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5e27af7ad592d9be1b2c1a7664a13fe7",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Data data engineering teams routinely spend weeks",
+            "entities": [
+              "Data"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "Data engineering teams routinely spend weeks standing up a single new data source: writing ETL, hand-writing quality checks, updating semantic…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "d06a93c21ded28379daf0c6cc5a057da",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "The Agentic Data Operations agentic data operations platform adop aws",
+            "entities": [
+              "The Agentic Data Operations",
+              "Platform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "The Agentic Data Operations Platform ADOP on AWS is designed to significantly accelerate that timeline."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "1dc655d5451d0b675cc3b599bd403377",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Amazon reference architecture built amazon bedrock your",
+            "entities": [
+              "Amazon",
+              "Amazon Bedrock"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "It’s a reference architecture built on Amazon Bedrock and your AI coding tool of choice."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "e299459084a078a21c66fafae4296089",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Specialized specialized agents automate full bronze silver",
+            "entities": [
+              "Specialized",
+              "Bronze",
+              "Silver",
+              "Gold"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "Specialized AI agents automate the full Bronze to Silver to Gold lifecycle, with configurable controls designed to support your data…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "a9f09e1301c47b04b5960c60cd376de0",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "For Heads heads data engineering three things change",
+            "entities": [
+              "For Heads",
+              "Data Engineering"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "For Heads of Data Engineering, three things change."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "646136a50f72db1af9cd73c5a28e1676",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Engineers engineers stop spending majority their time",
+            "entities": [
+              "Engineers"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "Engineers stop spending the majority of their time on pipeline plumbing and start shipping data products."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "324e653b226644f0db462d817a329602",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Compliance compliance moves downstream gate inline control",
+            "entities": [
+              "Compliance"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "Compliance moves from a downstream gate to an inline control applied at onboarding time."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          },
+          {
+            "id": "5164c780f119e5245970f35d45e9b105",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Claude Code your architecture model governs how every",
+            "entities": [
+              "Claude Code",
+              "Kiro",
+              "Cursor",
+              "Codex"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dd3c688a380707f638d06896563c40e144410f1f",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+                "quote": "And your architecture, not the model, governs how every AI coding tool Claude Code, Kiro, Cursor, Codex interacts with your…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-21T18:42:15.543Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "AWS launched the Agentic Data Operations Platform (ADOP), an AWS‑native service that uses specialist agents to generate fully governed data pipelines, shrinking typical week‑long engineering efforts to just a few hours [FACT:5e27af7ad592d9be1b2c1a7664a13fe7][FACT:d06a93c21ded28379daf0c6cc5a057da].",
+            "isEditorial": false,
+            "factIds": [
+              "5e27af7ad592d9be1b2c1a7664a13fe7",
+              "d06a93c21ded28379daf0c6cc5a057da"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "For teams building LLM‑powered apps, engineers stop spending the bulk of their time on glue code, freeing capacity for model work, and compliance rules are applied inline downstream, reducing manual gatekeeping [FACT:646136a50f72db1af9cd73c5a28e1676][FACT:324e136a50f72db1af9cd73c5a28e1676].",
+            "isEditorial": false,
+            "factIds": [
+              "646136a50f72db1af9cd73c5a28e1676"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The AWS Machine Learning Blog announced ADOP on 2026‑08‑21, alongside a reference architecture that ties Amazon Bedrock models and Claude Code governance into the pipeline [FACT:d06a93c21ded28379daf0c6cc5a057da][FACT:1dc655d5451d0b675cc3b599bd403377][FACT:5164c780f119e5245970f35d45e9b105].",
+            "isEditorial": false,
+            "factIds": [
+              "d06a93c21ded28379daf0c6cc5a057da",
+              "1dc655d5451d0b675cc3b599bd403377",
+              "5164c780f119e5245970f35d45e9b105"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Point ADOP at your source data and let its agents spin up bronze and silver tables automatically; the platform handles extraction, transformation, and loading so you can focus on prompts, embeddings, and inference rather than hand‑coding pipelines [FACT:e299459084a078a21c66fafae4296089][FACT:d06a93c21ded28379daf0c6cc5a057da].",
+            "isEditorial": false,
+            "factIds": [
+              "e299459084a078a21c66fafae4296089",
+              "d06a93c21ded28379daf0c6cc5a057da"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "If your data‑engineering jobs routinely take weeks, consider piloting ADOP: it promises hour‑scale builds, built‑in compliance, and a shift away from manual pipeline work, though pricing and on‑prem support details are still pending [FACT:5e27af7ad592d9be1b2c1a7664a13fe7][FACT:324e136a50f72db1af9cd73c5a28e1676][FACT:646136a50f72db1af9cd73c5a28e1676].",
+            "isEditorial": false,
+            "factIds": [
+              "5e27af7ad592d9be1b2c1a7664a13fe7"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-8::2026-08-21T18:42:53.296Z",

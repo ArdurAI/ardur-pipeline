@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-21T12:00:00.000Z",
-    "windowStart": "2026-08-21T12:00:00.000Z",
-    "windowEnd": "2026-08-21T18:00:00.000Z"
+    "id": "2026-08-21T18:00:00.000Z",
+    "windowStart": "2026-08-21T18:00:00.000Z",
+    "windowEnd": "2026-08-22T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-21T12:55:58.253Z",
-  "nextRefreshAt": "2026-08-21T18:00:00.000Z",
+  "publishedAt": "2026-08-21T18:42:15.346Z",
+  "nextRefreshAt": "2026-08-22T00:00:00.000Z",
   "runIds": {
-    "aggregation": "69981a1c-1e9b-44e6-ac50-d100cb9c344b",
-    "ranking": "rank-77344977",
-    "top10": "top10:2026-08-21T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-21T12:00:00.000Z-2026-08-21T12:56:20.033Z"
+    "aggregation": "ebe68695-45ab-4df1-ba83-1c678a4d9f6e",
+    "ranking": "rank-97b7e553",
+    "top10": "top10:2026-08-21T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-21T18:00:00.000Z-2026-08-21T18:42:53.296Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-21T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-21T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-21T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-21T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-21T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-21T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1214,
+      "count": 1413,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pZlh4LWwzcDRQZW1LZHFOeDdkZ0h2aFFVbmF1U3VnRzN3NzR6d1VBZjZBODBfWVlId1BQOFR2anNwVWxCd2huNDBTdUNFaVBBSzA5Rm9FYnhIY0NI?oc=5"
+        "[ai/cluster-ai-9] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pZlh4LWwzcDRQZW1LZHFOeDdkZ0h2aFFVbmF1U3VnRzN3NzR6d1VBZjZBODBfWVlId1BQOFR2anNwVWxCd2huNDBTdUNFaVBBSzA5Rm9FYnhIY0NI?oc=5",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1505,
+      "count": 1722,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 16,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 17,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -104,22 +104,22 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "Microsoft warns of max severity Entra ID flaw exploited in attacks"
+        "headline": "Is Cyber missing the Marque?"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Up to 3.2x Faster Inference with LFM2.5-DSpark"
+        "topic": "security",
+        "headline": "OWASP Flags Top AI Skill Risks in New Security Blueprint"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "Calling on Cyber Pros to Help Defend City Hall"
+        "headline": "Microsoft Patches Severe Entra ID Flaw CVSS 10.0 Allowing Remote Code Execution"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "CISA orders feds to patch actively exploited TrueConf Server flaws"
+        "topic": "platform",
+        "headline": "Upcoming Next.js August Security Release"
       },
       {
         "rank": 5,
@@ -128,28 +128,28 @@
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Palo Alto Networks and NTT DATA target $1B in AI security sales by 2029"
+        "topic": "kubernetes",
+        "headline": "v1.20.12"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "OpenAI Pauses Frontier Model Training for Safety Review"
+        "topic": "kubernetes",
+        "headline": "v2.2.5"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "DeepSeek Unveils Test Model to Rival Anthropic’s Opus 4.8"
+        "topic": "kubernetes",
+        "headline": "v2.3.5"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "China’s Acorn Robot Secures Angel Funding, Unveils ‘Instinctive’ Physical AI Model"
+        "topic": "kubernetes",
+        "headline": "apis/v2.3.5"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Azure DevOps Remote MCP Server Reaches GA, Without Support for Claude, ChatGPT, or Cursor"
+        "topic": "security",
+        "headline": "CISA orders feds to patch actively exploited TrueConf Server flaws"
       }
     ],
     "articleCount": 0
