@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-21T18:00:00.000Z",
-    "windowStart": "2026-08-21T18:00:00.000Z",
-    "windowEnd": "2026-08-22T00:00:00.000Z"
+    "id": "2026-08-22T00:00:00.000Z",
+    "windowStart": "2026-08-22T00:00:00.000Z",
+    "windowEnd": "2026-08-22T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-21T18:42:15.346Z",
-  "nextRefreshAt": "2026-08-22T00:00:00.000Z",
+  "publishedAt": "2026-08-22T01:26:26.455Z",
+  "nextRefreshAt": "2026-08-22T06:00:00.000Z",
   "runIds": {
-    "aggregation": "ebe68695-45ab-4df1-ba83-1c678a4d9f6e",
-    "ranking": "rank-97b7e553",
-    "top10": "top10:2026-08-21T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-21T18:00:00.000Z-2026-08-21T18:42:53.296Z"
+    "aggregation": "b82f296b-03b9-4223-aede-088966a4caa1",
+    "ranking": "rank-33018a12",
+    "top10": "top10:2026-08-22T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-22T00:00:00.000Z-2026-08-22T01:26:44.593Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-21T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-21T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-21T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-22T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-22T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-22T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -31,15 +31,6 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1413,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pZlh4LWwzcDRQZW1LZHFOeDdkZ0h2aFFVbmF1U3VnRzN3NzR6d1VBZjZBODBfWVlId1BQOFR2anNwVWxCd2huNDBTdUNFaVBBSzA5Rm9FYnhIY0NI?oc=5",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "blocked-fetch",
       "count": 6,
       "sample": [
@@ -49,26 +40,35 @@
       ]
     },
     {
-      "category": "diversity-floor",
-      "count": 15,
+      "category": "other",
+      "count": 1360,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "diversity-floor",
+      "count": 12,
+      "sample": [
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[kubernetes] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1722,
+      "count": 1663,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 16,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 17,
+      "count": 23,
       "sample": [
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 5,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -103,38 +103,38 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "Is Cyber missing the Marque?"
+        "topic": "ai",
+        "headline": "llm 0.32.1"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "OWASP Flags Top AI Skill Risks in New Security Blueprint"
+        "topic": "ai",
+        "headline": "Anthropic puts its most powerful model Claude Mythos 5 to work for cyber defense"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "Microsoft Patches Severe Entra ID Flaw CVSS 10.0 Allowing Remote Code Execution"
+        "headline": "Microsoft warns of max severity Entra ID flaw exploited in attacks"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Upcoming Next.js August Security Release"
+        "topic": "security",
+        "headline": "Is Cyber missing the Marque?"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic Aims for SpaceX’s IPO Record"
-      },
-      {
-        "rank": 6,
         "topic": "kubernetes",
         "headline": "v1.20.12"
       },
       {
-        "rank": 7,
+        "rank": 6,
         "topic": "kubernetes",
         "headline": "v2.2.5"
+      },
+      {
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "v1.14.1"
       },
       {
         "rank": 8,
@@ -143,13 +143,13 @@
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "apis/v2.3.5"
+        "topic": "security",
+        "headline": "CISA orders feds to patch actively exploited TrueConf Server flaws"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "CISA orders feds to patch actively exploited TrueConf Server flaws"
+        "topic": "platform",
+        "headline": "Upcoming Next.js August Security Release"
       }
     ],
     "articleCount": 0
