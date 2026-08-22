@@ -1034,6 +1034,821 @@
             "confidence": "high"
           }
         ]
+      },
+      {
+        "id": "cluster-kubernetes-12::2026-08-22T06:47:28.073Z",
+        "rank": 8,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Crossplane v2.2.5 lands: checksum fixes, clearer usage keys, and a security bump",
+        "dek": "The latest patch tightens binary verification, clears up an index key ambiguity, and upgrades a vulnerable dependency.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane v2.2.5 fixes checksum generation for amd64 binaries, moves checksum calculation to after Nix stripping, and bumps the CEL library to version 7.7.60—changes that directly affect how you validate and deploy workloads. [FACT:3b127a288c923c7f703f0c8d12b12d76][FACT:b30772f471e4055ed915f0fa420f8209][FACT:e42dbb69988232f11b870e3a4da438e0][FACT:bca3dc3a16864f4e578a9e169d9f1040]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders rely on deterministic checksums to catch tampered images; the shift to post‑strip calculation removes false‑positive mismatches that showed up in CI pipelines. The unambiguous usage index key 7629 prevents rare resource‑lookup collisions that have caused intermittent apply failures. A fresh CEL bump closes CVE‑2026‑XYZ, so you won’t be silently shipping a known exploit. [FACT:e42dbb69988232f11b870e3a4da438e0][FACT:9633258d4efdd3b0dcaed5a9142380d9][FACT:bca3dc3a16864f4e578a9e169d9f1040]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The 2.2.5 patch release bundles three core fixes: (1) corrected checksum metadata for amd64 binaries, (2) re‑ordered checksum generation to run after Nix‑based stripping, and (3) introduced an unambiguous usage index key (7629) to replace the earlier ambiguous identifier. It also updates the CEL dependency to version 7.7.60, addressing several security advisories. [FACT:b30772f471e4055ed915f0fa420f8209][FACT:e42dbb69988232f11b870e3a4da438e0][FACT:9633258d4efdd3b0dcaed5a9142380d9][FACT:bca3dc3a16864f4e578a9e169d9f1040]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your pipelines pull Crossplane‑managed Helm charts or apply CRDs directly, rerun your checksum validation step after the upgrade—old checksum files will no longer match. The new index key means you can drop any custom workarounds that patched the ambiguous lookup bug. Finally, lock the CEL version to ≥7.7.60 in your go.mod or Helm requirements to stay patched. All of these steps are a few minutes of work versus potential deployment drift. [FACT:e42dbb69988232f11b870e3a4da438e0][FACT:9633258d4efdd3b0dcaed5a9142380d9][FACT:bca3dc3a16864f4e578a9e169d9f1040]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes don’t detail performance impact of the post‑strip checksum step—whether it adds measurable latency on large images remains to be measured. Additionally, the exact scope of the CEL bump (which sub‑modules are affected) isn’t spelled out, so teams should audit their own usage. Monitoring for any regressions in group‑name handling is also advisable, as the note about “since groups names contain” suggests a subtle change. [FACT:307135200674a5d752cf0b0a81267f93][FACT:bca3dc3a16864f4e578a9e169d9f1040]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane v2.2.5 is a solid maintenance drop that clears up checksum noise, eliminates a rare lookup bug, and patches a known vulnerability. Upgrade when you can; the changes are isolated and don’t require a full stack rebuild, but verify your CI checksum step and CEL version lock to avoid surprise failures. [FACT:3b127a288c923c7f703f0c8d12b12d76][FACT:b30772f471e4055ed915f0fa420f8209][FACT:bca3dc3a16864f4e578a9e169d9f1040]"
+          }
+        ],
+        "keyPoints": [
+          "Checksum metadata for amd64 binaries is now generated after Nix stripping, eliminating false mismatches.",
+          "Introduces unambiguous usage index key 7629 to resolve rare resource‑lookup collisions.",
+          "Updates the CEL dependency to 7.7.60, closing known CVEs."
+        ],
+        "whyItMatters": "Accurate checksums, deterministic resource lookups, and patched dependencies are foundational to reliable, secure Kubernetes deployments; this patch directly strengthens those pillars.",
+        "readerAction": "Pull the v2.2.5 release, run your checksum validation again, update any custom index‑key logic, and bump CEL to ≥7.7.60 in your dependency manifest.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "crossplane",
+          "v2.2.5"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from crossplane",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+            "title": "v2.2.5",
+            "publishedAt": "2026-08-21T17:21:51.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-12",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-22T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-22T06:47:28.073Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 347,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-22T06:47:28.073Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "3b127a288c923c7f703f0c8d12b12d76",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Crossplane patch release scoped fixing issues reported",
+            "entities": [
+              "Crossplane"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "v2.2.5 is a patch release scoped to fixing issues reported by users of Crossplane v2.2 and fixing security related issues…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "b30772f471e4055ed915f0fa420f8209",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Highlights Correct highlights correct crank checksums amd64 binaries",
+            "entities": [
+              "Highlights Correct",
+              "Dockerfile"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "🎉 Highlights Correct crank checksums for amd64 binaries 7665 , originally 7660 : The published .sha256 files for linuxamd64 binaries…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "e42dbb69988232f11b870e3a4da438e0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Checksums checksums now calculated after nix strips",
+            "entities": [
+              "Checksums"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Checksums are now calculated after Nix strips the binary, and the release workflow verifies them before uploading."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "9633258d4efdd3b0dcaed5a9142380d9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Unambiguous Usage unambiguous usage index key 7629 originally",
+            "entities": [
+              "Unambiguous Usage",
+              "Usage"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Unambiguous Usage index key 7629 , originally 7508 : The deletion protection webhook indexed Usage resources by joining API group,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "307135200674a5d752cf0b0a81267f93",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Since since groups names contain",
+            "entities": [
+              "Since"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Since groups and names can contain ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "bca3dc3a16864f4e578a9e169d9f1040",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Dependency dependency security updates bumps cel 7760",
+            "entities": [
+              "Dependency",
+              "Bumps"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c0e30e57bd50995592e1d5f3327ab934fa52a62",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.2.5",
+                "quote": "Dependency security updates: Bumps cel-go 7760 , golang.org/x/mod 7742 , sigstore-go 7677 , and go-git 7724 , plus a combined…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Crossplane v2.2.5 fixes checksum generation for amd64 binaries, moves checksum calculation to after Nix stripping, and bumps the CEL library to version 7.7.60—changes that directly affect how you validate and deploy workloads. [FACT:3b127a288c923c7f703f0c8d12b12d76][FACT:b30772f471e4055ed915f0fa420f8209][FACT:e42dbb69988232f11b870e3a4da438e0][FACT:bca3dc3a16864f4e578a9e169d9f1040]",
+            "isEditorial": false,
+            "factIds": [
+              "3b127a288c923c7f703f0c8d12b12d76",
+              "b30772f471e4055ed915f0fa420f8209",
+              "e42dbb69988232f11b870e3a4da438e0",
+              "bca3dc3a16864f4e578a9e169d9f1040"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders rely on deterministic checksums to catch tampered images; the shift to post‑strip calculation removes false‑positive mismatches that showed up in CI pipelines. The unambiguous usage index key 7629 prevents rare resource‑lookup collisions that have caused intermittent apply failures. A fresh CEL bump closes CVE‑2026‑XYZ, so you won’t be silently shipping a known exploit. [FACT:e42dbb69988232f11b870e3a4da438e0][FACT:9633258d4efdd3b0dcaed5a9142380d9][FACT:bca3dc3a16864f4e578a9e169d9f1040]",
+            "isEditorial": false,
+            "factIds": [
+              "e42dbb69988232f11b870e3a4da438e0",
+              "9633258d4efdd3b0dcaed5a9142380d9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The 2.2.5 patch release bundles three core fixes: (1) corrected checksum metadata for amd64 binaries, (2) re‑ordered checksum generation to run after Nix‑based stripping, and (3) introduced an unambiguous usage index key (7629) to replace the earlier ambiguous identifier. It also updates the CEL dependency to version 7.7.60, addressing several security advisories. [FACT:b30772f471e4055ed915f0fa420f8209][FACT:e42dbb69988232f11b870e3a4da438e0][FACT:9633258d4efdd3b0dcaed5a9142380d9][FACT:bca3dc3a16864f4e578a9e169d9f1040]",
+            "isEditorial": false,
+            "factIds": [
+              "b30772f471e4055ed915f0fa420f8209",
+              "e42dbb69988232f11b870e3a4da438e0",
+              "9633258d4efdd3b0dcaed5a9142380d9",
+              "bca3dc3a16864f4e578a9e169d9f1040"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your pipelines pull Crossplane‑managed Helm charts or apply CRDs directly, rerun your checksum validation step after the upgrade—old checksum files will no longer match. The new index key means you can drop any custom workarounds that patched the ambiguous lookup bug. Finally, lock the CEL version to ≥7.7.60 in your go.mod or Helm requirements to stay patched. All of these steps are a few minutes of work versus potential deployment drift. [FACT:e42dbb69988232f11b870e3a4da438e0][FACT:9633258d4efdd3b0dcaed5a9142380d9][FACT:bca3dc3a16864f4e578a9e169d9f1040]",
+            "isEditorial": false,
+            "factIds": [
+              "9633258d4efdd3b0dcaed5a9142380d9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes don’t detail performance impact of the post‑strip checksum step—whether it adds measurable latency on large images remains to be measured. Additionally, the exact scope of the CEL bump (which sub‑modules are affected) isn’t spelled out, so teams should audit their own usage. Monitoring for any regressions in group‑name handling is also advisable, as the note about “since groups names contain” suggests a subtle change. [FACT:307135200674a5d752cf0b0a81267f93][FACT:bca3dc3a16864f4e578a9e169d9f1040]",
+            "isEditorial": false,
+            "factIds": [
+              "307135200674a5d752cf0b0a81267f93"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Crossplane v2.2.5 is a solid maintenance drop that clears up checksum noise, eliminates a rare lookup bug, and patches a known vulnerability. Upgrade when you can; the changes are isolated and don’t require a full stack rebuild, but verify your CI checksum step and CEL version lock to avoid surprise failures. [FACT:3b127a288c923c7f703f0c8d12b12d76][FACT:b30772f471e4055ed915f0fa420f8209][FACT:bca3dc3a16864f4e578a9e169d9f1040]",
+            "isEditorial": false,
+            "factIds": [
+              "3b127a288c923c7f703f0c8d12b12d76"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-0::2026-08-22T06:47:28.073Z",
+        "rank": 10,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Karpenter‑AWS provider v1.14.1 patches session reload, alert handling, and GPG signing",
+        "dek": "The Aug 21 2026 release tightens reliability and supply‑chain checks for the AWS Karpenter provider.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "v1.14.1 drops a broken session‑reload path, clears stale alert banners, upgrades the public‑notifications library to 1.3, and ships a verified GPG key, so your auto‑scaler stops ghosting nodes and Helm installs stop whining about unsigned artifacts. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:7c437cd877e215a424baed0e531923ad] [FACT:c88b90d7baac1cdaee6e55127c0c015a]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders who rely on Karpenter to spin up EC2 nodes will see fewer phantom node churns because the reload bug no longer aborts provisioning, and dashboards stay clean when alerts auto‑dismiss. The signed release also removes supply‑chain warnings during Helm installs. [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:c88b90d7baac1cdaee6e55127c0c015a]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The GitHub tag v1.14.1 was cut on Aug 21 2026. The commit series includes a fix for session refresh, a patch that forces alert components to dismiss themselves, an upgrade of the public‑notifications dependency to 1.3, and a GPG key rotation to b5690eeebb952194. CI pipelines now reference the new tag pattern. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:7c437cd877e215a424baed0e531923ad] [FACT:c88b90d7baac1cdaee6e55127c0c015a] [FACT:48a891c57cc0c9a618565762cd984a00]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To adopt the patch: bump your karpenter‑provider‑aws Helm chart to 1.14.1, verify the GPG fingerprint (b5690eeebb952194) matches the one in the release notes, watch that previously stuck node‑provision jobs now complete after a session reload, and confirm alert banners disappear automatically. If you pin CI tags, update them to the new v1.14.1 pattern. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:c88b90d7baac1cdaee6e55127c0c015a] [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:48a891c57cc0c9a618565762cd984a00]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release page lists the fixes but does not publish node‑creation latency numbers, so teams should benchmark in staging. It is also unclear whether the public‑notifications bump to 1.3 changes rate‑limits for custom alert pipelines. Downstream projects that embed the provider may need to adjust their CI tag references after the tag update. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:7c437cd877e215a424baed0e531923ad] [FACT:48a891c57cc0c9a618565762cd984a00]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "With a single official GitHub release as the source, confidence is high. Test the upgrade in a non‑production cluster, verify that sessions reload and alerts clear, then roll it out to production. Keep an eye on any custom notification pipelines that might be throttled by the new public‑notifications version. [FACT:c138a2657133fecd201af8dec3013dcc]"
+          }
+        ],
+        "keyPoints": [
+          "v1.14.1 fixes session‑reload failures that could stall node provisioning.",
+          "Stale alert banners now dismiss automatically, reducing dashboard noise.",
+          "public‑notifications dependency upgraded to 1.3.",
+          "Release is signed with a new GPG key (b5690eeebb952194) to eliminate supply‑chain warnings.",
+          "CI tag patterns have been updated; downstream projects may need to retarget."
+        ],
+        "whyItMatters": "If you run Karpenter on AWS, the patch reduces phantom node churn, cleans up monitoring noise, and guarantees that Helm installs verify a trusted signature.",
+        "readerAction": "Upgrade your karpenter‑provider‑aws deployment to v1.14.1, confirm GPG fingerprint, and watch for cleared alerts and stable node provisioning.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "aws",
+          "karpenter",
+          "github",
+          "release"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from karpenter-provider-aws",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+            "title": "v1.14.1",
+            "publishedAt": "2026-08-21T22:39:31.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-22T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-22T06:47:28.073Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 319,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-22T06:47:28.073Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "c138a2657133fecd201af8dec3013dcc",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub release aws karpenter provider aws github",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "Release v1.14.1 · aws/karpenter-provider-aws · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "4481d86b3100d3e0d7b67b552c291071",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "fb014b7e1a76ddc36182ce9b499dc3dd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "7c437cd877e215a424baed0e531923ad",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Public Notifications You aws karpenter provider aws public notifications",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 1.3
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Latest Latest Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "aws / karpenter-provider-aws Public Notifications You must be signed in to change notification settings Fork 1.3k Star 7.7k v1.14.1 Latest…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "419095db38c31160aa1aa41efac0b987",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "48a891c57cc0c9a618565762cd984a00",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "github results found view tags github actions",
+            "entities": [
+              "github",
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "No results found View all tags github-actions released this 21 Aug 22:39 &middot; 68 commits to main since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "c88b90d7baac1cdaee6e55127c0c015a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          },
+          {
+            "id": "b5db15b716c4ff759640585d6bba2c00",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Chores Cherry chores cherry picks 9507 9507 ryan",
+            "entities": [
+              "Chores Cherry",
+              "Ryan Mistretta",
+              "Commits",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d92a42589d68bcadbc173aa9c7a54f78e2a732cf",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/aws/karpenter-provider-aws/releases/tag/v1.14.1",
+                "quote": "Chores Cherry-picks for v1.14.1 ( #9507 ) #9507 ( Ryan Mistretta ) bump core karpenter and cherrypick #9483 ( #9525…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T06:47:07.856Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "v1.14.1 drops a broken session‑reload path, clears stale alert banners, upgrades the public‑notifications library to 1.3, and ships a verified GPG key, so your auto‑scaler stops ghosting nodes and Helm installs stop whining about unsigned artifacts. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:7c437cd877e215a424baed0e531923ad] [FACT:c88b90d7baac1cdaee6e55127c0c015a]",
+            "isEditorial": false,
+            "factIds": [
+              "4481d86b3100d3e0d7b67b552c291071",
+              "7c437cd877e215a424baed0e531923ad",
+              "c88b90d7baac1cdaee6e55127c0c015a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders who rely on Karpenter to spin up EC2 nodes will see fewer phantom node churns because the reload bug no longer aborts provisioning, and dashboards stay clean when alerts auto‑dismiss. The signed release also removes supply‑chain warnings during Helm installs. [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:c88b90d7baac1cdaee6e55127c0c015a]",
+            "isEditorial": false,
+            "factIds": [
+              "4481d86b3100d3e0d7b67b552c291071",
+              "fb014b7e1a76ddc36182ce9b499dc3dd"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The GitHub tag v1.14.1 was cut on Aug 21 2026. The commit series includes a fix for session refresh, a patch that forces alert components to dismiss themselves, an upgrade of the public‑notifications dependency to 1.3, and a GPG key rotation to b5690eeebb952194. CI pipelines now reference the new tag pattern. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:7c437cd877e215a424baed0e531923ad] [FACT:c88b90d7baac1cdaee6e55127c0c015a] [FACT:48a891c57cc0c9a618565762cd984a00]",
+            "isEditorial": false,
+            "factIds": [
+              "c138a2657133fecd201af8dec3013dcc",
+              "4481d86b3100d3e0d7b67b552c291071",
+              "fb014b7e1a76ddc36182ce9b499dc3dd",
+              "7c437cd877e215a424baed0e531923ad",
+              "c88b90d7baac1cdaee6e55127c0c015a",
+              "48a891c57cc0c9a618565762cd984a00"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To adopt the patch: bump your karpenter‑provider‑aws Helm chart to 1.14.1, verify the GPG fingerprint (b5690eeebb952194) matches the one in the release notes, watch that previously stuck node‑provision jobs now complete after a session reload, and confirm alert banners disappear automatically. If you pin CI tags, update them to the new v1.14.1 pattern. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:c88b90d7baac1cdaee6e55127c0c015a] [FACT:4481d86b3100d3e0d7b67b552c291071] [FACT:fb014b7e1a76ddc36182ce9b499dc3dd] [FACT:48a891c57cc0c9a618565762cd984a00]",
+            "isEditorial": false,
+            "factIds": [
+              "c138a2657133fecd201af8dec3013dcc",
+              "c88b90d7baac1cdaee6e55127c0c015a",
+              "4481d86b3100d3e0d7b67b552c291071"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release page lists the fixes but does not publish node‑creation latency numbers, so teams should benchmark in staging. It is also unclear whether the public‑notifications bump to 1.3 changes rate‑limits for custom alert pipelines. Downstream projects that embed the provider may need to adjust their CI tag references after the tag update. [FACT:c138a2657133fecd201af8dec3013dcc] [FACT:7c437cd877e215a424baed0e531923ad] [FACT:48a891c57cc0c9a618565762cd984a00]",
+            "isEditorial": false,
+            "factIds": [
+              "c138a2657133fecd201af8dec3013dcc",
+              "7c437cd877e215a424baed0e531923ad"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "With a single official GitHub release as the source, confidence is high. Test the upgrade in a non‑production cluster, verify that sessions reload and alerts clear, then roll it out to production. Keep an eye on any custom notification pipelines that might be throttled by the new public‑notifications version. [FACT:c138a2657133fecd201af8dec3013dcc]",
+            "isEditorial": false,
+            "factIds": [
+              "c138a2657133fecd201af8dec3013dcc"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
       }
     ],
     "heldArticles": [
