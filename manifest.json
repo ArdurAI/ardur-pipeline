@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-22T12:00:00.000Z",
-    "windowStart": "2026-08-22T12:00:00.000Z",
-    "windowEnd": "2026-08-22T18:00:00.000Z"
+    "id": "2026-08-22T18:00:00.000Z",
+    "windowStart": "2026-08-22T18:00:00.000Z",
+    "windowEnd": "2026-08-23T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-22T12:47:26.897Z",
-  "nextRefreshAt": "2026-08-22T18:00:00.000Z",
+  "publishedAt": "2026-08-22T18:36:48.102Z",
+  "nextRefreshAt": "2026-08-23T00:00:00.000Z",
   "runIds": {
-    "aggregation": "f79694e8-bf3b-4b05-9c4a-f4c565a03125",
-    "ranking": "rank-4f49e6d8",
-    "top10": "top10:2026-08-22T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-22T12:00:00.000Z-2026-08-22T12:47:54.251Z"
+    "aggregation": "f5da27b3-4781-42c6-b1b5-1a5e5cae273b",
+    "ranking": "rank-2853ac54",
+    "top10": "top10:2026-08-22T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-22T18:00:00.000Z-2026-08-22T18:37:10.187Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-22T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-22T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-22T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-22T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-22T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-22T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,9 @@
       "category": "http-error",
       "count": 69,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1100,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-16] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -49,26 +40,35 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1110,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-17] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1364,
+      "count": 1422,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "llm 0.32.1"
+        "headline": "llm 0.33"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic puts its most powerful model Claude Mythos 5 to work for cyber defense"
+        "headline": "Anthropic market debut could break SpaceX IPO record: media"
       },
       {
         "rank": 3,
+        "topic": "kubernetes",
+        "headline": "The open mainframe: the keystone of the end-to-end digital enterprise"
+      },
+      {
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "v1.54.3"
+      },
+      {
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "v1.54.2"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "DeepSeek unveils vision-enabled AI model claimed to match Anthropic’s top tier"
+      },
+      {
+        "rank": 7,
         "topic": "ai",
         "headline": "Study explains why AI agents benefit from \"skills\" and when they fail"
       },
       {
-        "rank": 4,
+        "rank": 8,
+        "topic": "models",
+        "headline": "More than just code review"
+      },
+      {
+        "rank": 9,
         "topic": "platform",
         "headline": "AWS Releases Aws-Bench to Evaluate Agents on Cloud Tasks"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "David Sacks Defends Open-Source AI, Cites Harvey's Tenet Model - Meta Platforms NASDAQ:META"
-      },
-      {
-        "rank": 6,
+        "rank": 10,
         "topic": "platform",
         "headline": "VoidZero Releases Vite+ Beta: A Unified Web Toolchain Behind a Single Command"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "Microsoft Patches Severe Entra ID Flaw CVSS 10.0 Allowing Remote Code Execution"
-      },
-      {
-        "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Drying Containers for Components Market to Reach 193 Index by 2035 on Semiconductor Fab Capacity Additions"
-      },
-      {
-        "rank": 9,
-        "topic": "security",
-        "headline": "How Investors May Respond To F5 FFIV Unifying AI Security And Cost Controls In One Gateway Platform"
-      },
-      {
-        "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.20.12"
       }
     ],
     "articleCount": 0

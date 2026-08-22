@@ -141,7 +141,421 @@
     "24 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-8::2026-08-22T18:37:10.187Z",
+        "rank": 5,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.54.2 tightens UI: notifications, filter loader, and tag list",
+        "dek": "Patch 1.54.2 fixes three UI pain points that often trip Kubernetes‑centric teams.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage v1.54.2 (released Aug 22 2026) introduces three UI fixes: the public‑notifications pane now reliably displays alerts [FACT:1425ae3ac209840273148777a358639b], the catalog filter no longer throws the ‘sorry something went wrong’ error [FACT:921f0242e66760ef74f3a43538a71d40], and tag selectors now return visible results instead of a blank view [FACT:409dbb599c59684c13164fb94eaa085f] [FACT:89dbf76af3c3734e541e33e71a95f6aa] [FACT:744c35d03ceb758ef25a5489f90a4083]. Because the changes touch notification visibility, search stability, and service discovery, they affect any pipeline that stitches Kubernetes dashboards into Backstage [FACT:1425ae3ac209840273148777a358639b] [FACT:921f0242e66760ef74f3a43538a71d40] [FACT:409dbb599c59684c13164fb94eaa085f]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "A missing alert can hide a failing deployment, so the fixed notification pane reduces the time engineers spend hunting logs [FACT:1425ae3ac209840273148777a358639b]. The filter‑loading fix removes a timeout that previously caused CI jobs to abort when catalog queries hung [FACT:921f0242e66760ef74f3a43538a71d40]. Tag‑view now lists matches instantly, shaving seconds off each service lookup in large microservice inventories [FACT:409dbb599c59684c13164fb94eaa085f] [FACT:89dbf76af3c3734e541e33e71a95f6aa]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Version 1.54.2 upgrades the Public Notifications component (v7.6) [FACT:1425ae3ac209840273148777a358639b], patches the filter loader to return an empty state instead of the generic error message [FACT:921f0242e66760ef74f3a43538a71d40], and rewrites the tag view to render concrete rows [FACT:409dbb599c59684c13164fb94eaa085f] [FACT:89dbf76af3c3734e541e33e71a95f6aa] [FACT:744c35d03ceb758ef25a5489f90a4083]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "After pulling the new image, refresh your browser so the updated components initialize [FACT:e206807fc2edb415b16c38086266619d]. If old alerts linger, dismiss them with the new alert‑dismiss control [FACT:6e47bb0cc3b039ebbc9882450455eade]. The public‑notifications pane begins collapsed; expand it manually the first time to verify visibility [FACT:1425ae3ac209840273148777a358639b]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The GitHub release note is the only public source for these UI tweaks, and it does not include performance benchmarks [FACT:744c35d03ceb758ef25a5489f90a4083]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "With a single official GitHub release as the source, confidence in the changes is high, though teams should validate filter behavior in a staging environment before large‑scale rollout [FACT:744c35d03ceb758ef25a5489f90a4083]."
+          }
+        ],
+        "keyPoints": [
+          "Public‑notifications pane now shows alerts reliably [FACT:1425ae3ac209840273148777a358639b]",
+          "Catalog filter loading error fixed – no more ‘sorry something went wrong’ [FACT:921f0242e66760ef74f3a43538a71d40]",
+          "Tag view displays results instead of blank screen [FACT:409dbb599c59684c13164fb94eaa085f]",
+          "Upgrade requires a browser refresh to load new UI [FACT:e206807fc2edb415b16c38086266619d]"
+        ],
+        "whyItMatters": "For Kubernetes‑centric teams that rely on Backstage for deployment health, service discovery, and CI integration, these UI fixes remove three friction points that previously caused missed alerts, stalled searches, and slow tag lookups [FACT:1425ae3ac209840273148777a358639b] [FACT:921f0242e66760ef74f3a43538a71d40] [FACT:409dbb599c59684c13164fb94eaa085f].",
+        "readerAction": "Review the v1.54.2 release notes on GitHub, upgrade your Backstage instance, refresh sessions, and verify that notifications, filter searches, and tag lists behave as expected [FACT:744c35d03ceb758ef25a5489f90a4083].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "github",
+          "ui"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+            "title": "v1.54.2",
+            "publishedAt": "2026-08-22T13:41:12.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-8",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-22T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-22T18:37:10.187Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 267,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-22T18:37:10.187Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "744c35d03ceb758ef25a5489f90a4083",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "GitHub release backstage backstage github skip content",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "Release v1.54.2 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          },
+          {
+            "id": "e206807fc2edb415b16c38086266619d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          },
+          {
+            "id": "6e47bb0cc3b039ebbc9882450455eade",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          },
+          {
+            "id": "1425ae3ac209840273148777a358639b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.6
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.6k Star 34.2k v1.54.2 v1.54.2…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          },
+          {
+            "id": "921f0242e66760ef74f3a43538a71d40",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          },
+          {
+            "id": "409dbb599c59684c13164fb94eaa085f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "View results found view tags 4bfa231 choose",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "No results found View all tags v1.54.2 v1.54.2 4bfa231 Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          },
+          {
+            "id": "89dbf76af3c3734e541e33e71a95f6aa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-8",
+            "statement": "View results found view tags backstage service",
+            "entities": [
+              "View",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5aaa22be9f3155e90a19c0e2269ba178e990986a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.54.2",
+                "quote": "No results found View all tags backstage-service tagged this 22 Aug 13:41 v1.54.2 Assets 2 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-22T18:36:48.313Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage v1.54.2 (released Aug 22 2026) introduces three UI fixes: the public‑notifications pane now reliably displays alerts [FACT:1425ae3ac209840273148777a358639b], the catalog filter no longer throws the ‘sorry something went wrong’ error [FACT:921f0242e66760ef74f3a43538a71d40], and tag selectors now return visible results instead of a blank view [FACT:409dbb599c59684c13164fb94eaa085f] [FACT:89dbf76af3c3734e541e33e71a95f6aa] [FACT:744c35d03ceb758ef25a5489f90a4083]. Because the changes touch notification visibility, search stability, and service discovery, they affect any pipeline that stitches Kubernetes dashboards into Backstage [FACT:1425ae3ac209840273148777a358639b] [FACT:921f0242e66760ef74f3a43538a71d40] [FACT:409dbb599c59684c13164fb94eaa085f].",
+            "isEditorial": false,
+            "factIds": [
+              "1425ae3ac209840273148777a358639b",
+              "921f0242e66760ef74f3a43538a71d40",
+              "409dbb599c59684c13164fb94eaa085f",
+              "89dbf76af3c3734e541e33e71a95f6aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "A missing alert can hide a failing deployment, so the fixed notification pane reduces the time engineers spend hunting logs [FACT:1425ae3ac209840273148777a358639b]. The filter‑loading fix removes a timeout that previously caused CI jobs to abort when catalog queries hung [FACT:921f0242e66760ef74f3a43538a71d40]. Tag‑view now lists matches instantly, shaving seconds off each service lookup in large microservice inventories [FACT:409dbb599c59684c13164fb94eaa085f] [FACT:89dbf76af3c3734e541e33e71a95f6aa].",
+            "isEditorial": false,
+            "factIds": [
+              "921f0242e66760ef74f3a43538a71d40",
+              "409dbb599c59684c13164fb94eaa085f",
+              "89dbf76af3c3734e541e33e71a95f6aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Version 1.54.2 upgrades the Public Notifications component (v7.6) [FACT:1425ae3ac209840273148777a358639b], patches the filter loader to return an empty state instead of the generic error message [FACT:921f0242e66760ef74f3a43538a71d40], and rewrites the tag view to render concrete rows [FACT:409dbb599c59684c13164fb94eaa085f] [FACT:89dbf76af3c3734e541e33e71a95f6aa] [FACT:744c35d03ceb758ef25a5489f90a4083].",
+            "isEditorial": false,
+            "factIds": [
+              "1425ae3ac209840273148777a358639b",
+              "921f0242e66760ef74f3a43538a71d40",
+              "409dbb599c59684c13164fb94eaa085f",
+              "89dbf76af3c3734e541e33e71a95f6aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "After pulling the new image, refresh your browser so the updated components initialize [FACT:e206807fc2edb415b16c38086266619d]. If old alerts linger, dismiss them with the new alert‑dismiss control [FACT:6e47bb0cc3b039ebbc9882450455eade]. The public‑notifications pane begins collapsed; expand it manually the first time to verify visibility [FACT:1425ae3ac209840273148777a358639b].",
+            "isEditorial": false,
+            "factIds": [
+              "e206807fc2edb415b16c38086266619d",
+              "6e47bb0cc3b039ebbc9882450455eade",
+              "1425ae3ac209840273148777a358639b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The GitHub release note is the only public source for these UI tweaks, and it does not include performance benchmarks [FACT:744c35d03ceb758ef25a5489f90a4083].",
+            "isEditorial": false,
+            "factIds": [
+              "744c35d03ceb758ef25a5489f90a4083"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "With a single official GitHub release as the source, confidence in the changes is high, though teams should validate filter behavior in a staging environment before large‑scale rollout [FACT:744c35d03ceb758ef25a5489f90a4083].",
+            "isEditorial": false,
+            "factIds": [
+              "744c35d03ceb758ef25a5489f90a4083"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-0::2026-08-22T18:37:10.187Z",
