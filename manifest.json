@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-23T12:00:00.000Z",
-    "windowStart": "2026-08-23T12:00:00.000Z",
-    "windowEnd": "2026-08-23T18:00:00.000Z"
+    "id": "2026-08-23T18:00:00.000Z",
+    "windowStart": "2026-08-23T18:00:00.000Z",
+    "windowEnd": "2026-08-24T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-23T12:48:32.995Z",
-  "nextRefreshAt": "2026-08-23T18:00:00.000Z",
+  "publishedAt": "2026-08-23T18:35:29.599Z",
+  "nextRefreshAt": "2026-08-24T00:00:00.000Z",
   "runIds": {
-    "aggregation": "1d8ce0ce-6837-49ee-8bf5-b368fd1cacc4",
-    "ranking": "rank-0288fb12",
-    "top10": "top10:2026-08-23T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-23T12:00:00.000Z-2026-08-23T12:48:44.907Z"
+    "aggregation": "4e411c91-0381-4d91-81de-3a71e756812c",
+    "ranking": "rank-bf41766e",
+    "top10": "top10:2026-08-23T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-23T18:00:00.000Z-2026-08-23T18:35:45.916Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-23T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-23T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-23T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-23T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-23T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-23T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1226,
+      "count": 1204,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-18] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1025,
+      "count": 1036,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
@@ -79,9 +79,9 @@
       "category": "copyright-gate",
       "count": 33,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
+        "topic": "ai",
+        "headline": "Anthropic market debut could break SpaceX IPO record"
+      },
+      {
+        "rank": 3,
         "topic": "models",
         "headline": "OpenAI Pauses Frontier Model Training for Safety Review"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic market debut could beat recent IPO record set by SpaceX"
-      },
-      {
         "rank": 4,
-        "topic": "ai",
-        "headline": "How China&039;s gray market sells Claude tokens at a fraction of the price"
+        "topic": "platform",
+        "headline": "Google's HEIR Aims to Make Homomorphic-Encrypted Inference a One-Click Capability"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "DRAM Controller Register Manipulation Breaks CPU Memory Isolation"
+        "topic": "ai",
+        "headline": "The Mystery AI Model With 1M Free Tokens"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic hires Google chip veteran Amir Salek amid in-house semiconductor push"
+        "topic": "kubernetes",
+        "headline": "Ingress-NGINX EOL: CVE-2026-4342 Still Unpatched 2026 - tech-insider.org"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "An AI boss fired its first employee but only after humans reminded it of its own rules"
+        "topic": "kubernetes",
+        "headline": "Why real-time AI at scale is so hard"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Welcoming the Sri Lankan Government to Have I Been Pwned"
+        "topic": "ai",
+        "headline": "Ex-Google techies' AI agent beats OpenAI, Anthropic in reproducing research | Firm wanted Faraday to show 'research taste' | Inshorts"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "OVHcloud Raises Prices as AI Memory Demand Reprices Non-AI Infrastructure"
+        "topic": "kubernetes",
+        "headline": "The Food Storage Container Brand You Should Be Buying, According To Amazon Reviews"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Ink Tank Printers: Print Quality Factors and Model Comparison"
+        "topic": "platform",
+        "headline": "DRAM Controller Register Manipulation Breaks CPU Memory Isolation"
       }
     ],
     "articleCount": 0
