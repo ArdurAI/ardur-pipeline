@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-24T12:00:00.000Z",
-    "windowStart": "2026-08-24T12:00:00.000Z",
-    "windowEnd": "2026-08-24T18:00:00.000Z"
+    "id": "2026-08-24T18:00:00.000Z",
+    "windowStart": "2026-08-24T18:00:00.000Z",
+    "windowEnd": "2026-08-25T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-24T12:58:16.612Z",
-  "nextRefreshAt": "2026-08-24T18:00:00.000Z",
+  "publishedAt": "2026-08-24T18:46:59.180Z",
+  "nextRefreshAt": "2026-08-25T00:00:00.000Z",
   "runIds": {
-    "aggregation": "cd619280-b85c-43eb-b7ef-d64086d58285",
-    "ranking": "rank-e0004338",
-    "top10": "top10:2026-08-24T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-24T12:00:00.000Z-2026-08-24T12:58:29.763Z"
+    "aggregation": "b1696767-9eb1-4225-8997-b940e6adc1d3",
+    "ranking": "rank-339dd0c0",
+    "top10": "top10:2026-08-24T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-24T18:00:00.000Z-2026-08-24T18:47:14.017Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-24T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-24T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-24T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-24T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-24T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-24T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 69,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1213,
+      "count": 1198,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1111,
+      "count": 1426,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:58902: Important: python3.12 security update"
+        "headline": "RHSA-2026:59147: Important: kpatch-patch-5140-2841171, kpatch-patch-5140-2841341, kpatch-patch-5140-2841481, kpatch-patch-5140-2841581, and kpatch-patch-5140-2841721 security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Introducing the AI Model ‘Harness’"
+        "topic": "security",
+        "headline": "RHSA-2026:59137: Important: Red Hat Ansible Automation Platform 2.7 Product Security and Bug Fix Update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:58956: Moderate: assertj-core security update"
+        "headline": "RHSA-2026:58982: Moderate: grafana security, bug fix, and enhancement update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "😺 Anthropic's IPO could top SpaceX's record"
+        "topic": "security",
+        "headline": "RHSA-2026:58952: Important: python-urwid security update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "CISA orders urgent patching of actively exploited Zimbra flaw"
+        "topic": "ai",
+        "headline": "How NVIDIA Groq 3 LPX Unlocks Ultrafast Interactivity at Long Context on NVIDIA Vera Rubin"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Rethinking Application Security for the AI Era"
+        "topic": "models",
+        "headline": "Nvidia's AI inference chip from its $20 billion Groq deal enters full production"
       },
       {
         "rank": 7,
         "topic": "platform",
-        "headline": "Rightsizing Platform Engineering: Building the Platform Your Organization Actually Needs"
+        "headline": "Grok Bot vs. Hermes: Where each draws the security boundary"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Run LoRA fine-tuning on Red Hat OpenShift AI with Ray"
+        "topic": "kubernetes",
+        "headline": "v1.54.4"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic chases a record US$2 trillion debut on Wall Street"
+        "topic": "kubernetes",
+        "headline": "MinIO End of Life: How to Stay Patched and Audit-Ready with Docker ELS"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Cerebras unveils CS-4 with double the performance on the same chip"
+        "headline": "Anthropic’s best AI model struggles to attract users as cheaper tools thrive"
       }
     ],
     "articleCount": 0

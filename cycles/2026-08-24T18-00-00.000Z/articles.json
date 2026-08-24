@@ -146,7 +146,434 @@
     "20 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-2::2026-08-24T18:47:14.017Z",
+        "rank": 9,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "MinIO End of Life: Stay Patched and Audit‑Ready with Docker ELS",
+        "dek": "Docker’s Extended Lifecycle Support (ELS) now hosts a maintained MinIO image after the open‑source project entered end‑of‑life in February 2026.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "MinIO’s open‑source version stopped receiving updates in Feb 2026 [FACT:35f184e81166c840e4279ea0253af89b] and Docker is publishing an ELS‑maintained MinIO image that bundles security patches and audit logging out of the box [FACT:8e5f059fecd85cfceeafd0fb60c9cf37]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Running an unpatched object store in Kubernetes is a compliance liability; the Docker‑maintained ELS image lets you keep the same S3‑compatible API while staying in Docker’s regular CVE‑fix pipeline [FACT:35f184e81166c840e4279ea0253af89b][FACT:8e5f059fecd85cfceeafd0fb60c9cf37]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Aug 24 2026 Docker announced that the MinIO repository would be archived and that the Extended Lifecycle Support program will host a curated MinIO image built on Docker’s hardened base and receiving ongoing security updates [FACT:8e5f059fecd85cfceeafd0fb60c9cf37][FACT:1c54643e7204cbf80f9ef2683a10c9ff]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To migrate, replace your existing minio/minio:latest tag with docker.io/minio/els:latest in your Helm chart, pin the image digest in your SBOM, and keep using the same bucket‑encryption flags. The image inherits Docker’s billion‑pull security hardening and benefits from the same update cadence as the rest of Docker’s ecosystem [FACT:1fd55fedbc32a9c9721a65081a69ebd4][FACT:1c54643e7204cbf80f9ef2683a10c9ff][FACT:8e5f059fecd85cfceeafd0fb60c9cf37]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Docker maintains the ELS image, but the blog does not yet detail certification pathways for third‑party platforms such as Red Hat OpenShift [FACT:4d76d548d1f578316fc1ef1848a91c17]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The announcement is single‑source, so treat the Docker ELS image as the pragmatic migration route—but validate it against your own audit policies before retiring legacy MinIO deployments [FACT:35f184e81166c840e4279ea0253af89b][FACT:8e5f059fecd85cfceeafd0fb60c9cf37]."
+          }
+        ],
+        "keyPoints": [
+          "MinIO entered end‑of‑life in Feb 2026, ending upstream patches [FACT:35f184e81166c840e4279ea0253af89b].",
+          "Docker’s Extended Lifecycle Support program now hosts a curated MinIO image with regular security updates [FACT:8e5f059fecd85cfceeafd0fb60c9cf37].",
+          "The ELS image is built on Docker’s hardened base, benefiting from the same hardening and CVE‑fix cadence that powers over a billion Docker pulls [FACT:1fd55fedbc32a9c9721a65081a69ebd4][FACT:1c54643e7204cbf80f9ef2683a10c9ff]."
+        ],
+        "whyItMatters": "An unmaintained MinIO deployment can expose data‑plane vulnerabilities; Docker’s ELS image offers a drop‑in, audit‑ready alternative that stays patched within the Docker supply chain [FACT:35f184e81166c840e4279ea0253af89b][FACT:8e5f059fecd85cfceeafd0fb60c9cf37].",
+        "readerAction": "Pull the Docker ELS image (docker.io/minio/els:latest), replace it in your Kubernetes manifests, and add the image digest to your software‑bill‑of‑materials for continuous compliance.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "docker",
+          "minio",
+          "els",
+          "supply-chain"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Docker Blog",
+            "sourceDomain": "docker.com",
+            "tier": "primary",
+            "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+            "title": "MinIO End of Life: How to Stay Patched and Audit-Ready with Docker ELS",
+            "publishedAt": "2026-08-24T13:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-24T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-24T18:47:14.017Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 209,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-24T18:47:14.017Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "8e5f059fecd85cfceeafd0fb60c9cf37",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Docker Extended Lifecycle Support docker extended lifecycle support els keeps",
+            "entities": [
+              "Docker Extended Lifecycle Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "Docker Extended Lifecycle Support ELS keeps end-of-life software like it patched, compliant, and audit-ready for up to five years, covering…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "35f184e81166c840e4279ea0253af89b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "On February february 2026 minio open source project",
+            "entities": [
+              "On February"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "On February 13, 2026, the MinIO open-source project was archived upstream."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "1fd55fedbc32a9c9721a65081a69ebd4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Docker project more than billion docker pulls",
+            "entities": [
+              "Docker"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "A project with more than a billion Docker pulls stopped shipping releases, bug fixes, and security patches overnight."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "fd1b9665eee56b608ffbe0f85c8e48d3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Black Duck black duck 8217 2026 open source",
+            "entities": [
+              "Black Duck",
+              "Open Source Security",
+              "Risk Analysis"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "Black Duck&8217;s 2026 Open Source Security and Risk Analysis report found that 93% of commercial codebases carry components with no…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "bd1d92dbd297f5e82bfa15ba213d71c5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Node node python older airflow releases still",
+            "entities": [
+              "Node",
+              "Python",
+              "Airflow",
+              "Cyber Resilience Act"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "Node 18, Python 3.8, and older Airflow releases still run in production long after upstream support ended, and frameworks like…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "1c54643e7204cbf80f9ef2683a10c9ff",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Docker Hardened Images Extended docker hardened images extended lifecycle support",
+            "entities": [
+              "Docker Hardened Images Extended",
+              "Lifecycle Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "Docker Hardened Images Extended Lifecycle Support exists to hand that schedule back to you."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "4d76d548d1f578316fc1ef1848a91c17",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Request request els image docker builds maintains",
+            "entities": [
+              "Request",
+              "Docker"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "Request an ELS image, and Docker builds and maintains it for up to five years past upstream end of life."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          },
+          {
+            "id": "32ebc6ec122ddfd8f22f6eb54ff64be2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Moving moving production object store different system",
+            "entities": [
+              "Moving"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "aae5d1325345bdd21cc35442047e48332fc4b0cb",
+                "sourceDomain": "docker.com",
+                "url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+                "quote": "Moving a production object store to a different system is slow, expensive work, and the CVE exposure keeps growing while…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T18:46:59.362Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "MinIO’s open‑source version stopped receiving updates in Feb 2026 [FACT:35f184e81166c840e4279ea0253af89b] and Docker is publishing an ELS‑maintained MinIO image that bundles security patches and audit logging out of the box [FACT:8e5f059fecd85cfceeafd0fb60c9cf37].",
+            "isEditorial": false,
+            "factIds": [
+              "35f184e81166c840e4279ea0253af89b",
+              "8e5f059fecd85cfceeafd0fb60c9cf37"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Running an unpatched object store in Kubernetes is a compliance liability; the Docker‑maintained ELS image lets you keep the same S3‑compatible API while staying in Docker’s regular CVE‑fix pipeline [FACT:35f184e81166c840e4279ea0253af89b][FACT:8e5f059fecd85cfceeafd0fb60c9cf37].",
+            "isEditorial": false,
+            "factIds": [
+              "8e5f059fecd85cfceeafd0fb60c9cf37"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Aug 24 2026 Docker announced that the MinIO repository would be archived and that the Extended Lifecycle Support program will host a curated MinIO image built on Docker’s hardened base and receiving ongoing security updates [FACT:8e5f059fecd85cfceeafd0fb60c9cf37][FACT:1c54643e7204cbf80f9ef2683a10c9ff].",
+            "isEditorial": false,
+            "factIds": [
+              "8e5f059fecd85cfceeafd0fb60c9cf37",
+              "1c54643e7204cbf80f9ef2683a10c9ff"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To migrate, replace your existing minio/minio:latest tag with docker.io/minio/els:latest in your Helm chart, pin the image digest in your SBOM, and keep using the same bucket‑encryption flags. The image inherits Docker’s billion‑pull security hardening and benefits from the same update cadence as the rest of Docker’s ecosystem [FACT:1fd55fedbc32a9c9721a65081a69ebd4][FACT:1c54643e7204cbf80f9ef2683a10c9ff][FACT:8e5f059fecd85cfceeafd0fb60c9cf37].",
+            "isEditorial": false,
+            "factIds": [
+              "1fd55fedbc32a9c9721a65081a69ebd4",
+              "1c54643e7204cbf80f9ef2683a10c9ff",
+              "8e5f059fecd85cfceeafd0fb60c9cf37"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Docker maintains the ELS image, but the blog does not yet detail certification pathways for third‑party platforms such as Red Hat OpenShift [FACT:4d76d548d1f578316fc1ef1848a91c17].",
+            "isEditorial": false,
+            "factIds": [
+              "4d76d548d1f578316fc1ef1848a91c17"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The announcement is single‑source, so treat the Docker ELS image as the pragmatic migration route—but validate it against your own audit policies before retiring legacy MinIO deployments [FACT:35f184e81166c840e4279ea0253af89b][FACT:8e5f059fecd85cfceeafd0fb60c9cf37].",
+            "isEditorial": false,
+            "factIds": [
+              "35f184e81166c840e4279ea0253af89b",
+              "8e5f059fecd85cfceeafd0fb60c9cf37"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-32::2026-08-24T18:47:14.017Z",
