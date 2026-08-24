@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-24T00:00:00.000Z",
-    "windowStart": "2026-08-24T00:00:00.000Z",
-    "windowEnd": "2026-08-24T06:00:00.000Z"
+    "id": "2026-08-24T06:00:00.000Z",
+    "windowStart": "2026-08-24T06:00:00.000Z",
+    "windowEnd": "2026-08-24T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-24T01:38:28.782Z",
-  "nextRefreshAt": "2026-08-24T06:00:00.000Z",
+  "publishedAt": "2026-08-24T07:06:42.324Z",
+  "nextRefreshAt": "2026-08-24T12:00:00.000Z",
   "runIds": {
-    "aggregation": "8b106067-3e8c-4065-bb33-7d7a4adc8605",
-    "ranking": "rank-8d517546",
-    "top10": "top10:2026-08-24T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-24T00:00:00.000Z-2026-08-24T01:38:41.466Z"
+    "aggregation": "4a593de2-5cb2-4db9-932b-e51c3cd78ffd",
+    "ranking": "rank-a7de6624",
+    "top10": "top10:2026-08-24T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-24T06:00:00.000Z-2026-08-24T07:06:55.890Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-24T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-24T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-24T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-24T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-24T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-24T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,17 +25,17 @@
       "category": "http-error",
       "count": 63,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1274,
+      "count": 1222,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 992,
+      "count": 979,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 35,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "llm 0.33"
+        "topic": "security",
+        "headline": "RHSA-2026:58811: Important: resource-agents security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic’s best AI model struggles to attract users as cheaper tools thrive"
+        "topic": "security",
+        "headline": "RHSA-2026:58555: Moderate: NetworkManager security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic market debut could break SpaceX IPO record: media"
+        "topic": "platform",
+        "headline": "Run LoRA fine-tuning on Red Hat OpenShift AI with Ray"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Cloudflare OS: Cloudflare's Open-Source Corporate AI Platform Built on a Capability-Based Model"
+        "topic": "ai",
+        "headline": "Anthropic market debut could break SpaceX IPO record"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Google's HEIR Aims to Make Homomorphic-Encrypted Inference a One-Click Capability"
+        "topic": "security",
+        "headline": "RHSA-2026:58561: Important: python-urwid security update"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "South Port sets cargo record as containers surge 19%"
+        "topic": "security",
+        "headline": "Fortinet Expands AI Security Strategy With Virtue AI Acquisition"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "SoftBank Plans Record $6.3 Billion Retail Bond Sale in Japan"
+        "headline": "OpenAI Unveils Harness Post-Black Whale Launch: Competing for Dominance in the Agent Runtime Space"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Ingress-NGINX EOL: CVE-2026-4342 Still Unpatched 2026 - tech-insider.org"
+        "topic": "ai",
+        "headline": "Anthropic’s best AI model struggles to attract users as cheaper tools thrive"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "7 Plants to Grow in Pots Now to Revive Tired Containers and Keep Them Colorful Into Fall"
+        "topic": "platform",
+        "headline": "Cloudflare OS: Cloudflare's Open-Source Corporate AI Platform Built on a Capability-Based Model"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Quoting Drew Breunig"
+        "topic": "ai",
+        "headline": "SoftBank Plans Record $6.3 Billion Retail Bond Sale in Japan"
       }
     ],
     "articleCount": 0

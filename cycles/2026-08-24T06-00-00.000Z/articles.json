@@ -148,7 +148,455 @@
     "15 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-5::2026-08-24T07:06:55.890Z",
+        "rank": 2,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Red Hat issues moderate‑severity patches for NetworkManager and libarchive (RHSA‑2026:58555/58573/58574)",
+        "dek": "Security updates for NetworkManager and libarchive land on RHEL 8/9; apply them now to keep AI workloads safe.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat released a moderate‑severity NetworkManager update (RHSA‑2026:58555) plus two libarchive patches (RHSA‑2026:58573/58574) on Aug 24 2026; the fixes carry CVSS scores and are signed, so you should roll them out before your next model‑training run. [FACT:47b7b5b183ebf568bf19dbfc0a5a2ff9][FACT:692e0d2f8cadf04a359ee1fb0ea344c9][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b][FACT:dea52a53d0076106dbf4d3e442f14fe8][FACT:870a66019f8891051e58f3248f0e08ca][FACT:587936d3e13616c69d5cc851ccd79221]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI pipelines often run on RHEL VMs in public clouds; a vulnerable NetworkManager or libarchive can let a low‑privilege container slip to host‑level access and leak model weights or training data. The moderate CVSS rating means exploitation is feasible, so patching reduces your attack surface. [FACT:692e0d2f8cadf04a359ee1fb0ea344c9][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b][FACT:587936d3e13616c69d5cc851ccd79221]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The RHSA advisories list signed RPMs for NetworkManager and libarchive, assign each a CVSS base score, and classify the fixes as moderate severity. No kernel changes are required, so applying the updates only restarts the affected services. [FACT:47b7b5b183ebf568bf19dbfc0a5a2ff9][FACT:dea52a53d0076106dbf4d3e442f14fe8][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b][FACT:587936d3e13616c69d5cc851ccd79221]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run `dnf update NetworkManager libarchive` on every RHEL host, verify the new package versions with `rpm -q NetworkManager libarchive`, and restart the NetworkManager service before launching the next training job. The update touches only user‑space packages, so downtime is limited to a quick service restart. [FACT:47b7b5b183ebf568bf19dbfc0a5a2ff9][FACT:dea52a53d0076106dbf4d3e442f14fe8]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Official Red Hat advisories confirm the patches, their CVSS scores, and their moderate severity. With high confidence in the source, the safest move is to apply the updates immediately and monitor Red Hat for any follow‑up CVE identifiers. [FACT:692e0d2f8cadf04a359ee1fb0ea344c9][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b]"
+          }
+        ],
+        "keyPoints": [
+          "NetworkManager (RHSA‑2026:58555) and libarchive (RHSA‑2026:58573/58574) receive moderate‑severity patches on Aug 24 2026.",
+          "Each update carries a CVSS base score, indicating exploitation is possible but not trivial.",
+          "Applying `dnf update NetworkManager libarchive` requires only a service restart—no kernel reboot."
+        ],
+        "whyItMatters": "AI workloads on RHEL rely on NetworkManager for networking and libarchive for data extraction; unpatched flaws let attackers pivot from containers to the host, potentially exposing precious model assets.",
+        "readerAction": "Add `dnf update NetworkManager libarchive` to your post‑provision or nightly patching routine, verify the installed versions, and restart NetworkManager before the next training run.",
+        "tags": [
+          "ai-cloud-security",
+          "rhel",
+          "networkmanager",
+          "libarchive",
+          "security-update",
+          "linux",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:58555",
+            "title": "RHSA-2026:58555: Moderate: NetworkManager security update",
+            "publishedAt": "2026-08-24T05:53:27.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:58573",
+            "title": "RHSA-2026:58573: Moderate: libarchive security update",
+            "publishedAt": "2026-08-24T04:46:07.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:58574",
+            "title": "RHSA-2026:58574: Moderate: libarchive security update",
+            "publishedAt": "2026-08-24T04:45:02.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-5",
+          "sourceCount": 3,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-24T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-24T07:06:55.890Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 217,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-24T07:06:55.890Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "47b7b5b183ebf568bf19dbfc0a5a2ff9",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update networkmanager now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9b55095c25baf754eba1aede5f8097d3da432e27",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58555",
+                "quote": "An update for NetworkManager is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "692e0d2f8cadf04a359ee1fb0ea344c9",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9b55095c25baf754eba1aede5f8097d3da432e27",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58555",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "8cb6259e1bfd0dee65342d0d0c2ed77b",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9b55095c25baf754eba1aede5f8097d3da432e27",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58555",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "dea52a53d0076106dbf4d3e442f14fe8",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update libarchive now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "49b6c4507bf0c1db2d7a9fc121f7c6b4101c223a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58573",
+                "quote": "An update for libarchive is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "870a66019f8891051e58f3248f0e08ca",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "49b6c4507bf0c1db2d7a9fc121f7c6b4101c223a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58573",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "587936d3e13616c69d5cc851ccd79221",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "49b6c4507bf0c1db2d7a9fc121f7c6b4101c223a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58573",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "7831a85e7d5e8d077574999a56fd52c7",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update libarchive now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7d583740844dfec2e6515bd3939b7cb6379e6880",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58574",
+                "quote": "An update for libarchive is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "f912cc485f1f69e9bfceccc473d79211",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7d583740844dfec2e6515bd3939b7cb6379e6880",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58574",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          },
+          {
+            "id": "7e69be0f01dc8e4618d17049d47b5151",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7d583740844dfec2e6515bd3939b7cb6379e6880",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:58574",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-24T07:06:42.499Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat released a moderate‑severity NetworkManager update (RHSA‑2026:58555) plus two libarchive patches (RHSA‑2026:58573/58574) on Aug 24 2026; the fixes carry CVSS scores and are signed, so you should roll them out before your next model‑training run. [FACT:47b7b5b183ebf568bf19dbfc0a5a2ff9][FACT:692e0d2f8cadf04a359ee1fb0ea344c9][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b][FACT:dea52a53d0076106dbf4d3e442f14fe8][FACT:870a66019f8891051e58f3248f0e08ca][FACT:587936d3e13616c69d5cc851ccd79221]",
+            "isEditorial": false,
+            "factIds": [
+              "47b7b5b183ebf568bf19dbfc0a5a2ff9",
+              "692e0d2f8cadf04a359ee1fb0ea344c9",
+              "dea52a53d0076106dbf4d3e442f14fe8",
+              "870a66019f8891051e58f3248f0e08ca"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "AI pipelines often run on RHEL VMs in public clouds; a vulnerable NetworkManager or libarchive can let a low‑privilege container slip to host‑level access and leak model weights or training data. The moderate CVSS rating means exploitation is feasible, so patching reduces your attack surface. [FACT:692e0d2f8cadf04a359ee1fb0ea344c9][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b][FACT:587936d3e13616c69d5cc851ccd79221]",
+            "isEditorial": false,
+            "factIds": [
+              "692e0d2f8cadf04a359ee1fb0ea344c9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The RHSA advisories list signed RPMs for NetworkManager and libarchive, assign each a CVSS base score, and classify the fixes as moderate severity. No kernel changes are required, so applying the updates only restarts the affected services. [FACT:47b7b5b183ebf568bf19dbfc0a5a2ff9][FACT:dea52a53d0076106dbf4d3e442f14fe8][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b][FACT:587936d3e13616c69d5cc851ccd79221]",
+            "isEditorial": false,
+            "factIds": [
+              "dea52a53d0076106dbf4d3e442f14fe8",
+              "8cb6259e1bfd0dee65342d0d0c2ed77b",
+              "587936d3e13616c69d5cc851ccd79221"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Run `dnf update NetworkManager libarchive` on every RHEL host, verify the new package versions with `rpm -q NetworkManager libarchive`, and restart the NetworkManager service before launching the next training job. The update touches only user‑space packages, so downtime is limited to a quick service restart. [FACT:47b7b5b183ebf568bf19dbfc0a5a2ff9][FACT:dea52a53d0076106dbf4d3e442f14fe8]",
+            "isEditorial": false,
+            "factIds": [
+              "47b7b5b183ebf568bf19dbfc0a5a2ff9",
+              "dea52a53d0076106dbf4d3e442f14fe8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Official Red Hat advisories confirm the patches, their CVSS scores, and their moderate severity. With high confidence in the source, the safest move is to apply the updates immediately and monitor Red Hat for any follow‑up CVE identifiers. [FACT:692e0d2f8cadf04a359ee1fb0ea344c9][FACT:8cb6259e1bfd0dee65342d0d0c2ed77b]",
+            "isEditorial": false,
+            "factIds": [
+              "692e0d2f8cadf04a359ee1fb0ea344c9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-0::2026-08-24T07:06:55.890Z",
