@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-25T06:00:00.000Z",
-    "windowStart": "2026-08-25T06:00:00.000Z",
-    "windowEnd": "2026-08-25T12:00:00.000Z"
+    "id": "2026-08-25T12:00:00.000Z",
+    "windowStart": "2026-08-25T12:00:00.000Z",
+    "windowEnd": "2026-08-25T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-25T06:55:32.096Z",
-  "nextRefreshAt": "2026-08-25T12:00:00.000Z",
+  "publishedAt": "2026-08-25T12:54:29.929Z",
+  "nextRefreshAt": "2026-08-25T18:00:00.000Z",
   "runIds": {
-    "aggregation": "618c63f5-fa93-4e85-aa31-e455a262fc30",
-    "ranking": "rank-94ccd651",
-    "top10": "top10:2026-08-25T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-25T06:00:00.000Z-2026-08-25T06:55:53.389Z"
+    "aggregation": "2a2fe948-538d-40d6-beec-d713c13ab1e8",
+    "ranking": "rank-f8249e61",
+    "top10": "top10:2026-08-25T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-25T12:00:00.000Z-2026-08-25T12:54:48.277Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-25T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-25T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-25T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-25T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-25T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-25T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 81,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1229,
+      "count": 1275,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1418,
+      "count": 1542,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
+        "topic": "models",
         "headline": "llm-anthropic 0.27"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:59277: Important: postgresql-jdbc security update"
+        "topic": "ai",
+        "headline": "Anthropic tells San Francisco staff to work from home due to possible security team strike"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:59247: Important: python-pyasn1 security update"
+        "headline": "RHSA-2026:59372: Moderate: assertj-core security update"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data"
+        "headline": "RHSA-2026:57361: Important: OpenShift Container Platform 4.22.11 packages and security update"
       },
       {
         "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:59329: Important: resource-agents security update"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:59247: Important: python-pyasn1 security update"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Disrupting a new covert influence campaign from Russia"
+      },
+      {
+        "rank": 8,
         "topic": "platform",
         "headline": "Beyond Embedded: How DuckDB v2.0 Shifts Architecture Toward Distributed Network Capabilities"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI subpoenaed by Alabama attorney general over Hugging Face hack"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:59136: Important: Red Hat Ansible Automation Platform 2.6 Product Security and Bug Fix Update"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "AI model Skala now available on the open-source simulation platform CP2K"
-      },
-      {
         "rank": 9,
-        "topic": "ai",
-        "headline": "HOL Guard: Open-source antivirus for AI agents"
+        "topic": "models",
+        "headline": "Nvidia's AI inference chip from its $20 billion Groq deal enters full production"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Nvidia's AI inference chip from its $20 billion Groq deal enters full production"
+        "topic": "ai",
+        "headline": "OpenAI subpoenaed by Alabama attorney general over Hugging Face hack"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
