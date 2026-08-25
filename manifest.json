@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-25T12:00:00.000Z",
-    "windowStart": "2026-08-25T12:00:00.000Z",
-    "windowEnd": "2026-08-25T18:00:00.000Z"
+    "id": "2026-08-25T18:00:00.000Z",
+    "windowStart": "2026-08-25T18:00:00.000Z",
+    "windowEnd": "2026-08-26T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-25T12:54:29.929Z",
-  "nextRefreshAt": "2026-08-25T18:00:00.000Z",
+  "publishedAt": "2026-08-25T18:45:09.197Z",
+  "nextRefreshAt": "2026-08-26T00:00:00.000Z",
   "runIds": {
-    "aggregation": "2a2fe948-538d-40d6-beec-d713c13ab1e8",
-    "ranking": "rank-f8249e61",
-    "top10": "top10:2026-08-25T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-25T12:00:00.000Z-2026-08-25T12:54:48.277Z"
+    "aggregation": "38861622-465b-4079-a01d-7971a6d0a8a5",
+    "ranking": "rank-ff2607a9",
+    "top10": "top10:2026-08-25T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-25T18:00:00.000Z-2026-08-25T18:45:25.396Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-25T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-25T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-25T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-25T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-25T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-25T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 87,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1275,
+      "count": 1335,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1542,
+      "count": 1560,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 17,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
+        "topic": "ai",
         "headline": "llm-anthropic 0.27"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic tells San Francisco staff to work from home due to possible security team strike"
+        "topic": "security",
+        "headline": "RHSA-2026:59544: Moderate: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:59372: Moderate: assertj-core security update"
+        "topic": "ai",
+        "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:57361: Important: OpenShift Container Platform 4.22.11 packages and security update"
+        "topic": "platform",
+        "headline": "August 2026 Security Release"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:59329: Important: resource-agents security update"
+        "headline": "RHSA-2026:59490: Important: nginx:1.24 security update"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:59247: Important: python-pyasn1 security update"
+        "headline": "RHSA-2026:59372: Moderate: assertj-core security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Disrupting a new covert influence campaign from Russia"
+        "headline": "The full stack behind abundant intelligence"
       },
       {
         "rank": 8,
         "topic": "platform",
-        "headline": "Beyond Embedded: How DuckDB v2.0 Shifts Architecture Toward Distributed Network Capabilities"
+        "headline": "Project Lighthouse — Part 3: Introducing project-lighthouse-anonymize"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Nvidia's AI inference chip from its $20 billion Groq deal enters full production"
+        "topic": "ai",
+        "headline": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI subpoenaed by Alabama attorney general over Hugging Face hack"
+        "topic": "security",
+        "headline": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data"
       }
     ],
     "articleCount": 1
