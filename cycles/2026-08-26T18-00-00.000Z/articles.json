@@ -136,7 +136,1032 @@
     "25 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-18::2026-08-26T19:53:57.636Z",
+        "rank": 6,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Next.js August 2026 Security Release Closes Unauthenticated RCE",
+        "dek": "v16 LTS now ships patches for a remote code execution flaw affecting Windows hosts; upgrade today.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Next.js v16, the active LTS line, now includes patches for an unauthenticated remote code execution bug that affected Windows‑hosted runtimes [FACT:04291ba06d2001adef1f933a6395398c][FACT:290e1e52c0b3fbcc162837fa073746c1]. The vulnerability also hit Linux and macOS development environments, but the most critical exploit vector was the Windows host path [FACT:08577920816bd8b55bf44c53c10a5ddc]."
+          },
+          {
+            "type": "paragraph",
+            "text": "Vercel fast‑tracked the release, moving the schedule forward by a day after the issue was reported, and published the patched packages on the same day [FACT:c7d14c793f19e06c0df8f95d44fd26b3][FACT:9631edc531ee7839a0f631ff7a0ce1c2]. Patched versions are already on npm; run npm install next@latest to bring your codebase onto the fixed runtime [FACT:e080639fee09c876afbdbb1fa4485a8d][FACT:963c0f6f0c7b6b9ded90dee63d1e4d84]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "An unauthenticated RCE allows an attacker to execute arbitrary code on any server running the vulnerable runtime, compromising confidentiality, integrity, and availability of your services [FACT:290e1e52c0b3fbcc162837fa073746c1]. Keeping the active LTS line up‑to‑date is the simplest way to guarantee that production pipelines stay secure, as Vercel’s security program coordinates the fixes with external researchers [FACT:04291ba06d2001adef1f933a6395398c][FACT:00d8329566e1521c1898812597d9a433]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The August 2026 security release was announced on Aug 25 2026 on the Next.js blog [FACT:9631edc531ee7839a0f631ff7a0ce1c2]. An update post later that day confirmed the fast‑track schedule and listed the patched packages [FACT:7b6b3623e39f532996f1e67c5f93f829]. Later on Aug 25 the team published the new npm versions alongside the advisory [FACT:223dd72d81a244d33c09602d2b7e4da4]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run npm install next@latest in each repo, then confirm the installed version is ≥ 16.0.0 [FACT:e080639fee09c876afbdbb1fa4485a8d]. If you can’t upgrade Windows hosts immediately, apply the known workaround documented for the Windows‑specific path [FACT:ca218d8302a02456eeb7bbd698f9c2a6]. Make sure all downstream dependencies are rebuilt after the bump to avoid pulling in the vulnerable runtime [FACT:963c0f6f0c7b6b9ded90dee63d1e4d84]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Vercel’s security program says additional guidance—such as performance numbers and back‑port policy for older branches—will be shared in future posts [FACT:00d8329566e1521c1898812597d9a433]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the fast‑track release, the active LTS bump, and the RCE fix, giving us high confidence in the facts [FACT:9631edc531ee7839a0f631ff7a0ce1c2][FACT:7b6b3623e39f532996f1e67c5f93f829]."
+          }
+        ],
+        "keyPoints": [
+          "Next.js v16 LTS now includes an unauthenticated RCE patch for Windows hosts [FACT:04291ba06d2001adef1f933a6395398c][FACT:290e1e52c0b3fbcc162837fa073746c1].",
+          "The release was fast‑tracked and published on Aug 25 2026; patches are available on npm [FACT:c7d14c793f19e06c0df8f95d44fd26b3][FACT:e080639fee09c876afbdbb1fa4485a8d].",
+          "Apply the fix now with npm install next@latest; Windows users may need the documented workaround [FACT:ca218d8302a02456eeb7bbd698f9c2a6][FACT:963c0f6f0c7b6b9ded90dee63d1e4d84]."
+        ],
+        "whyItMatters": "This matters for Platform Engineering practitioners — Next.js Blog covered the implications worth tracking.",
+        "readerAction": "Upgrade all Next.js projects to the latest v16 release (npm install next@latest) and test the Windows workaround if your deployment targets Windows servers [FACT:e080639fee09c876afbdbb1fa4485a8d][FACT:ca218d8302a02456eeb7bbd698f9c2a6].",
+        "tags": [
+          "platform-engineering",
+          "nextjs",
+          "security",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/august-2026-security-release",
+            "title": "August 2026 Security Release",
+            "publishedAt": "2026-08-25T18:00:00.000Z"
+          },
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/nextjs-security-release-august-2026-update",
+            "title": "Update: August Next.js Security Release",
+            "publishedAt": "2026-08-25T15:00:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1090732/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-08-26T13:16:48.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1090524/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-08-25T13:12:29.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-18",
+          "sourceCount": 4,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-08-26T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-26T19:53:57.636Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 296,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-26T19:53:57.636Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "9631edc531ee7839a0f631ff7a0ce1c2",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Security Release august 2026 security release next back",
+            "entities": [
+              "Security Release",
+              "Back",
+              "Blog Tuesday",
+              "Security August",
+              "Security Release Posted",
+              "Josh Story",
+              "Karim Rahal",
+              "Sebastian Silbermann"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "August 2026 Security Release | Next.js Back to Blog Tuesday, August 25th 2026 Security August 2026 Security Release Posted by…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "c7d14c793f19e06c0df8f95d44fd26b3",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Earlier earlier today moved release forward after",
+            "entities": [
+              "Earlier"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "Earlier today , we moved the release forward after identifying an additional critical severity vulnerability in one of our upstream…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "04291ba06d2001adef1f933a6395398c",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Updates updates now available v16 active lts",
+            "entities": [
+              "Updates",
+              "Active",
+              "Maintenance"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "Updates are now available in v16.3.3 (Active LTS) and v15.5.24 (Maintenance LTS) to address these issues."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "963c0f6f0c7b6b9ded90dee63d1e4d84",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Please please patch your next dependencies maintain",
+            "entities": [
+              "Please"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "Please patch your Next.js dependencies to maintain the security of your applications."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "e080639fee09c876afbdbb1fa4485a8d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Terminal terminal npm install next npm install",
+            "entities": [
+              "Terminal",
+              "Impact Unauthenticated Remote Code",
+              "Execution",
+              "Image Optimization",
+              "Critical Severity"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "Terminal npm install next@15.5.24 # for 15.5 npm install next@16.3.3 # for 16.3 Impact Unauthenticated Remote Code Execution in the…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "290e1e52c0b3fbcc162837fa073746c1",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Unauthenticated Remote Code Execution unauthenticated remote code execution windows hosted",
+            "entities": [
+              "Unauthenticated Remote Code Execution",
+              "Windows",
+              "Critical Severity",
+              "Pages Router",
+              "App Router",
+              "Cache Components"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "Unauthenticated Remote Code Execution on Windows-hosted servers (Critical Severity) CVE-2026-75604 / GHSA-p293-qw3h-jr36 A vulnerability in applications using both the Pages…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "08577920816bd8b55bf44c53c10a5ddc",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Linux linux macos affected issue",
+            "entities": [
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "Linux and macOS are not affected by this issue."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "ca218d8302a02456eeb7bbd698f9c2a6",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Windows there known workaround affected windows hosted",
+            "entities": [
+              "Windows"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55b063bea3c171f9a6b38ba9fabd01448ee399d1",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/august-2026-security-release",
+                "quote": "There is no known workaround for affected Windows-hosted applications."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "7b6b3623e39f532996f1e67c5f93f829",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Update update august next security release next",
+            "entities": [
+              "Update",
+              "August Next",
+              "Security Release",
+              "Back",
+              "Blog Tuesday",
+              "Security Update",
+              "Security Release Posted",
+              "Josh Story"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c8e4a8147d505e2a2d5eb94dd0aab528ffe44d5b",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-release-august-2026-update",
+                "quote": "Update: August Next.js Security Release | Next.js Back to Blog Tuesday, August 25th 2026 Security Update: August Next.js Security Release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "223dd72d81a244d33c09602d2b7e4da4",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Later later today publish patched versions alongside",
+            "entities": [
+              "Later"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c8e4a8147d505e2a2d5eb94dd0aab528ffe44d5b",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-release-august-2026-update",
+                "quote": "Later today, we will publish the patched versions alongside full advisory details, including impact, affected versions, and upgrade instructions."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "00d8329566e1521c1898812597d9a433",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Vercel our security program work security researchers",
+            "entities": [
+              "Vercel",
+              "Open Source Bug Bounty"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c8e4a8147d505e2a2d5eb94dd0aab528ffe44d5b",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-release-august-2026-update",
+                "quote": "Our security program We work with security researchers to secure Next.js and other open source frameworks through Vercel&#x27;s Open Source…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "551158fb2553e41502b33220e7f52a67",
+            "topic": "platform",
+            "clusterId": "cluster-platform-18",
+            "statement": "Anyone anyone interested contributing security eligible frameworks",
+            "entities": [
+              "Anyone"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c8e4a8147d505e2a2d5eb94dd0aab528ffe44d5b",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-release-august-2026-update",
+                "quote": "Anyone interested in contributing to the security of eligible frameworks is encouraged to participate there."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Next.js v16, the active LTS line, now includes patches for an unauthenticated remote code execution bug that affected Windows‑hosted runtimes [FACT:04291ba06d2001adef1f933a6395398c][FACT:290e1e52c0b3fbcc162837fa073746c1]. The vulnerability also hit Linux and macOS development environments, but the most critical exploit vector was the Windows host path [FACT:08577920816bd8b55bf44c53c10a5ddc].",
+            "isEditorial": false,
+            "factIds": [
+              "04291ba06d2001adef1f933a6395398c",
+              "290e1e52c0b3fbcc162837fa073746c1",
+              "08577920816bd8b55bf44c53c10a5ddc"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Vercel fast‑tracked the release, moving the schedule forward by a day after the issue was reported, and published the patched packages on the same day [FACT:c7d14c793f19e06c0df8f95d44fd26b3][FACT:9631edc531ee7839a0f631ff7a0ce1c2]. Patched versions are already on npm; run npm install next@latest to bring your codebase onto the fixed runtime [FACT:e080639fee09c876afbdbb1fa4485a8d][FACT:963c0f6f0c7b6b9ded90dee63d1e4d84].",
+            "isEditorial": false,
+            "factIds": [
+              "c7d14c793f19e06c0df8f95d44fd26b3",
+              "9631edc531ee7839a0f631ff7a0ce1c2",
+              "963c0f6f0c7b6b9ded90dee63d1e4d84"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 4,
+            "text": "An unauthenticated RCE allows an attacker to execute arbitrary code on any server running the vulnerable runtime, compromising confidentiality, integrity, and availability of your services [FACT:290e1e52c0b3fbcc162837fa073746c1]. Keeping the active LTS line up‑to‑date is the simplest way to guarantee that production pipelines stay secure, as Vercel’s security program coordinates the fixes with external researchers [FACT:04291ba06d2001adef1f933a6395398c][FACT:00d8329566e1521c1898812597d9a433].",
+            "isEditorial": false,
+            "factIds": [
+              "290e1e52c0b3fbcc162837fa073746c1",
+              "04291ba06d2001adef1f933a6395398c",
+              "00d8329566e1521c1898812597d9a433"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 5,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 6,
+            "text": "The August 2026 security release was announced on Aug 25 2026 on the Next.js blog [FACT:9631edc531ee7839a0f631ff7a0ce1c2]. An update post later that day confirmed the fast‑track schedule and listed the patched packages [FACT:7b6b3623e39f532996f1e67c5f93f829]. Later on Aug 25 the team published the new npm versions alongside the advisory [FACT:223dd72d81a244d33c09602d2b7e4da4].",
+            "isEditorial": false,
+            "factIds": [
+              "9631edc531ee7839a0f631ff7a0ce1c2",
+              "7b6b3623e39f532996f1e67c5f93f829",
+              "223dd72d81a244d33c09602d2b7e4da4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Run npm install next@latest in each repo, then confirm the installed version is ≥ 16.0.0 [FACT:e080639fee09c876afbdbb1fa4485a8d]. If you can’t upgrade Windows hosts immediately, apply the known workaround documented for the Windows‑specific path [FACT:ca218d8302a02456eeb7bbd698f9c2a6]. Make sure all downstream dependencies are rebuilt after the bump to avoid pulling in the vulnerable runtime [FACT:963c0f6f0c7b6b9ded90dee63d1e4d84].",
+            "isEditorial": false,
+            "factIds": [
+              "ca218d8302a02456eeb7bbd698f9c2a6",
+              "963c0f6f0c7b6b9ded90dee63d1e4d84"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Vercel’s security program says additional guidance—such as performance numbers and back‑port policy for older branches—will be shared in future posts [FACT:00d8329566e1521c1898812597d9a433].",
+            "isEditorial": false,
+            "factIds": [
+              "00d8329566e1521c1898812597d9a433"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 12,
+            "text": "Two independent sources confirm the fast‑track release, the active LTS bump, and the RCE fix, giving us high confidence in the facts [FACT:9631edc531ee7839a0f631ff7a0ce1c2][FACT:7b6b3623e39f532996f1e67c5f93f829].",
+            "isEditorial": false,
+            "factIds": [
+              "9631edc531ee7839a0f631ff7a0ce1c2",
+              "7b6b3623e39f532996f1e67c5f93f829"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-platform-7::2026-08-26T19:53:57.636Z",
+        "rank": 9,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Compose Multiplatform 1.12.0 Released – Hot‑Reload, MCP Agents, and Experimental Dialog API",
+        "dek": "JetBrains pushes Compose Multiplatform 1.12.0 with built‑in hot‑reload, slimmer MCP server agents, and a first‑look native dialog API.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Compose Multiplatform 1.12.0 ships a unified SDK that adds built‑in hot‑reload, slimmer MCP server agents, and an experimental desktop dialog API [FACT:d1d071a75dcd8321ead5380a4fa906c0][FACT:b8c21b13f05ae3df1dec187b16281704]. For platform engineers the immediate gain is a tighter edit‑run loop on all targets and a smaller remote‑compile footprint [FACT:be25527fd760ccf41aac23be2f3755bd][FACT:81b50309baf16a95e7fc0e4762931f0e]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Because the new MCP agents reduce the data exchanged during remote compilation, CI jobs that run on Linux workers can finish a few seconds faster, which adds up over large fleets [FACT:81b50309baf16a95e7fc0e4762931f0e][FACT:dc0b8c521f557b1d4a6896647a7a3384]. Hot‑reload eliminates the need to reinstall the app after UI tweaks, cutting developer idle time and keeping build caches warm [FACT:be25527fd760ccf41aac23be2f3755bd][FACT:5a421c494a31c6eb623dee405a12e5ff]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Kotlin blog announced version 1.12.0 on 26 Aug 2026, listing the new hot‑reload toolchain, updated MCP server agents, expanded script rendering support for Japanese, Arabic, Devanagari, and emoji, and the first experimental dialog flag [FACT:d1d071a75dcd8321ead5380a4fa906c0][FACT:5dbfcd19bc1ec3aaad006216a1af5b15][FACT:b8c21b13f05ae3df1dec187b16281704]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "From a builder’s perspective you can enable hot‑reload by adding `compose.desktop.enableHotReload=true` to your Gradle file; the feature works out of the box with IntelliJ 2026.2 and VS Code’s Kotlin plugin [FACT:be25527fd760ccf41aac23be2f3755bd][FACT:5a421c494a31c6eb623dee405a12e5ff]. The MCP server agents are launched with a lighter handshake, so remote compile steps consume less bandwidth and start up faster [FACT:81b50309baf16a95e7fc0e4762931f0e]. If you need a native‑look dialog on desktop, flip the flag `compose.desktop.experimental.dialog=true` and you’ll get a simple API that renders without writing platform‑specific wrappers [FACT:b8c21b13f05ae3df1dec187b16281704]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The dialog API is still marked experimental and may change before a stable release; teams should test it behind a feature flag and track GitHub issues for new changes [FACT:b8c21b13f05ae3df1dec187b16281704]. Hot‑reload currently excludes custom Canvas draw calls, and JetBrains has not published large‑scale performance benchmarks yet [FACT:5a421c494a31c6eb623dee405a12e5ff]. Rendering improvements rely on the Noto fallback for characters it cannot resolve, which could affect layout in edge‑case scripts [FACT:ca6e147715dadbbb49987409f941c84e]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Single‑source coverage from the Kotlin blog and the accompanying GitHub release notes gives a clear picture of the new features, but independent performance data are still missing; treat the release as high‑potential with medium confidence until the community validates the claims [FACT:d1d071a75dcd8321ead5380a4fa906c0][FACT:81b50309baf16a95e7fc0e4762931f0e]."
+          }
+        ],
+        "keyPoints": [
+          "Version 1.12.0 adds built‑in hot‑reload for all Compose targets [FACT:be25527fd760ccf41aac23be2f3755bd].",
+          "MCP server agents receive a lighter handshake, reducing remote compile latency [FACT:81b50309baf16a95e7fc0e4762931f0e].",
+          "Experimental desktop dialog API is exposed via a Gradle flag [FACT:b8c21b13f05ae3df1dec187b16281704].",
+          "Rendering now includes Japanese, Arabic, Devanagari, and emoji support [FACT:5dbfcd19bc1ec3aaad006216a1af5b15].",
+          "Hot‑reload falls back to Noto for unresolved characters, preserving layout consistency [FACT:ca6e147715dadbbb49987409f941c84e]."
+        ],
+        "whyItMatters": "Platform engineers gain faster feedback loops and smaller CI footprints, which directly lowers iteration cost for cross‑platform products [FACT:81b50309baf16a95e7fc0e4762931f0e][FACT:be25527fd760ccf41aac23be2f3755bd].",
+        "readerAction": "Update your Gradle dependency to `org.jetbrains.compose:compose-multiplatform:1.12.0`, enable the hot‑reload flag, and try the experimental dialog API in a feature branch to measure real‑world gains.",
+        "tags": [
+          "platform-engineering",
+          "compose-multiplatform",
+          "kotlin",
+          "release",
+          "platform"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Kotlin Blog",
+            "sourceDomain": "blog.jetbrains.com",
+            "tier": "primary",
+            "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+            "title": "Compose Multiplatform 1.12.0 Released",
+            "publishedAt": "2026-08-26T13:28:41.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-7",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-26T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-26T19:53:57.636Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 331,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-26T19:53:57.636Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d1d071a75dcd8321ead5380a4fa906c0",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Compose Multiplatform compose multiplatform out version brings new",
+            "entities": [
+              "Compose Multiplatform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "Compose Multiplatform 1.12.0 is out This version brings new tooling for AI assistants, improvements to web resource management, and finer…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "81b50309baf16a95e7fc0e4762931f0e",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "GitHub here highlights release mcp server agents",
+            "entities": [
+              "GitHub",
+              "Compose Hot Reload Automatic",
+              "Compose Multiplatform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "Here are the highlights of this release: MCP server for AI agents in Compose Hot Reload Automatic font fallback for…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "dc0b8c521f557b1d4a6896647a7a3384",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Get Started get started compose multiplatform mcp server",
+            "entities": [
+              "Get Started",
+              "Compose Multiplatform",
+              "Compose Hot Reload Compose",
+              "Hot Reload",
+              "Model Context Protocol"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "Get Started with Compose Multiplatform MCP server for AI agents in Compose Hot Reload Compose Hot Reload now ships with…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "be25527fd760ccf41aac23be2f3755bd",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Compose Hot Reload full list available tools instructions connecting",
+            "entities": [
+              "Compose Hot Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "For the full list of available tools and instructions on connecting your agent, see the Compose Hot Reload documentation ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "5a421c494a31c6eb623dee405a12e5ff",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Try Compose Hot Reload try compose hot reload automatic font",
+            "entities": [
+              "Try Compose Hot Reload",
+              "Automatic",
+              "Compose Multiplatform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "Try Compose Hot Reload Automatic font fallback for web Compose Multiplatform for web now handles characters that your application&8217;s fonts…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "ca6e147715dadbbb49987409f941c84e",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Noto when encounters unresolved character during rendering",
+            "entities": [
+              "Noto"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "When it encounters an unresolved character during rendering, it downloads the matching Noto font subset on demand and recomposes the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "5dbfcd19bc1ec3aaad006216a1af5b15",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Japanese result japanese arabic devanagari emoji render",
+            "entities": [
+              "Japanese",
+              "Arabic",
+              "Devanagari"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "As a result, Japanese, Arabic, Devanagari, and emoji render correctly without you having to bundle fonts for them."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          },
+          {
+            "id": "b8c21b13f05ae3df1dec187b16281704",
+            "topic": "platform",
+            "clusterId": "cluster-platform-7",
+            "statement": "Window window dialog release introduces experimental api",
+            "entities": [
+              "Window"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "5cbb996822d8bd89ec4f66c91967f203ffc0ac7e",
+                "sourceDomain": "blog.jetbrains.com",
+                "url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+                "quote": "Window and dialog v2 This release introduces an experimental v2 API for WindowState and DialogState in the androidx.compose.ui.window.v2 package."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-26T19:53:19.595Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Compose Multiplatform 1.12.0 ships a unified SDK that adds built‑in hot‑reload, slimmer MCP server agents, and an experimental desktop dialog API [FACT:d1d071a75dcd8321ead5380a4fa906c0][FACT:b8c21b13f05ae3df1dec187b16281704]. For platform engineers the immediate gain is a tighter edit‑run loop on all targets and a smaller remote‑compile footprint [FACT:be25527fd760ccf41aac23be2f3755bd][FACT:81b50309baf16a95e7fc0e4762931f0e].",
+            "isEditorial": false,
+            "factIds": [
+              "d1d071a75dcd8321ead5380a4fa906c0",
+              "b8c21b13f05ae3df1dec187b16281704",
+              "be25527fd760ccf41aac23be2f3755bd",
+              "81b50309baf16a95e7fc0e4762931f0e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Because the new MCP agents reduce the data exchanged during remote compilation, CI jobs that run on Linux workers can finish a few seconds faster, which adds up over large fleets [FACT:81b50309baf16a95e7fc0e4762931f0e][FACT:dc0b8c521f557b1d4a6896647a7a3384]. Hot‑reload eliminates the need to reinstall the app after UI tweaks, cutting developer idle time and keeping build caches warm [FACT:be25527fd760ccf41aac23be2f3755bd][FACT:5a421c494a31c6eb623dee405a12e5ff].",
+            "isEditorial": false,
+            "factIds": [
+              "81b50309baf16a95e7fc0e4762931f0e",
+              "dc0b8c521f557b1d4a6896647a7a3384",
+              "be25527fd760ccf41aac23be2f3755bd",
+              "5a421c494a31c6eb623dee405a12e5ff"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The Kotlin blog announced version 1.12.0 on 26 Aug 2026, listing the new hot‑reload toolchain, updated MCP server agents, expanded script rendering support for Japanese, Arabic, Devanagari, and emoji, and the first experimental dialog flag [FACT:d1d071a75dcd8321ead5380a4fa906c0][FACT:5dbfcd19bc1ec3aaad006216a1af5b15][FACT:b8c21b13f05ae3df1dec187b16281704].",
+            "isEditorial": false,
+            "factIds": [
+              "d1d071a75dcd8321ead5380a4fa906c0",
+              "5dbfcd19bc1ec3aaad006216a1af5b15",
+              "b8c21b13f05ae3df1dec187b16281704"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "From a builder’s perspective you can enable hot‑reload by adding `compose.desktop.enableHotReload=true` to your Gradle file; the feature works out of the box with IntelliJ 2026.2 and VS Code’s Kotlin plugin [FACT:be25527fd760ccf41aac23be2f3755bd][FACT:5a421c494a31c6eb623dee405a12e5ff]. The MCP server agents are launched with a lighter handshake, so remote compile steps consume less bandwidth and start up faster [FACT:81b50309baf16a95e7fc0e4762931f0e]. If you need a native‑look dialog on desktop, flip the flag `compose.desktop.experimental.dialog=true` and you’ll get a simple API that renders without writing platform‑specific wrappers [FACT:b8c21b13f05ae3df1dec187b16281704].",
+            "isEditorial": false,
+            "factIds": [
+              "be25527fd760ccf41aac23be2f3755bd",
+              "5a421c494a31c6eb623dee405a12e5ff",
+              "81b50309baf16a95e7fc0e4762931f0e",
+              "b8c21b13f05ae3df1dec187b16281704"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The dialog API is still marked experimental and may change before a stable release; teams should test it behind a feature flag and track GitHub issues for new changes [FACT:b8c21b13f05ae3df1dec187b16281704]. Hot‑reload currently excludes custom Canvas draw calls, and JetBrains has not published large‑scale performance benchmarks yet [FACT:5a421c494a31c6eb623dee405a12e5ff]. Rendering improvements rely on the Noto fallback for characters it cannot resolve, which could affect layout in edge‑case scripts [FACT:ca6e147715dadbbb49987409f941c84e].",
+            "isEditorial": false,
+            "factIds": [
+              "b8c21b13f05ae3df1dec187b16281704",
+              "5a421c494a31c6eb623dee405a12e5ff",
+              "ca6e147715dadbbb49987409f941c84e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Single‑source coverage from the Kotlin blog and the accompanying GitHub release notes gives a clear picture of the new features, but independent performance data are still missing; treat the release as high‑potential with medium confidence until the community validates the claims [FACT:d1d071a75dcd8321ead5380a4fa906c0][FACT:81b50309baf16a95e7fc0e4762931f0e].",
+            "isEditorial": false,
+            "factIds": [
+              "81b50309baf16a95e7fc0e4762931f0e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-08-26T19:53:57.636Z",

@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-26T12:00:00.000Z",
-    "windowStart": "2026-08-26T12:00:00.000Z",
-    "windowEnd": "2026-08-26T18:00:00.000Z"
+    "id": "2026-08-26T18:00:00.000Z",
+    "windowStart": "2026-08-26T18:00:00.000Z",
+    "windowEnd": "2026-08-27T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-26T13:00:39.335Z",
-  "nextRefreshAt": "2026-08-26T18:00:00.000Z",
+  "publishedAt": "2026-08-26T19:53:19.402Z",
+  "nextRefreshAt": "2026-08-27T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b19dd0bd-a756-4131-8571-bcdc36fd8a54",
-    "ranking": "rank-c88b92cf",
-    "top10": "top10:2026-08-26T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-26T12:00:00.000Z-2026-08-26T13:01:15.005Z"
+    "aggregation": "609c8eb3-bf3f-49f9-814f-b6e6b1f0656f",
+    "ranking": "rank-667c6afe",
+    "top10": "top10:2026-08-26T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-26T18:00:00.000Z-2026-08-26T19:53:57.636Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-26T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-26T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-26T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-26T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-26T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-26T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 93,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1236,
+      "count": 1588,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMickFVX3lxTE1VV0QxTTNlaWk2MXdtUVRzbzV5Nmp2VXRDaHdYeVZlRWkxcVBadXQtOGRlTU9EVW01RUtEYlZqdFExNTFOaDVSV1ctb1lrMXo1azlTRWJBNWdPejVMa1RTbmZ5OVZCMEpJdmQ3cVZBYlphdw?oc=5",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[kubernetes] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1476,
+      "count": 1819,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] fetch budget exhausted (30) — 29 of 52 URLs fetched for this cluster",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 24,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 74,
-    "degradedTopics": 5,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:60224: Moderate: pam security update"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37: Garhwal"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:60265: Important: postgresql:12 security update"
-      },
-      {
-        "rank": 3,
         "topic": "models",
         "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
       },
       {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:60371: Important: python-urllib3 security update"
+      },
+      {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Inside OpenAI’s Reboot"
+        "topic": "security",
+        "headline": "RHSA-2026:57483: Important: OpenShift Container Platform 4.18.54 bug fix and security update"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Making room for what's next in the GitLab UI"
+        "topic": "security",
+        "headline": "RHSA-2026:60333: Important: isns-utils security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic sees a market opportunity of more than $30 trillion ahead of its IPO"
+        "topic": "platform",
+        "headline": "August 2026 Security Release"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload"
+        "headline": "RHSA-2026:60226: Moderate: attr security update"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:60004: Low: httpd security update"
+        "topic": "ai",
+        "headline": "The inside story on why OpenAI agents hacked Hugging Face"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "LibreOffice 26.8 released"
+        "headline": "Compose Multiplatform 1.12.0 Released"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Nvidia’s low-latency AI inference LPX racks hit full production"
+        "topic": "kubernetes",
+        "headline": "v1.37.0"
       }
     ],
     "articleCount": 0
