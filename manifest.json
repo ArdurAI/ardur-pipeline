@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-26T06:00:00.000Z",
-    "windowStart": "2026-08-26T06:00:00.000Z",
-    "windowEnd": "2026-08-26T12:00:00.000Z"
+    "id": "2026-08-26T12:00:00.000Z",
+    "windowStart": "2026-08-26T12:00:00.000Z",
+    "windowEnd": "2026-08-26T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-26T06:56:27.535Z",
-  "nextRefreshAt": "2026-08-26T12:00:00.000Z",
+  "publishedAt": "2026-08-26T13:00:39.335Z",
+  "nextRefreshAt": "2026-08-26T18:00:00.000Z",
   "runIds": {
-    "aggregation": "bdddf9c5-e26c-4df6-9739-a67ddb33ebd0",
-    "ranking": "rank-9152f4b3",
-    "top10": "top10:2026-08-26T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-26T06:00:00.000Z-2026-08-26T06:57:01.897Z"
+    "aggregation": "b19dd0bd-a756-4131-8571-bcdc36fd8a54",
+    "ranking": "rank-c88b92cf",
+    "top10": "top10:2026-08-26T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-26T12:00:00.000Z-2026-08-26T13:01:15.005Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-26T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-26T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-26T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-26T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-26T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-26T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1314,
+      "count": 1236,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMickFVX3lxTE1VV0QxTTNlaWk2MXdtUVRzbzV5Nmp2VXRDaHdYeVZlRWkxcVBadXQtOGRlTU9EVW01RUtEYlZqdFExNTFOaDVSV1ctb1lrMXo1azlTRWJBNWdPejVMa1RTbmZ5OVZCMEpJdmQ3cVZBYlphdw?oc=5",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1569,
+      "count": 1476,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] fetch budget exhausted (30) — 29 of 52 URLs fetched for this cluster",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 24,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:59737: Important: kernel-rt security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:60224: Moderate: pam security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
+        "topic": "security",
+        "headline": "RHSA-2026:60265: Important: postgresql:12 security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "CISA Warns of Exploited Gitea Vulnerability"
+        "topic": "models",
+        "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:59409: Important: python-urllib3 security update"
+        "topic": "ai",
+        "headline": "Inside OpenAI’s Reboot"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Atlas Open-Sources Flight Booking Skill for AI Agents"
+        "topic": "kubernetes",
+        "headline": "Making room for what's next in the GitLab UI"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "Restore LLM Inference Capacity in Seconds with Shadow Engine Recovery in NVIDIA Dynamo"
+        "topic": "ai",
+        "headline": "Anthropic sees a market opportunity of more than $30 trillion ahead of its IPO"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "mklinux-v7.0-mk2 released"
+        "topic": "security",
+        "headline": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "August 2026 Security Release"
+        "topic": "security",
+        "headline": "RHSA-2026:60004: Low: httpd security update"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.4-rc.1"
+        "topic": "platform",
+        "headline": "LibreOffice 26.8 released"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:57845: Important: Red Hat build of MicroShift 4.16.69 security update"
+        "topic": "models",
+        "headline": "Nvidia’s low-latency AI inference LPX racks hit full production"
       }
     ],
     "articleCount": 0
