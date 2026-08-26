@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-26T00:00:00.000Z",
-    "windowStart": "2026-08-26T00:00:00.000Z",
-    "windowEnd": "2026-08-26T06:00:00.000Z"
+    "id": "2026-08-26T06:00:00.000Z",
+    "windowStart": "2026-08-26T06:00:00.000Z",
+    "windowEnd": "2026-08-26T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-26T01:38:04.547Z",
-  "nextRefreshAt": "2026-08-26T06:00:00.000Z",
+  "publishedAt": "2026-08-26T06:56:27.535Z",
+  "nextRefreshAt": "2026-08-26T12:00:00.000Z",
   "runIds": {
-    "aggregation": "deeb626c-adf6-4d2b-accb-681c4f2681fe",
-    "ranking": "rank-49dd4547",
-    "top10": "top10:2026-08-26T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-26T00:00:00.000Z-2026-08-26T01:38:39.317Z"
+    "aggregation": "bdddf9c5-e26c-4df6-9739-a67ddb33ebd0",
+    "ranking": "rank-9152f4b3",
+    "top10": "top10:2026-08-26T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-26T06:00:00.000Z-2026-08-26T06:57:01.897Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-26T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-26T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-26T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-26T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-26T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-26T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,14 +25,14 @@
       "category": "http-error",
       "count": 93,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1464,
+      "count": 1314,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1703,
+      "count": 1569,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 22,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "Restore LLM Inference Capacity in Seconds with Shadow Engine Recovery in NVIDIA Dynamo"
+        "topic": "security",
+        "headline": "RHSA-2026:59737: Important: kernel-rt security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:57845: Important: Red Hat build of MicroShift 4.16.69 security update"
+        "topic": "ai",
+        "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
+        "topic": "security",
+        "headline": "CISA Warns of Exploited Gitea Vulnerability"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:59663: Important: kernel-rt security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
         "headline": "RHSA-2026:59409: Important: python-urllib3 security update"
       },
       {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Atlas Open-Sources Flight Booking Skill for AI Agents"
+      },
+      {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:59487: Important: gstreamer1-plugins-base security update"
+        "topic": "models",
+        "headline": "Restore LLM Inference Capacity in Seconds with Shadow Engine Recovery in NVIDIA Dynamo"
       },
       {
         "rank": 7,
         "topic": "platform",
-        "headline": "August 2026 Security Release"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Introducing the Admin plugin for ChatGPT Work and Codex"
-      },
-      {
-        "rank": 9,
-        "topic": "platform",
         "headline": "mklinux-v7.0-mk2 released"
       },
       {
-        "rank": 10,
+        "rank": 8,
+        "topic": "platform",
+        "headline": "August 2026 Security Release"
+      },
+      {
+        "rank": 9,
         "topic": "kubernetes",
         "headline": "Dapr Runtime v1.18.4-rc.1"
+      },
+      {
+        "rank": 10,
+        "topic": "security",
+        "headline": "RHSA-2026:57845: Important: Red Hat build of MicroShift 4.16.69 security update"
       }
     ],
     "articleCount": 0
