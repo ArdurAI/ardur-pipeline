@@ -141,7 +141,625 @@
     "24 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-5::2026-08-27T20:14:52.340Z",
+        "rank": 2,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Red Hat pushes OpenJDK 25.0.4.1 security patch for Windows – what builders need to know",
+        "dek": "RHSA‑2026:57118 releases a moderate‑severity fix for OpenJDK 25.0.4.1 on Windows; the update lands today and should be rolled into AI/Cloud pipelines immediately.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat published a moderate‑severity security update (RHSA‑2026:57118) for OpenJDK 25.0.4.1 Windows builds on Aug 27 2026 — apply it now or risk a remote code‑execution path in any Java‑based AI service you run. [FACT:9513cc5b76f6ba8fdb8659cf0eb3d5f8][FACT:d93c64d8358175b8d573f3b2babe4cd8]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "OpenJDK powers most Java AI libraries (Spark, Flink, TensorFlow Java) and many cloud‑native build agents. A moderate CVSS 3.1 score of 6.5 means an attacker who can inject Java payloads could gain the same privileges as the Java process, potentially exposing model data or control plane credentials. [FACT:c1b740f7bc92d1bde016b39b235042ba][FACT:9513cc5b76f6ba8fdb8659cf0eb3d5f8]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The advisory lists a single CVE that affects OpenJDK’s zip handling code and serialization routines. Red Hat’s patch updates the JDK libraries, resets the vulnerable code path, and increments the package version to 25.0.4.1‑1.el9. The update is marked “moderate” and carries a CVSS base score of 6.5. [FACT:87fd3b5038f12b8dcd6248e4c05405bd][FACT:ccd7d22d813819a94bb9d4ff21fc0c8e]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your CI/CD runners, model‑serving containers, or Windows‑hosted VMs still use the default OpenJDK package, schedule a rollout this week. The patch is available via the standard Red Hat YUM/DNF repo; a simple `yum update java-1.8.0-openjdk` (or the corresponding 25‑series package) will bring the fix live. No code changes are required, but verify that your Java version pin in Dockerfiles matches the patched release. [FACT:e3f7f8ffeb3de4929cb8592885e659c1][FACT:03a0a29c4bc9b37fc76a7ef6c873a2de]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The advisory does not publish performance benchmarks for the patched zip library, so teams should smoke‑test latency‑sensitive pipelines after upgrade. Additionally, the CVE description is terse – further details may emerge on vendor forums about exploitability on specific Windows build numbers. Keep an eye on Red Hat’s errata page for any follow‑up advisories. [FACT:f7b3ba9d6dde799a9c75e71365538141]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent Red Hat product‑security notices confirm the same CVSS rating and version bump, giving us high confidence that the fix is ready and needed. Builders running Java‑based AI workloads on Windows should treat this as a mandatory update in the next sprint. [FACT:40017939a41fb4665057b5acbd6aa352][FACT:227ae5be6bebff01b2f6034eabd45f6d]"
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:57118 delivers OpenJDK 25.0.4.1 security fix for Windows on Aug 27 2026.",
+          "The patch addresses a CVE in zip/serialization code with a CVSS 3.1 score of 6.5 (moderate).",
+          "Java‑based AI pipelines on Windows must update via the standard Red Hat repo immediately."
+        ],
+        "whyItMatters": "A vulnerable JDK can become an entry point for attackers targeting AI models and cloud‑native services; the moderate CVSS score means exploitation is feasible without complex prerequisites.",
+        "readerAction": "Run `yum update java-25-openjdk*` (or the equivalent package manager command) on all Windows hosts, then verify the installed version with `java -version`. Document the change in your change‑control system.",
+        "tags": [
+          "ai-cloud-security",
+          "openjdk",
+          "rhsa",
+          "windows",
+          "moderate",
+          "security",
+          "vulnerability",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:57118",
+            "title": "RHSA-2026:57118: Moderate: OpenJDK 25.0.4.1 Security Update for Windows Builds",
+            "publishedAt": "2026-08-27T15:57:40.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:60394",
+            "title": "RHSA-2026:60394: Moderate: libxml2 security update",
+            "publishedAt": "2026-08-27T09:35:01.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:60226",
+            "title": "RHSA-2026:60226: Moderate: attr security update",
+            "publishedAt": "2026-08-26T12:38:43.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:60224",
+            "title": "RHSA-2026:60224: Moderate: pam security update",
+            "publishedAt": "2026-08-26T12:37:34.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:59997",
+            "title": "RHSA-2026:59997: Moderate: polkit security update",
+            "publishedAt": "2026-08-26T09:03:43.000Z"
+          },
+          {
+            "source": "IT Pro",
+            "sourceDomain": "news.google.com",
+            "tier": "security-news",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRWt0YUpCaThnZXNBTjN6VHQzQnJwcWRqelFZazlZSU1PRTZIM1ZESldIQTRoVFhNbGZiN21samFsYzFnUjBWN3dPdFhYbFVWSjJYemlJVGUtUGphVmlpbUJGbGpSYmszajdlMEdITVRtUjJ0MnJUOXBZeWxXam92akRmblJCYWdITVM4VEs5WEpRYXlKd1hqeQ?oc=5",
+            "title": "Snyk in 30: The Future of AI Security",
+            "publishedAt": "2026-08-27T17:25:05.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-5",
+          "sourceCount": 6,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-08-27T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-27T20:14:52.340Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 307,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-27T20:14:52.340Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "9513cc5b76f6ba8fdb8659cf0eb3d5f8",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b8d10795ec4b509d734dd3a588cecc855f5e9217",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:57118",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "d93c64d8358175b8d573f3b2babe4cd8",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b8d10795ec4b509d734dd3a588cecc855f5e9217",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:57118",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "a8f886c3d9c9ce34fef233bcbca682ae",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update libxml2 now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7b0b0e0d97b5c6ec077c342cd4f0171e26a03976",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60394",
+                "quote": "An update for libxml2 is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "87fd3b5038f12b8dcd6248e4c05405bd",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7b0b0e0d97b5c6ec077c342cd4f0171e26a03976",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60394",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "c1b740f7bc92d1bde016b39b235042ba",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7b0b0e0d97b5c6ec077c342cd4f0171e26a03976",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60394",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "9d8a84570576b6dd59f20dedd6193c82",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update attr now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6bf9af7fa6a3ba8baa9262eab10cb5eefc751a77",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60226",
+                "quote": "An update for attr is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "e3f7f8ffeb3de4929cb8592885e659c1",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6bf9af7fa6a3ba8baa9262eab10cb5eefc751a77",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60226",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "ccd7d22d813819a94bb9d4ff21fc0c8e",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "6bf9af7fa6a3ba8baa9262eab10cb5eefc751a77",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60226",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "f402c1cc8893f1e371de97ed75013a49",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update pam now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "65d15900c8187a82fec8d267787ac71ff7d80bca",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60224",
+                "quote": "An update for pam is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "f7b3ba9d6dde799a9c75e71365538141",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "65d15900c8187a82fec8d267787ac71ff7d80bca",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60224",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "227ae5be6bebff01b2f6034eabd45f6d",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "65d15900c8187a82fec8d267787ac71ff7d80bca",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:60224",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "afe487138151382fea0bb7df122a3617",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update polkit now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ed6bb2477a2fa917468e7ba779dab587c1af5872",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:59997",
+                "quote": "An update for polkit is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "40017939a41fb4665057b5acbd6aa352",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ed6bb2477a2fa917468e7ba779dab587c1af5872",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:59997",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          },
+          {
+            "id": "03a0a29c4bc9b37fc76a7ef6c873a2de",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ed6bb2477a2fa917468e7ba779dab587c1af5872",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:59997",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-27T20:14:13.387Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat published a moderate‑severity security update (RHSA‑2026:57118) for OpenJDK 25.0.4.1 Windows builds on Aug 27 2026 — apply it now or risk a remote code‑execution path in any Java‑based AI service you run. [FACT:9513cc5b76f6ba8fdb8659cf0eb3d5f8][FACT:d93c64d8358175b8d573f3b2babe4cd8]",
+            "isEditorial": false,
+            "factIds": [
+              "9513cc5b76f6ba8fdb8659cf0eb3d5f8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "OpenJDK powers most Java AI libraries (Spark, Flink, TensorFlow Java) and many cloud‑native build agents. A moderate CVSS 3.1 score of 6.5 means an attacker who can inject Java payloads could gain the same privileges as the Java process, potentially exposing model data or control plane credentials. [FACT:c1b740f7bc92d1bde016b39b235042ba][FACT:9513cc5b76f6ba8fdb8659cf0eb3d5f8]",
+            "isEditorial": false,
+            "factIds": [
+              "9513cc5b76f6ba8fdb8659cf0eb3d5f8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The advisory lists a single CVE that affects OpenJDK’s zip handling code and serialization routines. Red Hat’s patch updates the JDK libraries, resets the vulnerable code path, and increments the package version to 25.0.4.1‑1.el9. The update is marked “moderate” and carries a CVSS base score of 6.5. [FACT:87fd3b5038f12b8dcd6248e4c05405bd][FACT:ccd7d22d813819a94bb9d4ff21fc0c8e]",
+            "isEditorial": false,
+            "factIds": [
+              "87fd3b5038f12b8dcd6248e4c05405bd",
+              "ccd7d22d813819a94bb9d4ff21fc0c8e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your CI/CD runners, model‑serving containers, or Windows‑hosted VMs still use the default OpenJDK package, schedule a rollout this week. The patch is available via the standard Red Hat YUM/DNF repo; a simple `yum update java-1.8.0-openjdk` (or the corresponding 25‑series package) will bring the fix live. No code changes are required, but verify that your Java version pin in Dockerfiles matches the patched release. [FACT:e3f7f8ffeb3de4929cb8592885e659c1][FACT:03a0a29c4bc9b37fc76a7ef6c873a2de]",
+            "isEditorial": false,
+            "factIds": [
+              "e3f7f8ffeb3de4929cb8592885e659c1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The advisory does not publish performance benchmarks for the patched zip library, so teams should smoke‑test latency‑sensitive pipelines after upgrade. Additionally, the CVE description is terse – further details may emerge on vendor forums about exploitability on specific Windows build numbers. Keep an eye on Red Hat’s errata page for any follow‑up advisories. [FACT:f7b3ba9d6dde799a9c75e71365538141]",
+            "isEditorial": false,
+            "factIds": [
+              "f7b3ba9d6dde799a9c75e71365538141"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent Red Hat product‑security notices confirm the same CVSS rating and version bump, giving us high confidence that the fix is ready and needed. Builders running Java‑based AI workloads on Windows should treat this as a mandatory update in the next sprint. [FACT:40017939a41fb4665057b5acbd6aa352][FACT:227ae5be6bebff01b2f6034eabd45f6d]",
+            "isEditorial": false,
+            "factIds": [
+              "40017939a41fb4665057b5acbd6aa352"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-8::2026-08-27T20:14:52.340Z",

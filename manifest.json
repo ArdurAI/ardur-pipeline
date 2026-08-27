@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-27T06:00:00.000Z",
-    "windowStart": "2026-08-27T06:00:00.000Z",
-    "windowEnd": "2026-08-27T12:00:00.000Z"
+    "id": "2026-08-27T18:00:00.000Z",
+    "windowStart": "2026-08-27T18:00:00.000Z",
+    "windowEnd": "2026-08-28T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-27T08:26:57.442Z",
-  "nextRefreshAt": "2026-08-27T12:00:00.000Z",
+  "publishedAt": "2026-08-27T20:14:13.207Z",
+  "nextRefreshAt": "2026-08-28T00:00:00.000Z",
   "runIds": {
-    "aggregation": "3e788206-8e26-493f-8db8-27602d19b275",
-    "ranking": "rank-a4d67f7d",
-    "top10": "top10:2026-08-27T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-27T06:00:00.000Z-2026-08-27T08:27:31.843Z"
+    "aggregation": "d9111371-7e52-4006-9d8f-2b6ed42d5491",
+    "ranking": "rank-533c18b4",
+    "top10": "top10:2026-08-27T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-27T18:00:00.000Z-2026-08-27T20:14:52.340Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-27T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-27T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-27T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-27T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-27T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-27T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 99,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1510,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMickFVX3lxTE1VV0QxTTNlaWk2MXdtUVRzbzV5Nmp2VXRDaHdYeVZlRWkxcVBadXQtOGRlTU9EVW01RUtEYlZqdFExNTFOaDVSV1ctb1lrMXo1azlTRWJBNWdPejVMa1RTbmZ5OVZCMEpJdmQ3cVZBYlphdw?oc=5",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
@@ -49,17 +40,26 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1545,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-18] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[kubernetes] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1660,
+      "count": 1743,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -71,25 +71,25 @@
       "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 26,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
+    "failedSources": 72,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: Garhwal"
+        "topic": "platform",
+        "headline": "Building an AI factory on Kubernetes"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:60438: Important: kernel-rt security update"
+        "headline": "RHSA-2026:57118: Moderate: OpenJDK 25.0.4.1 Security Update for Windows Builds"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Security advisories: CVE-2026-80212 and CVE-2026-80213"
+        "topic": "security",
+        "headline": "RHSA-2026:60486: Important: kernel security update"
       },
       {
         "rank": 4,
         "topic": "models",
-        "headline": "Qwen3.8-Flash-Next"
+        "headline": "Introducing India cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Recent Citrix NetScaler Vulnerability Exploited in the Wild"
+        "topic": "ai",
+        "headline": "Expanding OpenAI’s presence in Brazil"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "CVE-2026-0251 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: HIGH"
+        "headline": "New GPUThor Rowhammer Defeats ECC on NVIDIA RTX A6000 to Gain Host Root Access"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "llm-d flow control: Priority queuing for shared GPU inference"
+        "topic": "kubernetes",
+        "headline": "v1.20.0"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Sam Altman says OpenAI will have AGI by the end of 2026 if you accept his definition"
+        "topic": "kubernetes",
+        "headline": "v1.13.0-beta1"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.39.1"
+        "topic": "security",
+        "headline": "PaperCut warns of NG, MF flaw exploited in zero-day attacks"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "News OpenAI Debuts Jalapeño AI Inference Chip, with Samsung Reportedly Supplying HBM4"
+        "topic": "ai",
+        "headline": "Anthropic unveils new framework allowing AI agents to operate physical devices"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
