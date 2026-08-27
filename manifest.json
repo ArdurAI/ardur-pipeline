@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-26T18:00:00.000Z",
-    "windowStart": "2026-08-26T18:00:00.000Z",
-    "windowEnd": "2026-08-27T00:00:00.000Z"
+    "id": "2026-08-27T06:00:00.000Z",
+    "windowStart": "2026-08-27T06:00:00.000Z",
+    "windowEnd": "2026-08-27T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-26T19:53:19.402Z",
-  "nextRefreshAt": "2026-08-27T00:00:00.000Z",
+  "publishedAt": "2026-08-27T08:26:57.442Z",
+  "nextRefreshAt": "2026-08-27T12:00:00.000Z",
   "runIds": {
-    "aggregation": "609c8eb3-bf3f-49f9-814f-b6e6b1f0656f",
-    "ranking": "rank-667c6afe",
-    "top10": "top10:2026-08-26T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-26T18:00:00.000Z-2026-08-26T19:53:57.636Z"
+    "aggregation": "3e788206-8e26-493f-8db8-27602d19b275",
+    "ranking": "rank-a4d67f7d",
+    "top10": "top10:2026-08-27T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-27T06:00:00.000Z-2026-08-27T08:27:31.843Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-26T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-26T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-26T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-27T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-27T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-27T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 87,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1588,
+      "count": 1510,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMickFVX3lxTE1VV0QxTTNlaWk2MXdtUVRzbzV5Nmp2VXRDaHdYeVZlRWkxcVBadXQtOGRlTU9EVW01RUtEYlZqdFExNTFOaDVSV1ctb1lrMXo1azlTRWJBNWdPejVMa1RTbmZ5OVZCMEpJdmQ3cVZBYlphdw?oc=5",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1819,
+      "count": 1660,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 74,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -108,50 +108,50 @@
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "OpenAI&039;s first custom chip \"Jalapeño\" reportedly beats Nvidia&039;s Blackwell and Rubin in inference benchmarks"
+        "topic": "security",
+        "headline": "RHSA-2026:60438: Important: kernel-rt security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:60371: Important: python-urllib3 security update"
+        "topic": "platform",
+        "headline": "Security advisories: CVE-2026-80212 and CVE-2026-80213"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:57483: Important: OpenShift Container Platform 4.18.54 bug fix and security update"
+        "topic": "models",
+        "headline": "Qwen3.8-Flash-Next"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:60333: Important: isns-utils security update"
+        "headline": "Recent Citrix NetScaler Vulnerability Exploited in the Wild"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "August 2026 Security Release"
+        "topic": "security",
+        "headline": "CVE-2026-0251 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: HIGH"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:60226: Moderate: attr security update"
+        "topic": "platform",
+        "headline": "llm-d flow control: Priority queuing for shared GPU inference"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "The inside story on why OpenAI agents hacked Hugging Face"
+        "headline": "Sam Altman says OpenAI will have AGI by the end of 2026 if you accept his definition"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Compose Multiplatform 1.12.0 Released"
+        "topic": "kubernetes",
+        "headline": "v1.39.1"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.37.0"
+        "topic": "models",
+        "headline": "News OpenAI Debuts Jalapeño AI Inference Chip, with Samsung Reportedly Supplying HBM4"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
