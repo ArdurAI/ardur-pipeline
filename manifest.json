@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-28T06:00:00.000Z",
-    "windowStart": "2026-08-28T06:00:00.000Z",
-    "windowEnd": "2026-08-28T12:00:00.000Z"
+    "id": "2026-08-28T18:00:00.000Z",
+    "windowStart": "2026-08-28T18:00:00.000Z",
+    "windowEnd": "2026-08-29T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-28T06:02:09.066Z",
-  "nextRefreshAt": "2026-08-28T12:00:00.000Z",
+  "publishedAt": "2026-08-28T20:06:33.469Z",
+  "nextRefreshAt": "2026-08-29T00:00:00.000Z",
   "runIds": {
-    "aggregation": "f5bfa6d3-d59a-4553-9f28-c52ba63ba023",
-    "ranking": "rank-a7298dad",
-    "top10": "top10:2026-08-28T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-28T06:00:00.000Z-2026-08-28T06:02:43.110Z"
+    "aggregation": "1a7ec1d9-7a30-4e0b-9ad1-020b67b5b685",
+    "ranking": "rank-cad9e5d8",
+    "top10": "top10:2026-08-28T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-28T18:00:00.000Z-2026-08-28T20:07:09.072Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-28T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-28T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-28T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-28T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-28T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-28T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 90,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1324,
+      "count": 1335,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiuAFBVV95cUxORE9UdEhrbXVVSVdacFJlZnBpd2VFQlRIY0Z5YXAtMnFlVWUzdEtfejRYLUhGd09vTmY3MVkwLXRWRDhmS2NwRmpJMkEyZjA3VFNQSGVzaG94M2JMdmhjSFp2RF9rdjl1dTAzU3ZrelhwQlJpMGtqbXgycGRISjlyc0UyWERYSGNsTmtNd01rOTJ6Zl9XZ2w5WTVIZzhpMTZKTEk0aGNpWW5xYkdQeFhkaFdpTGVPdEJY?oc=5",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1552,
+      "count": 1587,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 24,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 25,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 72,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Building an AI factory on Kubernetes"
+        "headline": "Your Kubernetes platform is ready for containers. Is it ready for AI?"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:57118: Moderate: OpenJDK 25.0.4.1 Security Update for Windows Builds"
+        "topic": "models",
+        "headline": "OpenAI's Jalapeño Chip Outpaces Rivals in AI Inference Performance"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: Metrics API graduates to stable"
+        "topic": "ai",
+        "headline": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Trump Administration’s Blacklisting of Anthropic Was Illegal, Judge Rules"
+        "topic": "models",
+        "headline": "Deploy an Open Model from Checkpoint to Inference in Two Commands with NVIDIA TensorRT Model Connect"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Judge says Pentagon's measures against Anthropic were 'illegal and baseless'"
+        "topic": "kubernetes",
+        "headline": "containerd API 1.12.0-rc.0"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Judge blocks Pentagon blacklist of Anthropic as supply chain risk"
+        "headline": "Judge says Pentagon's measures against Anthropic were 'illegal and baseless'"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Nutanix unveils AI 2.8 & Kubernetes platform update"
+        "topic": "security",
+        "headline": "PaperCut NG/MF Critical Zero-Day Exploited in the Wild"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:60486: Important: kernel security update"
+        "headline": "PaperCut releases second emergency patch for exploited flaws"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic plans to publicly unveil IPO prospectus after Labor Day, the Information reports"
+        "topic": "security",
+        "headline": "Three CVSS 10.0 ServiceNow Flaws Could Let Unauthenticated Attackers Execute Code and SQL"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "New GPUThor Rowhammer Defeats ECC on NVIDIA RTX A6000 to Gain Host Root Access"
+        "topic": "kubernetes",
+        "headline": "v1.53.2"
       }
     ],
     "articleCount": 0
