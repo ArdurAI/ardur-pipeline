@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-27T18:00:00.000Z",
-    "windowStart": "2026-08-27T18:00:00.000Z",
-    "windowEnd": "2026-08-28T00:00:00.000Z"
+    "id": "2026-08-28T06:00:00.000Z",
+    "windowStart": "2026-08-28T06:00:00.000Z",
+    "windowEnd": "2026-08-28T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-27T20:14:13.207Z",
-  "nextRefreshAt": "2026-08-28T00:00:00.000Z",
+  "publishedAt": "2026-08-28T06:02:09.066Z",
+  "nextRefreshAt": "2026-08-28T12:00:00.000Z",
   "runIds": {
-    "aggregation": "d9111371-7e52-4006-9d8f-2b6ed42d5491",
-    "ranking": "rank-533c18b4",
-    "top10": "top10:2026-08-27T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-27T18:00:00.000Z-2026-08-27T20:14:52.340Z"
+    "aggregation": "f5bfa6d3-d59a-4553-9f28-c52ba63ba023",
+    "ranking": "rank-a7298dad",
+    "top10": "top10:2026-08-28T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-28T06:00:00.000Z-2026-08-28T06:02:43.110Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-27T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-27T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-27T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-28T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-28T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-28T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 99,
+      "count": 87,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1324,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiuAFBVV95cUxORE9UdEhrbXVVSVdacFJlZnBpd2VFQlRIY0Z5YXAtMnFlVWUzdEtfejRYLUhGd09vTmY3MVkwLXRWRDhmS2NwRmpJMkEyZjA3VFNQSGVzaG94M2JMdmhjSFp2RF9rdjl1dTAzU3ZrelhwQlJpMGtqbXgycGRISjlyc0UyWERYSGNsTmtNd01rOTJ6Zl9XZ2w5WTVIZzhpMTZKTEk0aGNpWW5xYkdQeFhkaFdpTGVPdEJY?oc=5",
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1545,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-18] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 12,
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 13 distinct domains < floor 20"
+        "[kubernetes] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1743,
+      "count": 1552,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 26,
       "sample": [
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -113,43 +113,43 @@
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:60486: Important: kernel security update"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37: Metrics API graduates to stable"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "Introducing India cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock"
+        "topic": "ai",
+        "headline": "Trump Administration’s Blacklisting of Anthropic Was Illegal, Judge Rules"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Expanding OpenAI’s presence in Brazil"
+        "headline": "Judge says Pentagon's measures against Anthropic were 'illegal and baseless'"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "New GPUThor Rowhammer Defeats ECC on NVIDIA RTX A6000 to Gain Host Root Access"
+        "topic": "ai",
+        "headline": "Judge blocks Pentagon blacklist of Anthropic as supply chain risk"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.20.0"
+        "headline": "Nutanix unveils AI 2.8 & Kubernetes platform update"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.13.0-beta1"
+        "topic": "security",
+        "headline": "RHSA-2026:60486: Important: kernel security update"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "PaperCut warns of NG, MF flaw exploited in zero-day attacks"
+        "topic": "ai",
+        "headline": "Anthropic plans to publicly unveil IPO prospectus after Labor Day, the Information reports"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Anthropic unveils new framework allowing AI agents to operate physical devices"
+        "topic": "security",
+        "headline": "New GPUThor Rowhammer Defeats ECC on NVIDIA RTX A6000 to Gain Host Root Access"
       }
     ],
     "articleCount": 0
