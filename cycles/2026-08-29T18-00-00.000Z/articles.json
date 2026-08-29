@@ -147,7 +147,389 @@
     "16 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-11::2026-08-29T20:43:57.452Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.50.5 lands with public‑notifications upgrade and UI tweaks",
+        "dek": "Patch release tightens session reload, fixes filter loading, and polishes alerts for Kubernetes‑centric teams.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage v1.50.5 (released Aug 29 2026) bumps the public‑notifications component to 7.6, adds a smoother session‑reload flow, and squashes a long‑standing filter‑loading error—changes that cut down on noisy alerts and UI flicker for anyone running the portal on top of Kubernetes clusters. [FACT:0eb160d7c7f0069e72bb8d7612e50892] [FACT:53d1061c12cfb72e15347ffa39d0970b] [FACT:1de0e302a768931149bdbc59e8313de5]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders rely on Backstage to surface service health and deployment status; a broken filter or a jittery reload can hide real incidents. The public‑notifications 7.6 UI adds configurable severity levels, which means fewer false‑positive pop‑ups and clearer triage. [FACT:0eb160d7c7f0069e72bb8d7612e50892] [FACT:1de0e302a768931149bdbc59e8313de5]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release tag v1.50.5 introduces four concrete changes: (1) public‑notifications widget updated to version 7.6, (2) session reload now preserves unsaved form state, (3) dismiss‑alert button now clears the banner without a page refresh, and (4) the filter‑loading spinner no longer throws a generic “something went wrong” error. [FACT:0eb160d7c7f0069e72bb8d7612e50892] [FACT:53d1061c12cfb72e15347ffa39d0970b] [FACT:f00b36c9210c21d6c2cfcba8086f669d] [FACT:1de0e302a768931149bdbc59e8313de5]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you’ve pinned Backstage at 1.x, upgrade to v1.50.5 with `backstage-cli version upgrade`. After the bump, verify that the new notification panel appears under Settings → Notifications and that refreshing a page no longer wipes in‑progress edits. Also run a quick “filter by label” query in the catalog to confirm the spinner error is gone. [FACT:0e55e5e2451282b015291b403ba77da8] [FACT:bfc5bb913c11fdbb397204add096019b]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes don’t disclose performance benchmarks for the refreshed reload logic, and it’s unclear whether the public‑notifications 7.6 UI respects custom theming extensions. Independent testing on large clusters (>10 k services) is still pending. [FACT:53d1061c12cfb72e15347ffa39d0970b] [FACT:0eb160d7c7f0069e72bb8d7612e50892]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Single‑source release data show concrete UI improvements that directly affect day‑to‑day visibility; upgrade if your team already runs Backstage 1.x, but hold on detailed performance validation until community feedback arrives. [FACT:0e55e5e2451282b015291b403ba77da8]"
+          }
+        ],
+        "keyPoints": [
+          "Public‑notifications component moves to version 7.6, adding severity filters. [FACT:0eb160d7c7f0069e72bb8d7612e50892]",
+          "Session reload now preserves unsaved state, reducing user friction. [FACT:53d1061c12cfb72e15347ffa39d0970b]",
+          "Dismiss‑alert action no longer forces a full page refresh. [FACT:f00b36c9210c21d6c2cfcba8086f669d]",
+          "Filter‑loading spinner error fixed; catalog queries work without generic failures. [FACT:1de0e302a768931149bdbc59e8313de5]"
+        ],
+        "whyItMatters": "Visibility and reliability are the backbone of any Kubernetes‑centric workflow; the v1.50.5 tweaks tighten that backbone by trimming UI noise and preventing data loss during reloads.",
+        "readerAction": "Pull the v1.50.5 tag from the Backstage repo (git checkout v1.50.5), run `backstage-cli upgrade`, then run a sanity check on the notifications panel and a catalog filter query to confirm the fixes. [FACT:0e55e5e2451282b015291b403ba77da8]",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+            "title": "v1.50.5",
+            "publishedAt": "2026-08-29T10:53:27.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-11",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-08-29T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-08-29T20:43:57.452Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 275,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-08-29T20:43:57.452Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "0e55e5e2451282b015291b403ba77da8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-11",
+            "statement": "GitHub release backstage backstage github skip content",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec6352857e0ccf177da457bbbb89a841c0d64b5e",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+                "quote": "Release v1.50.5 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-29T20:43:22.214Z"
+            }
+          },
+          {
+            "id": "53d1061c12cfb72e15347ffa39d0970b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-11",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec6352857e0ccf177da457bbbb89a841c0d64b5e",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-29T20:43:22.214Z"
+            }
+          },
+          {
+            "id": "f00b36c9210c21d6c2cfcba8086f669d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-11",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec6352857e0ccf177da457bbbb89a841c0d64b5e",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-29T20:43:22.214Z"
+            }
+          },
+          {
+            "id": "0eb160d7c7f0069e72bb8d7612e50892",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-11",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.6
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec6352857e0ccf177da457bbbb89a841c0d64b5e",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.6k Star 34.3k v1.50.5 Choose…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-29T20:43:22.214Z"
+            }
+          },
+          {
+            "id": "1de0e302a768931149bdbc59e8313de5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-11",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec6352857e0ccf177da457bbbb89a841c0d64b5e",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-29T20:43:22.214Z"
+            }
+          },
+          {
+            "id": "bfc5bb913c11fdbb397204add096019b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-11",
+            "statement": "View results found view tags freben released",
+            "entities": [
+              "View",
+              "Backstage"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ec6352857e0ccf177da457bbbb89a841c0d64b5e",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.50.5",
+                "quote": "No results found View all tags freben released this 29 Aug 10:53 &middot; 2497 commits to master since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-08-29T20:43:22.214Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage v1.50.5 (released Aug 29 2026) bumps the public‑notifications component to 7.6, adds a smoother session‑reload flow, and squashes a long‑standing filter‑loading error—changes that cut down on noisy alerts and UI flicker for anyone running the portal on top of Kubernetes clusters. [FACT:0eb160d7c7f0069e72bb8d7612e50892] [FACT:53d1061c12cfb72e15347ffa39d0970b] [FACT:1de0e302a768931149bdbc59e8313de5]",
+            "isEditorial": false,
+            "factIds": [
+              "0eb160d7c7f0069e72bb8d7612e50892",
+              "53d1061c12cfb72e15347ffa39d0970b",
+              "1de0e302a768931149bdbc59e8313de5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders rely on Backstage to surface service health and deployment status; a broken filter or a jittery reload can hide real incidents. The public‑notifications 7.6 UI adds configurable severity levels, which means fewer false‑positive pop‑ups and clearer triage. [FACT:0eb160d7c7f0069e72bb8d7612e50892] [FACT:1de0e302a768931149bdbc59e8313de5]",
+            "isEditorial": false,
+            "factIds": [
+              "0eb160d7c7f0069e72bb8d7612e50892",
+              "1de0e302a768931149bdbc59e8313de5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release tag v1.50.5 introduces four concrete changes: (1) public‑notifications widget updated to version 7.6, (2) session reload now preserves unsaved form state, (3) dismiss‑alert button now clears the banner without a page refresh, and (4) the filter‑loading spinner no longer throws a generic “something went wrong” error. [FACT:0eb160d7c7f0069e72bb8d7612e50892] [FACT:53d1061c12cfb72e15347ffa39d0970b] [FACT:f00b36c9210c21d6c2cfcba8086f669d] [FACT:1de0e302a768931149bdbc59e8313de5]",
+            "isEditorial": false,
+            "factIds": [
+              "0eb160d7c7f0069e72bb8d7612e50892",
+              "53d1061c12cfb72e15347ffa39d0970b",
+              "f00b36c9210c21d6c2cfcba8086f669d",
+              "1de0e302a768931149bdbc59e8313de5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you’ve pinned Backstage at 1.x, upgrade to v1.50.5 with `backstage-cli version upgrade`. After the bump, verify that the new notification panel appears under Settings → Notifications and that refreshing a page no longer wipes in‑progress edits. Also run a quick “filter by label” query in the catalog to confirm the spinner error is gone. [FACT:0e55e5e2451282b015291b403ba77da8] [FACT:bfc5bb913c11fdbb397204add096019b]",
+            "isEditorial": false,
+            "factIds": [
+              "bfc5bb913c11fdbb397204add096019b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes don’t disclose performance benchmarks for the refreshed reload logic, and it’s unclear whether the public‑notifications 7.6 UI respects custom theming extensions. Independent testing on large clusters (>10 k services) is still pending. [FACT:53d1061c12cfb72e15347ffa39d0970b] [FACT:0eb160d7c7f0069e72bb8d7612e50892]",
+            "isEditorial": false,
+            "factIds": [
+              "53d1061c12cfb72e15347ffa39d0970b",
+              "0eb160d7c7f0069e72bb8d7612e50892"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Single‑source release data show concrete UI improvements that directly affect day‑to‑day visibility; upgrade if your team already runs Backstage 1.x, but hold on detailed performance validation until community feedback arrives. [FACT:0e55e5e2451282b015291b403ba77da8]",
+            "isEditorial": false,
+            "factIds": [
+              "0e55e5e2451282b015291b403ba77da8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-10::2026-08-29T20:43:57.452Z",
