@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-29T18:00:00.000Z",
-    "windowStart": "2026-08-29T18:00:00.000Z",
-    "windowEnd": "2026-08-30T00:00:00.000Z"
+    "id": "2026-08-30T00:00:00.000Z",
+    "windowStart": "2026-08-30T00:00:00.000Z",
+    "windowEnd": "2026-08-30T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-29T20:43:22.030Z",
-  "nextRefreshAt": "2026-08-30T00:00:00.000Z",
+  "publishedAt": "2026-08-30T05:08:48.013Z",
+  "nextRefreshAt": "2026-08-30T06:00:00.000Z",
   "runIds": {
-    "aggregation": "4e4e578e-90e4-4412-8a41-b078434fd2a4",
-    "ranking": "rank-c8bb1de2",
-    "top10": "top10:2026-08-29T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-29T18:00:00.000Z-2026-08-29T20:43:57.452Z"
+    "aggregation": "4faa75cb-9151-4093-af57-1f71f3e02387",
+    "ranking": "rank-3a4c4b09",
+    "top10": "top10:2026-08-30T00:00:00.000Z",
+    "articles": "synth-top10:2026-08-30T00:00:00.000Z-2026-08-30T05:09:23.914Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-29T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-29T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-29T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-30T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-30T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-30T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 81,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1102,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -49,39 +40,48 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1150,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcFc1ZDlsUnFVNmpIUkpEdVRYYUZ5N2UxUVVJSTlsaE16YzJsUWlKVktoaW13VElKSXVQTHlmbmphVjQzZmZiQUtnVExubjdGTFhvMmg0U1NLN1JVMDg4dDdDTzZPRi1QNU9ZQ0RtUi1KVDZSaXBlNFlxS2o0SE11LS14YkVuY3BSNEhrT2ticUdFdzBPMDk3Szk0blJBTXJuQWdIQlR3N3dfLWZSYzd6bXpONGR0Sk4tQy0wLUItbGZtU0tKVEZIQXRQSlp1RDlj?oc=5",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 8 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1288,
+      "count": 1117,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "As AI agents go rogue, cyber insurers are adapting their policies"
+        "headline": "Sony, Warner sue Anthropic over alleged mass copyright infringement"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Your Kubernetes platform is ready for containers. Is it ready for AI?"
+        "topic": "ai",
+        "headline": "OpenAI to end model access to Cursor after acquisition by Elon Musk's SpaceX"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE"
+        "topic": "ai",
+        "headline": "Sony Music, Warner sue Anthropic, alleging a \"brazen campaign\" of intellectual property theft"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "UCSB Researchers Unveil 10 Rules for Generative AI in Science"
+        "headline": "As AI agents go rogue, cyber insurers are adapting their policies"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.49.6"
+        "topic": "models",
+        "headline": "Introducing Hy4 Preview"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v1.50.5"
+        "topic": "security",
+        "headline": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Mark Zuckerberg's Meta Just Open-Sourced Its Most Powerful AI Model to Take on OpenAI and Anthropic. Should Investors Watch Meta's AI Spending Closely?"
+        "topic": "security",
+        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "U.S. court rules Pentagon&039;s blacklisting of Anthropic was unlawful"
+        "topic": "security",
+        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.51.3"
+        "topic": "security",
+        "headline": "CrowdStrike CRWD Is Up 13.8% After Raising Full-Year Revenue Guidance on AI Security Demand"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Label Removal Equipment for Containers Market Outlook to 2035"
+        "headline": "v1.49.6"
       }
     ],
     "articleCount": 0
