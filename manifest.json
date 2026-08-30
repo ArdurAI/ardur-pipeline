@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-30T00:00:00.000Z",
-    "windowStart": "2026-08-30T00:00:00.000Z",
-    "windowEnd": "2026-08-30T06:00:00.000Z"
+    "id": "2026-08-30T06:00:00.000Z",
+    "windowStart": "2026-08-30T06:00:00.000Z",
+    "windowEnd": "2026-08-30T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-30T05:08:48.013Z",
-  "nextRefreshAt": "2026-08-30T06:00:00.000Z",
+  "publishedAt": "2026-08-30T11:35:53.198Z",
+  "nextRefreshAt": "2026-08-30T12:00:00.000Z",
   "runIds": {
-    "aggregation": "4faa75cb-9151-4093-af57-1f71f3e02387",
-    "ranking": "rank-3a4c4b09",
-    "top10": "top10:2026-08-30T00:00:00.000Z",
-    "articles": "synth-top10:2026-08-30T00:00:00.000Z-2026-08-30T05:09:23.914Z"
+    "aggregation": "c1cf95cb-f3f8-4acd-8b26-cbcd8fb09754",
+    "ranking": "rank-2cbcd80f",
+    "top10": "top10:2026-08-30T06:00:00.000Z",
+    "articles": "synth-top10:2026-08-30T06:00:00.000Z-2026-08-30T11:36:25.991Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-30T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-30T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-30T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-30T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-30T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-30T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1247,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMi0gFBVV95cUxONkhzVGk5dThJcTF5TjlibTRrVWpIeXZLNnNPZ3ZlOWppeERLVmEyVldaVEZwZC0xZDRGOFRfdUVrUHl3LWNUUlNnSmV4TE9hRWt6c0wyenU4U2NOOUx4cF9SVGxPSjVaUlhxX0MzU0g0ZmUwekNTWXZ4aEFuYlVyaVhuTE5NWk1wcnk4VHF2eFAwcjFOSGRIVjhiZm1KQzNNUUJjUlJDS1NqQ0QyRWotekc0WjEwc0pXV25jS1FGeE0yZW9BOU9mU3djTVUwX1IxOGc?oc=5",
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1150,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcFc1ZDlsUnFVNmpIUkpEdVRYYUZ5N2UxUVVJSTlsaE16YzJsUWlKVktoaW13VElKSXVQTHlmbmphVjQzZmZiQUtnVExubjdGTFhvMmg0U1NLN1JVMDg4dDdDTzZPRi1QNU9ZQ0RtUi1KVDZSaXBlNFlxS2o0SE11LS14YkVuY3BSNEhrT2ticUdFdzBPMDk3Szk0blJBTXJuQWdIQlR3N3dfLWZSYzd6bXpONGR0Sk4tQy0wLUItbGZtU0tKVEZIQXRQSlp1RDlj?oc=5",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
         "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1117,
+      "count": 1026,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 20,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 34,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -103,38 +103,38 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Sony, Warner sue Anthropic over alleged mass copyright infringement"
+        "topic": "security",
+        "headline": "YARA-X 1.20.0 Release, Sun, Aug 30th"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "OpenAI to end model access to Cursor after acquisition by Elon Musk's SpaceX"
+        "headline": "China's Tencent Releases New Open-source AI Model For Coding, Research Tasks"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Sony Music, Warner sue Anthropic, alleging a \"brazen campaign\" of intellectual property theft"
+        "headline": "AI agents have no sense of time and are not aware of it"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "As AI agents go rogue, cyber insurers are adapting their policies"
+        "topic": "platform",
+        "headline": "AWS Open Sources Kiro Crew for Asynchronous Coding Agents"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "Introducing Hy4 Preview"
+        "topic": "ai",
+        "headline": "Anthropic&039;s Claude Code limit change is a raise on paper but a cut in practice"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE"
+        "topic": "ai",
+        "headline": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\""
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
+        "topic": "kubernetes",
+        "headline": "I Live in a Tiny NYC Studio Apartment — Here Are 9 Clever Products I Use to Save Space in My Kitchen"
       },
       {
         "rank": 8,
@@ -144,12 +144,12 @@
       {
         "rank": 9,
         "topic": "security",
-        "headline": "CrowdStrike CRWD Is Up 13.8% After Raising Full-Year Revenue Guidance on AI Security Demand"
+        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.49.6"
+        "headline": "ON GARDENING: Superlophus Sunglow stuns in containers, landscapes"
       }
     ],
     "articleCount": 0
