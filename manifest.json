@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-30T12:00:00.000Z",
-    "windowStart": "2026-08-30T12:00:00.000Z",
-    "windowEnd": "2026-08-30T18:00:00.000Z"
+    "id": "2026-08-30T18:00:00.000Z",
+    "windowStart": "2026-08-30T18:00:00.000Z",
+    "windowEnd": "2026-08-31T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-30T16:23:02.378Z",
-  "nextRefreshAt": "2026-08-30T18:00:00.000Z",
+  "publishedAt": "2026-08-30T20:48:37.654Z",
+  "nextRefreshAt": "2026-08-31T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6936c248-9fa6-46f3-862c-b5d7d917e2fe",
-    "ranking": "rank-a432228b",
-    "top10": "top10:2026-08-30T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-30T12:00:00.000Z-2026-08-30T16:23:38.083Z"
+    "aggregation": "f42225ca-009d-417c-8035-6c54b89a6907",
+    "ranking": "rank-b2b14f25",
+    "top10": "top10:2026-08-30T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-30T18:00:00.000Z-2026-08-30T20:49:12.567Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-30T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-30T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-30T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-30T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-30T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-30T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1254,
+      "count": 1268,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMi0gFBVV95cUxONkhzVGk5dThJcTF5TjlibTRrVWpIeXZLNnNPZ3ZlOWppeERLVmEyVldaVEZwZC0xZDRGOFRfdUVrUHl3LWNUUlNnSmV4TE9hRWt6c0wyenU4U2NOOUx4cF9SVGxPSjVaUlhxX0MzU0g0ZmUwekNTWXZ4aEFuYlVyaVhuTE5NWk1wcnk4VHF2eFAwcjFOSGRIVjhiZm1KQzNNUUJjUlJDS1NqQ0QyRWotekc0WjEwc0pXV25jS1FGeE0yZW9BOU9mU3djTVUwX1IxOGc?oc=5",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcFc1ZDlsUnFVNmpIUkpEdVRYYUZ5N2UxUVVJSTlsaE16YzJsUWlKVktoaW13VElKSXVQTHlmbmphVjQzZmZiQUtnVExubjdGTFhvMmg0U1NLN1JVMDg4dDdDTzZPRi1QNU9ZQ0RtUi1KVDZSaXBlNFlxS2o0SE11LS14YkVuY3BSNEhrT2ticUdFdzBPMDk3Szk0blJBTXJuQWdIQlR3N3dfLWZSYzd6bXpONGR0Sk4tQy0wLUItbGZtU0tKVEZIQXRQSlp1RDlj?oc=5",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1074,
+      "count": 1073,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 39,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 12,
     "usedFallback": true
   },
   "summary": {
@@ -104,27 +104,27 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Sony Music, Warner sue Anthropic, alleging copyright infringement"
+        "headline": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk&039;s history of breaking contracts"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "YARA-X 1.20.0 Release, Sun, Aug 30th"
+        "topic": "ai",
+        "headline": "GTA 6 Will Have No Microtransactions or Generative AI at Launch, Rockstar Says"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "OpenAI to end model access to Cursor after acquisition by Elon Musk's SpaceX"
+        "headline": "Sony Music, Warner sue Anthropic, alleging copyright infringement"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "How to Secure LLM Apps With OWASP Top 10: 12 Steps 2026 - tech-insider.org"
+        "topic": "security",
+        "headline": "YARA-X 1.20.0 Release, Sun, Aug 30th"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "CrowdStrike Unveils Token-Based Flex Model as AI Agents Reshape Cyber Threats"
+        "headline": "How to Secure LLM Apps With OWASP Top 10: 12 Steps 2026 - tech-insider.org"
       },
       {
         "rank": 6,
@@ -133,23 +133,23 @@
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "AI agents are making retrieval engineering a core engineering discipline"
+        "topic": "platform",
+        "headline": "Cloudflare Extends AI Search to Make it Easier for Agents and Developers to Search Custom Data"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Sterile IV Containers Market Insights Highlight Segment Expansion And Market Leadership"
+        "topic": "security",
+        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Your AI agent is only as good as the harness around it"
+        "topic": "security",
+        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
+        "topic": "kubernetes",
+        "headline": "Sterile IV Containers Market Insights Highlight Segment Expansion And Market Leadership"
       }
     ],
     "articleCount": 0
