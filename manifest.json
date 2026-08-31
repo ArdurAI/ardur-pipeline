@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-31T06:00:00.000Z",
-    "windowStart": "2026-08-31T06:00:00.000Z",
-    "windowEnd": "2026-08-31T12:00:00.000Z"
+    "id": "2026-08-31T12:00:00.000Z",
+    "windowStart": "2026-08-31T12:00:00.000Z",
+    "windowEnd": "2026-08-31T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-31T08:24:49.487Z",
-  "nextRefreshAt": "2026-08-31T12:00:00.000Z",
+  "publishedAt": "2026-08-31T13:28:25.949Z",
+  "nextRefreshAt": "2026-08-31T18:00:00.000Z",
   "runIds": {
-    "aggregation": "d9a95e11-00e7-44e4-960e-ef70370c84e9",
-    "ranking": "rank-4f1528d0",
-    "top10": "top10:2026-08-31T06:00:00.000Z",
-    "articles": "synth-top10:2026-08-31T06:00:00.000Z-2026-08-31T08:25:18.940Z"
+    "aggregation": "385e44f7-6ba2-486e-b81c-c30de58f5fba",
+    "ranking": "rank-6705ba9b",
+    "top10": "top10:2026-08-31T12:00:00.000Z",
+    "articles": "synth-top10:2026-08-31T12:00:00.000Z-2026-08-31T13:28:56.049Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-31T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-31T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-31T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-31T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-31T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-31T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1219,
+      "count": 1159,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1tUjhUSk5BM3ctZ1I5clprQ3d4dmxablE3VDBoY1RVaUU4TnJ5ZGpSUk96OGViUm96cDJyczdUV3kySjZxZXhLckVyZ2E2YXpaeVV3UjB4TXR0UDhG?oc=5",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1tUjhUSk5BM3ctZ1I5clprQ3d4dmxablE3VDBoY1RVaUU4TnJ5ZGpSUk96OGViUm96cDJyczdUV3kySjZxZXhLckVyZ2E2YXpaeVV3UjB4TXR0UDhG?oc=5",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,14 +54,14 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 994,
+      "count": 1186,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 39,
+      "count": 34,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 12,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:61313: Important: rhc security update"
+        "headline": "RHSA-2026:61379: Important: freerdp security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:61240: Moderate: pipewire security update"
+        "headline": "RHSA-2026:61351: Moderate: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:61259: Low: php security, bug fix, and enhancement update"
+        "topic": "models",
+        "headline": "Broadcom, OpenAI unveil Jalapeño AI inference chip"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic&039;s Claude Code limit change is a raise on paper but a cut in practice"
+        "topic": "kubernetes",
+        "headline": "OpenTelemetry has graduated… now what?"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "More Details Emerge on Exploited PaperCut Vulnerabilities"
+        "topic": "models",
+        "headline": "Open Model"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Sony Music Publishing and Warner Chappell Music Sue Anthropic"
+        "headline": "OpenClaw 2.0 Released With Major Security Upgrades for AI Agents, Plugins and Credentials"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Binance Unveils 'Agent OS' Platform to Connect AI Agents With Financial Services"
+        "topic": "platform",
+        "headline": "Security updates for Monday"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\""
+        "headline": "OpenAI vs Anthropic: The Fierce Race to Define the Future of AI Hardware"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "FlexGanttFX is Open Source"
+        "topic": "ai",
+        "headline": "Broadcom Unveils AI-Ready Data Foundations for VMware Tanzu Platform to Help Enterprises Deploy Trusted Private AI Agents"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "AI-powered multicluster management: Querying fleet health with OpenShift Lightspeed and Red Hat Advanced Cluster Management"
+        "topic": "ai",
+        "headline": "OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents"
       }
     ],
     "articleCount": 0
