@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-31T12:00:00.000Z",
-    "windowStart": "2026-08-31T12:00:00.000Z",
-    "windowEnd": "2026-08-31T18:00:00.000Z"
+    "id": "2026-08-31T18:00:00.000Z",
+    "windowStart": "2026-08-31T18:00:00.000Z",
+    "windowEnd": "2026-09-01T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-31T13:28:25.949Z",
-  "nextRefreshAt": "2026-08-31T18:00:00.000Z",
+  "publishedAt": "2026-08-31T22:40:57.187Z",
+  "nextRefreshAt": "2026-09-01T00:00:00.000Z",
   "runIds": {
-    "aggregation": "385e44f7-6ba2-486e-b81c-c30de58f5fba",
-    "ranking": "rank-6705ba9b",
-    "top10": "top10:2026-08-31T12:00:00.000Z",
-    "articles": "synth-top10:2026-08-31T12:00:00.000Z-2026-08-31T13:28:56.049Z"
+    "aggregation": "72adcff1-5023-4d20-9808-099d00a082a4",
+    "ranking": "rank-f23bfd43",
+    "top10": "top10:2026-08-31T18:00:00.000Z",
+    "articles": "synth-top10:2026-08-31T18:00:00.000Z-2026-08-31T22:41:36.649Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-31T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-31T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-31T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-08-31T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-08-31T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-08-31T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1159,
+      "count": 1224,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTE1tUjhUSk5BM3ctZ1I5clprQ3d4dmxablE3VDBoY1RVaUU4TnJ5ZGpSUk96OGViUm96cDJyczdUV3kySjZxZXhLckVyZ2E2YXpaeVV3UjB4TXR0UDhG?oc=5",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 8 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1186,
+      "count": 1437,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 17,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:61379: Important: freerdp security update"
+        "headline": "RHSA-2026:61779: Important: libreswan security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:61351: Moderate: kernel security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:61766: Moderate: glib2 security update"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "Broadcom, OpenAI unveil Jalapeño AI inference chip"
+        "topic": "kubernetes",
+        "headline": "Helm v4.3.0-rc.1"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "OpenTelemetry has graduated… now what?"
+        "topic": "models",
+        "headline": "TimesFM-3: A zero-shot foundation model for multivariate forecasting"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "Open Model"
+        "topic": "ai",
+        "headline": "OpenAI says its ChatGPT ad business hits a $1 billion annual run rate"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "OpenClaw 2.0 Released With Major Security Upgrades for AI Agents, Plugins and Credentials"
+        "headline": "Manage agents, tools and skills at scale with AWS Agent Registry"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Security updates for Monday"
+        "topic": "models",
+        "headline": "Broadcom, OpenAI unveil Jalapeño AI inference chip"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI vs Anthropic: The Fierce Race to Define the Future of AI Hardware"
+        "topic": "platform",
+        "headline": "OpenShot 4.0 released"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Broadcom Unveils AI-Ready Data Foundations for VMware Tanzu Platform to Help Enterprises Deploy Trusted Private AI Agents"
+        "topic": "platform",
+        "headline": "Respond to security threats faster with Tines and Observability Pipelines"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents"
+        "topic": "kubernetes",
+        "headline": "v2.9.5"
       }
     ],
     "articleCount": 0
