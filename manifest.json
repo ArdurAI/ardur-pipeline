@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-01T06:00:00.000Z",
-    "windowStart": "2026-09-01T06:00:00.000Z",
-    "windowEnd": "2026-09-01T12:00:00.000Z"
+    "id": "2026-09-01T12:00:00.000Z",
+    "windowStart": "2026-09-01T12:00:00.000Z",
+    "windowEnd": "2026-09-01T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-01T11:23:43.156Z",
-  "nextRefreshAt": "2026-09-01T12:00:00.000Z",
+  "publishedAt": "2026-09-01T16:20:10.438Z",
+  "nextRefreshAt": "2026-09-01T18:00:00.000Z",
   "runIds": {
-    "aggregation": "63173532-43e2-4a6d-9f66-19b8a708a738",
-    "ranking": "rank-c6f0127d",
-    "top10": "top10:2026-09-01T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-01T06:00:00.000Z-2026-09-01T11:24:14.968Z"
+    "aggregation": "d9ef1585-fe0f-4f86-a9cb-7138e2d653ab",
+    "ranking": "rank-f1026078",
+    "top10": "top10:2026-09-01T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-01T12:00:00.000Z-2026-09-01T16:20:43.684Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-01T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-01T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-01T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-01T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-01T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-01T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1211,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -49,39 +40,48 @@
       ]
     },
     {
+      "category": "other",
+      "count": 1357,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-15] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1427,
+      "count": 1630,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 22,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:61959: Important: kernel security update"
+        "topic": "platform",
+        "headline": "$ A pause for the Python JIT"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Critical JFrog Artifactory Vulnerability Reportedly Exploited in the Wild"
+        "headline": "RHSA-2026:60444: Important: OpenShift Container Platform 4.20.36 packages and security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Exclusive | Anthropic Signs $35 Billion Cloud Deal Backed by Nvidia"
+        "topic": "security",
+        "headline": "RHSA-2026:61943: Moderate: gstreamer1-plugins-good security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Apple Says OpenAI Is Destroying Evidence in Trade Secrets Case"
+        "topic": "platform",
+        "headline": "Security updates for Tuesday"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "OpenAI says its ChatGPT ad business hits a $1 billion annual run rate"
+        "headline": "OpenAI supports California’s bill to advance youth AI safety"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:61766: Moderate: glib2 security update"
+        "topic": "kubernetes",
+        "headline": "HashiCorp Vault agentic IAM is now generally available"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "OpenAI supports California’s bill to advance youth AI safety"
+        "headline": "Anthropic signs $35B cloud deal with Nvidia-backed provider"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Helm v4.3.0-rc.1"
+        "topic": "security",
+        "headline": "RHSA-2026:62029: Important: iscsi-initiator-utils security update"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Attackers Exploit Critical Langflow and Rails Flaws in Credential-Probing and C2 Activity"
+        "topic": "ai",
+        "headline": "Apple Accuses OpenAI of Destroying Evidence in Exchange of Barbs"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Manage agents, tools and skills at scale with AWS Agent Registry"
+        "topic": "security",
+        "headline": "Critical JFrog Artifactory Vulnerability Reportedly Exploited in the Wild"
       }
     ],
     "articleCount": 0
