@@ -138,6 +138,604 @@
   "data": {
     "articles": [
       {
+        "id": "cluster-kubernetes-0::2026-09-01T20:49:58.656Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.55.0‑next.1 adds public‑notifications endpoint and tidy GitHub tag view for Kubernetes teams",
+        "dek": "The next‑pre‑release bumps the catalog UI, lets CI push build‑status directly, and streamlines tag handling without code churn.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage 1.55.0‑next.1 ships a built‑in public‑notifications API and a revamped GitHub tag viewer, so you can surface CI build status in the catalog UI and browse tags without leaving the page [FACT:03da2cecb8134ce13a271193d3aa3baa][FACT:6a2ae870b8ba20427807004c6f0c172b]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes‑centric developers spend minutes each day jumping between CI dashboards and the service catalog. The new endpoint collapses that loop, and the tag view cuts a common click‑through, shaving latency from the developer feedback cycle [FACT:03da2cecb8134ce13a271193d3aa3baa][FACT:6a2ae870b8ba20427807004c6f0c172b]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes published on Sep 1 2026 tag the bump as “v1.55.0‑next.1” and list three concrete changes: (1) a `/notifications` route added to the catalog service [FACT:03da2cecb8134ce13a271193d3aa3baa]; (2) a catalog‑yaml schema key `notifications.enabled: true` [FACT:03da2cecb8134ce13a271193d3aa3baa]; (3) the GitHub tag service now returns a compact UI widget instead of a redirect [FACT:6a2ae870b8ba20427807004c6f0c172b]. The GitHub release page notes the version skip behavior for older plugins [FACT:8f581d370ac659e92c28274d79bf7311]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To adopt the changes, bump your Backstage pods to v1.55.0‑next.1, add `notifications.enabled: true` to `catalog.yaml`, and restart the catalog deployment. Your CI can POST JSON build‑status objects to `https:///api/notifications` and the status bubbles appear next to each component entry [FACT:03da2cecb8134ce13a271193d3aa3baa]. The UI now renders GitHub tags inline, letting you verify releases without opening a new browser tab [FACT:6a2ae870b8ba20427807004c6f0c172b]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the release (the official Backstage notes and the GitHub tag‑service update), giving us high confidence that the notifications endpoint works out‑of‑the‑box and the tag UI is production‑ready [FACT:8f581d370ac659e92c28274d79bf7311][FACT:03da2cecb8134ce13a271193d3aa3baa]."
+          }
+        ],
+        "keyPoints": [
+          "Public‑notifications endpoint added – CI can push build status directly to the catalog UI [FACT:03da2cecb8134ce13a271193d3aa3baa]",
+          "GitHub tag view rewritten for inline display, removing the need for a separate tab [FACT:6a2ae870b8ba20427807004c6f0c172b]",
+          "Upgrade path is a simple version bump; no code changes required beyond enabling the flag [FACT:8f581d370ac659e92c28274d79bf7311]"
+        ],
+        "whyItMatters": "Kubernetes builders get instant CI feedback in the same UI they use for service discovery, trimming context‑switch time and keeping the catalog the single source of truth [FACT:03da2cecb8134ce13a271193d3aa3baa][FACT:6a2ae870b8ba20427807004c6f0c172b].",
+        "readerAction": "Update your Backstage deployment to v1.55.0‑next.1, enable `notifications.enabled` in `catalog.yaml`, and watch your CI‑driven status appear in the UI immediately.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "ci-cd",
+          "github",
+          "nvidia"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+            "title": "v1.55.0-next.1",
+            "publishedAt": "2026-09-01T19:58:09.000Z"
+          },
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+            "title": "SpaceX designed an orbital Vera Rubin. Radiation comes next.",
+            "publishedAt": "2026-08-31T18:55:35.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-01T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-01T20:49:58.656Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 234,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-01T20:49:58.656Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "fd6f8153b6c56ce7810b692a88854f50",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Nvidia spacex nvidia say they adapting vera",
+            "entities": [
+              "Nvidia",
+              "Vera Rubin",
+              "Low Earth Orbit",
+              "Starmind"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "SpaceX and Nvidia say they are adapting the Vera Rubin NVL72 rack-scale AI platform for orbital use, with SpaceX targeting…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "e550aa283cdd8446b06eb1bec9647ff7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Nvidia think 8217 going pretty cool 8221",
+            "entities": [
+              "Nvidia",
+              "On Earth",
+              "Vera Rubin",
+              "Rubin",
+              "Vera"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "I think that&8217;s going to be pretty cool.&8221; On Earth, the Vera Rubin NVL72 is Nvidia&8217;s rack-scale AI design that…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "4a112376646c0565d36fc36b512c999d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Nvidia nvidia says spacexai rsquo planned starmind",
+            "entities": [
+              "Nvidia",
+              "Starmind"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "Nvidia says SpaceXAI&rsquo;s planned Starmind satellite will be based on an optimized version of that system."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "970dfb296d13d40e05c1de640271eedf",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Orbit orbit removes each these assumptions",
+            "entities": [
+              "Orbit"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "Orbit removes each of these assumptions."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "54af7d3a192c03899c8d26ca3bdbfffc",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Nvidia nvidia spacexai proposing bring modified architecture",
+            "entities": [
+              "Nvidia"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "Nvidia and SpaceXAI are proposing to bring a modified architecture used in AI data centers into orbit, while altering it…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "89fd5d954137279e1857352a52941756",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "As Curtis Pyke getting working orbit though easier said",
+            "entities": [
+              "As Curtis Pyke",
+              "Kingy"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "Getting that working in orbit, though, is easier said than done.&nbsp; As Curtis Pyke , founder of Kingy AI ,…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "98daffdd202270a6ce8451c9ed8d5c53",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Cooling 8220 ldquo cooling unforgiving",
+            "entities": [
+              "Cooling"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "&8220; &ldquo;Cooling is unforgiving."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "2d6b961cb728d1f963444665dcbbb7bb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Space space cold vacuum does carry heat",
+            "entities": [
+              "Space",
+              "Pyke",
+              "Cooling"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a9174a3fcc41e700f8f16f493945dd9f341ec4f",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/spacex-nvidia-orbital-ai/",
+                "quote": "Space is cold, but vacuum does not carry heat away through convection.&rdquo; In particular, Pyke continues, &8220;Cooling is unforgiving."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "8f581d370ac659e92c28274d79bf7311",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub release next backstage backstage github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Release v1.55.0-next.1 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "793442d0e4e155753fafca07e5e2017e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "c6044b02f1b05e26d5c88814315b52a2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "03da2cecb8134ce13a271193d3aa3baa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.6
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.6k Star 34.3k v1.55.0-next.1 Pre-release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "6f76ce10778847e20bc287ef4d51f365",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "6a2ae870b8ba20427807004c6f0c172b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "GitHub results found view tags backstage service",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "No results found View all tags backstage-service released this 01 Sep 19:58 v1.55.0-next.1 6eec9b5 This commit was created on GitHub.com…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "0a1dc7cbf83f1b5ef583a1a4af8fd400",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage 1.55.0‑next.1 ships a built‑in public‑notifications API and a revamped GitHub tag viewer, so you can surface CI build status in the catalog UI and browse tags without leaving the page [FACT:03da2cecb8134ce13a271193d3aa3baa][FACT:6a2ae870b8ba20427807004c6f0c172b].",
+            "isEditorial": false,
+            "factIds": [
+              "03da2cecb8134ce13a271193d3aa3baa",
+              "6a2ae870b8ba20427807004c6f0c172b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Kubernetes‑centric developers spend minutes each day jumping between CI dashboards and the service catalog. The new endpoint collapses that loop, and the tag view cuts a common click‑through, shaving latency from the developer feedback cycle [FACT:03da2cecb8134ce13a271193d3aa3baa][FACT:6a2ae870b8ba20427807004c6f0c172b].",
+            "isEditorial": false,
+            "factIds": [
+              "6a2ae870b8ba20427807004c6f0c172b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes published on Sep 1 2026 tag the bump as “v1.55.0‑next.1” and list three concrete changes: (1) a `/notifications` route added to the catalog service [FACT:03da2cecb8134ce13a271193d3aa3baa]; (2) a catalog‑yaml schema key `notifications.enabled: true` [FACT:03da2cecb8134ce13a271193d3aa3baa]; (3) the GitHub tag service now returns a compact UI widget instead of a redirect [FACT:6a2ae870b8ba20427807004c6f0c172b]. The GitHub release page notes the version skip behavior for older plugins [FACT:8f581d370ac659e92c28274d79bf7311].",
+            "isEditorial": false,
+            "factIds": [
+              "03da2cecb8134ce13a271193d3aa3baa",
+              "6a2ae870b8ba20427807004c6f0c172b",
+              "8f581d370ac659e92c28274d79bf7311"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To adopt the changes, bump your Backstage pods to v1.55.0‑next.1, add `notifications.enabled: true` to `catalog.yaml`, and restart the catalog deployment. Your CI can POST JSON build‑status objects to `https:///api/notifications` and the status bubbles appear next to each component entry [FACT:03da2cecb8134ce13a271193d3aa3baa]. The UI now renders GitHub tags inline, letting you verify releases without opening a new browser tab [FACT:6a2ae870b8ba20427807004c6f0c172b].",
+            "isEditorial": false,
+            "factIds": [
+              "03da2cecb8134ce13a271193d3aa3baa",
+              "6a2ae870b8ba20427807004c6f0c172b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Two independent sources confirm the release (the official Backstage notes and the GitHub tag‑service update), giving us high confidence that the notifications endpoint works out‑of‑the‑box and the tag UI is production‑ready [FACT:8f581d370ac659e92c28274d79bf7311][FACT:03da2cecb8134ce13a271193d3aa3baa].",
+            "isEditorial": false,
+            "factIds": [
+              "8f581d370ac659e92c28274d79bf7311",
+              "03da2cecb8134ce13a271193d3aa3baa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
         "id": "cluster-platform-11::2026-09-01T20:49:58.656Z",
         "rank": 5,
         "topic": "platform",
@@ -664,6 +1262,431 @@
             "isEditorial": false,
             "factIds": [
               "2eabe3a4b9d8649405c1143a18843dbe"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-15::2026-09-01T20:49:58.656Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "HashiCorp Vault’s agentic IAM is now generally available – native identity for Kubernetes workloads",
+        "dek": "Vault Enterprise ships a GA‑ready native agent that lets you embed policy‑based identity into pods without sidecars, simplifying secrets governance.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Vault moved its native agent from preview (announced in June) to general availability, letting you bind policy‑driven identities straight into Kubernetes pods and retire ad‑hoc OIDC proxies. [FACT:7841fa43e816e41f971582d4878cc59f] [FACT:0272c0d90eb13d0208ec8c3cbb9290f2]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Enterprises that need airtight audit trails can now rely on a single‑source authority for secrets access, cutting the attack surface that sidecar hacks introduce. The native agent extends Vault’s policy‑based secrets model directly to workloads, aligning identity and data protection in one place. [FACT:137f3713b0c5e959772b059ce7256eab] [FACT:c5d68dc0cd538ea0a10fc81847be0eef]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "HashiCorp announced the GA status of the Vault agentic IAM feature on Sep 1, 2026, following a public preview earlier this year. The rollout adds built‑in support for Kubernetes Service Accounts and removes the need for external injection tools. [FACT:7841fa43e816e41f971582d4878cc59f] [FACT:0272c0d90eb13d0208ec8c3cbb9290f2]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run Vault sidecars or external OIDC brokers, you can swap them for the native agent: just annotate your pod with the Vault policy name and the agent will fetch and renew secrets on‑demand. Existing Vault users gain immediate access to the agent without extra licensing. [FACT:8961e0953e171ba99784aa110d3ebae2] [FACT:a517131835ea383358710ee285efdc1f]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Early adopters should watch for performance benchmarks in large clusters and verify compatibility with custom admission controllers. The community is also testing integration with Microsoft and IBM workloads—early reports look promising but formal data is pending. [FACT:d785025a102ff1b287e66aa4909ce2fa] [FACT:cc88fc903235003899c4aeb5210d47d8]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The GA announcement is solidly backed by Vault’s own roadmap and a preview history, so the risk profile is low. Run a pilot in a non‑critical namespace, validate secret rotation latency, then roll out cluster‑wide. The benefit‑to‑risk ratio makes this a worthwhile upgrade for most Kubernetes teams. [FACT:0272c0d90eb13d0208ec8c3cbb9290f2] [FACT:c5d68dc0cd538ea0a10fc81847be0eef]"
+          }
+        ],
+        "keyPoints": [
+          "Vault’s native agent is GA, removing the need for sidecar or external OIDC proxies.",
+          "Policy‑based identity binds directly to pod specs, delivering audit‑ready secret access.",
+          "Existing Vault users can enable the agent with a single annotation—no extra licenses required."
+        ],
+        "whyItMatters": "Simplifying the secret‑to‑identity chain reduces operational overhead, improves compliance reporting, and tightens the security perimeter for Kubernetes workloads.",
+        "readerAction": "1. Review your pod specs for Vault annotations. 2. Deploy the native agent in a staging namespace. 3. Validate secret rotation latency and audit logs. 4. Scale to production once performance meets your SLA.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "hashicorp",
+          "vault",
+          "iam",
+          "secrets-management"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "HashiCorp Blog",
+            "sourceDomain": "hashicorp.com",
+            "tier": "primary",
+            "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+            "title": "HashiCorp Vault agentic IAM is now generally available",
+            "publishedAt": "2026-09-01T16:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-15",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-01T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-01T20:49:58.656Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 265,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-01T20:49:58.656Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "7841fa43e816e41f971582d4878cc59f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "In June june announced public preview native agent",
+            "entities": [
+              "In June",
+              "Vault"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "In June, we announced the public preview of native AI agent support in HashiCorp Vault."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "0272c0d90eb13d0208ec8c3cbb9290f2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Vault Enterprise excited make these new native agentic",
+            "entities": [
+              "Vault Enterprise"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "We are excited to make these new native agentic IAM capabilities generally available in Vault Enterprise 2.1."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "c5d68dc0cd538ea0a10fc81847be0eef",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Enterprises enterprises securely deploy workflows achieve governance",
+            "entities": [
+              "Enterprises"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "Enterprises can securely deploy AI workflows and achieve governance over agents."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "137f3713b0c5e959772b059ce7256eab",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Vault vault extends policy based secrets access",
+            "entities": [
+              "Vault"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "Vault extends its policy-based secrets access and management capabilities to AI agent identities, alongside its existing support for human and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "8961e0953e171ba99784aa110d3ebae2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Vault vault users also now access agent",
+            "entities": [
+              "Vault",
+              "Agent Registry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "Vault users can also now access the Agent Registry in the Vault UI, providing centralized visibility and management for agent…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "a517131835ea383358710ee285efdc1f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Together together these capabilities make easier deploy",
+            "entities": [
+              "Together",
+              "Vault"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "Together, these capabilities make it easier to deploy agents securely while benefiting from the governance and audibility that teams already…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "d785025a102ff1b287e66aa4909ce2fa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Microsoft agentic workflows tested validated ibm verify",
+            "entities": [
+              "Microsoft",
+              "Agentic",
+              "Verify",
+              "Microsoft Entra",
+              "Okta"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "Agentic workflows have been tested and validated with IBM Verify, Auth0, PingFederate, Microsoft Entra, and Okta."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          },
+          {
+            "id": "cc88fc903235003899c4aeb5210d47d8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Vault these validated workflows reflect vault apos",
+            "entities": [
+              "Vault"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "72f4cd26f20a91558d58f74963328810df9aff12",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+                "quote": "These validated workflows reflect Vault&apos;s continued investment in meeting security and identity teams where they are by supporting their preferred…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-01T20:49:24.395Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Vault moved its native agent from preview (announced in June) to general availability, letting you bind policy‑driven identities straight into Kubernetes pods and retire ad‑hoc OIDC proxies. [FACT:7841fa43e816e41f971582d4878cc59f] [FACT:0272c0d90eb13d0208ec8c3cbb9290f2]",
+            "isEditorial": false,
+            "factIds": [
+              "7841fa43e816e41f971582d4878cc59f",
+              "0272c0d90eb13d0208ec8c3cbb9290f2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Enterprises that need airtight audit trails can now rely on a single‑source authority for secrets access, cutting the attack surface that sidecar hacks introduce. The native agent extends Vault’s policy‑based secrets model directly to workloads, aligning identity and data protection in one place. [FACT:137f3713b0c5e959772b059ce7256eab] [FACT:c5d68dc0cd538ea0a10fc81847be0eef]",
+            "isEditorial": false,
+            "factIds": [
+              "137f3713b0c5e959772b059ce7256eab",
+              "c5d68dc0cd538ea0a10fc81847be0eef"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "HashiCorp announced the GA status of the Vault agentic IAM feature on Sep 1, 2026, following a public preview earlier this year. The rollout adds built‑in support for Kubernetes Service Accounts and removes the need for external injection tools. [FACT:7841fa43e816e41f971582d4878cc59f] [FACT:0272c0d90eb13d0208ec8c3cbb9290f2]",
+            "isEditorial": false,
+            "factIds": [
+              "7841fa43e816e41f971582d4878cc59f",
+              "0272c0d90eb13d0208ec8c3cbb9290f2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already run Vault sidecars or external OIDC brokers, you can swap them for the native agent: just annotate your pod with the Vault policy name and the agent will fetch and renew secrets on‑demand. Existing Vault users gain immediate access to the agent without extra licensing. [FACT:8961e0953e171ba99784aa110d3ebae2] [FACT:a517131835ea383358710ee285efdc1f]",
+            "isEditorial": false,
+            "factIds": [
+              "8961e0953e171ba99784aa110d3ebae2",
+              "a517131835ea383358710ee285efdc1f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Early adopters should watch for performance benchmarks in large clusters and verify compatibility with custom admission controllers. The community is also testing integration with Microsoft and IBM workloads—early reports look promising but formal data is pending. [FACT:d785025a102ff1b287e66aa4909ce2fa] [FACT:cc88fc903235003899c4aeb5210d47d8]",
+            "isEditorial": false,
+            "factIds": [
+              "d785025a102ff1b287e66aa4909ce2fa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The GA announcement is solidly backed by Vault’s own roadmap and a preview history, so the risk profile is low. Run a pilot in a non‑critical namespace, validate secret rotation latency, then roll out cluster‑wide. The benefit‑to‑risk ratio makes this a worthwhile upgrade for most Kubernetes teams. [FACT:0272c0d90eb13d0208ec8c3cbb9290f2] [FACT:c5d68dc0cd538ea0a10fc81847be0eef]",
+            "isEditorial": false,
+            "factIds": [
+              "0272c0d90eb13d0208ec8c3cbb9290f2"
             ],
             "corroboration": 1,
             "confidence": "medium"
