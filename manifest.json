@@ -1,42 +1,33 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-08-31T18:00:00.000Z",
-    "windowStart": "2026-08-31T18:00:00.000Z",
-    "windowEnd": "2026-09-01T00:00:00.000Z"
+    "id": "2026-09-01T00:00:00.000Z",
+    "windowStart": "2026-09-01T00:00:00.000Z",
+    "windowEnd": "2026-09-01T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-08-31T22:40:57.187Z",
-  "nextRefreshAt": "2026-09-01T00:00:00.000Z",
+  "publishedAt": "2026-09-01T04:24:16.042Z",
+  "nextRefreshAt": "2026-09-01T06:00:00.000Z",
   "runIds": {
-    "aggregation": "72adcff1-5023-4d20-9808-099d00a082a4",
-    "ranking": "rank-f23bfd43",
-    "top10": "top10:2026-08-31T18:00:00.000Z",
-    "articles": "synth-top10:2026-08-31T18:00:00.000Z-2026-08-31T22:41:36.649Z"
+    "aggregation": "d4f1728c-5c12-4f67-a76c-41e851d8f303",
+    "ranking": "rank-f4e98cae",
+    "top10": "top10:2026-09-01T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-01T00:00:00.000Z-2026-09-01T04:24:46.667Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-08-31T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-08-31T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-08-31T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-01T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-01T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-01T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 81,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
-      ]
-    },
-    {
-      "category": "other",
-      "count": 1224,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -46,6 +37,15 @@
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
         "[ai] source importai.substack.com: HTTP 403 Forbidden"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1208,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,28 +59,28 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1437,
+      "count": 1430,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 20,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:61779: Important: libreswan security update"
+        "headline": "RHSA-2026:60668: Important: Red Hat build of MicroShift 4.21.31 security update"
       },
       {
         "rank": 2,
@@ -113,43 +113,43 @@
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:61679: Important: iscsi-initiator-utils security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Exclusive | Anthropic Signs $35 Billion Cloud Deal Backed by Nvidia"
+      },
+      {
+        "rank": 5,
         "topic": "kubernetes",
         "headline": "Helm v4.3.0-rc.1"
       },
       {
-        "rank": 4,
-        "topic": "models",
-        "headline": "TimesFM-3: A zero-shot foundation model for multivariate forecasting"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI says its ChatGPT ad business hits a $1 billion annual run rate"
-      },
-      {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Polimill builds Japan's next-generation public AI infrastructure"
+      },
+      {
+        "rank": 7,
         "topic": "ai",
         "headline": "Manage agents, tools and skills at scale with AWS Agent Registry"
       },
       {
-        "rank": 7,
-        "topic": "models",
-        "headline": "Broadcom, OpenAI unveil Jalapeño AI inference chip"
-      },
-      {
         "rank": 8,
-        "topic": "platform",
-        "headline": "OpenShot 4.0 released"
+        "topic": "ai",
+        "headline": "Apple Adds More Allegations To Its Trade Secrets Lawsuit Against OpenAI"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Respond to security threats faster with Tines and Observability Pipelines"
+        "topic": "models",
+        "headline": "TimesFM-3: A zero-shot foundation model for multivariate forecasting"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v2.9.5"
+        "headline": "Kubernetes v1.37: Storage Version Migration Enabled by Default"
       }
     ],
     "articleCount": 0
