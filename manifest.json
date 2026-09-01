@@ -1,33 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-01T00:00:00.000Z",
-    "windowStart": "2026-09-01T00:00:00.000Z",
-    "windowEnd": "2026-09-01T06:00:00.000Z"
+    "id": "2026-09-01T06:00:00.000Z",
+    "windowStart": "2026-09-01T06:00:00.000Z",
+    "windowEnd": "2026-09-01T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-01T04:24:16.042Z",
-  "nextRefreshAt": "2026-09-01T06:00:00.000Z",
+  "publishedAt": "2026-09-01T11:23:43.156Z",
+  "nextRefreshAt": "2026-09-01T12:00:00.000Z",
   "runIds": {
-    "aggregation": "d4f1728c-5c12-4f67-a76c-41e851d8f303",
-    "ranking": "rank-f4e98cae",
-    "top10": "top10:2026-09-01T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-01T00:00:00.000Z-2026-09-01T04:24:46.667Z"
+    "aggregation": "63173532-43e2-4a6d-9f66-19b8a708a738",
+    "ranking": "rank-c6f0127d",
+    "top10": "top10:2026-09-01T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-01T06:00:00.000Z-2026-09-01T11:24:14.968Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-01T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-01T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-01T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-01T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-01T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-01T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 84,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
+      ]
+    },
+    {
+      "category": "other",
+      "count": 1211,
+      "sample": [
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -40,26 +49,17 @@
       ]
     },
     {
-      "category": "other",
-      "count": 1208,
-      "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1430,
+      "count": 1427,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
@@ -79,7 +79,7 @@
       "category": "copyright-gate",
       "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:60668: Important: Red Hat build of MicroShift 4.21.31 security update"
+        "headline": "RHSA-2026:61959: Important: kernel security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:61766: Moderate: glib2 security update"
+        "headline": "Critical JFrog Artifactory Vulnerability Reportedly Exploited in the Wild"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:61679: Important: iscsi-initiator-utils security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 4,
         "topic": "ai",
         "headline": "Exclusive | Anthropic Signs $35 Billion Cloud Deal Backed by Nvidia"
       },
       {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Apple Says OpenAI Is Destroying Evidence in Trade Secrets Case"
+      },
+      {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Helm v4.3.0-rc.1"
+        "topic": "ai",
+        "headline": "OpenAI says its ChatGPT ad business hits a $1 billion annual run rate"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Polimill builds Japan's next-generation public AI infrastructure"
+        "topic": "security",
+        "headline": "RHSA-2026:61766: Moderate: glib2 security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Manage agents, tools and skills at scale with AWS Agent Registry"
+        "headline": "OpenAI supports California’s bill to advance youth AI safety"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Apple Adds More Allegations To Its Trade Secrets Lawsuit Against OpenAI"
+        "topic": "kubernetes",
+        "headline": "Helm v4.3.0-rc.1"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "TimesFM-3: A zero-shot foundation model for multivariate forecasting"
+        "topic": "security",
+        "headline": "Attackers Exploit Critical Langflow and Rails Flaws in Credential-Probing and C2 Activity"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: Storage Version Migration Enabled by Default"
+        "topic": "models",
+        "headline": "Manage agents, tools and skills at scale with AWS Agent Registry"
       }
     ],
     "articleCount": 0
