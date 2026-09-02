@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-01T18:00:00.000Z",
-    "windowStart": "2026-09-01T18:00:00.000Z",
-    "windowEnd": "2026-09-02T00:00:00.000Z"
+    "id": "2026-09-02T00:00:00.000Z",
+    "windowStart": "2026-09-02T00:00:00.000Z",
+    "windowEnd": "2026-09-02T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-01T20:49:24.219Z",
-  "nextRefreshAt": "2026-09-02T00:00:00.000Z",
+  "publishedAt": "2026-09-02T03:47:00.219Z",
+  "nextRefreshAt": "2026-09-02T06:00:00.000Z",
   "runIds": {
-    "aggregation": "637c3733-5dc6-4bb5-91bd-45921f56ced2",
-    "ranking": "rank-bd043d83",
-    "top10": "top10:2026-09-01T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-01T18:00:00.000Z-2026-09-01T20:49:58.656Z"
+    "aggregation": "48ea0ac6-034d-4a12-888e-372d10037a21",
+    "ranking": "rank-cdb8725f",
+    "top10": "top10:2026-09-02T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-02T00:00:00.000Z-2026-09-02T03:47:36.255Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-01T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-01T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-01T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-02T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-02T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-02T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 90,
+      "count": 87,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1472,
+      "count": 1405,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
         "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1724,
+      "count": 1642,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -103,23 +103,23 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Introducing Claude Fable 5.1 on AWS"
+        "topic": "security",
+        "headline": "RHSA-2026:62345: Important: kernel security update"
       },
       {
         "rank": 2,
         "topic": "kubernetes",
-        "headline": "v1.55.0-next.1"
+        "headline": "v0.160.0"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:62269: Important: dracut security update"
+        "topic": "kubernetes",
+        "headline": "v1.55.0-next.1"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:62218: Moderate: libssh security update"
+        "topic": "ai",
+        "headline": "Claude Fable 5.1 made me a really nice animated pelican"
       },
       {
         "rank": 5,
@@ -129,27 +129,27 @@
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic opens Claude AI text detection to regulators, media, fact-checkers, and others"
+        "headline": "How law firm Gilbert + Tobin governs and scales AI with OpenAI"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT"
+        "topic": "security",
+        "headline": "RHSA-2026:62218: Moderate: libssh security update"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "OpenClaw 2.0 Releases with Simplified Setup and Collaborative Agents"
+        "topic": "ai",
+        "headline": "OpenAI Says Astra Crosses Critical Cybersecurity Threshold, Finds 2 Zero-Day Vulnerabilities: how 10 outlets framed it"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "OpenAI Hits Back at Apple Lawsuit Claiming It Stole Trade Secrets"
+        "headline": "Anthropic opens Claude AI text detection to regulators, media, fact-checkers, and others"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Security updates for Tuesday"
+        "headline": "OpenClaw 2.0 Releases with Simplified Setup and Collaborative Agents"
       }
     ],
     "articleCount": 1

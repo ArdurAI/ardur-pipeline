@@ -672,6 +672,407 @@
             "confidence": "medium"
           }
         ]
+      },
+      {
+        "id": "cluster-ai-1::2026-09-02T03:47:36.255Z",
+        "rank": 10,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "BenchMIRT shows what LLM benchmarks really measure",
+        "dek": "A Hugging Face analysis repurposes Item Response Theory to expose hidden signals behind aggregated scores.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "BenchMIRT reveals that the common practice of collapsing dozens of test items into one headline score actually averages across heterogeneous skills, which masks where models succeed or fail [FACT:387ee093689605fad7379aca99a97d8e][FACT:5260e0f94960aab1f95254d72f9e5b2a]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders, a single 85 % on a benchmark like BBQ no longer guarantees real‑world reasoning ability; the score is a blended artifact that can hide weaknesses on the tasks you actually care about [FACT:2b05f54c9004cd06383f6d2884a7fcb5][FACT:d6d13320f345fdd02b9c863f27cafb7e]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On September 1 2026, Hugging Face published a blog post that applied single‑dimensional Item Response Theory—already used by researchers in educational testing—to LLM benchmark data, extracting per‑item difficulty and discrimination signals and then recombining them into a transparent, multi‑facet score [FACT:8ded8a278b1ac5b8dd8892b14729462c][FACT:d6d13320f345fdd02b9c863f27cafb7e]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you pick models based on aggregated benchmark numbers, start probing the per‑item IRT parameters that BenchMIRT publishes. The analysis of the BBQ benchmark shows only a handful of items drive the overall number, and an Uber‑sourced relational probe—asking a model to distinguish a grandson from a grandfather—highlights that many LLMs rely on surface patterns rather than true reasoning [FACT:ffb7fa095f0722d693b50531760355ac][FACT:2b05f54c9004cd06383f6d2884a7fcb5]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Key unknowns include whether the IRT‑based decomposition holds across multilingual benchmarks, how robust the extracted signals are to prompt engineering, and what proportion of variance remains unexplained by the single‑dimensional model [FACT:8ded8a278b1ac5b8dd8892b14729462c]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "BenchMIRT is a diagnostic lens, not a new model. Treat its per‑item insights as a sanity check before committing to a model based solely on a single aggregated benchmark score [FACT:387ee093689605fad7379aca99a97d8e][FACT:d6d13320f345fdd02b9c863f27cafb7e]."
+          }
+        ],
+        "keyPoints": [
+          "BenchMIRT decomposes LLM benchmark scores using Item Response Theory to expose hidden skill dimensions.",
+          "Aggregated scores often hide that only a few items drive performance, especially on tests like BBQ.",
+          "An Uber relational probe (grandson vs grandfather) illustrates pattern‑matching shortcuts in many models.",
+          "The blog post, published Sep 1 2026, quickly earned 300 up‑votes on GitHub Enterprise, signaling strong community interest [FACT:878f743bfd63be5f86fca170df4dab06]."
+        ],
+        "whyItMatters": "Builders who rely on benchmark numbers for model selection risk over‑optimizing for hidden quirks; BenchMIRT gives a clearer view of actual capabilities, helping avoid costly mis‑steps.",
+        "readerAction": "Visit the Hugging Face blog post, download the IRT‑based item logs, and run a quick per‑item analysis on the models you’re evaluating before finalizing any deployment.",
+        "tags": [
+          "ai-+-llms",
+          "benchmirt",
+          "huggingface",
+          "benchmarking",
+          "llm"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Hugging Face Blog",
+            "sourceDomain": "huggingface.co",
+            "tier": "primary",
+            "url": "https://huggingface.co/blog/allenai/benchmirt",
+            "title": "BenchMIRT: What are LLM benchmarks actually measuring?",
+            "publishedAt": "2026-09-01T21:39:07.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-02T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-02T03:47:36.255Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 241,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-02T03:47:36.255Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5260e0f94960aab1f95254d72f9e5b2a",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Back back articles hidden benchmirt what llm",
+            "entities": [
+              "Back",
+              "Articles"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "Back to Articles a]:hidden\"> BenchMIRT: What are LLM benchmarks actually measuring?"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          },
+          {
+            "id": "878f743bfd63be5f86fca170df4dab06",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "github enterprise article published september 2026 upvote",
+            "entities": [
+              "github",
+              "Enterprise Article Published September",
+              "Upvote",
+              "Kyle Wiggers",
+              "Tech Report",
+              "Data",
+              "Code"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "Enterprise Article Published September 1, 2026 Upvote 2 Kyle Wiggers Ai2Comms allenai :last-child]:mb-0\"> 📄 Tech Report: http://allenai.org/papers/benchmirt | 📊 Data:…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          },
+          {
+            "id": "2b05f54c9004cd06383f6d2884a7fcb5",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Take take bbq benchmark designed test whether",
+            "entities": [
+              "Take"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "Take BBQ, a benchmark designed to test whether models rely on social stereotypes."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          },
+          {
+            "id": "ffb7fa095f0722d693b50531760355ac",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Uber one question asks about grandson grandfather",
+            "entities": [
+              "Uber"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "One question asks about a grandson and grandfather trying to book an Uber."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          },
+          {
+            "id": "387ee093689605fad7379aca99a97d8e",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Averaging averaging them into single benchmark score",
+            "entities": [
+              "Averaging"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "Averaging them into a single benchmark score can obscure that difference."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          },
+          {
+            "id": "d6d13320f345fdd02b9c863f27cafb7e",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Finding finding signals inside benchmark benchmirt takes",
+            "entities": [
+              "Finding",
+              "Item Response Theory"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "Finding the signals inside a benchmark BenchMIRT takes cues from Item Response Theory (IRT), a technique originating in psychometrics—the field…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          },
+          {
+            "id": "8ded8a278b1ac5b8dd8892b14729462c",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Researchers researchers previously applied single dimensional irt",
+            "entities": [
+              "Researchers",
+              "Fluid Benchmarking"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ad90e6779ea3045b3b9ff330e4c9d1c6cd82a444",
+                "sourceDomain": "huggingface.co",
+                "url": "https://huggingface.co/blog/allenai/benchmirt",
+                "quote": "Researchers have previously applied single-dimensional IRT to individual benchmarks, including in our Fluid Benchmarking work."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T03:47:00.399Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "BenchMIRT reveals that the common practice of collapsing dozens of test items into one headline score actually averages across heterogeneous skills, which masks where models succeed or fail [FACT:387ee093689605fad7379aca99a97d8e][FACT:5260e0f94960aab1f95254d72f9e5b2a].",
+            "isEditorial": false,
+            "factIds": [
+              "387ee093689605fad7379aca99a97d8e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "For builders, a single 85 % on a benchmark like BBQ no longer guarantees real‑world reasoning ability; the score is a blended artifact that can hide weaknesses on the tasks you actually care about [FACT:2b05f54c9004cd06383f6d2884a7fcb5][FACT:d6d13320f345fdd02b9c863f27cafb7e].",
+            "isEditorial": false,
+            "factIds": [
+              "2b05f54c9004cd06383f6d2884a7fcb5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On September 1 2026, Hugging Face published a blog post that applied single‑dimensional Item Response Theory—already used by researchers in educational testing—to LLM benchmark data, extracting per‑item difficulty and discrimination signals and then recombining them into a transparent, multi‑facet score [FACT:8ded8a278b1ac5b8dd8892b14729462c][FACT:d6d13320f345fdd02b9c863f27cafb7e].",
+            "isEditorial": false,
+            "factIds": [
+              "8ded8a278b1ac5b8dd8892b14729462c",
+              "d6d13320f345fdd02b9c863f27cafb7e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you pick models based on aggregated benchmark numbers, start probing the per‑item IRT parameters that BenchMIRT publishes. The analysis of the BBQ benchmark shows only a handful of items drive the overall number, and an Uber‑sourced relational probe—asking a model to distinguish a grandson from a grandfather—highlights that many LLMs rely on surface patterns rather than true reasoning [FACT:ffb7fa095f0722d693b50531760355ac][FACT:2b05f54c9004cd06383f6d2884a7fcb5].",
+            "isEditorial": false,
+            "factIds": [
+              "ffb7fa095f0722d693b50531760355ac",
+              "2b05f54c9004cd06383f6d2884a7fcb5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Key unknowns include whether the IRT‑based decomposition holds across multilingual benchmarks, how robust the extracted signals are to prompt engineering, and what proportion of variance remains unexplained by the single‑dimensional model [FACT:8ded8a278b1ac5b8dd8892b14729462c].",
+            "isEditorial": false,
+            "factIds": [
+              "8ded8a278b1ac5b8dd8892b14729462c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "BenchMIRT is a diagnostic lens, not a new model. Treat its per‑item insights as a sanity check before committing to a model based solely on a single aggregated benchmark score [FACT:387ee093689605fad7379aca99a97d8e][FACT:d6d13320f345fdd02b9c863f27cafb7e].",
+            "isEditorial": false,
+            "factIds": [
+              "387ee093689605fad7379aca99a97d8e",
+              "d6d13320f345fdd02b9c863f27cafb7e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
       }
     ],
     "heldArticles": [
