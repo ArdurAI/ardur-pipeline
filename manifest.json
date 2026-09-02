@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-02T00:00:00.000Z",
-    "windowStart": "2026-09-02T00:00:00.000Z",
-    "windowEnd": "2026-09-02T06:00:00.000Z"
+    "id": "2026-09-02T06:00:00.000Z",
+    "windowStart": "2026-09-02T06:00:00.000Z",
+    "windowEnd": "2026-09-02T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-02T03:47:00.219Z",
-  "nextRefreshAt": "2026-09-02T06:00:00.000Z",
+  "publishedAt": "2026-09-02T08:37:55.989Z",
+  "nextRefreshAt": "2026-09-02T12:00:00.000Z",
   "runIds": {
-    "aggregation": "48ea0ac6-034d-4a12-888e-372d10037a21",
-    "ranking": "rank-cdb8725f",
-    "top10": "top10:2026-09-02T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-02T00:00:00.000Z-2026-09-02T03:47:36.255Z"
+    "aggregation": "04ebc18e-4f77-426a-8218-4feb7fa10790",
+    "ranking": "rank-649f33f4",
+    "top10": "top10:2026-09-02T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-02T06:00:00.000Z-2026-09-02T08:38:33.669Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-02T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-02T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-02T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-02T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-02T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-02T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1405,
+      "count": 1281,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1642,
+      "count": 1491,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 20,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:62345: Important: kernel security update"
+        "topic": "ai",
+        "headline": "Introducing Claude Fable 5.1 on AWS"
       },
       {
         "rank": 2,
+        "topic": "ai",
+        "headline": "OpenAI says Astra AI model is its first that crosses 'Critical' cybersecurity capability"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:62420: Important: gegl04 security update"
+      },
+      {
+        "rank": 4,
         "topic": "kubernetes",
         "headline": "v0.160.0"
       },
       {
-        "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.55.0-next.1"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Claude Fable 5.1 made me a really nice animated pelican"
-      },
-      {
         "rank": 5,
+        "topic": "security",
+        "headline": "SonicWall warns of actively exploited SMA1000 zero-day flaws"
+      },
+      {
+        "rank": 6,
+        "topic": "models",
+        "headline": "Broadcom, OpenAI unveil Jalapeño AI inference chip"
+      },
+      {
+        "rank": 7,
         "topic": "platform",
         "headline": "Python 3.15.0 candidate 2 is here"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "How law firm Gilbert + Tobin governs and scales AI with OpenAI"
-      },
-      {
-        "rank": 7,
+        "rank": 8,
         "topic": "security",
         "headline": "RHSA-2026:62218: Moderate: libssh security update"
       },
       {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI Says Astra Crosses Critical Cybersecurity Threshold, Finds 2 Zero-Day Vulnerabilities: how 10 outlets framed it"
-      },
-      {
         "rank": 9,
         "topic": "ai",
-        "headline": "Anthropic opens Claude AI text detection to regulators, media, fact-checkers, and others"
+        "headline": "CrowdStrike Unveils Falcon Guardian to Secure AI Agents Where They Execute: On the Endpoint at Runtime"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "OpenClaw 2.0 Releases with Simplified Setup and Collaborative Agents"
+        "topic": "security",
+        "headline": "Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
