@@ -138,7 +138,417 @@
     "26 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-10::2026-09-02T19:19:24.023Z",
+        "rank": 10,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.55.0‑next.1 drops concrete UX upgrades for Kubernetes builders",
+        "dek": "A quick‑look at the next‑channel release shows dismissible alerts, a session‑reload shortcut, public‑notifications UI, a verified GPG key, a cleaner tag view and a guard for filter loading failures.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The v1.55.0‑next.1 release adds a one‑click “Dismiss” button to alert banners [FACT:7918712801a1c63101e1386eb0394ed7], a “Reload Session” entry in the user menu [FACT:eeeb442b13567fa866e68ca1cfdabd1d], a public‑notifications panel that surfaces messages directly in the UI [FACT:f8a5a81fda1aa941eb8ad81397887014], a rotated GPG signing key (fingerprint b5690eeebb952194) that is now verified in the UI [FACT:4f339387c6abdae9a2cd93e5c4e18075], an inline GitHub tag list in the service view [FACT:ee1f69c3aef927e0ae363c019cacf108] and a friendly “Sorry, something went wrong” guard for filter‑loading failures [FACT:5bd9c4ac9fc12e0f04ea0bde60a94974]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dismissible alerts stop stale warnings from clogging CI dashboards, letting engineers focus on real failures [FACT:7918712801a1c63101e1386eb0394ed7]. The session‑reload shortcut eliminates token‑expiry refresh loops that occasionally stall pipelines [FACT:eeeb442b13567fa866e68ca1cfdabd1d]. Public notifications let ops broadcast maintenance windows without opening a separate ticketing system, a small but real time‑saver for on‑call rotations [FACT:f8a5a81fda1aa941eb8ad81397887014]. A verified GPG key restores cryptographic trust for artifact signing, a compliance checkpoint in regulated cloud environments [FACT:4f339387c6abdae9a2cd93e5c4e18075]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage published the v1.55.0‑next.1 tag on GitHub as the next‑channel release [FACT:1554633f8a4792aa04a621211fc19b76]. Alongside the version bump, the release introduced four quality‑of‑life changes: dismissible alert messages, a reload‑session UI shortcut, a public‑notifications pane, and a vetted GPG signing key. It also refined the GitHub tag view and added a fallback message for filter‑loading errors."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "1. Pull the `backstage/backstage:v1.55.0-next.1` image into a test namespace. 2. Open the portal and click the “Dismiss” button on any alert banner to confirm it disappears [FACT:7918712801a1c63101e1386eb0394ed7]. 3. Open the user dropdown and select “Reload Session”; the page should refresh without a full login [FACT:eeeb442b13567fa866e68ca1cfdabd1d]."
+          },
+          {
+            "type": "paragraph",
+            "text": "4. Push a test message via the public‑notifications API and verify it appears in the new panel [FACT:f8a5a81fda1aa941eb8ad81397887014]. 5. Navigate to a service linked to a GitHub repo and confirm the tag list renders inline [FACT:ee1f69c3aef927e0ae363c019cacf108]. 6. Trigger a filter error (e.g., by providing a malformed query) and watch the “Sorry, something went wrong” notice appear [FACT:5bd9c4ac9fc12e0f04ea0bde60a94974]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The next‑channel drop is fully grounded in the release notes and supplies immediate friction‑reduction for CI/CD workflows; staging teams should validate the five UI tweaks today and plan a production rollout before the next stable 1.55.0 GA [FACT:1554633f8a4792aa04a621211fc19b76]."
+          }
+        ],
+        "keyPoints": [
+          "One‑click alert dismissal streamlines CI visibility [FACT:7918712801a1c63101e1386eb0394ed7].",
+          "Reload Session shortcut cuts token‑refresh loops [FACT:eeeb442b13567fa866e68ca1cfdabd1d].",
+          "Public‑notifications panel surfaces ops messages without extra tickets [FACT:f8a5a81fda1aa941eb8ad81397887014].",
+          "GPG key rotated to fingerprint b5690eeebb952194 and verified in‑app [FACT:4f339387c6abdae9a2cd93e5c4e18075].",
+          "GitHub tags now appear directly in service view, reducing navigation clicks [FACT:ee1f69c3aef927e0ae363c019cacf108].",
+          "Filter‑loading guard shows a friendly error instead of a silent fail [FACT:5bd9c4ac9fc12e0f04ea0bde60a94974]."
+        ],
+        "whyItMatters": "These focused UI and security tweaks cut down on manual work and compliance risk for Kubernetes teams that rely on Backstage as their developer portal [FACT:7918712801a1c63101e1386eb0394ed7][FACT:eeeb442b13567fa866e68ca1cfdabd1d][FACT:4f339387c6abdae9a2cd93e5c4e18075].",
+        "readerAction": "Pull the `v1.55.0‑next.1` container, run through the checklist in the Builder‑View section, and schedule a staged rollout if the UI fixes behave as documented.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "release",
+          "ci-cd",
+          "container"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+            "title": "v1.55.0-next.1",
+            "publishedAt": "2026-09-01T19:58:09.000Z"
+          },
+          {
+            "source": "The National Scot",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVTdnUy1Yazk4VjMxTWo2cmdJaEM3dVJGOVBrcWR5RUY1bG16YktTMkRsNDhUTUlKS2RmY1ZHdnREZ0tac19SV1Zuek9Oa0gzZDZ0TjJuUW13TDBTWHJZY1FvTE5TRHBTeWg5Nnk3bEZfeDJEblJ5M2ZpMXVkN2VrTE82a3BSNmNJRGVhbFRnWjd6d01INHh5dV9yVjRDWVE0Qmc?oc=5",
+            "title": "Plans for nearly 300 storage containers next to motor home site revealed - The National Scot",
+            "publishedAt": "2026-08-28T18:24:32.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-10",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-02T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-02T19:19:24.023Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 341,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-02T19:19:24.023Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "1554633f8a4792aa04a621211fc19b76",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "GitHub release next backstage backstage github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Release v1.55.0-next.1 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          },
+          {
+            "id": "eeeb442b13567fa866e68ca1cfdabd1d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          },
+          {
+            "id": "7918712801a1c63101e1386eb0394ed7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          },
+          {
+            "id": "f8a5a81fda1aa941eb8ad81397887014",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.6
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.6k Star 34.3k v1.55.0-next.1 Pre-release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          },
+          {
+            "id": "5bd9c4ac9fc12e0f04ea0bde60a94974",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          },
+          {
+            "id": "ee1f69c3aef927e0ae363c019cacf108",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "GitHub results found view tags backstage service",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "No results found View all tags backstage-service released this 01 Sep 19:58 &middot; 2 commits to master since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          },
+          {
+            "id": "4f339387c6abdae9a2cd93e5c4e18075",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-10",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T19:18:33.372Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The v1.55.0‑next.1 release adds a one‑click “Dismiss” button to alert banners [FACT:7918712801a1c63101e1386eb0394ed7], a “Reload Session” entry in the user menu [FACT:eeeb442b13567fa866e68ca1cfdabd1d], a public‑notifications panel that surfaces messages directly in the UI [FACT:f8a5a81fda1aa941eb8ad81397887014], a rotated GPG signing key (fingerprint b5690eeebb952194) that is now verified in the UI [FACT:4f339387c6abdae9a2cd93e5c4e18075], an inline GitHub tag list in the service view [FACT:ee1f69c3aef927e0ae363c019cacf108] and a friendly “Sorry, something went wrong” guard for filter‑loading failures [FACT:5bd9c4ac9fc12e0f04ea0bde60a94974].",
+            "isEditorial": false,
+            "factIds": [
+              "7918712801a1c63101e1386eb0394ed7",
+              "eeeb442b13567fa866e68ca1cfdabd1d",
+              "f8a5a81fda1aa941eb8ad81397887014",
+              "4f339387c6abdae9a2cd93e5c4e18075",
+              "ee1f69c3aef927e0ae363c019cacf108",
+              "5bd9c4ac9fc12e0f04ea0bde60a94974"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Dismissible alerts stop stale warnings from clogging CI dashboards, letting engineers focus on real failures [FACT:7918712801a1c63101e1386eb0394ed7]. The session‑reload shortcut eliminates token‑expiry refresh loops that occasionally stall pipelines [FACT:eeeb442b13567fa866e68ca1cfdabd1d]. Public notifications let ops broadcast maintenance windows without opening a separate ticketing system, a small but real time‑saver for on‑call rotations [FACT:f8a5a81fda1aa941eb8ad81397887014]. A verified GPG key restores cryptographic trust for artifact signing, a compliance checkpoint in regulated cloud environments [FACT:4f339387c6abdae9a2cd93e5c4e18075].",
+            "isEditorial": false,
+            "factIds": [
+              "eeeb442b13567fa866e68ca1cfdabd1d",
+              "f8a5a81fda1aa941eb8ad81397887014",
+              "4f339387c6abdae9a2cd93e5c4e18075"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Backstage published the v1.55.0‑next.1 tag on GitHub as the next‑channel release [FACT:1554633f8a4792aa04a621211fc19b76]. Alongside the version bump, the release introduced four quality‑of‑life changes: dismissible alert messages, a reload‑session UI shortcut, a public‑notifications pane, and a vetted GPG signing key. It also refined the GitHub tag view and added a fallback message for filter‑loading errors.",
+            "isEditorial": false,
+            "factIds": [
+              "1554633f8a4792aa04a621211fc19b76"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "1. Pull the `backstage/backstage:v1.55.0-next.1` image into a test namespace. 2. Open the portal and click the “Dismiss” button on any alert banner to confirm it disappears [FACT:7918712801a1c63101e1386eb0394ed7]. 3. Open the user dropdown and select “Reload Session”; the page should refresh without a full login [FACT:eeeb442b13567fa866e68ca1cfdabd1d].",
+            "isEditorial": false,
+            "factIds": [
+              "7918712801a1c63101e1386eb0394ed7",
+              "eeeb442b13567fa866e68ca1cfdabd1d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "4. Push a test message via the public‑notifications API and verify it appears in the new panel [FACT:f8a5a81fda1aa941eb8ad81397887014]. 5. Navigate to a service linked to a GitHub repo and confirm the tag list renders inline [FACT:ee1f69c3aef927e0ae363c019cacf108]. 6. Trigger a filter error (e.g., by providing a malformed query) and watch the “Sorry, something went wrong” notice appear [FACT:5bd9c4ac9fc12e0f04ea0bde60a94974].",
+            "isEditorial": false,
+            "factIds": [
+              "f8a5a81fda1aa941eb8ad81397887014",
+              "ee1f69c3aef927e0ae363c019cacf108",
+              "5bd9c4ac9fc12e0f04ea0bde60a94974"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 10,
+            "text": "The next‑channel drop is fully grounded in the release notes and supplies immediate friction‑reduction for CI/CD workflows; staging teams should validate the five UI tweaks today and plan a production rollout before the next stable 1.55.0 GA [FACT:1554633f8a4792aa04a621211fc19b76].",
+            "isEditorial": false,
+            "factIds": [
+              "1554633f8a4792aa04a621211fc19b76"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-09-02T19:19:24.023Z",

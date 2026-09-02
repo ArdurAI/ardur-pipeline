@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-02T12:00:00.000Z",
-    "windowStart": "2026-09-02T12:00:00.000Z",
-    "windowEnd": "2026-09-02T18:00:00.000Z"
+    "id": "2026-09-02T18:00:00.000Z",
+    "windowStart": "2026-09-02T18:00:00.000Z",
+    "windowEnd": "2026-09-03T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-02T14:13:09.513Z",
-  "nextRefreshAt": "2026-09-02T18:00:00.000Z",
+  "publishedAt": "2026-09-02T19:18:33.180Z",
+  "nextRefreshAt": "2026-09-03T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b87a7e4c-1efb-4672-8e94-39f5a660af88",
-    "ranking": "rank-6ef2e29d",
-    "top10": "top10:2026-09-02T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-02T12:00:00.000Z-2026-09-02T14:13:45.984Z"
+    "aggregation": "951db010-8c2c-4708-935a-0acaf1536502",
+    "ranking": "rank-62b1a679",
+    "top10": "top10:2026-09-02T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-02T18:00:00.000Z-2026-09-02T19:19:24.023Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-02T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-02T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-02T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-02T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-02T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-02T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1332,
+      "count": 1514,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,23 +52,23 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1551,
+      "count": 1700,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Claude Fable 5.1 on AWS"
+        "headline": "llm-gemini 0.34"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:62578: Important: go-fdo-server security update"
+        "headline": "RHSA-2026:62753: Important: osbuild-composer security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "World Labs unveils Atlas, a single AI model that generates, reconstructs, and simulates 3D worlds from just a few photos"
+        "topic": "kubernetes",
+        "headline": "v1.66.0/v0.160.0"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "Anthropic Details Response to Security Incidents, Unveils Enterprise Safeguards"
+        "headline": "Hackers exploit critical JFrog Artifactory flaw to forge admin tokens"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v0.160.0"
+        "topic": "security",
+        "headline": "RHSA-2026:62568: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "OpenAI calls Astra its most dangerous model yet"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild"
+      },
+      {
+        "rank": 8,
         "topic": "models",
         "headline": "Equinix Accelerates AI Inference for Enterprises with NVIDIA and Together AI"
       },
       {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Security updates for Wednesday"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI Technique in ‘Astra’ Model Sparks Security Concerns"
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "SonicWall warns of actively exploited SMA1000 zero-day flaws"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.18.4-rc.3"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:62334: Important: php:7.4 security, bug fix, and enhancement update"
+        "topic": "kubernetes",
+        "headline": "v1.55.0-next.1"
       }
     ],
     "articleCount": 0
