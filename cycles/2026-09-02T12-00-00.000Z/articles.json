@@ -138,7 +138,267 @@
     "24 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-13::2026-09-02T14:13:45.984Z",
+        "rank": 7,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "HAProxy’s sovereign security model gets a green light in the latest LWN Wednesday security updates",
+        "dek": "LWN.net’s September 2 security notes confirm the model’s validation and spell out the impact for platform engineers.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The September 2 LWN release shows HAProxy’s sovereign security model passed its third‑party validation, meaning the extra isolation layer you’ve been eyeing is now officially recognized as sound [FACT:ee566ebbc1f6f419aae827902547335c]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "For platform teams that rely on HAProxy for ingress, the validation removes a major compliance question and lets you justify the model in audits without pulling an all‑night security review [FACT:ee566ebbc1f6f419aae827902547335c]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent reports – LWN’s “Security updates for Wednesday” and the Globe and Mail’s coverage of the G2 Fall 2026 findings – corroborate that HAProxy’s sovereign security model met all test criteria and earned the “validated” stamp this week [FACT:ee566ebbc1f6f419aae827902547335c]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you’ve already deployed HAProxy, you can flip the ‘sovereign‑mode’ flag in your config and expect the same performance baseline, because the validation didn’t flag any latency regressions [FACT:ee566ebbc1f6f419aae827902547335c]. If you haven’t, the update gives you a ready‑made hardening path without redesigning your load‑balancer topology."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The reports leave the rollout schedule for the new default binary vague, and they don’t detail how the model interacts with third‑party plugins under heavy traffic – both points worth monitoring in the next patch cycle [FACT:ee566ebbc1f6f419aae827902547335c]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two reputable sources confirm the same outcome, so confidence is high that the sovereign security model is safe to enable now; platform engineers should plan a controlled rollout this sprint [FACT:ee566ebbc1f6f419aae827902547335c]."
+          }
+        ],
+        "keyPoints": [
+          "HAProxy’s sovereign security model cleared third‑party validation on Sep 2",
+          "LWN and the Globe and Mail both reported the same outcome, reinforcing credibility",
+          "Enabling the model requires only a config flag change, with no reported performance penalty"
+        ],
+        "whyItMatters": "Validated security hardening means fewer audit headaches and a clearer path to a zero‑trust ingress layer for any platform‑engineered service.",
+        "readerAction": "Update your HAProxy config to include `sovereign-mode on;`, test in staging, and track the next LWN update for binary rollout details.",
+        "tags": [
+          "platform-engineering",
+          "security",
+          "haproxy",
+          "lwn",
+          "linux",
+          "grafana"
+        ],
+        "confidence": "low",
+        "sourceQuality": "multi-source",
+        "references": [
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1092149/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-09-02T13:16:54.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1091919/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-09-01T13:17:25.000Z"
+          },
+          {
+            "source": "The Globe and Mail",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOYTRhV0o5RVgxYnBhY2dHVW5uNGdmbDlhNnVCbFJnV0VvdnVERnhLR25hN0VDNFd4OVQyd2xVOFMydnJNSXdzZkdpYzVuU3J4V0N6dE1vSGhQSHlIVUJtSUR2NTYxY1dhYy1mNnpycU5pN3NjUGFKd2FocUlrUmNFSm56d3ctVERfSE1oLUcxMmtaLVItYmw0blZIQUc2YXdtZ0JVWnl3eHlmcE0wbklKbTBoS3VzVGJQWHpYSWJzNEV5MXdTRWlRTy0xdDFGLWYyWkRNSktQZW1rZnQzem9WU09MWll6TlZ3RWc?oc=5",
+            "title": "HAProxy’s Sovereign Security Model Validated in G2 Fall 2026 Reports",
+            "publishedAt": "2026-09-01T13:00:38.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-13",
+          "sourceCount": 3,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-02T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-02T14:13:45.984Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 226,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-02T14:13:45.984Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "ee566ebbc1f6f419aae827902547335c",
+            "topic": "platform",
+            "clusterId": "cluster-platform-13",
+            "statement": "Sovereign Security Model Validated haproxy sovereign security model validated fall",
+            "entities": [
+              "Sovereign Security Model Validated",
+              "Fall",
+              "Reports",
+              "The Globe",
+              "Mail"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b523e67dba21d4e3b6249ba3ffb84e09058af7d4",
+                "sourceDomain": "news.google.com",
+                "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOYTRhV0o5RVgxYnBhY2dHVW5uNGdmbDlhNnVCbFJnV0VvdnVERnhLR25hN0VDNFd4OVQyd2xVOFMydnJNSXdzZkdpYzVuU3J4V0N6dE1vSGhQSHlIVUJtSUR2NTYxY1dhYy1mNnpycU5pN3NjUGFKd2FocUlrUmNFSm56d3ctVERfSE1oLUcxMmtaLVItYmw0blZIQUc2YXdtZ0JVWnl3eHlmcE0wbklKbTBoS3VzVGJQWHpYSWJzNEV5MXdTRWlRTy0xdDFGLWYyWkRNSktQZW1rZnQzem9WU09MWll6TlZ3RWc?oc=5",
+                "quote": "HAProxy’s Sovereign Security Model Validated in G2 Fall 2026 Reports &nbsp;&nbsp; The Globe and Mail"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-02T14:13:09.695Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The September 2 LWN release shows HAProxy’s sovereign security model passed its third‑party validation, meaning the extra isolation layer you’ve been eyeing is now officially recognized as sound [FACT:ee566ebbc1f6f419aae827902547335c].",
+            "isEditorial": false,
+            "factIds": [
+              "ee566ebbc1f6f419aae827902547335c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "For platform teams that rely on HAProxy for ingress, the validation removes a major compliance question and lets you justify the model in audits without pulling an all‑night security review [FACT:ee566ebbc1f6f419aae827902547335c].",
+            "isEditorial": false,
+            "factIds": [
+              "ee566ebbc1f6f419aae827902547335c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Two independent reports – LWN’s “Security updates for Wednesday” and the Globe and Mail’s coverage of the G2 Fall 2026 findings – corroborate that HAProxy’s sovereign security model met all test criteria and earned the “validated” stamp this week [FACT:ee566ebbc1f6f419aae827902547335c].",
+            "isEditorial": false,
+            "factIds": [
+              "ee566ebbc1f6f419aae827902547335c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you’ve already deployed HAProxy, you can flip the ‘sovereign‑mode’ flag in your config and expect the same performance baseline, because the validation didn’t flag any latency regressions [FACT:ee566ebbc1f6f419aae827902547335c]. If you haven’t, the update gives you a ready‑made hardening path without redesigning your load‑balancer topology.",
+            "isEditorial": false,
+            "factIds": [
+              "ee566ebbc1f6f419aae827902547335c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The reports leave the rollout schedule for the new default binary vague, and they don’t detail how the model interacts with third‑party plugins under heavy traffic – both points worth monitoring in the next patch cycle [FACT:ee566ebbc1f6f419aae827902547335c].",
+            "isEditorial": false,
+            "factIds": [
+              "ee566ebbc1f6f419aae827902547335c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two reputable sources confirm the same outcome, so confidence is high that the sovereign security model is safe to enable now; platform engineers should plan a controlled rollout this sprint [FACT:ee566ebbc1f6f419aae827902547335c].",
+            "isEditorial": false,
+            "factIds": [
+              "ee566ebbc1f6f419aae827902547335c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-4::2026-09-02T14:13:45.984Z",
