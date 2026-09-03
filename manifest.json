@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-02T18:00:00.000Z",
-    "windowStart": "2026-09-02T18:00:00.000Z",
-    "windowEnd": "2026-09-03T00:00:00.000Z"
+    "id": "2026-09-03T00:00:00.000Z",
+    "windowStart": "2026-09-03T00:00:00.000Z",
+    "windowEnd": "2026-09-03T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-02T19:18:33.180Z",
-  "nextRefreshAt": "2026-09-03T00:00:00.000Z",
+  "publishedAt": "2026-09-03T03:46:18.523Z",
+  "nextRefreshAt": "2026-09-03T06:00:00.000Z",
   "runIds": {
-    "aggregation": "951db010-8c2c-4708-935a-0acaf1536502",
-    "ranking": "rank-62b1a679",
-    "top10": "top10:2026-09-02T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-02T18:00:00.000Z-2026-09-02T19:19:24.023Z"
+    "aggregation": "89cb38e6-bd21-47f2-970d-b189c65e502a",
+    "ranking": "rank-d81e86f6",
+    "top10": "top10:2026-09-03T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-03T00:00:00.000Z-2026-09-03T03:47:03.529Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-02T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-02T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-02T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-03T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-03T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-03T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1514,
+      "count": 1502,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1700,
+      "count": 1667,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,29 +67,29 @@
       ]
     },
     {
+      "category": "copyright-gate",
+      "count": 31,
+      "sample": [
+        "[ai/cluster-ai-2] paywalled (snippet-only): https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/",
+        "[ai/cluster-ai-2] paywalled (snippet-only): https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/",
+        "[ai/cluster-ai-2] paywalled (snippet-only): https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/"
+      ]
+    },
+    {
       "category": "editorial-hold",
       "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 24,
-      "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:62753: Important: osbuild-composer security update"
+        "topic": "kubernetes",
+        "headline": "v1.55.0-next.1"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.66.0/v0.160.0"
+        "topic": "models",
+        "headline": "Accessing OpenAI models on Amazon Bedrock from Australia with global cross-Region inference"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Hackers exploit critical JFrog Artifactory flaw to forge admin tokens"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37: Scale Workloads to Zero with HorizontalPodAutoscaler"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:62568: Important: kernel security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI calls Astra its most dangerous model yet"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild"
-      },
-      {
-        "rank": 8,
         "topic": "models",
         "headline": "Equinix Accelerates AI Inference for Enterprises with NVIDIA and Together AI"
       },
       {
-        "rank": 9,
+        "rank": 6,
+        "topic": "security",
+        "headline": "Hackers exploit Sangoma Switchvox flaw to deploy reverse shells"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:60452: Important: OpenShift Container Platform 4.19.45 packages and security update"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.4-rc.3"
+        "headline": "v1.66.0/v0.160.0"
+      },
+      {
+        "rank": 9,
+        "topic": "ai",
+        "headline": "OpenAI calls Astra its most dangerous model yet"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.55.0-next.1"
+        "topic": "ai",
+        "headline": "US government backs OpenAI in New York Times copyright case"
       }
     ],
     "articleCount": 0

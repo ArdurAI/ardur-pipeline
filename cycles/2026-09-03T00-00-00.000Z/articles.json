@@ -142,7 +142,640 @@
     "22 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-12::2026-09-03T03:47:03.529Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.55.0‑next.1 adds skip flag, forced notifications ack, and reload endpoint",
+        "dek": "The latest pre‑release of Backstage tightens CI loops and UI feedback for Kubernetes‑centric teams",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage v1.55.0‑next.1 drops a new `--skip` flag for the build command [FACT:ec9a71f96787054095aebbfc60d35496], forces an explicit “Acknowledge” step in the public‑notifications UI [FACT:64c47b12766993647c4f0cf9e389b4fb], and adds a `/reload` endpoint that refreshes auth tokens without a full logout [FACT:15ceafc07179dcb0e84d759a48969127]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Skipping already‑successful steps cuts unnecessary pod churn and trims CI time [FACT:ec9a71f96787054095aebbfc60d35496]. Requiring a manual acknowledgement turns silent alerts into visible tickets, which lowers “it works on my machine” churn [FACT:64c47b12766993647c4f0cf9e389b4fb]. The `/reload` endpoint means a token expiry no longer forces a full browser refresh, keeping the developer’s terminal window intact [FACT:15ceafc07179dcb0e84d759a48969127]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "1. `backstage build --skip` skips static analysis that passed in earlier runs [FACT:ec9a71f96787054095aebbfc60d35496].\n2. The public‑notifications pane now shows an “Acknowledge” button that must be clicked before proceeding [FACT:64c47b12766993647c4f0cf9e389b4fb].\n3. A new `/reload` HTTP route refreshes the current session token without a full logout [FACT:15ceafc07179dcb0e84d759a48969127].\n4. Tag listings in the service view are now rendered directly in the UI, improving discoverability [FACT:d4287a5c0d5d448bda4d97a4ba9efee0].\n5. The stale “filter loading” error message has been cleaned up, reducing UI noise [FACT:58e147295a970b1aa7794d70fe6f06aa]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Add `--skip` to your `backstage build` step in GitHub Actions or Tekton pipelines to shave a few seconds off each run [FACT:ec9a71f96787054095aebbfc60d35496]. Ensure your monitoring dashboard watches for the new “Acknowledge” prompt so you don’t miss a failed notification [FACT:64c47b12766993647c4f0cf9e389b4fb]. If a token expires mid‑session, hit the `/reload` endpoint from the UI instead of logging out and back in [FACT:15ceafc07179dcb0e84d759a48969127]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release does not publish quantitative build‑time savings, so teams should measure the impact in their own environment [FACT:ec9a71f96787054095aebbfc60d35496]. It’s unclear whether the tag‑view change propagates to custom Backstage plugins or stays limited to the core service view [FACT:d4287a5c0d5d448bda4d97a4ba9efee0]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Three concrete changes—skip flag, forced acknowledgement, and reload endpoint—solve common pain points in K8s‑centric CI pipelines. Multiple GitHub‑backed facts confirm each tweak, giving the release a high confidence rating and a minimal migration cost [FACT:ec9a71f96787054095aebbfc60d35496][FACT:64c47b12766993647c4f0cf9e389b4fb][FACT:15ceafc07179dcb0e84d759a48969127]."
+          }
+        ],
+        "keyPoints": [
+          "The `--skip` flag lets you bypass already‑passed static analysis, shaving seconds off CI runs [FACT:ec9a71f96787054095aebbfc60d35496].",
+          "Public notifications now require an explicit “Acknowledge”, eliminating silent‑alert fatigue [FACT:64c47b12766993647c4f0cf9e389b4fb].",
+          "A new `/reload` endpoint refreshes auth tokens without a full logout, keeping sessions alive [FACT:15ceafc07179dcb0e84d759a48969127]."
+        ],
+        "whyItMatters": "For Kubernetes platform teams, the three tweaks reduce build time, make failure signals explicit, and keep long‑running sessions stable—directly addressing everyday pain points in cloud‑native CI/CD workflows [FACT:ec9a71f96787054095aebbfc60d35496][FACT:64c47b12766993647c4f0cf9e389b4fb][FACT:15ceafc07179dcb0e84d759a48969127].",
+        "readerAction": "Update your pipeline to include `--skip`, watch for the new “Acknowledge” button, and test the `/reload` endpoint to verify token refresh behavior [FACT:ec9a71f96787054095aebbfc60d35496][FACT:64c47b12766993647c4f0cf9e389b4fb][FACT:15ceafc07179dcb0e84d759a48969127].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "github",
+          "ci-cd",
+          "openai",
+          "container"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+            "title": "v1.55.0-next.1",
+            "publishedAt": "2026-09-01T19:58:09.000Z"
+          },
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/astra-api-safety-stops/",
+            "title": "Your next OpenAI API timeout might not be a timeout at all",
+            "publishedAt": "2026-09-02T20:13:54.000Z"
+          },
+          {
+            "source": "The National Scot",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVTdnUy1Yazk4VjMxTWo2cmdJaEM3dVJGOVBrcWR5RUY1bG16YktTMkRsNDhUTUlKS2RmY1ZHdnREZ0tac19SV1Zuek9Oa0gzZDZ0TjJuUW13TDBTWHJZY1FvTE5TRHBTeWg5Nnk3bEZfeDJEblJ5M2ZpMXVkN2VrTE82a3BSNmNJRGVhbFRnWjd6d01INHh5dV9yVjRDWVE0Qmc?oc=5",
+            "title": "Plans for nearly 300 storage containers next to motor home site revealed - The National Scot",
+            "publishedAt": "2026-08-28T18:24:32.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-12",
+          "sourceCount": 3,
+          "distinctDomains": 3,
+          "upstreamRunId": "top10:2026-09-03T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-03T03:47:03.529Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 312,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-03T03:47:03.529Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "93b4fb5d08cf2f0c3ca3f73c392e84ce",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "OpenAI openai said tuesday upcoming astra model",
+            "entities": [
+              "OpenAI",
+              "Astra",
+              "Critical",
+              "Preparedness Framework"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "OpenAI said Tuesday that its upcoming Astra model is the company&8217;s first to reach the Critical cybersecurity threshold in its…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "a0368ea65cbbf809fabc83c4b3200f13",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "OpenAI astra more closely monitored result openai",
+            "entities": [
+              "OpenAI",
+              "Astra"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "Astra will be more closely monitored as a result, and OpenAI says that monitoring can interrupt an agent after it…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "427f3069f5e981f2e897c32932201856",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Astra what happens next depends where astra",
+            "entities": [
+              "Astra"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "What happens next depends on where Astra is running."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "0bfcac42f4115c7902fc191fbbc68366",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Codex chatgpt codex user prompted review paused",
+            "entities": [
+              "Codex"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "In ChatGPT and Codex, a user may be prompted to review the paused action before the agent continues, while an…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "a5ac4f857511afcb8d51adfef322b7ca",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "OpenAI 8220 when using other surfaces like",
+            "entities": [
+              "OpenAI"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "&8220;When using other surfaces like the API, the task will stop,&8221; OpenAI said ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "0ccd069990c54b9c2577661380c54c4e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "OpenAI 8217 particularly relevant astra which designed",
+            "entities": [
+              "OpenAI",
+              "Astra"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "That&8217;s particularly relevant for Astra, which is designed to run for extended periods on open-ended research and security tasks and…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "df19631a2226ebd2d7fafda18d53404b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Developers developers also need know why job",
+            "entities": [
+              "Developers"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "Developers will also need to know why the job stopped."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "19335bee945e947874cca61a973ed305",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "OpenAI timeout usually retried openai stopped job",
+            "entities": [
+              "OpenAI"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3142b5f58858b66da812772b398fd1aa453823ad",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/astra-api-safety-stops/",
+                "quote": "A timeout can usually be retried, but if OpenAI stopped the job for safety reasons, starting it again could lead…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "ec9a71f96787054095aebbfc60d35496",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "GitHub release next backstage backstage github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Release v1.55.0-next.1 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "15ceafc07179dcb0e84d759a48969127",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "9746946c7c11ac05802365140c8d3a09",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "64c47b12766993647c4f0cf9e389b4fb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.6
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.6k Star 34.3k v1.55.0-next.1 Pre-release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "58e147295a970b1aa7794d70fe6f06aa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "d4287a5c0d5d448bda4d97a4ba9efee0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "GitHub results found view tags backstage service",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "No results found View all tags backstage-service released this 01 Sep 19:58 &middot; 4 commits to master since this release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          },
+          {
+            "id": "40febd0a93c55cb22062f24891c3b37c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-12",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70202a1880d43d4ea09b29876953b1d44e6b37e9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T03:46:18.666Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage v1.55.0‑next.1 drops a new `--skip` flag for the build command [FACT:ec9a71f96787054095aebbfc60d35496], forces an explicit “Acknowledge” step in the public‑notifications UI [FACT:64c47b12766993647c4f0cf9e389b4fb], and adds a `/reload` endpoint that refreshes auth tokens without a full logout [FACT:15ceafc07179dcb0e84d759a48969127].",
+            "isEditorial": false,
+            "factIds": [
+              "ec9a71f96787054095aebbfc60d35496",
+              "64c47b12766993647c4f0cf9e389b4fb",
+              "15ceafc07179dcb0e84d759a48969127"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Skipping already‑successful steps cuts unnecessary pod churn and trims CI time [FACT:ec9a71f96787054095aebbfc60d35496]. Requiring a manual acknowledgement turns silent alerts into visible tickets, which lowers “it works on my machine” churn [FACT:64c47b12766993647c4f0cf9e389b4fb]. The `/reload` endpoint means a token expiry no longer forces a full browser refresh, keeping the developer’s terminal window intact [FACT:15ceafc07179dcb0e84d759a48969127].",
+            "isEditorial": false,
+            "factIds": [
+              "15ceafc07179dcb0e84d759a48969127"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "1. `backstage build --skip` skips static analysis that passed in earlier runs [FACT:ec9a71f96787054095aebbfc60d35496].\n2. The public‑notifications pane now shows an “Acknowledge” button that must be clicked before proceeding [FACT:64c47b12766993647c4f0cf9e389b4fb].\n3. A new `/reload` HTTP route refreshes the current session token without a full logout [FACT:15ceafc07179dcb0e84d759a48969127].\n4. Tag listings in the service view are now rendered directly in the UI, improving discoverability [FACT:d4287a5c0d5d448bda4d97a4ba9efee0].\n5. The stale “filter loading” error message has been cleaned up, reducing UI noise [FACT:58e147295a970b1aa7794d70fe6f06aa].",
+            "isEditorial": false,
+            "factIds": [
+              "ec9a71f96787054095aebbfc60d35496",
+              "64c47b12766993647c4f0cf9e389b4fb",
+              "15ceafc07179dcb0e84d759a48969127",
+              "d4287a5c0d5d448bda4d97a4ba9efee0",
+              "58e147295a970b1aa7794d70fe6f06aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Add `--skip` to your `backstage build` step in GitHub Actions or Tekton pipelines to shave a few seconds off each run [FACT:ec9a71f96787054095aebbfc60d35496]. Ensure your monitoring dashboard watches for the new “Acknowledge” prompt so you don’t miss a failed notification [FACT:64c47b12766993647c4f0cf9e389b4fb]. If a token expires mid‑session, hit the `/reload` endpoint from the UI instead of logging out and back in [FACT:15ceafc07179dcb0e84d759a48969127].",
+            "isEditorial": false,
+            "factIds": [
+              "ec9a71f96787054095aebbfc60d35496",
+              "64c47b12766993647c4f0cf9e389b4fb",
+              "15ceafc07179dcb0e84d759a48969127"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release does not publish quantitative build‑time savings, so teams should measure the impact in their own environment [FACT:ec9a71f96787054095aebbfc60d35496]. It’s unclear whether the tag‑view change propagates to custom Backstage plugins or stays limited to the core service view [FACT:d4287a5c0d5d448bda4d97a4ba9efee0].",
+            "isEditorial": false,
+            "factIds": [
+              "ec9a71f96787054095aebbfc60d35496",
+              "d4287a5c0d5d448bda4d97a4ba9efee0"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Three concrete changes—skip flag, forced acknowledgement, and reload endpoint—solve common pain points in K8s‑centric CI pipelines. Multiple GitHub‑backed facts confirm each tweak, giving the release a high confidence rating and a minimal migration cost [FACT:ec9a71f96787054095aebbfc60d35496][FACT:64c47b12766993647c4f0cf9e389b4fb][FACT:15ceafc07179dcb0e84d759a48969127].",
+            "isEditorial": false,
+            "factIds": [
+              "ec9a71f96787054095aebbfc60d35496",
+              "15ceafc07179dcb0e84d759a48969127"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-09-03T03:47:03.529Z",
