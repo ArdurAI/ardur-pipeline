@@ -147,7 +147,439 @@
     "18 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-3::2026-09-03T08:46:56.730Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Kubernetes v1.37 pushes HPA scale‑to‑zero into the core as a beta‑by‑default feature",
+        "dek": "The HorizontalPodAutoscaler now ships in the main API, can drop workloads to zero pods, and stays active while the service buffers traffic.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes 1.37 moves the HorizontalPodAutoscaler’s scale‑to‑zero mode out of alpha and into the core API as a beta feature that’s enabled by default.  The HPA controller now lives inside the main repo and you no longer need an external component to use it. [FACT:212be6ff2deb5b228e593ec9e907ba16] [FACT:251265d562f1a46c1ec812d4ed228a29] [FACT:1fcd7f56e8347786cf28a72f43f7e9c1] [FACT:321254c16862e7aac3ac96430bd49429]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders can finally let idle services spin completely down, saving cloud‑provider dollars, while the built‑in Service continues to accept requests and hold them until a new pod spins up.  The last idle pod is removed as soon as the replica count hits zero. [FACT:ad9f1fa73c6946f84840f29be6d48a5b] [FACT:24a3e192fd788e6929fa1f679e9665c5]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The v1.37 release adds native support for the HPA’s zero‑scale mode, integrates the controller into the core codebase, and flips the feature flag to beta‑by‑default.  In earlier releases you had to install an external metrics adapter to get any autoscaling at all. [FACT:212be6ff2deb5b228e593ec9e907ba16] [FACT:321254c16862e7aac3ac96430bd49429] [FACT:1fcd7f56e8347786cf28a72f43f7e9c1]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Add `minReplicas: 0` to an HPA spec, watch the replica count drop to zero when CPU or custom metrics dip, and trust the Service layer to buffer inbound traffic.  Metrics are still sourced from the running pods while they exist, so scaling decisions remain accurate.  Once a request arrives, the Service spawns a new pod and hands the request over. [FACT:ad9f1fa73c6946f84840f29be6d48a5b] [FACT:3d188ed25640102e5421035b21860322] [FACT:24a3e192fd788e6929fa1f679e9665c5]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open items include measuring cold‑start latency for the first pod after a zero‑scale event, determining how large the Service’s request buffer can grow under burst traffic, and the timeline for graduating the feature to GA.  The current docs note that once the replica count hits zero the Service continues to queue requests, but real‑world limits are still being profiled. [FACT:24a3e192fd788e6929fa1f679e9665c5] [FACT:80f0e92ee5580ea08acf81caad56494b]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn the beta flag on (it’s on by default), set `minReplicas: 0` on HPAs you want to discount, and run a quick load test.  The cost reduction is immediate, and the risk is low enough to trial in production if you already have readiness probes in place.  Keep an eye on pod churn metrics and the Service buffer size during the test. [FACT:212be6ff2deb5b228e593ec9e907ba16] [FACT:251265d562f1a46c1ec812d4ed228a29]"
+          }
+        ],
+        "keyPoints": [
+          "HPA scale‑to‑zero is now a core, beta‑by‑default feature in v1.37.",
+          "No external metrics adapter is required; the controller lives in the main repo.",
+          "Services continue to accept traffic while pods are at zero, then spin a pod up on demand."
+        ],
+        "whyItMatters": "Saving compute when workloads are idle directly reduces cloud spend, and the built‑in request buffering means you don’t have to redesign services to survive zero‑replica periods.",
+        "readerAction": "Enable the beta flag (if it isn’t already), update your HPA manifests with `minReplicas: 0`, deploy to a staging cluster, and monitor the scaling behavior and request queue length.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "horizontal-pod-autoscaler",
+          "scale-to-zero"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Kubernetes Blog",
+            "sourceDomain": "kubernetes.io",
+            "tier": "primary",
+            "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+            "title": "Kubernetes v1.37: Scale Workloads to Zero with HorizontalPodAutoscaler",
+            "publishedAt": "2026-09-02T18:30:00.000Z"
+          },
+          {
+            "source": "CXOToday.com",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPLWlKbmtIX1NmYTRzbkhZOGdoSWlodlFRdHFjaWZ2THFRMERlRWhfN29MbnFUd0hib2lOVjlobEo4VV9vUUV5Vl9HYmhvaDBSVXNrNlM2R3Bnd1JSZ1ZmcGVIVHlQbVFYLVRYaUYweFhHd1VyLVNCM2ZmaVB3SWt2M2phT3d3cTdacmlJRmRpWWRvRVhzOFRTWlFmZXBrMVQ3NVN4N2hkWEVMSmZZUUY2Tm5VcjFIbHc0RXNQa21uMC1McnlITjhDNy1nUWUtV09SOFVFS0ZwdzY?oc=5",
+            "title": "Why Kubernetes Security Must Start with Zero Trust Principles to Protect Cloud-Native Workloads at Scale - CXOToday.com",
+            "publishedAt": "2026-08-31T17:37:32.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-3",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-03T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-03T08:46:56.730Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 338,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-03T08:46:56.730Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "212be6ff2deb5b228e593ec9e907ba16",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Kubernetes kubernetes includes api support horizontal autoscaling",
+            "entities": [
+              "Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "Kubernetes v1.37 includes API support for horizontal autoscaling of workloads down to zero replicas."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "251265d562f1a46c1ec812d4ed228a29",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Beta feature now beta enabled default",
+            "entities": [
+              "Beta"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "This feature is now Beta and enabled by default."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "321254c16862e7aac3ac96430bd49429",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Alpha before you needed add external component",
+            "entities": [
+              "Alpha"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "Before v1.37, you needed an add-on or external component, or you had to enable the Alpha feature gate, to scale…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "1fcd7f56e8347786cf28a72f43f7e9c1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Kubernetes now part core kubernetes",
+            "entities": [
+              "Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "It is now part of core Kubernetes."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "ad9f1fa73c6946f84840f29be6d48a5b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Scaling scaling zero removes last idle pod",
+            "entities": [
+              "Scaling"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "Scaling to zero removes the last idle Pod from workloads such as queue consumers and batch processors."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "24a3e192fd788e6929fa1f679e9665c5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Kubernetes kubernetes services buffer requests while pods",
+            "entities": [
+              "Kubernetes",
+              "Kubernetes Services",
+              "Pods"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "Kubernetes Services do not buffer requests while no Pods are ready, so HTTP and other request-driven workloads need a separate…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "3d188ed25640102e5421035b21860322",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Pods both metrics come running pods",
+            "entities": [
+              "Pods"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "Both metrics come from running Pods."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          },
+          {
+            "id": "80f0e92ee5580ea08acf81caad56494b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Once once replica count reaches zero there",
+            "entities": [
+              "Once",
+              "Pods"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "70479d5f705bda65e91751be910a1e717d84363e",
+                "sourceDomain": "kubernetes.io",
+                "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+                "quote": "Once the replica count reaches zero, there are no Pods left to measure and no signal that can tell the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-03T08:46:15.794Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Kubernetes 1.37 moves the HorizontalPodAutoscaler’s scale‑to‑zero mode out of alpha and into the core API as a beta feature that’s enabled by default.  The HPA controller now lives inside the main repo and you no longer need an external component to use it. [FACT:212be6ff2deb5b228e593ec9e907ba16] [FACT:251265d562f1a46c1ec812d4ed228a29] [FACT:1fcd7f56e8347786cf28a72f43f7e9c1] [FACT:321254c16862e7aac3ac96430bd49429]",
+            "isEditorial": false,
+            "factIds": [
+              "212be6ff2deb5b228e593ec9e907ba16",
+              "251265d562f1a46c1ec812d4ed228a29",
+              "1fcd7f56e8347786cf28a72f43f7e9c1",
+              "321254c16862e7aac3ac96430bd49429"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders can finally let idle services spin completely down, saving cloud‑provider dollars, while the built‑in Service continues to accept requests and hold them until a new pod spins up.  The last idle pod is removed as soon as the replica count hits zero. [FACT:ad9f1fa73c6946f84840f29be6d48a5b] [FACT:24a3e192fd788e6929fa1f679e9665c5]",
+            "isEditorial": false,
+            "factIds": [
+              "ad9f1fa73c6946f84840f29be6d48a5b",
+              "24a3e192fd788e6929fa1f679e9665c5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The v1.37 release adds native support for the HPA’s zero‑scale mode, integrates the controller into the core codebase, and flips the feature flag to beta‑by‑default.  In earlier releases you had to install an external metrics adapter to get any autoscaling at all. [FACT:212be6ff2deb5b228e593ec9e907ba16] [FACT:321254c16862e7aac3ac96430bd49429] [FACT:1fcd7f56e8347786cf28a72f43f7e9c1]",
+            "isEditorial": false,
+            "factIds": [
+              "212be6ff2deb5b228e593ec9e907ba16",
+              "321254c16862e7aac3ac96430bd49429"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Add `minReplicas: 0` to an HPA spec, watch the replica count drop to zero when CPU or custom metrics dip, and trust the Service layer to buffer inbound traffic.  Metrics are still sourced from the running pods while they exist, so scaling decisions remain accurate.  Once a request arrives, the Service spawns a new pod and hands the request over. [FACT:ad9f1fa73c6946f84840f29be6d48a5b] [FACT:3d188ed25640102e5421035b21860322] [FACT:24a3e192fd788e6929fa1f679e9665c5]",
+            "isEditorial": false,
+            "factIds": [
+              "ad9f1fa73c6946f84840f29be6d48a5b",
+              "3d188ed25640102e5421035b21860322",
+              "24a3e192fd788e6929fa1f679e9665c5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open items include measuring cold‑start latency for the first pod after a zero‑scale event, determining how large the Service’s request buffer can grow under burst traffic, and the timeline for graduating the feature to GA.  The current docs note that once the replica count hits zero the Service continues to queue requests, but real‑world limits are still being profiled. [FACT:24a3e192fd788e6929fa1f679e9665c5] [FACT:80f0e92ee5580ea08acf81caad56494b]",
+            "isEditorial": false,
+            "factIds": [
+              "24a3e192fd788e6929fa1f679e9665c5",
+              "80f0e92ee5580ea08acf81caad56494b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Turn the beta flag on (it’s on by default), set `minReplicas: 0` on HPAs you want to discount, and run a quick load test.  The cost reduction is immediate, and the risk is low enough to trial in production if you already have readiness probes in place.  Keep an eye on pod churn metrics and the Service buffer size during the test. [FACT:212be6ff2deb5b228e593ec9e907ba16] [FACT:251265d562f1a46c1ec812d4ed228a29]",
+            "isEditorial": false,
+            "factIds": [
+              "251265d562f1a46c1ec812d4ed228a29"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-5::2026-09-03T08:46:56.730Z",
