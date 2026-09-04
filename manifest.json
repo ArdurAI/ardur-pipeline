@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-04T06:00:00.000Z",
-    "windowStart": "2026-09-04T06:00:00.000Z",
-    "windowEnd": "2026-09-04T12:00:00.000Z"
+    "id": "2026-09-04T12:00:00.000Z",
+    "windowStart": "2026-09-04T12:00:00.000Z",
+    "windowEnd": "2026-09-04T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-04T08:59:43.705Z",
-  "nextRefreshAt": "2026-09-04T12:00:00.000Z",
+  "publishedAt": "2026-09-04T14:06:44.065Z",
+  "nextRefreshAt": "2026-09-04T18:00:00.000Z",
   "runIds": {
-    "aggregation": "4882a826-919b-4390-b743-1b514d1462d5",
-    "ranking": "rank-90687e66",
-    "top10": "top10:2026-09-04T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-04T06:00:00.000Z-2026-09-04T09:00:25.410Z"
+    "aggregation": "f4dd004f-2f36-43b8-98ae-a1007e9c1774",
+    "ranking": "rank-f7a5a86a",
+    "top10": "top10:2026-09-04T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-04T12:00:00.000Z-2026-09-04T14:07:15.048Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-04T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-04T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-04T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-04T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-04T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-04T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1216,
+      "count": 1200,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE96LWRUcTNTOGszRVdVcDMxel8yNUFJajFqLUxxWklNZDZ1a0FKcW9pMXo5X29iS0ZQcFVGLW5KaTVGczUxRi1iUzZYcm1XcDVBZGlUZ0Jfc2xrSGhNN29QbXVRcw?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSkVvZEZ2QXlsVXRmMGRRQzVka2pPNmhyV0wxOHJzeUphZUk4U0ZvVS1rajhmOHp1LU9uSzdQOGkxb3FfT1FNeldXZVBaZEJBYVlSQmtidUtiM296eUVKWExqeDJLcFlXbGR3d3pkcG1uQ2luV1JIQ0ZXSzdSNFM3R1NSS0gyNm1XSlVV?oc=5"
       ]
     },
     {
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1378,
+      "count": 1377,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 16,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 72,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "GPT-6 Astra: A new generation of intelligence"
-      },
-      {
-        "rank": 2,
         "topic": "kubernetes",
         "headline": "Kubernetes v1.37: DRA Updates"
       },
       {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "\"Welcome to the AGI era,\" OpenAI says as GPT-6 Astra debuts"
+      },
+      {
         "rank": 3,
         "topic": "ai",
-        "headline": "GPT-6 Astra is the first model making OpenAI willing to declare the \"AGI era\""
+        "headline": "Benchmarks disagree on GPT-6 Astra, but its human-beating efficiency on ARC-AGI-3 pulls Chollet’s AGI forecast forward"
       },
       {
         "rank": 4,
+        "topic": "platform",
+        "headline": "The common security controls behind India's regulatory wave"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:63537: Important: kernel security update"
       },
       {
-        "rank": 5,
-        "topic": "models",
-        "headline": "NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network"
-      },
-      {
         "rank": 6,
         "topic": "platform",
-        "headline": "Build AI-assisted firewall workflows with Ansible Automation Platform"
+        "headline": "CPU + GPU: Why AI platform engineering is a heterogeneous infrastructure problem"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "GPT‑6 Astra"
+        "topic": "ai",
+        "headline": "GPT-6 Astra: A new generation of intelligence"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Google Releases Chrome Update to Patch Actively Exploited V8 Zero-Day"
+        "headline": "Sangoma Switchvox Vulnerabilities Exploited in the Wild"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI unveils GPT-6 Astra with major advances in AI capabilities: 'Now in the AGI era'"
+        "topic": "security",
+        "headline": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "OpenAI launches new Astra model amid growing scrutiny over agents' safety"
+        "headline": "OpenAI agents hijacked a 25-year-old German wiki to cheat on their tasks and share sandbox exploits"
       }
     ],
-    "articleCount": 1
+    "articleCount": 2
   }
 }
