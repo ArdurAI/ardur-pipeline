@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-04T12:00:00.000Z",
-    "windowStart": "2026-09-04T12:00:00.000Z",
-    "windowEnd": "2026-09-04T18:00:00.000Z"
+    "id": "2026-09-04T18:00:00.000Z",
+    "windowStart": "2026-09-04T18:00:00.000Z",
+    "windowEnd": "2026-09-05T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-04T14:06:44.065Z",
-  "nextRefreshAt": "2026-09-04T18:00:00.000Z",
+  "publishedAt": "2026-09-04T18:55:15.657Z",
+  "nextRefreshAt": "2026-09-05T00:00:00.000Z",
   "runIds": {
-    "aggregation": "f4dd004f-2f36-43b8-98ae-a1007e9c1774",
-    "ranking": "rank-f7a5a86a",
-    "top10": "top10:2026-09-04T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-04T12:00:00.000Z-2026-09-04T14:07:15.048Z"
+    "aggregation": "5c16d718-2d90-4b78-80d0-891451a1e130",
+    "ranking": "rank-3ca54e40",
+    "top10": "top10:2026-09-04T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-04T18:00:00.000Z-2026-09-04T18:55:47.195Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-04T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-04T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-04T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-04T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-04T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-04T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1200,
+      "count": 1358,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSkVvZEZ2QXlsVXRmMGRRQzVka2pPNmhyV0wxOHJzeUphZUk4U0ZvVS1rajhmOHp1LU9uSzdQOGkxb3FfT1FNeldXZVBaZEJBYVlSQmtidUtiM296eUVKWExqeDJLcFlXbGR3d3pkcG1uQ2luV1JIQ0ZXSzdSNFM3R1NSS0gyNm1XSlVV?oc=5"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE96LWRUcTNTOGszRVdVcDMxel8yNUFJajFqLUxxWklNZDZ1a0FKcW9pMXo5X29iS0ZQcFVGLW5KaTVGczUxRi1iUzZYcm1XcDVBZGlUZ0Jfc2xrSGhNN29QbXVRcw?oc=5"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1377,
+      "count": 1532,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 16,
+      "count": 20,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 19,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 31,
     "usedFallback": true
   },
   "summary": {
@@ -109,17 +109,17 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "\"Welcome to the AGI era,\" OpenAI says as GPT-6 Astra debuts"
+        "headline": "OpenAI&039;s GPT-6 Astra hallucinates less but remains vulnerable to hidden prompt injections"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Benchmarks disagree on GPT-6 Astra, but its human-beating efficiency on ARC-AGI-3 pulls Chollet’s AGI forecast forward"
+        "headline": "\"Welcome to the AGI era,\" OpenAI says as GPT-6 Astra debuts"
       },
       {
         "rank": 4,
         "topic": "platform",
-        "headline": "The common security controls behind India's regulatory wave"
+        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
       },
       {
         "rank": 5,
@@ -128,30 +128,30 @@
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "CPU + GPU: Why AI platform engineering is a heterogeneous infrastructure problem"
+        "topic": "ai",
+        "headline": "Build a Physical AI model factory with NVIDIA Cosmos 3 on SageMaker HyperPod"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "GPT-6 Astra: A new generation of intelligence"
+        "headline": "EXCLUSIVE: OpenAI agents hijacked German website in previously undisclosed AI breakout this spring"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Sangoma Switchvox Vulnerabilities Exploited in the Wild"
+        "topic": "kubernetes",
+        "headline": "Investigate DMS migration issues with AWS DevOps Agent"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges"
+        "headline": "HPE Patches Critical RCE Vulnerabilities in AOS-CX"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI agents hijacked a 25-year-old German wiki to cheat on their tasks and share sandbox exploits"
+        "topic": "security",
+        "headline": "Critical Citrix NetScaler auth bypass now leveraged in attacks"
       }
     ],
-    "articleCount": 2
+    "articleCount": 1
   }
 }
