@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-04T18:00:00.000Z",
-    "windowStart": "2026-09-04T18:00:00.000Z",
-    "windowEnd": "2026-09-05T00:00:00.000Z"
+    "id": "2026-09-05T00:00:00.000Z",
+    "windowStart": "2026-09-05T00:00:00.000Z",
+    "windowEnd": "2026-09-05T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-04T18:55:15.657Z",
-  "nextRefreshAt": "2026-09-05T00:00:00.000Z",
+  "publishedAt": "2026-09-05T03:46:21.676Z",
+  "nextRefreshAt": "2026-09-05T06:00:00.000Z",
   "runIds": {
-    "aggregation": "5c16d718-2d90-4b78-80d0-891451a1e130",
-    "ranking": "rank-3ca54e40",
-    "top10": "top10:2026-09-04T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-04T18:00:00.000Z-2026-09-04T18:55:47.195Z"
+    "aggregation": "58bbef59-8ea7-42b5-aa9e-d26d49196585",
+    "ranking": "rank-5c4393f9",
+    "top10": "top10:2026-09-05T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-05T00:00:00.000Z-2026-09-05T03:46:57.294Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-04T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-04T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-04T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-05T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-05T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-05T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1358,
+      "count": 1255,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE96LWRUcTNTOGszRVdVcDMxel8yNUFJajFqLUxxWklNZDZ1a0FKcW9pMXo5X29iS0ZQcFVGLW5KaTVGczUxRi1iUzZYcm1XcDVBZGlUZ0Jfc2xrSGhNN29QbXVRcw?oc=5"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
         "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1532,
+      "count": 1519,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 19,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 31,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,48 +103,48 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: DRA Updates"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "OpenAI&039;s GPT-6 Astra hallucinates less but remains vulnerable to hidden prompt injections"
       },
       {
+        "rank": 2,
+        "topic": "platform",
+        "headline": "From incident to remediation: Building an AI-driven AIOps workflow with Red Hat Ansible Automation Platform"
+      },
+      {
         "rank": 3,
-        "topic": "ai",
-        "headline": "\"Welcome to the AGI era,\" OpenAI says as GPT-6 Astra debuts"
+        "topic": "kubernetes",
+        "headline": "containerd 2.3.5"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
+        "topic": "security",
+        "headline": "RHSA-2026:63538: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:63537: Important: kernel security update"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37: KubeletInUserNamespace aka Rootless mode Graduates to Beta"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Build a Physical AI model factory with NVIDIA Cosmos 3 on SageMaker HyperPod"
+        "headline": "OpenAI Unveils Astra AI With Evasion Capabilities"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: OpenAI agents hijacked German website in previously undisclosed AI breakout this spring"
+        "topic": "security",
+        "headline": "HPE Patches Critical RCE Vulnerabilities in AOS-CX"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Investigate DMS migration issues with AWS DevOps Agent"
+        "topic": "ai",
+        "headline": "Seattle Times sues Microsoft and OpenAI, alleging they trained their AI on its journalism"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "HPE Patches Critical RCE Vulnerabilities in AOS-CX"
+        "topic": "kubernetes",
+        "headline": "Investigate DMS migration issues with AWS DevOps Agent"
       },
       {
         "rank": 10,
@@ -152,6 +152,6 @@
         "headline": "Critical Citrix NetScaler auth bypass now leveraged in attacks"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
