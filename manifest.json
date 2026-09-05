@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-05T00:00:00.000Z",
-    "windowStart": "2026-09-05T00:00:00.000Z",
-    "windowEnd": "2026-09-05T06:00:00.000Z"
+    "id": "2026-09-05T06:00:00.000Z",
+    "windowStart": "2026-09-05T06:00:00.000Z",
+    "windowEnd": "2026-09-05T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-05T03:46:21.676Z",
-  "nextRefreshAt": "2026-09-05T06:00:00.000Z",
+  "publishedAt": "2026-09-05T08:13:58.474Z",
+  "nextRefreshAt": "2026-09-05T12:00:00.000Z",
   "runIds": {
-    "aggregation": "58bbef59-8ea7-42b5-aa9e-d26d49196585",
-    "ranking": "rank-5c4393f9",
-    "top10": "top10:2026-09-05T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-05T00:00:00.000Z-2026-09-05T03:46:57.294Z"
+    "aggregation": "34ab7963-aef2-413e-8ee1-2cdd03ddc1d4",
+    "ranking": "rank-e990a0aa",
+    "top10": "top10:2026-09-05T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-05T06:00:00.000Z-2026-09-05T08:14:34.986Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-05T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-05T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-05T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-05T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-05T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-05T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1255,
+      "count": 1087,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1519,
+      "count": 1360,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -104,12 +104,12 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI&039;s GPT-6 Astra hallucinates less but remains vulnerable to hidden prompt injections"
+        "headline": "OpenAI rolls out GPT-6 Astra to top-tier ChatGPT plans at half the rate of GPT-5.6 Sol"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "From incident to remediation: Building an AI-driven AIOps workflow with Red Hat Ansible Automation Platform"
+        "topic": "ai",
+        "headline": "Building a Memory-Driven Agent with NVIDIA NemoClaw"
       },
       {
         "rank": 3,
@@ -118,38 +118,38 @@
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:63538: Important: kernel security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: KubeletInUserNamespace aka Rootless mode Graduates to Beta"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI Unveils Astra AI With Evasion Capabilities"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "HPE Patches Critical RCE Vulnerabilities in AOS-CX"
-      },
-      {
-        "rank": 8,
         "topic": "ai",
         "headline": "Seattle Times sues Microsoft and OpenAI, alleging they trained their AI on its journalism"
       },
       {
-        "rank": 9,
+        "rank": 5,
+        "topic": "ai",
+        "headline": "GPT-6 Astra: A new generation of intelligence"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:63538: Important: kernel security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 7,
         "topic": "kubernetes",
-        "headline": "Investigate DMS migration issues with AWS DevOps Agent"
+        "headline": "Fluent Bit 5.1.2"
+      },
+      {
+        "rank": 8,
+        "topic": "platform",
+        "headline": "Redefining GIS: Declarative Symbology and Collaborative Workflows in JupyterGIS"
+      },
+      {
+        "rank": 9,
+        "topic": "platform",
+        "headline": "Blume: Zero-Config Docs Framework That Turns a Markdown Folder into an AI-Ready Website"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Critical Citrix NetScaler auth bypass now leveraged in attacks"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37: KubeletInUserNamespace aka Rootless mode Graduates to Beta"
       }
     ],
     "articleCount": 0

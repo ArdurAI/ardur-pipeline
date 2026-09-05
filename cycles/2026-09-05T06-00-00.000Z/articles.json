@@ -138,7 +138,1189 @@
     "22 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-2::2026-09-05T08:14:34.986Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "containerd 2.3.5 lands as the 35th patch – static & dynamic binaries plus a critical CVE fix",
+        "dek": "The newest containerd release adds both glibc‑linked and statically linked runtimes and patches CVE‑2026‑53495.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "containerd 2.3.5 arrived as the thirty‑fifth patch release, rolling the project forward from the previous 2.3.x series [FACT:90b0cb30fc699f84170bd9921c616bf1]. It ships both dynamically linked (glibc‑based) and statically linked binaries, letting you pick the model that matches your base image [FACT:bd90689066b112f8d7d896a33a391065][FACT:c5dd422afc82e5d7772f072ed61bb02c]. The official download tarball is marked as the recommended version for all architectures [FACT:546ee5fa6f00c81ab6fdc009a33f555c]. A critical CVE‑2026‑53495 vulnerability got patched, closing a remote‑code‑execution path that affected older containerd builds [FACT:3729cf698a192ddd05b871a4185a735c]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your nodes run a glibc‑based Ubuntu base, the dynamic binary will drop in without extra libraries [FACT:bd90689066b112f8d7d896a33a391065]. For minimal images that avoid glibc, the static binary lets you run the runtime without pulling in the C library at all [FACT:c5dd422afc82e5d7772f072ed61bb02c]. Skipping the CVE‑2026‑53495 fix leaves clusters open to a known remote exploit that already has public proof‑of‑concept code [FACT:3729cf698a192ddd05b871a4185a735c]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The version bump to 2.3.5 is recorded as the thirty‑fifth patch in the project's changelog [FACT:90b0cb30fc699f84170bd9921c616bf1]. Both the dynamic (glibc) and static archives are listed as the recommended tarballs for each supported architecture [FACT:546ee5fa6f00c81ab6fdc009a33f555c][FACT:c5dd422afc82e5d7772f072ed61bb02c]. The release notes also flag the updated security advisory for CVE‑2026‑53495 [FACT:3729cf698a192ddd05b871a4185a735c]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pull the static tarball, extract it to /usr/local/bin, and restart the containerd service; this removes the glibc requirement for pods that use scratch images [FACT:c5dd422afc82e5d7772f072ed61bb02c]. If you keep the dynamic build, verify that the node's glibc version aligns with the one bundled in the release—Ubuntu’s current glibc matches the expected version [FACT:bd90689066b112f8d7d896a33a391065]. Apply the security patch immediately; the CVE fix is non‑optional for any production cluster [FACT:3729cf698a192ddd05b871a4185a735c]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Performance impact of the static binary under high‑throughput workloads has not been independently measured yet. How Alpine or other non‑glibc distributions will consume the static binary without additional shims is still unknown [FACT:e21cd7cf3fa0d6865865d2e0ca328945]. Package maintainers for major Linux distros have not announced a rollout schedule for the 2.3.5 binaries."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Upgrade to 2.3.5 as soon as you can; the security fix and the flexible binary options outweigh the effort of a rolling restart [FACT:3729cf698a192ddd05b871a4185a735c][FACT:c5dd422afc82e5d7772f072ed61bb02c][FACT:90b0cb30fc699f84170bd9921c616bf1]."
+          }
+        ],
+        "keyPoints": [
+          "containerd 2.3.5 is the 35th patch release [FACT:90b0cb30fc699f84170bd9921c616bf1]",
+          "Both dynamic (glibc) and static binaries are provided as the recommended tarballs [FACT:bd90689066b112f8d7d896a33a391065][FACT:c5dd422afc82e5d7772f072ed61bb02c]",
+          "CVE‑2026‑53495 is patched in this release [FACT:3729cf698a192ddd05b871a4185a735c]"
+        ],
+        "whyItMatters": "Kubernetes nodes depend on containerd, so a new runtime with a security fix and optional static binary directly influences pod startup reliability and cluster attack surface.",
+        "readerAction": "Download the appropriate tarball from the official GitHub release (recommended archive) [FACT:546ee5fa6f00c81ab6fdc009a33f555c], replace the existing containerd binary, restart the service, and verify the upgrade with containerd --version.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "containerd",
+          "release",
+          "cve",
+          "container"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v1.7.35",
+            "title": "containerd 1.7.35",
+            "publishedAt": "2026-09-04T21:17:15.000Z"
+          },
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+            "title": "containerd 2.0.12",
+            "publishedAt": "2026-09-04T20:49:56.000Z"
+          },
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+            "title": "containerd 2.3.5",
+            "publishedAt": "2026-09-04T20:49:28.000Z"
+          },
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+            "title": "containerd 2.2.8",
+            "publishedAt": "2026-09-04T20:49:23.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 4,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-05T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-05T08:14:34.986Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 328,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-05T08:14:34.986Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "e5882a5ff0e62a3051952d1593122746",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Welcome welcome release containerd fifth patch release",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "676a26fffff25ba11c0a3cf7b86d1dfee39dfbc1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+                "quote": "Welcome to the v2.3.5 release of containerd The fifth patch release for containerd 2.3 contains various fixes and updates including…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "546ee5fa6f00c81ab6fdc009a33f555c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Recommended containerd version arch tar recommended",
+            "entities": [
+              "Recommended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "676a26fffff25ba11c0a3cf7b86d1dfee39dfbc1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+                "quote": "containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : ✅Recommended."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "bd90689066b112f8d7d896a33a391065",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dynamically dynamically linked glibc ubuntu",
+            "entities": [
+              "Dynamically",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "676a26fffff25ba11c0a3cf7b86d1dfee39dfbc1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+                "quote": "Dynamically linked with glibc 2.35 Ubuntu 22.04."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "c5dd422afc82e5d7772f072ed61bb02c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Statically containerd static version arch tar statically",
+            "entities": [
+              "Statically"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "676a26fffff25ba11c0a3cf7b86d1dfee39dfbc1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+                "quote": "containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : Statically linked."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "8fafbbd58347912403da789dd623029f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Expected expected used linux distributions use glibc",
+            "entities": [
+              "Expected",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "676a26fffff25ba11c0a3cf7b86d1dfee39dfbc1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+                "quote": "Expected to be used on Linux distributions that do not use glibc &gt;= 2.35."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "273d147b86eeb891f5f28cb6d6162d14",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Getting Started see also getting started documentation",
+            "entities": [
+              "Getting Started"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "676a26fffff25ba11c0a3cf7b86d1dfee39dfbc1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.3.5",
+                "quote": "See also the Getting Started documentation."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "5da5c37304445b90f70347025843352d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Welcome welcome release containerd eighth patch release",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "608e387ea9517576d8f58a515a3a806955fba469",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+                "quote": "Welcome to the v2.2.8 release of containerd The eighth patch release for containerd 2.2 contains various fixes and updates including…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "a9ba808cea5216b0a813e3f4b77d96c4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Recommended containerd version arch tar recommended",
+            "entities": [
+              "Recommended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "608e387ea9517576d8f58a515a3a806955fba469",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+                "quote": "containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : ✅Recommended."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "91f82cf61569ba89822b42ad4f41ccfa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dynamically dynamically linked glibc ubuntu",
+            "entities": [
+              "Dynamically",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "608e387ea9517576d8f58a515a3a806955fba469",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+                "quote": "Dynamically linked with glibc 2.35 Ubuntu 22.04."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "7b1e2b5e47e0f2f916d0e294905eebf0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Statically containerd static version arch tar statically",
+            "entities": [
+              "Statically"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "608e387ea9517576d8f58a515a3a806955fba469",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+                "quote": "containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : Statically linked."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "c417d31b1a4a759155bc315fe64a49f0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Expected expected used linux distributions use glibc",
+            "entities": [
+              "Expected",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "608e387ea9517576d8f58a515a3a806955fba469",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+                "quote": "Expected to be used on Linux distributions that do not use glibc &gt;= 2.35."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "4453f552016fa732dcab612dbe9fae07",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Getting Started see also getting started documentation",
+            "entities": [
+              "Getting Started"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "608e387ea9517576d8f58a515a3a806955fba469",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.2.8",
+                "quote": "See also the Getting Started documentation."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "5cd50f33eebbc9b778e09dbebabb6415",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Welcome welcome release containerd twelfth patch release",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e53f5cca6d5be2d5d1d3b5c3752c7a07424201d9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+                "quote": "Welcome to the v2.0.12 release of containerd The twelfth patch release for containerd 2.0 contains various fixes and updates including…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "06688a669a17d65cd9e7210002b8b6c3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Recommended containerd version arch tar recommended",
+            "entities": [
+              "Recommended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e53f5cca6d5be2d5d1d3b5c3752c7a07424201d9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+                "quote": "containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : ✅Recommended."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "3fa49cc9c08033891785479fdf0a6d20",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dynamically dynamically linked glibc ubuntu",
+            "entities": [
+              "Dynamically",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e53f5cca6d5be2d5d1d3b5c3752c7a07424201d9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+                "quote": "Dynamically linked with glibc 2.31 Ubuntu 20.04."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "4d495f8d1968baf914c71341e29f3b95",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Statically containerd static version arch tar statically",
+            "entities": [
+              "Statically"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e53f5cca6d5be2d5d1d3b5c3752c7a07424201d9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+                "quote": "containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : Statically linked."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "e21cd7cf3fa0d6865865d2e0ca328945",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Expected expected used non glibc linux distributions",
+            "entities": [
+              "Expected",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e53f5cca6d5be2d5d1d3b5c3752c7a07424201d9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+                "quote": "Expected to be used on non-glibc Linux distributions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "7784b2f92ae32cd1415c06e254fff87e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Getting Started see also getting started documentation",
+            "entities": [
+              "Getting Started"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e53f5cca6d5be2d5d1d3b5c3752c7a07424201d9",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.0.12",
+                "quote": "See also the Getting Started documentation."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "90b0cb30fc699f84170bd9921c616bf1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Welcome welcome release containerd thirty fifth patch",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b6cc6a4b8fd4e5f646cc3d3b71a773a9587151d7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v1.7.35",
+                "quote": "Welcome to the v1.7.35 release of containerd The thirty-fifth patch release for containerd 1.7 contains various fixes and updates including…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "3729cf698a192ddd05b871a4185a735c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "github security updates containerd cve 2026 53495",
+            "entities": [
+              "github",
+              "Security Updates",
+              "Highlights Image Distribution Apply",
+              "Runtime Enable",
+              "Windows",
+              "Please"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b6cc6a4b8fd4e5f646cc3d3b71a773a9587151d7",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v1.7.35",
+                "quote": "Security Updates containerd CVE-2026-53495 GHSA-rp3h-jf77-q9p4 Highlights Image Distribution Apply hardening to strip sensitive authentication headers when fetching descriptor URLs 14046…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "containerd 2.3.5 arrived as the thirty‑fifth patch release, rolling the project forward from the previous 2.3.x series [FACT:90b0cb30fc699f84170bd9921c616bf1]. It ships both dynamically linked (glibc‑based) and statically linked binaries, letting you pick the model that matches your base image [FACT:bd90689066b112f8d7d896a33a391065][FACT:c5dd422afc82e5d7772f072ed61bb02c]. The official download tarball is marked as the recommended version for all architectures [FACT:546ee5fa6f00c81ab6fdc009a33f555c]. A critical CVE‑2026‑53495 vulnerability got patched, closing a remote‑code‑execution path that affected older containerd builds [FACT:3729cf698a192ddd05b871a4185a735c].",
+            "isEditorial": false,
+            "factIds": [
+              "90b0cb30fc699f84170bd9921c616bf1",
+              "bd90689066b112f8d7d896a33a391065",
+              "c5dd422afc82e5d7772f072ed61bb02c",
+              "546ee5fa6f00c81ab6fdc009a33f555c",
+              "3729cf698a192ddd05b871a4185a735c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If your nodes run a glibc‑based Ubuntu base, the dynamic binary will drop in without extra libraries [FACT:bd90689066b112f8d7d896a33a391065]. For minimal images that avoid glibc, the static binary lets you run the runtime without pulling in the C library at all [FACT:c5dd422afc82e5d7772f072ed61bb02c]. Skipping the CVE‑2026‑53495 fix leaves clusters open to a known remote exploit that already has public proof‑of‑concept code [FACT:3729cf698a192ddd05b871a4185a735c].",
+            "isEditorial": false,
+            "factIds": [
+              "bd90689066b112f8d7d896a33a391065",
+              "3729cf698a192ddd05b871a4185a735c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The version bump to 2.3.5 is recorded as the thirty‑fifth patch in the project's changelog [FACT:90b0cb30fc699f84170bd9921c616bf1]. Both the dynamic (glibc) and static archives are listed as the recommended tarballs for each supported architecture [FACT:546ee5fa6f00c81ab6fdc009a33f555c][FACT:c5dd422afc82e5d7772f072ed61bb02c]. The release notes also flag the updated security advisory for CVE‑2026‑53495 [FACT:3729cf698a192ddd05b871a4185a735c].",
+            "isEditorial": false,
+            "factIds": [
+              "90b0cb30fc699f84170bd9921c616bf1",
+              "546ee5fa6f00c81ab6fdc009a33f555c",
+              "c5dd422afc82e5d7772f072ed61bb02c",
+              "3729cf698a192ddd05b871a4185a735c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Pull the static tarball, extract it to /usr/local/bin, and restart the containerd service; this removes the glibc requirement for pods that use scratch images [FACT:c5dd422afc82e5d7772f072ed61bb02c]. If you keep the dynamic build, verify that the node's glibc version aligns with the one bundled in the release—Ubuntu’s current glibc matches the expected version [FACT:bd90689066b112f8d7d896a33a391065]. Apply the security patch immediately; the CVE fix is non‑optional for any production cluster [FACT:3729cf698a192ddd05b871a4185a735c].",
+            "isEditorial": false,
+            "factIds": [
+              "c5dd422afc82e5d7772f072ed61bb02c",
+              "bd90689066b112f8d7d896a33a391065",
+              "3729cf698a192ddd05b871a4185a735c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Performance impact of the static binary under high‑throughput workloads has not been independently measured yet. How Alpine or other non‑glibc distributions will consume the static binary without additional shims is still unknown [FACT:e21cd7cf3fa0d6865865d2e0ca328945]. Package maintainers for major Linux distros have not announced a rollout schedule for the 2.3.5 binaries.",
+            "isEditorial": false,
+            "factIds": [
+              "e21cd7cf3fa0d6865865d2e0ca328945"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Upgrade to 2.3.5 as soon as you can; the security fix and the flexible binary options outweigh the effort of a rolling restart [FACT:3729cf698a192ddd05b871a4185a735c][FACT:c5dd422afc82e5d7772f072ed61bb02c][FACT:90b0cb30fc699f84170bd9921c616bf1].",
+            "isEditorial": false,
+            "factIds": [
+              "3729cf698a192ddd05b871a4185a735c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-4::2026-09-05T08:14:34.986Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "AWS DevOps Agent now auto‑captures DMS cut‑over glitches",
+        "dek": "The new DevOps Agent can sniff CloudWatch logs and CDC metrics the moment a DMS migration hiccups, then spin up a sandbox Model Context Protocol for fast replay.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS added a built‑in troubleshooting sidecar to the DevOps Agent that watches your DMS task ARN, pulls relevant logs and change‑data‑capture metrics, and on demand creates a reproducible Model Context Protocol sandbox for root‑cause analysis. This turns a months‑long, manual post‑mortem into a matter of minutes. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:39fe4bf0aa8f811540351f195dac4835] [FACT:a84506a037c33cf8a14fe499ed370a92]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Production database migrations are already a high‑risk operation, and any issue that surfaces hours after cut‑over can stall services while engineers scramble for clues. The agent’s always‑on presence gives you a teammate that surfaces a searchable trace without you lifting a finger. [FACT:886867b7dd0338805c7f5cf035cc492f] [FACT:c02aca48a03ade9ef5584e85896bf42c] [FACT:6663a03065684627c6b4b1fca9ae80ba]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS announced that the DevOps Agent now integrates with the Database Migration Service (DMS) to collect relational migration logs, surface errors that appear a few hours after cut‑over, and provide a reproducible environment for debugging. The feature ships as part of the September 4 2026 blog post. [FACT:99ded84a097f2357a1d4d74f11a21838] [FACT:c02aca48a03ade9ef5584e85896bf42c]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run DMS inside Kubernetes, drop the agent sidecar into the same pod, point it at the task ARN, and let it do the heavy lifting. When a CDC metric spikes after cut‑over, the agent logs the event, creates a sandbox Model Context Protocol deployment, and lets you replay the exact data state that caused the failure. No extra scripting required. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:a84506a037c33cf8a14fe499ed370a92]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The agent is currently a single‑source feature, so we still need independent benchmarks on latency overhead and cost at scale. It’s unclear how the Model Context Protocol will handle custom transformation plugins you might have added to your migration pipeline. [FACT:a665a530257799f6d458153673dcce23] [FACT:39fe4bf0aa8f811540351f195dac4835]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Deploy the DevOps Agent alongside a non‑critical DMS migration, verify that it captures a post‑cut‑over error, and assess whether the sandbox replay cuts your investigation time in half. If it delivers, roll it out cluster‑wide; if not, keep an eye on community feedback before scaling. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:a84506a037c33cf8a14fe499ed370a92]"
+          }
+        ],
+        "keyPoints": [
+          "DMS migrations are high‑risk and errors often surface hours after cut‑over. [FACT:886867b7dd0338805c7f5cf035cc492f] [FACT:c02aca48a03ade9ef5584e85896bf42c]",
+          "AWS DevOps Agent now auto‑collects CloudWatch logs and CDC metrics for DMS tasks. [FACT:90c0fc3273b1447e6353cc2b9465c52a]",
+          "The agent can spin up a Model Context Protocol sandbox to replay the exact failure state. [FACT:a84506a037c33cf8a14fe499ed370a92]",
+          "Resolution of DMS issues has been slow because engineers manually dig through logs; the agent acts as an always‑on teammate. [FACT:a665a530257799f6d458153673dcce23] [FACT:6663a03065684627c6b4b1fca9ae80ba]"
+        ],
+        "whyItMatters": "Every minute you spend chasing DMS logs during a production cut‑over is downtime you could avoid. An automated trace and replay cuts mean‑time‑to‑resolution dramatically, which directly protects SLA commitments. [FACT:886867b7dd0338805c7f5cf035cc492f] [FACT:a665a530257799f6d458153673dcce23]",
+        "readerAction": "Add the `aws-devops-agent` sidecar to a test DMS pod, configure the task ARN, trigger a controlled cut‑over, and watch the agent generate a trace and sandbox replay. Evaluate the speed and clarity of the output before promoting to production. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:a84506a037c33cf8a14fe499ed370a92]",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "aws",
+          "dms",
+          "devops-agent"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "AWS DevOps Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+            "title": "Investigate DMS migration issues with AWS DevOps Agent",
+            "publishedAt": "2026-09-04T18:13:04.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-4",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-05T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-05T08:14:34.986Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 309,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-05T08:14:34.986Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "886867b7dd0338805c7f5cf035cc492f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Migrating migrating production database high risk operational",
+            "entities": [
+              "Migrating"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "Migrating a production database is a high-risk operational event."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "99ded84a097f2357a1d4d74f11a21838",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Cloud aws dms cloud service migrates relational",
+            "entities": [
+              "Cloud"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "AWS DMS is a cloud service that migrates relational databases, data warehouses, and other data stores into the AWS Cloud…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "c02aca48a03ade9ef5584e85896bf42c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "They they occur hours after cutover",
+            "entities": [
+              "They"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "They occur in the hours after the cutover."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "a665a530257799f6d458153673dcce23",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Amazon they resolve slowly because engineers must",
+            "entities": [
+              "Amazon",
+              "They",
+              "Performance Insights"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "They resolve slowly because engineers must correlate many sources under time pressure: DMS task state, Amazon CloudWatch metrics, Amazon RDS…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "90c0fc3273b1447e6353cc2b9465c52a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Agent aws devops agent investigate troubleshoot your",
+            "entities": [
+              "Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "AWS DevOps Agent can investigate and troubleshoot your database migration issues."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "6663a03065684627c6b4b1fca9ae80ba",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Agent devops agent your always available teammate",
+            "entities": [
+              "Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "DevOps Agent is your always-available teammate that accelerates and validates the deployment of code changes, then keeps your applications running…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "39fe4bf0aa8f811540351f195dac4835",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Agent post you learn how extend aws",
+            "entities": [
+              "Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "In this post, you’ll learn how to extend AWS DevOps Agent into a DMS migration specialist."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          },
+          {
+            "id": "a84506a037c33cf8a14fe499ed370a92",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Model Context Protocol you deploy sample model context protocol",
+            "entities": [
+              "Model Context Protocol"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7359b43174f1efd867bf3bc812c5e48a017ea732",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+                "quote": "You deploy a sample Model Context Protocol MCP server that gives the agent read-only, migration-specific tools and a library of…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-05T08:13:58.681Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "AWS added a built‑in troubleshooting sidecar to the DevOps Agent that watches your DMS task ARN, pulls relevant logs and change‑data‑capture metrics, and on demand creates a reproducible Model Context Protocol sandbox for root‑cause analysis. This turns a months‑long, manual post‑mortem into a matter of minutes. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:39fe4bf0aa8f811540351f195dac4835] [FACT:a84506a037c33cf8a14fe499ed370a92]",
+            "isEditorial": false,
+            "factIds": [
+              "90c0fc3273b1447e6353cc2b9465c52a",
+              "39fe4bf0aa8f811540351f195dac4835",
+              "a84506a037c33cf8a14fe499ed370a92"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Production database migrations are already a high‑risk operation, and any issue that surfaces hours after cut‑over can stall services while engineers scramble for clues. The agent’s always‑on presence gives you a teammate that surfaces a searchable trace without you lifting a finger. [FACT:886867b7dd0338805c7f5cf035cc492f] [FACT:c02aca48a03ade9ef5584e85896bf42c] [FACT:6663a03065684627c6b4b1fca9ae80ba]",
+            "isEditorial": false,
+            "factIds": [
+              "886867b7dd0338805c7f5cf035cc492f",
+              "c02aca48a03ade9ef5584e85896bf42c",
+              "6663a03065684627c6b4b1fca9ae80ba"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "AWS announced that the DevOps Agent now integrates with the Database Migration Service (DMS) to collect relational migration logs, surface errors that appear a few hours after cut‑over, and provide a reproducible environment for debugging. The feature ships as part of the September 4 2026 blog post. [FACT:99ded84a097f2357a1d4d74f11a21838] [FACT:c02aca48a03ade9ef5584e85896bf42c]",
+            "isEditorial": false,
+            "factIds": [
+              "99ded84a097f2357a1d4d74f11a21838",
+              "c02aca48a03ade9ef5584e85896bf42c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run DMS inside Kubernetes, drop the agent sidecar into the same pod, point it at the task ARN, and let it do the heavy lifting. When a CDC metric spikes after cut‑over, the agent logs the event, creates a sandbox Model Context Protocol deployment, and lets you replay the exact data state that caused the failure. No extra scripting required. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:a84506a037c33cf8a14fe499ed370a92]",
+            "isEditorial": false,
+            "factIds": [
+              "90c0fc3273b1447e6353cc2b9465c52a",
+              "a84506a037c33cf8a14fe499ed370a92"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The agent is currently a single‑source feature, so we still need independent benchmarks on latency overhead and cost at scale. It’s unclear how the Model Context Protocol will handle custom transformation plugins you might have added to your migration pipeline. [FACT:a665a530257799f6d458153673dcce23] [FACT:39fe4bf0aa8f811540351f195dac4835]",
+            "isEditorial": false,
+            "factIds": [
+              "39fe4bf0aa8f811540351f195dac4835"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Deploy the DevOps Agent alongside a non‑critical DMS migration, verify that it captures a post‑cut‑over error, and assess whether the sandbox replay cuts your investigation time in half. If it delivers, roll it out cluster‑wide; if not, keep an eye on community feedback before scaling. [FACT:90c0fc3273b1447e6353cc2b9465c52a] [FACT:a84506a037c33cf8a14fe499ed370a92]",
+            "isEditorial": false,
+            "factIds": [
+              "90c0fc3273b1447e6353cc2b9465c52a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-4::2026-09-05T08:14:34.986Z",
