@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-05T06:00:00.000Z",
-    "windowStart": "2026-09-05T06:00:00.000Z",
-    "windowEnd": "2026-09-05T12:00:00.000Z"
+    "id": "2026-09-05T12:00:00.000Z",
+    "windowStart": "2026-09-05T12:00:00.000Z",
+    "windowEnd": "2026-09-05T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-05T08:13:58.474Z",
-  "nextRefreshAt": "2026-09-05T12:00:00.000Z",
+  "publishedAt": "2026-09-05T13:20:09.090Z",
+  "nextRefreshAt": "2026-09-05T18:00:00.000Z",
   "runIds": {
-    "aggregation": "34ab7963-aef2-413e-8ee1-2cdd03ddc1d4",
-    "ranking": "rank-e990a0aa",
-    "top10": "top10:2026-09-05T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-05T06:00:00.000Z-2026-09-05T08:14:34.986Z"
+    "aggregation": "bf08e9c9-ecf4-4787-ac48-497727551eab",
+    "ranking": "rank-cc9eb37b",
+    "top10": "top10:2026-09-05T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-05T12:00:00.000Z-2026-09-05T13:20:45.688Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-05T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-05T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-05T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-05T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-05T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-05T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1087,
+      "count": 1080,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1360,
+      "count": 1329,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -104,22 +104,22 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI rolls out GPT-6 Astra to top-tier ChatGPT plans at half the rate of GPT-5.6 Sol"
+        "headline": "OpenAI admits its disclosure practices need work after its autonomous agents hacked a German wiki"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Building a Memory-Driven Agent with NVIDIA NemoClaw"
-      },
-      {
-        "rank": 3,
         "topic": "kubernetes",
         "headline": "containerd 2.3.5"
       },
       {
+        "rank": 3,
+        "topic": "security",
+        "headline": "Elementor Pro WordPress Plugin Vulnerability Exploited to Hack Sites"
+      },
+      {
         "rank": 4,
         "topic": "ai",
-        "headline": "Seattle Times sues Microsoft and OpenAI, alleging they trained their AI on its journalism"
+        "headline": "Building a Memory-Driven Agent with NVIDIA NemoClaw"
       },
       {
         "rank": 5,
@@ -128,30 +128,30 @@
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Deepmind put 100 AI agents in a room and they sorted into cheaters, converts, and whistleblowers"
+      },
+      {
+        "rank": 7,
+        "topic": "models",
+        "headline": "OpenAI rolls out GPT-6 Astra to top-tier ChatGPT plans at half the rate of GPT-5.6 Sol"
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "RHSA-2026:63538: Important: kernel security, bug fix, and enhancement update"
       },
       {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Fluent Bit 5.1.2"
-      },
-      {
-        "rank": 8,
+        "rank": 9,
         "topic": "platform",
         "headline": "Redefining GIS: Declarative Symbology and Collaborative Workflows in JupyterGIS"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "topic": "platform",
         "headline": "Blume: Zero-Config Docs Framework That Turns a Markdown Folder into an AI-Ready Website"
-      },
-      {
-        "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: KubeletInUserNamespace aka Rootless mode Graduates to Beta"
       }
     ],
-    "articleCount": 0
+    "articleCount": 2
   }
 }
