@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-05T18:00:00.000Z",
-    "windowStart": "2026-09-05T18:00:00.000Z",
-    "windowEnd": "2026-09-06T00:00:00.000Z"
+    "id": "2026-09-06T00:00:00.000Z",
+    "windowStart": "2026-09-06T00:00:00.000Z",
+    "windowEnd": "2026-09-06T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-05T20:08:58.644Z",
-  "nextRefreshAt": "2026-09-06T00:00:00.000Z",
+  "publishedAt": "2026-09-06T03:50:17.398Z",
+  "nextRefreshAt": "2026-09-06T06:00:00.000Z",
   "runIds": {
-    "aggregation": "8adbe0de-7377-47b1-ba9b-df3d7523a948",
-    "ranking": "rank-931b7167",
-    "top10": "top10:2026-09-05T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-05T18:00:00.000Z-2026-09-05T20:09:33.444Z"
+    "aggregation": "2eaf5d7a-1d08-4a78-a6b5-2873d0e8edcc",
+    "ranking": "rank-6c427a74",
+    "top10": "top10:2026-09-06T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-06T00:00:00.000Z-2026-09-06T03:50:50.746Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-05T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-05T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-05T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-06T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-06T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-06T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 75,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1058,
+      "count": 1039,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1334,
+      "count": 1096,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "OpenAI shares prompting tips for GPT-6 Astra including a blocklist of slop words"
+        "topic": "models",
+        "headline": "Introducing GPT-6 Astra for developers"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Artificial Analysis overhauls its Intelligence Index after GPT-6 Astra scoring drew skepticism"
+        "topic": "security",
+        "headline": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Two More News Organizations Sue OpenAI And Microsoft For Copyright Infringement"
+        "headline": "Two more newsrooms join the case against OpenAI and Microsoft"
       },
       {
         "rank": 4,
@@ -128,30 +128,30 @@
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Hybrid generative AI augmentation boosts tomato disease detection from limited data"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Anthropic's IPO Could Value It at 30 Times Revenue. Here's Why I'm Still Interested Anyway."
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "containerd 2.3.5"
       },
       {
-        "rank": 7,
-        "topic": "security",
-        "headline": "Elementor Pro WordPress Plugin Vulnerability Exploited to Hack Sites"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Quebec courts say generative AI cannot replace judges’ reasoning"
-      },
-      {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Rubber Gaskets Pharmaceutical Containers Market Outlook to 2035"
+        "topic": "security",
+        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Industrial MLOps as a Distributed Operating Model"
+        "topic": "models",
+        "headline": "Broadcom, OpenAI unveil Jalapeño AI inference chip"
       }
     ],
-    "articleCount": 1
+    "articleCount": 2
   }
 }
