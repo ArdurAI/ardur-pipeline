@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-07T06:00:00.000Z",
-    "windowStart": "2026-09-07T06:00:00.000Z",
-    "windowEnd": "2026-09-07T12:00:00.000Z"
+    "id": "2026-09-07T12:00:00.000Z",
+    "windowStart": "2026-09-07T12:00:00.000Z",
+    "windowEnd": "2026-09-07T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-07T09:09:33.992Z",
-  "nextRefreshAt": "2026-09-07T12:00:00.000Z",
+  "publishedAt": "2026-09-07T12:16:43.713Z",
+  "nextRefreshAt": "2026-09-07T18:00:00.000Z",
   "runIds": {
-    "aggregation": "0914a54c-1361-4fab-af94-92e341027254",
-    "ranking": "rank-e01927cf",
-    "top10": "top10:2026-09-07T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-07T06:00:00.000Z-2026-09-07T09:10:08.791Z"
+    "aggregation": "9fdcf4e8-4114-41dc-9d00-8cbaf9a6af74",
+    "ranking": "rank-fa3d3272",
+    "top10": "top10:2026-09-07T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-07T12:00:00.000Z-2026-09-07T12:17:20.532Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-07T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-07T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-07T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-07T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-07T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-07T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1154,
+      "count": 1072,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,33 +54,33 @@
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 944,
+      "count": 1048,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 26,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "GPT-6 Astra: A new generation of intelligence"
+        "topic": "security",
+        "headline": "Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Critical MikroTik Vulnerability"
+        "headline": "Adobe Commerce Zero-Day Exploited to Backdoor Online Stores"
       },
       {
         "rank": 3,
         "topic": "platform",
-        "headline": "vlt 1.0 Ships as a Drop-in npm Replacement with Phased Installs, Graph Queries, and Malware-Blocking"
+        "headline": "Kotlin 2.4.20 Released"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Harvey + Legora on OpenAI’s GPT-6 Astra"
+        "headline": "OpenAI has sent EU incident report on hijacked German website, Commission says"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Research acceleration: The view inside OpenAI"
+        "topic": "kubernetes",
+        "headline": "Handling vulnerability reports: Recipe card"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Nuix Expands Generative AI for Legal Review, Debuts AI Chat for Case Data"
+        "topic": "kubernetes",
+        "headline": "v1.20.2"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "N-able patches max severity N-central flaw amid ongoing attacks"
+        "topic": "ai",
+        "headline": "OpenAI officially launches GPT-6 Astra: How to try it"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "ToolHive: The open-source way to run any MCP server securely"
+        "topic": "ai",
+        "headline": "Supporting independent journalism in Ukraine"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Understanding W8A8 INT8 LLM quantization: Half the size, better performance, same accuracy"
+        "headline": "vlt 1.0 Ships as a Drop-in npm Replacement with Phased Installs, Graph Queries, and Malware-Blocking"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Red Hat Developer Hub software template authoring with rhdh-templates"
+        "topic": "kubernetes",
+        "headline": "v0.313.3"
       }
     ],
     "articleCount": 0
