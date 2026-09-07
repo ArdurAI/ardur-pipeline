@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-07T12:00:00.000Z",
-    "windowStart": "2026-09-07T12:00:00.000Z",
-    "windowEnd": "2026-09-07T18:00:00.000Z"
+    "id": "2026-09-07T18:00:00.000Z",
+    "windowStart": "2026-09-07T18:00:00.000Z",
+    "windowEnd": "2026-09-08T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-07T12:16:43.713Z",
-  "nextRefreshAt": "2026-09-07T18:00:00.000Z",
+  "publishedAt": "2026-09-07T19:43:47.157Z",
+  "nextRefreshAt": "2026-09-08T00:00:00.000Z",
   "runIds": {
-    "aggregation": "9fdcf4e8-4114-41dc-9d00-8cbaf9a6af74",
-    "ranking": "rank-fa3d3272",
-    "top10": "top10:2026-09-07T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-07T12:00:00.000Z-2026-09-07T12:17:20.532Z"
+    "aggregation": "9515997d-4ba9-4a70-b0eb-4344eb17bc01",
+    "ranking": "rank-500b0590",
+    "top10": "top10:2026-09-07T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-07T18:00:00.000Z-2026-09-07T19:44:32.089Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-07T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-07T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-07T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-07T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-07T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-07T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1072,
+      "count": 1032,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,21 +54,21 @@
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 7 distinct domains < floor 20"
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1048,
+      "count": 1212,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-5] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 35,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "kubernetes",
+        "headline": "3.13.3 / 2026-09-07"
+      },
+      {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Research acceleration: The view inside OpenAI"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor"
+      },
+      {
+        "rank": 4,
+        "topic": "platform",
+        "headline": "Reference architecture for HA scanning with Red Hat Advanced Cluster Security for Kubernetes"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits"
       },
       {
-        "rank": 2,
+        "rank": 6,
         "topic": "security",
         "headline": "Adobe Commerce Zero-Day Exploited to Backdoor Online Stores"
       },
       {
-        "rank": 3,
+        "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI’s GPT-6 Astra model autonomously completes Portal in 24 hours — feat cost just $571 in tokens"
+      },
+      {
+        "rank": 8,
         "topic": "platform",
         "headline": "Kotlin 2.4.20 Released"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI has sent EU incident report on hijacked German website, Commission says"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Handling vulnerability reports: Recipe card"
-      },
-      {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v1.20.2"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI officially launches GPT-6 Astra: How to try it"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Supporting independent journalism in Ukraine"
-      },
-      {
         "rank": 9,
-        "topic": "platform",
-        "headline": "vlt 1.0 Ships as a Drop-in npm Replacement with Phased Installs, Graph Queries, and Malware-Blocking"
+        "topic": "ai",
+        "headline": "Anthropic reportedly signs $517 billion in compute deals after Dario Amodei warned rivals about reckless risk"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v0.313.3"
+        "headline": "v1.20.2"
       }
     ],
     "articleCount": 0
