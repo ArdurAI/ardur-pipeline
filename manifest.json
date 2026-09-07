@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-07T00:00:00.000Z",
-    "windowStart": "2026-09-07T00:00:00.000Z",
-    "windowEnd": "2026-09-07T06:00:00.000Z"
+    "id": "2026-09-07T06:00:00.000Z",
+    "windowStart": "2026-09-07T06:00:00.000Z",
+    "windowEnd": "2026-09-07T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-07T03:48:54.993Z",
-  "nextRefreshAt": "2026-09-07T06:00:00.000Z",
+  "publishedAt": "2026-09-07T09:09:33.992Z",
+  "nextRefreshAt": "2026-09-07T12:00:00.000Z",
   "runIds": {
-    "aggregation": "2fd63dea-a8e4-4728-8c18-6be1a9a9b4e0",
-    "ranking": "rank-aff51cf9",
-    "top10": "top10:2026-09-07T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-07T00:00:00.000Z-2026-09-07T03:49:45.179Z"
+    "aggregation": "0914a54c-1361-4fab-af94-92e341027254",
+    "ranking": "rank-e01927cf",
+    "top10": "top10:2026-09-07T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-07T06:00:00.000Z-2026-09-07T09:10:08.791Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-07T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-07T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-07T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-07T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-07T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-07T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 87,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1132,
+      "count": 1154,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiUEFVX3lxTE5Dc0tRS2JjQVdhblRTVldQamEyclNHY1hqbDdSVXV2QlZURjZWSE9PYXBIVGZkTERYUFNQUy1LWXh3cnFXN29YYkdIa0NNbF9T?oc=5"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 904,
+      "count": 944,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 32,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -113,43 +113,43 @@
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Nvidia CEO Jensen Huang Says AGI Has Arrived With OpenAI's GPT-6 Astra"
+        "topic": "platform",
+        "headline": "vlt 1.0 Ships as a Drop-in npm Replacement with Phased Installs, Graph Queries, and Malware-Blocking"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Research acceleration: The view inside OpenAI"
+        "headline": "Harvey + Legora on OpenAI’s GPT-6 Astra"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "An Alien Mind"
+        "headline": "Research acceleration: The view inside OpenAI"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Java News Roundup: TornadoVM 6, JReleaser, LangChain4j, Java Operator SDK, JHipster, Yupiik Fusion"
+        "topic": "ai",
+        "headline": "Nuix Expands Generative AI for Legal Review, Debuts AI Chat for Case Data"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Reference architecture for HA scanning with Red Hat Advanced Cluster Security for Kubernetes"
+        "topic": "security",
+        "headline": "N-able patches max severity N-central flaw amid ongoing attacks"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "OpenAI launches powerful new frontier model 'Astra'"
+        "topic": "kubernetes",
+        "headline": "ToolHive: The open-source way to run any MCP server securely"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Permissions belong in the assembly context"
+        "topic": "platform",
+        "headline": "Understanding W8A8 INT8 LLM quantization: Half the size, better performance, same accuracy"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Weekly Update 520: The Unscripted Edition"
+        "topic": "platform",
+        "headline": "Red Hat Developer Hub software template authoring with rhdh-templates"
       }
     ],
     "articleCount": 0
