@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-08T00:00:00.000Z",
-    "windowStart": "2026-09-08T00:00:00.000Z",
-    "windowEnd": "2026-09-08T06:00:00.000Z"
+    "id": "2026-09-08T06:00:00.000Z",
+    "windowStart": "2026-09-08T06:00:00.000Z",
+    "windowEnd": "2026-09-08T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-08T03:52:56.785Z",
-  "nextRefreshAt": "2026-09-08T06:00:00.000Z",
+  "publishedAt": "2026-09-08T08:45:32.186Z",
+  "nextRefreshAt": "2026-09-08T12:00:00.000Z",
   "runIds": {
-    "aggregation": "cbeacfd7-d90f-4315-a893-4ebc01e22c6b",
-    "ranking": "rank-5692e950",
-    "top10": "top10:2026-09-08T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-08T00:00:00.000Z-2026-09-08T03:53:32.167Z"
+    "aggregation": "37d36282-f313-4fad-837f-6f1cf839d3fb",
+    "ranking": "rank-66884fba",
+    "top10": "top10:2026-09-08T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-08T06:00:00.000Z-2026-09-08T08:46:04.444Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-08T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-08T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-08T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-08T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-08T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-08T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1134,
+      "count": 1169,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1287,
+      "count": 1325,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 38,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 12,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:64781: Critical: 389-ds-base security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:64772: Important: xmlrpc-c security update"
-      },
-      {
-        "rank": 3,
         "topic": "kubernetes",
         "headline": "3.13.3 / 2026-09-07"
       },
       {
+        "rank": 2,
+        "topic": "models",
+        "headline": "llm 0.35"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:65111: Important: firefox security update"
+      },
+      {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:64784: Critical: 389-ds-base security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:64799: Moderate: glib2 security update"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "CNCF and SlashData Report Highlights China’s Cloud Native Momentum as AI Moves to Inference"
+      },
+      {
+        "rank": 7,
         "topic": "kubernetes",
         "headline": "CNCF Welcomes New Silver Members as Enterprises Scale AI From Training to Inference"
       },
       {
-        "rank": 5,
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "China Merchants Bank Wins CNCF End User Case Study Contest for Unifying AI Training and Inference on Kubernetes"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "llm 0.35"
-      },
-      {
-        "rank": 7,
+        "rank": 9,
         "topic": "models",
         "headline": "Nvidia Eyes Rebellions as Its Strategic Push into AI Inference Accelerates"
       },
       {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Firmus locks in OpenAI as anchor customer, unveils two Malaysian sites"
-      },
-      {
-        "rank": 9,
-        "topic": "security",
-        "headline": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor"
-      },
-      {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Wavespace Unveils a New Design Approach for AI Agents: Moving Beyond the Chatbox"
+        "topic": "security",
+        "headline": "RHSA-2026:64794: Low: httpd:2.4 security update"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
