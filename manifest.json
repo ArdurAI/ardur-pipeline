@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-07T18:00:00.000Z",
-    "windowStart": "2026-09-07T18:00:00.000Z",
-    "windowEnd": "2026-09-08T00:00:00.000Z"
+    "id": "2026-09-08T00:00:00.000Z",
+    "windowStart": "2026-09-08T00:00:00.000Z",
+    "windowEnd": "2026-09-08T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-07T19:43:47.157Z",
-  "nextRefreshAt": "2026-09-08T00:00:00.000Z",
+  "publishedAt": "2026-09-08T03:52:56.785Z",
+  "nextRefreshAt": "2026-09-08T06:00:00.000Z",
   "runIds": {
-    "aggregation": "9515997d-4ba9-4a70-b0eb-4344eb17bc01",
-    "ranking": "rank-500b0590",
-    "top10": "top10:2026-09-07T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-07T18:00:00.000Z-2026-09-07T19:44:32.089Z"
+    "aggregation": "cbeacfd7-d90f-4315-a893-4ebc01e22c6b",
+    "ranking": "rank-5692e950",
+    "top10": "top10:2026-09-08T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-08T00:00:00.000Z-2026-09-08T03:53:32.167Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-07T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-07T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-07T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-08T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-08T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-08T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1032,
+      "count": 1134,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,16 +59,16 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1212,
+      "count": 1287,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-5] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "RHSA-2026:64781: Critical: 389-ds-base security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:64772: Important: xmlrpc-c security update"
+      },
+      {
+        "rank": 3,
         "topic": "kubernetes",
         "headline": "3.13.3 / 2026-09-07"
       },
       {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Research acceleration: The view inside OpenAI"
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "CNCF Welcomes New Silver Members as Enterprises Scale AI From Training to Inference"
       },
       {
-        "rank": 3,
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "China Merchants Bank Wins CNCF End User Case Study Contest for Unifying AI Training and Inference on Kubernetes"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "llm 0.35"
+      },
+      {
+        "rank": 7,
+        "topic": "models",
+        "headline": "Nvidia Eyes Rebellions as Its Strategic Push into AI Inference Accelerates"
+      },
+      {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "Firmus locks in OpenAI as anchor customer, unveils two Malaysian sites"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor"
       },
       {
-        "rank": 4,
-        "topic": "platform",
-        "headline": "Reference architecture for HA scanning with Red Hat Advanced Cluster Security for Kubernetes"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "Adobe Commerce Zero-Day Exploited to Backdoor Online Stores"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI’s GPT-6 Astra model autonomously completes Portal in 24 hours — feat cost just $571 in tokens"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "Kotlin 2.4.20 Released"
-      },
-      {
-        "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic reportedly signs $517 billion in compute deals after Dario Amodei warned rivals about reckless risk"
-      },
-      {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.20.2"
+        "topic": "ai",
+        "headline": "Wavespace Unveils a New Design Approach for AI Agents: Moving Beyond the Chatbox"
       }
     ],
     "articleCount": 0
