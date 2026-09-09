@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-09T00:00:00.000Z",
-    "windowStart": "2026-09-09T00:00:00.000Z",
-    "windowEnd": "2026-09-09T06:00:00.000Z"
+    "id": "2026-09-09T06:00:00.000Z",
+    "windowStart": "2026-09-09T06:00:00.000Z",
+    "windowEnd": "2026-09-09T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-09T03:57:32.299Z",
-  "nextRefreshAt": "2026-09-09T06:00:00.000Z",
+  "publishedAt": "2026-09-09T08:55:00.626Z",
+  "nextRefreshAt": "2026-09-09T12:00:00.000Z",
   "runIds": {
-    "aggregation": "6b00c3b7-2939-4d04-9e60-2a9243ac03a4",
-    "ranking": "rank-f29e69eb",
-    "top10": "top10:2026-09-09T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-09T00:00:00.000Z-2026-09-09T03:58:07.679Z"
+    "aggregation": "bf468cf6-1d0e-4059-9bb1-b5c761e1dd49",
+    "ranking": "rank-fc29ea05",
+    "top10": "top10:2026-09-09T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-09T06:00:00.000Z-2026-09-09T08:55:34.399Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-09T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-09T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-09T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-09T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-09T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-09T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 102,
+      "count": 93,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1388,
+      "count": 1403,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1622,
+      "count": 1619,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 21,
       "sample": [
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "llm 0.35"
+        "topic": "security",
+        "headline": "RHSA-2026:65816: Important: qt6-qt5compat security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:65764: Important: thunderbird security update"
+        "topic": "models",
+        "headline": "llm 0.35"
       },
       {
         "rank": 3,
@@ -119,37 +119,37 @@
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:65762: Moderate: glib2 security update"
+        "headline": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "On the Navier–Stokes Millennium Prize Problem"
+        "topic": "security",
+        "headline": "RHSA-2026:65763: Moderate: glib2 security update"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Introducing ChatGPT Images 2.5"
+        "headline": "'Gambling with our lives': AI researcher quits Anthropic and leaves AI entirely over what he calls a threat to humanity"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Cloud Native Computing Foundation Announces Karmada Graduation"
+        "topic": "ai",
+        "headline": "On the Navier–Stokes Millennium Prize Problem"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.55.0-next.2"
+        "topic": "platform",
+        "headline": "Presentation: Platform Engineering in the Age of AI"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock"
+        "topic": "kubernetes",
+        "headline": "v1.19.1-rc.1"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day"
+        "topic": "kubernetes",
+        "headline": "Dominion Hosting S p A : DHH joins Cloud Native Computing Foundation CNCF to champion Open Source innovation"
       }
     ],
     "articleCount": 0
