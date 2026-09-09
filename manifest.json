@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-09T06:00:00.000Z",
-    "windowStart": "2026-09-09T06:00:00.000Z",
-    "windowEnd": "2026-09-09T12:00:00.000Z"
+    "id": "2026-09-09T12:00:00.000Z",
+    "windowStart": "2026-09-09T12:00:00.000Z",
+    "windowEnd": "2026-09-09T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-09T08:55:00.626Z",
-  "nextRefreshAt": "2026-09-09T12:00:00.000Z",
+  "publishedAt": "2026-09-09T14:17:11.726Z",
+  "nextRefreshAt": "2026-09-09T18:00:00.000Z",
   "runIds": {
-    "aggregation": "bf468cf6-1d0e-4059-9bb1-b5c761e1dd49",
-    "ranking": "rank-fc29ea05",
-    "top10": "top10:2026-09-09T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-09T06:00:00.000Z-2026-09-09T08:55:34.399Z"
+    "aggregation": "d5611534-185e-483f-b313-4625a0e52cb2",
+    "ranking": "rank-47635878",
+    "top10": "top10:2026-09-09T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-09T12:00:00.000Z-2026-09-09T14:17:44.116Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-09T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-09T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-09T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-09T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-09T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-09T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1403,
+      "count": 1366,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1619,
+      "count": 1600,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 21,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:65816: Important: qt6-qt5compat security update"
+        "headline": "RHSA-2026:65918: Important: delve security update"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "llm 0.35"
+        "topic": "security",
+        "headline": "RHSA-2026:65959: Moderate: gstreamer1-plugins-good security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Microsoft Plugs Nearly 1,000 Security Holes"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:65763: Moderate: glib2 security update"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "'Gambling with our lives': AI researcher quits Anthropic and leaves AI entirely over what he calls a threat to humanity"
-      },
-      {
-        "rank": 7,
         "topic": "ai",
         "headline": "On the Navier–Stokes Millennium Prize Problem"
       },
       {
+        "rank": 4,
+        "topic": "security",
+        "headline": "Microsoft Patches Record 974 Vulnerabilities, Including Two Exploited Zero-Days"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "Microsoft Plugs Nearly 1,000 Security Holes"
+      },
+      {
+        "rank": 6,
+        "topic": "platform",
+        "headline": "Use a local and open source code assistant"
+      },
+      {
+        "rank": 7,
+        "topic": "models",
+        "headline": "AWS is using Qualcomm for AI inference while Qualcomm uses AWS Bedrock to design the chips"
+      },
+      {
         "rank": 8,
         "topic": "platform",
-        "headline": "Presentation: Platform Engineering in the Age of AI"
+        "headline": "CGI buys Cincinnati's Callibrity to expand AI and platform engineering"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.19.1-rc.1"
+        "topic": "ai",
+        "headline": "Anthropic insiders warn AI could kill all humans"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Dominion Hosting S p A : DHH joins Cloud Native Computing Foundation CNCF to champion Open Source innovation"
+        "topic": "ai",
+        "headline": "Anthropic researcher quits over AI labs ‘gambling with our lives’"
       }
     ],
     "articleCount": 0
