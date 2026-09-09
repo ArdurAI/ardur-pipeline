@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-08T18:00:00.000Z",
-    "windowStart": "2026-09-08T18:00:00.000Z",
-    "windowEnd": "2026-09-09T00:00:00.000Z"
+    "id": "2026-09-09T00:00:00.000Z",
+    "windowStart": "2026-09-09T00:00:00.000Z",
+    "windowEnd": "2026-09-09T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-08T19:20:57.882Z",
-  "nextRefreshAt": "2026-09-09T00:00:00.000Z",
+  "publishedAt": "2026-09-09T03:57:32.299Z",
+  "nextRefreshAt": "2026-09-09T06:00:00.000Z",
   "runIds": {
-    "aggregation": "3a9e4684-dacc-46f4-8d24-014824a64c5a",
-    "ranking": "rank-02757485",
-    "top10": "top10:2026-09-08T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-08T18:00:00.000Z-2026-09-08T19:21:34.238Z"
+    "aggregation": "6b00c3b7-2939-4d04-9e60-2a9243ac03a4",
+    "ranking": "rank-f29e69eb",
+    "top10": "top10:2026-09-09T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-09T00:00:00.000Z-2026-09-09T03:58:07.679Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-08T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-08T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-08T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-09T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-09T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-09T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 102,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1428,
+      "count": 1388,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1599,
+      "count": 1622,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 22,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -108,18 +108,18 @@
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "3.13.3 / 2026-09-07"
+        "topic": "security",
+        "headline": "RHSA-2026:65764: Important: thunderbird security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:65508: Important: libyang security update"
+        "headline": "Microsoft Plugs Nearly 1,000 Security Holes"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Govern models with MLflow and Amazon SageMaker AI Model Registry sync: Part 2"
+        "topic": "security",
+        "headline": "RHSA-2026:65762: Moderate: glib2 security update"
       },
       {
         "rank": 5,
@@ -128,30 +128,30 @@
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review"
+        "topic": "ai",
+        "headline": "Introducing ChatGPT Images 2.5"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Funding grants for new research into AI and teen development"
+        "topic": "kubernetes",
+        "headline": "Cloud Native Computing Foundation Announces Karmada Graduation"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:64800: Moderate: glib2 security update"
+        "topic": "kubernetes",
+        "headline": "v1.55.0-next.2"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day"
+        "topic": "ai",
+        "headline": "Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Presentation: Platform Engineering in the Age of AI"
+        "topic": "security",
+        "headline": "Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
