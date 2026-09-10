@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-09T18:00:00.000Z",
-    "windowStart": "2026-09-09T18:00:00.000Z",
-    "windowEnd": "2026-09-10T00:00:00.000Z"
+    "id": "2026-09-10T00:00:00.000Z",
+    "windowStart": "2026-09-10T00:00:00.000Z",
+    "windowEnd": "2026-09-10T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-09T19:10:37.405Z",
-  "nextRefreshAt": "2026-09-10T00:00:00.000Z",
+  "publishedAt": "2026-09-10T03:56:48.832Z",
+  "nextRefreshAt": "2026-09-10T06:00:00.000Z",
   "runIds": {
-    "aggregation": "f7e47ed6-94bc-40a5-9079-a72ddb94e95e",
-    "ranking": "rank-d906e3ab",
-    "top10": "top10:2026-09-09T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-09T18:00:00.000Z-2026-09-09T19:11:12.219Z"
+    "aggregation": "a7c8adcb-39ca-4935-8ede-9fddaeb154c3",
+    "ranking": "rank-390ae316",
+    "top10": "top10:2026-09-10T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-10T00:00:00.000Z-2026-09-10T03:57:23.461Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-09T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-09T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-09T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-10T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-10T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-10T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 87,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1365,
+      "count": 1415,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1593,
+      "count": 1652,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 25,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -104,17 +104,17 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:63044: Important: OpenShift Container Platform 4.19.46 bug fix and security update"
+        "headline": "RHSA-2026:66282: Important: freerdp security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:66016: Important: osbuild-composer security update"
+        "topic": "ai",
+        "headline": "GPT-6 Astra: A new generation of intelligence"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:65999: Moderate: gstreamer1-plugins-good security update"
+        "topic": "kubernetes",
+        "headline": "Helm v4.3.0"
       },
       {
         "rank": 4,
@@ -123,33 +123,33 @@
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "CONTAINERS"
+        "topic": "ai",
+        "headline": "The AI policy window is open. We need to act."
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "Multiple Chinese hacking groups seen using identical Chrome zero-day exploit"
+        "headline": "RHSA-2026:65998: Moderate: gzip security update"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license"
+        "topic": "ai",
+        "headline": "Anthropic researcher resigns with warning about the dangers of AI development"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "'Gambling with our lives': AI researcher quits Anthropic"
+        "topic": "models",
+        "headline": "When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "On the Navier–Stokes Millennium Prize Problem"
+        "topic": "security",
+        "headline": "Multiple Chinese hacking groups seen using identical Chrome zero-day exploit"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Use a local and open source code assistant"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37: Introducing Node Lifecycle Conditions"
       }
     ],
     "articleCount": 0
