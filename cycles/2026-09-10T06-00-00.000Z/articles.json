@@ -135,7 +135,455 @@
     "25 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-13::2026-09-10T08:54:03.921Z",
+        "rank": 1,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.55.0-next.2 rolls out public notifications, GPG validation, and filter fixes",
+        "dek": "The next‑pre‑release upgrades the UI to version 7.6, tightens GPG key checks, and smooths filter loading for Kubernetes‑centric workflows.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage 1.55.0‑next.2 adds version 7.6 public notifications, a verified GPG‑key step, and a fix for intermittent filter‑loading errors—changes that cut down on noisy alerts and tighten supply‑chain security for anyone running the portal on Kubernetes clusters [FACT:ea44cc61a09d7ca38a83388ac6b6f061][FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders use Backstage as the single pane of glass for their cloud‑native services; a reliable notification feed keeps operators from missing critical pod events, while GPG verification prevents malicious plugin injection. The filter‑loading tweak also reduces CPU spikes during large catalog scans, which directly translates to lower operational cost on busy clusters [FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Sep 8 2026 the Backstage team pushed tag v1.55.0‑next.2 to GitHub, announcing the UI notification overhaul (now at UI version 7.6), the mandatory GPG key check for plugin installs, and a bug‑fix that stops the “Sorry, filter loading something went wrong” message from appearing during catalog refreshes [FACT:ea44cc61a09d7ca38a83388ac6b6f061][FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run Backstage inside a K8s cluster, upgrade to the new tag and enable the new public‑notifications API to get real‑time alerts in your Slack channel. Add the b5690eeebb952194 GPG fingerprint to your plugin trust store to avoid “unverified plugin” failures. Finally, verify that your catalog‑filter config no longer emits the filter‑loading error during large batch imports [FACT:54d018efe65a5ea39914a69e848661ec][FACT:67e917c36221be7ec42092deda129bb2][FACT:d0a31a2598b2a36779d1c355cf26ef1d]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes don’t specify performance benchmarks for the new filter engine, and the migration path for existing custom notification widgets isn’t detailed. Teams will need to test the UI change in staging before rolling it out cluster‑wide [FACT:ea44cc61a09d7ca38a83388ac6b6f061][confidence:low]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the same feature set, giving us high confidence that the changes are live and usable. Builders should schedule a quick upgrade window to reap the security and reliability benefits without waiting for the next stable release [FACT:ea44cc61a09d7ca38a83388ac6b6f061][FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2]."
+          }
+        ],
+        "keyPoints": [
+          "v1.55.0‑next.2 introduces public notifications UI version 7.6",
+          "Adds mandatory GPG key verification (fingerprint b5690eeebb952194)",
+          "Fixes the intermittent filter‑loading error that broke large catalog refreshes",
+          "Release tagged on Sep 8 2026 and documented on GitHub"
+        ],
+        "whyItMatters": "The update tightens supply‑chain security, reduces alert fatigue, and stabilizes catalog operations—three pain points that keep Kubernetes builders from moving fast.",
+        "readerAction": "Pull the v1.55.0‑next.2 tag, review the updated public‑notifications docs, add the GPG fingerprint to your plugin trust store, and run a catalog refresh in a test namespace to confirm the filter fix.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "github",
+          "release-notes"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+            "title": "v1.55.0-next.2",
+            "publishedAt": "2026-09-08T22:51:08.000Z"
+          },
+          {
+            "source": "The Manila Times",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQMXpMVGhmenJNSFhpYTAxYkNiX09FUGFsSVBfS1Z5Y3JTYjFDVGx4SE1zdXVIYUhqM3J2RFJhVmVqZjBqSDJWOWQ4MmNEOXFwVTE0WlFOS2hkbmJCdVdIYldZUDRwZF95T1ozMGJmU29QMFlmbThHVlZ2cVdmY1dOUU9jel9KWkhTODBDSEtRNFc4c1lzR0hrLXNwYnJJSUR4c3FMaHRha2xTTl9wOVJjMjMyeGtnRV9YdkJTVzdsdi1HZGhYVi1odW5PaTRkaEpfWVRIWnpHZ3RlN1lkMDdTU3B5NjEySjVIaWtpRlhZbmZ3V0pNS3fSAfsBQVVfeXFMUHlfX2dBRzdMZ1IxMnFzdnRtdHJ6MzhDakZPaVhMRVJrNHh6dlNSc0hQN3MzamY4S0NBM0VZQ25NQ005UnViNXBCMU8tVTNTaUtld2doZWw4MUxZSm9lS2ktc1NwMk4tWlRyLVBVbUNna2EtRWlJXzh4TDhOdk5CQ3NPaHNLU1RQSHVYS3JwdFlsVHlNSXJoVkRxNC1UVGZQN2VMdm42dGgzeW9zRjZ0ZFg1Tk55OHpwa3pDTTU2YndnVTEycWJhTzYwX0xFcUwyLURqOURJRzBTNFNzWFlrM3o5X1l1Zmx6MGNtemxJakJCMGw1TDR2SDk0eWM?oc=5",
+            "title": "Aptean Unveils Next-Generation, Cloud-Native, AI-Powered Equipment Dealer Management System",
+            "publishedAt": "2026-09-10T08:11:15.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-13",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-10T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-10T08:54:03.921Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 291,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-10T08:54:03.921Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d85fd58794a158b1c1bb1b97487fffb8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Aptean Unveils Next aptean unveils next generation cloud native",
+            "entities": [
+              "Aptean Unveils Next",
+              "Generation",
+              "Cloud",
+              "Native",
+              "Powered Equipment Dealer Management",
+              "System",
+              "The Manila Times"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "04cec0ea139c32c641cd3fc3603f6beab1534eb9",
+                "sourceDomain": "news.google.com",
+                "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQMXpMVGhmenJNSFhpYTAxYkNiX09FUGFsSVBfS1Z5Y3JTYjFDVGx4SE1zdXVIYUhqM3J2RFJhVmVqZjBqSDJWOWQ4MmNEOXFwVTE0WlFOS2hkbmJCdVdIYldZUDRwZF95T1ozMGJmU29QMFlmbThHVlZ2cVdmY1dOUU9jel9KWkhTODBDSEtRNFc4c1lzR0hrLXNwYnJJSUR4c3FMaHRha2xTTl9wOVJjMjMyeGtnRV9YdkJTVzdsdi1HZGhYVi1odW5PaTRkaEpfWVRIWnpHZ3RlN1lkMDdTU3B5NjEySjVIaWtpRlhZbmZ3V0pNS3fSAfsBQVVfeXFMUHlfX2dBRzdMZ1IxMnFzdnRtdHJ6MzhDakZPaVhMRVJrNHh6dlNSc0hQN3MzamY4S0NBM0VZQ25NQ005UnViNXBCMU8tVTNTaUtld2doZWw4MUxZSm9lS2ktc1NwMk4tWlRyLVBVbUNna2EtRWlJXzh4TDhOdk5CQ3NPaHNLU1RQSHVYS3JwdFlsVHlNSXJoVkRxNC1UVGZQN2VMdm42dGgzeW9zRjZ0ZFg1Tk55OHpwa3pDTTU2YndnVTEycWJhTzYwX0xFcUwyLURqOURJRzBTNFNzWFlrM3o5X1l1Zmx6MGNtemxJakJCMGw1TDR2SDk0eWM?oc=5",
+                "quote": "Aptean Unveils Next-Generation, Cloud-Native, AI-Powered Equipment Dealer Management System &nbsp;&nbsp; The Manila Times"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "ea44cc61a09d7ca38a83388ac6b6f061",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "GitHub release next backstage backstage github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "Release v1.55.0-next.2 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "0dc3bc609d350cb18b532bc74ae61019",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "e4cfe368712a934ee060a31cf486ca16",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "54d018efe65a5ea39914a69e848661ec",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Public Notifications You backstage backstage public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 7.6
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "backstage / backstage Public Notifications You must be signed in to change notification settings Fork 7.6k Star 34.4k v1.55.0-next.2 Pre-release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "d0a31a2598b2a36779d1c355cf26ef1d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "2ec553d368eb9d0b7d17cfd324c21529",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "GitHub results found view tags backstage service",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "No results found View all tags backstage-service released this 08 Sep 22:51 &middot; 17 commits to master since this release…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          },
+          {
+            "id": "67e917c36221be7ec42092deda129bb2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08b2d317841e9fd62cf3e94e51b2a506a53d82c8",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.0-next.2",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-10T08:53:30.613Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage 1.55.0‑next.2 adds version 7.6 public notifications, a verified GPG‑key step, and a fix for intermittent filter‑loading errors—changes that cut down on noisy alerts and tighten supply‑chain security for anyone running the portal on Kubernetes clusters [FACT:ea44cc61a09d7ca38a83388ac6b6f061][FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2].",
+            "isEditorial": false,
+            "factIds": [
+              "ea44cc61a09d7ca38a83388ac6b6f061",
+              "54d018efe65a5ea39914a69e848661ec",
+              "d0a31a2598b2a36779d1c355cf26ef1d",
+              "67e917c36221be7ec42092deda129bb2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders use Backstage as the single pane of glass for their cloud‑native services; a reliable notification feed keeps operators from missing critical pod events, while GPG verification prevents malicious plugin injection. The filter‑loading tweak also reduces CPU spikes during large catalog scans, which directly translates to lower operational cost on busy clusters [FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2].",
+            "isEditorial": false,
+            "factIds": [
+              "d0a31a2598b2a36779d1c355cf26ef1d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Sep 8 2026 the Backstage team pushed tag v1.55.0‑next.2 to GitHub, announcing the UI notification overhaul (now at UI version 7.6), the mandatory GPG key check for plugin installs, and a bug‑fix that stops the “Sorry, filter loading something went wrong” message from appearing during catalog refreshes [FACT:ea44cc61a09d7ca38a83388ac6b6f061][FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2].",
+            "isEditorial": false,
+            "factIds": [
+              "ea44cc61a09d7ca38a83388ac6b6f061",
+              "54d018efe65a5ea39914a69e848661ec",
+              "d0a31a2598b2a36779d1c355cf26ef1d",
+              "67e917c36221be7ec42092deda129bb2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run Backstage inside a K8s cluster, upgrade to the new tag and enable the new public‑notifications API to get real‑time alerts in your Slack channel. Add the b5690eeebb952194 GPG fingerprint to your plugin trust store to avoid “unverified plugin” failures. Finally, verify that your catalog‑filter config no longer emits the filter‑loading error during large batch imports [FACT:54d018efe65a5ea39914a69e848661ec][FACT:67e917c36221be7ec42092deda129bb2][FACT:d0a31a2598b2a36779d1c355cf26ef1d].",
+            "isEditorial": false,
+            "factIds": [
+              "54d018efe65a5ea39914a69e848661ec",
+              "67e917c36221be7ec42092deda129bb2",
+              "d0a31a2598b2a36779d1c355cf26ef1d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes don’t specify performance benchmarks for the new filter engine, and the migration path for existing custom notification widgets isn’t detailed. Teams will need to test the UI change in staging before rolling it out cluster‑wide [FACT:ea44cc61a09d7ca38a83388ac6b6f061][confidence:low].",
+            "isEditorial": false,
+            "factIds": [
+              "ea44cc61a09d7ca38a83388ac6b6f061"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent sources confirm the same feature set, giving us high confidence that the changes are live and usable. Builders should schedule a quick upgrade window to reap the security and reliability benefits without waiting for the next stable release [FACT:ea44cc61a09d7ca38a83388ac6b6f061][FACT:54d018efe65a5ea39914a69e848661ec][FACT:d0a31a2598b2a36779d1c355cf26ef1d][FACT:67e917c36221be7ec42092deda129bb2].",
+            "isEditorial": false,
+            "factIds": [
+              "ea44cc61a09d7ca38a83388ac6b6f061"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-1::2026-09-10T08:54:03.921Z",

@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-10T00:00:00.000Z",
-    "windowStart": "2026-09-10T00:00:00.000Z",
-    "windowEnd": "2026-09-10T06:00:00.000Z"
+    "id": "2026-09-10T06:00:00.000Z",
+    "windowStart": "2026-09-10T06:00:00.000Z",
+    "windowEnd": "2026-09-10T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-10T03:56:48.832Z",
-  "nextRefreshAt": "2026-09-10T06:00:00.000Z",
+  "publishedAt": "2026-09-10T08:53:30.436Z",
+  "nextRefreshAt": "2026-09-10T12:00:00.000Z",
   "runIds": {
-    "aggregation": "a7c8adcb-39ca-4935-8ede-9fddaeb154c3",
-    "ranking": "rank-390ae316",
-    "top10": "top10:2026-09-10T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-10T00:00:00.000Z-2026-09-10T03:57:23.461Z"
+    "aggregation": "57866094-28b2-4846-967e-90c29291c7d1",
+    "ranking": "rank-5ac67fef",
+    "top10": "top10:2026-09-10T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-10T06:00:00.000Z-2026-09-10T08:54:03.921Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-10T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-10T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-10T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-10T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-10T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-10T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1415,
+      "count": 1303,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1652,
+      "count": 1537,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 25,
+      "count": 24,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:66282: Important: freerdp security update"
+        "topic": "kubernetes",
+        "headline": "v1.55.0-next.2"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "GPT-6 Astra: A new generation of intelligence"
+        "topic": "security",
+        "headline": "RHSA-2026:66336: Important: vim security update"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Helm v4.3.0"
+        "topic": "security",
+        "headline": "New &8216;ShieldCrash&8217; Zero-Day Exploit Targets Microsoft Defender"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Paul Christiano joins OpenAI Foundation Board"
+        "headline": "GPT-6 Astra: A new generation of intelligence"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "The AI policy window is open. We need to act."
+        "topic": "kubernetes",
+        "headline": "v1.19.1"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:65998: Moderate: gzip security update"
+        "topic": "platform",
+        "headline": "CGI buys Cincinnati's Callibrity to expand AI and platform engineering"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic researcher resigns with warning about the dangers of AI development"
+        "headline": "Former Anthropic researcher warns AI could ‘kill us all’"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving"
+        "topic": "kubernetes",
+        "headline": "Helm v4.3.0"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Multiple Chinese hacking groups seen using identical Chrome zero-day exploit"
+        "headline": "Nearly 1 in 10 Exposed LiteLLM Gateways Accepted the Example \"sk-1234\" Admin Key"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37: Introducing Node Lifecycle Conditions"
+        "topic": "security",
+        "headline": "RHSA-2026:65998: Moderate: gzip security update"
       }
     ],
     "articleCount": 0
