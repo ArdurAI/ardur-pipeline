@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-11T06:00:00.000Z",
-    "windowStart": "2026-09-11T06:00:00.000Z",
-    "windowEnd": "2026-09-11T12:00:00.000Z"
+    "id": "2026-09-11T12:00:00.000Z",
+    "windowStart": "2026-09-11T12:00:00.000Z",
+    "windowEnd": "2026-09-11T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-11T08:47:28.170Z",
-  "nextRefreshAt": "2026-09-11T12:00:00.000Z",
+  "publishedAt": "2026-09-11T14:09:35.523Z",
+  "nextRefreshAt": "2026-09-11T18:00:00.000Z",
   "runIds": {
-    "aggregation": "026ac970-9e73-4602-a1d8-d50fdfb42404",
-    "ranking": "rank-9c98fd97",
-    "top10": "top10:2026-09-11T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-11T06:00:00.000Z-2026-09-11T08:48:03.450Z"
+    "aggregation": "b45520d5-a87a-40a1-98aa-a36debbef091",
+    "ranking": "rank-b31abc07",
+    "top10": "top10:2026-09-11T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-11T12:00:00.000Z-2026-09-11T14:10:16.066Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-11T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-11T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-11T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-11T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-11T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-11T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 84,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1463,
+      "count": 1449,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1727,
+      "count": 1689,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 19,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:66432: Important: osbuild-composer security update"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:66460: Moderate: gstreamer1-plugins-base security update"
-      },
-      {
-        "rank": 3,
-        "topic": "security",
-        "headline": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:66459: Important: grafana-pcp security update"
-      },
-      {
-        "rank": 5,
-        "topic": "platform",
-        "headline": "Forgejo 16.0.4 and 15.0.8 address critical security vulnerability"
-      },
-      {
-        "rank": 6,
         "topic": "ai",
         "headline": "Datasette 1.0a39 and 0.65.4 security releases"
       },
       {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:66410: Important: openssh security update"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:66451: Moderate: glib2 security update"
+      },
+      {
+        "rank": 5,
+        "topic": "models",
+        "headline": "Deloitte launches the Open Model Engineering practice in India and other key global markets"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Anthropic Says Yemen Group Used Claude in Missile Development"
+      },
+      {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "0.45.0-rc2"
+        "topic": "security",
+        "headline": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0"
+        "topic": "kubernetes",
+        "headline": "v1.49.7"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v2.15.3-rc1"
+        "topic": "security",
+        "headline": "Metasploit Wrap Up: This One Goes to Sixteen"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Anthropic Says It Blocked Possible Efforts to Build Biological Weapons"
+        "topic": "platform",
+        "headline": "Terraform AWS Provider Continues Rapid Expansion as AWS Infrastructure Becomes More Complex"
       }
     ],
     "articleCount": 0
