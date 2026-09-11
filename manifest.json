@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-11T12:00:00.000Z",
-    "windowStart": "2026-09-11T12:00:00.000Z",
-    "windowEnd": "2026-09-11T18:00:00.000Z"
+    "id": "2026-09-11T18:00:00.000Z",
+    "windowStart": "2026-09-11T18:00:00.000Z",
+    "windowEnd": "2026-09-12T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-11T14:09:35.523Z",
-  "nextRefreshAt": "2026-09-11T18:00:00.000Z",
+  "publishedAt": "2026-09-11T19:04:03.011Z",
+  "nextRefreshAt": "2026-09-12T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b45520d5-a87a-40a1-98aa-a36debbef091",
-    "ranking": "rank-b31abc07",
-    "top10": "top10:2026-09-11T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-11T12:00:00.000Z-2026-09-11T14:10:16.066Z"
+    "aggregation": "74b0d224-1c3d-4123-9795-8e2e0b3e3165",
+    "ranking": "rank-9ecf35ef",
+    "top10": "top10:2026-09-11T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-11T18:00:00.000Z-2026-09-11T19:04:35.315Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-11T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-11T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-11T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-11T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-11T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-11T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 84,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1449,
+      "count": 1522,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1689,
+      "count": 1783,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 20,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Datasette 1.0a39 and 0.65.4 security releases"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37 brings 67 enhancements. Which matter for operators?"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:66410: Important: openssh security update"
+        "topic": "ai",
+        "headline": "Rapidly scaling online storage to serve over 1 billion ChatGPT users"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:66451: Moderate: glib2 security update"
+        "headline": "RHSA-2026:66410: Important: openssh security update"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure"
+      },
+      {
+        "rank": 7,
         "topic": "models",
         "headline": "Deloitte launches the Open Model Engineering practice in India and other key global markets"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic Says Yemen Group Used Claude in Missile Development"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws"
-      },
-      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.49.7"
+        "topic": "security",
+        "headline": "RHSA-2026:66451: Moderate: glib2 security update"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Metasploit Wrap Up: This One Goes to Sixteen"
+        "topic": "ai",
+        "headline": "Soft-deprecating re.match"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Terraform AWS Provider Continues Rapid Expansion as AWS Infrastructure Becomes More Complex"
+        "topic": "ai",
+        "headline": "Iran used Claude to target US Navy in Middle East, Anthropic says"
       }
     ],
     "articleCount": 0
