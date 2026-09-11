@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-11T00:00:00.000Z",
-    "windowStart": "2026-09-11T00:00:00.000Z",
-    "windowEnd": "2026-09-11T06:00:00.000Z"
+    "id": "2026-09-11T06:00:00.000Z",
+    "windowStart": "2026-09-11T06:00:00.000Z",
+    "windowEnd": "2026-09-11T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-11T03:53:19.118Z",
-  "nextRefreshAt": "2026-09-11T06:00:00.000Z",
+  "publishedAt": "2026-09-11T08:47:28.170Z",
+  "nextRefreshAt": "2026-09-11T12:00:00.000Z",
   "runIds": {
-    "aggregation": "a8bd416a-2657-4735-b5c3-84769be30615",
-    "ranking": "rank-54dc8030",
-    "top10": "top10:2026-09-11T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-11T00:00:00.000Z-2026-09-11T03:53:55.602Z"
+    "aggregation": "026ac970-9e73-4602-a1d8-d50fdfb42404",
+    "ranking": "rank-9c98fd97",
+    "top10": "top10:2026-09-11T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-11T06:00:00.000Z-2026-09-11T08:48:03.450Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-11T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-11T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-11T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-11T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-11T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-11T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1515,
+      "count": 1463,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1800,
+      "count": 1727,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:66545: Important: Red Hat AMQ Broker 7.13.6 release and security update"
+        "headline": "RHSA-2026:66432: Important: osbuild-composer security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference"
+        "topic": "security",
+        "headline": "RHSA-2026:66460: Moderate: gstreamer1-plugins-base security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says"
+        "topic": "security",
+        "headline": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws"
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:66459: Important: grafana-pcp security update"
+      },
+      {
+        "rank": 5,
         "topic": "platform",
         "headline": "Forgejo 16.0.4 and 15.0.8 address critical security vulnerability"
       },
       {
-        "rank": 5,
+        "rank": 6,
         "topic": "ai",
         "headline": "Datasette 1.0a39 and 0.65.4 security releases"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v2.15.3-rc1"
-      },
-      {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Senators from both parties question OpenAI on breach of AI startup Hugging Face"
+        "topic": "kubernetes",
+        "headline": "0.45.0-rc2"
       },
       {
         "rank": 8,
-        "topic": "models",
+        "topic": "ai",
         "headline": "Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Amazon Quick is now generally available on desktop"
+        "topic": "kubernetes",
+        "headline": "v2.15.3-rc1"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "'DeepSeek-V4.1-Flash' has been released, an open model that has shown performance exceeding Claude Opus 5 and GPT-5.6 Sol in multiple tests."
+        "topic": "ai",
+        "headline": "Anthropic Says It Blocked Possible Efforts to Build Biological Weapons"
       }
     ],
     "articleCount": 0
