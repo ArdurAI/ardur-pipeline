@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-10T18:00:00.000Z",
-    "windowStart": "2026-09-10T18:00:00.000Z",
-    "windowEnd": "2026-09-11T00:00:00.000Z"
+    "id": "2026-09-11T00:00:00.000Z",
+    "windowStart": "2026-09-11T00:00:00.000Z",
+    "windowEnd": "2026-09-11T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-10T19:02:20.188Z",
-  "nextRefreshAt": "2026-09-11T00:00:00.000Z",
+  "publishedAt": "2026-09-11T03:53:19.118Z",
+  "nextRefreshAt": "2026-09-11T06:00:00.000Z",
   "runIds": {
-    "aggregation": "eb0c3487-b2d0-4f13-9b6f-379f3d5f72e0",
-    "ranking": "rank-b25cdaeb",
-    "top10": "top10:2026-09-10T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-10T18:00:00.000Z-2026-09-10T19:02:56.926Z"
+    "aggregation": "a8bd416a-2657-4735-b5c3-84769be30615",
+    "ranking": "rank-54dc8030",
+    "top10": "top10:2026-09-11T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-11T00:00:00.000Z-2026-09-11T03:53:55.602Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-10T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-10T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-10T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-11T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-11T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-11T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 99,
+      "count": 93,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1519,
+      "count": 1515,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
         "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1813,
+      "count": 1800,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:66403: Moderate: coreutils security update"
+        "headline": "RHSA-2026:66545: Important: Red Hat AMQ Broker 7.13.6 release and security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:66407: Important: gstreamer1-plugins-bad-free security update"
+        "topic": "ai",
+        "headline": "Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "GPT-6 Astra: A new generation of intelligence"
+        "headline": "Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Build more natural voice experiences with GPT‑Live‑1 in the API"
+        "topic": "platform",
+        "headline": "Forgejo 16.0.4 and 15.0.8 address critical security vulnerability"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Introducing ChatGPT for Financial Services"
+        "headline": "Datasette 1.0a39 and 0.65.4 security releases"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Amazon Quick is now generally available on desktop"
+        "topic": "kubernetes",
+        "headline": "v2.15.3-rc1"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Watch d-Matrix Joins Nvidia’s AI Inference Push"
+        "topic": "ai",
+        "headline": "Senators from both parties question OpenAI on breach of AI startup Hugging Face"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.17.14"
+        "topic": "models",
+        "headline": "Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0"
       },
       {
         "rank": 9,
         "topic": "models",
-        "headline": "How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra"
+        "headline": "Amazon Quick is now generally available on desktop"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws"
+        "topic": "models",
+        "headline": "'DeepSeek-V4.1-Flash' has been released, an open model that has shown performance exceeding Claude Opus 5 and GPT-5.6 Sol in multiple tests."
       }
     ],
     "articleCount": 0
