@@ -1,38 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-12T12:00:00.000Z",
-    "windowStart": "2026-09-12T12:00:00.000Z",
-    "windowEnd": "2026-09-12T18:00:00.000Z"
+    "id": "2026-09-12T18:00:00.000Z",
+    "windowStart": "2026-09-12T18:00:00.000Z",
+    "windowEnd": "2026-09-13T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-12T13:28:30.010Z",
-  "nextRefreshAt": "2026-09-12T18:00:00.000Z",
+  "publishedAt": "2026-09-12T20:23:06.538Z",
+  "nextRefreshAt": "2026-09-13T00:00:00.000Z",
   "runIds": {
-    "aggregation": "f8ee53fd-5918-4ff4-8007-a50e44201055",
-    "ranking": "rank-43c3301e",
-    "top10": "top10:2026-09-12T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-12T12:00:00.000Z-2026-09-12T13:29:01.509Z"
+    "aggregation": "bc97e32e-ad83-48d4-9e77-8900d21d256a",
+    "ranking": "rank-f9968182",
+    "top10": "top10:2026-09-12T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-12T18:00:00.000Z-2026-09-12T20:23:41.078Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-12T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-12T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-12T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-12T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-12T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-12T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 87,
+      "count": 90,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1211,
+      "count": 1128,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1469,
+      "count": 1362,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 37,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI agents attacked RubyGems back in May"
+        "headline": "Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Nvidia, D-Matrix team up on next-gen AI inference chips"
+        "topic": "ai",
+        "headline": "Anthropic CEO calls for the AI industry to slow down"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends"
+        "headline": "Anthropic CEO seeks immediate slowdown on AI"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Presentation: From Retrieval to Reasoning: Building Production-Ready Agentic AI Systems with Knowledge Graphs"
+        "topic": "security",
+        "headline": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "CVE-2026-0295 GlobalProtect App: Local Privilege Escalation via Race Condition on macOS Severity: MEDIUM"
+        "topic": "ai",
+        "headline": "‘We must slow’: Anthropic CEO warns AI is advancing faster than humans can control it"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say"
+        "topic": "platform",
+        "headline": "Open-Source Project Brings Full iOS 27 Virtualization to Apple Silicon"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "IBM IBM Open Sources Lunar Exploration AI Model"
+        "topic": "platform",
+        "headline": "Why MCP security is about permissions overhaul"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "CVE-2026-0298 GlobalProtect App: Code Execution Vulnerability in Windows Pre-Logon Access Provider PLAP Severity: MEDIUM"
+        "topic": "kubernetes",
+        "headline": "&8220;Same mission, bigger stage&8221;: OpenAI hires Git AI founders to help Codex prove its ROI"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "CVE-2026-0250 GlobalProtect App: Buffer Overflow Vulnerability during connection to Portal or Gateway Severity: MEDIUM"
+        "topic": "models",
+        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
+        "topic": "security",
+        "headline": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent"
       }
     ],
     "articleCount": 0
