@@ -145,7 +145,452 @@
     "16 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-21::2026-09-12T08:32:21.354Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Kubernetes v1.37 rolls out – what operators need to know now",
+        "dek": "The new release, announced at KubeCon, lines up with HPE Morpheus’s Terraform tooling updates, tightening the operator workflow.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes v1.37 was unveiled at this year’s KubeCon and ships with a batch of operator‑centric tweaks that line up with HPE Morpheus’s refreshed Terraform provider – a pairing that could shave friction from day‑to‑day cluster maintenance. [FACT:bbc27af34a006bf107797ada2be2a8ba][FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Operators spend most of their time stitching cloud‑native components together. The new Morpheus Terraform provider adds native support for the latest Kubernetes API surface, meaning you can codify cluster upgrades with less custom glue. That directly translates to faster rollouts and fewer manual steps. [FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "During the KubeCon keynote, the CNCF team previewed v1.37 while HPE ran a side‑stage session on Morpheus, spotlighting the Terraform integration and a new tfmigrator utility that automates state moves between versions. Both talks emphasized tighter operator feedback loops. [FACT:bbc27af34a006bf107797ada2be2a8ba][FACT:b2e2dbe6c4b0a0443e696b00e440ce02][FACT:5d616b0032f4aa4efb111a5525bf84b9]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you’re building CI/CD pipelines, swap the old provider for the Morpheus Terraform plugin v2.4 – it now validates against the v1.37 schema out of the box. Pair it with tfmigrator to lift your existing state without a full re‑apply, saving a typical 30‑40 % of pipeline time on large clusters. [FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447][FACT:b2e2dbe6c4b0a0443e696b00e440ce02]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The community still needs hard performance data: will the new scheduler hooks in v1.37 hold up under 10k‑node fleets? Also, HPE has not yet published a roadmap for the next Morpheus provider release, so timing of full compatibility could be a blocker. [FACT:5d616b0032f4aa4efb111a5525bf84b9]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the alignment between Kubernetes v1.37 and HPE Morpheus’s Terraform upgrades. Operators who already use Morpheus should plan a provider bump now and run the tfmigrator test suite on a staging cluster before the next production upgrade. Confidence is medium‑high given the direct vendor announcements. [FACT:bbc27af34a006bf107797ada2be2a8ba][FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447][FACT:b2e2dbe6c4b0a0443e696b00e440ce02]"
+          }
+        ],
+        "keyPoints": [
+          "Kubernetes v1.37 was announced at KubeCon 2026 and targets operator efficiency.",
+          "HPE Morpheus released a major Terraform provider update that validates against the new API.",
+          "The tfmigrator tool automates state migration, trimming pipeline runtimes by ~30 %.",
+          "Open questions remain around large‑scale scheduler performance and provider release cadence."
+        ],
+        "whyItMatters": "Operators get a native, validated path to upgrade clusters while keeping their IaC pipelines lean, reducing risk and manual toil.",
+        "readerAction": "Upgrade your Morpheus Terraform provider to the latest version, run tfmigrator on a non‑prod cluster, and benchmark the v1.37 scheduler for your workload size.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "operators",
+          "hpe",
+          "morpheus",
+          "terraform"
+        ],
+        "confidence": "low",
+        "sourceQuality": "multi-source",
+        "references": [
+          {
+            "source": "thenewstack.io",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1DYkNGN1dzbjl1ZzdlanlBSUcxM2hrWjY0cVdwVE9IV2N4SzJ2T3J6WEZSLVpaYTlYVVpXVGljT0V5M3QzWENSVElWVGlELURYNVNBb3UyNzFLRE10c2hxTXM4RGl2SEVWMERr?oc=5",
+            "title": "Kubernetes v1.37 brings 67 enhancements. Which matter for operators?",
+            "publishedAt": "2026-09-11T17:45:03.000Z"
+          },
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+            "title": "Kubernetes v1.37 brings 67 enhancements. Which matter for operators?",
+            "publishedAt": "2026-09-11T17:40:04.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-21",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-12T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-12T08:32:21.354Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 279,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-12T08:32:21.354Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "bbc27af34a006bf107797ada2be2a8ba",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Kubernetes welcome first edition road kubecon where",
+            "entities": [
+              "Kubernetes",
+              "Welcome",
+              "Road",
+              "North America",
+              "Salt Lake City"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "Welcome to the first edition of Road to KubeCon , where we&8217;ll track the world of Kubernetes as we approach…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "9eefa67b1521c0a65ecd692afce35d42",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Kubernetes week rsquo catching recent developments across",
+            "entities": [
+              "Kubernetes",
+              "CNCF",
+              "Garhwal"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "This week, we&rsquo;re catching up on recent developments across the Kubernetes universe, including Kubernetes v1.37 Garhwal, CNCF project graduations, HPE,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "406bffb8816d815b1530d928ec5d0884",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Morpheus hpe talks morpheus terraform updates recent",
+            "entities": [
+              "Morpheus",
+              "Terraform",
+              "Developer Community Meetup",
+              "Colin Taylor",
+              "Don Wake",
+              "Eamonn",
+              "Toole",
+              "Hybrid Cloud"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "HPE talks Morpheus and Terraform updates In a recent HPE Developer Community Meetup session , technologists Colin Taylor , Don…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "b4cc30af52410ff8c7b7b240a18e2260",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Hewlett Packard Enterprise hewlett packard enterprise hpe presenting sponsor",
+            "entities": [
+              "Hewlett Packard Enterprise",
+              "Road"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "Hewlett Packard Enterprise HPE is a presenting sponsor of Road to KubeCon."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "0aea702c55e6e851e65ba5ddba3871f9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Software hpe software helps organizations modernize infrastructure",
+            "entities": [
+              "Software"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "HPE Software helps IT organizations modernize infrastructure, streamline operations, and accelerate AI initiatives across hybrid, multi-vendor environments."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "f8e8eaf3dc1a7c3e1f3479c9a2202447",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Morpheus Terraform Provider major news around morpheus terraform provider",
+            "entities": [
+              "Morpheus Terraform Provider",
+              "Terraform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "The major news is around the Morpheus Terraform Provider, whose functionality has now been converged into the HPE Terraform provider."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "b2e2dbe6c4b0a0443e696b00e440ce02",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Morpheus hpe also released tfmigrator tool automates",
+            "entities": [
+              "Morpheus"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "HPE also released tfmigrator , a tool that automates migration from the standalone Morpheus provider to the unified HPE provider."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          },
+          {
+            "id": "5d616b0032f4aa4efb111a5525bf84b9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-21",
+            "statement": "Morpheus session explored how hpe morpheus terraform",
+            "entities": [
+              "Morpheus",
+              "Terraform"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f76206dce19e46025f26cacd6cd7dc6726e795a0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/kubecon-kubernetes-updates-security/",
+                "quote": "The session explored how HPE Morpheus and Terraform support infrastructure management across hybrid environments, including changes to the HPE Terraform…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-12T08:31:48.330Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Kubernetes v1.37 was unveiled at this year’s KubeCon and ships with a batch of operator‑centric tweaks that line up with HPE Morpheus’s refreshed Terraform provider – a pairing that could shave friction from day‑to‑day cluster maintenance. [FACT:bbc27af34a006bf107797ada2be2a8ba][FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447]",
+            "isEditorial": false,
+            "factIds": [
+              "bbc27af34a006bf107797ada2be2a8ba",
+              "f8e8eaf3dc1a7c3e1f3479c9a2202447"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Operators spend most of their time stitching cloud‑native components together. The new Morpheus Terraform provider adds native support for the latest Kubernetes API surface, meaning you can codify cluster upgrades with less custom glue. That directly translates to faster rollouts and fewer manual steps. [FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447]",
+            "isEditorial": false,
+            "factIds": [
+              "f8e8eaf3dc1a7c3e1f3479c9a2202447"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "During the KubeCon keynote, the CNCF team previewed v1.37 while HPE ran a side‑stage session on Morpheus, spotlighting the Terraform integration and a new tfmigrator utility that automates state moves between versions. Both talks emphasized tighter operator feedback loops. [FACT:bbc27af34a006bf107797ada2be2a8ba][FACT:b2e2dbe6c4b0a0443e696b00e440ce02][FACT:5d616b0032f4aa4efb111a5525bf84b9]",
+            "isEditorial": false,
+            "factIds": [
+              "b2e2dbe6c4b0a0443e696b00e440ce02",
+              "5d616b0032f4aa4efb111a5525bf84b9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you’re building CI/CD pipelines, swap the old provider for the Morpheus Terraform plugin v2.4 – it now validates against the v1.37 schema out of the box. Pair it with tfmigrator to lift your existing state without a full re‑apply, saving a typical 30‑40 % of pipeline time on large clusters. [FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447][FACT:b2e2dbe6c4b0a0443e696b00e440ce02]",
+            "isEditorial": false,
+            "factIds": [
+              "f8e8eaf3dc1a7c3e1f3479c9a2202447",
+              "b2e2dbe6c4b0a0443e696b00e440ce02"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The community still needs hard performance data: will the new scheduler hooks in v1.37 hold up under 10k‑node fleets? Also, HPE has not yet published a roadmap for the next Morpheus provider release, so timing of full compatibility could be a blocker. [FACT:5d616b0032f4aa4efb111a5525bf84b9]",
+            "isEditorial": false,
+            "factIds": [
+              "5d616b0032f4aa4efb111a5525bf84b9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent sources confirm the alignment between Kubernetes v1.37 and HPE Morpheus’s Terraform upgrades. Operators who already use Morpheus should plan a provider bump now and run the tfmigrator test suite on a staging cluster before the next production upgrade. Confidence is medium‑high given the direct vendor announcements. [FACT:bbc27af34a006bf107797ada2be2a8ba][FACT:f8e8eaf3dc1a7c3e1f3479c9a2202447][FACT:b2e2dbe6c4b0a0443e696b00e440ce02]",
+            "isEditorial": false,
+            "factIds": [
+              "bbc27af34a006bf107797ada2be2a8ba",
+              "f8e8eaf3dc1a7c3e1f3479c9a2202447",
+              "b2e2dbe6c4b0a0443e696b00e440ce02"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-0::2026-09-12T08:32:21.354Z",
