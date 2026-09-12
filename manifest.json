@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-12T06:00:00.000Z",
-    "windowStart": "2026-09-12T06:00:00.000Z",
-    "windowEnd": "2026-09-12T12:00:00.000Z"
+    "id": "2026-09-12T12:00:00.000Z",
+    "windowStart": "2026-09-12T12:00:00.000Z",
+    "windowEnd": "2026-09-12T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-12T08:31:48.136Z",
-  "nextRefreshAt": "2026-09-12T12:00:00.000Z",
+  "publishedAt": "2026-09-12T13:28:30.010Z",
+  "nextRefreshAt": "2026-09-12T18:00:00.000Z",
   "runIds": {
-    "aggregation": "9231cf91-f213-43da-8d2c-bbdffb47235c",
-    "ranking": "rank-146cc808",
-    "top10": "top10:2026-09-12T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-12T06:00:00.000Z-2026-09-12T08:32:21.354Z"
+    "aggregation": "f8ee53fd-5918-4ff4-8007-a50e44201055",
+    "ranking": "rank-43c3301e",
+    "top10": "top10:2026-09-12T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-12T12:00:00.000Z-2026-09-12T13:29:01.509Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-12T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-12T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-12T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-12T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-12T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-12T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,14 +25,14 @@
       "category": "http-error",
       "count": 87,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1262,
+      "count": 1211,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1544,
+      "count": 1469,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -108,47 +108,47 @@
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say"
+        "topic": "models",
+        "headline": "Nvidia, D-Matrix team up on next-gen AI inference chips"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "CVE-2026-0295 GlobalProtect App: Local Privilege Escalation via Race Condition on macOS Severity: MEDIUM"
+        "topic": "ai",
+        "headline": "GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "CVE-2026-0298 GlobalProtect App: Code Execution Vulnerability in Windows Pre-Logon Access Provider PLAP Severity: MEDIUM"
+        "topic": "platform",
+        "headline": "Presentation: From Retrieval to Reasoning: Building Production-Ready Agentic AI Systems with Knowledge Graphs"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "CVE-2026-0250 GlobalProtect App: Buffer Overflow Vulnerability during connection to Portal or Gateway Severity: MEDIUM"
+        "headline": "CVE-2026-0295 GlobalProtect App: Local Privilege Escalation via Race Condition on macOS Severity: MEDIUM"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37 brings 67 enhancements. Which matter for operators?"
+        "topic": "ai",
+        "headline": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "One Decade of Rustls: Evolution, Benchmarks, and Future Roadmap"
+        "topic": "ai",
+        "headline": "IBM IBM Open Sources Lunar Exploration AI Model"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Deloitte launches the Open Model Engineering practice in India and other key global markets"
+        "topic": "security",
+        "headline": "CVE-2026-0298 GlobalProtect App: Code Execution Vulnerability in Windows Pre-Logon Access Provider PLAP Severity: MEDIUM"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Cognition helps Devin test its own work with GPT‑6 Astra"
+        "topic": "security",
+        "headline": "CVE-2026-0250 GlobalProtect App: Buffer Overflow Vulnerability during connection to Portal or Gateway Severity: MEDIUM"
       },
       {
         "rank": 10,
-        "topic": "ai",
+        "topic": "models",
         "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
       }
     ],
