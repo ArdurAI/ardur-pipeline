@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-13T00:00:00.000Z",
-    "windowStart": "2026-09-13T00:00:00.000Z",
-    "windowEnd": "2026-09-13T06:00:00.000Z"
+    "id": "2026-09-13T06:00:00.000Z",
+    "windowStart": "2026-09-13T06:00:00.000Z",
+    "windowEnd": "2026-09-13T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-13T04:04:38.143Z",
-  "nextRefreshAt": "2026-09-13T06:00:00.000Z",
+  "publishedAt": "2026-09-13T11:25:22.904Z",
+  "nextRefreshAt": "2026-09-13T12:00:00.000Z",
   "runIds": {
-    "aggregation": "203c8a00-b89f-456a-a622-e3c1367a6b13",
-    "ranking": "rank-f1036909",
-    "top10": "top10:2026-09-13T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-13T00:00:00.000Z-2026-09-13T04:05:08.895Z"
+    "aggregation": "c4a9876c-2383-4180-9fb0-f42ce908ee2a",
+    "ranking": "rank-3b7bc40c",
+    "top10": "top10:2026-09-13T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-13T06:00:00.000Z-2026-09-13T11:25:55.157Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-13T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-13T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-13T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-13T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-13T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-13T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1044,
+      "count": 1131,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1125,
+      "count": 1056,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,10 +68,10 @@
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
@@ -79,9 +79,9 @@
       "category": "copyright-gate",
       "count": 37,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -104,42 +104,42 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown"
+        "headline": "OpenAI agents attacked RubyGems back in May"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic CEO calls for ‘pacing the frontier’ of AI race amid safety concerns"
+        "headline": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV"
+        "topic": "ai",
+        "headline": "Anthropic, OpenAI CEOs call for slowdown in AI development"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
+        "headline": "Anthropic CEO urges AI companies to slow model development amid fears over misuse"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI delaying IPO amid AI safety concerns, Sam Altman says"
+        "topic": "models",
+        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Open-Source Project Brings Full iOS 27 Virtualization to Apple Silicon"
+        "topic": "security",
+        "headline": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Generating running routes with GPT-6 Astra and ChatGPT Work"
+        "topic": "platform",
+        "headline": "Cloudflare Tests Cache Transcoding to Reduce Storage Requirements"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "&8220;Same mission, bigger stage&8221;: OpenAI hires Git AI founders to help Codex prove its ROI"
+        "headline": "Lowell Shuts Lanai Barge Harbor -- \"containers floating in water\""
       },
       {
         "rank": 9,
