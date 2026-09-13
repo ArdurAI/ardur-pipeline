@@ -1,38 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-12T18:00:00.000Z",
-    "windowStart": "2026-09-12T18:00:00.000Z",
-    "windowEnd": "2026-09-13T00:00:00.000Z"
+    "id": "2026-09-13T00:00:00.000Z",
+    "windowStart": "2026-09-13T00:00:00.000Z",
+    "windowEnd": "2026-09-13T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-12T20:23:06.538Z",
-  "nextRefreshAt": "2026-09-13T00:00:00.000Z",
+  "publishedAt": "2026-09-13T04:04:38.143Z",
+  "nextRefreshAt": "2026-09-13T06:00:00.000Z",
   "runIds": {
-    "aggregation": "bc97e32e-ad83-48d4-9e77-8900d21d256a",
-    "ranking": "rank-f9968182",
-    "top10": "top10:2026-09-12T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-12T18:00:00.000Z-2026-09-12T20:23:41.078Z"
+    "aggregation": "203c8a00-b89f-456a-a622-e3c1367a6b13",
+    "ranking": "rank-f1036909",
+    "top10": "top10:2026-09-13T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-13T00:00:00.000Z-2026-09-13T04:05:08.895Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-12T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-12T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-12T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-13T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-13T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-13T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 90,
+      "count": 81,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1128,
+      "count": 1044,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,24 +54,24 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1362,
+      "count": 1125,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 24,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
@@ -79,9 +79,9 @@
       "category": "copyright-gate",
       "count": 37,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -104,27 +104,27 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control"
+        "headline": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic CEO calls for the AI industry to slow down"
+        "headline": "Anthropic CEO calls for ‘pacing the frontier’ of AI race amid safety concerns"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic CEO seeks immediate slowdown on AI"
-      },
-      {
-        "rank": 4,
         "topic": "security",
         "headline": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV"
       },
       {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
+      },
+      {
         "rank": 5,
         "topic": "ai",
-        "headline": "‘We must slow’: Anthropic CEO warns AI is advancing faster than humans can control it"
+        "headline": "OpenAI delaying IPO amid AI safety concerns, Sam Altman says"
       },
       {
         "rank": 6,
@@ -133,8 +133,8 @@
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Why MCP security is about permissions overhaul"
+        "topic": "models",
+        "headline": "Generating running routes with GPT-6 Astra and ChatGPT Work"
       },
       {
         "rank": 8,
@@ -143,13 +143,13 @@
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
+        "topic": "security",
+        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent"
+        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
       }
     ],
     "articleCount": 0
