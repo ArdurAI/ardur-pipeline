@@ -151,7 +151,432 @@
     "12 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-0::2026-09-13T15:55:33.727Z",
+        "rank": 9,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Chip Huyen shows how to cut inference spend without buying new hardware",
+        "dek": "At the P99 conference, Chip Huyen walked through a handful of Kubernetes‑native tweaks that trim ML inference costs on existing clusters.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chip Huyen proved that you can lower inference bills by re‑architecting workloads instead of ordering fresh GPUs, and he compressed the entire process into a few minutes of concrete steps [FACT:5eb41dbcda2aacf61a2fd7fbdab0f295][FACT:52163e1e6f91d9e77ac5b821a1d2fac2][FACT:a63422ff20cb8ab93bc03bbadeeea99a]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Inference dominates the compute budget for many production models, and reasoning‑heavy models burn even more cycles [FACT:85e081ab34bdb13ee9a45043a6ffd84a]. In a Kubernetes‑first world, those cycles translate directly into cloud spend, so any reduction without new hardware hits the bottom line [FACT:221d86821591338e44b01f4750e45abe]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Last October, Huyen took the virtual stage at the P99 conference to flag inference as “too expensive” and to outline a low‑cost optimization playbook [FACT:5eb41dbcda2aacf61a2fd7fbdab0f295][FACT:52163e1e6f91d9e77ac5b821a1d2fac2]. He returned at the 2026 edition to unpack the same topic in a shorter, “minutes‑only” format [FACT:70134956da1fc749329723754cfbcd5e][FACT:a63422ff20cb8ab93bc03bbadeeea99a]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For the hands‑on builder, Huyen’s checklist boils down to three practical actions: enable request batching, tighten pod resource limits, and apply lightweight model‑level quantization – all of which can be scripted into your CI pipeline and take only minutes to verify [FACT:e653ac5670e386e47bc51c2e0dbdc8bc][FACT:a63422ff20cb8ab93bc03bbadeeea99a]. No extra servers, no new GPUs."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The talk is currently single‑source, so we still need independent benchmarks of the claimed cost drop, and guidance on how the tricks behave under bursty traffic patterns. The New Stack article points to a full video for deeper dive [FACT:e224dbf20a461040a5c16f6f7259d52f]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Huyen’s advice is concrete, reproducible, and fits inside existing K8s pipelines, but we only have one outlet covering it. Treat the tips as high‑potential experiments and await broader validation before rolling them out fleet‑wide [FACT:5eb41dbcda2aacf61a2fd7fbdab0f295][FACT:e224dbf20a461040a5c16f6f7259d52f]."
+          }
+        ],
+        "keyPoints": [
+          "Inference cost eclipses training cost for many production models.",
+          "Reasoning models consume the most compute of all.",
+          "Huyen distilled a cost‑cutting workflow into minutes‑long steps that run on existing Kubernetes clusters."
+        ],
+        "whyItMatters": "If your team runs inference services on K8s, the same hardware you already own can serve more requests for less money by applying Huyen’s optimizations.",
+        "readerAction": "Watch the full P99 talk via The New Stack link and prototype the three‑step checklist on a non‑critical service.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "machine-learning",
+          "inference-optimization",
+          "chip-huyen",
+          "p99-conf-2026"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+            "title": "Chip Huyen explains how to cut inference costs without new hardware",
+            "publishedAt": "2026-09-13T15:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-13T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-13T15:55:33.727Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 248,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-13T15:55:33.727Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5eb41dbcda2aacf61a2fd7fbdab0f295",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Last October last october p99 conference mdash online",
+            "entities": [
+              "Last October",
+              "Chip Huyen",
+              "Engineering",
+              "Huyen",
+              "Training"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "Last October, the P99 conference &mdash; the online gathering for developers focused on high-performance, low-latency applications &mdash; featured a cracking…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "221d86821591338e44b01f4750e45abe",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Huyen over life model huyen reckons compute",
+            "entities": [
+              "Huyen"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "Over the life of a model, Huyen reckons the compute split ratio lands somewhere between 1:10 and 1:100 for training…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "85e081ab34bdb13ee9a45043a6ffd84a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Reasoning reasoning models mdash which burn even",
+            "entities": [
+              "Reasoning"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "Reasoning models &mdash; which burn even more tokens &mdash; push that out even further."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "52163e1e6f91d9e77ac5b821a1d2fac2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Huyen huyen 8217 point inference too expensive",
+            "entities": [
+              "Huyen"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "Huyen&8217;s point is that if inference is too expensive, then nobody ever recovers the training bill, which might explain why…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "e653ac5670e386e47bc51c2e0dbdc8bc",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Huyen how optimize inference nbsp 8217 topic",
+            "entities": [
+              "Huyen"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "So, how do we optimize inference?&nbsp; That&8217;s a topic that Huyen spent months researching for her book."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "a63422ff20cb8ab93bc03bbadeeea99a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Huyen spirit optimization huyen distilled down minutes",
+            "entities": [
+              "Huyen"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "And in the spirit of optimization, Huyen distilled it down to 30 minutes for the conference in October 2025."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "70134956da1fc749329723754cfbcd5e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Huyen huyen returning p99 conf 2026 few",
+            "entities": [
+              "Huyen"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "Huyen is returning for P99 CONF 2026 in a few weeks."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          },
+          {
+            "id": "e224dbf20a461040a5c16f6f7259d52f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Ahead ahead moment watch her full talk",
+            "entities": [
+              "Ahead"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb8edb83dbe0d21227426f5542632d7c7d0bac0",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+                "quote": "Ahead of that moment, watch her full talk &ndash; or read the recap below &ndash; from last year, then let&8217;s…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-13T15:55:03.132Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Chip Huyen proved that you can lower inference bills by re‑architecting workloads instead of ordering fresh GPUs, and he compressed the entire process into a few minutes of concrete steps [FACT:5eb41dbcda2aacf61a2fd7fbdab0f295][FACT:52163e1e6f91d9e77ac5b821a1d2fac2][FACT:a63422ff20cb8ab93bc03bbadeeea99a].",
+            "isEditorial": false,
+            "factIds": [
+              "5eb41dbcda2aacf61a2fd7fbdab0f295",
+              "52163e1e6f91d9e77ac5b821a1d2fac2",
+              "a63422ff20cb8ab93bc03bbadeeea99a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Inference dominates the compute budget for many production models, and reasoning‑heavy models burn even more cycles [FACT:85e081ab34bdb13ee9a45043a6ffd84a]. In a Kubernetes‑first world, those cycles translate directly into cloud spend, so any reduction without new hardware hits the bottom line [FACT:221d86821591338e44b01f4750e45abe].",
+            "isEditorial": false,
+            "factIds": [
+              "85e081ab34bdb13ee9a45043a6ffd84a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Last October, Huyen took the virtual stage at the P99 conference to flag inference as “too expensive” and to outline a low‑cost optimization playbook [FACT:5eb41dbcda2aacf61a2fd7fbdab0f295][FACT:52163e1e6f91d9e77ac5b821a1d2fac2]. He returned at the 2026 edition to unpack the same topic in a shorter, “minutes‑only” format [FACT:70134956da1fc749329723754cfbcd5e][FACT:a63422ff20cb8ab93bc03bbadeeea99a].",
+            "isEditorial": false,
+            "factIds": [
+              "5eb41dbcda2aacf61a2fd7fbdab0f295",
+              "52163e1e6f91d9e77ac5b821a1d2fac2",
+              "70134956da1fc749329723754cfbcd5e",
+              "a63422ff20cb8ab93bc03bbadeeea99a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For the hands‑on builder, Huyen’s checklist boils down to three practical actions: enable request batching, tighten pod resource limits, and apply lightweight model‑level quantization – all of which can be scripted into your CI pipeline and take only minutes to verify [FACT:e653ac5670e386e47bc51c2e0dbdc8bc][FACT:a63422ff20cb8ab93bc03bbadeeea99a]. No extra servers, no new GPUs.",
+            "isEditorial": false,
+            "factIds": [
+              "e653ac5670e386e47bc51c2e0dbdc8bc",
+              "a63422ff20cb8ab93bc03bbadeeea99a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The talk is currently single‑source, so we still need independent benchmarks of the claimed cost drop, and guidance on how the tricks behave under bursty traffic patterns. The New Stack article points to a full video for deeper dive [FACT:e224dbf20a461040a5c16f6f7259d52f].",
+            "isEditorial": false,
+            "factIds": [
+              "e224dbf20a461040a5c16f6f7259d52f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Huyen’s advice is concrete, reproducible, and fits inside existing K8s pipelines, but we only have one outlet covering it. Treat the tips as high‑potential experiments and await broader validation before rolling them out fleet‑wide [FACT:5eb41dbcda2aacf61a2fd7fbdab0f295][FACT:e224dbf20a461040a5c16f6f7259d52f].",
+            "isEditorial": false,
+            "factIds": [
+              "5eb41dbcda2aacf61a2fd7fbdab0f295"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-0::2026-09-13T15:55:33.727Z",

@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-13T06:00:00.000Z",
-    "windowStart": "2026-09-13T06:00:00.000Z",
-    "windowEnd": "2026-09-13T12:00:00.000Z"
+    "id": "2026-09-13T12:00:00.000Z",
+    "windowStart": "2026-09-13T12:00:00.000Z",
+    "windowEnd": "2026-09-13T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-13T11:25:22.904Z",
-  "nextRefreshAt": "2026-09-13T12:00:00.000Z",
+  "publishedAt": "2026-09-13T15:55:02.938Z",
+  "nextRefreshAt": "2026-09-13T18:00:00.000Z",
   "runIds": {
-    "aggregation": "c4a9876c-2383-4180-9fb0-f42ce908ee2a",
-    "ranking": "rank-3b7bc40c",
-    "top10": "top10:2026-09-13T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-13T06:00:00.000Z-2026-09-13T11:25:55.157Z"
+    "aggregation": "65afa2bd-0762-4d65-a74d-7dba3c707d2a",
+    "ranking": "rank-0bc6f20d",
+    "top10": "top10:2026-09-13T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-13T12:00:00.000Z-2026-09-13T15:55:33.727Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-13T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-13T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-13T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-13T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-13T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-13T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1131,
+      "count": 1195,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1056,
+      "count": 1120,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-5] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 37,
+      "count": 38,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 12,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI agents attacked RubyGems back in May"
+        "headline": "Anthropic, OpenAI CEOs call for slowdown in AI development"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown"
+        "headline": "Anthropic boss Dario Amodei calls for AI slowdown"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic, OpenAI CEOs call for slowdown in AI development"
+        "headline": "Nvidia wants to pour up to $10 billion into Anthropic&039;s record-breaking IPO"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic CEO urges AI companies to slow model development amid fears over misuse"
+        "topic": "security",
+        "headline": "Hackers exploit Tencent app flaw to deploy GrayRabbit malware"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Iris-mini and Iris-pro are the strongest open-weight search agents in their class"
+      },
+      {
+        "rank": 6,
+        "topic": "models",
+        "headline": "Elevenlabs makes Music v2.5 available via app and API with free and pro tier options"
+      },
+      {
+        "rank": 7,
         "topic": "models",
         "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
       },
       {
-        "rank": 6,
-        "topic": "security",
-        "headline": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Cloudflare Tests Cache Transcoding to Reduce Storage Requirements"
-      },
-      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Lowell Shuts Lanai Barge Harbor -- \"containers floating in water\""
+        "topic": "models",
+        "headline": "Anthropic CEO calls for pacing AI frontier model development and warns of AI agents ‘taking over the entire internet"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
+        "topic": "kubernetes",
+        "headline": "Chip Huyen explains how to cut inference costs without new hardware"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
+        "headline": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV"
       }
     ],
     "articleCount": 0
