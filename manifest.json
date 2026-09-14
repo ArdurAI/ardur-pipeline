@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-14T12:00:00.000Z",
-    "windowStart": "2026-09-14T12:00:00.000Z",
-    "windowEnd": "2026-09-14T18:00:00.000Z"
+    "id": "2026-09-14T18:00:00.000Z",
+    "windowStart": "2026-09-14T18:00:00.000Z",
+    "windowEnd": "2026-09-15T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-14T12:17:43.897Z",
-  "nextRefreshAt": "2026-09-14T18:00:00.000Z",
+  "publishedAt": "2026-09-14T19:08:23.787Z",
+  "nextRefreshAt": "2026-09-15T00:00:00.000Z",
   "runIds": {
-    "aggregation": "11891a66-c506-401e-9af4-72bf40159ff9",
-    "ranking": "rank-185df13e",
-    "top10": "top10:2026-09-14T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-14T12:00:00.000Z-2026-09-14T12:18:20.377Z"
+    "aggregation": "57c402d5-ccdc-4624-9fbf-7da6e82f48f7",
+    "ranking": "rank-e7de3451",
+    "top10": "top10:2026-09-14T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-14T18:00:00.000Z-2026-09-14T19:08:57.718Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-14T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-14T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-14T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-14T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-14T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-14T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1204,
+      "count": 1272,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1171,
+      "count": 1491,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 19,
       "sample": [
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 19,
       "sample": [
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 31,
     "usedFallback": true
   },
   "summary": {
@@ -109,49 +109,49 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:67287: Important: git-lfs security update"
+        "headline": "RHSA-2026:67461: Important: redis security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:67278: Moderate: perl:5.32 security update"
+        "headline": "RHSA-2026:67308: Moderate: nginx:1.24 security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Unmasking Cloud Identities: From Behavioral Clustering to Automated Detection"
+        "topic": "ai",
+        "headline": "The generative AI customization spectrum: From prompt engineering to custom models on AWS"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Cilium 1.20: Gateway API ExternalAuth, TCPRoute/UDPRoute, ENI IPAM for IPv6, and more"
+        "topic": "ai",
+        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Beijing hits back at Anthropic CEO's call to curb China's AI development"
+        "topic": "kubernetes",
+        "headline": "v0.315.0-rc.0"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Jotai 3.0 Ships as a Modernized, ESM-Only Package That Drops Legacy Builds and Deprecated APIs"
+        "topic": "ai",
+        "headline": "Anthropic targets financial advisers with new Claude tool"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI delays 2026 IPO over safety concerns while Anthropic prepares to debut"
+        "topic": "platform",
+        "headline": "How platform engineering 2.0 mitigates AI security and compliance risks"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "v3.5.3"
+        "headline": "v3.15.0-rc.0"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v3.4.9"
+        "topic": "security",
+        "headline": "RHSA-2026:67303: Important: RHEL AI 3.5 RPM runtime CVE fix"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }

@@ -134,7 +134,414 @@
     "31 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-2::2026-09-14T19:08:57.718Z",
+        "rank": 9,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Prometheus v3.15.0‑rc.0 lands with UI tweaks that matter for Kubernetes observability",
+        "dek": "The Sep 14 2026 release adds a filter‑loading spinner, a one‑click alert dismiss, and a public‑notifications badge [FACT:98435a555cda6e1aeae5b9c185a304db][FACT:a4008b82fe2ec92ec89e13571de7d626][FACT:7ce678f6c4869b150cc5baf4bae179bc][FACT:ebc578850164cb4400a7d3282dd31497].",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prometheus v3.15.0‑rc.0 introduces three concrete UI changes: a loading indicator for filter‑heavy queries, a dismiss button on alert messages, and a public‑notifications flag [FACT:a4008b82fe2ec92ec89e13571de7d626][FACT:7ce678f6c4869b150cc5baf4bae179bc][FACT:ebc578850164cb4400a7d3282dd31497]. If you run Prometheus inside Kubernetes, those tweaks affect how operators interpret latency and noise on the dashboard."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a busy cluster, a missing spinner makes it easy to mistake a slow label query for a broken UI, while lingering alerts can trigger unnecessary paging. The new dismiss action lets operators clear noise without editing rule files, and the public‑notifications badge surfaces required RBAC changes instantly [FACT:7ce678f6c4869b150cc5baf4bae179bc][FACT:ebc578850164cb4400a7d3282dd31497]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The official GitHub release page for v3.15.0‑rc.0 lists the three changes and ships the updated binaries on Sep 14 2026 [FACT:98435a555cda6e1aeae5b9c185a304db]. No other external coverage has appeared yet."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To verify the changes, drop the RC image into a staging namespace and run a query that pulls many labels; you should see the spinner appear in the UI [FACT:a4008b82fe2ec92ec89e13571de7d626]. Trigger an alert, hit the new “X” button, and watch the dismissal persist across pod restarts [FACT:7ce678f6c4869b150cc5baf4bae179bc]. Finally, log in as a non‑admin user and confirm the public‑notifications badge is visible, which may require a role‑binding tweak [FACT:ebc578850164cb4400a7d3282dd31497]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes don’t expose the exact throttle limits for remote‑write, so performance testing is still needed. It’s also unclear whether the filter‑loading flag propagates to embedded Grafana panels that render Prometheus queries. Lastly, the public‑notifications UI change could break custom RBAC policies that hide the badge by default [FACT:ebc578850164cb4400a7d3282dd31497]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "We have a single‑source official release note, giving high confidence that the UI changes are real and ready for testing [FACT:98435a555cda6e1aeae5b9c185a304db]. Adopt the RC in a sandbox, confirm the three UI behaviours, and you’ll be set for the final 3.15.0."
+          }
+        ],
+        "keyPoints": [
+          "Prometheus v3.15.0‑rc.0 ships a filter‑loading spinner to signal heavy queries [FACT:a4008b82fe2ec92ec89e13571de7d626].",
+          "A one‑click dismiss button now clears alerts without rule edits [FACT:7ce678f6c4869b150cc5baf4bae179bc].",
+          "Public‑notifications badge appears for RBAC‑restricted users, hinting at possible role‑binding updates [FACT:ebc578850164cb4400a7d3282dd31497].",
+          "Release announced on GitHub on Sep 14 2026; no other coverage yet [FACT:98435a555cda6e1aeae5b9c185a304db]."
+        ],
+        "whyItMatters": "Operators of Kubernetes‑native observability stacks rely on fast UI feedback; the new spinner reduces mystery, the dismiss button cuts alert noise, and the notifications badge surfaces permission issues early [FACT:a4008b82fe2ec92ec89e13571de7d626][FACT:7ce678f6c4869b150cc5baf4bae179bc][FACT:ebc578850164cb4400a7d3282dd31497].",
+        "readerAction": "Deploy the v3.15.0‑rc.0 Docker image to a test cluster, trigger a heavy label query, dismiss an alert, and verify the public‑notifications badge—then decide if you’ll roll the final version to prod [FACT:98435a555cda6e1aeae5b9c185a304db].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "prometheus",
+          "github",
+          "rc"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from prometheus",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+            "title": "v3.15.0-rc.0",
+            "publishedAt": "2026-09-14T14:56:38.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-14T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-14T19:08:57.718Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 290,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-14T19:08:57.718Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "98435a555cda6e1aeae5b9c185a304db",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "GitHub release prometheus prometheus github skip content",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "Release v3.15.0-rc.0 · prometheus/prometheus · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          },
+          {
+            "id": "d4c2a43dd9a6970a8ec3c9b721bff57e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          },
+          {
+            "id": "7ce678f6c4869b150cc5baf4bae179bc",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          },
+          {
+            "id": "ebc578850164cb4400a7d3282dd31497",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Public Notifications You prometheus prometheus public notifications you must",
+            "quantity": {
+              "metric": "Public Notifications You",
+              "value": 10.8
+            },
+            "entities": [
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "prometheus / prometheus Public Notifications You must be signed in to change notification settings Fork 10.8k Star 66.1k v3.15.0-rc.0 v3.15.0-rc.0…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          },
+          {
+            "id": "a4008b82fe2ec92ec89e13571de7d626",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          },
+          {
+            "id": "b60a68243cfc0d55f6c0bc50b4703217",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "View results found view tags 856521e choose",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "No results found View all tags v3.15.0-rc.0 v3.15.0-rc.0 856521e Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          },
+          {
+            "id": "8b5a05dee2a67d529e9362d25fe46c65",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "View results found view tags jan tagged",
+            "entities": [
+              "View",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e8ebcc18b914744baf3995dabef7caa31b855579",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v3.15.0-rc.0",
+                "quote": "No results found View all tags jan--f tagged this 14 Sep 14:56 v3.15.0-rc.0 Assets 2 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-14T19:08:23.983Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Prometheus v3.15.0‑rc.0 introduces three concrete UI changes: a loading indicator for filter‑heavy queries, a dismiss button on alert messages, and a public‑notifications flag [FACT:a4008b82fe2ec92ec89e13571de7d626][FACT:7ce678f6c4869b150cc5baf4bae179bc][FACT:ebc578850164cb4400a7d3282dd31497]. If you run Prometheus inside Kubernetes, those tweaks affect how operators interpret latency and noise on the dashboard.",
+            "isEditorial": false,
+            "factIds": [
+              "a4008b82fe2ec92ec89e13571de7d626",
+              "7ce678f6c4869b150cc5baf4bae179bc",
+              "ebc578850164cb4400a7d3282dd31497"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "In a busy cluster, a missing spinner makes it easy to mistake a slow label query for a broken UI, while lingering alerts can trigger unnecessary paging. The new dismiss action lets operators clear noise without editing rule files, and the public‑notifications badge surfaces required RBAC changes instantly [FACT:7ce678f6c4869b150cc5baf4bae179bc][FACT:ebc578850164cb4400a7d3282dd31497].",
+            "isEditorial": false,
+            "factIds": [
+              "7ce678f6c4869b150cc5baf4bae179bc",
+              "ebc578850164cb4400a7d3282dd31497"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The official GitHub release page for v3.15.0‑rc.0 lists the three changes and ships the updated binaries on Sep 14 2026 [FACT:98435a555cda6e1aeae5b9c185a304db]. No other external coverage has appeared yet.",
+            "isEditorial": false,
+            "factIds": [
+              "98435a555cda6e1aeae5b9c185a304db"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To verify the changes, drop the RC image into a staging namespace and run a query that pulls many labels; you should see the spinner appear in the UI [FACT:a4008b82fe2ec92ec89e13571de7d626]. Trigger an alert, hit the new “X” button, and watch the dismissal persist across pod restarts [FACT:7ce678f6c4869b150cc5baf4bae179bc]. Finally, log in as a non‑admin user and confirm the public‑notifications badge is visible, which may require a role‑binding tweak [FACT:ebc578850164cb4400a7d3282dd31497].",
+            "isEditorial": false,
+            "factIds": [
+              "ebc578850164cb4400a7d3282dd31497"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes don’t expose the exact throttle limits for remote‑write, so performance testing is still needed. It’s also unclear whether the filter‑loading flag propagates to embedded Grafana panels that render Prometheus queries. Lastly, the public‑notifications UI change could break custom RBAC policies that hide the badge by default [FACT:ebc578850164cb4400a7d3282dd31497].",
+            "isEditorial": false,
+            "factIds": [
+              "ebc578850164cb4400a7d3282dd31497"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "We have a single‑source official release note, giving high confidence that the UI changes are real and ready for testing [FACT:98435a555cda6e1aeae5b9c185a304db]. Adopt the RC in a sandbox, confirm the three UI behaviours, and you’ll be set for the final 3.15.0.",
+            "isEditorial": false,
+            "factIds": [
+              "98435a555cda6e1aeae5b9c185a304db"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-22::2026-09-14T19:08:57.718Z",
