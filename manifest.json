@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-14T00:00:00.000Z",
-    "windowStart": "2026-09-14T00:00:00.000Z",
-    "windowEnd": "2026-09-14T06:00:00.000Z"
+    "id": "2026-09-14T12:00:00.000Z",
+    "windowStart": "2026-09-14T12:00:00.000Z",
+    "windowEnd": "2026-09-14T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-14T04:12:40.564Z",
-  "nextRefreshAt": "2026-09-14T06:00:00.000Z",
+  "publishedAt": "2026-09-14T12:17:43.897Z",
+  "nextRefreshAt": "2026-09-14T18:00:00.000Z",
   "runIds": {
-    "aggregation": "4dd14c04-fe6b-4eb0-8058-4ff435ccad41",
-    "ranking": "rank-4d0fa66a",
-    "top10": "top10:2026-09-14T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-14T00:00:00.000Z-2026-09-14T04:13:15.019Z"
+    "aggregation": "11891a66-c506-401e-9af4-72bf40159ff9",
+    "ranking": "rank-185df13e",
+    "top10": "top10:2026-09-14T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-14T12:00:00.000Z-2026-09-14T12:18:20.377Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-14T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-14T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-14T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-14T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-14T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-14T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1239,
+      "count": 1204,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -59,37 +59,37 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1005,
+      "count": 1171,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 16,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held",
-        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 25,
       "sample": [
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown"
+        "topic": "security",
+        "headline": "Microsoft’s Patching"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:67151: Important: gstreamer1-plugins-bad-free security update"
+        "headline": "RHSA-2026:67287: Important: git-lfs security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "commit-rewriter 0.1"
+        "topic": "security",
+        "headline": "RHSA-2026:67278: Moderate: perl:5.32 security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "shot-scraper 1.12"
+        "topic": "security",
+        "headline": "Unmasking Cloud Identities: From Behavioral Clustering to Automated Detection"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic expects profit as it prepares for IPO"
+        "topic": "kubernetes",
+        "headline": "Cilium 1.20: Gateway API ExternalAuth, TCPRoute/UDPRoute, ENI IPAM for IPv6, and more"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Meta Open-Sources Astryx, its Agent-Ready React Design System"
+        "topic": "ai",
+        "headline": "Beijing hits back at Anthropic CEO's call to curb China's AI development"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "ISC Stormcast For Monday, September 14th, 2026 https://isc.sans.edu/podcastdetail/10092, Mon, Sep 14th"
+        "topic": "platform",
+        "headline": "Jotai 3.0 Ships as a Modernized, ESM-Only Package That Drops Legacy Builds and Deprecated APIs"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:67114: Important: kernel security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "OpenAI delays 2026 IPO over safety concerns while Anthropic prepares to debut"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "There's A Lot To Like About B&B Triplewall Containers' NSE:BBTCL Upcoming ₹1.00 Dividend"
+        "headline": "v3.5.3"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "How SourceFuse Australia helped Tuned Global establish a cloud-native data foundation"
+        "headline": "v3.4.9"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
