@@ -1,38 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-13T18:00:00.000Z",
-    "windowStart": "2026-09-13T18:00:00.000Z",
-    "windowEnd": "2026-09-14T00:00:00.000Z"
+    "id": "2026-09-14T00:00:00.000Z",
+    "windowStart": "2026-09-14T00:00:00.000Z",
+    "windowEnd": "2026-09-14T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-13T18:40:03.163Z",
-  "nextRefreshAt": "2026-09-14T00:00:00.000Z",
+  "publishedAt": "2026-09-14T04:12:40.564Z",
+  "nextRefreshAt": "2026-09-14T06:00:00.000Z",
   "runIds": {
-    "aggregation": "f27b8103-0e7b-4552-bc07-11fad33c0838",
-    "ranking": "rank-eda8e1cf",
-    "top10": "top10:2026-09-13T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-13T18:00:00.000Z-2026-09-13T18:40:35.273Z"
+    "aggregation": "4dd14c04-fe6b-4eb0-8058-4ff435ccad41",
+    "ranking": "rank-4d0fa66a",
+    "top10": "top10:2026-09-14T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-14T00:00:00.000Z-2026-09-14T04:13:15.019Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-13T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-13T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-13T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-14T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-14T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-14T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 78,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1177,
+      "count": 1239,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1090,
+      "count": 1005,
       "sample": [
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 16,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 39,
+      "count": 34,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 11,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic, OpenAI CEOs call for slowdown in AI development"
+        "headline": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Nvidia wants to pour up to $10 billion into Anthropic&039;s record-breaking IPO"
+        "topic": "security",
+        "headline": "RHSA-2026:67151: Important: gstreamer1-plugins-bad-free security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic boss Dario Amodei calls for AI slowdown"
+        "headline": "commit-rewriter 0.1"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Hackers exploit Tencent app flaw to deploy GrayRabbit malware"
+        "topic": "ai",
+        "headline": "shot-scraper 1.12"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Iris-mini and Iris-pro are the strongest open-weight search agents in their class"
+        "headline": "Anthropic expects profit as it prepares for IPO"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "Perplexity trusts GPT-6 Astra with end-to-end systems"
+        "topic": "platform",
+        "headline": "Meta Open-Sources Astryx, its Agent-Ready React Design System"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Elevenlabs makes Music v2.5 available via app and API with free and pro tier options"
+        "topic": "security",
+        "headline": "ISC Stormcast For Monday, September 14th, 2026 https://isc.sans.edu/podcastdetail/10092, Mon, Sep 14th"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Virtual Event What Every Enterprise Should Know About Securing Cloud Assets in the Age of AI"
+        "headline": "RHSA-2026:67114: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Virtual Event Building a Secure AI Strategy for the Enterprise"
+        "topic": "kubernetes",
+        "headline": "There's A Lot To Like About B&B Triplewall Containers' NSE:BBTCL Upcoming ₹1.00 Dividend"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Anthropic CEO calls for pacing AI frontier model development and warns of AI agents ‘taking over the entire internet"
+        "topic": "kubernetes",
+        "headline": "How SourceFuse Australia helped Tuned Global establish a cloud-native data foundation"
       }
     ],
     "articleCount": 0
