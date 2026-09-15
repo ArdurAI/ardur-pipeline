@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-15T12:00:00.000Z",
-    "windowStart": "2026-09-15T12:00:00.000Z",
-    "windowEnd": "2026-09-15T18:00:00.000Z"
+    "id": "2026-09-15T18:00:00.000Z",
+    "windowStart": "2026-09-15T18:00:00.000Z",
+    "windowEnd": "2026-09-16T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-15T16:38:18.420Z",
-  "nextRefreshAt": "2026-09-15T18:00:00.000Z",
+  "publishedAt": "2026-09-15T21:03:23.958Z",
+  "nextRefreshAt": "2026-09-16T00:00:00.000Z",
   "runIds": {
-    "aggregation": "3dda6d23-04cc-4c39-a484-200b26908192",
-    "ranking": "rank-42226076",
-    "top10": "top10:2026-09-15T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-15T12:00:00.000Z-2026-09-15T16:38:55.204Z"
+    "aggregation": "2ab1a717-6740-46ad-8663-d98c54af56ac",
+    "ranking": "rank-2f242cb0",
+    "top10": "top10:2026-09-15T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-15T18:00:00.000Z-2026-09-15T21:04:11.604Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-15T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-15T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-15T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-15T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-15T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-15T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1403,
+      "count": 1455,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1667,
+      "count": 1740,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 18,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 33,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "Microsoft’s Patching"
+        "headline": "Microsoft Commits to Sweeping AI Privacy Rules for Students. Will Other Tech Giants Follow?"
       },
       {
         "rank": 2,
@@ -123,33 +123,33 @@
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "What I learned organizing KCD Lima 2026"
+        "topic": "ai",
+        "headline": "Google launches Gemini 3.8 Live to take on OpenAI&039;s GPT-Live-1 at a fraction of the cost"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.0-rc.0"
+        "topic": "ai",
+        "headline": "OpenAI is working with Anthropic, Google on AI safety, Bloomberg News reports"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI, Anthropic, Google have been in talks on AI safety for weeks"
+        "topic": "kubernetes",
+        "headline": "v2.4.1"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "v1.55.0"
+        "headline": "v2.3.6"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Rubrik Unveils AI-Powered Code Guardian Built on Anthropic’s Claude Mythos 5"
+        "topic": "kubernetes",
+        "headline": "v2.2.6"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.67.0/v0.161.0"
+        "headline": "Several shipping containers fall off cargo ship, plunge into water at Port of Los Angeles"
       }
     ],
     "articleCount": 0
