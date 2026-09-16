@@ -710,6 +710,439 @@
             "confidence": "high"
           }
         ]
+      },
+      {
+        "id": "cluster-kubernetes-7::2026-09-16T07:28:28.314Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "containerd 2.4.0‑rc.0 lands with static & Ubuntu builds plus API 1.12.0‑rc.1",
+        "dek": "A pre‑release of containerd 2.4.0‑rc.0 ships both a statically linked tarball and a glibc‑linked Ubuntu tarball, and updates the API to 1.12.0‑rc.1.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "containerd 2.4.0‑rc.0 arrives as a pre‑release and includes two binaries – a static build ([FACT:c4925f532a5a91e5cbb9ec5afb454486]) and a glibc‑linked Ubuntu build ([FACT:d1806fd7f70fc291b5365cdbb37a5740]) – plus API version 1.12.0‑rc.1 ([FACT:478eb5ceb03ded47319cdf0ee2363d9f]) ([FACT:c03e7697304f052e8067d8046a3cb547])."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your worker nodes run Ubuntu, you can use the glibc‑linked package directly; if you need a self‑contained binary for a stripped‑down OS, the static tarball fits the bill. Choosing the right binary now avoids a later migration when the GA drops ([FACT:c4925f532a5a91e5cbb9ec5afb454486]; [FACT:d1806fd7f70fc291b5365cdbb37a5740])."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes list the two tarballs under the arch directory and label them the recommended downloads for the 2.4 series ([FACT:5729679e327103f66dab9bd430931bf4]). This is the first time containerd publishes a static tarball alongside the traditional dynamic Ubuntu package for the same version ([FACT:c4925f532a5a91e5cbb9ec5afb454486]; [FACT:d1806fd7f70fc291b5365cdbb37a5740])."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Download the tarball that matches your node OS, verify the SHA256 checksum, extract to /opt/containerd, and point your systemd unit to the new binary. The static binary works on any glibc‑based distro, while the Ubuntu tarball assumes the host’s glibc version matches Ubuntu’s runtime ([FACT:d1806fd7f70fc291b5365cdbb37a5740]; [FACT:c4925f532a5a91e5cbb9ec5afb454486])."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Because this is still a pre‑release, performance numbers, the exact GA timeline, and whether the static package will later include optional snapshotter plugins have not been published ([FACT:c03e7697304f052e8067d8046a3cb547])."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "For clusters that can tolerate a pre‑release, grab the matching tarball now and run a small upgrade test on a staging node. Teams that prioritize a stable support lifecycle should stick with the current GA version until containerd 2.4.0 is officially released ([FACT:887110a12d1d5f35e007c26b1c01221f])."
+          }
+        ],
+        "keyPoints": [
+          "containerd 2.4.0‑rc.0 is a pre‑release with both static and Ubuntu glibc builds.",
+          "API is bumped to version 1.12.0‑rc.1.",
+          "Tarballs are listed as the recommended downloads for the 2.4 series."
+        ],
+        "whyItMatters": "Choosing the correct binary now prevents a rushed migration later and lets you test the new API ahead of the GA release.",
+        "readerAction": "Pull the appropriate tarball from the official release page, verify its checksum, and run a controlled test upgrade on a non‑production node.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "containerd",
+          "rc",
+          "container"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+            "title": "containerd 2.4.0-rc.0",
+            "publishedAt": "2026-09-15T14:27:43.000Z"
+          },
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/api%2Fv1.12.0-rc.1",
+            "title": "containerd API 1.12.0-rc.1",
+            "publishedAt": "2026-09-15T04:48:49.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-7",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T07:28:28.314Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 246,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T07:28:28.314Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "c03e7697304f052e8067d8046a3cb547",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Welcome welcome release containerd pre release containerd",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "Welcome to the v2.4.0-rc.0 release of containerd This is a pre-release of containerd containerd 2.4 is a regular non-LTS release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "887110a12d1d5f35e007c26b1c01221f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Users users prioritizing stability longer support lifecycle",
+            "entities": [
+              "Users"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "Users prioritizing stability and a longer support lifecycle should stay on the 2.3 LTS release."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "5729679e327103f66dab9bd430931bf4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Recommended containerd version arch tar recommended",
+            "entities": [
+              "Recommended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : ✅Recommended."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "d1806fd7f70fc291b5365cdbb37a5740",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Dynamically dynamically linked glibc ubuntu",
+            "entities": [
+              "Dynamically",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "Dynamically linked with glibc 2.35 Ubuntu 22.04."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "c4925f532a5a91e5cbb9ec5afb454486",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Statically containerd static version arch tar statically",
+            "entities": [
+              "Statically"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : Statically linked."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "0911da385f3c990a335085d2546bfd3d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Expected expected used linux distributions use glibc",
+            "entities": [
+              "Expected",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "Expected to be used on Linux distributions that do not use glibc &gt;= 2.35."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "c8cbe5b6a9799dbba32122fb814b0d1d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Getting Started see also getting started documentation",
+            "entities": [
+              "Getting Started"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a9a7aa3cfbba09287dca519894089b6f49ab1fb0",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0-rc.0",
+                "quote": "See also the Getting Started documentation."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          },
+          {
+            "id": "478eb5ceb03ded47319cdf0ee2363d9f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-7",
+            "statement": "Welcome welcome api release containerd pre release",
+            "quantity": {
+              "metric": "Welcome",
+              "value": 1
+            },
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "701a6a2192108b2766dd5d8bb871dcb854ed0570",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/api%2Fv1.12.0-rc.1",
+                "quote": "Welcome to the api/v1.12.0-rc.1 release of containerd This is a pre-release of containerd The 13th release for the containerd 1.x…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T07:27:43.570Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "containerd 2.4.0‑rc.0 arrives as a pre‑release and includes two binaries – a static build ([FACT:c4925f532a5a91e5cbb9ec5afb454486]) and a glibc‑linked Ubuntu build ([FACT:d1806fd7f70fc291b5365cdbb37a5740]) – plus API version 1.12.0‑rc.1 ([FACT:478eb5ceb03ded47319cdf0ee2363d9f]) ([FACT:c03e7697304f052e8067d8046a3cb547]).",
+            "isEditorial": false,
+            "factIds": [
+              "c4925f532a5a91e5cbb9ec5afb454486",
+              "d1806fd7f70fc291b5365cdbb37a5740",
+              "478eb5ceb03ded47319cdf0ee2363d9f",
+              "c03e7697304f052e8067d8046a3cb547"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If your worker nodes run Ubuntu, you can use the glibc‑linked package directly; if you need a self‑contained binary for a stripped‑down OS, the static tarball fits the bill. Choosing the right binary now avoids a later migration when the GA drops ([FACT:c4925f532a5a91e5cbb9ec5afb454486]; [FACT:d1806fd7f70fc291b5365cdbb37a5740]).",
+            "isEditorial": false,
+            "factIds": [
+              "d1806fd7f70fc291b5365cdbb37a5740"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes list the two tarballs under the arch directory and label them the recommended downloads for the 2.4 series ([FACT:5729679e327103f66dab9bd430931bf4]). This is the first time containerd publishes a static tarball alongside the traditional dynamic Ubuntu package for the same version ([FACT:c4925f532a5a91e5cbb9ec5afb454486]; [FACT:d1806fd7f70fc291b5365cdbb37a5740]).",
+            "isEditorial": false,
+            "factIds": [
+              "5729679e327103f66dab9bd430931bf4",
+              "c4925f532a5a91e5cbb9ec5afb454486",
+              "d1806fd7f70fc291b5365cdbb37a5740"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Download the tarball that matches your node OS, verify the SHA256 checksum, extract to /opt/containerd, and point your systemd unit to the new binary. The static binary works on any glibc‑based distro, while the Ubuntu tarball assumes the host’s glibc version matches Ubuntu’s runtime ([FACT:d1806fd7f70fc291b5365cdbb37a5740]; [FACT:c4925f532a5a91e5cbb9ec5afb454486]).",
+            "isEditorial": false,
+            "factIds": [
+              "d1806fd7f70fc291b5365cdbb37a5740",
+              "c4925f532a5a91e5cbb9ec5afb454486"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Because this is still a pre‑release, performance numbers, the exact GA timeline, and whether the static package will later include optional snapshotter plugins have not been published ([FACT:c03e7697304f052e8067d8046a3cb547]).",
+            "isEditorial": false,
+            "factIds": [
+              "c03e7697304f052e8067d8046a3cb547"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "For clusters that can tolerate a pre‑release, grab the matching tarball now and run a small upgrade test on a staging node. Teams that prioritize a stable support lifecycle should stick with the current GA version until containerd 2.4.0 is officially released ([FACT:887110a12d1d5f35e007c26b1c01221f]).",
+            "isEditorial": false,
+            "factIds": [
+              "887110a12d1d5f35e007c26b1c01221f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
       }
     ],
     "heldArticles": [

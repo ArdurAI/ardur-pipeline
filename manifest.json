@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-16T00:00:00.000Z",
-    "windowStart": "2026-09-16T00:00:00.000Z",
-    "windowEnd": "2026-09-16T06:00:00.000Z"
+    "id": "2026-09-16T06:00:00.000Z",
+    "windowStart": "2026-09-16T06:00:00.000Z",
+    "windowEnd": "2026-09-16T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-16T00:04:18.614Z",
-  "nextRefreshAt": "2026-09-16T06:00:00.000Z",
+  "publishedAt": "2026-09-16T07:27:43.388Z",
+  "nextRefreshAt": "2026-09-16T12:00:00.000Z",
   "runIds": {
-    "aggregation": "88c2dc95-b02e-4f16-b7c4-ed448566cbb8",
-    "ranking": "rank-50a3c644",
-    "top10": "top10:2026-09-16T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-16T00:00:00.000Z-2026-09-16T00:04:57.165Z"
+    "aggregation": "1c5649a2-1c3a-4502-8159-99b33dcba865",
+    "ranking": "rank-89e42e94",
+    "top10": "top10:2026-09-16T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-16T06:00:00.000Z-2026-09-16T07:28:28.314Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-16T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-16T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-16T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-16T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-16T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-16T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1494,
+      "count": 1317,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMidEFVX3lxTFBBeU5YQ2gyVVBIaUh1cWc4bFo2M3FXNVRxeFg2bkdUa0Fwd0dwYjluR1dvc1RGZHdtRXZ1ZHNZc2I2V1A5U1I1WFlhUjYwQlM0TzBZMEotZW9tdkF2UmVLb0lwY3JFREpIbmo2bmlPWC1fdWpv?oc=5"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMidEFVX3lxTFBBeU5YQ2gyVVBIaUh1cWc4bFo2M3FXNVRxeFg2bkdUa0Fwd0dwYjluR1dvc1RGZHdtRXZ1ZHNZc2I2V1A5U1I1WFlhUjYwQlM0TzBZMEotZW9tdkF2UmVLb0lwY3JFREpIbmo2bmlPWC1fdWpv?oc=5"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1719,
+      "count": 1536,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:67613: Important: .NET 10.0 security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:67830: Important: tesseract security update"
       },
       {
         "rank": 2,
@@ -114,22 +114,22 @@
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:67604: Important: Red Hat JBoss Enterprise Application Platform 7.4.25 security update"
+        "headline": "Google fixes actively exploited Android zero-day on Pixel devices"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Gemini Live audio"
+        "headline": "OpenAI, Google, Anthropic discussing collaboration on AI safety issues"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin"
+        "topic": "ai",
+        "headline": "OpenAI Considers New Financing at a $1.5 Trillion Valuation"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:67585: Moderate: firewalld security update"
+        "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
       },
       {
         "rank": 7,
@@ -139,19 +139,19 @@
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Nvidia's Huang diverges with CEOs of Anthropic, OpenAI on AI safety at Dreamforce"
+        "headline": "Gemini Live audio"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v2.4.1"
+        "topic": "models",
+        "headline": "How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v2.3.6"
+        "headline": "Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
