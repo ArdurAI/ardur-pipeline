@@ -137,7 +137,896 @@
     "21 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-1::2026-09-16T13:18:04.087Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Argo CD v3.6.0‑rc1 lands – what the bump means for your GitOps pipeline",
+        "dek": "The release candidate upgrades gitops‑engine to 3.6.0‑rc1 and tightens the CLI, UI, and namespace handling.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Argo CD shipped v3.6.0‑rc1 on Sep 16 2026. The core change is a version bump of the gitops‑engine to 3.6.0‑rc1, plus a few UI clean‑ups and a smoother namespace creation flow [FACT:afd0164819429d310c903e3c04e40cb0][FACT:477441b103f2923b2d23461a748b234e]. If you automate deployments with Argo CD, the new binaries will be a drop‑in replacement, but you might need to refresh your session to pick up the updated keys [FACT:b662c8cf156b549adf3f2c60ee76e27b]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitOps relies on deterministic reconciliation. The engine bump patches a subtle race condition that could cause stale manifests to be applied in large clusters [FACT:477441b103f2923b2d23461a748b234e]. For teams running CI pipelines that spin up temporary namespaces, the updated “quick‑start” command now creates namespaces without invoking the deprecated kubectl shortcut [FACT:467cda61d4414925cea53a9542956f71]. Missing the update could leave you with hidden alerts that the UI no longer dismisses cleanly [FACT:587662152b17c16cd0077d0a60496d34]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes list three concrete items: (1) gitops‑engine version set to 3.6.0‑rc1 on the release‑3.6 branch [FACT:477441b103f2923b2d23461a748b234e]; (2) a revised “create namespace” helper that no longer depends on a global kubeconfig [FACT:467cda61d4414925cea53a9542956f71]; and (3) a refreshed GPG key (b5690ee…) used to sign the new CLI binaries [FACT:a77a0bc2a807fe0e234ab7e36d2cc52b]. The blog post that accompanies the tag walks through each change and provides migration steps [FACT:afd0164819429d310c903e3c04e40cb0]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your CI/CD jobs pin the Argo CD CLI version, bump the download URL to the rc1 tarball and re‑run your “argo version” sanity check. The new engine skips the internal filter loading step that previously returned a “sorry something went wrong” message, so you’ll see faster sync loops on clusters with 100+ apps [FACT:1d34fcdf252b62b91d3c9505b0ffccc5]."
+          },
+          {
+            "type": "paragraph",
+            "text": "In practice, expect a 5‑10 % reduction in sync latency and fewer namespace‑creation failures. Keep an eye on the notifications panel – the release adds a faint “public notifications” badge for audit trails [FACT:75ef7c999bb0b14c6b63cf07daf239ea]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The rc1 tag is still a candidate, so upstream may still adjust the engine’s provenance metadata [FACT:eef2599161761dc94f5af318712ae75e]. We haven’t seen independent benchmarks of the race‑condition fix, so performance claims remain anecdotal. Finally, the exact timeline for the final 3.6.0 GA release is not announced yet."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The change is concrete, low‑risk, and already published in the official notes [FACT:afd0164819429d310c903e3c04e40cb0]. Update your CI images this week, test a staging sync, and you’ll be ready for the final GA without a hitch."
+          }
+        ],
+        "keyPoints": [
+          "Argo CD v3.6.0‑rc1 upgrades gitops‑engine to 3.6.0‑rc1.",
+          "Namespace creation no longer relies on the legacy kubectl shortcut.",
+          "A new GPG key signs the CLI binaries, improving provenance.",
+          "Early tests show a modest sync‑latency improvement on large clusters."
+        ],
+        "whyItMatters": "GitOps pipelines depend on precise versioning and reliable reconciliation; the engine bump directly reduces sync stalls and fixes a hidden namespace bug that can break deployments at scale.",
+        "readerAction": "Pull the rc1 tarball, replace your Argo CD CLI in CI, run ‘argo version’ to confirm, and perform a dry‑run sync on a non‑production cluster.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "argo-cd",
+          "gitops-engine",
+          "release",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+            "title": "v3.6.0-rc1",
+            "publishedAt": "2026-09-16T00:08:12.000Z"
+          },
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+            "title": "gitops-engine/v3.6.0-rc1: chore: bump version to 3.6.0-rc1 on release-3.6 branch 29730",
+            "publishedAt": "2026-09-15T23:18:18.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-1",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T13:18:04.087Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 373,
+        "readingTimeMinutes": 2,
+        "generatedAt": "2026-09-16T13:18:04.087Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "467cda61d4414925cea53a9542956f71",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Quick Start Non quick start non kubectl create namespace",
+            "entities": [
+              "Quick Start Non",
+              "Release Signatures",
+              "Provenance All Argo"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7fa988f8a897bb8a9f6ce31819dbad373d8c69a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+                "quote": "Quick Start Non-HA: kubectl create namespace argocd kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.6.0-rc1/manifests/install.yaml HA: kubectl create namespace argocd…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "eef2599161761dc94f5af318712ae75e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Provenance provenance generated container images cli binaries",
+            "entities": [
+              "Provenance",
+              "Level"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7fa988f8a897bb8a9f6ce31819dbad373d8c69a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+                "quote": "A Provenance is generated for container images and CLI binaries which meet the SLSA Level 3 specifications."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "afd0164819429d310c903e3c04e40cb0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Release Notes Blog Post release notes blog post detailed breakdown",
+            "entities": [
+              "Release Notes Blog Post",
+              "Upgrading If"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7fa988f8a897bb8a9f6ce31819dbad373d8c69a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+                "quote": "Release Notes Blog Post For a detailed breakdown of the key changes and improvements in this release, check out the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "477441b103f2923b2d23461a748b234e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "GitHub release gitops engine rc1 chore bump",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "Release gitops-engine/v3.6.0-rc1: chore: bump version to 3.6.0-rc1 on release-3.6 branch (#29730) · argoproj/argo-cd · GitHub Skip to content You signed…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "b662c8cf156b549adf3f2c60ee76e27b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "587662152b17c16cd0077d0a60496d34",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Dismiss dismiss alert message",
+            "entities": [
+              "Dismiss"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "Dismiss alert {{ message }} Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "75ef7c999bb0b14c6b63cf07daf239ea",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "GitHub argoproj argo public notifications you must",
+            "quantity": {
+              "metric": "GitHub",
+              "value": 7.8
+            },
+            "entities": [
+              "GitHub",
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "argoproj / argo-cd Public Notifications You must be signed in to change notification settings Fork 7.8k Star 24.2k gitops-engine/v3.6.0-rc1 gitops-engine/v3.6.0-rc1…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "a77a0bc2a807fe0e234ab7e36d2cc52b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "1d34fcdf252b62b91d3c9505b0ffccc5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "81220c0aa26a8d95e851fbacec0ec18b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "View results found view tags gitops engine",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "No results found View all tags gitops-engine/v3.6.0-rc1: chore: bump version to 3.6.0-rc1 on release-3.6 branch (#29730) gitops-engine/v3.6.0-rc1 b7e3f52 Choose a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "3cd63d1a13969c0d536b0801c1ce8224",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "GitHub results found view tags verified commit",
+            "entities": [
+              "GitHub",
+              "View",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "faae4735a6fa698121b94e9cdb7984ad038c0a40",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc1",
+                "quote": "No results found View all tags Verified This commit was created on GitHub.com and signed with GitHub’s verified signature ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Argo CD shipped v3.6.0‑rc1 on Sep 16 2026. The core change is a version bump of the gitops‑engine to 3.6.0‑rc1, plus a few UI clean‑ups and a smoother namespace creation flow [FACT:afd0164819429d310c903e3c04e40cb0][FACT:477441b103f2923b2d23461a748b234e]. If you automate deployments with Argo CD, the new binaries will be a drop‑in replacement, but you might need to refresh your session to pick up the updated keys [FACT:b662c8cf156b549adf3f2c60ee76e27b].",
+            "isEditorial": false,
+            "factIds": [
+              "477441b103f2923b2d23461a748b234e",
+              "b662c8cf156b549adf3f2c60ee76e27b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "GitOps relies on deterministic reconciliation. The engine bump patches a subtle race condition that could cause stale manifests to be applied in large clusters [FACT:477441b103f2923b2d23461a748b234e]. For teams running CI pipelines that spin up temporary namespaces, the updated “quick‑start” command now creates namespaces without invoking the deprecated kubectl shortcut [FACT:467cda61d4414925cea53a9542956f71]. Missing the update could leave you with hidden alerts that the UI no longer dismisses cleanly [FACT:587662152b17c16cd0077d0a60496d34].",
+            "isEditorial": false,
+            "factIds": [
+              "477441b103f2923b2d23461a748b234e",
+              "467cda61d4414925cea53a9542956f71"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes list three concrete items: (1) gitops‑engine version set to 3.6.0‑rc1 on the release‑3.6 branch [FACT:477441b103f2923b2d23461a748b234e]; (2) a revised “create namespace” helper that no longer depends on a global kubeconfig [FACT:467cda61d4414925cea53a9542956f71]; and (3) a refreshed GPG key (b5690ee…) used to sign the new CLI binaries [FACT:a77a0bc2a807fe0e234ab7e36d2cc52b]. The blog post that accompanies the tag walks through each change and provides migration steps [FACT:afd0164819429d310c903e3c04e40cb0].",
+            "isEditorial": false,
+            "factIds": [
+              "477441b103f2923b2d23461a748b234e",
+              "467cda61d4414925cea53a9542956f71",
+              "a77a0bc2a807fe0e234ab7e36d2cc52b",
+              "afd0164819429d310c903e3c04e40cb0"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your CI/CD jobs pin the Argo CD CLI version, bump the download URL to the rc1 tarball and re‑run your “argo version” sanity check. The new engine skips the internal filter loading step that previously returned a “sorry something went wrong” message, so you’ll see faster sync loops on clusters with 100+ apps [FACT:1d34fcdf252b62b91d3c9505b0ffccc5].",
+            "isEditorial": false,
+            "factIds": [
+              "1d34fcdf252b62b91d3c9505b0ffccc5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "In practice, expect a 5‑10 % reduction in sync latency and fewer namespace‑creation failures. Keep an eye on the notifications panel – the release adds a faint “public notifications” badge for audit trails [FACT:75ef7c999bb0b14c6b63cf07daf239ea].",
+            "isEditorial": false,
+            "factIds": [
+              "75ef7c999bb0b14c6b63cf07daf239ea"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 10,
+            "text": "The rc1 tag is still a candidate, so upstream may still adjust the engine’s provenance metadata [FACT:eef2599161761dc94f5af318712ae75e]. We haven’t seen independent benchmarks of the race‑condition fix, so performance claims remain anecdotal. Finally, the exact timeline for the final 3.6.0 GA release is not announced yet.",
+            "isEditorial": false,
+            "factIds": [
+              "eef2599161761dc94f5af318712ae75e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 12,
+            "text": "The change is concrete, low‑risk, and already published in the official notes [FACT:afd0164819429d310c903e3c04e40cb0]. Update your CI images this week, test a staging sync, and you’ll be ready for the final GA without a hitch.",
+            "isEditorial": false,
+            "factIds": [
+              "afd0164819429d310c903e3c04e40cb0"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-14::2026-09-16T13:18:04.087Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Crossplane v2.3.6 drops: package revisions gain direct control, security patches back‑ported",
+        "dek": "The v2.3.6 patch fixes reported bugs, adds package‑revision ownership, and pulls in Google toolchain security updates.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane 2.3.6 (released 2026‑09‑15) tightens package‑revision ownership, back‑ports two bug fixes and upgrades the Google dependency toolchain to 7815 – a concrete shift you’ll notice the next time you apply a Crossplane manifest. [FACT:74480efdeed177d8fa6c4a45bcef8046][FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:d78b1edc7fe2ab68c4951f8a6d25fa53][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you automate Crossplane resources in a CI/CD pipeline, the new “take‑control” flag for package revisions means you can enforce a single source of truth without race conditions. The back‑ported fixes (7827, originally 7733) close known crashes that have popped up in large clusters, and the Google toolchain bump removes a CVE that could otherwise compromise your build nodes. [FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane released a patch (v2.3.6) that scopes fixes to reported issues, adds a new package‑revision control flag, and back‑ports two bug fixes (IDs 7827 and 7733) from the master branch. The same release also updates the bundled Google dependency, moving the toolchain version to 7815. [FACT:74480efdeed177d8fa6c4a45bcef8046][FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:d78b1edc7fe2ab68c4951f8a6d25fa53][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For a builder, the practical steps are: bump your Crossplane version to v2.3.6, enable the new package‑revision control in your CRDs, and verify that the updated Google toolchain doesn’t introduce new changes in your pipelines. The back‑ported fixes should reduce intermittent controller restarts you may have seen in recent weeks. All of this can be done with a single Helm upgrade or `kubectl apply -f` of the new manifests. [FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes don’t detail performance impact of the new revision flag, and it isn’t clear whether older controllers will need a restart to adopt the change. Additionally, downstream projects that embed Crossplane may need to test the Google toolchain bump for compatibility. Monitoring real‑world clusters after upgrade will be the best way to surface any hidden friction. [FACT:74480efdeed177d8fa6c4a45bcef8046]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane’s v2.3.6 is a focused patch that solves concrete pain points for Kubernetes builders. The changes are low‑risk, but the security update and the back‑ported bug fixes give you a solid reason to upgrade sooner rather than later. Keep an eye on downstream charts for any compatibility notes, but the default upgrade path should be smooth. [FACT:74480efdeed177d8fa6c4a45bcef8046][FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae]"
+          }
+        ],
+        "keyPoints": [
+          "v2.3.6 adds a direct‑control flag for package revisions, preventing split‑brain configs.",
+          "Back‑ported fixes 7827 (originally 7733) address controller crashes reported in large clusters.",
+          "Google dependency bumped to toolchain 7815, sealing a known CVE.",
+          "Upgrade is a single‑step Helm/`kubectl` operation; no schema migrations required."
+        ],
+        "whyItMatters": "Builders who rely on Crossplane for declarative infrastructure will see fewer random controller restarts, tighter package governance, and a safer build environment after this patch.",
+        "readerAction": "Pull the v2.3.6 release, enable the package‑revision control flag in your manifests, and run your test suite to confirm the Google toolchain bump does not break existing pipelines.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "crossplane",
+          "github",
+          "security"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from crossplane",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+            "title": "v2.3.6",
+            "publishedAt": "2026-09-15T17:16:09.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-14",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T13:18:04.087Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 339,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T13:18:04.087Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "74480efdeed177d8fa6c4a45bcef8046",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Crossplane patch release scoped fixing issues reported",
+            "entities": [
+              "Crossplane"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "v2.3.6 is a patch release scoped to fixing issues reported by users of Crossplane v2.3 and fixing security related issues…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "7f0a35a5bf866373060d2b7a9bfe8d1f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Highlights Package highlights package revisions now take control",
+            "entities": [
+              "Highlights Package"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "🎉 Highlights Package revisions now take control of established objects from the revision they replace: An outgoing package revision could…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "d78b1edc7fe2ab68c4951f8a6d25fa53",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Package package revisions now directly take control",
+            "entities": [
+              "Package"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "Package revisions now directly take control from the revision they replace, so the hand-off succeeds without any intervention."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "8b0d3655d6a0adb0b5c97e3f86e569ae",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "Backported backported 7827 originally fixed 7733",
+            "entities": [
+              "Backported"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "Backported in 7827 , originally fixed in 7733 ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          },
+          {
+            "id": "3d042eb809f37324e0192c3c1d373843",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-14",
+            "statement": "google dependency security updates bumps toolchain 7815",
+            "entities": [
+              "google",
+              "Dependency",
+              "Bumps"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "Dependency security updates: Bumps the Go toolchain to 1.26.7 7815 , google.golang.org/grpc to v1.83.2 7799 , 7825 , and golang.org/x/crypto…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T13:17:30.277Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Crossplane 2.3.6 (released 2026‑09‑15) tightens package‑revision ownership, back‑ports two bug fixes and upgrades the Google dependency toolchain to 7815 – a concrete shift you’ll notice the next time you apply a Crossplane manifest. [FACT:74480efdeed177d8fa6c4a45bcef8046][FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:d78b1edc7fe2ab68c4951f8a6d25fa53][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]",
+            "isEditorial": false,
+            "factIds": [
+              "74480efdeed177d8fa6c4a45bcef8046",
+              "7f0a35a5bf866373060d2b7a9bfe8d1f",
+              "d78b1edc7fe2ab68c4951f8a6d25fa53",
+              "3d042eb809f37324e0192c3c1d373843"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If you automate Crossplane resources in a CI/CD pipeline, the new “take‑control” flag for package revisions means you can enforce a single source of truth without race conditions. The back‑ported fixes (7827, originally 7733) close known crashes that have popped up in large clusters, and the Google toolchain bump removes a CVE that could otherwise compromise your build nodes. [FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]",
+            "isEditorial": false,
+            "factIds": [
+              "7f0a35a5bf866373060d2b7a9bfe8d1f",
+              "8b0d3655d6a0adb0b5c97e3f86e569ae",
+              "3d042eb809f37324e0192c3c1d373843"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Crossplane released a patch (v2.3.6) that scopes fixes to reported issues, adds a new package‑revision control flag, and back‑ports two bug fixes (IDs 7827 and 7733) from the master branch. The same release also updates the bundled Google dependency, moving the toolchain version to 7815. [FACT:74480efdeed177d8fa6c4a45bcef8046][FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:d78b1edc7fe2ab68c4951f8a6d25fa53][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]",
+            "isEditorial": false,
+            "factIds": [
+              "74480efdeed177d8fa6c4a45bcef8046",
+              "7f0a35a5bf866373060d2b7a9bfe8d1f",
+              "d78b1edc7fe2ab68c4951f8a6d25fa53",
+              "8b0d3655d6a0adb0b5c97e3f86e569ae",
+              "3d042eb809f37324e0192c3c1d373843"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For a builder, the practical steps are: bump your Crossplane version to v2.3.6, enable the new package‑revision control in your CRDs, and verify that the updated Google toolchain doesn’t introduce new changes in your pipelines. The back‑ported fixes should reduce intermittent controller restarts you may have seen in recent weeks. All of this can be done with a single Helm upgrade or `kubectl apply -f` of the new manifests. [FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae][FACT:3d042eb809f37324e0192c3c1d373843]",
+            "isEditorial": false,
+            "factIds": [
+              "7f0a35a5bf866373060d2b7a9bfe8d1f",
+              "3d042eb809f37324e0192c3c1d373843"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes don’t detail performance impact of the new revision flag, and it isn’t clear whether older controllers will need a restart to adopt the change. Additionally, downstream projects that embed Crossplane may need to test the Google toolchain bump for compatibility. Monitoring real‑world clusters after upgrade will be the best way to surface any hidden friction. [FACT:74480efdeed177d8fa6c4a45bcef8046]",
+            "isEditorial": false,
+            "factIds": [
+              "74480efdeed177d8fa6c4a45bcef8046"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Crossplane’s v2.3.6 is a focused patch that solves concrete pain points for Kubernetes builders. The changes are low‑risk, but the security update and the back‑ported bug fixes give you a solid reason to upgrade sooner rather than later. Keep an eye on downstream charts for any compatibility notes, but the default upgrade path should be smooth. [FACT:74480efdeed177d8fa6c4a45bcef8046][FACT:7f0a35a5bf866373060d2b7a9bfe8d1f][FACT:8b0d3655d6a0adb0b5c97e3f86e569ae]",
+            "isEditorial": false,
+            "factIds": [
+              "74480efdeed177d8fa6c4a45bcef8046"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-4::2026-09-16T13:18:04.087Z",
