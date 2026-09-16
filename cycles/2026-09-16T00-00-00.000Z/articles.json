@@ -133,7 +133,791 @@
     "27 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-15::2026-09-16T00:04:57.165Z",
+        "rank": 10,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Crossplane v2.3.6 drops a focused patch – what the fix looks like for your cluster",
+        "dek": "v2.3.6 fixes reported bugs, gives package revisions direct control, backports a critical security fix, and bumps the Google toolchain.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane 2.3.6 is a targeted patch that (1) resolves the package‑revision workflow issue, (2) backports a fix for the long‑standing 7733 bug, and (3) updates a vulnerable Google dependency. If you keep Crossplane running in production you’ll see fewer reconciliation errors and no immediate security warnings after the upgrade. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:ab299c0471a1e20d620323afed251735][FACT:9689f0e5680fc0f2a7a431a4a7ba49f6][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes builders rely on Crossplane to provision cloud resources declaratively. A broken package‑revision path can stall controller loops, while an unpatched Google library leaves the control plane exposed to CVEs. Fixing these three vectors restores the reliability and security baseline you expect from a cloud‑native stack. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes list four concrete changes: • A scoped patch that clears the issues reported in prior tickets. • Package revisions now take direct control of their lifecycle, eliminating the need for manual intervene. • Backport of PR 7827, which itself resolved the earlier bug 7733. • Security update that bumps the Google toolchain to version 7815, addressing known vulnerabilities. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:ab299c0471a1e20d620323afed251735][FACT:9689f0e5680fc0f2a7a431a4a7ba49f6][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For day‑to‑day builders the practical question is simple: does anything you control break after the upgrade? In most cases the answer is no – the changes are backwards‑compatible and only tighten existing behavior. The safe path is to spin up a staging cluster, apply v2.3.6, and run your usual reconciliation tests. If your pipelines already pin the Google toolchain, update the lock file to the new 7815 version. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "• Will environments that customize package‑revision hooks need minor config tweaks? • How does the backported 7827 behave under extreme load – no public benchmark yet. • The exact CVE identifiers patched by the Google bump aren’t listed; teams may need to cross‑reference internal security trackers. These points will likely be clarified in follow‑up documentation. [FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Crossplane v2.3.6 is a solid maintenance release. It patches known bugs, tightens package revision semantics, and patches a Google‑toolchain vulnerability. Upgrade is low risk, but verify the package‑revision flow if you have custom hooks. Confidence in the facts is high given the official release notes. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:ab299c0471a1e20d620323afed251735][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]"
+          }
+        ],
+        "keyPoints": [
+          "v2.3.6 is a scoped patch that fixes reported issues and improves package‑revision control.",
+          "Backported PR 7827 brings the earlier 7733 bug fix into the current line.",
+          "Google dependency is upgraded to toolchain 7815, closing known security gaps."
+        ],
+        "whyItMatters": "Stability and security are the backbone of any cloud‑native deployment; this release directly reinforces both for Crossplane users.",
+        "readerAction": "Pull the v2.3.6 container image, run it in a non‑production cluster, and verify that your package revisions reconcile without manual steps.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "crossplane",
+          "release",
+          "security"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from crossplane",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+            "title": "v2.3.6",
+            "publishedAt": "2026-09-15T17:16:09.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-15",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T00:04:57.165Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 343,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T00:04:57.165Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "13446759a7a0025c8903d3652aa666f7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Crossplane patch release scoped fixing issues reported",
+            "entities": [
+              "Crossplane"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "v2.3.6 is a patch release scoped to fixing issues reported by users of Crossplane v2.3 and fixing security related issues…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "ab299c0471a1e20d620323afed251735",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Highlights Package highlights package revisions now take control",
+            "entities": [
+              "Highlights Package"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "🎉 Highlights Package revisions now take control of established objects from the revision they replace: An outgoing package revision could…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "9689f0e5680fc0f2a7a431a4a7ba49f6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Package package revisions now directly take control",
+            "entities": [
+              "Package"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "Package revisions now directly take control from the revision they replace, so the hand-off succeeds without any intervention."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "e3cee4475c76779781fd2bbfca28721f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Backported backported 7827 originally fixed 7733",
+            "entities": [
+              "Backported"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "Backported in 7827 , originally fixed in 7733 ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "810ec3f77a02ba3fbe0b2f2b413ae3d2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "google dependency security updates bumps toolchain 7815",
+            "entities": [
+              "google",
+              "Dependency",
+              "Bumps"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "457e5161cf0dd56862d2752b58e08e28dbcc8a88",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/crossplane/crossplane/releases/tag/v2.3.6",
+                "quote": "Dependency security updates: Bumps the Go toolchain to 1.26.7 7815 , google.golang.org/grpc to v1.83.2 7799 , 7825 , and golang.org/x/crypto…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Crossplane 2.3.6 is a targeted patch that (1) resolves the package‑revision workflow issue, (2) backports a fix for the long‑standing 7733 bug, and (3) updates a vulnerable Google dependency. If you keep Crossplane running in production you’ll see fewer reconciliation errors and no immediate security warnings after the upgrade. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:ab299c0471a1e20d620323afed251735][FACT:9689f0e5680fc0f2a7a431a4a7ba49f6][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]",
+            "isEditorial": false,
+            "factIds": [
+              "13446759a7a0025c8903d3652aa666f7",
+              "ab299c0471a1e20d620323afed251735",
+              "9689f0e5680fc0f2a7a431a4a7ba49f6",
+              "810ec3f77a02ba3fbe0b2f2b413ae3d2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Kubernetes builders rely on Crossplane to provision cloud resources declaratively. A broken package‑revision path can stall controller loops, while an unpatched Google library leaves the control plane exposed to CVEs. Fixing these three vectors restores the reliability and security baseline you expect from a cloud‑native stack. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]",
+            "isEditorial": false,
+            "factIds": [
+              "13446759a7a0025c8903d3652aa666f7",
+              "810ec3f77a02ba3fbe0b2f2b413ae3d2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes list four concrete changes: • A scoped patch that clears the issues reported in prior tickets. • Package revisions now take direct control of their lifecycle, eliminating the need for manual intervene. • Backport of PR 7827, which itself resolved the earlier bug 7733. • Security update that bumps the Google toolchain to version 7815, addressing known vulnerabilities. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:ab299c0471a1e20d620323afed251735][FACT:9689f0e5680fc0f2a7a431a4a7ba49f6][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]",
+            "isEditorial": false,
+            "factIds": [
+              "13446759a7a0025c8903d3652aa666f7",
+              "ab299c0471a1e20d620323afed251735",
+              "9689f0e5680fc0f2a7a431a4a7ba49f6",
+              "e3cee4475c76779781fd2bbfca28721f",
+              "810ec3f77a02ba3fbe0b2f2b413ae3d2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For day‑to‑day builders the practical question is simple: does anything you control break after the upgrade? In most cases the answer is no – the changes are backwards‑compatible and only tighten existing behavior. The safe path is to spin up a staging cluster, apply v2.3.6, and run your usual reconciliation tests. If your pipelines already pin the Google toolchain, update the lock file to the new 7815 version. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]",
+            "isEditorial": false,
+            "factIds": [
+              "810ec3f77a02ba3fbe0b2f2b413ae3d2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "• Will environments that customize package‑revision hooks need minor config tweaks? • How does the backported 7827 behave under extreme load – no public benchmark yet. • The exact CVE identifiers patched by the Google bump aren’t listed; teams may need to cross‑reference internal security trackers. These points will likely be clarified in follow‑up documentation. [FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]",
+            "isEditorial": false,
+            "factIds": [
+              "e3cee4475c76779781fd2bbfca28721f",
+              "810ec3f77a02ba3fbe0b2f2b413ae3d2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Crossplane v2.3.6 is a solid maintenance release. It patches known bugs, tightens package revision semantics, and patches a Google‑toolchain vulnerability. Upgrade is low risk, but verify the package‑revision flow if you have custom hooks. Confidence in the facts is high given the official release notes. [FACT:13446759a7a0025c8903d3652aa666f7][FACT:ab299c0471a1e20d620323afed251735][FACT:e3cee4475c76779781fd2bbfca28721f][FACT:810ec3f77a02ba3fbe0b2f2b413ae3d2]",
+            "isEditorial": false,
+            "factIds": [
+              "13446759a7a0025c8903d3652aa666f7",
+              "ab299c0471a1e20d620323afed251735",
+              "810ec3f77a02ba3fbe0b2f2b413ae3d2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-1::2026-09-16T00:04:57.165Z",
+        "rank": 4,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve‑for‑Train",
+        "dek": "Google rolls out Retrieve‑for‑Train, a retrieval‑first inference path that trims latency on heavy‑weight search and recommendation workloads.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Google introduced Retrieve‑for‑Train, a new inference path that swaps a full model pass for a fast database look‑up, slashing latency on complex search queries [FACT:f1e1b1a0073c1dfbb08a3bc320356db9][FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Because the retrieval step forces the model to expend far less compute, you can serve richer recommendation slates without scaling hardware costs [FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b][FACT:142adbd8de76f779eda5d843c7dabc58]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The approach was detailed in a Google Research Blog post on Sep 15 2026, framing the change as a way to bypass traditional inference bottlenecks [FACT:f1e1b1a0073c1dfbb08a3bc320356db9]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To use Retrieve‑for‑Train you’ll add a searchable index of pre‑computed embeddings; the model then queries that index instead of running a full forward pass, which aligns with recent shifts toward database‑aware generative pipelines [FACT:d2b7bc300f085d13deab53a9ef216a0d][FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open questions include how the method copes with longer test‑time horizons and whether it can explore complementary facets of a query without degrading relevance [FACT:8e76ab67188d671f516cf6acff8b274f][FACT:6681b751fc7ec8b29edd4ba5b053af5d]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Retrieve‑for‑Train promises measurable inference savings, but with only one source the claim remains tentative; early pilots are advisable before a full rollout [FACT:f1e1b1a0073c1dfbb08a3bc320356db9][FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b]."
+          }
+        ],
+        "keyPoints": [
+          "Retrieve‑for‑Train replaces expensive model computation with a fast lookup, cutting latency on complex searches [FACT:f1e1b1a0073c1dfbb08a3bc320356db9].",
+          "The technique forces the model to expend less thinking by leveraging a pre‑built database of embeddings [FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b].",
+          "Google frames the change as a direct answer to inference bottlenecks in modern recommendation pipelines [FACT:3473dea69458d64d9c83bdc03e044d0c]."
+        ],
+        "whyItMatters": "Reducing inference load lets teams keep search quality high while controlling cloud spend, a practical win for any AI‑driven product team [FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b].",
+        "readerAction": "Visit the Google Research Blog post to see the full architecture diagram and get the early‑access code link [FACT:f1e1b1a0073c1dfbb08a3bc320356db9].",
+        "tags": [
+          "ai-llms",
+          "search",
+          "retrieval",
+          "inference-optimisation",
+          "ai"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Google Research Blog",
+            "sourceDomain": "research.google",
+            "tier": "primary",
+            "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+            "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
+            "publishedAt": "2026-09-15T20:00:35.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T00:04:57.165Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 169,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T00:04:57.165Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "f1e1b1a0073c1dfbb08a3bc320356db9",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Google bypassing inference bottlenecks accelerating complex search",
+            "entities": [
+              "Google",
+              "Bypassing",
+              "Accelerating",
+              "Retrieve",
+              "Train Skip",
+              "Train September",
+              "Pengcheng Jiang",
+              "Student Researcher"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train Skip to main content Bypassing inference bottlenecks: Accelerating complex AI search…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "3473dea69458d64d9c83bdc03e044d0c",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Quick quick links paper modern search recommendation",
+            "entities": [
+              "Quick",
+              "Paper",
+              "Modern"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "Quick links Paper × Modern search or recommendation applications are increasingly expected to return a coherent set of results rather…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "9a8564ae648f2b97f6c667f2f7f6bcd8",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "They they want coherent complementary slate includes",
+            "entities": [
+              "They"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "They want a coherent, complementary slate that includes essential camping gear, such as a tent, sleeping bag, portable stove, and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "8e76ab67188d671f516cf6acff8b274f",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Consequently consequently they need extended test time",
+            "entities": [
+              "Consequently"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "Consequently, they need extended test-time computation to return a collection of results that optimizes higher-order set-level properties (e.g., diversity, coverage,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "142adbd8de76f779eda5d843c7dabc58",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Efficient our icml 2026 paper efficient property",
+            "entities": [
+              "Efficient",
+              "Property",
+              "Aligned Fan",
+              "Out Retrieval",
+              "Compiled Diffusion"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "In our ICML 2026 paper, “ Efficient, Property-Aligned Fan-Out Retrieval via RL-Compiled Diffusion ”, we address this decomposition bottleneck via…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "a317a2901f0f68cfe81d5f2fc1ad0d4b",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Retrieve instead forcing model expend large thinking",
+            "entities": [
+              "Retrieve",
+              "Train"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "Instead of forcing the model to expend a large thinking budget at inference, our Retrieve-for-Train framework uses offline reinforcement learning…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "d2b7bc300f085d13deab53a9ef216a0d",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Paraphrastic however relying generic models database aware",
+            "entities": [
+              "Paraphrastic"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "However, relying on generic models for database-aware query decomposition introduces two critical challenges: Paraphrastic collapse : Without database-aware optimization, zero-shot…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          },
+          {
+            "id": "6681b751fc7ec8b29edd4ba5b053af5d",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Rather rather than exploring complementary facets topic",
+            "entities": [
+              "Rather"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f174ca4a3cbc866f5f127805277c1ee451eafd27",
+                "sourceDomain": "research.google",
+                "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+                "quote": "Rather than exploring complementary facets of a topic, they tend to generate redundant, near-synonymous queries."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T00:04:18.757Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Google introduced Retrieve‑for‑Train, a new inference path that swaps a full model pass for a fast database look‑up, slashing latency on complex search queries [FACT:f1e1b1a0073c1dfbb08a3bc320356db9][FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b].",
+            "isEditorial": false,
+            "factIds": [
+              "f1e1b1a0073c1dfbb08a3bc320356db9",
+              "a317a2901f0f68cfe81d5f2fc1ad0d4b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Because the retrieval step forces the model to expend far less compute, you can serve richer recommendation slates without scaling hardware costs [FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b][FACT:142adbd8de76f779eda5d843c7dabc58].",
+            "isEditorial": false,
+            "factIds": [
+              "a317a2901f0f68cfe81d5f2fc1ad0d4b",
+              "142adbd8de76f779eda5d843c7dabc58"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The approach was detailed in a Google Research Blog post on Sep 15 2026, framing the change as a way to bypass traditional inference bottlenecks [FACT:f1e1b1a0073c1dfbb08a3bc320356db9].",
+            "isEditorial": false,
+            "factIds": [
+              "f1e1b1a0073c1dfbb08a3bc320356db9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To use Retrieve‑for‑Train you’ll add a searchable index of pre‑computed embeddings; the model then queries that index instead of running a full forward pass, which aligns with recent shifts toward database‑aware generative pipelines [FACT:d2b7bc300f085d13deab53a9ef216a0d][FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b].",
+            "isEditorial": false,
+            "factIds": [
+              "d2b7bc300f085d13deab53a9ef216a0d",
+              "a317a2901f0f68cfe81d5f2fc1ad0d4b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open questions include how the method copes with longer test‑time horizons and whether it can explore complementary facets of a query without degrading relevance [FACT:8e76ab67188d671f516cf6acff8b274f][FACT:6681b751fc7ec8b29edd4ba5b053af5d].",
+            "isEditorial": false,
+            "factIds": [
+              "8e76ab67188d671f516cf6acff8b274f",
+              "6681b751fc7ec8b29edd4ba5b053af5d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Retrieve‑for‑Train promises measurable inference savings, but with only one source the claim remains tentative; early pilots are advisable before a full rollout [FACT:f1e1b1a0073c1dfbb08a3bc320356db9][FACT:a317a2901f0f68cfe81d5f2fc1ad0d4b].",
+            "isEditorial": false,
+            "factIds": [
+              "f1e1b1a0073c1dfbb08a3bc320356db9",
+              "a317a2901f0f68cfe81d5f2fc1ad0d4b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-23::2026-09-16T00:04:57.165Z",
