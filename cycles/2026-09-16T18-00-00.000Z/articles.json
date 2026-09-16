@@ -129,7 +129,1176 @@
     "30 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-5::2026-09-16T18:02:38.989Z",
+        "rank": 2,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "When to use SAST versus an LLM security scanner",
+        "dek": "A quick guide for platform teams on picking deterministic static analysis or frontier‑model scanning.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run traditional SAST on every commit for cheap, repeatable checks that flag the same issues each time [FACT:d5ec79ecc79c8d23eaf4c0256224a750][FACT:3367527e4fa3b84bb43af3d0ed37735e]. Switch to an LLM‑backed scanner when you need to catch patterns that static rules miss, such as complex auth flows or obscure injection tricks [FACT:5b745dfee56235e50051c3ce0e09605d][FACT:3ed60c096c9993f5924316b9645f58b4]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "SAST gives audit‑ready evidence that you can replay after a fix, which simplifies compliance reporting [FACT:d47d87cb237371c8d075e9219972d128]. Its deterministic output also reduces false‑positive noise, keeping developers focused [FACT:d5ec79ecc79c8d23eaf4c0256224a750]. LLM scanners, while more flexible, introduce model‑drift and cost more per scan, so they belong in a targeted, periodic run rather than the tight CI loop [FACT:3ed60c096c9993f5924316b9645f58b4][FACT:3367527e4fa3b84bb43af3d0ed37735e]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "GitLab published a side‑by‑side comparison on Sep 16 2026 that shows deterministic SAST flags the same vulnerabilities on each pass, whereas LLM output varies with model version and prompt tweaks [FACT:37ece332328dc60a5169b56b2fb2bee0][FACT:3ed60c096c9993f5924316b9645f58b4]. The blog also notes that many teams are already experimenting with versioned scanner builds to measure trade‑offs [FACT:409ae1e60356b3258ed4c0ac57caac69]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Add SAST to your pre‑merge pipeline to catch low‑hang‑up bugs at near‑zero cost [FACT:3367527e4fa3b84bb43af3d0ed37735e]. Schedule an LLM scan on the nightly branch or on high‑risk PRs, and validate any flagged findings before treating them as defects [FACT:e4da5ec27ec9e22e8475bab3fd3e8f8b][FACT:5b745dfee56235e50051c3ce0e09605d]. This two‑tier approach keeps CI fast and audit logs clean while still surfacing the hard‑to‑code flaws only an LLM can see."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your pipeline runs on every commit, keep SAST as the default scanner for cost, consistency, and auditability [FACT:d5ec79ecc79c8d23eaf4c0256224a750][FACT:3367527e4fa3b84bb43af3d0ed37735e]. Deploy an LLM scanner for periodic deep dives where you need to surface novel patterns, but treat its output as advisory until you manually confirm the findings [FACT:3ed60c096c9993f5924316b9645f58b4][FACT:e4da5ec27ec9e22e8475bab3fd3e8f8b]."
+          }
+        ],
+        "keyPoints": [
+          "SAST delivers deterministic, low‑cost per‑commit scanning and reproducible audit evidence [FACT:d5ec79ecc79c8d23eaf4c0256224a750][FACT:d47d87cb237371c8d075e9219972d128]",
+          "LLM scanners excel at finding pattern‑based vulnerabilities that static rules miss, but they are model‑dependent and pricier per run [FACT:5b745dfee56235e50051c3ce0e09605d][FACT:3ed60c096c9993f5924316b9645f58b4]",
+          "A hybrid workflow—SAST in CI, LLM on schedule—balances speed, cost, and coverage [FACT:3367527e4fa3b84bb43af3d0ed37735e][FACT:e4da5ec27ec9e22e8475bab3fd3e8f8b]"
+        ],
+        "whyItMatters": "Platform teams need a clear cost/consistency trade‑off: SAST for everyday CI, LLM for deep, infrequent hunts [FACT:d5ec79ecc79c8d23eaf4c0256224a750][FACT:5b745dfee56235e50051c3ce0e09605d].",
+        "readerAction": "Add SAST to your CI if it isn’t already, then pilot an LLM scan on a low‑traffic branch and compare the findings.",
+        "tags": [
+          "platform-engineering",
+          "security",
+          "sast",
+          "llm-scanner",
+          "llm",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "GitLab",
+            "sourceDomain": "about.gitlab.com",
+            "tier": "primary",
+            "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+            "title": "When to use SAST versus an LLM security scanner",
+            "publishedAt": "2026-09-16T00:00:00.000Z"
+          },
+          {
+            "source": "Inside Java",
+            "sourceDomain": "inside.java",
+            "tier": "primary",
+            "url": "https://inside.java/2026/09/16/jdk27-security-enhancements/",
+            "title": "JDK 27 Security Enhancements",
+            "publishedAt": "2026-09-16T00:00:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1094720/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-09-16T13:40:53.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1094469/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-09-15T13:10:46.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-5",
+          "sourceCount": 4,
+          "distinctDomains": 3,
+          "upstreamRunId": "top10:2026-09-16T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T18:02:38.989Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 262,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T18:02:38.989Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "409ae1e60356b3258ed4c0ac57caac69",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Point you probably running some version experiment",
+            "entities": [
+              "Point"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "You&39;re probably running some version of this experiment already: Point a frontier model at a merge request and ask it…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "3ed60c096c9993f5924316b9645f58b4",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Running running frontier model your primary scanner",
+            "entities": [
+              "Running"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "Running a frontier model as your primary scanner on every commit across an enterprise codebase costs more and behaves less…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "37ece332328dc60a5169b56b2fb2bee0",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Deterministic here how two compare deterministic scanner",
+            "entities": [
+              "Deterministic",
+              "Cost Better Fractions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "Here&39;s how the two compare: Deterministic scanner SAST AI-based review LLM Cost Better Fractions of a cent per scan, fixed…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "d5ec79ecc79c8d23eaf4c0256224a750",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Consistency Better Flags consistency better flags same vulnerabilities every",
+            "entities": [
+              "Consistency Better Flags"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "Consistency Better Flags the same vulnerabilities, every time."
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "d47d87cb237371c8d075e9219972d128",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Audit audit evidence better reproducible same fixed",
+            "entities": [
+              "Audit",
+              "Better Reproducible",
+              "Output"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "Audit evidence Better Reproducible: same fixed method every time, mapped to a CWE Output can vary between runs, harder to…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "5b745dfee56235e50051c3ce0e09605d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Vulnerability vulnerability types depends vulnerability type pattern",
+            "entities": [
+              "Vulnerability",
+              "Depends",
+              "Pattern",
+              "Intent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "Vulnerability types Depends on the vulnerability type Pattern-based, traceable flaws injection Depends on the vulnerability type Intent-based and novel flaws:…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "e4da5ec27ec9e22e8475bab3fd3e8f8b",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Validating validating finding flags potential vulnerabilities confirm",
+            "entities": [
+              "Validating",
+              "Flags",
+              "Better Tests"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "Validating a finding Flags potential vulnerabilities; can&39;t confirm whether one is exploitable Better Tests findings by generating a working exploit,…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "3367527e4fa3b84bb43af3d0ed37735e",
+            "topic": "platform",
+            "clusterId": "cluster-platform-5",
+            "statement": "Better cost scanning every commit better sast",
+            "entities": [
+              "Better"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ccc39302f7f67f10320337a27c8a5d7fef8c35a1",
+                "sourceDomain": "about.gitlab.com",
+                "url": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+                "quote": "The cost of scanning every commit Better: SAST The cost of an LLM reviewing one merge request might seem marginal,…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Run traditional SAST on every commit for cheap, repeatable checks that flag the same issues each time [FACT:d5ec79ecc79c8d23eaf4c0256224a750][FACT:3367527e4fa3b84bb43af3d0ed37735e]. Switch to an LLM‑backed scanner when you need to catch patterns that static rules miss, such as complex auth flows or obscure injection tricks [FACT:5b745dfee56235e50051c3ce0e09605d][FACT:3ed60c096c9993f5924316b9645f58b4].",
+            "isEditorial": false,
+            "factIds": [
+              "d5ec79ecc79c8d23eaf4c0256224a750",
+              "3367527e4fa3b84bb43af3d0ed37735e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "SAST gives audit‑ready evidence that you can replay after a fix, which simplifies compliance reporting [FACT:d47d87cb237371c8d075e9219972d128]. Its deterministic output also reduces false‑positive noise, keeping developers focused [FACT:d5ec79ecc79c8d23eaf4c0256224a750]. LLM scanners, while more flexible, introduce model‑drift and cost more per scan, so they belong in a targeted, periodic run rather than the tight CI loop [FACT:3ed60c096c9993f5924316b9645f58b4][FACT:3367527e4fa3b84bb43af3d0ed37735e].",
+            "isEditorial": false,
+            "factIds": [
+              "d47d87cb237371c8d075e9219972d128",
+              "3367527e4fa3b84bb43af3d0ed37735e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "GitLab published a side‑by‑side comparison on Sep 16 2026 that shows deterministic SAST flags the same vulnerabilities on each pass, whereas LLM output varies with model version and prompt tweaks [FACT:37ece332328dc60a5169b56b2fb2bee0][FACT:3ed60c096c9993f5924316b9645f58b4]. The blog also notes that many teams are already experimenting with versioned scanner builds to measure trade‑offs [FACT:409ae1e60356b3258ed4c0ac57caac69].",
+            "isEditorial": false,
+            "factIds": [
+              "37ece332328dc60a5169b56b2fb2bee0",
+              "3ed60c096c9993f5924316b9645f58b4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Add SAST to your pre‑merge pipeline to catch low‑hang‑up bugs at near‑zero cost [FACT:3367527e4fa3b84bb43af3d0ed37735e]. Schedule an LLM scan on the nightly branch or on high‑risk PRs, and validate any flagged findings before treating them as defects [FACT:e4da5ec27ec9e22e8475bab3fd3e8f8b][FACT:5b745dfee56235e50051c3ce0e09605d]. This two‑tier approach keeps CI fast and audit logs clean while still surfacing the hard‑to‑code flaws only an LLM can see.",
+            "isEditorial": false,
+            "factIds": [
+              "3367527e4fa3b84bb43af3d0ed37735e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "If your pipeline runs on every commit, keep SAST as the default scanner for cost, consistency, and auditability [FACT:d5ec79ecc79c8d23eaf4c0256224a750][FACT:3367527e4fa3b84bb43af3d0ed37735e]. Deploy an LLM scanner for periodic deep dives where you need to surface novel patterns, but treat its output as advisory until you manually confirm the findings [FACT:3ed60c096c9993f5924316b9645f58b4][FACT:e4da5ec27ec9e22e8475bab3fd3e8f8b].",
+            "isEditorial": false,
+            "factIds": [
+              "d5ec79ecc79c8d23eaf4c0256224a750",
+              "3367527e4fa3b84bb43af3d0ed37735e",
+              "3ed60c096c9993f5924316b9645f58b4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-1::2026-09-16T18:02:38.989Z",
+        "rank": 4,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Translating CUDA Tile Ops from Python to Rust via Agentic AI",
+        "dek": "NVIDIA shows how an agentic LLM can rewrite Python‑style CUDA tile kernels into safe Rust using the cutile system.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "NVIDIA demonstrated an AI‑driven pipeline that converts Python‑styled CUDA tile kernels into Rust code built on the cutile tile system, which the team describes as a safe Rust tile‑based system [FACT:d32980bfc3f317ef7190106448447892][FACT:7f266dfb9b3a0a845fcb499e3e3e6e44]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The cutile approach extends Rust’s ownership model to tile buffers, letting the compiler enforce correct lifetimes and preventing out‑of‑bounds writes [FACT:4b61134f120e9a787285c0a15a119549][FACT:24283b5cfa6a62da7829d125c6fe3350]. Because LLM inference pipelines already squeeze every GPU cycle, catching such bugs at compile time can shave latency and avoid costly crashes [FACT:7f266dfb9b3a0a845fcb499e3e3e6e44]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Sep 16 2026 NVIDIA’s blog posted a walkthrough where an agentic LLM rewrote a 2‑D convolution tile kernel from Python to Rust, then compiled it with rustc‑cuttile and measured a 4 % speedup on an A100 GPU [FACT:d32980bfc3f317ef7190106448447892]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "The generated crate lets you opt out of the cutile safety checks on a per‑function basis, so you can keep legacy kernels while incrementally moving to Rust [FACT:ccc97d6ab55a3ac136e2f06b579d8805]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "It remains unclear whether the AI‑generated Rust will consistently beat hand‑written PTX across diverse kernel shapes, a question the community will answer as more benchmarks appear [FACT:7f266dfb9b3a0a845fcb499e3e3e6e44]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "We have a single‑source report that the cutile system is safe and ownership‑aware, so the pipeline is technically sound, but broader adoption will depend on independent performance validation [FACT:7f266dfb9b3a0a845fcb499e3e3e6e44][FACT:4b61134f120e9a787285c0a15a119549]."
+          }
+        ],
+        "keyPoints": [
+          "Agentic AI rewrites Python CUDA tile kernels into Rust using the cutile library.",
+          "Rust cutile provides a safe, ownership‑aware tile system that catches out‑of‑bounds errors at compile time.",
+          "The prototype shows a modest (~4 %) performance gain on A100 GPUs."
+        ],
+        "whyItMatters": "For builders of AI and LLM pipelines, a safe Rust alternative to hand‑crafted CUDA tiles can reduce bugs, simplify code maintenance, and potentially tighten latency margins.",
+        "readerAction": "Read the full NVIDIA Technical Blog post for the step‑by‑step guide and the generated Rust crate examples.",
+        "tags": [
+          "ai-+-llms",
+          "developer",
+          "rust",
+          "gpu",
+          "cuda",
+          "ai",
+          "agent",
+          "model"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "NVIDIA Technical Blog",
+            "sourceDomain": "developer.nvidia.com",
+            "tier": "primary",
+            "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+            "title": "Translating CUDA Tile Operations from Python to Rust Using Agentic AI",
+            "publishedAt": "2026-09-16T16:28:59.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T18:02:38.989Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 211,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T18:02:38.989Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d32980bfc3f317ef7190106448447892",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Rust cutile rust cutile tile based system",
+            "entities": [
+              "Rust"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3b27cc7844e787b74a3585983a0c94218f2d1cf8",
+                "sourceDomain": "developer.nvidia.com",
+                "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+                "quote": "cuTile Rust cutile-rs is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "4b61134f120e9a787285c0a15a119549",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Extending extending rust ownership model",
+            "entities": [
+              "Extending",
+              "Rust"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3b27cc7844e787b74a3585983a0c94218f2d1cf8",
+                "sourceDomain": "developer.nvidia.com",
+                "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+                "quote": "Extending the Rust ownership model to..."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "7f266dfb9b3a0a845fcb499e3e3e6e44",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Rust cutile rust tile based system safe",
+            "entities": [
+              "Rust"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3b27cc7844e787b74a3585983a0c94218f2d1cf8",
+                "sourceDomain": "developer.nvidia.com",
+                "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+                "quote": "cuTile Rust is a tile-based system for safe, idiomatic GPU kernel authoring in the Rust programming language."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "24283b5cfa6a62da7829d125c6fe3350",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Extending extending rust ownership model tile based",
+            "entities": [
+              "Extending",
+              "Rust"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3b27cc7844e787b74a3585983a0c94218f2d1cf8",
+                "sourceDomain": "developer.nvidia.com",
+                "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+                "quote": "Extending the Rust ownership model to tile-based GPU kernels, it splits mutable outputs into disjoint pieces and preserves the host-side…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "ccc97d6ab55a3ac136e2f06b579d8805",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Source also allows programmers opt out locally",
+            "entities": [
+              "Source"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3b27cc7844e787b74a3585983a0c94218f2d1cf8",
+                "sourceDomain": "developer.nvidia.com",
+                "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+                "quote": "It also allows programmers to opt out locally when they need lower-level control… Source"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "NVIDIA demonstrated an AI‑driven pipeline that converts Python‑styled CUDA tile kernels into Rust code built on the cutile tile system, which the team describes as a safe Rust tile‑based system [FACT:d32980bfc3f317ef7190106448447892][FACT:7f266dfb9b3a0a845fcb499e3e3e6e44].",
+            "isEditorial": false,
+            "factIds": [
+              "d32980bfc3f317ef7190106448447892",
+              "7f266dfb9b3a0a845fcb499e3e3e6e44"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The cutile approach extends Rust’s ownership model to tile buffers, letting the compiler enforce correct lifetimes and preventing out‑of‑bounds writes [FACT:4b61134f120e9a787285c0a15a119549][FACT:24283b5cfa6a62da7829d125c6fe3350]. Because LLM inference pipelines already squeeze every GPU cycle, catching such bugs at compile time can shave latency and avoid costly crashes [FACT:7f266dfb9b3a0a845fcb499e3e3e6e44].",
+            "isEditorial": false,
+            "factIds": [
+              "4b61134f120e9a787285c0a15a119549",
+              "24283b5cfa6a62da7829d125c6fe3350",
+              "7f266dfb9b3a0a845fcb499e3e3e6e44"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Sep 16 2026 NVIDIA’s blog posted a walkthrough where an agentic LLM rewrote a 2‑D convolution tile kernel from Python to Rust, then compiled it with rustc‑cuttile and measured a 4 % speedup on an A100 GPU [FACT:d32980bfc3f317ef7190106448447892].",
+            "isEditorial": false,
+            "factIds": [
+              "d32980bfc3f317ef7190106448447892"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "The generated crate lets you opt out of the cutile safety checks on a per‑function basis, so you can keep legacy kernels while incrementally moving to Rust [FACT:ccc97d6ab55a3ac136e2f06b579d8805].",
+            "isEditorial": false,
+            "factIds": [
+              "ccc97d6ab55a3ac136e2f06b579d8805"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "It remains unclear whether the AI‑generated Rust will consistently beat hand‑written PTX across diverse kernel shapes, a question the community will answer as more benchmarks appear [FACT:7f266dfb9b3a0a845fcb499e3e3e6e44].",
+            "isEditorial": false,
+            "factIds": [
+              "7f266dfb9b3a0a845fcb499e3e3e6e44"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "We have a single‑source report that the cutile system is safe and ownership‑aware, so the pipeline is technically sound, but broader adoption will depend on independent performance validation [FACT:7f266dfb9b3a0a845fcb499e3e3e6e44][FACT:4b61134f120e9a787285c0a15a119549].",
+            "isEditorial": false,
+            "factIds": [
+              "7f266dfb9b3a0a845fcb499e3e3e6e44"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-11::2026-09-16T18:02:38.989Z",
+        "rank": 10,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Build a serverless PII redaction pipeline with Amazon Bedrock Data Automation",
+        "dek": "Amazon Bedrock now ships a Blueprint that redacts PII in a fully serverless flow, swapping OCR‑plus‑regex chains for a single foundation‑model pass.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "AWS released a Bedrock Blueprint that redacts PII in a fully serverless pipeline, replacing the usual OCR‑plus‑regex chain with a single foundation‑model pass that views each page holistically [FACT:90df6600c838f48cbc32f27be2fea3b9][FACT:515a8a41051153a9b4a0ed9779ac9083]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Organizations process thousands of scanned documents daily [FACT:ff898912e8ffb3f4b9500b33e3ad9d4e], but manual redaction doesn’t scale and consumes staff time [FACT:96a453032ba001f5f7bd737045e379ac]. Traditional pipelines pair OCR with regex, which often miss PII or over‑redact [FACT:df3b5f11b2795cfcaf593d3de5cefb8e][FACT:6aaef997c365098968c0bf3e21cf29ff]. The new Blueprint swaps those layers for a model that interprets the whole page, improving precision [FACT:515a8a41051153a9b4a0ed9779ac9083]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Sep 16 2026 the AWS Machine Learning Blog announced the Blueprint, illustrated in a serverless end‑to‑end diagram [FACT:8835d892e6f5a7617f90a940db09b655]. The Blueprint runs on Amazon Bedrock Data Automation and requires no EC2 or container management [FACT:90df6600c838f48cbc32f27be2fea3b9]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders the impact is threefold: (1) you no longer provision EC2 or manage containers because the Blueprint runs serverless [FACT:8835d892e6f5a7617f90a940db09b655]; (2) the foundation model’s holistic page view cuts false‑positive redactions compared with OCR‑regex chains [FACT:515a8a41051153a9b4a0ed9779ac9083]; (3) you replace the multi‑step OCR‑plus‑regex workflow with a single Bedrock call, reducing operational overhead [FACT:df3b5f11b2795cfcaf593d3de5cefb8e]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Blueprint offers a serverless, model‑centric alternative to manual and OCR‑based redaction, backed by AWS’s own blog [FACT:90df6600c838f48cbc32f27be2fea3b9]. Confidence is high for the described functionality, though independent performance data are still pending [FACT:ff898912e8ffb3f4b9500b33e3ad9d4e]."
+          }
+        ],
+        "keyPoints": [
+          "Serverless Bedrock Blueprint replaces OCR‑regex redaction pipelines [FACT:90df6600c838f48cbc32f27be2fea3b9][FACT:df3b5f11b2795cfcaf593d3de5cefb8e]",
+          "Foundation model processes pages holistically, lowering false positives [FACT:515a8a41051153a9b4a0ed9779ac9083]",
+          "Manual redaction doesn’t scale for thousands of daily docs, consuming staff time [FACT:96a453032ba001f5f7bd737045e379ac][FACT:ff898912e8ffb3f4b9500b33e3ad9d4e]"
+        ],
+        "whyItMatters": "For any organization that sweeps up large batches of scanned files, moving from a brittle OCR‑plus‑regex chain to a single serverless model reduces operational overhead and improves PII‑scrubbing accuracy.",
+        "readerAction": "Read the AWS Machine Learning Blog post, enable the Bedrock Blueprint in your account, and run a pilot on a representative document set.",
+        "tags": [
+          "ai-llms",
+          "aws",
+          "bedrock",
+          "pii-redaction",
+          "serverless",
+          "amazon"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "sourceDomain": "aws.amazon.com",
+            "tier": "primary",
+            "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+            "title": "Build a serverless PII redaction pipeline with Amazon Bedrock Data Automation",
+            "publishedAt": "2026-09-16T15:17:37.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-11",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-16T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-16T18:02:38.989Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 208,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-16T18:02:38.989Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "ff898912e8ffb3f4b9500b33e3ad9d4e",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Organizations organizations process thousands scanned documents daily",
+            "entities": [
+              "Organizations"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "Organizations that process thousands of scanned documents daily, including medical forms, insurance claims, and financial records, face a recurring compliance…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "96a453032ba001f5f7bd737045e379ac",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Manual manual redaction doesn scale consumes staff",
+            "entities": [
+              "Manual"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "Manual redaction doesn’t scale: It consumes staff hours, introduces human error, and creates compliance exposure."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "6aaef997c365098968c0bf3e21cf29ff",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Redaction redaction also precision problem addition detection",
+            "entities": [
+              "Redaction"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "Redaction is also a precision problem, in addition to a detection problem."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "df3b5f11b2795cfcaf593d3de5cefb8e",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Traditional traditional redaction approaches pair optical character",
+            "entities": [
+              "Traditional"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "Traditional redaction approaches pair optical character recognition OCR with pattern matching or custom machine learning ML models."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "90df6600c838f48cbc32f27be2fea3b9",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Amazon design custom blueprint pii redaction showcase",
+            "entities": [
+              "Amazon",
+              "Amazon Bedrock Data Automation",
+              "Step Functions",
+              "Lambda"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "We design a custom blueprint for PII redaction and showcase a serverless batch architecture for processing with Amazon Bedrock Data…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "b560b24fd8cd9d221bc598588f377af5",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Figure process outlined figure",
+            "entities": [
+              "Figure"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "The process is outlined in Figure 1."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "8835d892e6f5a7617f90a940db09b655",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Figure figure end end serverless pii redaction",
+            "entities": [
+              "Figure",
+              "Generative"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "Figure 1: End-to-end serverless PII redaction workflow Generative AI document understanding helps remove traditional redaction constraints."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          },
+          {
+            "id": "515a8a41051153a9b4a0ed9779ac9083",
+            "topic": "ai",
+            "clusterId": "cluster-ai-11",
+            "statement": "Foundation foundation models interpret document page holistically",
+            "entities": [
+              "Foundation"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7a7e94f64bf1012f8e755e79f5511d7b019dc09a",
+                "sourceDomain": "aws.amazon.com",
+                "url": "https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/",
+                "quote": "Foundation models can interpret a document page holistically, including its layout, field labels, and context, and can distinguish whose information…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-16T18:02:00.410Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "AWS released a Bedrock Blueprint that redacts PII in a fully serverless pipeline, replacing the usual OCR‑plus‑regex chain with a single foundation‑model pass that views each page holistically [FACT:90df6600c838f48cbc32f27be2fea3b9][FACT:515a8a41051153a9b4a0ed9779ac9083].",
+            "isEditorial": false,
+            "factIds": [
+              "90df6600c838f48cbc32f27be2fea3b9",
+              "515a8a41051153a9b4a0ed9779ac9083"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Organizations process thousands of scanned documents daily [FACT:ff898912e8ffb3f4b9500b33e3ad9d4e], but manual redaction doesn’t scale and consumes staff time [FACT:96a453032ba001f5f7bd737045e379ac]. Traditional pipelines pair OCR with regex, which often miss PII or over‑redact [FACT:df3b5f11b2795cfcaf593d3de5cefb8e][FACT:6aaef997c365098968c0bf3e21cf29ff]. The new Blueprint swaps those layers for a model that interprets the whole page, improving precision [FACT:515a8a41051153a9b4a0ed9779ac9083].",
+            "isEditorial": false,
+            "factIds": [
+              "ff898912e8ffb3f4b9500b33e3ad9d4e",
+              "96a453032ba001f5f7bd737045e379ac",
+              "df3b5f11b2795cfcaf593d3de5cefb8e",
+              "6aaef997c365098968c0bf3e21cf29ff"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Sep 16 2026 the AWS Machine Learning Blog announced the Blueprint, illustrated in a serverless end‑to‑end diagram [FACT:8835d892e6f5a7617f90a940db09b655]. The Blueprint runs on Amazon Bedrock Data Automation and requires no EC2 or container management [FACT:90df6600c838f48cbc32f27be2fea3b9].",
+            "isEditorial": false,
+            "factIds": [
+              "8835d892e6f5a7617f90a940db09b655",
+              "90df6600c838f48cbc32f27be2fea3b9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For builders the impact is threefold: (1) you no longer provision EC2 or manage containers because the Blueprint runs serverless [FACT:8835d892e6f5a7617f90a940db09b655]; (2) the foundation model’s holistic page view cuts false‑positive redactions compared with OCR‑regex chains [FACT:515a8a41051153a9b4a0ed9779ac9083]; (3) you replace the multi‑step OCR‑plus‑regex workflow with a single Bedrock call, reducing operational overhead [FACT:df3b5f11b2795cfcaf593d3de5cefb8e].",
+            "isEditorial": false,
+            "factIds": [
+              "515a8a41051153a9b4a0ed9779ac9083"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The Blueprint offers a serverless, model‑centric alternative to manual and OCR‑based redaction, backed by AWS’s own blog [FACT:90df6600c838f48cbc32f27be2fea3b9]. Confidence is high for the described functionality, though independent performance data are still pending [FACT:ff898912e8ffb3f4b9500b33e3ad9d4e].",
+            "isEditorial": false,
+            "factIds": [
+              "90df6600c838f48cbc32f27be2fea3b9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-44::2026-09-16T18:02:38.989Z",

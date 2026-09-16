@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-16T12:00:00.000Z",
-    "windowStart": "2026-09-16T12:00:00.000Z",
-    "windowEnd": "2026-09-16T18:00:00.000Z"
+    "id": "2026-09-16T18:00:00.000Z",
+    "windowStart": "2026-09-16T18:00:00.000Z",
+    "windowEnd": "2026-09-17T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-16T13:17:30.083Z",
-  "nextRefreshAt": "2026-09-16T18:00:00.000Z",
+  "publishedAt": "2026-09-16T18:02:00.265Z",
+  "nextRefreshAt": "2026-09-17T00:00:00.000Z",
   "runIds": {
-    "aggregation": "02bdf4ba-e585-4e1d-b58d-9de6c4edaba5",
-    "ranking": "rank-6fda84ac",
-    "top10": "top10:2026-09-16T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-16T12:00:00.000Z-2026-09-16T13:18:04.087Z"
+    "aggregation": "b762263a-c7e4-48d7-b299-6788930a560c",
+    "ranking": "rank-9ff33c38",
+    "top10": "top10:2026-09-16T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-16T18:00:00.000Z-2026-09-16T18:02:38.989Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-16T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-16T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-16T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-16T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-16T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-16T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 81,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1279,
+      "count": 1483,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1495,
+      "count": 1690,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 19,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 18,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "JDK 27 Security Enhancements"
+        "topic": "security",
+        "headline": "RHSA-2026:68233: Important: .NET 9.0 security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:67979: Important: microcodectl security, bug fix, and enhancement update"
+        "topic": "platform",
+        "headline": "When to use SAST versus an LLM security scanner"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:67882: Important: gstreamer1-plugins-ugly-free security update"
+        "headline": "RHSA-2026:68131: Moderate: kernel security update"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks"
+        "headline": "RHSA-2026:67882: Important: gstreamer1-plugins-ugly-free security update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Atomic macOS AMOS Stealer Activity"
+        "topic": "kubernetes",
+        "headline": "containerd API 1.12.0"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "OpenAI, Anthropic, Google DeepMind in AI safety talks for weeks"
+        "headline": "Anthropic merges Claude Chat, Cowork, and more into a single product"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI Considers Pre-IPO Funding Round at More Than $1.2 Trillion Valuation"
+        "topic": "security",
+        "headline": "RHSA-2026:68276: Important: Red Hat build of Keycloak 26.4.16 Images Security Update"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "Running OpenBao on Kubernetes with a CloudNativePG PostgreSQL backend"
+        "headline": "v3.6.0-rc1"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic | History, Controversies, & Claude AI | Britannica Money"
+        "topic": "kubernetes",
+        "headline": "v1.67.0/v0.161.0"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "EXCLUSIVE: OpenAI's rogue agents probed Hugging Face for weaknesses two months before major hack"
+        "headline": "Reimagining advertising with AI"
       }
     ],
     "articleCount": 0
