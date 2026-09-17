@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-17T12:00:00.000Z",
-    "windowStart": "2026-09-17T12:00:00.000Z",
-    "windowEnd": "2026-09-17T18:00:00.000Z"
+    "id": "2026-09-17T18:00:00.000Z",
+    "windowStart": "2026-09-17T18:00:00.000Z",
+    "windowEnd": "2026-09-18T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-17T16:36:32.242Z",
-  "nextRefreshAt": "2026-09-17T18:00:00.000Z",
+  "publishedAt": "2026-09-17T21:08:17.499Z",
+  "nextRefreshAt": "2026-09-18T00:00:00.000Z",
   "runIds": {
-    "aggregation": "af36cb7a-b09c-4065-ac74-2fe67768f9eb",
-    "ranking": "rank-cd2f7ee7",
-    "top10": "top10:2026-09-17T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-17T12:00:00.000Z-2026-09-17T16:37:16.242Z"
+    "aggregation": "c88ff2c7-d391-4406-b63e-04fdeb64eb1b",
+    "ranking": "rank-3166b00a",
+    "top10": "top10:2026-09-17T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-17T18:00:00.000Z-2026-09-17T21:08:50.613Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-17T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-17T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-17T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-17T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-17T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-17T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 87,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1387,
+      "count": 1344,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1594,
+      "count": 1569,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:68677: Important: tomcat security update"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI models go rogue in 6 new cases"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI flags new concerning AI behavior, to track model misalignment regularly"
-      },
-      {
-        "rank": 4,
-        "topic": "platform",
-        "headline": "Building an Internal Developer Platform with Artificial Intelligence"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.13.0-rc1"
-      },
-      {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "HCP Vagrant deprecation: important dates and migration guidance"
-      },
-      {
-        "rank": 7,
         "topic": "platform",
         "headline": "Security updates for Thursday"
       },
       {
-        "rank": 8,
+        "rank": 2,
+        "topic": "kubernetes",
+        "headline": "Migrating the GitHub Copilot runtime to Rust, using Copilot"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:68711: Important: vim security update"
+      },
+      {
+        "rank": 4,
         "topic": "ai",
-        "headline": "Our framework for reporting model misalignment"
+        "headline": "OpenAI flags new concerning AI behavior, to track model misalignment regularly"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:68702: Moderate: rrdtool security update"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "An OpenAI model kept slipping prompt injections into its own notes, and researchers still aren&039;t sure why"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Introducing Astra for Law"
+      },
+      {
+        "rank": 8,
+        "topic": "kubernetes",
+        "headline": "The critical vulnerability was a test database. That&8217;s the whole triage problem."
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI reveals AI models tried to bypass safeguards, hide mistakes"
+        "topic": "platform",
+        "headline": "Building an Internal Developer Platform with Artificial Intelligence"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Catching poor LLM performance and accuracy before deployment"
+        "topic": "ai",
+        "headline": "OpenAI models go rogue in 6 new cases"
       }
     ],
     "articleCount": 0
