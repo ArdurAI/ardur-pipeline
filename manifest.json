@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-17T06:00:00.000Z",
-    "windowStart": "2026-09-17T06:00:00.000Z",
-    "windowEnd": "2026-09-17T12:00:00.000Z"
+    "id": "2026-09-17T12:00:00.000Z",
+    "windowStart": "2026-09-17T12:00:00.000Z",
+    "windowEnd": "2026-09-17T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-17T11:19:49.033Z",
-  "nextRefreshAt": "2026-09-17T12:00:00.000Z",
+  "publishedAt": "2026-09-17T16:36:32.242Z",
+  "nextRefreshAt": "2026-09-17T18:00:00.000Z",
   "runIds": {
-    "aggregation": "7007d2e2-1080-496f-b8c3-8ed7cd20d402",
-    "ranking": "rank-79724945",
-    "top10": "top10:2026-09-17T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-17T06:00:00.000Z-2026-09-17T11:20:29.827Z"
+    "aggregation": "af36cb7a-b09c-4065-ac74-2fe67768f9eb",
+    "ranking": "rank-cd2f7ee7",
+    "top10": "top10:2026-09-17T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-17T12:00:00.000Z-2026-09-17T16:37:16.242Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-17T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-17T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-17T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-17T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-17T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-17T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 87,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1327,
+      "count": 1387,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 7 distinct domains < floor 20",
         "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1558,
+      "count": 1594,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 18,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 19,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 31,
     "usedFallback": true
   },
   "summary": {
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "OpenTelemetry everywhere: Migrating a metrics platform at scale"
+        "topic": "security",
+        "headline": "RHSA-2026:68677: Important: tomcat security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:65906: Important: OpenShift Container Platform 4.12.98 packages and security update"
+        "topic": "ai",
+        "headline": "OpenAI models go rogue in 6 new cases"
       },
       {
         "rank": 3,
@@ -118,38 +118,38 @@
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Novo taps Anthropic’s Claude to ‘supercharge’ R&D efforts"
+        "topic": "platform",
+        "headline": "Building an Internal Developer Platform with Artificial Intelligence"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:68503: Important: gstreamer1-plugins-base security update"
+        "topic": "kubernetes",
+        "headline": "v1.13.0-rc1"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Cisco warns of max severity ISE zero-day exploited in attacks"
+        "topic": "kubernetes",
+        "headline": "HCP Vagrant deprecation: important dates and migration guidance"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:68567: Critical: RHELAI 3.6: mariadb-connector-c 3.4.9 CVE-2026-44172"
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "OpenAI Discloses Six New Incidents of ‘Concerning’ A.I. Behavior"
+        "headline": "Our framework for reporting model misalignment"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.0"
+        "topic": "ai",
+        "headline": "OpenAI reveals AI models tried to bypass safeguards, hide mistakes"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI&039;s GPT-6 Astra decrypts a Nazi radio message in ten hours that went unsolved for 83 years"
+        "topic": "platform",
+        "headline": "Catching poor LLM performance and accuracy before deployment"
       }
     ],
     "articleCount": 0
