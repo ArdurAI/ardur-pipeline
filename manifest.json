@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-17T00:00:00.000Z",
-    "windowStart": "2026-09-17T00:00:00.000Z",
-    "windowEnd": "2026-09-17T06:00:00.000Z"
+    "id": "2026-09-17T06:00:00.000Z",
+    "windowStart": "2026-09-17T06:00:00.000Z",
+    "windowEnd": "2026-09-17T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-17T04:15:16.760Z",
-  "nextRefreshAt": "2026-09-17T06:00:00.000Z",
+  "publishedAt": "2026-09-17T11:19:49.033Z",
+  "nextRefreshAt": "2026-09-17T12:00:00.000Z",
   "runIds": {
-    "aggregation": "1ba2f69f-daea-422d-9815-1f0ad9e16a19",
-    "ranking": "rank-68f60f8a",
-    "top10": "top10:2026-09-17T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-17T00:00:00.000Z-2026-09-17T04:16:15.121Z"
+    "aggregation": "7007d2e2-1080-496f-b8c3-8ed7cd20d402",
+    "ranking": "rank-79724945",
+    "top10": "top10:2026-09-17T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-17T06:00:00.000Z-2026-09-17T11:20:29.827Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-17T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-17T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-17T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-17T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-17T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-17T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 96,
+      "count": 93,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1452,
+      "count": 1327,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,23 +52,23 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1650,
+      "count": 1558,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 76,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Platform Engineering in the Age of AI"
+        "headline": "OpenTelemetry everywhere: Migrating a metrics platform at scale"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Claude Cowork and chat are now one Claude"
+        "topic": "security",
+        "headline": "RHSA-2026:65906: Important: OpenShift Container Platform 4.12.98 packages and security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:68292: Moderate: unbound security update"
+        "topic": "ai",
+        "headline": "OpenAI flags new concerning AI behavior, to track model misalignment regularly"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:68334: Important: Red Hat Edge Manager Version 1.1.4 Security Update"
+        "topic": "ai",
+        "headline": "Novo taps Anthropic’s Claude to ‘supercharge’ R&D efforts"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic debuts Claude Docs, raising stakes for Microsoft"
+        "topic": "security",
+        "headline": "RHSA-2026:68503: Important: gstreamer1-plugins-base security update"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.0"
+        "topic": "security",
+        "headline": "Cisco warns of max severity ISE zero-day exploited in attacks"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:68233: Important: .NET 9.0 security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:68567: Critical: RHELAI 3.6: mariadb-connector-c 3.4.9 CVE-2026-44172"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "How to Use AI Agents to Prepare 3D Scenes for Simulation"
+        "headline": "OpenAI Discloses Six New Incidents of ‘Concerning’ A.I. Behavior"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor"
+        "topic": "kubernetes",
+        "headline": "containerd 2.4.0"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "datasette 1.0a40"
+        "topic": "ai",
+        "headline": "OpenAI&039;s GPT-6 Astra decrypts a Nazi radio message in ten hours that went unsolved for 83 years"
       }
     ],
     "articleCount": 0
