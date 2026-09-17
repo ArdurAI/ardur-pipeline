@@ -136,7 +136,636 @@
     "27 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-3::2026-09-17T04:16:15.121Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "containerd 2.4.0 lands with dual binaries and a longer support window",
+        "dek": "The 13th containerd release adds a static binary option, bumps the API to v1.12.0, and promises an extended lifecycle for stability‑focused users.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "containerd 2.4.0 ships both a dynamically linked Ubuntu build and a statically linked binary, and it extends the supported lifecycle—so you can avoid glibc version mismatches and skip frequent version churn. [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:882fad2eda0671782dda004832f9fbd5]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes nodes still use containerd as the default OCI runtime; the new static binary removes the glibc version lock that trips up Alpine‑based nodes, and the longer support window reduces upgrade noise for teams that lock versions for stability. [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:882fad2eda0671782dda004832f9fbd5]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Version 2.4.0 is the 13th major release of containerd and includes API v1.12.0, officially recommended tarballs for common architectures, and is labelled a regular (non‑preview) release. [FACT:ea7de698708c98012388df730050255b] [FACT:1b5c302efa88acf69ff953cf2e8ad010] [FACT:e0f34550ad17659dd9a6053cdc772929]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your clusters run Ubuntu, stick with the dynamically linked tarball; if you target Alpine or other minimal distros, pull the static tarball to sidestep the glibc dependency. Validate the new API 1.12.0 against your Kubelet before promoting to production. [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:ea7de698708c98012388df730050255b]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes call out a longer support lifecycle, but the precise end‑of‑life dates have not been published yet. [FACT:882fad2eda0671782dda004832f9fbd5]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The changelog comes directly from the official containerd release notes, so the factual details are high‑confidence. Operators should watch downstream projects (e.g., CRI‑Shim) for API 1.12.0 support before flipping production nodes. [FACT:e0f34550ad17659dd9a6053cdc772929] [FACT:ea7de698708c98012388df730050255b]"
+          }
+        ],
+        "keyPoints": [
+          "containerd 2.4.0 adds a static binary alongside the traditional dynamic Ubuntu build, easing glibc constraints. [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:241a8ae738936bdfaddf7062117c5443]",
+          "API version is bumped to 1.12.0, marking the 13th major containerd release. [FACT:ea7de698708c98012388df730050255b]",
+          "The release promises a longer support lifecycle, catering to stability‑first teams. [FACT:882fad2eda0671782dda004832f9fbd5]"
+        ],
+        "whyItMatters": "Kubernetes workloads depend on containerd; the new static binary removes glibc version lock‑ins, and the extended support window means fewer mandatory upgrades for operators. [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:882fad2eda0671782dda004832f9fbd5]",
+        "readerAction": "Download the appropriate tarball (dynamic for Ubuntu, static for Alpine) from the GitHub release page, run a compatibility test with your Kubelet, and schedule the upgrade once downstream tooling confirms API 1.12.0 support. [FACT:c7b2c24ab8a5200054ed759e784f652f] [FACT:ea7de698708c98012388df730050255b]",
+        "tags": [
+          "kubernetes",
+          "containerd",
+          "cloud-native",
+          "github",
+          "container"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+            "title": "containerd 2.4.0",
+            "publishedAt": "2026-09-16T20:08:21.000Z"
+          },
+          {
+            "source": "Release notes from containerd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/containerd/containerd/releases/tag/api%2Fv1.12.0",
+            "title": "containerd API 1.12.0",
+            "publishedAt": "2026-09-16T16:26:55.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-3",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-17T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-17T04:16:15.121Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 214,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-17T04:16:15.121Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "e0f34550ad17659dd9a6053cdc772929",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Welcome welcome release containerd containerd regular non",
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "Welcome to the v2.4.0 release of containerd containerd 2.4 is a regular non-LTS release with a shorter support window, intended…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "882fad2eda0671782dda004832f9fbd5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Users users prioritizing stability longer support lifecycle",
+            "entities": [
+              "Users"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "Users prioritizing stability and a longer support lifecycle should stay on the 2.3 LTS release."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "1b5c302efa88acf69ff953cf2e8ad010",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Recommended containerd version arch tar recommended",
+            "entities": [
+              "Recommended"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : ✅Recommended."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "241a8ae738936bdfaddf7062117c5443",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Dynamically dynamically linked glibc ubuntu",
+            "entities": [
+              "Dynamically",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "Dynamically linked with glibc 2.35 Ubuntu 22.04."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "067f988ac99db781ac7df06c6867c86e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Statically containerd static version arch tar statically",
+            "entities": [
+              "Statically"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz : Statically linked."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "addad477c58270ff075732d7b0b68af4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Expected expected used linux distributions use glibc",
+            "entities": [
+              "Expected",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "Expected to be used on Linux distributions that do not use glibc &gt;= 2.35."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "c7b2c24ab8a5200054ed759e784f652f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "github see also getting started https github",
+            "entities": [
+              "github",
+              "Getting Started"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8dff53f73c1e00d07c1ea536647f76563354ad14",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/v2.4.0",
+                "quote": "See also the Getting Started https://github.com/containerd/containerd/blob/m"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "ea7de698708c98012388df730050255b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Welcome welcome api release containerd 13th release",
+            "quantity": {
+              "metric": "Welcome",
+              "value": 1
+            },
+            "entities": [
+              "Welcome"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ee6312136261782ff6f6bac54e185921450d1107",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/containerd/containerd/releases/tag/api%2Fv1.12.0",
+                "quote": "Welcome to the api/v1.12.0 release of containerd The 13th release for the containerd 1.x API aligns with the containerd 2.4…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "containerd 2.4.0 ships both a dynamically linked Ubuntu build and a statically linked binary, and it extends the supported lifecycle—so you can avoid glibc version mismatches and skip frequent version churn. [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:882fad2eda0671782dda004832f9fbd5]",
+            "isEditorial": false,
+            "factIds": [
+              "241a8ae738936bdfaddf7062117c5443",
+              "067f988ac99db781ac7df06c6867c86e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Kubernetes nodes still use containerd as the default OCI runtime; the new static binary removes the glibc version lock that trips up Alpine‑based nodes, and the longer support window reduces upgrade noise for teams that lock versions for stability. [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:882fad2eda0671782dda004832f9fbd5]",
+            "isEditorial": false,
+            "factIds": [
+              "067f988ac99db781ac7df06c6867c86e",
+              "882fad2eda0671782dda004832f9fbd5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Version 2.4.0 is the 13th major release of containerd and includes API v1.12.0, officially recommended tarballs for common architectures, and is labelled a regular (non‑preview) release. [FACT:ea7de698708c98012388df730050255b] [FACT:1b5c302efa88acf69ff953cf2e8ad010] [FACT:e0f34550ad17659dd9a6053cdc772929]",
+            "isEditorial": false,
+            "factIds": [
+              "ea7de698708c98012388df730050255b",
+              "1b5c302efa88acf69ff953cf2e8ad010",
+              "e0f34550ad17659dd9a6053cdc772929"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your clusters run Ubuntu, stick with the dynamically linked tarball; if you target Alpine or other minimal distros, pull the static tarball to sidestep the glibc dependency. Validate the new API 1.12.0 against your Kubelet before promoting to production. [FACT:241a8ae738936bdfaddf7062117c5443] [FACT:067f988ac99db781ac7df06c6867c86e] [FACT:ea7de698708c98012388df730050255b]",
+            "isEditorial": false,
+            "factIds": [
+              "241a8ae738936bdfaddf7062117c5443"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes call out a longer support lifecycle, but the precise end‑of‑life dates have not been published yet. [FACT:882fad2eda0671782dda004832f9fbd5]",
+            "isEditorial": false,
+            "factIds": [
+              "882fad2eda0671782dda004832f9fbd5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The changelog comes directly from the official containerd release notes, so the factual details are high‑confidence. Operators should watch downstream projects (e.g., CRI‑Shim) for API 1.12.0 support before flipping production nodes. [FACT:e0f34550ad17659dd9a6053cdc772929] [FACT:ea7de698708c98012388df730050255b]",
+            "isEditorial": false,
+            "factIds": [
+              "e0f34550ad17659dd9a6053cdc772929",
+              "ea7de698708c98012388df730050255b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-models-0::2026-09-17T04:16:15.121Z",
+        "rank": 10,
+        "topic": "models",
+        "topicLabel": "Model Comparisons",
+        "headline": "datasette 1.0a40 drops a security patch and flips to httpx2",
+        "dek": "The latest prerelease of datasette adds the same security fix as the last update and migrates its internal HTTP client to httpx‑2.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "datasette 1.0a40 ships a security fix that mirrors the one in the previous 0a40 release and swaps the internal HTTP stack to httpx2, so your instances stay safe and gain a more modern networking layer [FACT:91560b90925871d8aa8da93f1afe6a83][FACT:b5f103f9b70585d51f15f19faa4a1851]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The fix patches a known vulnerability that could let an attacker read or modify data served by datasette, and httpx2 brings better connection reuse and async support—both of which matter for low‑latency model‑comparison dashboards [FACT:c86350f0cfb3ab4ae1e0815ea871d128][FACT:b5f103f9b70585d51f15f19faa4a1851]."
+          }
+        ],
+        "keyPoints": [
+          "datasette 1.0a40 includes the same security fix as 0a40 [FACT:91560b90925871d8aa8da93f1afe6a83]",
+          "the internal HTTP client is now httpx2, improving async handling [FACT:b5f103f9b70585d51f15f19faa4a1851]",
+          "the fix addresses a vulnerability that could expose or tamper with served data [FACT:c86350f0cfb3ab4ae1e0815ea871d128]"
+        ],
+        "whyItMatters": "A security patch protects the data you’re exposing, and a modern HTTP client reduces latency for the model‑comparison queries that power your dashboards.",
+        "readerAction": "Pull the 1.0a40 tag into your staging environment, run your existing test suite, and verify that no plugin raises import errors before rolling out to production.",
+        "tags": [
+          "datasette",
+          "security",
+          "httpx2",
+          "model-comparisons"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Simon Willison's Weblog",
+            "sourceDomain": "simonwillison.net",
+            "tier": "primary",
+            "url": "https://simonwillison.net/2026/Sep/16/datasette/",
+            "title": "datasette 1.0a40",
+            "publishedAt": "2026-09-16T23:51:43.000Z"
+          },
+          {
+            "source": "Simon Willison's Weblog",
+            "sourceDomain": "simonwillison.net",
+            "tier": "primary",
+            "url": "https://simonwillison.net/2026/Sep/16/datasette-2/",
+            "title": "datasette 0.65.5",
+            "publishedAt": "2026-09-16T23:51:08.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-models-0",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-17T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-17T04:16:15.121Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 76,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-17T04:16:15.121Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "91560b90925871d8aa8da93f1afe6a83",
+            "topic": "models",
+            "clusterId": "cluster-models-0",
+            "statement": "Release release datasette 0a40 same security fix",
+            "entities": [
+              "Release",
+              "Plugins"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb5c069cb2ad112b416a6a3538fd3dbb9dabe70",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/16/datasette/",
+                "quote": "Release: datasette 1.0a40 Same security fix as 0.65.5 , plus some neat new features and bug fixes: Plugins can now…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "b5f103f9b70585d51f15f19faa4a1851",
+            "topic": "models",
+            "clusterId": "cluster-models-0",
+            "statement": "Datasette migrated datasette httpx2 features like internal",
+            "entities": [
+              "Datasette"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3fb5c069cb2ad112b416a6a3538fd3dbb9dabe70",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/16/datasette/",
+                "quote": "I've migrated Datasette to httpx2 for features like the internal datasette.client.get method."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          },
+          {
+            "id": "c86350f0cfb3ab4ae1e0815ea871d128",
+            "topic": "models",
+            "clusterId": "cluster-models-0",
+            "statement": "Release release datasette security fix issue where",
+            "entities": [
+              "Release",
+              "Security"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4e32c351abd8d17df0b2260154851059c6c39ddb",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/16/datasette-2/",
+                "quote": "Release: datasette 0.65.5 Security fix for an issue where a trailing newline in a requested table name could bypass table…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-17T04:15:16.968Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "datasette 1.0a40 ships a security fix that mirrors the one in the previous 0a40 release and swaps the internal HTTP stack to httpx2, so your instances stay safe and gain a more modern networking layer [FACT:91560b90925871d8aa8da93f1afe6a83][FACT:b5f103f9b70585d51f15f19faa4a1851].",
+            "isEditorial": false,
+            "factIds": [
+              "91560b90925871d8aa8da93f1afe6a83",
+              "b5f103f9b70585d51f15f19faa4a1851"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The fix patches a known vulnerability that could let an attacker read or modify data served by datasette, and httpx2 brings better connection reuse and async support—both of which matter for low‑latency model‑comparison dashboards [FACT:c86350f0cfb3ab4ae1e0815ea871d128][FACT:b5f103f9b70585d51f15f19faa4a1851].",
+            "isEditorial": false,
+            "factIds": [
+              "c86350f0cfb3ab4ae1e0815ea871d128",
+              "b5f103f9b70585d51f15f19faa4a1851"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-1::2026-09-17T04:16:15.121Z",
