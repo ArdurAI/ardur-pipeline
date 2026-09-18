@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-18T12:00:00.000Z",
-    "windowStart": "2026-09-18T12:00:00.000Z",
-    "windowEnd": "2026-09-18T18:00:00.000Z"
+    "id": "2026-09-18T18:00:00.000Z",
+    "windowStart": "2026-09-18T18:00:00.000Z",
+    "windowEnd": "2026-09-19T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-18T16:08:10.408Z",
-  "nextRefreshAt": "2026-09-18T18:00:00.000Z",
+  "publishedAt": "2026-09-18T20:41:02.693Z",
+  "nextRefreshAt": "2026-09-19T00:00:00.000Z",
   "runIds": {
-    "aggregation": "7d8a9ac8-c553-4473-83ba-f145a653aa3a",
-    "ranking": "rank-05e54256",
-    "top10": "top10:2026-09-18T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-18T12:00:00.000Z-2026-09-18T16:08:26.609Z"
+    "aggregation": "00355b70-176e-4742-965e-75f0383c005d",
+    "ranking": "rank-002bc9c8",
+    "top10": "top10:2026-09-18T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-18T18:00:00.000Z-2026-09-18T20:41:20.350Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-18T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-18T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-18T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-18T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-18T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-18T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1308,
+      "count": 1307,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1584,
+      "count": 1550,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:68642: Important: gstreamer1-plugins-good security update"
+        "topic": "ai",
+        "headline": "Introducing Kimi K3 on Amazon Bedrock"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Enforce custom rules in Datadog IaC Security scanning"
+        "topic": "ai",
+        "headline": "Benchmarking LLM Inference at Scale with AIPerf"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime"
+        "headline": "Security researchers used Anthropic&039;s Claude to hack OpenAI&039;s internal systems in under 72 hours"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents"
+        "topic": "security",
+        "headline": "RHSA-2026:68642: Important: gstreamer1-plugins-good security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Exclusive | Hackers Used Anthropic’s Claude to Break Into OpenAI"
+        "topic": "security",
+        "headline": "Cisco Zero-Day Highlights API Endpoint Authentication Issues"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:68651: Moderate: tomcat9 security update"
+        "topic": "platform",
+        "headline": "Enforce custom rules in Datadog IaC Security scanning"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "How To Write With An LLM"
+        "headline": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation"
+        "topic": "kubernetes",
+        "headline": "Officials defend using temporary containers, cruise ship as lodging at Asian Games"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Kubernetes can run AI inference. But can it count the real cost?"
+        "topic": "security",
+        "headline": "RHSA-2026:68651: Moderate: tomcat9 security update"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Officials defend using temporary containers, cruise ship as lodging at Asian Games"
+        "topic": "security",
+        "headline": "Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation"
       }
     ],
     "articleCount": 0

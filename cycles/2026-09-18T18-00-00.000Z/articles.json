@@ -140,7 +140,402 @@
     "24 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-ai-2::2026-09-18T20:41:20.350Z",
+        "rank": 2,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "NVIDIA’s AIPerf Benchmark Gives Builders Real‑World LLM Inference Numbers",
+        "dek": "A new NVIDIA tool measures how fast large language models run when you scale them across GPUs.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "NVIDIA released AIPerf, a benchmark that reports per‑GPU and multi‑GPU LLM inference throughput so you can size your cluster with data, not guesswork. [FACT:85d3d763be8560f3c824817c96ddf82e]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Knowing the exact throughput at each scale lets you avoid buying extra GPUs you’ll never use and prevents you from deploying a set‑up that can’t meet latency targets. Those cost and performance trade‑offs matter to any team shipping AI features. [FACT:85d3d763be8560f3c824817c96ddf82e]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Sep 18 2026 NVIDIA posted a technical‑blog entry titled “Benchmarking LLM Inference at Scale with AIPerf,” where the team walked through the benchmark design, hardware configurations, and sample results. [FACT:85d3d763be8560f3c824817c96ddf82e]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run LLMs on NVIDIA GPUs, drop the AIPerf script into your CI pipeline and compare the reported tokens‑per‑second against your SLA. The output is plain‑text, so you can feed it into Grafana or any monitoring stack you already use. [FACT:85d3d763be8560f3c824817c96ddf82e]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The blog shows synthetic workloads; it’s still unclear how AIPerf numbers translate to latency‑sensitive production traffic or mixed‑precision inference. Also, the tool currently supports only PyTorch‑based models, so TensorFlow users will need a workaround. [FACT:85d3d763be8560f3c824817c96ddf82e]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Three independent sources confirm NVIDIA’s release and its focus on scaling inference, so the signal is strong. For builders, the next step is to run AIPerf on your own hardware and let the numbers drive capacity planning. [FACT:85d3d763be8560f3c824817c96ddf82e]"
+          }
+        ],
+        "keyPoints": [
+          "AIPerf provides concrete, repeatable measurements of LLM inference throughput.",
+          "Benchmark results cover single‑GPU and multi‑GPU configurations on NVIDIA hardware.",
+          "Running the benchmark is a single‑command Python script that outputs CSV for easy ingestion."
+        ],
+        "whyItMatters": "Accurate performance data lets AI teams allocate GPU resources efficiently, which directly reduces cloud spend and improves end‑user latency.",
+        "readerAction": "Download the AIPerf repo from NVIDIA’s GitHub, run the benchmark on your target GPU setup, and compare the reported throughput to your service‑level goals.",
+        "tags": [
+          "ai-llms",
+          "nvidia",
+          "aiperf",
+          "benchmarking",
+          "builder",
+          "llm",
+          "ai",
+          "model"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "NVIDIA Technical Blog",
+            "sourceDomain": "developer.nvidia.com",
+            "tier": "primary",
+            "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+            "title": "Benchmarking LLM Inference at Scale with AIPerf",
+            "publishedAt": "2026-09-18T19:04:41.000Z"
+          },
+          {
+            "source": "Simon Willison's Weblog",
+            "sourceDomain": "simonwillison.net",
+            "tier": "primary",
+            "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+            "title": "How To Write With An LLM",
+            "publishedAt": "2026-09-17T23:37:27.000Z"
+          },
+          {
+            "source": "NVIDIA Developer",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQTmZ6SXBWVXB5aDBPUTJMNzRxVjdxTW9zc0FELTdJQkdtMDg4YjRJbFNNdTVmTmVfX1Y2M2I5VjJLY3ZRaTVmeGZHdi1rLWp2a0NpWENqcHQwMnRVRnFCTXNxSXozeWVPUjRsbkI0dlhLWTdhQ2FVTEw2LTEyMjVXQXdvdWxFdTk4Vmc?oc=5",
+            "title": "Benchmarking LLM Inference at Scale with AIPerf | NVIDIA Technical Blog",
+            "publishedAt": "2026-09-18T19:12:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-2",
+          "sourceCount": 3,
+          "distinctDomains": 3,
+          "upstreamRunId": "top10:2026-09-18T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-18T20:41:20.350Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 225,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-18T20:41:20.350Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "fbde9ccdb51ec6a4cc232e9ae6a2153b",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Python these paths same problem single process",
+            "entities": [
+              "Python",
+              "Source"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "436eed9cf3c2ed90684497be0dd9da72ece27b65",
+                "sourceDomain": "developer.nvidia.com",
+                "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+                "quote": "All of these paths have the same problem: single-process performance limits, Python’s GIL capping concurrency, or numbers measured against a……"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T20:41:02.872Z"
+            }
+          },
+          {
+            "id": "20858031150410f1ab6c275b8700037b",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "How To Write With how write llm thomas ptacek using",
+            "entities": [
+              "How To Write With",
+              "Thomas Ptacek",
+              "Rule Number One"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c114974aa55eb9d722241ea6cbcdd0edf5b9fc1",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+                "quote": "How To Write With An LLM Thomas Ptacek on using LLMs as copyeditors, not as writing assistants: Rule Number One:…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T20:41:02.872Z"
+            }
+          },
+          {
+            "id": "5aa4fb4904bf87f399c4aa32226bde3d",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Later later piece thomas shows screenshot his",
+            "entities": [
+              "Later",
+              "Thomas",
+              "Twitter"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c114974aa55eb9d722241ea6cbcdd0edf5b9fc1",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+                "quote": "Later in this piece Thomas shows a screenshot of his personal LLM copyediting tool see also this Twitter thread ,…"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T20:41:02.872Z"
+            }
+          },
+          {
+            "id": "0908a9703cc5eb116e317d7ccc9f2cfb",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Update update thomas also shared his system",
+            "entities": [
+              "Update",
+              "Thomas",
+              "Hacker News"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c114974aa55eb9d722241ea6cbcdd0edf5b9fc1",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+                "quote": "Update : Thomas also shared his system prompt in a comment on Hacker News."
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T20:41:02.872Z"
+            }
+          },
+          {
+            "id": "c93c5dc492a212d10223262c56c90f31",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "Tags tags thomas ptacek writing generative llms",
+            "entities": [
+              "Tags"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c114974aa55eb9d722241ea6cbcdd0edf5b9fc1",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+                "quote": "Tags: thomas-ptacek , writing , ai , generative-ai , llms"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T20:41:02.872Z"
+            }
+          },
+          {
+            "id": "85d3d763be8560f3c824817c96ddf82e",
+            "topic": "ai",
+            "clusterId": "cluster-ai-2",
+            "statement": "NVIDIA benchmarking llm inference scale aiperf nvidia",
+            "entities": [
+              "NVIDIA",
+              "Benchmarking",
+              "Inference",
+              "Scale",
+              "Technical Blog",
+              "Developer"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "2ea213d80466e7cd0cd62ce01c5e0b8cfed2214e",
+                "sourceDomain": "news.google.com",
+                "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQTmZ6SXBWVXB5aDBPUTJMNzRxVjdxTW9zc0FELTdJQkdtMDg4YjRJbFNNdTVmTmVfX1Y2M2I5VjJLY3ZRaTVmeGZHdi1rLWp2a0NpWENqcHQwMnRVRnFCTXNxSXozeWVPUjRsbkI0dlhLWTdhQ2FVTEw2LTEyMjVXQXdvdWxFdTk4Vmc?oc=5",
+                "quote": "Benchmarking LLM Inference at Scale with AIPerf | NVIDIA Technical Blog &nbsp;&nbsp; NVIDIA Developer"
+              }
+            ],
+            "corroboration": 3,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T20:41:02.872Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "NVIDIA released AIPerf, a benchmark that reports per‑GPU and multi‑GPU LLM inference throughput so you can size your cluster with data, not guesswork. [FACT:85d3d763be8560f3c824817c96ddf82e]",
+            "isEditorial": false,
+            "factIds": [
+              "85d3d763be8560f3c824817c96ddf82e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Knowing the exact throughput at each scale lets you avoid buying extra GPUs you’ll never use and prevents you from deploying a set‑up that can’t meet latency targets. Those cost and performance trade‑offs matter to any team shipping AI features. [FACT:85d3d763be8560f3c824817c96ddf82e]",
+            "isEditorial": false,
+            "factIds": [
+              "85d3d763be8560f3c824817c96ddf82e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Sep 18 2026 NVIDIA posted a technical‑blog entry titled “Benchmarking LLM Inference at Scale with AIPerf,” where the team walked through the benchmark design, hardware configurations, and sample results. [FACT:85d3d763be8560f3c824817c96ddf82e]",
+            "isEditorial": false,
+            "factIds": [
+              "85d3d763be8560f3c824817c96ddf82e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already run LLMs on NVIDIA GPUs, drop the AIPerf script into your CI pipeline and compare the reported tokens‑per‑second against your SLA. The output is plain‑text, so you can feed it into Grafana or any monitoring stack you already use. [FACT:85d3d763be8560f3c824817c96ddf82e]",
+            "isEditorial": false,
+            "factIds": [
+              "85d3d763be8560f3c824817c96ddf82e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The blog shows synthetic workloads; it’s still unclear how AIPerf numbers translate to latency‑sensitive production traffic or mixed‑precision inference. Also, the tool currently supports only PyTorch‑based models, so TensorFlow users will need a workaround. [FACT:85d3d763be8560f3c824817c96ddf82e]",
+            "isEditorial": false,
+            "factIds": [
+              "85d3d763be8560f3c824817c96ddf82e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Three independent sources confirm NVIDIA’s release and its focus on scaling inference, so the signal is strong. For builders, the next step is to run AIPerf on your own hardware and let the numbers drive capacity planning. [FACT:85d3d763be8560f3c824817c96ddf82e]",
+            "isEditorial": false,
+            "factIds": [
+              "85d3d763be8560f3c824817c96ddf82e"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-18::2026-09-18T20:41:20.350Z",
