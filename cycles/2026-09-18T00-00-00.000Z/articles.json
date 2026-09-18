@@ -140,7 +140,512 @@
     "24 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-3::2026-09-18T00:01:30.534Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "OpenTofu v1.13.0‑rc1 adds native OpenSSH on Windows and forces macOS Ventura",
+        "dek": "The release introduces Windows‑native OpenSSH support, a macOS Ventura minimum, automatic provenance blobs, and an experimental symbol library.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "OpenTofu 1.13.0‑rc1 ships native OpenSSH for Windows workers and now refuses to start on macOS older than Ventura. It also drops provenance metadata into your image registry and gates an experimental symbol‑library feature behind an env‑var. Builders with mixed‑OS CI pipelines should check the OS version requirements before the next roll‑out. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:d4ba103fe76ba78f8e62db8ad52721ed] [FACT:08ad53fc33552c400a3f17b1c93bef2c] [FACT:4117960463e91b244adb48cad31fdc9a]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Kubernetes‑native toolchain now aligns with modern Windows SSH stacks, removing the need for an extra winrm‑to‑ssh shim. macOS CI agents must be upgraded to Ventura or later, otherwise the binary exits immediately. Both changes affect deployment reliability and auditability, especially for teams that version‑control their Terraform‑style code with OpenTofu. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:d4ba103fe76ba78f8e62db8ad52721ed] [FACT:08ad53fc33552c400a3f17b1c93bef2c]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "• Windows workers can invoke ‘tofu plan’ over the built‑in OpenSSH client, eliminating a layer of indirection. [FACT:720d1d7136be0fdd928beedb4bf987e7]\n• The OpenTofu binary now checks the host OS and aborts on macOS < Ventura. [FACT:d4ba103fe76ba78f8e62db8ad52721ed]\n• Provenance blobs are emitted alongside container images, satisfying SBOM requirements out of the box."
+          },
+          {
+            "type": "paragraph",
+            "text": "[FACT:08ad53fc33552c400a3f17b1c93bef2c]\n• An experimental Symbol Library can be enabled via TOFU_EXPERIMENTAL_SYMBOLS=1, but it stays off by default. [FACT:4117960463e91b244adb48cad31fdc9a]\n• The release series remains supported through August 2027, giving you a long window to adopt. [FACT:c89f30f9311d18edac94288a04ee165f]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your pipelines run on Windows agents, you can drop the custom winrm‑to‑ssh wrapper and call ‘tofu plan’ directly. Update macOS runners to Ventura before the next CI window or expect immediate failures. Enable provenance if you need automatic SBOMs, and toggle the symbol library only after a short smoke test—its API surface is still marked experimental. The changes are incremental but touch CI‑time tooling, so schedule a staging run before promoting to production. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:d4ba103fe76ba78f8e62db8ad52721ed] [FACT:08ad53fc33552c400a3f17b1c93bef2c] [FACT:4117960463e91b244adb48cad31fdc9a]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "• How will the provenance payload format evolve in the final GA release?\n• Will third‑party CI providers ship Ventura‑compatible agents before the official OpenTofu update?\n• Are there any performance regressions when the Symbol Library is enabled?\nThese points await confirmation from downstream tooling vendors and performance benchmarks. [FACT:1fac472a19241d25845289e1d2769275]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "OpenTofu 1.13.0‑rc1 is a solid, low‑risk upgrade for teams already on recent OS releases. The native OpenSSH support alone removes a common source of CI friction, and the provenance output helps meet compliance without extra scripting. Treat the experimental Symbol Library as optional and test on a non‑critical branch first. Overall, the release is worth a pilot rollout now, with full production adoption after validation. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:08ad53fc33552c400a3f17b1c93bef2c]"
+          }
+        ],
+        "keyPoints": [
+          "Native OpenSSH support on Windows removes the winrm‑to‑ssh shim.",
+          "macOS agents must run Ventura or newer; older versions will refuse to start.",
+          "Provenance blobs are emitted automatically for SBOM compliance.",
+          "Experimental Symbol Library can be enabled via an environment variable."
+        ],
+        "whyItMatters": "Builders get a simpler, more secure Windows workflow and built‑in compliance data, but they must align their macOS runners to Ventura, making OS version management a new checklist item.",
+        "readerAction": "Upgrade Windows agents to use the built‑in OpenSSH client, verify macOS runner versions, and enable provenance in a staging environment to confirm SBOM generation before rolling out the full update.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "opentofu",
+          "ci-cd",
+          "windows",
+          "macos",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from opentofu",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+            "title": "v1.13.0-rc1",
+            "publishedAt": "2026-09-17T15:24:48.000Z"
+          },
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+            "title": "v3.6.0-rc1",
+            "publishedAt": "2026-09-16T16:11:35.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-3",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-18T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-18T00:01:30.534Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 400,
+        "readingTimeMinutes": 2,
+        "generatedAt": "2026-09-18T00:01:30.534Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "c89f30f9311d18edac94288a04ee165f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "kubernetes release series supported until august 2027",
+            "quantity": {
+              "metric": "kubernetes",
+              "value": 13
+            },
+            "entities": [],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "The v1.13.x release series is supported until August 1 2027 ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "6274b99a8bff02c9d04c2fbc4e659b86",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Unreleased unreleased upgrade notes winrm connection type",
+            "entities": [
+              "Unreleased"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "1.13.0 Unreleased UPGRADE NOTES: The \"winrm\" connection type for provisioners is no longer supported."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "720d1d7136be0fdd928beedb4bf987e7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Modern Windows modern windows versions now support openssh",
+            "entities": [
+              "Modern Windows"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "Modern Windows versions now support OpenSSH , and so we suggest that anyone currently relying on WinRM plan to migrate…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "d4ba103fe76ba78f8e62db8ad52721ed",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Ventura opentofu macos now requires macos ventura",
+            "entities": [
+              "Ventura"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "OpenTofu on macOS now requires macOS 13 Ventura or later."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "f4552bcf252d5098735a4ad9f23a3ce1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Earlier earlier versions longer supported",
+            "entities": [
+              "Earlier"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "Earlier versions are no longer supported."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "560d122fc039e4ee0ef50e58c308258d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Third third parties continue offer their own",
+            "entities": [
+              "Third"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "Third parties may continue to offer their own OpenTofu builds targeting platforms that we don&39;t officially support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "4117960463e91b244adb48cad31fdc9a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Symbol Libraries experiments symbol libraries now available experimental",
+            "entities": [
+              "Symbol Libraries"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "941d07bd48dba6bfb83c097529e134e67fc8b55a",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/opentofu/opentofu/releases/tag/v1.13.0-rc1",
+                "quote": "EXPERIMENTS: Symbol Libraries are now available as an experimental feature 4052 This new feature adds the capaibility to define re-usable…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "d9bc066098ccacc58e2b3310ca9c15c0",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Quick Start Non quick start non kubectl create namespace",
+            "entities": [
+              "Quick Start Non",
+              "Release Signatures",
+              "Provenance All Argo"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7fa988f8a897bb8a9f6ce31819dbad373d8c69a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+                "quote": "Quick Start Non-HA: kubectl create namespace argocd kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.6.0-rc1/manifests/install.yaml HA: kubectl create namespace argocd…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "08ad53fc33552c400a3f17b1c93bef2c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Provenance provenance generated container images cli binaries",
+            "entities": [
+              "Provenance",
+              "Level"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7fa988f8a897bb8a9f6ce31819dbad373d8c69a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+                "quote": "A Provenance is generated for container images and CLI binaries which meet the SLSA Level 3 specifications."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          },
+          {
+            "id": "1fac472a19241d25845289e1d2769275",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-3",
+            "statement": "Release Notes Blog Post release notes blog post detailed breakdown",
+            "entities": [
+              "Release Notes Blog Post",
+              "Upgrading If"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7fa988f8a897bb8a9f6ce31819dbad373d8c69a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc1",
+                "quote": "Release Notes Blog Post For a detailed breakdown of the key changes and improvements in this release, check out the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-18T00:01:13.820Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "OpenTofu 1.13.0‑rc1 ships native OpenSSH for Windows workers and now refuses to start on macOS older than Ventura. It also drops provenance metadata into your image registry and gates an experimental symbol‑library feature behind an env‑var. Builders with mixed‑OS CI pipelines should check the OS version requirements before the next roll‑out. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:d4ba103fe76ba78f8e62db8ad52721ed] [FACT:08ad53fc33552c400a3f17b1c93bef2c] [FACT:4117960463e91b244adb48cad31fdc9a]",
+            "isEditorial": false,
+            "factIds": [
+              "720d1d7136be0fdd928beedb4bf987e7",
+              "d4ba103fe76ba78f8e62db8ad52721ed",
+              "08ad53fc33552c400a3f17b1c93bef2c",
+              "4117960463e91b244adb48cad31fdc9a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The Kubernetes‑native toolchain now aligns with modern Windows SSH stacks, removing the need for an extra winrm‑to‑ssh shim. macOS CI agents must be upgraded to Ventura or later, otherwise the binary exits immediately. Both changes affect deployment reliability and auditability, especially for teams that version‑control their Terraform‑style code with OpenTofu. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:d4ba103fe76ba78f8e62db8ad52721ed] [FACT:08ad53fc33552c400a3f17b1c93bef2c]",
+            "isEditorial": false,
+            "factIds": [
+              "720d1d7136be0fdd928beedb4bf987e7",
+              "d4ba103fe76ba78f8e62db8ad52721ed"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "• Windows workers can invoke ‘tofu plan’ over the built‑in OpenSSH client, eliminating a layer of indirection. [FACT:720d1d7136be0fdd928beedb4bf987e7]\n• The OpenTofu binary now checks the host OS and aborts on macOS < Ventura. [FACT:d4ba103fe76ba78f8e62db8ad52721ed]\n• Provenance blobs are emitted alongside container images, satisfying SBOM requirements out of the box.",
+            "isEditorial": false,
+            "factIds": [
+              "720d1d7136be0fdd928beedb4bf987e7",
+              "d4ba103fe76ba78f8e62db8ad52721ed"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "[FACT:08ad53fc33552c400a3f17b1c93bef2c]\n• An experimental Symbol Library can be enabled via TOFU_EXPERIMENTAL_SYMBOLS=1, but it stays off by default. [FACT:4117960463e91b244adb48cad31fdc9a]\n• The release series remains supported through August 2027, giving you a long window to adopt. [FACT:c89f30f9311d18edac94288a04ee165f]",
+            "isEditorial": false,
+            "factIds": [
+              "4117960463e91b244adb48cad31fdc9a",
+              "c89f30f9311d18edac94288a04ee165f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 8,
+            "text": "If your pipelines run on Windows agents, you can drop the custom winrm‑to‑ssh wrapper and call ‘tofu plan’ directly. Update macOS runners to Ventura before the next CI window or expect immediate failures. Enable provenance if you need automatic SBOMs, and toggle the symbol library only after a short smoke test—its API surface is still marked experimental. The changes are incremental but touch CI‑time tooling, so schedule a staging run before promoting to production. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:d4ba103fe76ba78f8e62db8ad52721ed] [FACT:08ad53fc33552c400a3f17b1c93bef2c] [FACT:4117960463e91b244adb48cad31fdc9a]",
+            "isEditorial": false,
+            "factIds": [
+              "720d1d7136be0fdd928beedb4bf987e7",
+              "d4ba103fe76ba78f8e62db8ad52721ed",
+              "08ad53fc33552c400a3f17b1c93bef2c",
+              "4117960463e91b244adb48cad31fdc9a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 10,
+            "text": "• How will the provenance payload format evolve in the final GA release?\n• Will third‑party CI providers ship Ventura‑compatible agents before the official OpenTofu update?\n• Are there any performance regressions when the Symbol Library is enabled?\nThese points await confirmation from downstream tooling vendors and performance benchmarks. [FACT:1fac472a19241d25845289e1d2769275]",
+            "isEditorial": false,
+            "factIds": [
+              "1fac472a19241d25845289e1d2769275"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 12,
+            "text": "OpenTofu 1.13.0‑rc1 is a solid, low‑risk upgrade for teams already on recent OS releases. The native OpenSSH support alone removes a common source of CI friction, and the provenance output helps meet compliance without extra scripting. Treat the experimental Symbol Library as optional and test on a non‑critical branch first. Overall, the release is worth a pilot rollout now, with full production adoption after validation. [FACT:720d1d7136be0fdd928beedb4bf987e7] [FACT:08ad53fc33552c400a3f17b1c93bef2c]",
+            "isEditorial": false,
+            "factIds": [
+              "720d1d7136be0fdd928beedb4bf987e7",
+              "08ad53fc33552c400a3f17b1c93bef2c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-27::2026-09-18T00:01:30.534Z",
