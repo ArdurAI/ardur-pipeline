@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-18T00:00:00.000Z",
-    "windowStart": "2026-09-18T00:00:00.000Z",
-    "windowEnd": "2026-09-18T06:00:00.000Z"
+    "id": "2026-09-18T06:00:00.000Z",
+    "windowStart": "2026-09-18T06:00:00.000Z",
+    "windowEnd": "2026-09-18T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-18T00:01:13.635Z",
-  "nextRefreshAt": "2026-09-18T06:00:00.000Z",
+  "publishedAt": "2026-09-18T10:53:34.753Z",
+  "nextRefreshAt": "2026-09-18T12:00:00.000Z",
   "runIds": {
-    "aggregation": "0491c45a-1e2c-4c3f-aeae-89395e8db7a2",
-    "ranking": "rank-43758468",
-    "top10": "top10:2026-09-18T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-18T00:00:00.000Z-2026-09-18T00:01:30.534Z"
+    "aggregation": "d386a288-c4a3-41d9-823b-04fa20da86c3",
+    "ranking": "rank-f9a3ea18",
+    "top10": "top10:2026-09-18T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-18T06:00:00.000Z-2026-09-18T10:53:48.906Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-18T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-18T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-18T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-18T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-18T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-18T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 72,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1391,
+      "count": 1261,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMidEFVX3lxTFBBeU5YQ2gyVVBIaUh1cWc4bFo2M3FXNVRxeFg2bkdUa0Fwd0dwYjluR1dvc1RGZHdtRXZ1ZHNZc2I2V1A5U1I1WFlhUjYwQlM0TzBZMEotZW9tdkF2UmVLb0lwY3JFREpIbmo2bmlPWC1fdWpv?oc=5"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1619,
+      "count": 1510,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -71,23 +71,23 @@
       "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 25,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 24,
     "usedFallback": true
@@ -108,50 +108,50 @@
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "topic": "security",
+        "headline": "RHSA-2026:68642: Important: gstreamer1-plugins-good security update"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Migrating the GitHub Copilot runtime to Rust, using Copilot"
+        "topic": "security",
+        "headline": "RHSA-2026:68651: Moderate: tomcat9 security update"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:68711: Important: vim security update"
+        "headline": "A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI flags concerning new AI behavior and vows to track it more closely"
+        "topic": "kubernetes",
+        "headline": "Migrating the GitHub Copilot runtime to Rust, using Copilot"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:68702: Moderate: rrdtool security update"
+        "headline": "RHSA-2026:68786: Important: perl-Net-DNS security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "An OpenAI model kept slipping prompt injections into its own notes, and researchers still aren&039;t sure why"
+        "headline": "Security Researchers Hacked Into OpenAI Using Anthropic’s Claude"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Inside the Modern SOC: Defending the Cross-Environment Pivot"
+        "topic": "kubernetes",
+        "headline": "Officials defend using temporary containers, cruise ship as lodging at Asian Games"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic keeps pushing Claude Code toward autonomous coding with new parallel agent workflows"
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "The critical vulnerability was a test database. That&8217;s the whole triage problem."
+        "topic": "platform",
+        "headline": "OpenTelemetry everywhere: Migrating a metrics platform at scale"
       }
     ],
-    "articleCount": 0
+    "articleCount": 2
   }
 }
