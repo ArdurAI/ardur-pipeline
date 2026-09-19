@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-19T06:00:00.000Z",
-    "windowStart": "2026-09-19T06:00:00.000Z",
-    "windowEnd": "2026-09-19T12:00:00.000Z"
+    "id": "2026-09-19T12:00:00.000Z",
+    "windowStart": "2026-09-19T12:00:00.000Z",
+    "windowEnd": "2026-09-19T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-19T07:11:34.486Z",
-  "nextRefreshAt": "2026-09-19T12:00:00.000Z",
+  "publishedAt": "2026-09-19T12:22:50.588Z",
+  "nextRefreshAt": "2026-09-19T18:00:00.000Z",
   "runIds": {
-    "aggregation": "41e3f114-99b8-4ae6-bb11-73c30f5d279e",
-    "ranking": "rank-8f4c3f77",
-    "top10": "top10:2026-09-19T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-19T06:00:00.000Z-2026-09-19T07:11:52.941Z"
+    "aggregation": "d1b717ba-8948-42ed-a506-60772c561906",
+    "ranking": "rank-4b6def13",
+    "top10": "top10:2026-09-19T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-19T12:00:00.000Z-2026-09-19T12:23:07.821Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-19T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-19T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-19T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-19T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-19T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-19T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1154,
+      "count": 1152,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1403,
+      "count": 1347,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 24,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Introducing the Australian Youth Safety Blueprint"
+        "headline": "Exclusive | Hackers Used Anthropic’s Claude to Break Into OpenAI"
       },
       {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Benchmarking LLM Inference at Scale with AIPerf"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Security researchers used Anthropic&039;s Claude to hack OpenAI&039;s internal systems in under 72 hours"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic, OpenAI, SpaceXAI, Google sued over call to ‘pace’ AI development"
-      },
-      {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Officials defend containers, cruise ship as Asian Games lodging"
+        "topic": "ai",
+        "headline": "Introducing the Australian Youth Safety Blueprint"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "Cisco Zero-Day Highlights API Endpoint Authentication Issues"
+        "headline": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:68651: Moderate: tomcat9 security update"
+        "headline": "Cisco Zero-Day Highlights API Endpoint Authentication Issues"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents"
+        "topic": "kubernetes",
+        "headline": "Officials defend containers, cruise ship as Asian Games lodging"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Benchmarking LLM Inference at Scale with AIPerf"
+        "topic": "kubernetes",
+        "headline": "Ask the Builder: Building secret hiding containers into your home - The Spokesman-Review"
       }
     ],
     "articleCount": 0
