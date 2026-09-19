@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-19T00:00:00.000Z",
-    "windowStart": "2026-09-19T00:00:00.000Z",
-    "windowEnd": "2026-09-19T06:00:00.000Z"
+    "id": "2026-09-19T06:00:00.000Z",
+    "windowStart": "2026-09-19T06:00:00.000Z",
+    "windowEnd": "2026-09-19T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-19T00:01:23.143Z",
-  "nextRefreshAt": "2026-09-19T06:00:00.000Z",
+  "publishedAt": "2026-09-19T07:11:34.486Z",
+  "nextRefreshAt": "2026-09-19T12:00:00.000Z",
   "runIds": {
-    "aggregation": "afee8a2d-bcd4-4da9-8a7a-510d804492a6",
-    "ranking": "rank-90312428",
-    "top10": "top10:2026-09-19T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-19T00:00:00.000Z-2026-09-19T00:01:38.923Z"
+    "aggregation": "41e3f114-99b8-4ae6-bb11-73c30f5d279e",
+    "ranking": "rank-8f4c3f77",
+    "top10": "top10:2026-09-19T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-19T06:00:00.000Z-2026-09-19T07:11:52.941Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-19T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-19T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-19T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-19T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-19T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-19T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 72,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1293,
+      "count": 1154,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1545,
+      "count": 1403,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 26,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -104,17 +104,17 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Kimi K3 on Amazon Bedrock"
+        "headline": "Gemini Hacked Three Companies in First Known Breakout by Google’s AI"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Benchmarking LLM Inference at Scale with AIPerf"
+        "headline": "Introducing the Australian Youth Safety Blueprint"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:68651: Moderate: tomcat9 security update"
+        "headline": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild"
       },
       {
         "rank": 4,
@@ -123,23 +123,23 @@
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic, OpenAI, SpaceXAI, Google sued over call to ‘pace’ AI development"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Officials defend containers, cruise ship as Asian Games lodging"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "Cisco Zero-Day Highlights API Endpoint Authentication Issues"
       },
       {
-        "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:68642: Important: gstreamer1-plugins-good security update"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI expects to burn $280bn by 2030"
-      },
-      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Officials defend using temporary containers, cruise ship as lodging at Asian Games"
+        "topic": "security",
+        "headline": "RHSA-2026:68651: Moderate: tomcat9 security update"
       },
       {
         "rank": 9,
@@ -148,8 +148,8 @@
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Enforce custom rules in Datadog IaC Security scanning"
+        "topic": "models",
+        "headline": "Benchmarking LLM Inference at Scale with AIPerf"
       }
     ],
     "articleCount": 0
