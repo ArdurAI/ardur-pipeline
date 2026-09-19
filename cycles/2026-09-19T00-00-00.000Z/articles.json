@@ -140,7 +140,428 @@
     "25 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-24::2026-09-19T00:01:38.923Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Test DB Flaw Exposes Triaging Weakness in Kubernetes Ops",
+        "dek": "A mis‑configured test database surfaced as a critical CVE, highlighting how noisy scanners and limited engineering bandwidth can hide real risk.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "The vulnerability turned out to be a test database left exposed in a Kubernetes cluster [FACT:36d6d20ac037a52b295e6a7a7d6bddc9]. The incident proved that security scanners often drown teams in false positives, making it hard to spot the genuine issue [FACT:0d6f633bfc940a14e8cc4cb8be54a469]. Companies are increasingly outsourcing scanning to external partners, adding another layer of communication overhead [FACT:7f7698751cb584c820ec24760ae8c963]. With engineering bandwidth a scarce resource, teams must prioritize alerts carefully [FACT:934081cec75ac3ada14d33113e9f3c53]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Structural security challenges in cloud‑native environments mean you can’t afford to chase every noisy alert [FACT:54feb6055c69132566602120411b91a8]. Scanners that produce excessive noise force engineers to spend time filtering rather than fixing [FACT:0d6f633bfc940a14e8cc4cb8be54a469]. When limited engineering capacity meets a flood of low‑value findings, real threats slip through the cracks [FACT:934081cec75ac3ada14d33113e9f3c53]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Researchers digging deeper into scan logs discovered the test database after a routine inspection [FACT:36d6d20ac037a52b295e6a7a7d6bddc9]. The scanner had already flagged dozens of unrelated events, creating excessive noise [FACT:0d6f633bfc940a14e8cc4cb8be54a469]. This burst of false positives turned triage into a needle‑in‑a‑haystack problem [FACT:6f1ed0c4dbf9659feb87ae798f690133]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your CI pipeline should ingest identity events and firewall logs in a way that filters out irrelevant noise before it reaches the scanner [FACT:b3e86b56b1532012912f54504af97add]. If you rely on external partners for scanning, enforce clear SLAs for triage turnaround to keep the signal‑to‑noise ratio manageable [FACT:7f7698751cb584c820ec24760ae8c963]. Allocate a small, dedicated slice of engineering time for manual verification of high‑severity alerts rather than spreading the team thin [FACT:934081cec75ac3ada14d33113e9f3c53]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Is the test‑DB exposure limited to a single namespace or does it span multiple clusters? [FACT:efd4ccf9251978e7a4f8f438ea3665df]. Can tighter integration between identity‑event programs and firewall logs reduce future noise? [FACT:b3e86b56b1532012912f54504af97add]. How will external scanning partners adjust their reporting to avoid overwhelming internal teams? [FACT:7f7698751cb584c820ec24760ae8c963]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The only public report identifies a test database as the root cause, and the broader issue is how noisy scanners and thin engineering resources make triage brittle [FACT:36d6d20ac037a52b295e6a7a7d6bddc9][FACT:0d6f633bfc940a14e8cc4cb8be54a469][FACT:934081cec75ac3ada14d33113e9f3c53]. Treat the finding with medium confidence and start by tightening scanner output and reserving dedicated triage bandwidth before hunting for obscure test assets."
+          }
+        ],
+        "keyPoints": [
+          "A mis‑configured test DB triggered a critical vulnerability in a Kubernetes cluster.",
+          "Security scanners generated excessive noise, obscuring the real issue.",
+          "External scanning partners add latency to triage workflows.",
+          "Limited engineering capacity forces hard prioritization of alerts."
+        ],
+        "whyItMatters": "In Kubernetes‑centric clouds, noisy security tooling and scarce engineering bandwidth can let simple mis‑configurations become high‑impact incidents.",
+        "readerAction": "Audit your scanner alerts for noise, set up log filtering, and reserve a dedicated triage slot each sprint.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "security",
+          "triage",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+            "title": "The critical vulnerability was a test database. That&8217;s the whole triage problem.",
+            "publishedAt": "2026-09-17T16:56:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-24",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-19T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-19T00:01:38.923Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 325,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-19T00:01:38.923Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "36d6d20ac037a52b295e6a7a7d6bddc9",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Upon upon further inspection however researchers learned",
+            "entities": [
+              "Upon"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "Upon further inspection, however, researchers learned it was a resettable test database used to test job candidates, rather than a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "6f1ed0c4dbf9659feb87ae798f690133",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Scanners episode represents critical problem scanners security",
+            "entities": [
+              "Scanners"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "The episode represents a critical problem: Scanners and security researchers can&rsquo;t infer the real cost of a compromise on their…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "7f7698751cb584c820ec24760ae8c963",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Increasingly increasingly companies rely external partner handle",
+            "entities": [
+              "Increasingly"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "Increasingly, companies rely on an external partner to handle cloud vulnerability triage and keep teams from becoming overwhelmed."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "0d6f633bfc940a14e8cc4cb8be54a469",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Scanners scanners produce excessive noise requiring focus",
+            "entities": [
+              "Scanners"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "Scanners produce excessive noise, requiring focus and attention from engineers to understand alerts and complex attack techniques, tune out false…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "efd4ccf9251978e7a4f8f438ea3665df",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Tech tech employees more their lists than",
+            "entities": [
+              "Tech",
+              "Product"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "Tech employees have more on their to-do lists than ever: Product teams face an infinite stream of feature requests and…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "54feb6055c69132566602120411b91a8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Beyond beyond today 8217 structural challenges security",
+            "entities": [
+              "Beyond"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "Beyond today&8217;s structural challenges, security teams are drowning in a different type of data."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "b3e86b56b1532012912f54504af97add",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Programs programs absorb identity events firewall logs",
+            "entities": [
+              "Programs"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "Programs absorb identity events, firewall logs, endpoint alerts, vendor feeds, and threat intelligence, producing far more analysis data than even…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          },
+          {
+            "id": "934081cec75ac3ada14d33113e9f3c53",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-24",
+            "statement": "Deciding rsquo allocation deciding where limited engineering",
+            "entities": [
+              "Deciding"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a80192b74b04e8e0ebe829d81cb2bdde0123eaab",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/vulnerability-prioritization-business-context/",
+                "quote": "It&rsquo;s allocation: Deciding where limited engineering and security capacity will make the greatest impact is the most important question security…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-19T00:01:23.347Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "The vulnerability turned out to be a test database left exposed in a Kubernetes cluster [FACT:36d6d20ac037a52b295e6a7a7d6bddc9]. The incident proved that security scanners often drown teams in false positives, making it hard to spot the genuine issue [FACT:0d6f633bfc940a14e8cc4cb8be54a469]. Companies are increasingly outsourcing scanning to external partners, adding another layer of communication overhead [FACT:7f7698751cb584c820ec24760ae8c963]. With engineering bandwidth a scarce resource, teams must prioritize alerts carefully [FACT:934081cec75ac3ada14d33113e9f3c53].",
+            "isEditorial": false,
+            "factIds": [
+              "0d6f633bfc940a14e8cc4cb8be54a469",
+              "7f7698751cb584c820ec24760ae8c963"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Structural security challenges in cloud‑native environments mean you can’t afford to chase every noisy alert [FACT:54feb6055c69132566602120411b91a8]. Scanners that produce excessive noise force engineers to spend time filtering rather than fixing [FACT:0d6f633bfc940a14e8cc4cb8be54a469]. When limited engineering capacity meets a flood of low‑value findings, real threats slip through the cracks [FACT:934081cec75ac3ada14d33113e9f3c53].",
+            "isEditorial": false,
+            "factIds": [
+              "54feb6055c69132566602120411b91a8",
+              "0d6f633bfc940a14e8cc4cb8be54a469",
+              "934081cec75ac3ada14d33113e9f3c53"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Researchers digging deeper into scan logs discovered the test database after a routine inspection [FACT:36d6d20ac037a52b295e6a7a7d6bddc9]. The scanner had already flagged dozens of unrelated events, creating excessive noise [FACT:0d6f633bfc940a14e8cc4cb8be54a469]. This burst of false positives turned triage into a needle‑in‑a‑haystack problem [FACT:6f1ed0c4dbf9659feb87ae798f690133].",
+            "isEditorial": false,
+            "factIds": [
+              "36d6d20ac037a52b295e6a7a7d6bddc9",
+              "0d6f633bfc940a14e8cc4cb8be54a469"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Your CI pipeline should ingest identity events and firewall logs in a way that filters out irrelevant noise before it reaches the scanner [FACT:b3e86b56b1532012912f54504af97add]. If you rely on external partners for scanning, enforce clear SLAs for triage turnaround to keep the signal‑to‑noise ratio manageable [FACT:7f7698751cb584c820ec24760ae8c963]. Allocate a small, dedicated slice of engineering time for manual verification of high‑severity alerts rather than spreading the team thin [FACT:934081cec75ac3ada14d33113e9f3c53].",
+            "isEditorial": false,
+            "factIds": [
+              "b3e86b56b1532012912f54504af97add",
+              "7f7698751cb584c820ec24760ae8c963"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Is the test‑DB exposure limited to a single namespace or does it span multiple clusters? [FACT:efd4ccf9251978e7a4f8f438ea3665df]. Can tighter integration between identity‑event programs and firewall logs reduce future noise? [FACT:b3e86b56b1532012912f54504af97add]. How will external scanning partners adjust their reporting to avoid overwhelming internal teams? [FACT:7f7698751cb584c820ec24760ae8c963].",
+            "isEditorial": false,
+            "factIds": [
+              "b3e86b56b1532012912f54504af97add"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The only public report identifies a test database as the root cause, and the broader issue is how noisy scanners and thin engineering resources make triage brittle [FACT:36d6d20ac037a52b295e6a7a7d6bddc9][FACT:0d6f633bfc940a14e8cc4cb8be54a469][FACT:934081cec75ac3ada14d33113e9f3c53]. Treat the finding with medium confidence and start by tightening scanner output and reserving dedicated triage bandwidth before hunting for obscure test assets.",
+            "isEditorial": false,
+            "factIds": [
+              "0d6f633bfc940a14e8cc4cb8be54a469"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-3::2026-09-19T00:01:38.923Z",
