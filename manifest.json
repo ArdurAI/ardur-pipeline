@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-20T06:00:00.000Z",
-    "windowStart": "2026-09-20T06:00:00.000Z",
-    "windowEnd": "2026-09-20T12:00:00.000Z"
+    "id": "2026-09-20T12:00:00.000Z",
+    "windowStart": "2026-09-20T12:00:00.000Z",
+    "windowEnd": "2026-09-20T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-20T10:59:44.843Z",
-  "nextRefreshAt": "2026-09-20T12:00:00.000Z",
+  "publishedAt": "2026-09-20T15:45:43.609Z",
+  "nextRefreshAt": "2026-09-20T18:00:00.000Z",
   "runIds": {
-    "aggregation": "b0afcaeb-90ad-403a-a64f-005a58ab0028",
-    "ranking": "rank-4b4f47c3",
-    "top10": "top10:2026-09-20T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-20T06:00:00.000Z-2026-09-20T10:59:56.236Z"
+    "aggregation": "006775d4-df45-4453-8741-639f678eee93",
+    "ranking": "rank-e9eca11c",
+    "top10": "top10:2026-09-20T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-20T12:00:00.000Z-2026-09-20T15:46:11.375Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-20T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-20T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-20T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-20T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-20T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-20T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 60,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1058,
+      "count": 1006,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMirwFBVV95cUxPQ2FKNi1uZ3RjYUZjMVJWZTZJWW5uSTJlcmw3Q25uSjdDOUFEWko0LUR1OHIxNkhwaDl6c3RPOVhSdF9ReDN6RTAwNGd0cEhVdHI3Ym83UXpoYVpSX2MtczlydUlMaHVpaXY3OVhXanpJWXBtenRfcUlJUW9yb3VnYXFURFMzamNpbVBtUkhwcm9VaVZDZWJOOXNKaEFkNjlqYkYwbl8yOGFzaGJTbXJN?oc=5"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[platform] degraded: 4 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 992,
+      "count": 982,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,11 +68,11 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
@@ -86,10 +86,10 @@
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 10,
+    "heldArticles": 11,
     "usedFallback": true
   },
   "summary": {
@@ -109,32 +109,32 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Gemini Hacked Three Companies in First Known Breakout by Google’s AI"
+        "headline": "Lawsuit says Anthropic, OpenAI, SpaceXAI and Google made illegal agreement on AI slowdown"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "OpenAI, Google, Anthropic, and SpaceXAI face antitrust lawsuit over conspiring against consumers"
+        "headline": "Anthropic Says Claude Leads 26% of Its Own AI R&D 2026"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Following OpenAI, Anthropic is also reportedly postponing its IPO"
+        "topic": "platform",
+        "headline": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "OpenAI Just Beat Google, Meta, and Amazon To This Key Milestone. Is It Bullish for AI Stocks."
+      },
+      {
+        "rank": 6,
         "topic": "platform",
         "headline": "Google Agent Development Kit for Kotlin Reaches Feature Parity with Python, Supports On-Device AI"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Lebanese army receives 70 ammunition containers from US aid"
-      },
-      {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "Israeli man critically wounded in West Bank shooting, and other Mideast developments - San Antonio Express-News"
+        "headline": "Your AI agent failed. The model might not be the problem."
       },
       {
         "rank": 8,
@@ -143,13 +143,13 @@
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Cloudflare Measures Origin TLS Preferences, Cutting Handshake Retries from 52% to 3.7%"
+        "topic": "models",
+        "headline": "Tencent&039;s Gander aims to keep talking while it works in the background"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild"
+        "topic": "kubernetes",
+        "headline": "Lebanese army receives 70 ammunition containers from US aid"
       }
     ],
     "articleCount": 0
