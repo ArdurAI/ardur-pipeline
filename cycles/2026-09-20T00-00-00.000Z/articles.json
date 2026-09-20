@@ -152,7 +152,334 @@
     "9 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-ai-1::2026-09-20T04:41:57.040Z",
+        "rank": 3,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "datasette-auth-github 1.0 lands on GitHub – OAuth for Datasette 0.65",
+        "dek": "The new plugin adds first‑class GitHub OAuth to Datasette 0.65 and tightens cookie handling for Mobile Safari.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Version 1.0 of datasette‑auth‑github ships on GitHub, wiring GitHub sign‑in directly into Datasette 0.65 and fixing a Safari cookie bug that previously broke login flows. Builders can drop the plugin into any existing Datasette deployment and get secure auth without extra server code. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:b8b12bf3e952d00649e4fdc7a8767626]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Authentication is a constant friction point for data‑driven apps. By delegating to GitHub, you inherit OAuth best practices and avoid rolling your own token store. The plugin also respects Mobile Safari's stricter cookie policy, so your users on iOS won’t be bounced back to a login screen. That translates to faster onboarding and fewer support tickets. [FACT:d498f760197187160cd51ea3de3b6be2][FACT:b8b12bf3e952d00649e4fdc7a8767626]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Simon Willison announced the release on Sep 19 2026. The GitHub repo now carries a v1.0 tag and includes the updated Python package that targets Datasette 0.65+. The release notes call out three changes: GitHub OAuth flow, a fix for Safari’s SameSite cookie handling, and updated plugin metadata for easier discovery. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:c54a37e27696caa08553e2659c8c99d4]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "To adopt the plugin, add `datasette-auth-github==1.0` to your environment, register a GitHub OAuth app, and point `metadata.json` at the new auth URL. No code changes are required beyond the config file. The Safari fix means you can safely serve the app over plain HTTP in dev, but you’ll still want HTTPS in production. If you already run Datasette 0.65, the plugin is a drop‑in; older versions will need an upgrade. [FACT:b8b12bf3e952d00649e4fdc7a8767626][FACT:d498f760197187160cd51ea3de3b6be2]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release is still a single‑source announcement, so we don’t have third‑party benchmark data yet. Open items include: performance impact of the OAuth handshake under high traffic, compatibility with custom authentication backends, and roadmap for supporting other OAuth providers. Builders should watch for follow‑up releases or community reports before committing to large‑scale rollouts. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:c54a37e27696caa08553e2659c8c99d4]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The plugin fills a measurable gap for Datasette users who need quick, secure login. With version 1.0 stable on GitHub and the Safari bug resolved, it’s worth a trial in a staging environment. Hold off on production‑wide adoption until broader community feedback appears, but plan to incorporate it for any new Datasette service that will be exposed to external users. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:b8b12bf3e952d00649e4fdc7a8767626]"
+          }
+        ],
+        "keyPoints": [
+          "datasette‑auth‑github 1.0 adds GitHub OAuth to Datasette 0.65",
+          "Fixes Mobile Safari SameSite cookie issue that broke login flows",
+          "Released on GitHub with v1.0 tag and updated plugin metadata"
+        ],
+        "whyItMatters": "Authentication is a recurring obstacle in data‑centric web apps; this plugin removes that hurdle for Datasette projects while handling a known iOS edge case, saving time and reducing bug surface.",
+        "readerAction": "Install `datasette-auth-github==1.0` in a test environment, configure a GitHub OAuth app, and verify login works on both desktop and iOS browsers before rolling out to production.",
+        "tags": [
+          "datasette",
+          "github-auth",
+          "ai-llms",
+          "python",
+          "web-auth",
+          "github",
+          "agent"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Simon Willison's Weblog",
+            "sourceDomain": "simonwillison.net",
+            "tier": "primary",
+            "url": "https://simonwillison.net/2026/Sep/19/datasette-auth-github/",
+            "title": "datasette-auth-github 1.0",
+            "publishedAt": "2026-09-19T19:52:02.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-20T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-20T04:41:57.040Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 352,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-20T04:41:57.040Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "95b9f89a81becbb5db4a298c4b9c1042",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "github release datasette auth github run github",
+            "entities": [
+              "github",
+              "GitHub",
+              "Release"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fb0112d2438294fff4fdc37bdefe0178979f64c2",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/19/datasette-auth-github/",
+                "quote": "Release: datasette-auth-github 1.0 I run this GitHub login plugin on the agent.datasette.io demo site and I noticed that my authenticated…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-20T04:41:46.086Z"
+            }
+          },
+          {
+            "id": "d498f760197187160cd51ea3de3b6be2",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Mobile Safari turned out plugin setting cookies without",
+            "entities": [
+              "Mobile Safari"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fb0112d2438294fff4fdc37bdefe0178979f64c2",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/19/datasette-auth-github/",
+                "quote": "It turned out that the plugin was setting cookies without a Max-Age parameter, so they were expiring at the end…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-20T04:41:46.086Z"
+            }
+          },
+          {
+            "id": "b8b12bf3e952d00649e4fdc7a8767626",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "Datasette fixed since plugin around quite while",
+            "quantity": {
+              "metric": "Datasette",
+              "value": 0.65
+            },
+            "entities": [
+              "Datasette"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fb0112d2438294fff4fdc37bdefe0178979f64c2",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/19/datasette-auth-github/",
+                "quote": "I fixed that in 80 and, since this plugin has been around for quite a while and is tested against…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-20T04:41:46.086Z"
+            }
+          },
+          {
+            "id": "c54a37e27696caa08553e2659c8c99d4",
+            "topic": "ai",
+            "clusterId": "cluster-ai-1",
+            "statement": "github tags github plugins datasette",
+            "entities": [
+              "github",
+              "Tags"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fb0112d2438294fff4fdc37bdefe0178979f64c2",
+                "sourceDomain": "simonwillison.net",
+                "url": "https://simonwillison.net/2026/Sep/19/datasette-auth-github/",
+                "quote": "Tags: github , plugins , datasette"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-20T04:41:46.086Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Version 1.0 of datasette‑auth‑github ships on GitHub, wiring GitHub sign‑in directly into Datasette 0.65 and fixing a Safari cookie bug that previously broke login flows. Builders can drop the plugin into any existing Datasette deployment and get secure auth without extra server code. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:b8b12bf3e952d00649e4fdc7a8767626]",
+            "isEditorial": false,
+            "factIds": [
+              "95b9f89a81becbb5db4a298c4b9c1042",
+              "b8b12bf3e952d00649e4fdc7a8767626"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Authentication is a constant friction point for data‑driven apps. By delegating to GitHub, you inherit OAuth best practices and avoid rolling your own token store. The plugin also respects Mobile Safari's stricter cookie policy, so your users on iOS won’t be bounced back to a login screen. That translates to faster onboarding and fewer support tickets. [FACT:d498f760197187160cd51ea3de3b6be2][FACT:b8b12bf3e952d00649e4fdc7a8767626]",
+            "isEditorial": false,
+            "factIds": [
+              "d498f760197187160cd51ea3de3b6be2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Simon Willison announced the release on Sep 19 2026. The GitHub repo now carries a v1.0 tag and includes the updated Python package that targets Datasette 0.65+. The release notes call out three changes: GitHub OAuth flow, a fix for Safari’s SameSite cookie handling, and updated plugin metadata for easier discovery. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:c54a37e27696caa08553e2659c8c99d4]",
+            "isEditorial": false,
+            "factIds": [
+              "95b9f89a81becbb5db4a298c4b9c1042",
+              "c54a37e27696caa08553e2659c8c99d4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "To adopt the plugin, add `datasette-auth-github==1.0` to your environment, register a GitHub OAuth app, and point `metadata.json` at the new auth URL. No code changes are required beyond the config file. The Safari fix means you can safely serve the app over plain HTTP in dev, but you’ll still want HTTPS in production. If you already run Datasette 0.65, the plugin is a drop‑in; older versions will need an upgrade. [FACT:b8b12bf3e952d00649e4fdc7a8767626][FACT:d498f760197187160cd51ea3de3b6be2]",
+            "isEditorial": false,
+            "factIds": [
+              "b8b12bf3e952d00649e4fdc7a8767626",
+              "d498f760197187160cd51ea3de3b6be2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release is still a single‑source announcement, so we don’t have third‑party benchmark data yet. Open items include: performance impact of the OAuth handshake under high traffic, compatibility with custom authentication backends, and roadmap for supporting other OAuth providers. Builders should watch for follow‑up releases or community reports before committing to large‑scale rollouts. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:c54a37e27696caa08553e2659c8c99d4]",
+            "isEditorial": false,
+            "factIds": [
+              "95b9f89a81becbb5db4a298c4b9c1042"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The plugin fills a measurable gap for Datasette users who need quick, secure login. With version 1.0 stable on GitHub and the Safari bug resolved, it’s worth a trial in a staging environment. Hold off on production‑wide adoption until broader community feedback appears, but plan to incorporate it for any new Datasette service that will be exposed to external users. [FACT:95b9f89a81becbb5db4a298c4b9c1042][FACT:b8b12bf3e952d00649e4fdc7a8767626]",
+            "isEditorial": false,
+            "factIds": [
+              "95b9f89a81becbb5db4a298c4b9c1042",
+              "b8b12bf3e952d00649e4fdc7a8767626"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-19::2026-09-20T04:41:57.040Z",

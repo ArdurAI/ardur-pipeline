@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-19T18:00:00.000Z",
-    "windowStart": "2026-09-19T18:00:00.000Z",
-    "windowEnd": "2026-09-20T00:00:00.000Z"
+    "id": "2026-09-20T00:00:00.000Z",
+    "windowStart": "2026-09-20T00:00:00.000Z",
+    "windowEnd": "2026-09-20T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-19T20:19:41.158Z",
-  "nextRefreshAt": "2026-09-20T00:00:00.000Z",
+  "publishedAt": "2026-09-20T04:41:45.901Z",
+  "nextRefreshAt": "2026-09-20T06:00:00.000Z",
   "runIds": {
-    "aggregation": "6a55a27a-4b06-45ae-8f2c-e77f9d9fc341",
-    "ranking": "rank-47c78443",
-    "top10": "top10:2026-09-19T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-19T18:00:00.000Z-2026-09-19T20:19:53.976Z"
+    "aggregation": "8ed73a59-e739-4ce8-a77c-57316bd7f271",
+    "ranking": "rank-a432b7b8",
+    "top10": "top10:2026-09-20T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-20T00:00:00.000Z-2026-09-20T04:41:57.040Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-19T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-19T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-19T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-20T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-20T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-20T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1132,
+      "count": 1178,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 8 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1321,
+      "count": 1094,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -70,18 +70,18 @@
       "category": "editorial-hold",
       "count": 23,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 40,
+      "count": 41,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 11,
+    "heldArticles": 9,
     "usedFallback": true
   },
   "summary": {
@@ -114,7 +114,7 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Security researchers used Anthropic&039;s Claude to hack OpenAI&039;s internal systems in under 72 hours"
+        "headline": "datasette-auth-github 1.0"
       },
       {
         "rank": 4,
@@ -123,33 +123,33 @@
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Unity launches official plugins for Claude Code and OpenAI Codex to stop AI agents from using outdated tutorials"
+      },
+      {
+        "rank": 6,
         "topic": "security",
         "headline": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Qwen3.8-Omni-Flash undercuts Google&039;s Gemini Flash pricing while matching its multimodal benchmarks"
-      },
-      {
         "rank": 7,
-        "topic": "security",
-        "headline": "Identity Visibility in 2026: The Foundation of Identity Security"
+        "topic": "kubernetes",
+        "headline": "Customs suspends Tinapa FTZ transfers, clamps down on free trade zone violations"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE"
+        "headline": "Virtual Event Cybersecurity Outlook 2027"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "California Sea Lion, Brandt's Cormorant"
+        "topic": "kubernetes",
+        "headline": "Tissue Sample Preservation Containers Market Forecast to 2035: Demand Accelerates on Histopathology and Biobanking Growth - News and Statistics"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Twin cities admins on toes as four long marches loom"
+        "topic": "security",
+        "headline": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE"
       }
     ],
     "articleCount": 0
