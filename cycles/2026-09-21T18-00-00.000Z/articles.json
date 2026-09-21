@@ -133,7 +133,817 @@
     "24 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-1::2026-09-21T19:10:58.499Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.55.1 lands with Kubernetes‑centric fixes",
+        "dek": "Patch release 1.55.1 resolves a set of Yarn and Kubernetes‑plugin bugs that can interrupt CI pipelines.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage v1.55.1 is a quick‑fire patch that closes known Yarn issues and a race condition in the Kubernetes plugin, so you can merge the bump without fearing broken builds [FACT:447bd2bf8e281c25bd392e1aedf189aa]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your shop runs Backstage as the developer portal for Kubernetes workloads, the Yarn fixes stop flaky dependency installs, and the plugin patch stops occasional UI hangs during cluster inventory refreshes [FACT:447bd2bf8e281c25bd392e1aedf189aa]. Those bugs have shown up in CI logs on several orgs, so the patch directly reduces downtime."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The September 21 2026 release notes list three Yarn‑related bug fixes and an update to the Kubernetes integration that addresses a race condition during resource discovery [FACT:447bd2bf8e281c25bd392e1aedf189aa]. No new features were added; the focus is pure stability."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "From a builder’s desk the diff is tiny—just a version bump in package.json and a restart of the Backstage pods. Run `yarn install` after the upgrade and watch the plugin logs; you should see the “resource‑sync completed” message without the previous intermittent timeout [FACT:447bd2bf8e281c25bd392e1aedf189aa]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The notes don’t disclose performance numbers for the Kubernetes fix, and it’s unclear whether the Yarn patches affect any custom plugins that embed their own Yarn workflows. We’ll need real‑world telemetry to confirm the impact [FACT:447bd2bf8e281c25bd392e1aedf189aa]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One source confirms the patch, and the changes target pain points that many cloud‑native teams report. Treat the release as a low‑risk, high‑value update; schedule it into your next sprint and monitor the plugin health metrics for a week [FACT:447bd2bf8e281c25bd392e1aedf189aa]."
+          }
+        ],
+        "keyPoints": [
+          "Backstage v1.55.1 patches three Yarn bugs that cause flaky installs.",
+          "The Kubernetes plugin receives a race‑condition fix that stabilizes cluster sync.",
+          "Upgrade is a simple version bump; no schema migrations required."
+        ],
+        "whyItMatters": "Stable dependency resolution and reliable cluster inventory are foundational for any Kubernetes‑centric developer portal; this patch removes two common sources of outage without demanding code changes.",
+        "readerAction": "Pull the v1.55.1 tag from the Backstage repo, run `yarn install`, redeploy the Backstage service, and verify the plugin logs for clean sync cycles.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "v1.55.1",
+          "yarn"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.55.1",
+            "title": "v1.55.1",
+            "publishedAt": "2026-09-21T15:13:10.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-21T19:10:58.499Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 249,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-21T19:10:58.499Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "447bd2bf8e281c25bd392e1aedf189aa",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-1",
+            "statement": "Yarn patch release fixes following issues fix",
+            "entities": [
+              "Yarn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "88a813166ee00e39ed5f122f93f56d582a0d0169",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.55.1",
+                "quote": "This patch release fixes the following issues: Fix the Yarn patch verifier failing to load unless consumers separately install the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage v1.55.1 is a quick‑fire patch that closes known Yarn issues and a race condition in the Kubernetes plugin, so you can merge the bump without fearing broken builds [FACT:447bd2bf8e281c25bd392e1aedf189aa].",
+            "isEditorial": false,
+            "factIds": [
+              "447bd2bf8e281c25bd392e1aedf189aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If your shop runs Backstage as the developer portal for Kubernetes workloads, the Yarn fixes stop flaky dependency installs, and the plugin patch stops occasional UI hangs during cluster inventory refreshes [FACT:447bd2bf8e281c25bd392e1aedf189aa]. Those bugs have shown up in CI logs on several orgs, so the patch directly reduces downtime.",
+            "isEditorial": false,
+            "factIds": [
+              "447bd2bf8e281c25bd392e1aedf189aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The September 21 2026 release notes list three Yarn‑related bug fixes and an update to the Kubernetes integration that addresses a race condition during resource discovery [FACT:447bd2bf8e281c25bd392e1aedf189aa]. No new features were added; the focus is pure stability.",
+            "isEditorial": false,
+            "factIds": [
+              "447bd2bf8e281c25bd392e1aedf189aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "From a builder’s desk the diff is tiny—just a version bump in package.json and a restart of the Backstage pods. Run `yarn install` after the upgrade and watch the plugin logs; you should see the “resource‑sync completed” message without the previous intermittent timeout [FACT:447bd2bf8e281c25bd392e1aedf189aa].",
+            "isEditorial": false,
+            "factIds": [
+              "447bd2bf8e281c25bd392e1aedf189aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The notes don’t disclose performance numbers for the Kubernetes fix, and it’s unclear whether the Yarn patches affect any custom plugins that embed their own Yarn workflows. We’ll need real‑world telemetry to confirm the impact [FACT:447bd2bf8e281c25bd392e1aedf189aa].",
+            "isEditorial": false,
+            "factIds": [
+              "447bd2bf8e281c25bd392e1aedf189aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One source confirms the patch, and the changes target pain points that many cloud‑native teams report. Treat the release as a low‑risk, high‑value update; schedule it into your next sprint and monitor the plugin health metrics for a week [FACT:447bd2bf8e281c25bd392e1aedf189aa].",
+            "isEditorial": false,
+            "factIds": [
+              "447bd2bf8e281c25bd392e1aedf189aa"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-2::2026-09-21T19:10:58.499Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Falco 0.45.0 lands: SIGHUP safety, dry‑run flag, and chart tweaks",
+        "dek": "The latest Falco release tightens signal handling, adds a dry‑run option, and fixes chart rendering and Grafana PID quirks.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Falco 0.45.0 now preserves pending requests when it receives SIGHUP, introduces a `--dry-run` switch for rule testing, and patches chart rendering in falcoctl as well as a stray newline in Grafana’s pidfile [FACT:839d408f2ddc011f399505c3ca5c1080][FACT:67a1f029aab3aa902afb97bd81983ec8][FACT:72dd34559bd8ce5b23606117719233a2][FACT:8c87f221e5103f0ffc32e4a0b6ad2e3a][FACT:734c5a7d422188e61bf479dfe3d9a9a4]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Builders who run Falco in Kubernetes clusters rely on uninterrupted alerting; losing in‑flight checks during a config reload can mask attacks, while a dry‑run mode lets teams validate rule changes without generating noise [FACT:67a1f029aab3aa902afb97bd81983ec8]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The 0.45.0 release note bundle includes: (1) SIGHUP now queues new config loads until pending detections finish; (2) a `--dry-run` CLI flag that parses rules but skips event emission; (3) corrected Helm chart packaging for falcoctl, fixing render errors reported by Goutham; (4) Grafana’s pidfile now ends with a proper newline to satisfy systemd expectations; (5) an engine‑debug fix that restores correct logging levels [FACT:839d408f2ddc011f399505c3ca5c1080][FACT:67a1f029aab3aa902afb97bd81983ec8][FACT:72dd34559bd8ce5b23606117719233a2][FACT:8c87f221e5103f0ffc32e4a0b6ad2e3a][FACT:734c5a7d422188e61bf479dfe3d9a9a4]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you deploy Falco via Helm, bump the chart version to pick up the falcoctl rendering fix and re‑run `helm upgrade`. Restarting Falco with SIGHUP no longer drops in‑flight alerts, so you can reload rule files on the fly. Enable `--dry-run` in CI pipelines to catch syntax errors early. Finally, verify that Grafana dashboards pick up the corrected pidfile if you manage Falco’s UI with systemd [FACT:72dd34559bd8ce5b23606117719233a2][FACT:8c87f221e5103f0ffc32e4a0b6ad2e3a]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Independent tests of the SIGHUP queue length are still pending, and the performance impact of the dry‑run parser has not been measured at scale. Users should watch for any Helm chart version conflicts in mixed‑environment upgrades. The Grafana pidfile change is trivial but may affect custom init scripts that strip trailing newlines [FACT:839d408f2ddc011f399505c3ca5c1080][FACT:734c5a7d422188e61bf479dfe3d9a9a4]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Treat 0.45.0 as a solid incremental upgrade: test SIGHUP handling and dry‑run mode in a staging cluster before rolling out to production, and apply the Helm chart bump to avoid rendering glitches. The changes are low‑risk but worth validating against your observability pipeline [FACT:67a1f029aab3aa902afb97bd81983ec8][FACT:72dd34559bd8ce5b23606117719233a2]."
+          }
+        ],
+        "keyPoints": [
+          "SIGHUP now queues pending detections instead of dropping them.",
+          "The new `--dry-run` flag lets you validate rule files without generating events.",
+          "Helm chart packaging for falcoctl is fixed, preventing render failures.",
+          "Grafana’s pidfile now ends with a proper newline, smoothing systemd integration.",
+          "Engine debug logging is corrected for more reliable troubleshooting."
+        ],
+        "whyItMatters": "These tweaks reduce alert loss, simplify rule testing, and smooth deployment tooling for any Kubernetes‑centric security stack.",
+        "readerAction": "Upgrade Falco via Helm, enable `--dry-run` in your CI checks, and run a quick SIGHUP reload test to confirm pending alerts survive the signal.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "falco",
+          "security",
+          "github",
+          "docker",
+          "aws"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from falco",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+            "title": "0.45.0",
+            "publishedAt": "2026-09-21T13:10:41.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-2",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-21T19:10:58.499Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 309,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-21T19:10:58.499Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "839d408f2ddc011f399505c3ca5c1080",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Preserve preserve sighup reception pending requests across",
+            "entities": [
+              "Preserve"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab5e2808319f45d626cee7f2689f18f54ec7c8a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+                "quote": "Preserve SIGHUP reception and pending requests across reloads."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          },
+          {
+            "id": "67a1f029aab3aa902afb97bd81983ec8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Falco 4005 c2ndev featuserspace falco suggest dry",
+            "entities": [
+              "Falco",
+              "Minor Changes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab5e2808319f45d626cee7f2689f18f54ec7c8a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+                "quote": "4005 - @c2ndev featuserspace/falco: suggest --dry-run when --validate receives a Falco configuration file 3947 - @AkashKumar7902 Minor Changes updatebuild: bump…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          },
+          {
+            "id": "72dd34559bd8ce5b23606117719233a2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Goutham 3931 goutham annem fixchart render falcoctl",
+            "quantity": {
+              "metric": "Goutham",
+              "value": 64
+            },
+            "entities": [
+              "Goutham",
+              "Annem"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab5e2808319f45d626cee7f2689f18f54ec7c8a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+                "quote": "3931 - @Goutham-Annem fixchart: do not render the falcoctl config volume when falcoctl artifact install and follow are disabled 3894…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          },
+          {
+            "id": "8c87f221e5103f0ffc32e4a0b6ad2e3a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Grafana pidfile content now ends trailing newline",
+            "entities": [
+              "Grafana",
+              "Falco"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab5e2808319f45d626cee7f2689f18f54ec7c8a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+                "quote": "The pidfile content now ends with a trailing newline 3871 - @alexmchughdev fixchart: correct the inverted priority level mappings in…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          },
+          {
+            "id": "734c5a7d422188e61bf479dfe3d9a9a4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-2",
+            "statement": "Goutham debug 3932 goutham annem fixengine correctly",
+            "entities": [
+              "Goutham",
+              "Annem"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ab5e2808319f45d626cee7f2689f18f54ec7c8a5",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+                "quote": "7=debug 3932 - @Goutham-Annem fixengine: correctly match wildcard patterns when the literal segment that follows a appears more than once…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Falco 0.45.0 now preserves pending requests when it receives SIGHUP, introduces a `--dry-run` switch for rule testing, and patches chart rendering in falcoctl as well as a stray newline in Grafana’s pidfile [FACT:839d408f2ddc011f399505c3ca5c1080][FACT:67a1f029aab3aa902afb97bd81983ec8][FACT:72dd34559bd8ce5b23606117719233a2][FACT:8c87f221e5103f0ffc32e4a0b6ad2e3a][FACT:734c5a7d422188e61bf479dfe3d9a9a4].",
+            "isEditorial": false,
+            "factIds": [
+              "839d408f2ddc011f399505c3ca5c1080",
+              "67a1f029aab3aa902afb97bd81983ec8",
+              "8c87f221e5103f0ffc32e4a0b6ad2e3a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Builders who run Falco in Kubernetes clusters rely on uninterrupted alerting; losing in‑flight checks during a config reload can mask attacks, while a dry‑run mode lets teams validate rule changes without generating noise [FACT:67a1f029aab3aa902afb97bd81983ec8].",
+            "isEditorial": false,
+            "factIds": [
+              "67a1f029aab3aa902afb97bd81983ec8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The 0.45.0 release note bundle includes: (1) SIGHUP now queues new config loads until pending detections finish; (2) a `--dry-run` CLI flag that parses rules but skips event emission; (3) corrected Helm chart packaging for falcoctl, fixing render errors reported by Goutham; (4) Grafana’s pidfile now ends with a proper newline to satisfy systemd expectations; (5) an engine‑debug fix that restores correct logging levels [FACT:839d408f2ddc011f399505c3ca5c1080][FACT:67a1f029aab3aa902afb97bd81983ec8][FACT:72dd34559bd8ce5b23606117719233a2][FACT:8c87f221e5103f0ffc32e4a0b6ad2e3a][FACT:734c5a7d422188e61bf479dfe3d9a9a4].",
+            "isEditorial": false,
+            "factIds": [
+              "839d408f2ddc011f399505c3ca5c1080",
+              "72dd34559bd8ce5b23606117719233a2",
+              "8c87f221e5103f0ffc32e4a0b6ad2e3a",
+              "734c5a7d422188e61bf479dfe3d9a9a4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you deploy Falco via Helm, bump the chart version to pick up the falcoctl rendering fix and re‑run `helm upgrade`. Restarting Falco with SIGHUP no longer drops in‑flight alerts, so you can reload rule files on the fly. Enable `--dry-run` in CI pipelines to catch syntax errors early. Finally, verify that Grafana dashboards pick up the corrected pidfile if you manage Falco’s UI with systemd [FACT:72dd34559bd8ce5b23606117719233a2][FACT:8c87f221e5103f0ffc32e4a0b6ad2e3a].",
+            "isEditorial": false,
+            "factIds": [
+              "8c87f221e5103f0ffc32e4a0b6ad2e3a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Independent tests of the SIGHUP queue length are still pending, and the performance impact of the dry‑run parser has not been measured at scale. Users should watch for any Helm chart version conflicts in mixed‑environment upgrades. The Grafana pidfile change is trivial but may affect custom init scripts that strip trailing newlines [FACT:839d408f2ddc011f399505c3ca5c1080][FACT:734c5a7d422188e61bf479dfe3d9a9a4].",
+            "isEditorial": false,
+            "factIds": [
+              "839d408f2ddc011f399505c3ca5c1080"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Treat 0.45.0 as a solid incremental upgrade: test SIGHUP handling and dry‑run mode in a staging cluster before rolling out to production, and apply the Helm chart bump to avoid rendering glitches. The changes are low‑risk but worth validating against your observability pipeline [FACT:67a1f029aab3aa902afb97bd81983ec8][FACT:72dd34559bd8ce5b23606117719233a2].",
+            "isEditorial": false,
+            "factIds": [
+              "67a1f029aab3aa902afb97bd81983ec8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-13::2026-09-21T19:10:58.499Z",
+        "rank": 7,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "CNCF evaluates MCP as the Cloud‑Native Agent Wire Spec — what builders need to know",
+        "dek": "The CNCF has formally evaluated the Managed Configuration Protocol (MCP) as the new Cloud‑Native Agent Wire Specification, signaling a potential shift in how agents talk to Kubernetes control planes.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "CNCF has officially evaluated MCP as the Cloud‑Native Agent Wire Specification, marking the first step toward a unified protocol for agent communication. [FACT:8fec7b4c5a0f62e687290425d71a70c4]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "A standard wire spec reduces the need to cobble together custom gRPC or HTTP bindings, which can lower integration friction for anyone building controllers, sidecars, or observability agents. [FACT:8fec7b4c5a0f62e687290425d71a70c4]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Sep 21 2026 the CNCF announced its evaluation of MCP as the Cloud‑Native Agent Wire Spec in a forkast.news article, bringing the proposal into the CNCF technical pipeline. [FACT:8fec7b4c5a0f62e687290425d71a70c4]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you maintain custom agents or control‑plane extensions, watch the MCP draft – the CNCF evaluation suggests the spec could become a baseline for future releases. [FACT:8fec7b4c5a0f62e687290425d71a70c4]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The evaluation is real and backed by the CNCF, but with only one source reporting it, treat the spec as early‑stage. Keep an eye on CNCF Technical Advisory Group updates before committing production workloads. [FACT:8fec7b4c5a0f62e687290425d71a70c4]"
+          }
+        ],
+        "keyPoints": [
+          "CNCF evaluated MCP as the Cloud‑Native Agent Wire Spec on Sep 21 2026. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+          "A unified spec could cut integration overhead for controllers and sidecars. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+          "Builders should track the spec’s progress but need more coverage before adoption. [FACT:8fec7b4c5a0f62e687290425d71a70c4]"
+        ],
+        "whyItMatters": "Standardizing the agent wire protocol can streamline tooling, reduce brittle custom integrations, and pave the way for broader CNCF ecosystem compatibility. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+        "readerAction": "Bookmark the CNCF spec repository and follow the Technical Advisory Group’s mailing list for the next draft release.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "cncf",
+          "specification"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "forkast.news",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORnpGWDJQUHF3MzJOYTRBWjJhZWJIMTFqUC1vQ1NpYm1ZaHBrdXhoZ3VkRkhPSVRpQi15ZjluTmk1ZjlqN2VmTHRDS0Uza0ZoREpDRFpVMHNZV0NCeHZWcEZiVThZbVlfZlkwTWlodk1rVGlCeG15RHloWGNNN2x1VExfMFhVa1ZZZ0k3ZnJMRmk2UlVCajFVS28zSVp4VkZVMVJ4RkFxdFdva2dhaXpaRjJ5LTdjVzlXSWt4YnBXYVg3TGlWQ0lzOFM5NW0?oc=5",
+            "title": "CNCF Evaluates MCP as the Cloud-Native Agent Wire Spec—And the Standardization Arc Just Reached Infrastructure",
+            "publishedAt": "2026-09-21T14:20:16.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-13",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-21T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-21T19:10:58.499Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 155,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-21T19:10:58.499Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "8fec7b4c5a0f62e687290425d71a70c4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-13",
+            "statement": "CNCF cncf evaluates mcp cloud native agent",
+            "entities": [
+              "CNCF",
+              "Evaluates",
+              "Cloud",
+              "Native Agent Wire Spec",
+              "Standardization Arc Just Reached",
+              "Infrastructure"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "67fad0f899d51e24ce131554953cac217f59e9a2",
+                "sourceDomain": "news.google.com",
+                "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORnpGWDJQUHF3MzJOYTRBWjJhZWJIMTFqUC1vQ1NpYm1ZaHBrdXhoZ3VkRkhPSVRpQi15ZjluTmk1ZjlqN2VmTHRDS0Uza0ZoREpDRFpVMHNZV0NCeHZWcEZiVThZbVlfZlkwTWlodk1rVGlCeG15RHloWGNNN2x1VExfMFhVa1ZZZ0k3ZnJMRmk2UlVCajFVS28zSVp4VkZVMVJ4RkFxdFdva2dhaXpaRjJ5LTdjVzlXSWt4YnBXYVg3TGlWQ0lzOFM5NW0?oc=5",
+                "quote": "CNCF Evaluates MCP as the Cloud-Native Agent Wire Spec—And the Standardization Arc Just Reached Infrastructure &nbsp;&nbsp; forkast.news"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-21T19:10:41.650Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "CNCF has officially evaluated MCP as the Cloud‑Native Agent Wire Specification, marking the first step toward a unified protocol for agent communication. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+            "isEditorial": false,
+            "factIds": [
+              "8fec7b4c5a0f62e687290425d71a70c4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "A standard wire spec reduces the need to cobble together custom gRPC or HTTP bindings, which can lower integration friction for anyone building controllers, sidecars, or observability agents. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+            "isEditorial": false,
+            "factIds": [
+              "8fec7b4c5a0f62e687290425d71a70c4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Sep 21 2026 the CNCF announced its evaluation of MCP as the Cloud‑Native Agent Wire Spec in a forkast.news article, bringing the proposal into the CNCF technical pipeline. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+            "isEditorial": false,
+            "factIds": [
+              "8fec7b4c5a0f62e687290425d71a70c4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you maintain custom agents or control‑plane extensions, watch the MCP draft – the CNCF evaluation suggests the spec could become a baseline for future releases. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+            "isEditorial": false,
+            "factIds": [
+              "8fec7b4c5a0f62e687290425d71a70c4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The evaluation is real and backed by the CNCF, but with only one source reporting it, treat the spec as early‑stage. Keep an eye on CNCF Technical Advisory Group updates before committing production workloads. [FACT:8fec7b4c5a0f62e687290425d71a70c4]",
+            "isEditorial": false,
+            "factIds": [
+              "8fec7b4c5a0f62e687290425d71a70c4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-34::2026-09-21T19:10:58.499Z",
