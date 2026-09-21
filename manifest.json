@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-21T00:00:00.000Z",
-    "windowStart": "2026-09-21T00:00:00.000Z",
-    "windowEnd": "2026-09-21T06:00:00.000Z"
+    "id": "2026-09-21T12:00:00.000Z",
+    "windowStart": "2026-09-21T12:00:00.000Z",
+    "windowEnd": "2026-09-21T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-21T04:12:13.773Z",
-  "nextRefreshAt": "2026-09-21T06:00:00.000Z",
+  "publishedAt": "2026-09-21T12:25:36.137Z",
+  "nextRefreshAt": "2026-09-21T18:00:00.000Z",
   "runIds": {
-    "aggregation": "d02c679a-1442-46a4-a857-bb7881c344da",
-    "ranking": "rank-7c035511",
-    "top10": "top10:2026-09-21T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-21T00:00:00.000Z-2026-09-21T04:12:31.001Z"
+    "aggregation": "4504a850-2685-45aa-a8e4-14c1f7afe24a",
+    "ranking": "rank-09a22bf9",
+    "top10": "top10:2026-09-21T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-21T12:00:00.000Z-2026-09-21T12:25:53.662Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-21T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-21T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-21T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-21T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-21T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-21T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 60,
+      "count": 57,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1144,
+      "count": 1142,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMirwFBVV95cUxPQ2FKNi1uZ3RjYUZjMVJWZTZJWW5uSTJlcmw3Q25uSjdDOUFEWko0LUR1OHIxNkhwaDl6c3RPOVhSdF9ReDN6RTAwNGd0cEhVdHI3Ym83UXpoYVpSX2MtczlydUlMaHVpaXY3OVhXanpJWXBtenRfcUlJUW9yb3VnYXFURFMzamNpbVBtUkhwcm9VaVZDZWJOOXNKaEFkNjlqYkYwbl8yOGFzaGJTbXJN?oc=5"
+        "[ai/cluster-ai-12] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 976,
+      "count": 1133,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,19 +68,19 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:69114: Important: libvirt security update"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "llm-keys-ui 0.1"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:69285: Moderate: libkcapi security update"
+      },
+      {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Softbank Group launches over $10 billion in bonds for OpenAI investment, term sheet shows"
+        "topic": "security",
+        "headline": "RHSA-2026:69278: Important: corosync security update"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Kubernetes 1.37 Released: Stable Metrics API and Rootless Kubelet in Beta"
+        "topic": "security",
+        "headline": "From Exposure to Lockdown: How AWS Neutralizes Compromised IAM Credentials through Managed Policies"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Google’s open source EnvHarness lets AI agents train against environments that evolve with them"
+        "headline": "Following OpenAI, Anthropic is also reportedly postponing its IPO"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "SoftBank Launches Over $11 Billion Bond Sale to Fund OpenAI Stake"
+        "topic": "kubernetes",
+        "headline": "0.45.0"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "Virtual Event Cybersecurity Outlook 2027"
+        "headline": "TerminalFix: PNG Steganography, Mon, Sep 21st"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "Container seizures cripple supply of goods"
+        "headline": "Kubernetes 1.37 Released: Stable Metrics API and Rootless Kubelet in Beta"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review"
+        "topic": "ai",
+        "headline": "Lawsuit says Anthropic, OpenAI, SpaceXAI and Google made illegal agreement on AI slowdown - Oregon Public Broadcasting"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Quoting voxium"
+        "topic": "ai",
+        "headline": "OpenAI projections point to a massive $278 billion cash burn through 2030 that exceeds the national budgets of Indonesia and Norway — $856 billion compute tab outpaces tenfold revenue surge"
       }
     ],
     "articleCount": 0
