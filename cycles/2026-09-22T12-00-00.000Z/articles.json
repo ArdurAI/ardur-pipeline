@@ -141,7 +141,444 @@
     "21 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-0::2026-09-22T16:38:27.501Z",
+        "rank": 5,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Check Point flags Management Server zero‑day (CVE‑2026‑93616) being used in ransomware attacks",
+        "dek": "A path‑traversal bug in Check Point's Security Management Server is live in the wild; the vendor supplies a temporary fix and urges immediate remediation.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Check Point disclosed that CVE‑2026‑93616 – a path‑traversal flaw in its Security Management Server – is currently exploited by the Qilin ransomware affiliate, and a temporary mitigation is already available [FACT:99431bdcf9a090652859dbe7194685ba][FACT:c958834f9578dc5007ab20a7d430b86f][FACT:eec6296288d963c69d88d07beb33573c]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Management Server holds the central policy repository and credential vault for your firewalls; a successful traversal can let an attacker read or overwrite those files, potentially exposing AI model data, cloud API keys, or routing rules [FACT:d24785f416556e589e51a14390694c08][FACT:fb41b7c700389b4daadcae5e45fe3af9]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Check Point observed active exploitation where the Qilin ransomware affiliate abused the path‑traversal to pull authentication tokens from the server and then used those tokens to spread inside target environments [FACT:fb41b7c700389b4daadcae5e45fe3af9][FACT:c958834f9578dc5007ab20a7d430b86f]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run Check Point Management Server to drive AI/ML workloads or to enforce network policy in the cloud, apply the hotfix now, scan logs for unexpected file accesses, and isolate the server behind a zero‑trust segment. Check Point already shared a temporary mitigation and is working with a handful of affected customers [FACT:eec6296288d963c69d88d07beb33573c][FACT:db5f82224b7229f5405c661843742de9]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "What changes will the forthcoming permanent patch introduce to the API surface? How many on‑prem vs. cloud‑native deployments are truly vulnerable? Are there concrete Indicators of Compromise (IOCs) we can extract from the few customers already hit? Check Point has been warning customers for months, and CISA flagged a related issue two years ago, suggesting a lingering attack surface [FACT:4b96282b81c686f1849317fe1fab659e][FACT:f071bbc69aa5769429f5c68fe199c756]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Treat this as an urgent remediation priority. The advisory comes directly from Check Point, a trusted vendor, but it is currently a single‑source report, so patch now, enforce defense‑in‑depth, and watch for updates on a permanent fix [FACT:99431bdcf9a090652859dbe7194685ba][FACT:eec6296288d963c69d88d07beb33573c]."
+          }
+        ],
+        "keyPoints": [
+          "CVE‑2026‑93616 path‑traversal in Check Point Security Management Server is actively exploited.",
+          "Qilin ransomware affiliate uses the bug to harvest authentication data.",
+          "Check Point provides a temporary mitigation and is urging immediate patching."
+        ],
+        "whyItMatters": "Compromise of the Management Server gives attackers control over firewall policies and credentials, which can cascade into AI model leaks, cloud resource hijacking, and broader ransomware impact.",
+        "readerAction": "Download and apply Check Point’s temporary fix today, audit server logs for unusual file reads, segment the Management Server from production workloads, and subscribe to vendor alerts for the permanent patch.",
+        "tags": [
+          "ai-cloud-security",
+          "check-point",
+          "cve-2026-93616",
+          "ransomware",
+          "cloud-security",
+          "zero-day",
+          "security",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "BleepingComputer",
+            "sourceDomain": "bleepingcomputer.com",
+            "tier": "security-news",
+            "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+            "title": "Check Point warns of Management Server zero-day exploited in attacks",
+            "publishedAt": "2026-09-22T16:32:47.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-22T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-22T16:38:27.501Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 265,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-22T16:38:27.501Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "99431bdcf9a090652859dbe7194685ba",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Check Point check point warns management server zero",
+            "entities": [
+              "Check Point",
+              "Management Server",
+              "Home News Security Check",
+              "Point",
+              "By Sergiu Gatlan September",
+              "Check Point Software",
+              "Security Management Server"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "Check Point warns of Management Server zero-day exploited in attacks Home News Security Check Point warns of Management Server zero-day…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "d24785f416556e589e51a14390694c08",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "The Security Management Server security management server central repository stores",
+            "entities": [
+              "The Security Management Server"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "The Security Management Server is a central repository that stores and manages security policies, processes administrator changes, and collects system…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "c958834f9578dc5007ab20a7d430b86f",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Tracked tracked cve 2026 93616 path traversal",
+            "entities": [
+              "Tracked",
+              "Check Point Management Servers"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "Tracked as CVE-2026-93616 , this path traversal flaw lets unauthenticated threat actors upload arbitrary scripts on vulnerable Check Point Management…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "db5f82224b7229f5405c661843742de9",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Check Point check point aware handful customers who",
+            "entities": [
+              "Check Point"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "Check Point is aware of a handful of customers who have been attacked,\" the company warned, while advising security teams…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "eec6296288d963c69d88d07beb33573c",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Check Point check point also provides temporary mitigation",
+            "entities": [
+              "Check Point",
+              "Manage",
+              "Settings",
+              "Permissions",
+              "Administrators",
+              "Trusted Clients"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "Check Point also provides temporary mitigation measures for customers who can't immediately deploy the hotfix on vulnerable systems, including hardening…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "4b96282b81c686f1849317fe1fab659e",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Check Point recent months check point warned customers",
+            "entities": [
+              "Check Point"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "In recent months, Check Point has warned customers that other flaws were being actively exploited in the wild."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "f071bbc69aa5769429f5c68fe199c756",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Check Point instance two years ago cisa flagged",
+            "entities": [
+              "Check Point",
+              "Quantum Security Gateways",
+              "Orange Cyberdefense"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "For instance, two years ago, CISA flagged a flaw (CVE-2024-24919) in Check Point's Quantum Security Gateways as actively exploited by…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          },
+          {
+            "id": "fb41b7c700389b4daadcae5e45fe3af9",
+            "topic": "security",
+            "clusterId": "cluster-security-0",
+            "statement": "Qilin qilin ransomware affiliate also exploited authentication",
+            "entities": [
+              "Qilin"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "20fee5056b0e598bf05650841ee0e0df40fba03f",
+                "sourceDomain": "bleepingcomputer.com",
+                "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+                "quote": "Qilin ransomware affiliate has also exploited an authentication bypass (CVE-2026-50751) zero-day since June, while a second auth bypass zero-day (CVE-2026-16232)…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T16:37:59.735Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Check Point disclosed that CVE‑2026‑93616 – a path‑traversal flaw in its Security Management Server – is currently exploited by the Qilin ransomware affiliate, and a temporary mitigation is already available [FACT:99431bdcf9a090652859dbe7194685ba][FACT:c958834f9578dc5007ab20a7d430b86f][FACT:eec6296288d963c69d88d07beb33573c].",
+            "isEditorial": false,
+            "factIds": [
+              "99431bdcf9a090652859dbe7194685ba",
+              "c958834f9578dc5007ab20a7d430b86f",
+              "eec6296288d963c69d88d07beb33573c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The Management Server holds the central policy repository and credential vault for your firewalls; a successful traversal can let an attacker read or overwrite those files, potentially exposing AI model data, cloud API keys, or routing rules [FACT:d24785f416556e589e51a14390694c08][FACT:fb41b7c700389b4daadcae5e45fe3af9].",
+            "isEditorial": false,
+            "factIds": [
+              "d24785f416556e589e51a14390694c08"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Check Point observed active exploitation where the Qilin ransomware affiliate abused the path‑traversal to pull authentication tokens from the server and then used those tokens to spread inside target environments [FACT:fb41b7c700389b4daadcae5e45fe3af9][FACT:c958834f9578dc5007ab20a7d430b86f].",
+            "isEditorial": false,
+            "factIds": [
+              "fb41b7c700389b4daadcae5e45fe3af9",
+              "c958834f9578dc5007ab20a7d430b86f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you run Check Point Management Server to drive AI/ML workloads or to enforce network policy in the cloud, apply the hotfix now, scan logs for unexpected file accesses, and isolate the server behind a zero‑trust segment. Check Point already shared a temporary mitigation and is working with a handful of affected customers [FACT:eec6296288d963c69d88d07beb33573c][FACT:db5f82224b7229f5405c661843742de9].",
+            "isEditorial": false,
+            "factIds": [
+              "eec6296288d963c69d88d07beb33573c",
+              "db5f82224b7229f5405c661843742de9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "What changes will the forthcoming permanent patch introduce to the API surface? How many on‑prem vs. cloud‑native deployments are truly vulnerable? Are there concrete Indicators of Compromise (IOCs) we can extract from the few customers already hit? Check Point has been warning customers for months, and CISA flagged a related issue two years ago, suggesting a lingering attack surface [FACT:4b96282b81c686f1849317fe1fab659e][FACT:f071bbc69aa5769429f5c68fe199c756].",
+            "isEditorial": false,
+            "factIds": [
+              "4b96282b81c686f1849317fe1fab659e",
+              "f071bbc69aa5769429f5c68fe199c756"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Treat this as an urgent remediation priority. The advisory comes directly from Check Point, a trusted vendor, but it is currently a single‑source report, so patch now, enforce defense‑in‑depth, and watch for updates on a permanent fix [FACT:99431bdcf9a090652859dbe7194685ba][FACT:eec6296288d963c69d88d07beb33573c].",
+            "isEditorial": false,
+            "factIds": [
+              "99431bdcf9a090652859dbe7194685ba",
+              "eec6296288d963c69d88d07beb33573c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-12::2026-09-22T16:38:27.501Z",

@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-22T06:00:00.000Z",
-    "windowStart": "2026-09-22T06:00:00.000Z",
-    "windowEnd": "2026-09-22T12:00:00.000Z"
+    "id": "2026-09-22T12:00:00.000Z",
+    "windowStart": "2026-09-22T12:00:00.000Z",
+    "windowEnd": "2026-09-22T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-22T11:15:54.398Z",
-  "nextRefreshAt": "2026-09-22T12:00:00.000Z",
+  "publishedAt": "2026-09-22T16:37:59.523Z",
+  "nextRefreshAt": "2026-09-22T18:00:00.000Z",
   "runIds": {
-    "aggregation": "0a384bf4-ecd6-404a-af43-8bc1699def9d",
-    "ranking": "rank-9321a04f",
-    "top10": "top10:2026-09-22T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-22T06:00:00.000Z-2026-09-22T11:16:23.538Z"
+    "aggregation": "4ac08d03-b9e0-4fc6-912c-d61c550911ad",
+    "ranking": "rank-bd6ae189",
+    "top10": "top10:2026-09-22T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-22T12:00:00.000Z-2026-09-22T16:38:27.501Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-22T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-22T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-22T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-22T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-22T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-22T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1269,
+      "count": 1467,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[kubernetes] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1488,
+      "count": 1719,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,11 +68,11 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
@@ -81,15 +81,15 @@
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
-    "degradedTopics": 5,
+    "failedSources": 68,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "3.15.0-rc.1 / 2026-09-21"
+        "topic": "security",
+        "headline": "RHSA-2026:70277: Important: Red Hat JBoss Enterprise Application Platform 8.1.8 security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:68550: Important: OpenShift Container Platform 4.22.15 packages and security update"
+        "headline": "RHSA-2026:70264: Moderate: gstreamer1-plugins-good security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:69863: Moderate: libsoup security update"
+        "topic": "platform",
+        "headline": "Dynamic AI Discovery & Runtime Security for AgentCore"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "China's Alibaba unveils new powerful chip and ambitious AI model plans - ABC News"
+        "headline": "Xiaomi&039;s affordable flagship AI leads the open models, and Anthropic says Claude helped get it there"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "New Windows Defender zero-day blocks Microsoft antivirus updates"
+        "headline": "Check Point warns of Management Server zero-day exploited in attacks"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Upcoming Next.js Security Update for a Critical Upstream Issue"
+        "topic": "kubernetes",
+        "headline": "From attendee badge to speaker badge: My first KubeCon at KubeCon + CloudNativeCon India 2026"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "British Columbia sues OpenAI and Sam Altman over Tumbler Ridge mass school shooting"
+        "topic": "security",
+        "headline": "D-Link warns of max severity zero-day bug in DIR-822A routers"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v0.315.0-rc.1"
+        "topic": "ai",
+        "headline": "China's Alibaba unveils new powerful chip and ambitious AI model plans - ABC News"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:69866: Important: gstreamer1-plugins-base security update"
+        "topic": "ai",
+        "headline": "Anthropic Unveils More Cost-Efficient Opus 5.5 Model Before IPO"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Amazon Brings OpenAI, Meta, Anthropic to AWS GovCloud 2026"
+        "topic": "kubernetes",
+        "headline": "v0.315.0-rc.1"
       }
     ],
     "articleCount": 0
