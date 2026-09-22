@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-22T12:00:00.000Z",
-    "windowStart": "2026-09-22T12:00:00.000Z",
-    "windowEnd": "2026-09-22T18:00:00.000Z"
+    "id": "2026-09-22T18:00:00.000Z",
+    "windowStart": "2026-09-22T18:00:00.000Z",
+    "windowEnd": "2026-09-23T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-22T16:37:59.523Z",
-  "nextRefreshAt": "2026-09-22T18:00:00.000Z",
+  "publishedAt": "2026-09-22T21:05:08.469Z",
+  "nextRefreshAt": "2026-09-23T00:00:00.000Z",
   "runIds": {
-    "aggregation": "4ac08d03-b9e0-4fc6-912c-d61c550911ad",
-    "ranking": "rank-bd6ae189",
-    "top10": "top10:2026-09-22T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-22T12:00:00.000Z-2026-09-22T16:38:27.501Z"
+    "aggregation": "e390a41f-6682-469e-8b21-7d65ac7a352b",
+    "ranking": "rank-c960860f",
+    "top10": "top10:2026-09-22T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-22T18:00:00.000Z-2026-09-22T21:05:24.797Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-22T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-22T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-22T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-22T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-22T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-22T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1467,
+      "count": 1550,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,15 +54,15 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 15 distinct domains < floor 20"
+        "[kubernetes] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1719,
+      "count": 1757,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] fetch budget exhausted (30) — 14 of 19 URLs fetched for this cluster",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
@@ -71,17 +71,17 @@
       "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:70277: Important: Red Hat JBoss Enterprise Application Platform 8.1.8 security update"
+        "topic": "ai",
+        "headline": "Introducing Claude Opus 5.5"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:70264: Moderate: gstreamer1-plugins-good security update"
+        "topic": "platform",
+        "headline": "Next.js Security Update for a Critical Upstream Issue"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Dynamic AI Discovery & Runtime Security for AgentCore"
+        "topic": "security",
+        "headline": "RHSA-2026:70403: Important: kernel-rt security, bug fix, and enhancement update"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Xiaomi&039;s affordable flagship AI leads the open models, and Anthropic says Claude helped get it there"
+        "headline": "OpenAI&039;s GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Check Point warns of Management Server zero-day exploited in attacks"
+        "headline": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "From attendee badge to speaker badge: My first KubeCon at KubeCon + CloudNativeCon India 2026"
+        "headline": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "D-Link warns of max severity zero-day bug in DIR-822A routers"
+        "headline": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "China's Alibaba unveils new powerful chip and ambitious AI model plans - ABC News"
+        "headline": "llm-typesafe 0.1a0"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic Unveils More Cost-Efficient Opus 5.5 Model Before IPO"
+        "topic": "security",
+        "headline": "RHSA-2026:70264: Moderate: gstreamer1-plugins-good security update"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v0.315.0-rc.1"
+        "topic": "ai",
+        "headline": "Better prompt caching for GPT-6"
       }
     ],
     "articleCount": 0

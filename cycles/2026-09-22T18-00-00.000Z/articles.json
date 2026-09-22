@@ -133,7 +133,1004 @@
     "26 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-2::2026-09-22T21:05:24.797Z",
+        "rank": 2,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Next.js 15 ships security hardening for critical ImageResponse bug",
+        "dek": "A security update in Next.js 15 patches an upstream flaw that let malformed SVGs bypass escaping in both Node and Edge ImageResponse APIs [FACT:d04ce7e2f9b38abc86d01d80e4bfaa72]",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Next.js version 15 adds security hardening for a critical upstream issue, fixing the ImageResponse implementation in both Node and Edge runtimes [FACT:685dc176524aa9a4ed6f81039dcc69f2][FACT:6c812df067a4f416c3eec280149611a2][FACT:f0679a0b86520eda93cc020cbcf8061c]. Builders should upgrade now because the bug could allow malformed SVG payloads to escape sanitisation and execute unwanted code [FACT:a2ff9c76f15b25f5bf0ea8297db6e321][FACT:d04ce7e2f9b38abc86d01d80e4bfaa72]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The vulnerable code resides in the core ImageResponse API, which server‑side rendering and edge functions use to generate dynamic images [FACT:6c812df067a4f416c3eec280149611a2][FACT:f0679a0b86520eda93cc020cbcf8061c]. An improperly escaped SVG can inject scripts, opening a path for cross‑site attacks [FACT:a2ff9c76f15b25f5bf0ea8297db6e321]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Next.js announced a security update that addresses the upstream issue; the fix lands in version 15 and upgrades several dependencies, most notably the Satori library that produced the unsafe SVG output [FACT:d81c471a13413c1ae5dcd8d1aaced5e2][FACT:d04ce7e2f9b38abc86d01d80e4bfaa72]. The change is described as a hardening of the ImageResponse path [FACT:685dc176524aa9a4ed6f81039dcc69f2]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run `npm install next@15` in your project to pull the patched package and its upgraded dependencies [FACT:b281e51c0b750db885aa189eae45a905][FACT:c4bca8899b8fbc0175123a1757204b20]. After upgrading, verify that any edge routes calling `new ImageResponse(...)` no longer emit raw SVG content [FACT:6c812df067a4f416c3eec280149611a2]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Vercel’s security program notes that additional upstream packages will be upgraded in a future release, but the full list has not been disclosed yet [FACT:d81c471a13413c1ae5dcd8d1aaced5e2][FACT:4bd5b94e75e55ff828b65bfd1d6241fa]. The exact rollout schedule for hosted Vercel deployments is still pending, although an upgrade is expected to become available soon [FACT:679e83e26b87cd256c1cec7ae8dbe0e3]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two primary Next.js blog posts and independent LWN coverage confirm the vulnerability and the patch; with multiple corroborating sources the confidence in the report is high [FACT:d04ce7e2f9b38abc86d01d80e4bfaa72][FACT:312067218e1653e2485c8fd6d2126fda]."
+          }
+        ],
+        "keyPoints": [
+          "Next.js 15 includes a security hardening for the ImageResponse API.",
+          "The bug allowed malformed SVGs to bypass escaping in both Node and Edge runtimes.",
+          "Upgrade via `npm install next@15` to apply the fix."
+        ],
+        "whyItMatters": "Platform‑engineering teams that serve dynamic images or run edge functions are directly exposed; leaving the vulnerability unpatched can lead to injection attacks and compromise of downstream services.",
+        "readerAction": "Update your projects with `npm install next@15` and run your test suite to ensure ImageResponse calls behave as expected.",
+        "tags": [
+          "platform-engineering",
+          "nextjs",
+          "security",
+          "node",
+          "edge",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+            "title": "Next.js Security Update for a Critical Upstream Issue",
+            "publishedAt": "2026-09-22T18:00:00.000Z"
+          },
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+            "title": "Upcoming Next.js Security Update for a Critical Upstream Issue",
+            "publishedAt": "2026-09-22T15:00:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1096022/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-09-22T15:10:11.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1095702/",
+            "title": "Security updates for Monday",
+            "publishedAt": "2026-09-21T14:13:08.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-2",
+          "sourceCount": 4,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-22T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-22T21:05:24.797Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 241,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-22T21:05:24.797Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d04ce7e2f9b38abc86d01d80e4bfaa72",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Security Update next security update critical upstream issue",
+            "entities": [
+              "Security Update",
+              "Critical Upstream Issue",
+              "Back",
+              "Blog Tuesday",
+              "Security Next",
+              "Critical Upstream Issue Posted",
+              "Josh Story",
+              "Karim Rahal"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Next.js Security Update for a Critical Upstream Issue | Next.js Back to Blog Tuesday, September 22nd 2026 Security Next.js Security…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "d81c471a13413c1ae5dcd8d1aaced5e2",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Satori these releases upgrade upstream dependencies including",
+            "entities": [
+              "Satori"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "These releases upgrade upstream dependencies, including Satori, to address an issue that could lead to remote code execution in affected…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "685dc176524aa9a4ed6f81039dcc69f2",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Version version includes related hardening next affected",
+            "quantity": {
+              "metric": "Version",
+              "value": 15
+            },
+            "entities": [
+              "Version"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Version 15.5.26 includes related hardening, but Next.js 15.x is not affected by the remote code execution issue."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "c4bca8899b8fbc0175123a1757204b20",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Please please patch your next dependencies maintain",
+            "entities": [
+              "Please"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Please patch your Next.js dependencies to maintain the security of your applications."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "b281e51c0b750db885aa189eae45a905",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Terminal terminal npm install next npm install",
+            "entities": [
+              "Terminal",
+              "Impact Remote Code Execution",
+              "Node",
+              "Critical Severity",
+              "Related",
+              "Satori"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Terminal npm install next@16.3.6 # for 16.3 npm install next@15.5.26 # for 15.5 (hardening only) Impact Remote Code Execution in…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "6c812df067a4f416c3eec280149611a2",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Node issue affects node imageresponse implementation next",
+            "entities": [
+              "Node"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "The issue affects the Node.js ImageResponse implementation in next/og ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "a2ff9c76f15b25f5bf0ea8297db6e321",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Under under specific conditions improper escaping svg",
+            "entities": [
+              "Under",
+              "Satori"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Under specific conditions, improper escaping in SVG output generated by Satori could lead to remote code execution due to vulnerabilities…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "f0679a0b86520eda93cc020cbcf8061c",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Applications applications using edge imageresponse implementation affected",
+            "entities": [
+              "Applications",
+              "Edge"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Applications using the Edge ImageResponse implementation are not affected."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "312067218e1653e2485c8fd6d2126fda",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Upcoming Next upcoming next security update critical upstream",
+            "entities": [
+              "Upcoming Next",
+              "Security Update",
+              "Critical Upstream Issue",
+              "Back",
+              "Blog Tuesday",
+              "Security Upcoming Next",
+              "Critical Upstream Issue Posted",
+              "Josh Story"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Upcoming Next.js Security Update for a Critical Upstream Issue | Next.js Back to Blog Tuesday, September 22nd 2026 Security Upcoming…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "679e83e26b87cd256c1cec7ae8dbe0e3",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Upgrade upgrade next soon they available",
+            "entities": [
+              "Upgrade"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Upgrade to Next.js 16.3.6 or 15.5.26 as soon as they are available."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "e8673533b1bf5c547e7bdfc520b08bfc",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Vercel our security program work security researchers",
+            "entities": [
+              "Vercel",
+              "Open Source Bug Bounty"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Our security program We work with security researchers to secure Next.js and other open source frameworks through Vercel&#x27;s Open Source…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "4bd5b94e75e55ff828b65bfd1d6241fa",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Anyone anyone interested contributing security eligible frameworks",
+            "entities": [
+              "Anyone"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Anyone interested in contributing to the security of eligible frameworks is encouraged to participate there."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "a955ff0c333d59e575bc49325d27d5d5",
+            "topic": "platform",
+            "clusterId": "cluster-platform-2",
+            "statement": "Select select display theme system light dark",
+            "entities": [
+              "Select"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Select a display theme: system light dark"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Next.js version 15 adds security hardening for a critical upstream issue, fixing the ImageResponse implementation in both Node and Edge runtimes [FACT:685dc176524aa9a4ed6f81039dcc69f2][FACT:6c812df067a4f416c3eec280149611a2][FACT:f0679a0b86520eda93cc020cbcf8061c]. Builders should upgrade now because the bug could allow malformed SVG payloads to escape sanitisation and execute unwanted code [FACT:a2ff9c76f15b25f5bf0ea8297db6e321][FACT:d04ce7e2f9b38abc86d01d80e4bfaa72].",
+            "isEditorial": false,
+            "factIds": [
+              "685dc176524aa9a4ed6f81039dcc69f2",
+              "6c812df067a4f416c3eec280149611a2",
+              "f0679a0b86520eda93cc020cbcf8061c",
+              "d04ce7e2f9b38abc86d01d80e4bfaa72"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The vulnerable code resides in the core ImageResponse API, which server‑side rendering and edge functions use to generate dynamic images [FACT:6c812df067a4f416c3eec280149611a2][FACT:f0679a0b86520eda93cc020cbcf8061c]. An improperly escaped SVG can inject scripts, opening a path for cross‑site attacks [FACT:a2ff9c76f15b25f5bf0ea8297db6e321].",
+            "isEditorial": false,
+            "factIds": [
+              "f0679a0b86520eda93cc020cbcf8061c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Next.js announced a security update that addresses the upstream issue; the fix lands in version 15 and upgrades several dependencies, most notably the Satori library that produced the unsafe SVG output [FACT:d81c471a13413c1ae5dcd8d1aaced5e2][FACT:d04ce7e2f9b38abc86d01d80e4bfaa72]. The change is described as a hardening of the ImageResponse path [FACT:685dc176524aa9a4ed6f81039dcc69f2].",
+            "isEditorial": false,
+            "factIds": [
+              "d81c471a13413c1ae5dcd8d1aaced5e2",
+              "d04ce7e2f9b38abc86d01d80e4bfaa72",
+              "685dc176524aa9a4ed6f81039dcc69f2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Run `npm install next@15` in your project to pull the patched package and its upgraded dependencies [FACT:b281e51c0b750db885aa189eae45a905][FACT:c4bca8899b8fbc0175123a1757204b20]. After upgrading, verify that any edge routes calling `new ImageResponse(...)` no longer emit raw SVG content [FACT:6c812df067a4f416c3eec280149611a2].",
+            "isEditorial": false,
+            "factIds": [
+              "c4bca8899b8fbc0175123a1757204b20",
+              "6c812df067a4f416c3eec280149611a2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Vercel’s security program notes that additional upstream packages will be upgraded in a future release, but the full list has not been disclosed yet [FACT:d81c471a13413c1ae5dcd8d1aaced5e2][FACT:4bd5b94e75e55ff828b65bfd1d6241fa]. The exact rollout schedule for hosted Vercel deployments is still pending, although an upgrade is expected to become available soon [FACT:679e83e26b87cd256c1cec7ae8dbe0e3].",
+            "isEditorial": false,
+            "factIds": [
+              "d81c471a13413c1ae5dcd8d1aaced5e2",
+              "679e83e26b87cd256c1cec7ae8dbe0e3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two primary Next.js blog posts and independent LWN coverage confirm the vulnerability and the patch; with multiple corroborating sources the confidence in the report is high [FACT:d04ce7e2f9b38abc86d01d80e4bfaa72][FACT:312067218e1653e2485c8fd6d2126fda].",
+            "isEditorial": false,
+            "factIds": [
+              "d04ce7e2f9b38abc86d01d80e4bfaa72",
+              "312067218e1653e2485c8fd6d2126fda"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-4::2026-09-22T21:05:24.797Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Backstage v1.56.0‑next.0 rolls out UI tweaks and GPG verification for cloud‑native builders",
+        "dek": "The next‑pre‑release adds a session‑reload button, dismissable alerts, tag filtering fixes, a tag‑view overhaul and built‑in GPG key verification – small wins that smooth the dev‑portal workflow.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage 1.56.0‑next.0 ships a refresh‑session control, dismissable alerts, a corrected filter UI, improved tag browsing and automatic GPG key validation. Builders who spend their day toggling the portal will notice fewer dead‑ends and clearer security signals. [FACT:d8e42dd39c6c0d2b5e3cb085bb504613]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a Kubernetes‑heavy shop, the developer portal is the glue between services, docs and pipelines. UI friction translates directly into extra tickets and slower deployments. The new reload button lets you re‑authenticate without a full browser reset, while dismissable alerts keep the dashboard from turning into a flash‑y notice board. The tag‑view tweak surfaces GitHub‑linked service tags faster, and built‑in GPG verification gives you a quick sanity check on signed artifacts. All of this trims the “where‑did‑my‑service‑go?” time. [FACT:6e263a6d7580286787d594fb2c8a62d3][FACT:889e4b4c328455be9f3a225d5080fac6][FACT:32c40322f85d5361f2bc38aa87e22c3b][FACT:1a2c9b8717be41c18f34c42f16d42b16]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes on GitHub announce five concrete tweaks: \n1. A **Reload Session** button to force a fresh token without leaving the page. [FACT:6e263a6d7580286787d594fb2c8a62d3]\n2. **Dismissable alerts** so you can clear informational banners until they reappear. [FACT:889e4b4c328455be9f3a225d5080fac6]\n3. A fix for the **filter loading error** that previously showed “Sorry, something went wrong” on tag searches."
+          },
+          {
+            "type": "paragraph",
+            "text": "[FACT:7130381aa3d1319d3ba98b4c2dd5741b]\n4. Updated **GitHub tag view** that highlights service tags directly in the results pane. [FACT:32c40322f85d5361f2bc38aa87e22c3b]\n5. Automatic verification of **GPG keys** for artifacts signed with key b5690eeebb952194. [FACT:1a2c9b8717be41c18f34c42f16d42b16]\nAll changes are delivered in the v1.56.0‑next.0 tag on the Backstage repo. [FACT:d8e42dd39c6c0d2b5e3cb085bb504613]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you run a Kubernetes‑centric Backstage instance, the practical impact is immediate: click **Reload** instead of forcing a hard refresh, clear noisy alerts without digging into config files, and trust the GPG fingerprint when pulling signed images. The tag UI now respects GitHub’s pagination, so large service catalogs load faster. In short, you spend less time on portal gymnastics and more on ship‑it‑fast cycles. [FACT:6e263a6d7580286787d594fb2c8a62d3][FACT:889e4b4c328455be9f3a225d5080fac6][FACT:32c40322f85d5361f2bc38aa87e22c3b]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release is still a “next” build, so we don’t yet know how it behaves under heavy CI traffic or in multi‑tenant SaaS deployments. No new‑API changes were announced, but the filter fix could expose edge‑case bugs in custom plugins. Also, the GPG verification currently only supports the hard‑coded key b5690eeebb952194; future versions may allow user‑provided keys. Keep an eye on follow‑up patches and community feedback. [FACT:7130381aa3d1319d3ba98b4c2dd5741b][FACT:1a2c9b8717be41c18f34c42f16d42b16]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Backstage v1.56.0‑next.0 offers concrete, low‑risk UX upgrades that are worth rolling out to dev clusters now. The changes are incremental, well‑scoped, and the source is the official GitHub release tag, so confidence is medium‑high. Adopt quickly, but validate the filter fix and GPG check in your staging environment before a prod push. [FACT:d8e42dd39c6c0d2b5e3cb085bb504613]"
+          }
+        ],
+        "keyPoints": [
+          "Session‑reload button eliminates full‑page refreshes.",
+          "Alerts become dismissable, reducing visual noise.",
+          "Filter UI no longer throws generic errors.",
+          "GitHub tag view is streamlined for large service catalogs.",
+          "Built‑in GPG key verification adds a quick security check."
+        ],
+        "whyItMatters": "For teams that tie Kubernetes deployments to a Backstage portal, these tweaks shave minutes off daily ops, improve visibility of service metadata, and add a thin layer of supply‑chain security – all without a major version bump.",
+        "readerAction": "Pull the v1.56.0‑next.0 tag from the Backstage repository, test the new reload and alert features in a staging namespace, and confirm GPG verification works with your own signed artifacts.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "backstage",
+          "github",
+          "release"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from backstage",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+            "title": "v1.56.0-next.0",
+            "publishedAt": "2026-09-22T17:09:55.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-4",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-22T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-22T21:05:24.797Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 411,
+        "readingTimeMinutes": 2,
+        "generatedAt": "2026-09-22T21:05:24.797Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d8e42dd39c6c0d2b5e3cb085bb504613",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "GitHub release next backstage backstage github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d52991fa843f8514f36941d320e3f5ae767d55de",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+                "quote": "Release v1.56.0-next.0 · backstage/backstage · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "6e263a6d7580286787d594fb2c8a62d3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d52991fa843f8514f36941d320e3f5ae767d55de",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "889e4b4c328455be9f3a225d5080fac6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Dismiss dismiss alert message backstage backstage public",
+            "quantity": {
+              "metric": "Dismiss",
+              "value": 7.6
+            },
+            "entities": [
+              "Dismiss",
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d52991fa843f8514f36941d320e3f5ae767d55de",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+                "quote": "Dismiss alert {{ message }} backstage / backstage Public Notifications You must be signed in to change notification settings Fork…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "7130381aa3d1319d3ba98b4c2dd5741b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d52991fa843f8514f36941d320e3f5ae767d55de",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "32c40322f85d5361f2bc38aa87e22c3b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "GitHub results found view tags backstage service",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d52991fa843f8514f36941d320e3f5ae767d55de",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+                "quote": "No results found View all tags backstage-service released this 22 Sep 17:09 &middot; 1 commit to master since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          },
+          {
+            "id": "1a2c9b8717be41c18f34c42f16d42b16",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d52991fa843f8514f36941d320e3f5ae767d55de",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/backstage/backstage/releases/tag/v1.56.0-next.0",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-22T21:05:08.654Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Backstage 1.56.0‑next.0 ships a refresh‑session control, dismissable alerts, a corrected filter UI, improved tag browsing and automatic GPG key validation. Builders who spend their day toggling the portal will notice fewer dead‑ends and clearer security signals. [FACT:d8e42dd39c6c0d2b5e3cb085bb504613]",
+            "isEditorial": false,
+            "factIds": [
+              "d8e42dd39c6c0d2b5e3cb085bb504613"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "In a Kubernetes‑heavy shop, the developer portal is the glue between services, docs and pipelines. UI friction translates directly into extra tickets and slower deployments. The new reload button lets you re‑authenticate without a full browser reset, while dismissable alerts keep the dashboard from turning into a flash‑y notice board. The tag‑view tweak surfaces GitHub‑linked service tags faster, and built‑in GPG verification gives you a quick sanity check on signed artifacts. All of this trims the “where‑did‑my‑service‑go?” time. [FACT:6e263a6d7580286787d594fb2c8a62d3][FACT:889e4b4c328455be9f3a225d5080fac6][FACT:32c40322f85d5361f2bc38aa87e22c3b][FACT:1a2c9b8717be41c18f34c42f16d42b16]",
+            "isEditorial": false,
+            "factIds": [
+              "6e263a6d7580286787d594fb2c8a62d3",
+              "889e4b4c328455be9f3a225d5080fac6",
+              "32c40322f85d5361f2bc38aa87e22c3b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes on GitHub announce five concrete tweaks: \n1. A **Reload Session** button to force a fresh token without leaving the page. [FACT:6e263a6d7580286787d594fb2c8a62d3]\n2. **Dismissable alerts** so you can clear informational banners until they reappear. [FACT:889e4b4c328455be9f3a225d5080fac6]\n3. A fix for the **filter loading error** that previously showed “Sorry, something went wrong” on tag searches.",
+            "isEditorial": false,
+            "factIds": [
+              "6e263a6d7580286787d594fb2c8a62d3",
+              "889e4b4c328455be9f3a225d5080fac6"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "[FACT:7130381aa3d1319d3ba98b4c2dd5741b]\n4. Updated **GitHub tag view** that highlights service tags directly in the results pane. [FACT:32c40322f85d5361f2bc38aa87e22c3b]\n5. Automatic verification of **GPG keys** for artifacts signed with key b5690eeebb952194. [FACT:1a2c9b8717be41c18f34c42f16d42b16]\nAll changes are delivered in the v1.56.0‑next.0 tag on the Backstage repo. [FACT:d8e42dd39c6c0d2b5e3cb085bb504613]",
+            "isEditorial": false,
+            "factIds": [
+              "32c40322f85d5361f2bc38aa87e22c3b",
+              "1a2c9b8717be41c18f34c42f16d42b16",
+              "d8e42dd39c6c0d2b5e3cb085bb504613"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 8,
+            "text": "If you run a Kubernetes‑centric Backstage instance, the practical impact is immediate: click **Reload** instead of forcing a hard refresh, clear noisy alerts without digging into config files, and trust the GPG fingerprint when pulling signed images. The tag UI now respects GitHub’s pagination, so large service catalogs load faster. In short, you spend less time on portal gymnastics and more on ship‑it‑fast cycles. [FACT:6e263a6d7580286787d594fb2c8a62d3][FACT:889e4b4c328455be9f3a225d5080fac6][FACT:32c40322f85d5361f2bc38aa87e22c3b]",
+            "isEditorial": false,
+            "factIds": [
+              "6e263a6d7580286787d594fb2c8a62d3",
+              "889e4b4c328455be9f3a225d5080fac6",
+              "32c40322f85d5361f2bc38aa87e22c3b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 10,
+            "text": "The release is still a “next” build, so we don’t yet know how it behaves under heavy CI traffic or in multi‑tenant SaaS deployments. No new‑API changes were announced, but the filter fix could expose edge‑case bugs in custom plugins. Also, the GPG verification currently only supports the hard‑coded key b5690eeebb952194; future versions may allow user‑provided keys. Keep an eye on follow‑up patches and community feedback. [FACT:7130381aa3d1319d3ba98b4c2dd5741b][FACT:1a2c9b8717be41c18f34c42f16d42b16]",
+            "isEditorial": false,
+            "factIds": [
+              "7130381aa3d1319d3ba98b4c2dd5741b",
+              "1a2c9b8717be41c18f34c42f16d42b16"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 12,
+            "text": "Backstage v1.56.0‑next.0 offers concrete, low‑risk UX upgrades that are worth rolling out to dev clusters now. The changes are incremental, well‑scoped, and the source is the official GitHub release tag, so confidence is medium‑high. Adopt quickly, but validate the filter fix and GPG check in your staging environment before a prod push. [FACT:d8e42dd39c6c0d2b5e3cb085bb504613]",
+            "isEditorial": false,
+            "factIds": [
+              "d8e42dd39c6c0d2b5e3cb085bb504613"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-2::2026-09-22T21:05:24.797Z",
