@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-23T06:00:00.000Z",
-    "windowStart": "2026-09-23T06:00:00.000Z",
-    "windowEnd": "2026-09-23T12:00:00.000Z"
+    "id": "2026-09-23T12:00:00.000Z",
+    "windowStart": "2026-09-23T12:00:00.000Z",
+    "windowEnd": "2026-09-23T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-23T07:34:47.112Z",
-  "nextRefreshAt": "2026-09-23T12:00:00.000Z",
+  "publishedAt": "2026-09-23T13:30:00.905Z",
+  "nextRefreshAt": "2026-09-23T18:00:00.000Z",
   "runIds": {
-    "aggregation": "4487dd8a-38bb-4523-a3a9-16b18d2ffce5",
-    "ranking": "rank-5793218d",
-    "top10": "top10:2026-09-23T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-23T06:00:00.000Z-2026-09-23T07:35:05.840Z"
+    "aggregation": "7f9879fd-f4f0-4522-8a87-3c8ffd348032",
+    "ranking": "rank-9b075f40",
+    "top10": "top10:2026-09-23T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-23T12:00:00.000Z-2026-09-23T13:30:40.285Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-23T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-23T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-23T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-23T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-23T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-23T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 87,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1349,
+      "count": 1394,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1625,
+      "count": 1676,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 16,
+      "count": 20,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:70584: Moderate: gstreamer1-plugins-good security update"
+        "topic": "platform",
+        "headline": "Security updates for Wednesday"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "Check Point Patches Exploited Management Server Zero-Day"
+        "topic": "ai",
+        "headline": "Anthropic’s IPO Will Happen a Month Later Than Expected"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI&039;s GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
+        "topic": "security",
+        "headline": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "llm 0.36"
+        "topic": "security",
+        "headline": "F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war"
+        "topic": "security",
+        "headline": "RHSA-2026:70630: Moderate: java-1.8.0-ibm security update"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:70191: Important: runc security update"
+        "headline": "RHSA-2026:70562: Important: qt5-qtbase security update"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Next.js Security Update for a Critical Upstream Issue"
+        "topic": "ai",
+        "headline": "Bring more intelligence to everyday work with GPT-6 Sol and GPT-6 Luna on Amazon Bedrock"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Critical F5 BIG-IP Vulnerability Exploited as Zero-Day"
+        "topic": "ai",
+        "headline": "OpenAI extends cyber access to Ukraine for civilian defense"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server"
+        "topic": "ai",
+        "headline": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Ruby 3.4.11 Released"
+        "topic": "kubernetes",
+        "headline": "server/v3.7.2"
       }
     ],
     "articleCount": 0

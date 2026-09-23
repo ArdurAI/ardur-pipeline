@@ -145,7 +145,432 @@
     "19 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-0::2026-09-23T13:30:40.285Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Secure AI agents with HashiCorp Boundary",
+        "dek": "HashiCorp adds a Zero‑Trust layer for AI workloads in Kubernetes, letting you grant scoped, audited access without exposing raw network paths or secrets.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Boundary ships a built‑in agent that proxies every outbound call from an AI container, records each request in an audit log, and enforces zero‑trust policies before traffic leaves the pod. [FACT:af431124f229058945d0b8732eb6a349][FACT:3a16a5b666e641784c0849551687e013]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI pods often need DB, secret‑store, or internal‑API access. Boundary’s model stops you from handing those pods a raw network path or static secret, dramatically shrinking the blast radius if a model is compromised. [FACT:9664b300840ae4f685c4f998d48921ca][FACT:ad7faf1fa28aa435f5f8a6eda1c66ce5]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The September 23 HashiCorp blog describes a new workflow: when a pod requests infrastructure, the Boundary agent starts, opens a proxied session, and logs the activity for audit. [FACT:f75f62e36f16c0bb8070ddbb9ed3ab07][FACT:af431124f229058945d0b8732eb6a349][FACT:3a16a5b666e641784c0849551687e013]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "The agent runs on each node; platform engineers can create a role that lists only the API paths an AI workload needs, and the workload points its client library at the Boundary proxy endpoint—no secret‑key injection required. [FACT:f75f62e36f16c0bb8070ddbb9ed3ab07][FACT:f35c6fb94b6e312006cc4ce5020eaff4][FACT:9664b300840ae4f685c4f998d48921ca]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The blog shows the zero‑trust architecture diagram, but it does not publish latency or scaling figures, so you’ll need to benchmark your own workloads. [FACT:def6534332f0deaf78f9ff8f771247eb]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Only the HashiCorp blog currently covers this AI‑focused Boundary workflow, confirming the zero‑trust session model. The design is solid, but without performance data you should pilot in a staging environment first. [FACT:5155db1ed6531eb28c1f08a6ed6ee38f]"
+          }
+        ],
+        "keyPoints": [
+          "Boundary adds an agent‑driven, proxied session for AI workloads in Kubernetes",
+          "All outbound calls are audited and governed by fine‑grained roles",
+          "Deployment is a node‑level agent; no code changes beyond the proxy endpoint"
+        ],
+        "whyItMatters": "Kubernetes teams can now enforce zero‑trust networking for AI models without re‑architecting secret management, cutting the attack surface for high‑value workloads. [FACT:9664b300840ae4f685c4f998d48921ca][FACT:ad7faf1fa28aa435f5f8a6eda1c66ce5]",
+        "readerAction": "Spin up a test namespace, install the Boundary DaemonSet, create a role for your AI service, point the client at the proxy address, and verify that calls appear in the audit log.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "hashicorp",
+          "boundary",
+          "ai-agents"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "HashiCorp Blog",
+            "sourceDomain": "hashicorp.com",
+            "tier": "primary",
+            "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+            "title": "Secure AI agents with HashiCorp Boundary",
+            "publishedAt": "2026-09-23T13:30:01.042Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-23T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-23T13:30:40.285Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 203,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-23T13:30:40.285Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5155db1ed6531eb28c1f08a6ed6ee38f",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Boundary blog explores how leverage hashicorp boundary",
+            "entities": [
+              "Boundary"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "This blog explores how to leverage HashiCorp Boundary’s zero trust access model to provide AI agents with secure, governed access…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "f35c6fb94b6e312006cc4ce5020eaff4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Investigate solution overview agent enables platform engineer",
+            "entities": [
+              "Investigate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "The solution overview The AI agent enables a platform engineer to describe an operational goal in natural language: A sample…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "f75f62e36f16c0bb8070ddbb9ed3ab07",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Boundary when infrastructure access required agent initiates",
+            "entities": [
+              "Boundary"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "When infrastructure access is required, the AI agent initiates a login to Boundary, and the platform engineer completes the authentication…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "af431124f229058945d0b8732eb6a349",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Boundary agent then opens boundary proxied session",
+            "entities": [
+              "Boundary",
+              "Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "The AI agent then opens a Boundary-proxied session to the authorized Linux target to perform the investigation."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "3a16a5b666e641784c0849551687e013",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Session session activity recorded audit logs capture",
+            "entities": [
+              "Session"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "Session activity is recorded, and audit logs capture authentication events, access decisions, grants, policy changes, and administrative actions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "def6534332f0deaf78f9ff8f771247eb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Boundary zero trust layer shown architecture diagram",
+            "entities": [
+              "Boundary"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "The zero trust layer As shown in the architecture diagram, Boundary provides the secure access layer between the AI agent…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "9664b300840ae4f685c4f998d48921ca",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Rather rather than granting agent direct access",
+            "entities": [
+              "Rather",
+              "Boundary"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "Rather than granting the agent direct access to systems, Boundary evaluates the authenticated user&apos;s identity, permissions, and target access policies…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          },
+          {
+            "id": "ad7faf1fa28aa435f5f8a6eda1c66ce5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Secure secure access boundary model boundary enables",
+            "entities": [
+              "Secure",
+              "Boundary In",
+              "Boundary",
+              "Identity",
+              "Verify"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "d8013761780e650b7b730d182ef0901f321d2c93",
+                "sourceDomain": "hashicorp.com",
+                "url": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+                "quote": "Secure access with Boundary In this model, Boundary enables five essential controls: Identity-based authentication: Boundary delegates authentication to IBM Verify…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T13:30:01.042Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Boundary ships a built‑in agent that proxies every outbound call from an AI container, records each request in an audit log, and enforces zero‑trust policies before traffic leaves the pod. [FACT:af431124f229058945d0b8732eb6a349][FACT:3a16a5b666e641784c0849551687e013]",
+            "isEditorial": false,
+            "factIds": [
+              "af431124f229058945d0b8732eb6a349"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "AI pods often need DB, secret‑store, or internal‑API access. Boundary’s model stops you from handing those pods a raw network path or static secret, dramatically shrinking the blast radius if a model is compromised. [FACT:9664b300840ae4f685c4f998d48921ca][FACT:ad7faf1fa28aa435f5f8a6eda1c66ce5]",
+            "isEditorial": false,
+            "factIds": [
+              "9664b300840ae4f685c4f998d48921ca",
+              "ad7faf1fa28aa435f5f8a6eda1c66ce5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The September 23 HashiCorp blog describes a new workflow: when a pod requests infrastructure, the Boundary agent starts, opens a proxied session, and logs the activity for audit. [FACT:f75f62e36f16c0bb8070ddbb9ed3ab07][FACT:af431124f229058945d0b8732eb6a349][FACT:3a16a5b666e641784c0849551687e013]",
+            "isEditorial": false,
+            "factIds": [
+              "f75f62e36f16c0bb8070ddbb9ed3ab07",
+              "af431124f229058945d0b8732eb6a349",
+              "3a16a5b666e641784c0849551687e013"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "The agent runs on each node; platform engineers can create a role that lists only the API paths an AI workload needs, and the workload points its client library at the Boundary proxy endpoint—no secret‑key injection required. [FACT:f75f62e36f16c0bb8070ddbb9ed3ab07][FACT:f35c6fb94b6e312006cc4ce5020eaff4][FACT:9664b300840ae4f685c4f998d48921ca]",
+            "isEditorial": false,
+            "factIds": [
+              "f75f62e36f16c0bb8070ddbb9ed3ab07",
+              "f35c6fb94b6e312006cc4ce5020eaff4",
+              "9664b300840ae4f685c4f998d48921ca"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The blog shows the zero‑trust architecture diagram, but it does not publish latency or scaling figures, so you’ll need to benchmark your own workloads. [FACT:def6534332f0deaf78f9ff8f771247eb]",
+            "isEditorial": false,
+            "factIds": [
+              "def6534332f0deaf78f9ff8f771247eb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Only the HashiCorp blog currently covers this AI‑focused Boundary workflow, confirming the zero‑trust session model. The design is solid, but without performance data you should pilot in a staging environment first. [FACT:5155db1ed6531eb28c1f08a6ed6ee38f]",
+            "isEditorial": false,
+            "factIds": [
+              "5155db1ed6531eb28c1f08a6ed6ee38f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-2::2026-09-23T13:30:40.285Z",
