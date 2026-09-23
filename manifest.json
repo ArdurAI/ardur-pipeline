@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-22T18:00:00.000Z",
-    "windowStart": "2026-09-22T18:00:00.000Z",
-    "windowEnd": "2026-09-23T00:00:00.000Z"
+    "id": "2026-09-23T00:00:00.000Z",
+    "windowStart": "2026-09-23T00:00:00.000Z",
+    "windowEnd": "2026-09-23T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-22T21:05:08.469Z",
-  "nextRefreshAt": "2026-09-23T00:00:00.000Z",
+  "publishedAt": "2026-09-23T00:10:51.456Z",
+  "nextRefreshAt": "2026-09-23T06:00:00.000Z",
   "runIds": {
-    "aggregation": "e390a41f-6682-469e-8b21-7d65ac7a352b",
-    "ranking": "rank-c960860f",
-    "top10": "top10:2026-09-22T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-22T18:00:00.000Z-2026-09-22T21:05:24.797Z"
+    "aggregation": "0a770a11-5c02-4c26-8130-05196dabba9e",
+    "ranking": "rank-af055d5b",
+    "top10": "top10:2026-09-23T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-23T00:00:00.000Z-2026-09-23T00:11:13.159Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-22T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-22T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-22T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-23T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-23T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-23T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1550,
+      "count": 1549,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1757,
+      "count": 1777,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] fetch budget exhausted (30) — 14 of 19 URLs fetched for this cluster",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 23,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -104,32 +104,32 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Claude Opus 5.5"
+        "headline": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war"
       },
       {
         "rank": 2,
+        "topic": "ai",
+        "headline": "llm 0.36"
+      },
+      {
+        "rank": 3,
         "topic": "platform",
         "headline": "Next.js Security Update for a Critical Upstream Issue"
       },
       {
-        "rank": 3,
+        "rank": 4,
         "topic": "security",
         "headline": "RHSA-2026:70403: Important: kernel-rt security, bug fix, and enhancement update"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI&039;s GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
-      },
-      {
         "rank": 5,
-        "topic": "security",
-        "headline": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks"
+        "topic": "kubernetes",
+        "headline": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server"
+        "topic": "security",
+        "headline": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks"
       },
       {
         "rank": 7,
@@ -138,18 +138,18 @@
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "llm-typesafe 0.1a0"
-      },
-      {
-        "rank": 9,
         "topic": "security",
         "headline": "RHSA-2026:70264: Moderate: gstreamer1-plugins-good security update"
       },
       {
-        "rank": 10,
+        "rank": 9,
         "topic": "ai",
-        "headline": "Better prompt caching for GPT-6"
+        "headline": "OpenAI&039;s GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
+      },
+      {
+        "rank": 10,
+        "topic": "kubernetes",
+        "headline": "Terraform provider for Google Cloud 8.0 now generally available"
       }
     ],
     "articleCount": 0
