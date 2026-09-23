@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-23T00:00:00.000Z",
-    "windowStart": "2026-09-23T00:00:00.000Z",
-    "windowEnd": "2026-09-23T06:00:00.000Z"
+    "id": "2026-09-23T06:00:00.000Z",
+    "windowStart": "2026-09-23T06:00:00.000Z",
+    "windowEnd": "2026-09-23T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-23T00:10:51.456Z",
-  "nextRefreshAt": "2026-09-23T06:00:00.000Z",
+  "publishedAt": "2026-09-23T07:34:47.112Z",
+  "nextRefreshAt": "2026-09-23T12:00:00.000Z",
   "runIds": {
-    "aggregation": "0a770a11-5c02-4c26-8130-05196dabba9e",
-    "ranking": "rank-af055d5b",
-    "top10": "top10:2026-09-23T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-23T00:00:00.000Z-2026-09-23T00:11:13.159Z"
+    "aggregation": "4487dd8a-38bb-4523-a3a9-16b18d2ffce5",
+    "ranking": "rank-5793218d",
+    "top10": "top10:2026-09-23T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-23T06:00:00.000Z-2026-09-23T07:35:05.840Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-23T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-23T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-23T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-23T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-23T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-23T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1549,
+      "count": 1349,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[kubernetes] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1777,
+      "count": 1625,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 16,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 23,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war"
+        "topic": "security",
+        "headline": "RHSA-2026:70584: Moderate: gstreamer1-plugins-good security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "llm 0.36"
+        "topic": "security",
+        "headline": "Check Point Patches Exploited Management Server Zero-Day"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Next.js Security Update for a Critical Upstream Issue"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:70403: Important: kernel-rt security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:70264: Moderate: gstreamer1-plugins-good security update"
-      },
-      {
-        "rank": 9,
         "topic": "ai",
         "headline": "OpenAI&039;s GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
       },
       {
-        "rank": 10,
+        "rank": 4,
+        "topic": "ai",
+        "headline": "llm 0.36"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:70191: Important: runc security update"
+      },
+      {
+        "rank": 7,
+        "topic": "platform",
+        "headline": "Next.js Security Update for a Critical Upstream Issue"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "Critical F5 BIG-IP Vulnerability Exploited as Zero-Day"
+      },
+      {
+        "rank": 9,
         "topic": "kubernetes",
-        "headline": "Terraform provider for Google Cloud 8.0 now generally available"
+        "headline": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server"
+      },
+      {
+        "rank": 10,
+        "topic": "platform",
+        "headline": "Ruby 3.4.11 Released"
       }
     ],
     "articleCount": 0
