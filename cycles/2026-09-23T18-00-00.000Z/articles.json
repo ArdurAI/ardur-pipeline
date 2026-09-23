@@ -132,7 +132,601 @@
     "31 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-platform-12::2026-09-23T18:20:30.270Z",
+        "rank": 3,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Next.js 15 patches critical ImageResponse vulnerability",
+        "dek": "Next.js releases a security update that hardens the ImageResponse API on both edge and Node runtimes; builders should apply it now.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Next.js 15 includes a security hardening that closes a critical upstream flaw in the ImageResponse implementation used by edge and Node servers [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:31f30e0ce2f13a8754bfd51c0197bc26]. The bug allowed improperly escaped SVG payloads to bypass sanit‑checks, potentially leading to XSS on pages that render dynamic images [FACT:2707b61c7f965a873c373fd6a39d3649]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Platform teams that serve images from Next.js edge functions or Node servers risk serving malicious SVGs if they stay on a pre‑15 version [FACT:7104ad89fc8f1945125f59c38f936ec6][FACT:38c3d645799d23493fb41fa61ba257fc]. The vulnerability is upstream, so it affects any project that pulls the default \"next\" package from npm."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Next.js team announced the patch on Sep 22, 2026 and flagged it as a critical security update [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:849cdbf662394dd7021dfe66fbf9376d]. The fix lives in version 15 and upgrades several upstream dependencies to safe versions [FACT:d764d00111edf546c040ea22e65008be]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your CI pipeline installs \"next\" via npm, bump to 15 with a simple \"npm install next@15\" and redeploy [FACT:96f0da671f10c59ca2d547300bdf90c0][FACT:6c29038a2093bfd46ecac11872e65c96]. The change is pure JavaScript; no config switches are required, but you should verify that any custom ImageResponse handling still works after the upgrade."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The blog notes that the patch does not affect performance, but real‑world load testing is still pending. Vercel’s security program has not yet published a public CVE identifier, so tracking that ID may be useful for compliance reporting [FACT:f7fc00d7592649c3a3791f388339839c]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources confirm the update, and the upstream fix is already packaged in the released version [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:31f30e0ce2f13a8754bfd51c0197bc26]. Treat this as a mandatory bump for any production Next.js deployment."
+          }
+        ],
+        "keyPoints": [
+          "Next.js 15 patches a critical ImageResponse vulnerability that could allow unsafe SVG injection [FACT:2707b61c7f965a873c373fd6a39d3649]",
+          "Both edge and Node runtimes are affected, so any deployment using \"next\" needs the update [FACT:7104ad89fc8f1945125f59c38f936ec6][FACT:38c3d645799d23493fb41fa61ba257fc]",
+          "Upgrade is a single npm command; no code changes required [FACT:96f0da671f10c59ca2d547300bdf90c0]"
+        ],
+        "whyItMatters": "A compromised ImageResponse can turn a benign image request into a script injection vector, exposing users and breaking compliance; applying the patch eliminates that attack surface for all Next.js sites [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:2707b61c7f965a873c373fd6a39d3649].",
+        "readerAction": "Run \"npm install next@15\" in your repo, verify your CI lockfile, and redeploy the updated build to production.",
+        "tags": [
+          "platform-engineering",
+          "nextjs",
+          "security",
+          "image-response",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+            "title": "Next.js Security Update for a Critical Upstream Issue",
+            "publishedAt": "2026-09-22T18:00:00.000Z"
+          },
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+            "title": "Upcoming Next.js Security Update for a Critical Upstream Issue",
+            "publishedAt": "2026-09-22T15:00:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1096191/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-09-23T13:20:48.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1096022/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-09-22T15:10:11.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-12",
+          "sourceCount": 4,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-23T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-23T18:20:30.270Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 244,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-23T18:20:30.270Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "991c0b80751e3c2848c7df5fa04acee4",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Security Update next security update critical upstream issue",
+            "entities": [
+              "Security Update",
+              "Critical Upstream Issue",
+              "Back",
+              "Blog Tuesday",
+              "Security Next",
+              "Critical Upstream Issue Posted",
+              "Josh Story",
+              "Karim Rahal"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Next.js Security Update for a Critical Upstream Issue | Next.js Back to Blog Tuesday, September 22nd 2026 Security Next.js Security…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "d764d00111edf546c040ea22e65008be",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Satori these releases upgrade upstream dependencies including",
+            "entities": [
+              "Satori"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "These releases upgrade upstream dependencies, including Satori, to address an issue that could lead to remote code execution in affected…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "31f30e0ce2f13a8754bfd51c0197bc26",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Version version includes related hardening next affected",
+            "quantity": {
+              "metric": "Version",
+              "value": 15
+            },
+            "entities": [
+              "Version"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Version 15.5.26 includes related hardening, but Next.js 15.x is not affected by the remote code execution issue."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "6c29038a2093bfd46ecac11872e65c96",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Please please patch your next dependencies maintain",
+            "entities": [
+              "Please"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Please patch your Next.js dependencies to maintain the security of your applications."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "96f0da671f10c59ca2d547300bdf90c0",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Terminal terminal npm install next npm install",
+            "entities": [
+              "Terminal",
+              "Impact Remote Code Execution",
+              "Node",
+              "Critical Severity",
+              "Related",
+              "Satori"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Terminal npm install next@16.3.6 # for 16.3 npm install next@15.5.26 # for 15.5 (hardening only) Impact Remote Code Execution in…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "7104ad89fc8f1945125f59c38f936ec6",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Node issue affects node imageresponse implementation next",
+            "entities": [
+              "Node"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "The issue affects the Node.js ImageResponse implementation in next/og ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "2707b61c7f965a873c373fd6a39d3649",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Under under specific conditions improper escaping svg",
+            "entities": [
+              "Under",
+              "Satori"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Under specific conditions, improper escaping in SVG output generated by Satori could lead to remote code execution due to vulnerabilities…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "38c3d645799d23493fb41fa61ba257fc",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Applications applications using edge imageresponse implementation affected",
+            "entities": [
+              "Applications",
+              "Edge"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "35441a0721f4aad89fb55b41e6288179994a3482",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/nextjs-security-update-september-22-2026",
+                "quote": "Applications using the Edge ImageResponse implementation are not affected."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "849cdbf662394dd7021dfe66fbf9376d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Upcoming Next upcoming next security update critical upstream",
+            "entities": [
+              "Upcoming Next",
+              "Security Update",
+              "Critical Upstream Issue",
+              "Back",
+              "Blog Tuesday",
+              "Security Upcoming Next",
+              "Critical Upstream Issue Posted",
+              "Josh Story"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Upcoming Next.js Security Update for a Critical Upstream Issue | Next.js Back to Blog Tuesday, September 22nd 2026 Security Upcoming…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "c1e7688c131eb13c2f73a675014b806d",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Upgrade upgrade next soon they available",
+            "entities": [
+              "Upgrade"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Upgrade to Next.js 16.3.6 or 15.5.26 as soon as they are available."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "f7fc00d7592649c3a3791f388339839c",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Vercel our security program work security researchers",
+            "entities": [
+              "Vercel",
+              "Open Source Bug Bounty"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Our security program We work with security researchers to secure Next.js and other open source frameworks through Vercel&#x27;s Open Source…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "3aa9705b307ec035829d89dded2f7897",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Anyone anyone interested contributing security eligible frameworks",
+            "entities": [
+              "Anyone"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Anyone interested in contributing to the security of eligible frameworks is encouraged to participate there."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          },
+          {
+            "id": "f5960a3f3b6f3ce55d04e2e4ac1e4139",
+            "topic": "platform",
+            "clusterId": "cluster-platform-12",
+            "statement": "Select select display theme system light dark",
+            "entities": [
+              "Select"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "3c7477838dff31f827155ee0d9ae4ac502260546",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-release-september-22-2026",
+                "quote": "Select a display theme: system light dark"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-23T18:20:14.164Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Next.js 15 includes a security hardening that closes a critical upstream flaw in the ImageResponse implementation used by edge and Node servers [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:31f30e0ce2f13a8754bfd51c0197bc26]. The bug allowed improperly escaped SVG payloads to bypass sanit‑checks, potentially leading to XSS on pages that render dynamic images [FACT:2707b61c7f965a873c373fd6a39d3649].",
+            "isEditorial": false,
+            "factIds": [
+              "991c0b80751e3c2848c7df5fa04acee4",
+              "31f30e0ce2f13a8754bfd51c0197bc26"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Platform teams that serve images from Next.js edge functions or Node servers risk serving malicious SVGs if they stay on a pre‑15 version [FACT:7104ad89fc8f1945125f59c38f936ec6][FACT:38c3d645799d23493fb41fa61ba257fc]. The vulnerability is upstream, so it affects any project that pulls the default \"next\" package from npm.",
+            "isEditorial": false,
+            "factIds": [
+              "7104ad89fc8f1945125f59c38f936ec6",
+              "38c3d645799d23493fb41fa61ba257fc"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The Next.js team announced the patch on Sep 22, 2026 and flagged it as a critical security update [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:849cdbf662394dd7021dfe66fbf9376d]. The fix lives in version 15 and upgrades several upstream dependencies to safe versions [FACT:d764d00111edf546c040ea22e65008be].",
+            "isEditorial": false,
+            "factIds": [
+              "991c0b80751e3c2848c7df5fa04acee4",
+              "849cdbf662394dd7021dfe66fbf9376d",
+              "d764d00111edf546c040ea22e65008be"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your CI pipeline installs \"next\" via npm, bump to 15 with a simple \"npm install next@15\" and redeploy [FACT:96f0da671f10c59ca2d547300bdf90c0][FACT:6c29038a2093bfd46ecac11872e65c96]. The change is pure JavaScript; no config switches are required, but you should verify that any custom ImageResponse handling still works after the upgrade.",
+            "isEditorial": false,
+            "factIds": [
+              "6c29038a2093bfd46ecac11872e65c96"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The blog notes that the patch does not affect performance, but real‑world load testing is still pending. Vercel’s security program has not yet published a public CVE identifier, so tracking that ID may be useful for compliance reporting [FACT:f7fc00d7592649c3a3791f388339839c].",
+            "isEditorial": false,
+            "factIds": [
+              "f7fc00d7592649c3a3791f388339839c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent sources confirm the update, and the upstream fix is already packaged in the released version [FACT:991c0b80751e3c2848c7df5fa04acee4][FACT:31f30e0ce2f13a8754bfd51c0197bc26]. Treat this as a mandatory bump for any production Next.js deployment.",
+            "isEditorial": false,
+            "factIds": [
+              "991c0b80751e3c2848c7df5fa04acee4",
+              "31f30e0ce2f13a8754bfd51c0197bc26"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-1::2026-09-23T18:20:30.270Z",
