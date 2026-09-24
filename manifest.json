@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-24T12:00:00.000Z",
-    "windowStart": "2026-09-24T12:00:00.000Z",
-    "windowEnd": "2026-09-24T18:00:00.000Z"
+    "id": "2026-09-24T18:00:00.000Z",
+    "windowStart": "2026-09-24T18:00:00.000Z",
+    "windowEnd": "2026-09-25T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-24T14:46:02.176Z",
-  "nextRefreshAt": "2026-09-24T18:00:00.000Z",
+  "publishedAt": "2026-09-24T19:54:38.109Z",
+  "nextRefreshAt": "2026-09-25T00:00:00.000Z",
   "runIds": {
-    "aggregation": "43f119e8-8e01-47ff-8346-79ab3d7b05bc",
-    "ranking": "rank-a2b0b3a0",
-    "top10": "top10:2026-09-24T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-24T12:00:00.000Z-2026-09-24T14:46:18.432Z"
+    "aggregation": "9a6c2fe2-2bcf-4a3d-91e0-9810fa6220cd",
+    "ranking": "rank-9ab89f2f",
+    "top10": "top10:2026-09-24T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-24T18:00:00.000Z-2026-09-24T19:54:54.446Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-24T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-24T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-24T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-24T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-24T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-24T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 90,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1432,
+      "count": 1565,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE9pTm1fMjdaS1JxMVFYTGo5Q2gxTVdWVmNRZWFsNmNLU2RnMWl6LTVlXzAwWWl1RnRjVEdxSG5NSHFzSkZodk8zNjk0ZmYwZjFkQXVhOGUyajF2LW5WOWx6MUZRTQ?oc=5"
+        "[ai/cluster-ai-8] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE9pTm1fMjdaS1JxMVFYTGo5Q2gxTVdWVmNRZWFsNmNLU2RnMWl6LTVlXzAwWWl1RnRjVEdxSG5NSHFzSkZodk8zNjk0ZmYwZjFkQXVhOGUyajF2LW5WOWx6MUZRTQ?oc=5"
       ]
     },
     {
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[kubernetes] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1663,
+      "count": 1820,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 5,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Un-Mused: How a Single Debug Setting Bypassed macOS Security in Meta’s AI Client"
+        "topic": "security",
+        "headline": "RHSA-2026:71659: Important: python-cryptography security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:71601: Important: kernel security update"
+        "headline": "RHSA-2026:71487: Critical: unbound security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:67837: Moderate: OpenShift Container Platform 4.14.74 bug fix and security update"
+        "topic": "platform",
+        "headline": "AI-powered fuzzing with the GitHub Security Lab Taskflow Agent"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:71460: Critical: unbound security update"
+        "headline": "RHSA-2026:71403: Moderate: glib2 security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Gemini 3.8 TTS Playground"
+        "topic": "security",
+        "headline": "RHSA-2026:67836: Important: OpenShift Container Platform 4.14.74 packages and security update"
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Rogue OpenAI agent 'infiltrated' Australian government website in world first"
+      },
+      {
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "Docker and CNCF partner on an open spec for agent permissions"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "v1.21.0"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI's breach of Australian health department website prompts rebuke"
-      },
-      {
-        "rank": 8,
+        "rank": 9,
         "topic": "ai",
         "headline": "How an OpenAI ‘agent’ hacked Australia’s Medicare and what that means"
       },
       {
-        "rank": 9,
-        "topic": "security",
-        "headline": "SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted"
-      },
-      {
         "rank": 10,
         "topic": "ai",
-        "headline": "Verana Health Introduces New AI Agents to Expedite and Streamline R&D"
+        "headline": "Gemini 3.8 TTS Playground"
       }
     ],
     "articleCount": 0
