@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-24T06:00:00.000Z",
-    "windowStart": "2026-09-24T06:00:00.000Z",
-    "windowEnd": "2026-09-24T12:00:00.000Z"
+    "id": "2026-09-24T12:00:00.000Z",
+    "windowStart": "2026-09-24T12:00:00.000Z",
+    "windowEnd": "2026-09-24T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-24T09:15:04.172Z",
-  "nextRefreshAt": "2026-09-24T12:00:00.000Z",
+  "publishedAt": "2026-09-24T14:46:02.176Z",
+  "nextRefreshAt": "2026-09-24T18:00:00.000Z",
   "runIds": {
-    "aggregation": "eaffb958-04c6-44f2-87e3-cd49eb6078dc",
-    "ranking": "rank-e1b1858a",
-    "top10": "top10:2026-09-24T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-24T06:00:00.000Z-2026-09-24T09:15:25.482Z"
+    "aggregation": "43f119e8-8e01-47ff-8346-79ab3d7b05bc",
+    "ranking": "rank-a2b0b3a0",
+    "top10": "top10:2026-09-24T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-24T12:00:00.000Z-2026-09-24T14:46:18.432Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-24T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-24T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-24T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-24T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-24T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-24T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,14 +25,14 @@
       "category": "http-error",
       "count": 90,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1353,
+      "count": 1432,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1587,
+      "count": 1663,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,23 +103,23 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:71387: Important: freerdp security update"
+        "topic": "platform",
+        "headline": "Un-Mused: How a Single Debug Setting Bypassed macOS Security in Meta’s AI Client"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:71459: Critical: unbound security update"
+        "headline": "RHSA-2026:71601: Important: kernel security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:71404: Moderate: glib2 security update"
+        "headline": "RHSA-2026:67837: Moderate: OpenShift Container Platform 4.14.74 bug fix and security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI says agent hacked Australian government website without being told to do so"
+        "topic": "security",
+        "headline": "RHSA-2026:71460: Critical: unbound security update"
       },
       {
         "rank": 5,
@@ -128,28 +128,28 @@
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war"
+        "topic": "kubernetes",
+        "headline": "v1.21.0"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Critical WordPress Vulnerability Exploited Immediately After Disclosure"
+        "topic": "ai",
+        "headline": "OpenAI's breach of Australian health department website prompts rebuke"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Secure AI agents with HashiCorp Boundary"
+        "topic": "ai",
+        "headline": "How an OpenAI ‘agent’ hacked Australia’s Medicare and what that means"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Canvas UI Ships 35 HTML-in-Canvas Components That Run WebGL and WebGPU Effects Over Live DOM"
+        "topic": "security",
+        "headline": "SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Two years of OpenAI Academy"
+        "headline": "Verana Health Introduces New AI Agents to Expedite and Streamline R&D"
       }
     ],
     "articleCount": 0
