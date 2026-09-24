@@ -134,7 +134,434 @@
     "28 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-6::2026-09-24T04:00:51.684Z",
+        "rank": 2,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "KEDA v2.21.0 lands: bound token auth and scaled‑object crash fix",
+        "dek": "The latest KEDA patch adds explicit boundServiceAccountToken support, tightens Vault integration, and patches a crash that broke existing ScaledObjects and ScaledJobs.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "KEDA 2.21.0 adds a new boundServiceAccountToken field to trigger authentication, revises Vault token handling, and fixes a controller bug that could crash existing ScaledObjects/ScaledJobs – all without new the public API. Builders need to scan their scaling rules and Vault configs before upgrading. [FACT:09cd2491b21b363b1bb29b713252ed04] [FACT:805dba42cee8f49608cd2ab5d1cd0c55] [FACT:48609f82472c89cb08a37833e66c8e68] [FACT:0d2cad8edaab257996658a71c4dae8ea]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your workloads rely on KEDA for event‑driven scaling, the token change can alter how credentials are presented to external systems, and the crash fix protects pipelines that already have ScaledObjects defined. Ignoring the update can lead to silent authentication failures or pod restarts. [FACT:fbe5f005ad417912fc01c26b9ddb6cf8] [FACT:48609f82472c89cb08a37833e66c8e68]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes announce three concrete changes: (1) a boundServiceAccountToken field for ClusterTriggerAuthentication, (2) revised Vault secret fetching that expects the token to be bound, and (3) a fix for a bug that caused ScaledObjects/ScaledJobs containing certain triggers to fail at runtime. The release is labeled as a “happy” patch, meaning no major API breakage beyond these additions. [FACT:09cd2491b21b363b1bb29b713252ed04] [FACT:805dba42cee8f49608cd2ab5d1cd0c55] [FACT:48609f82472c89cb08a37833e66c8e68] [FACT:0d2cad8edaab257996658a71c4dae8ea]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Before you roll the update, do three things: (1) run the official KEDA upgrade guide and verify any temporal rules you have – the guide warns of syntax tweaks in this version, (2) capture the current service‑account token if you use it for scaling, because the new bound token will supersede it, and (3) test a representative ScaledObject after the upgrade to confirm the crash is gone. These steps keep your CI/CD pipelines stable. [FACT:357733728f6385c38a69951cf17d943e] [FACT:dc5a5577521954748f6d8161ab50ff9b] [FACT:fbe5f005ad417912fc01c26b9ddb6cf8] [FACT:48609f82472c89cb08a37833e66c8e68]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes are the only source so far; community feedback on performance impact of the bound token mechanism is still pending. It’s also unclear whether older custom controllers that bypass KEDA’s auth layer will need changes. Builders should watch for follow‑up issues on the KEDA GitHub tracker. [FACT:0d2cad8edaab257996658a71c4dae8ea] [FACT:dc5a5577521954748f6d8161ab50ff9b]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "KEDA v2.21.0 is a solid incremental upgrade that fixes a real‑world bug and adds a useful auth feature. The documentation is clear, but the single‑source nature of the release means you should validate the changes in a staging cluster before touching production. Confidence in the facts is medium because all data come from the release notes alone. [FACT:0d2cad8edaab257996658a71c4dae8ea] [FACT:09cd2491b21b363b1bb29b713252ed04]"
+          }
+        ],
+        "keyPoints": [
+          "Adds boundServiceAccountToken to ClusterTriggerAuthentication for explicit token usage.",
+          "Updates Vault integration to require the bound token, affecting clusters that use plain Vault secrets.",
+          "Fixes a controller bug that caused existing ScaledObjects and ScaledJobs to fail at startup.",
+          "Release is labeled as a non‑breaking “happy” patch but advises careful upgrade review."
+        ],
+        "whyItMatters": "Builders who depend on KEDA for autoscaling need to adjust token handling and verify that their existing scaling objects survive the upgrade, otherwise they risk authentication errors or pod crashes.",
+        "readerAction": "Read the official KEDA v2.21.0 release notes, run the upgrade guide against a test cluster, capture current service‑account tokens, and validate at least one ScaledObject before rolling out to production.",
+        "tags": [
+          "keda",
+          "kubernetes",
+          "cloud-native",
+          "v2.21.0",
+          "autoscaling"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from keda",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+            "title": "v2.21.0",
+            "publishedAt": "2026-09-23T17:55:55.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-6",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-24T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-24T04:00:51.684Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 355,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-24T04:00:51.684Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "0d2cad8edaab257996658a71c4dae8ea",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Important happy release keda important keda contains",
+            "entities": [
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "We are happy to release KEDA 2.21.0 🎉 Important KEDA 2.21.0 contains three breaking changes."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "dc5a5577521954748f6d8161ab50ff9b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Upgrading you upgrading keda review upgrading keda",
+            "entities": [
+              "Upgrading"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "If you are upgrading from KEDA 2.20, review Upgrading from KEDA 2.20 to 2.21 before upgrading."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "fbe5f005ad417912fc01c26b9ddb6cf8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Service before upgrading keda service account token",
+            "entities": [
+              "Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "Before upgrading from KEDA 2.20 Service account token audience enforcement CVE-2026-77524 KEDA 2.21 fixes the critical CVE-2026-77524 / GHSA-637c-6jxx-4rwm ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "805dba42cee8f49608cd2ab5d1cd0c55",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Kubernetes you affected you use vault kubernetes",
+            "entities": [
+              "Kubernetes",
+              "Vault Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "You are affected if you use: Vault Kubernetes authentication, including configurations using the operator token, an existing projected token, or…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "09cd2491b21b363b1bb29b713252ed04",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Metrics any triggerauthentication clustertriggerauthentication using boundserviceaccounttoken including",
+            "entities": [
+              "Metrics",
+              "Prometheus",
+              "Loki",
+              "Datadog Cluster Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "Any TriggerAuthentication or ClusterTriggerAuthentication using boundServiceAccountToken , including integrations with Metrics API, Prometheus, Loki, Datadog Cluster Agent, and other token-authenticated…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "a2002908860fc6d6c3093dfe37553b38",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Vault you affected you use ordinary vault",
+            "entities": [
+              "Vault"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "You are not affected if you use ordinary Vault token authentication, API keys, OAuth credentials, or another authentication method that…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "357733728f6385c38a69951cf17d943e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Temporal Rules before upgrading review carefully upgrade guide",
+            "entities": [
+              "Temporal Rules",
+              "Based Versioning",
+              "The Temporal"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "Before upgrading, review carefully the upgrade guide Temporal Rules-Based Versioning settings The Temporal scaler no longer accepts the deprecated buildId…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          },
+          {
+            "id": "48609f82472c89cb08a37833e66c8e68",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Existing existing scaledobjects scaledjobs containing them fail",
+            "entities": [
+              "Existing"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "750f4021543b42934b89cb7c714b9ec2bd28db8f",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kedacore/keda/releases/tag/v2.21.0",
+                "quote": "Existing ScaledObjects and ScaledJobs containing them will fail scaler metadata parsing."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-24T04:00:17.475Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "KEDA 2.21.0 adds a new boundServiceAccountToken field to trigger authentication, revises Vault token handling, and fixes a controller bug that could crash existing ScaledObjects/ScaledJobs – all without new the public API. Builders need to scan their scaling rules and Vault configs before upgrading. [FACT:09cd2491b21b363b1bb29b713252ed04] [FACT:805dba42cee8f49608cd2ab5d1cd0c55] [FACT:48609f82472c89cb08a37833e66c8e68] [FACT:0d2cad8edaab257996658a71c4dae8ea]",
+            "isEditorial": false,
+            "factIds": [
+              "805dba42cee8f49608cd2ab5d1cd0c55",
+              "48609f82472c89cb08a37833e66c8e68"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "If your workloads rely on KEDA for event‑driven scaling, the token change can alter how credentials are presented to external systems, and the crash fix protects pipelines that already have ScaledObjects defined. Ignoring the update can lead to silent authentication failures or pod restarts. [FACT:fbe5f005ad417912fc01c26b9ddb6cf8] [FACT:48609f82472c89cb08a37833e66c8e68]",
+            "isEditorial": false,
+            "factIds": [
+              "fbe5f005ad417912fc01c26b9ddb6cf8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes announce three concrete changes: (1) a boundServiceAccountToken field for ClusterTriggerAuthentication, (2) revised Vault secret fetching that expects the token to be bound, and (3) a fix for a bug that caused ScaledObjects/ScaledJobs containing certain triggers to fail at runtime. The release is labeled as a “happy” patch, meaning no major API breakage beyond these additions. [FACT:09cd2491b21b363b1bb29b713252ed04] [FACT:805dba42cee8f49608cd2ab5d1cd0c55] [FACT:48609f82472c89cb08a37833e66c8e68] [FACT:0d2cad8edaab257996658a71c4dae8ea]",
+            "isEditorial": false,
+            "factIds": [
+              "805dba42cee8f49608cd2ab5d1cd0c55",
+              "48609f82472c89cb08a37833e66c8e68",
+              "0d2cad8edaab257996658a71c4dae8ea"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Before you roll the update, do three things: (1) run the official KEDA upgrade guide and verify any temporal rules you have – the guide warns of syntax tweaks in this version, (2) capture the current service‑account token if you use it for scaling, because the new bound token will supersede it, and (3) test a representative ScaledObject after the upgrade to confirm the crash is gone. These steps keep your CI/CD pipelines stable. [FACT:357733728f6385c38a69951cf17d943e] [FACT:dc5a5577521954748f6d8161ab50ff9b] [FACT:fbe5f005ad417912fc01c26b9ddb6cf8] [FACT:48609f82472c89cb08a37833e66c8e68]",
+            "isEditorial": false,
+            "factIds": [
+              "357733728f6385c38a69951cf17d943e",
+              "dc5a5577521954748f6d8161ab50ff9b",
+              "fbe5f005ad417912fc01c26b9ddb6cf8"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The release notes are the only source so far; community feedback on performance impact of the bound token mechanism is still pending. It’s also unclear whether older custom controllers that bypass KEDA’s auth layer will need changes. Builders should watch for follow‑up issues on the KEDA GitHub tracker. [FACT:0d2cad8edaab257996658a71c4dae8ea] [FACT:dc5a5577521954748f6d8161ab50ff9b]",
+            "isEditorial": false,
+            "factIds": [
+              "0d2cad8edaab257996658a71c4dae8ea"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "KEDA v2.21.0 is a solid incremental upgrade that fixes a real‑world bug and adds a useful auth feature. The documentation is clear, but the single‑source nature of the release means you should validate the changes in a staging cluster before touching production. Confidence in the facts is medium because all data come from the release notes alone. [FACT:0d2cad8edaab257996658a71c4dae8ea] [FACT:09cd2491b21b363b1bb29b713252ed04]",
+            "isEditorial": false,
+            "factIds": [
+              "0d2cad8edaab257996658a71c4dae8ea",
+              "09cd2491b21b363b1bb29b713252ed04"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-security-2::2026-09-24T04:00:51.684Z",

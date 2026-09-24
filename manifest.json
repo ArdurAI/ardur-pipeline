@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-23T18:00:00.000Z",
-    "windowStart": "2026-09-23T18:00:00.000Z",
-    "windowEnd": "2026-09-24T00:00:00.000Z"
+    "id": "2026-09-24T00:00:00.000Z",
+    "windowStart": "2026-09-24T00:00:00.000Z",
+    "windowEnd": "2026-09-24T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-23T18:20:13.990Z",
-  "nextRefreshAt": "2026-09-24T00:00:00.000Z",
+  "publishedAt": "2026-09-24T04:00:17.342Z",
+  "nextRefreshAt": "2026-09-24T06:00:00.000Z",
   "runIds": {
-    "aggregation": "926883a5-bbdd-4b2b-abe0-b2f380ee242f",
-    "ranking": "rank-ac83d219",
-    "top10": "top10:2026-09-23T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-23T18:00:00.000Z-2026-09-23T18:20:30.270Z"
+    "aggregation": "dbd72aca-d7d4-4108-8968-da0368d04ce0",
+    "ranking": "rank-11baed95",
+    "top10": "top10:2026-09-24T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-24T00:00:00.000Z-2026-09-24T04:00:51.684Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-23T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-23T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-23T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-24T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-24T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-24T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 90,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1561,
+      "count": 1458,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNFVkWFRIcXo5UXJHcFd1Ty1zbU5JT01wTl8tN3h2ZWY4cDJrMW01aDdaZDB4RzlqMTBVNVV2SFBsVzllVGhmSGg4VzhkVy04QzJnLUJFbTRLUTlnQ1ZVVnd5Y2NVUHVoZ2JzU2VxN0pNRFNSbTIzNVpWdzVxMFRzdFlpeVYzUi01RThz?oc=5"
+        "[ai/cluster-ai-7] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE9pTm1fMjdaS1JxMVFYTGo5Q2gxTVdWVmNRZWFsNmNLU2RnMWl6LTVlXzAwWWl1RnRjVEdxSG5NSHFzSkZodk8zNjk0ZmYwZjFkQXVhOGUyajF2LW5WOWx6MUZRTQ?oc=5"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1786,
+      "count": 1734,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 19,
+      "count": 22,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 31,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Anthropic launches Claude Opus 5.5: Benchmarks, pricing, safety"
+        "topic": "security",
+        "headline": "RHSA-2026:70564: Critical: ipa security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:70856: Important: postgresql:16 security update"
+        "headline": "RHSA-2026:70640: Important: buildah security update"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Next.js Security Update for a Critical Upstream Issue"
+        "topic": "ai",
+        "headline": "Gemini 3.8 TTS Playground"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "3.15.0-rc.1 / 2026-09-21"
+        "topic": "ai",
+        "headline": "Sam Altman’s remarks at the United Nations Security Council"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "llm 0.36"
+        "topic": "models",
+        "headline": "Anthropic engineer explains why Claude&039;s writing got worse although the model got smarter"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:70803: Moderate: gstreamer1-plugins-good security update"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
         "headline": "Two years of OpenAI Academy"
       },
       {
-        "rank": 9,
+        "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI Agent Hacked Australian Government Website"
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers"
       },
       {
+        "rank": 9,
+        "topic": "security",
+        "headline": "RHSA-2026:70803: Moderate: gstreamer1-plugins-good security update"
+      },
+      {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v2.21.0"
+        "headline": "v2.15.3-rc2"
       }
     ],
     "articleCount": 0
