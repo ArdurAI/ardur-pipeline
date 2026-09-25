@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-25T06:00:00.000Z",
-    "windowStart": "2026-09-25T06:00:00.000Z",
-    "windowEnd": "2026-09-25T12:00:00.000Z"
+    "id": "2026-09-25T12:00:00.000Z",
+    "windowStart": "2026-09-25T12:00:00.000Z",
+    "windowEnd": "2026-09-25T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-25T11:31:03.480Z",
-  "nextRefreshAt": "2026-09-25T12:00:00.000Z",
+  "publishedAt": "2026-09-25T16:55:10.734Z",
+  "nextRefreshAt": "2026-09-25T18:00:00.000Z",
   "runIds": {
-    "aggregation": "77ff0854-8331-43f8-b29d-9edda18a44e2",
-    "ranking": "rank-2b77080f",
-    "top10": "top10:2026-09-25T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-25T06:00:00.000Z-2026-09-25T11:31:19.819Z"
+    "aggregation": "b23df45a-d7df-4dd9-bfc8-b6c053ddeb15",
+    "ranking": "rank-36a33f0c",
+    "top10": "top10:2026-09-25T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-25T12:00:00.000Z-2026-09-25T16:55:32.329Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-25T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-25T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-25T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-25T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-25T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-25T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 57,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1367,
+      "count": 1403,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-14] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,35 +52,35 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1628,
+      "count": 1682,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 20,
+      "count": 16,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 34,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "The cheap new AI model taking aim at OpenAI and Anthropic"
+        "headline": "Microsoft unveils all-in-one Copilot app, taking on Anthropic and OpenAI in new push to boost adoption"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:71700: Important: kernel security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "On Anthropic’s AI Misuse Report"
-      },
-      {
-        "rank": 5,
         "topic": "ai",
         "headline": "Anthropic signs $11.6 billion cloud deal with Akamai, pushing its compute spending past $500 billion in under a year"
       },
       {
+        "rank": 4,
+        "topic": "security",
+        "headline": "Anthropic rolls out up to $250 in free Claude Code credits, but only for cloud sessions"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:71700: Important: kernel security, bug fix, and enhancement update"
+      },
+      {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.1"
+        "topic": "ai",
+        "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild"
+        "topic": "ai",
+        "headline": "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Docker and CNCF partner on an open spec for agent permissions"
+        "topic": "platform",
+        "headline": "An update on Angular’s TypeScript 7-powered Compiler"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "v0.315.0"
+        "headline": "containerd 2.4.1"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI to unveil GPT-6 Cyber model, plus a first-of-its-kind product to help deploy it"
+        "topic": "security",
+        "headline": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild"
       }
     ],
     "articleCount": 0
