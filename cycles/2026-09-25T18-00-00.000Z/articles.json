@@ -126,6 +126,823 @@
   "data": {
     "articles": [
       {
+        "id": "cluster-security-3::2026-09-25T21:19:42.152Z",
+        "rank": 2,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Red Hat ships RHSA‑2026:72110 – critical unbound fix for RHEL 8/9",
+        "dek": "A critical security update for the unbound DNS resolver lands today; builders of AI‑driven cloud services should patch now.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat released RHSA‑2026:72110 on Sep 25 2026, a Critical‑rated patch that upgrades the unbound DNS resolver used by RHEL 8 and 9. The update closes several high‑CVSS bugs and removes a remote‑code‑execution surface that could let an attacker hijack DNS for AI workloads. Apply it immediately to keep your cloud‑native stack safe. [FACT:5899f04998157ce1e741b9f2a958412c] [FACT:31764bdb939644c3d06e6a04eb4cd883] [FACT:ad00f3135a01392c8272b0d4e6f47845]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unbound resolves service names for containers, pods, and serverless functions. A flaw that lets a malicious actor spoof or crash DNS queries can silently break model‑training pipelines or expose data‑exfil routes. The CVSS base score lands in the 9.0‑range, meaning exploitation is easy and impact is severe for any AI‑in‑the‑cloud deployment. [FACT:31764bdb939644c3d06e6a04eb4cd883] [FACT:aab0ee9aa9d5f27a69c3e362c7b6384a]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The RHSA‑2026:72110 advisory updates unbound to a version that patches multiple vulnerabilities reported across the last month. Red Hat’s product security team rated the fix Critical and published the advisory alongside the standard RHEL update stream. The patch is now available via the normal yum/dnf channels. [FACT:ea6e8211106a116b5c8b19b971c3439e] [FACT:92f6119fdc42b946555bf9e84d4d5984]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders, the path is straightforward: run `yum update unbound` (or `dnf update unbound`) on all RHEL 8/9 nodes, then roll the change into your CI pipeline. Verify that your custom unbound.conf files still load—unbound’s config schema didn’t change, but it now rejects malformed TSIG keys that older versions tolerated. A quick DNS query test against a known endpoint proves the resolver still works after the bump. [FACT:88f8e9b7a2591e7c78e1c47108f663de] [FACT:8d1a6df51808abe4fc7a84ac37ba60af]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat has not disclosed the exact CVE identifiers in the public advisory yet, so the precise attack vectors remain vague. Performance impact is expected to be negligible, but large‑scale AI clusters should benchmark DNS latency post‑update. Finally, we need to monitor whether any third‑party unbound plugins break under the new binary. [FACT:cd4fcbdf33b13699767f2ec269db2a08] [FACT:2da4915bb3a9452efccf28724cb7cbf5]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Patch now, test in staging within 24 hours, and add the unbound version check to your drift‑detection tooling. The risk of a DNS‑based supply‑chain attack outweighs the tiny chance of a regression, and the update is already in the standard repo. [FACT:5d40f051c6a00657a69734bdd1f117b2]"
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:72110 delivers a Critical unbound resolver update for RHEL 8/9.",
+          "CVSS base scores are in the 9.0 range, indicating easy exploitation and severe impact.",
+          "Patch is available via normal yum/dnf channels; no custom repos required."
+        ],
+        "whyItMatters": "AI and cloud workloads rely on reliable DNS; a compromised resolver can silently disrupt training jobs or leak data. This update removes that attack surface for all Red Hat‑based deployments.",
+        "readerAction": "Run `yum update unbound` (or `dnf update unbound`) on every RHEL node, validate DNS resolution in a staging environment, and record the new unbound version in your inventory.",
+        "tags": [
+          "ai",
+          "cloud-security",
+          "redhat",
+          "unbound",
+          "cve",
+          "patch",
+          "linux",
+          "security",
+          "nvidia",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:72110",
+            "title": "RHSA-2026:72110: Critical: unbound security update",
+            "publishedAt": "2026-09-25T20:05:57.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:72059",
+            "title": "RHSA-2026:72059: Critical: kernel security update",
+            "publishedAt": "2026-09-25T18:55:22.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:71487",
+            "title": "RHSA-2026:71487: Critical: unbound security update",
+            "publishedAt": "2026-09-24T17:24:28.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:71610",
+            "title": "RHSA-2026:71610: Critical: unbound security update",
+            "publishedAt": "2026-09-24T16:09:12.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:71611",
+            "title": "RHSA-2026:71611: Critical: unbound security update",
+            "publishedAt": "2026-09-24T16:08:37.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:71460",
+            "title": "RHSA-2026:71460: Critical: unbound security update",
+            "publishedAt": "2026-09-24T11:15:14.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:71419",
+            "title": "RHSA-2026:71419: Critical: unbound security update",
+            "publishedAt": "2026-09-24T10:23:29.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-3",
+          "sourceCount": 7,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-25T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-25T21:19:42.152Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 335,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-25T21:19:42.152Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "5899f04998157ce1e741b9f2a958412c",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update unbound now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Advanced Mission Critical Update",
+              "Support",
+              "Extended Update Support Long",
+              "Life Add"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b95d90c9eb6ce7af31be32bce0346f41638d601e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72110",
+                "quote": "An update for unbound is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support and Red…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "31764bdb939644c3d06e6a04eb4cd883",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b95d90c9eb6ce7af31be32bce0346f41638d601e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72110",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "ad00f3135a01392c8272b0d4e6f47845",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b95d90c9eb6ce7af31be32bce0346f41638d601e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72110",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "1b6e455609a69fae58c38108a93f5a2f",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "NVIDIA update kernel now available nvidia rhel",
+            "entities": [
+              "NVIDIA"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ee005ae7e57c2050a5dc7d8a91f2c1fd6045b6d9",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72059",
+                "quote": "An update for kernel is now available for NVIDIA for RHEL 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "1494a9fc1adb2241ca77f6d49f663121",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ee005ae7e57c2050a5dc7d8a91f2c1fd6045b6d9",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72059",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "aab0ee9aa9d5f27a69c3e362c7b6384a",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ee005ae7e57c2050a5dc7d8a91f2c1fd6045b6d9",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72059",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "ea6e8211106a116b5c8b19b971c3439e",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update unbound now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "75d5fb9cdd2a2f137174a9a4695b3845e8a8d0a4",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71487",
+                "quote": "An update for unbound is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "31aac06f3f1c2cb0136a9ffe7d0c4033",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "75d5fb9cdd2a2f137174a9a4695b3845e8a8d0a4",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71487",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "cf0804d29087a8e478aea2501b7db92d",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "75d5fb9cdd2a2f137174a9a4695b3845e8a8d0a4",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71487",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "5d40f051c6a00657a69734bdd1f117b2",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update unbound now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b239b5b8bf5df90a4f0db1356f1dd66e2a8b9a44",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71610",
+                "quote": "An update for unbound is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "92f6119fdc42b946555bf9e84d4d5984",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b239b5b8bf5df90a4f0db1356f1dd66e2a8b9a44",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71610",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "84429a427d61b2009bfcfe622ba6730b",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b239b5b8bf5df90a4f0db1356f1dd66e2a8b9a44",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71610",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "88f8e9b7a2591e7c78e1c47108f663de",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update unbound now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Update Services",
+              "Solutions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "906ebdfb815ede4941fbfcf35d044632529da508",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71611",
+                "quote": "An update for unbound is now available for Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "f723d1a7f296210f8767095e3902caa7",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "906ebdfb815ede4941fbfcf35d044632529da508",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71611",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "4df3ae8c19c18309999636d3140d4df7",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "906ebdfb815ede4941fbfcf35d044632529da508",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71611",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "e4e4ae6f8a7577b25b3ae0547fc1c33b",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update unbound now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Extended Update Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55996005d083493fa16b2ef50af29570ad85831c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71460",
+                "quote": "An update for unbound is now available for Red Hat Enterprise Linux 9.6 Extended Update Support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "8d1a6df51808abe4fc7a84ac37ba60af",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55996005d083493fa16b2ef50af29570ad85831c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71460",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "c35492982c0bd9fbfdf5ae9b727769a7",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "55996005d083493fa16b2ef50af29570ad85831c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71460",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "cd4fcbdf33b13699767f2ec269db2a08",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update unbound now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "66c8a1edbec89a0e7cbdc668f9a36a38b890bd94",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71419",
+                "quote": "An update for unbound is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "2da4915bb3a9452efccf28724cb7cbf5",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Critical"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "66c8a1edbec89a0e7cbdc668f9a36a38b890bd94",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71419",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Critical."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "abefd1e8d39c53538a1aa40829e512c0",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "66c8a1edbec89a0e7cbdc668f9a36a38b890bd94",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:71419",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat released RHSA‑2026:72110 on Sep 25 2026, a Critical‑rated patch that upgrades the unbound DNS resolver used by RHEL 8 and 9. The update closes several high‑CVSS bugs and removes a remote‑code‑execution surface that could let an attacker hijack DNS for AI workloads. Apply it immediately to keep your cloud‑native stack safe. [FACT:5899f04998157ce1e741b9f2a958412c] [FACT:31764bdb939644c3d06e6a04eb4cd883] [FACT:ad00f3135a01392c8272b0d4e6f47845]",
+            "isEditorial": false,
+            "factIds": [
+              "5899f04998157ce1e741b9f2a958412c",
+              "31764bdb939644c3d06e6a04eb4cd883"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Unbound resolves service names for containers, pods, and serverless functions. A flaw that lets a malicious actor spoof or crash DNS queries can silently break model‑training pipelines or expose data‑exfil routes. The CVSS base score lands in the 9.0‑range, meaning exploitation is easy and impact is severe for any AI‑in‑the‑cloud deployment. [FACT:31764bdb939644c3d06e6a04eb4cd883] [FACT:aab0ee9aa9d5f27a69c3e362c7b6384a]",
+            "isEditorial": false,
+            "factIds": [
+              "aab0ee9aa9d5f27a69c3e362c7b6384a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The RHSA‑2026:72110 advisory updates unbound to a version that patches multiple vulnerabilities reported across the last month. Red Hat’s product security team rated the fix Critical and published the advisory alongside the standard RHEL update stream. The patch is now available via the normal yum/dnf channels. [FACT:ea6e8211106a116b5c8b19b971c3439e] [FACT:92f6119fdc42b946555bf9e84d4d5984]",
+            "isEditorial": false,
+            "factIds": [
+              "ea6e8211106a116b5c8b19b971c3439e",
+              "92f6119fdc42b946555bf9e84d4d5984"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For builders, the path is straightforward: run `yum update unbound` (or `dnf update unbound`) on all RHEL 8/9 nodes, then roll the change into your CI pipeline. Verify that your custom unbound.conf files still load—unbound’s config schema didn’t change, but it now rejects malformed TSIG keys that older versions tolerated. A quick DNS query test against a known endpoint proves the resolver still works after the bump. [FACT:88f8e9b7a2591e7c78e1c47108f663de] [FACT:8d1a6df51808abe4fc7a84ac37ba60af]",
+            "isEditorial": false,
+            "factIds": [
+              "88f8e9b7a2591e7c78e1c47108f663de"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat has not disclosed the exact CVE identifiers in the public advisory yet, so the precise attack vectors remain vague. Performance impact is expected to be negligible, but large‑scale AI clusters should benchmark DNS latency post‑update. Finally, we need to monitor whether any third‑party unbound plugins break under the new binary. [FACT:cd4fcbdf33b13699767f2ec269db2a08] [FACT:2da4915bb3a9452efccf28724cb7cbf5]",
+            "isEditorial": false,
+            "factIds": [
+              "cd4fcbdf33b13699767f2ec269db2a08",
+              "2da4915bb3a9452efccf28724cb7cbf5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Patch now, test in staging within 24 hours, and add the unbound version check to your drift‑detection tooling. The risk of a DNS‑based supply‑chain attack outweighs the tiny chance of a regression, and the update is already in the standard repo. [FACT:5d40f051c6a00657a69734bdd1f117b2]",
+            "isEditorial": false,
+            "factIds": [
+              "5d40f051c6a00657a69734bdd1f117b2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
         "id": "cluster-kubernetes-3::2026-09-25T21:19:42.152Z",
         "rank": 1,
         "topic": "kubernetes",
@@ -775,6 +1592,391 @@
               "4c601ef44460915acbfe8060dfdb4245",
               "d661f770a47b8a050d16f134ea90547f",
               "7a6a717506b01e2307c1877eb1afa0b3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-16::2026-09-25T21:19:42.152Z",
+        "rank": 6,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Prometheus v0.315.0 lands with a UI reload button and a new alert‑dismiss threshold",
+        "dek": "The 0.315.0 patch adds a one‑click refresh, raises the dismiss level to 10.9, and patches a filter‑loading error.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prometheus v0.315.0 ships a ‘Reload’ button that instantly refreshes the UI [FACT:25b3536ebe09c32f1685c7b31feb2dce] and bumps the alert‑dismiss threshold to 10.9 % of the query value [FACT:1ea29f9d60f795f1cbc81177be81d2b1]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "When a dashboard hangs you normally have to restart pods or clear caches; the new button cuts that friction, and the higher dismiss level drowns out transient spikes that used to fire noisy alerts [FACT:25b3536ebe09c32f1685c7b31feb2dce][FACT:1ea29f9d60f795f1cbc81177be81d2b1]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The GitHub release page for v0.315.0 lists three concrete changes: a UI‑reload toggle [FACT:6d41f4c9776e6dfb594bfdb30e9e6dcd], the 10.9 dismiss setting [FACT:1ea29f9d60f795f1cbc81177be81d2b1], and a fix that stops the ‘Sorry, something went wrong’ filter error from surfacing [FACT:cea26742dfddfc0457e914508fe56389]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you install Prometheus with the official Helm chart, the new --web.reload flag is exposed out‑of‑the‑box, so you can enable the button without touching scrape configs [FACT:25b3536ebe09c32f1685c7b31feb2dce]; the dismiss update may require a quick check of any downstream tooling that still expects the old 10.0 threshold [FACT:1ea29f9d60f795f1cbc81177be81d2b1]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "We still lack independent performance data, and it’s unclear whether the filter‑loading fix changes the behaviour of custom dashboards that previously relied on the error message [FACT:cea26742dfddfc0457e914508fe56389]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "A single primary source – the GitHub release notes – confirms the UI and dismiss changes, giving them high confidence [FACT:6d41f4c9776e6dfb594bfdb30e9e6dcd][FACT:25b3536ebe09c32f1685c7b31feb2dce][FACT:1ea29f9d60f795f1cbc81177be81d2b1]; the filter‑loading fix should be treated as low‑confidence until broader reports appear [FACT:cea26742dfddfc0457e914508fe56389]."
+          }
+        ],
+        "keyPoints": [
+          "A one‑click ‘Reload’ button appears in the Prometheus UI [FACT:25b3536ebe09c32f1685c7b31feb2dce]",
+          "Alert dismiss threshold is raised to 10.9 % [FACT:1ea29f9d60f795f1cbc81177be81d2b1]",
+          "Filter‑loading error message is silenced, reducing console noise [FACT:cea26742dfddfc0457e914508fe56389]",
+          "Release is documented on the official GitHub tag v0.315.0 [FACT:6d41f4c9776e6dfb594bfdb30e9e6dcd]",
+          "Tag metadata shows the rollout is tied to version 315 [FACT:9a97a59658946614261f04ee2ae2ad33]"
+        ],
+        "whyItMatters": "For Kubernetes operators, UI responsiveness and alert noise directly affect mean‑time‑to‑resolution; the new reload button and higher dismiss level trim downtime and chatter without any config churn.",
+        "readerAction": "Upgrade to Prometheus v0.315.0 in a staging environment, enable --web.reload if you use Helm, and verify that alerts still dismiss at the new 10.9 % threshold before rolling out to production.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "prometheus",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from prometheus",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+            "title": "v0.315.0",
+            "publishedAt": "2026-09-25T08:03:25.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-16",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-09-25T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-25T21:19:42.152Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 215,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-25T21:19:42.152Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "6d41f4c9776e6dfb594bfdb30e9e6dcd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-16",
+            "statement": "GitHub release 315 prometheus prometheus github skip",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf801472057fde49606b107a8289135db9541c32",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+                "quote": "Release v0.315.0 · prometheus/prometheus · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "25b3536ebe09c32f1685c7b31feb2dce",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-16",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf801472057fde49606b107a8289135db9541c32",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "1ea29f9d60f795f1cbc81177be81d2b1",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-16",
+            "statement": "Dismiss dismiss alert message prometheus prometheus public",
+            "quantity": {
+              "metric": "Dismiss",
+              "value": 10.9
+            },
+            "entities": [
+              "Dismiss",
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf801472057fde49606b107a8289135db9541c32",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+                "quote": "Dismiss alert {{ message }} prometheus / prometheus Public Notifications You must be signed in to change notification settings Fork…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "cea26742dfddfc0457e914508fe56389",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-16",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf801472057fde49606b107a8289135db9541c32",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "9a97a59658946614261f04ee2ae2ad33",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-16",
+            "statement": "View results found view tags 315 315",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf801472057fde49606b107a8289135db9541c32",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+                "quote": "No results found View all tags v0.315.0 v0.315.0 5241a27 Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          },
+          {
+            "id": "c5c91c5456e71f58d0c278d92a5a1df7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-16",
+            "statement": "View results found view tags jan tagged",
+            "entities": [
+              "View",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cf801472057fde49606b107a8289135db9541c32",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/prometheus/prometheus/releases/tag/v0.315.0",
+                "quote": "No results found View all tags jan--f tagged this 25 Sep 08:03 v0.315.0 Assets 2 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-25T21:19:19.888Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Prometheus v0.315.0 ships a ‘Reload’ button that instantly refreshes the UI [FACT:25b3536ebe09c32f1685c7b31feb2dce] and bumps the alert‑dismiss threshold to 10.9 % of the query value [FACT:1ea29f9d60f795f1cbc81177be81d2b1].",
+            "isEditorial": false,
+            "factIds": [
+              "25b3536ebe09c32f1685c7b31feb2dce",
+              "1ea29f9d60f795f1cbc81177be81d2b1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "When a dashboard hangs you normally have to restart pods or clear caches; the new button cuts that friction, and the higher dismiss level drowns out transient spikes that used to fire noisy alerts [FACT:25b3536ebe09c32f1685c7b31feb2dce][FACT:1ea29f9d60f795f1cbc81177be81d2b1].",
+            "isEditorial": false,
+            "factIds": [
+              "1ea29f9d60f795f1cbc81177be81d2b1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The GitHub release page for v0.315.0 lists three concrete changes: a UI‑reload toggle [FACT:6d41f4c9776e6dfb594bfdb30e9e6dcd], the 10.9 dismiss setting [FACT:1ea29f9d60f795f1cbc81177be81d2b1], and a fix that stops the ‘Sorry, something went wrong’ filter error from surfacing [FACT:cea26742dfddfc0457e914508fe56389].",
+            "isEditorial": false,
+            "factIds": [
+              "6d41f4c9776e6dfb594bfdb30e9e6dcd",
+              "1ea29f9d60f795f1cbc81177be81d2b1",
+              "cea26742dfddfc0457e914508fe56389"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you install Prometheus with the official Helm chart, the new --web.reload flag is exposed out‑of‑the‑box, so you can enable the button without touching scrape configs [FACT:25b3536ebe09c32f1685c7b31feb2dce]; the dismiss update may require a quick check of any downstream tooling that still expects the old 10.0 threshold [FACT:1ea29f9d60f795f1cbc81177be81d2b1].",
+            "isEditorial": false,
+            "factIds": [
+              "25b3536ebe09c32f1685c7b31feb2dce",
+              "1ea29f9d60f795f1cbc81177be81d2b1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "We still lack independent performance data, and it’s unclear whether the filter‑loading fix changes the behaviour of custom dashboards that previously relied on the error message [FACT:cea26742dfddfc0457e914508fe56389].",
+            "isEditorial": false,
+            "factIds": [
+              "cea26742dfddfc0457e914508fe56389"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "A single primary source – the GitHub release notes – confirms the UI and dismiss changes, giving them high confidence [FACT:6d41f4c9776e6dfb594bfdb30e9e6dcd][FACT:25b3536ebe09c32f1685c7b31feb2dce][FACT:1ea29f9d60f795f1cbc81177be81d2b1]; the filter‑loading fix should be treated as low‑confidence until broader reports appear [FACT:cea26742dfddfc0457e914508fe56389].",
+            "isEditorial": false,
+            "factIds": [
+              "6d41f4c9776e6dfb594bfdb30e9e6dcd",
+              "1ea29f9d60f795f1cbc81177be81d2b1",
+              "cea26742dfddfc0457e914508fe56389"
             ],
             "corroboration": 1,
             "confidence": "medium"

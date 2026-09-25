@@ -1,38 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-25T12:00:00.000Z",
-    "windowStart": "2026-09-25T12:00:00.000Z",
-    "windowEnd": "2026-09-25T18:00:00.000Z"
+    "id": "2026-09-25T18:00:00.000Z",
+    "windowStart": "2026-09-25T18:00:00.000Z",
+    "windowEnd": "2026-09-26T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-25T16:55:10.734Z",
-  "nextRefreshAt": "2026-09-25T18:00:00.000Z",
+  "publishedAt": "2026-09-25T21:19:19.708Z",
+  "nextRefreshAt": "2026-09-26T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b23df45a-d7df-4dd9-bfc8-b6c053ddeb15",
-    "ranking": "rank-36a33f0c",
-    "top10": "top10:2026-09-25T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-25T12:00:00.000Z-2026-09-25T16:55:32.329Z"
+    "aggregation": "cf1749f5-28f2-4d03-8b96-b3568f9ef920",
+    "ranking": "rank-09831f5b",
+    "top10": "top10:2026-09-25T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-25T18:00:00.000Z-2026-09-25T21:19:42.152Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-25T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-25T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-25T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-25T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-25T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-25T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 72,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1403,
+      "count": 1394,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1682,
+      "count": 1667,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,19 +68,19 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 16,
+      "count": 15,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 34,
+    "heldArticles": 33,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security Slam 2026 – Fall edition"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Microsoft unveils all-in-one Copilot app, taking on Anthropic and OpenAI in new push to boost adoption"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic signs $11.6 billion cloud deal with Akamai, pushing its compute spending past $500 billion in under a year"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "Anthropic rolls out up to $250 in free Claude Code credits, but only for cloud sessions"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:71700: Important: kernel security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod"
-      },
-      {
-        "rank": 7,
         "topic": "ai",
         "headline": "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock"
       },
       {
-        "rank": 8,
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:72110: Critical: unbound security update"
+      },
+      {
+        "rank": 3,
         "topic": "platform",
-        "headline": "An update on Angular’s TypeScript 7-powered Compiler"
+        "headline": "Security Slam 2026 – Fall edition"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "On Anthropic’s AI Misuse Report"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Pentagon was right to slap Anthropic with a security supply chain risk label, federal court says"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "DC appeals court sides with Pentagon on blacklist of Anthropic"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:71700: Important: kernel security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "As AI agents act on their own, governments face growing questions about control"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.1"
+        "topic": "models",
+        "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild"
+        "topic": "kubernetes",
+        "headline": "Fuel containers and power banks recalled over poisoning, fire & burn hazards"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
