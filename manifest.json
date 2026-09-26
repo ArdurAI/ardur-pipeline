@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-26T06:00:00.000Z",
-    "windowStart": "2026-09-26T06:00:00.000Z",
-    "windowEnd": "2026-09-26T12:00:00.000Z"
+    "id": "2026-09-26T12:00:00.000Z",
+    "windowStart": "2026-09-26T12:00:00.000Z",
+    "windowEnd": "2026-09-26T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-26T07:19:59.795Z",
-  "nextRefreshAt": "2026-09-26T12:00:00.000Z",
+  "publishedAt": "2026-09-26T12:50:41.347Z",
+  "nextRefreshAt": "2026-09-26T18:00:00.000Z",
   "runIds": {
-    "aggregation": "955d05c0-540f-471a-8d1a-42237dc447a1",
-    "ranking": "rank-c5e14162",
-    "top10": "top10:2026-09-26T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-26T06:00:00.000Z-2026-09-26T07:20:24.729Z"
+    "aggregation": "1992ea67-6fbe-4b79-8054-cc6093dc8819",
+    "ranking": "rank-c77bab9b",
+    "top10": "top10:2026-09-26T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-26T12:00:00.000Z-2026-09-26T12:51:05.214Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-26T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-26T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-26T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-26T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-26T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-26T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1152,
+      "count": 1148,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMie0FVX3lxTE0tWHRGem5SU3ZGTWdJZkRhZ2ZDNk5RTTY4NHZzY3FVUW1TbTRBRlhZaTRuSHV0eEZzVC1aelRmMGhxcUg1UHZYN1c1OUtYOGtCUVRwRkhFNkh5QU9wZWJDZVpTU0U1czFZeFNjYnJVeU9XTnNZMVA5WlV4Yw?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMie0FVX3lxTE0tWHRGem5SU3ZGTWdJZkRhZ2ZDNk5RTTY4NHZzY3FVUW1TbTRBRlhZaTRuSHV0eEZzVC1aelRmMGhxcUg1UHZYN1c1OUtYOGtCUVRwRkhFNkh5QU9wZWJDZVpTU0U1czFZeFNjYnJVeU9XTnNZMVA5WlV4Yw?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1460,
+      "count": 1392,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 9,
+      "category": "copyright-gate",
+      "count": 28,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 17,
+      "category": "editorial-hold",
+      "count": 11,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 32,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,33 +103,33 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security Slam 2026 – Fall edition"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "Pentagon was right to slap Anthropic with a security supply chain risk label, federal court says"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild"
+      },
+      {
         "rank": 3,
+        "topic": "ai",
+        "headline": "OpenAI's Agents Targeted And Infiltrated US Government Websites"
+      },
+      {
+        "rank": 4,
+        "topic": "platform",
+        "headline": "Security Slam 2026 – Fall edition"
+      },
+      {
+        "rank": 5,
         "topic": "ai",
         "headline": "OpenAI’s A.I. Went Rogue and Meddled With U.S. Government Websites"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI Says Its Models May Have Interfered With Government Sites"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks"
-      },
-      {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:72183: Critical: unbound security update"
+        "headline": "Elementor CSRF Flaw Lets Attackers Take Over Sites After Admin Clicks Crafted Link"
       },
       {
         "rank": 7,
@@ -138,20 +138,20 @@
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "On Anthropic’s AI Misuse Report"
+        "topic": "platform",
+        "headline": "Cloudflare Details Its Migration from WordPress to EmDash"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "US appeals court upholds Pentagon's blacklisting of Anthropic"
+        "headline": "OpenAI Says Its Models May Have Interfered With Government Sites"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod"
+        "topic": "security",
+        "headline": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
