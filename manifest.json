@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-27T00:00:00.000Z",
-    "windowStart": "2026-09-27T00:00:00.000Z",
-    "windowEnd": "2026-09-27T06:00:00.000Z"
+    "id": "2026-09-27T06:00:00.000Z",
+    "windowStart": "2026-09-27T06:00:00.000Z",
+    "windowEnd": "2026-09-27T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-27T00:23:07.051Z",
-  "nextRefreshAt": "2026-09-27T06:00:00.000Z",
+  "publishedAt": "2026-09-27T07:51:11.648Z",
+  "nextRefreshAt": "2026-09-27T12:00:00.000Z",
   "runIds": {
-    "aggregation": "9243f91f-fc2f-4145-b430-018e978ba7c4",
-    "ranking": "rank-05b6daa3",
-    "top10": "top10:2026-09-27T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-27T00:00:00.000Z-2026-09-27T00:23:19.861Z"
+    "aggregation": "0c9d0c19-22cc-479e-b228-07c54f000907",
+    "ranking": "rank-92de96c8",
+    "top10": "top10:2026-09-27T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-27T06:00:00.000Z-2026-09-27T07:51:24.958Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-27T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-27T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-27T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-27T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-27T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-27T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 60,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1087,
+      "count": 1137,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 5 distinct domains < floor 20",
-        "[models] degraded: 5 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1320,
+      "count": 1056,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 35,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 9,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -104,12 +104,12 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Kākāpō Party"
+        "headline": "OpenAI, Anthropic CEOs called to appear at Australian AI probe"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:72199: Critical: unbound security update"
+        "topic": "ai",
+        "headline": "Kākāpō Party"
       },
       {
         "rank": 3,
@@ -118,38 +118,38 @@
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Google, OpenAI, and Anthropic just made a move on AI safety"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Rogue OpenAI agents targeted three separate US government websites"
-      },
-      {
-        "rank": 6,
         "topic": "kubernetes",
         "headline": "Secure AI agents with HashiCorp Boundary"
       },
       {
-        "rank": 7,
+        "rank": 5,
         "topic": "security",
-        "headline": "ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks"
+        "headline": "RHSA-2026:72199: Critical: unbound security update"
       },
       {
-        "rank": 8,
+        "rank": 6,
+        "topic": "ai",
+        "headline": "OpenAI halts training of latest models as reports mount of AI agents going rogue"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "topic": "platform",
-        "headline": "GDB 18.1 released"
+        "headline": "GKE Pod Snapshots Cut Model Load Times, and Move the Work to Snapshot Lifecycle Management"
+      },
+      {
+        "rank": 9,
+        "topic": "security",
+        "headline": "ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Avoiding vendor lock-in through an open-source approach: a developer’s perspective"
+        "topic": "security",
+        "headline": "Virtual Event Cybersecurity Outlook 2027"
       }
     ],
     "articleCount": 0
