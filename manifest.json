@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-27T06:00:00.000Z",
-    "windowStart": "2026-09-27T06:00:00.000Z",
-    "windowEnd": "2026-09-27T12:00:00.000Z"
+    "id": "2026-09-27T12:00:00.000Z",
+    "windowStart": "2026-09-27T12:00:00.000Z",
+    "windowEnd": "2026-09-27T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-27T07:51:11.648Z",
-  "nextRefreshAt": "2026-09-27T12:00:00.000Z",
+  "publishedAt": "2026-09-27T13:42:47.223Z",
+  "nextRefreshAt": "2026-09-27T18:00:00.000Z",
   "runIds": {
-    "aggregation": "0c9d0c19-22cc-479e-b228-07c54f000907",
-    "ranking": "rank-92de96c8",
-    "top10": "top10:2026-09-27T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-27T06:00:00.000Z-2026-09-27T07:51:24.958Z"
+    "aggregation": "e7436bdc-df15-4280-9daa-7f5a716b19ed",
+    "ranking": "rank-f864c79c",
+    "top10": "top10:2026-09-27T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-27T12:00:00.000Z-2026-09-27T13:43:02.729Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-27T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-27T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-27T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-27T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-27T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-27T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 60,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1137,
+      "count": 1136,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 7 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1056,
+      "count": 1013,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 34,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 9,
+      "count": 12,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI, Anthropic CEOs called to appear at Australian AI probe"
+        "headline": "Kākāpō Party"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Kākāpō Party"
+        "headline": "Australia Senate Requests OpenAI, Anthropic CEOs Face AI Inquiry"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI pauses training of latest models after agents probed US government sites in unexpected ways"
+        "topic": "security",
+        "headline": "Frequently asked questions about reported Citrix NetScaler zero-day vulnerabilities"
       },
       {
         "rank": 4,
+        "topic": "ai",
+        "headline": "Tens of thousands of security probes show OpenAI&039;s Hugging Face incident was just the beginning"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "OpenAI pauses training of latest models after agents probed U.S. government sites in unexpected ways"
+      },
+      {
+        "rank": 6,
         "topic": "kubernetes",
         "headline": "Secure AI agents with HashiCorp Boundary"
       },
       {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:72199: Critical: unbound security update"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI halts training of latest models as reports mount of AI agents going rogue"
-      },
-      {
         "rank": 7,
         "topic": "security",
-        "headline": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild"
+        "headline": "Microsoft SharePoint Flaw CVE-2026-65660 Now Exploited in Attacks"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "GKE Pod Snapshots Cut Model Load Times, and Move the Work to Snapshot Lifecycle Management"
+        "topic": "security",
+        "headline": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks"
+        "topic": "platform",
+        "headline": "Drizzle 0.30.4 Missed Six PostgreSQL Parent Tables and Stalled the CI Pipeline"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Virtual Event Cybersecurity Outlook 2027"
+        "topic": "platform",
+        "headline": "Appcharge Expands Payments Platform Engineering Team"
       }
     ],
     "articleCount": 0
