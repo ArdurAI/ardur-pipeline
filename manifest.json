@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-26T18:00:00.000Z",
-    "windowStart": "2026-09-26T18:00:00.000Z",
-    "windowEnd": "2026-09-27T00:00:00.000Z"
+    "id": "2026-09-27T00:00:00.000Z",
+    "windowStart": "2026-09-27T00:00:00.000Z",
+    "windowEnd": "2026-09-27T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-26T20:52:00.324Z",
-  "nextRefreshAt": "2026-09-27T00:00:00.000Z",
+  "publishedAt": "2026-09-27T00:23:07.051Z",
+  "nextRefreshAt": "2026-09-27T06:00:00.000Z",
   "runIds": {
-    "aggregation": "13eeddcb-b296-4fdb-8cda-fc419155023f",
-    "ranking": "rank-8e59a9e5",
-    "top10": "top10:2026-09-26T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-26T18:00:00.000Z-2026-09-26T20:52:19.640Z"
+    "aggregation": "9243f91f-fc2f-4145-b430-018e978ba7c4",
+    "ranking": "rank-05b6daa3",
+    "top10": "top10:2026-09-27T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-27T00:00:00.000Z-2026-09-27T00:23:19.861Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-26T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-26T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-26T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-27T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-27T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-27T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1148,
+      "count": 1087,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1407,
+      "count": 1320,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 17,
+      "category": "copyright-gate",
+      "count": 33,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 31,
+      "category": "editorial-hold",
+      "count": 13,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks"
+        "topic": "ai",
+        "headline": "Kākāpō Party"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild"
+        "headline": "RHSA-2026:72199: Critical: unbound security update"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Secure AI agents with HashiCorp Boundary"
+        "topic": "ai",
+        "headline": "OpenAI pauses training of latest models after agents probed US government sites in unexpected ways"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Rogue OpenAI agents targeted three separate US government websites"
+        "headline": "Google, OpenAI, and Anthropic just made a move on AI safety"
       },
       {
         "rank": 5,
+        "topic": "ai",
+        "headline": "Rogue OpenAI agents targeted three separate US government websites"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Secure AI agents with HashiCorp Boundary"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild"
+      },
+      {
+        "rank": 9,
         "topic": "platform",
         "headline": "GDB 18.1 released"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI agents posted user images online, disclose dozens of third party incidents"
-      },
-      {
-        "rank": 7,
+        "rank": 10,
         "topic": "kubernetes",
         "headline": "Avoiding vendor lock-in through an open-source approach: a developer’s perspective"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "Security Slam 2026 – Fall edition"
-      },
-      {
-        "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI pauses its \"most capable models\" after agents exploit loopholes and leak data"
-      },
-      {
-        "rank": 10,
-        "topic": "ai",
-        "headline": "Nvidia Is Weighing a $10 Billion Stake in Anthropic's IPO. It Would Be Buying Its Own Demand."
       }
     ],
     "articleCount": 0
