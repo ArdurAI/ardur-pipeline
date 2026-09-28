@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-28T12:00:00.000Z",
-    "windowStart": "2026-09-28T12:00:00.000Z",
-    "windowEnd": "2026-09-28T18:00:00.000Z"
+    "id": "2026-09-28T18:00:00.000Z",
+    "windowStart": "2026-09-28T18:00:00.000Z",
+    "windowEnd": "2026-09-29T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-28T13:23:01.406Z",
-  "nextRefreshAt": "2026-09-28T18:00:00.000Z",
+  "publishedAt": "2026-09-28T20:27:07.508Z",
+  "nextRefreshAt": "2026-09-29T00:00:00.000Z",
   "runIds": {
-    "aggregation": "04b66af9-2ac0-4ed5-8978-68ef081daf59",
-    "ranking": "rank-7fc8e938",
-    "top10": "top10:2026-09-28T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-28T12:00:00.000Z-2026-09-28T13:23:17.557Z"
+    "aggregation": "92b747f9-1f1a-436b-8087-b0b52eef33fe",
+    "ranking": "rank-3668cc10",
+    "top10": "top10:2026-09-28T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-28T18:00:00.000Z-2026-09-28T20:27:28.533Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-28T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-28T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-28T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-28T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-28T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-28T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 57,
+      "count": 63,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1142,
+      "count": 1228,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUxKanl6eDh1bllRUDJXcUNjNlhfbnc2RWxTajRoclI0SnJHMzM1cXdILW5yUVhYLTVqWUxjS2R1WjZNTEV5bG1adG5mLTRJa1pWYm1oZG1LU01lX0o1VkNXcHZtdVR5RUxuMklmRExCSXNFbnRLZ2pVVWNwRjBvVA?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1293,
+      "count": 1461,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:72465: Important: vim security update"
+        "topic": "ai",
+        "headline": "Introducing Claude Sonnet 5.5 on AWS"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring"
+        "topic": "security",
+        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Nvidia says its new OpenShell platform can stop AI agents from going rogue"
+        "topic": "platform",
+        "headline": "How we found 24 Android vulnerabilities using our open source AI security agent"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Nvidia Unveils AI Agent Safety Platform With Hardware-Based Watchdog"
+        "topic": "ai",
+        "headline": "OpenAI Has Gone Rogue"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Upgrading to Red Hat JBoss Web Server 7: Key changes & impacts"
+        "topic": "security",
+        "headline": "RHSA-2026:72629: Important: kpatch-patch-4180-5531091, kpatch-patch-4180-5531251, kpatch-patch-4180-5531581, kpatch-patch-4180-553721, and kpatch-patch-4180-553851 security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Zero-Day Exploitation of Citrix NetScaler ADC and Gateway: CVE-2026-88771 and CVE-2026-88772"
+        "topic": "kubernetes",
+        "headline": "v1.68.0/v0.162.0"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Add Runtime Controls to AI Agents with NVIDIA OpenShell"
+        "topic": "security",
+        "headline": "US, UK warn of exploited Citrix NetScaler zero-day bugs"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Nvidia Debuts System Designed to Stop AI Agents From Going Awry"
+        "topic": "security",
+        "headline": "RHSA-2026:72737: Important: git-lfs security update"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Uber Separates Scaling Intent From Execution on Kubernetes Platform"
+        "headline": "Artifactory Vulnerabilities Under Active Exploitation Enable Authentication Bypass and Admin Access"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Carbonato Botnet Compromises Docker Hosts to Deploy Telegram-Controlled Hermes AI Agent"
+        "topic": "platform",
+        "headline": "Git v2.56.0 released"
       }
     ],
     "articleCount": 0
