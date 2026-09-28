@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-27T18:00:00.000Z",
-    "windowStart": "2026-09-27T18:00:00.000Z",
-    "windowEnd": "2026-09-28T00:00:00.000Z"
+    "id": "2026-09-28T00:00:00.000Z",
+    "windowStart": "2026-09-28T00:00:00.000Z",
+    "windowEnd": "2026-09-28T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-27T18:10:29.135Z",
-  "nextRefreshAt": "2026-09-28T00:00:00.000Z",
+  "publishedAt": "2026-09-28T04:37:19.265Z",
+  "nextRefreshAt": "2026-09-28T06:00:00.000Z",
   "runIds": {
-    "aggregation": "9a583857-6265-40d8-ad4d-bd794b5f2ffd",
-    "ranking": "rank-56b5ab3b",
-    "top10": "top10:2026-09-27T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-27T18:00:00.000Z-2026-09-27T18:10:44.569Z"
+    "aggregation": "6302836a-976a-4bc7-a4e0-850f1c394ada",
+    "ranking": "rank-1f1d5122",
+    "top10": "top10:2026-09-28T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-28T00:00:00.000Z-2026-09-28T04:37:40.549Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-27T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-27T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-27T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-28T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-28T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-28T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1081,
+      "count": 1137,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
         "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1080,
+      "count": 1050,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 37,
-      "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 7,
+      "count": 9,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 31,
+      "sample": [
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "OpenAI Agents Hit U.S. Government Websites"
+        "headline": "Quoting Muse AI Agent"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "An OpenAI agent hacked the Australian government"
+        "topic": "security",
+        "headline": "RHSA-2026:72280: Important: tesseract security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Australia Senate Requests OpenAI, Anthropic CEOs Face AI Inquiry"
+        "headline": "Trump said he would dine with Anthropic CEO amid mounting AI debate"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Wireshark 4.6.9 Released, Sun, Sep 27th"
+        "topic": "ai",
+        "headline": "Anthropic CEO Amodei to have dinner with Trump at White House"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Scoop: Anthropic's Dario Amodei to have White House dinner with Trump"
+        "topic": "security",
+        "headline": "RHSA-2026:72278: Moderate: rrdtool security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Frequently asked questions about reported Citrix NetScaler zero-day vulnerabilities"
+        "topic": "ai",
+        "headline": "OpenAI pauses training of latest models after agents searched U.S. government sites in unexpected ways"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Citrix confirms two NetScaler RCE zero-days exploited in attacks"
-      },
-      {
-        "rank": 8,
-        "topic": "kubernetes",
-        "headline": "The rise of agentic AI on Kubernetes: unleashing the new infrastructure layer"
-      },
-      {
-        "rank": 9,
         "topic": "kubernetes",
         "headline": "Secure AI agents with HashiCorp Boundary"
       },
       {
+        "rank": 8,
+        "topic": "security",
+        "headline": "RHSA-2026:72264: Critical: unbound security update"
+      },
+      {
+        "rank": 9,
+        "topic": "security",
+        "headline": "The AI Security Opportunity Emerging for Palo Alto Networks"
+      },
+      {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Google Rewrites Critical C Dependencies to Rust Using AI and Differential Fuzzing"
+        "topic": "models",
+        "headline": "How NVIDIA DSX MaxLPS Maximizes AI Factory Throughput and Efficiency"
       }
     ],
     "articleCount": 0
