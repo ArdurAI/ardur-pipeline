@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-28T18:00:00.000Z",
-    "windowStart": "2026-09-28T18:00:00.000Z",
-    "windowEnd": "2026-09-29T00:00:00.000Z"
+    "id": "2026-09-29T00:00:00.000Z",
+    "windowStart": "2026-09-29T00:00:00.000Z",
+    "windowEnd": "2026-09-29T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-28T20:27:07.508Z",
-  "nextRefreshAt": "2026-09-29T00:00:00.000Z",
+  "publishedAt": "2026-09-29T01:38:32.673Z",
+  "nextRefreshAt": "2026-09-29T06:00:00.000Z",
   "runIds": {
-    "aggregation": "92b747f9-1f1a-436b-8087-b0b52eef33fe",
-    "ranking": "rank-3668cc10",
-    "top10": "top10:2026-09-28T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-28T18:00:00.000Z-2026-09-28T20:27:28.533Z"
+    "aggregation": "6aff7775-8fb4-4969-9353-9927cfba9a5f",
+    "ranking": "rank-e89ee8ef",
+    "top10": "top10:2026-09-29T00:00:00.000Z",
+    "articles": "synth-top10:2026-09-29T00:00:00.000Z-2026-09-29T01:38:51.125Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-28T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-28T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-28T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-29T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-29T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-29T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1228,
+      "count": 1276,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUxKanl6eDh1bllRUDJXcUNjNlhfbnc2RWxTajRoclI0SnJHMzM1cXdILW5yUVhYLTVqWUxjS2R1WjZNTEV5bG1adG5mLTRJa1pWYm1oZG1LU01lX0o1VkNXcHZtdVR5RUxuMklmRExCSXNFbnRLZ2pVVWNwRjBvVA?oc=5"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
         "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1461,
+      "count": 1535,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 14,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing Claude Sonnet 5.5 on AWS"
+        "headline": "Claude Sonnet 5.5"
       },
       {
         "rank": 2,
@@ -118,38 +118,38 @@
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI Has Gone Rogue"
+        "topic": "security",
+        "headline": "RHSA-2026:72623: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:72629: Important: kpatch-patch-4180-5531091, kpatch-patch-4180-5531251, kpatch-patch-4180-5531581, kpatch-patch-4180-553721, and kpatch-patch-4180-553851 security update"
-      },
-      {
-        "rank": 6,
         "topic": "kubernetes",
         "headline": "v1.68.0/v0.162.0"
       },
       {
+        "rank": 6,
+        "topic": "security",
+        "headline": "Nvidia’s Answer to Rogue Agents Is an Open-Source AI Security System"
+      },
+      {
         "rank": 7,
         "topic": "security",
-        "headline": "US, UK warn of exploited Citrix NetScaler zero-day bugs"
+        "headline": "Carbonato Botnet Puts an AI Agent on Hacked Docker Hosts"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:72737: Important: git-lfs security update"
+        "topic": "ai",
+        "headline": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Artifactory Vulnerabilities Under Active Exploitation Enable Authentication Bypass and Admin Access"
+        "topic": "ai",
+        "headline": "Nvidia unveils security platform to stop AI agents from going rogue"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Git v2.56.0 released"
+        "topic": "ai",
+        "headline": "Basis completes a tax workbook 2x faster with GPT-6 Astra"
       }
     ],
     "articleCount": 0
