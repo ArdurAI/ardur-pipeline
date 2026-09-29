@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-29T12:00:00.000Z",
-    "windowStart": "2026-09-29T12:00:00.000Z",
-    "windowEnd": "2026-09-29T18:00:00.000Z"
+    "id": "2026-09-29T18:00:00.000Z",
+    "windowStart": "2026-09-29T18:00:00.000Z",
+    "windowEnd": "2026-09-30T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-29T12:38:53.900Z",
-  "nextRefreshAt": "2026-09-29T18:00:00.000Z",
+  "publishedAt": "2026-09-29T22:04:04.867Z",
+  "nextRefreshAt": "2026-09-30T00:00:00.000Z",
   "runIds": {
-    "aggregation": "1eb58165-e702-4949-bbae-213941fae462",
-    "ranking": "rank-21eeec89",
-    "top10": "top10:2026-09-29T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-29T12:00:00.000Z-2026-09-29T12:39:12.564Z"
+    "aggregation": "45af211e-8269-4516-96e3-0cf8ce67f827",
+    "ranking": "rank-04582f3e",
+    "top10": "top10:2026-09-29T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-29T18:00:00.000Z-2026-09-29T22:04:25.136Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-29T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-29T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-29T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-29T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-29T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-29T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1183,
+      "count": 1463,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-10] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1437,
+      "count": 1709,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 13,
+      "category": "copyright-gate",
+      "count": 23,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 32,
+      "category": "editorial-hold",
+      "count": 12,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Claude Sonnet 5.5"
+        "headline": "Introducing GPT-6 Sol and Luna"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "Apple patches CoreGraphics zero-day flaw exploited in attacks"
+        "topic": "ai",
+        "headline": "OpenAI takes on Meta with dots agent in enterprise AI push"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:73018: Important: cjose security update"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "Nvidia’s Answer to Rogue Agents Is an Open-Source AI Security System"
-      },
-      {
-        "rank": 6,
         "topic": "platform",
         "headline": "How we found 24 Android vulnerabilities using our open source AI security agent"
       },
       {
-        "rank": 7,
+        "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:73426: Important: gdb security update"
+      },
+      {
+        "rank": 5,
+        "topic": "models",
+        "headline": "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock"
+      },
+      {
+        "rank": 6,
         "topic": "ai",
-        "headline": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns"
+        "headline": "Claude Sonnet 5.5"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:73429: Moderate: gawk security update"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: Anthropic warns AI may pose 'existential risks to humanity' in IPO filing"
+        "topic": "security",
+        "headline": "Apple Zero-Day Vulnerability Weaponized in Targeted Attacks"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.38.0-alpha.1"
+        "topic": "security",
+        "headline": "Apple Patches CoreGraphics Flaw Possibly Exploited in Targeted Attacks"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Towards safety cases for frontier AI training"
+        "topic": "platform",
+        "headline": "Firefox 157.0 released"
       }
     ],
     "articleCount": 0
