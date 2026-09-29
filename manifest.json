@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-29T06:00:00.000Z",
-    "windowStart": "2026-09-29T06:00:00.000Z",
-    "windowEnd": "2026-09-29T12:00:00.000Z"
+    "id": "2026-09-29T12:00:00.000Z",
+    "windowStart": "2026-09-29T12:00:00.000Z",
+    "windowEnd": "2026-09-29T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-29T08:08:52.297Z",
-  "nextRefreshAt": "2026-09-29T12:00:00.000Z",
+  "publishedAt": "2026-09-29T12:38:53.900Z",
+  "nextRefreshAt": "2026-09-29T18:00:00.000Z",
   "runIds": {
-    "aggregation": "cc36f3ce-a99d-4ec0-9b7f-09d39aefb3a0",
-    "ranking": "rank-5db8c565",
-    "top10": "top10:2026-09-29T06:00:00.000Z",
-    "articles": "synth-top10:2026-09-29T06:00:00.000Z-2026-09-29T08:09:10.135Z"
+    "aggregation": "1eb58165-e702-4949-bbae-213941fae462",
+    "ranking": "rank-21eeec89",
+    "top10": "top10:2026-09-29T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-29T12:00:00.000Z-2026-09-29T12:39:12.564Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-29T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-29T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-29T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-29T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-29T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-29T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 69,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1194,
+      "count": 1183,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUxKanl6eDh1bllRUDJXcUNjNlhfbnc2RWxTajRoclI0SnJHMzM1cXdILW5yUVhYLTVqWUxjS2R1WjZNTEV5bG1adG5mLTRJa1pWYm1oZG1LU01lX0o1VkNXcHZtdVR5RUxuMklmRExCSXNFbnRLZ2pVVWNwRjBvVA?oc=5"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1413,
+      "count": 1437,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,18 +68,18 @@
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 13,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -108,23 +108,23 @@
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring"
-      },
-      {
-        "rank": 3,
         "topic": "security",
         "headline": "Apple patches CoreGraphics zero-day flaw exploited in attacks"
       },
       {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:73018: Important: cjose security update"
+      },
+      {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:73027: Important: freerdp security update"
+        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild"
+        "headline": "Nvidia’s Answer to Rogue Agents Is an Open-Source AI Security System"
       },
       {
         "rank": 6,
@@ -134,22 +134,22 @@
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Towards safety cases for frontier AI training"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "Apple Patches Meta-Reported Zero-Day Linked to &8216;Extremely Sophisticated Attack&8217;"
-      },
-      {
-        "rank": 9,
-        "topic": "ai",
         "headline": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns"
       },
       {
-        "rank": 10,
+        "rank": 8,
+        "topic": "ai",
+        "headline": "EXCLUSIVE: Anthropic warns AI may pose 'existential risks to humanity' in IPO filing"
+      },
+      {
+        "rank": 9,
         "topic": "kubernetes",
-        "headline": "In Islamabad, shipping containers on the streets signal a protest is imminent | National News | 2news.com"
+        "headline": "v1.38.0-alpha.1"
+      },
+      {
+        "rank": 10,
+        "topic": "ai",
+        "headline": "Towards safety cases for frontier AI training"
       }
     ],
     "articleCount": 0
