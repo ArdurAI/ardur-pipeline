@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-29T00:00:00.000Z",
-    "windowStart": "2026-09-29T00:00:00.000Z",
-    "windowEnd": "2026-09-29T06:00:00.000Z"
+    "id": "2026-09-29T06:00:00.000Z",
+    "windowStart": "2026-09-29T06:00:00.000Z",
+    "windowEnd": "2026-09-29T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-29T01:38:32.673Z",
-  "nextRefreshAt": "2026-09-29T06:00:00.000Z",
+  "publishedAt": "2026-09-29T08:08:52.297Z",
+  "nextRefreshAt": "2026-09-29T12:00:00.000Z",
   "runIds": {
-    "aggregation": "6aff7775-8fb4-4969-9353-9927cfba9a5f",
-    "ranking": "rank-e89ee8ef",
-    "top10": "top10:2026-09-29T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-29T00:00:00.000Z-2026-09-29T01:38:51.125Z"
+    "aggregation": "cc36f3ce-a99d-4ec0-9b7f-09d39aefb3a0",
+    "ranking": "rank-5db8c565",
+    "top10": "top10:2026-09-29T06:00:00.000Z",
+    "articles": "synth-top10:2026-09-29T06:00:00.000Z-2026-09-29T08:09:10.135Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-29T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-29T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-29T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-29T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-29T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-29T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 69,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1276,
+      "count": 1194,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUxKanl6eDh1bllRUDJXcUNjNlhfbnc2RWxTajRoclI0SnJHMzM1cXdILW5yUVhYLTVqWUxjS2R1WjZNTEV5bG1adG5mLTRJa1pWYm1oZG1LU01lX0o1VkNXcHZtdVR5RUxuMklmRExCSXNFbnRLZ2pVVWNwRjBvVA?oc=5"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1535,
+      "count": 1413,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 25,
-      "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 14,
+      "count": 15,
       "sample": [
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 30,
+      "sample": [
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild"
+        "topic": "ai",
+        "headline": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "How we found 24 Android vulnerabilities using our open source AI security agent"
+        "topic": "security",
+        "headline": "Apple patches CoreGraphics zero-day flaw exploited in attacks"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:72623: Important: kernel security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:73027: Important: freerdp security update"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.68.0/v0.162.0"
+        "topic": "security",
+        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Nvidia’s Answer to Rogue Agents Is an Open-Source AI Security System"
+        "topic": "platform",
+        "headline": "How we found 24 Android vulnerabilities using our open source AI security agent"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Carbonato Botnet Puts an AI Agent on Hacked Docker Hosts"
+        "topic": "ai",
+        "headline": "Towards safety cases for frontier AI training"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns"
+        "topic": "security",
+        "headline": "Apple Patches Meta-Reported Zero-Day Linked to &8216;Extremely Sophisticated Attack&8217;"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Nvidia unveils security platform to stop AI agents from going rogue"
+        "headline": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Basis completes a tax workbook 2x faster with GPT-6 Astra"
+        "topic": "kubernetes",
+        "headline": "In Islamabad, shipping containers on the streets signal a protest is imminent | National News | 2news.com"
       }
     ],
     "articleCount": 0
