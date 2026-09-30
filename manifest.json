@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-30T12:00:00.000Z",
-    "windowStart": "2026-09-30T12:00:00.000Z",
-    "windowEnd": "2026-09-30T18:00:00.000Z"
+    "id": "2026-09-30T18:00:00.000Z",
+    "windowStart": "2026-09-30T18:00:00.000Z",
+    "windowEnd": "2026-10-01T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-30T12:24:32.899Z",
-  "nextRefreshAt": "2026-09-30T18:00:00.000Z",
+  "publishedAt": "2026-09-30T18:58:15.571Z",
+  "nextRefreshAt": "2026-10-01T00:00:00.000Z",
   "runIds": {
-    "aggregation": "07d384d6-382b-40ba-b26a-87afdf6258fc",
-    "ranking": "rank-611f1e5f",
-    "top10": "top10:2026-09-30T12:00:00.000Z",
-    "articles": "synth-top10:2026-09-30T12:00:00.000Z-2026-09-30T12:24:51.468Z"
+    "aggregation": "3ea1cbe8-060f-4889-b12e-e57b80324030",
+    "ranking": "rank-206c0732",
+    "top10": "top10:2026-09-30T18:00:00.000Z",
+    "articles": "synth-top10:2026-09-30T18:00:00.000Z-2026-09-30T18:58:34.882Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-30T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-30T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-30T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-30T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-30T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-30T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 72,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1225,
+      "count": 1544,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMia0FVX3lxTE1XV3d1U3NkVTNXQnNQRUJkWjZySUxJcGUyQU1aYXdpUE40dW9oR05hQlgtSGFCNk9xUUhIVWNBai1NUUh1QnVaUUdoXzVyS3A3N1NucG9PeVdJVmhhTERjRTU4V2o2SEVMbWtN?oc=5"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE84OHBuWi1pTXVVQkZBTFdhMUwwSXlNemRoTUdyaUJ2LURPS0FEUXVvVXBHNWhmVzJzMzhSVDZVT01kYl9UazV5QzFVeTd2LXZ6VUxtTnpCZEdld2xJVlFwa1J1Z0o?oc=5"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[kubernetes] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1474,
+      "count": 1733,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 25,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 5,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Introducing GPT-6.1 Sol"
+        "topic": "security",
+        "headline": "RHSA-2026:73998: Important: gvfs security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI launches always-on Dots agents to rival Meta&039;s Muse"
+        "topic": "platform",
+        "headline": "Python Language Summit 2026"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:73915: Important: rhc security update"
+        "topic": "platform",
+        "headline": "September 2026 Security Release"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "From 40 seconds to under 10: rebuilding incident detection on OpenTelemetry, Apache Kafka, and Apache Flink on Kubernetes"
+        "topic": "ai",
+        "headline": "FTC opens probe into AI giants including Anthropic and OpenAI"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "OpenAI unveils AI assistant 'dots' while safety worries delay new model"
+        "headline": "Quoting Anthropic Frontier Red Team"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Bitget hacked via zero-day in third-party security products"
+        "topic": "ai",
+        "headline": "Disrupting a coordinated model-distillation campaign"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
+        "topic": "ai",
+        "headline": "Google drops Gems for Skills, joining OpenAI and Anthropic in the shift to agent-ready prompt formats"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "New OperTraitors Tool Reveals Dangerous Privilege Escalation Paths in Kubernetes Operators"
+        "topic": "security",
+        "headline": "Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "&8220;Think of it as Kubernetes for agents&8221;: OpenClaw lands in the enterprise with Nvidia and Red Hat on board"
+        "topic": "security",
+        "headline": "Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild CVE-2026-76504"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "“We’re not going to shoot ourselves in the foot” over hack fallout, says OpenAI’s chief research officer"
+        "topic": "security",
+        "headline": "Cisco warns of new SD-WAN zero-day exploited in attacks"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
