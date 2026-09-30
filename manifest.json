@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-30T00:00:00.000Z",
-    "windowStart": "2026-09-30T00:00:00.000Z",
-    "windowEnd": "2026-09-30T06:00:00.000Z"
+    "id": "2026-09-30T12:00:00.000Z",
+    "windowStart": "2026-09-30T12:00:00.000Z",
+    "windowEnd": "2026-09-30T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-30T04:52:03.956Z",
-  "nextRefreshAt": "2026-09-30T06:00:00.000Z",
+  "publishedAt": "2026-09-30T12:24:32.899Z",
+  "nextRefreshAt": "2026-09-30T18:00:00.000Z",
   "runIds": {
-    "aggregation": "05b319d9-93c8-47e2-a43a-f1ffd92cd71c",
-    "ranking": "rank-41ab99cf",
-    "top10": "top10:2026-09-30T00:00:00.000Z",
-    "articles": "synth-top10:2026-09-30T00:00:00.000Z-2026-09-30T04:52:22.627Z"
+    "aggregation": "07d384d6-382b-40ba-b26a-87afdf6258fc",
+    "ranking": "rank-611f1e5f",
+    "top10": "top10:2026-09-30T12:00:00.000Z",
+    "articles": "synth-top10:2026-09-30T12:00:00.000Z-2026-09-30T12:24:51.468Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-30T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-30T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-30T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-09-30T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-09-30T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-09-30T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1316,
+      "count": 1225,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMia0FVX3lxTE1XV3d1U3NkVTNXQnNQRUJkWjZySUxJcGUyQU1aYXdpUE40dW9oR05hQlgtSGFCNk9xUUhIVWNBai1NUUh1QnVaUUdoXzVyS3A3N1NucG9PeVdJVmhhTERjRTU4V2o2SEVMbWtN?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMia0FVX3lxTE1XV3d1U3NkVTNXQnNQRUJkWjZySUxJcGUyQU1aYXdpUE40dW9oR05hQlgtSGFCNk9xUUhIVWNBai1NUUh1QnVaUUdoXzVyS3A3N1NucG9PeVdJVmhhTERjRTU4V2o2SEVMbWtN?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
+        "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1608,
+      "count": 1474,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 23,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 35,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Introducing GPT-6 Sol and Luna"
+        "headline": "Introducing GPT-6.1 Sol"
       },
       {
         "rank": 2,
@@ -113,45 +113,45 @@
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price"
+        "topic": "security",
+        "headline": "RHSA-2026:73915: Important: rhc security update"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "How we found 24 Android vulnerabilities using our open source AI security agent"
+        "topic": "kubernetes",
+        "headline": "From 40 seconds to under 10: rebuilding incident detection on OpenTelemetry, Apache Kafka, and Apache Flink on Kubernetes"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "OpenAI announces ‘dots’ agent after scrapping launch of new AI model over safety concerns"
+        "headline": "OpenAI unveils AI assistant 'dots' while safety worries delay new model"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:73426: Important: gdb security update"
+        "headline": "Bitget hacked via zero-day in third-party security products"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:73512: Moderate: gawk security update"
+        "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "WSL containers are generally available on Windows"
+        "headline": "New OperTraitors Tool Reveals Dangerous Privilege Escalation Paths in Kubernetes Operators"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore"
+        "topic": "kubernetes",
+        "headline": "&8220;Think of it as Kubernetes for agents&8221;: OpenClaw lands in the enterprise with Nvidia and Red Hat on board"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Introducing dots"
+        "headline": "“We’re not going to shoot ourselves in the foot” over hack fallout, says OpenAI’s chief research officer"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }

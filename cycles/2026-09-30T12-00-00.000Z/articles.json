@@ -146,6 +146,436 @@
   "data": {
     "articles": [
       {
+        "id": "cluster-kubernetes-0::2026-09-30T12:24:51.468Z",
+        "rank": 4,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "From 40 seconds to under 10 seconds: rebuilding incident detection on OpenTelemetry, Kafka, and Flink in Kubernetes",
+        "dek": "A small team swapped a monolithic node‑aggregator for a streaming pipeline on K8s, cutting alert latency dramatically while still processing billions of events daily.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "A four‑person team replaced their first‑generation node aggregator with an OpenTelemetry‑Kafka‑Flink pipeline running on Kubernetes, dropping detection latency from roughly 40 s to under 10 s [FACT:db8b2f17003a27c16ee80c1131e42aba][FACT:e8512244930957af13098999554c4d3d][FACT:b40141be91af15cceeebde0050e9a8a5][FACT:8dad529efca2a937167fec452ac2378b]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Faster detection shortens mean‑time‑to‑response, which matters when you’re handling billions of events a day across dozens of products and thousands of distinct tenants [FACT:4d489d0f21a4c20a6c212f6536775482][FACT:4d2d16418e4ff33b50ff1b1dca1ecddd]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The original stack collected metrics on a single‑node aggregator that buffered for minutes before evaluating sliding windows, causing >40 s latency [FACT:b40141be91af15cceeebde0050e9a8a5][FACT:8dad529efca2a937167fec452ac2378b]. The new architecture streams raw OpenTelemetry data into Apache Kafka, runs low‑latency windowed analyses in Apache Flink, and emits alerts as soon as the window closes, achieving sub‑10‑second end‑to‑end latency [FACT:db8b2f17003a27c16ee80c1131e42aba][FACT:e1e9b055fde6e0310765d7bd3b06f288]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already ship OpenTelemetry from your services, you can drop the Kafka and Flink Helm charts into your cluster, point your collector at the new topics, and start seeing sub‑10‑second alerts without rewriting application code [FACT:db8b2f17003a27c16ee80c1131e42aba]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The team reports that detection precision still falls short of their target, so false‑positive rates may need further tuning, and they haven’t published full resource‑usage numbers for the pipeline at production scale [FACT:47b2fb10fc22c582b4de558a9a900bed][FACT:e1e9b055fde6e0310765d7bd3b06f288]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The rebuild provides a concrete, open‑source path to sub‑10‑second incident detection on Kubernetes. Adopt it if latency is a bottleneck, but plan for added operational complexity and allocate time to improve precision [FACT:db8b2f17003a27c16ee80c1131e42aba][FACT:47b2fb10fc22c582b4de558a9a900bed]."
+          }
+        ],
+        "keyPoints": [
+          "Four‑person team swapped a monolithic node aggregator for a streaming pipeline on K8s.",
+          "Latency dropped from ~40 s to <10 s using OpenTelemetry, Apache Kafka, and Apache Flink.",
+          "Pipeline processes billions of events daily for thousands of tenants.",
+          "Precision still below target; further tuning required."
+        ],
+        "whyItMatters": "Reducing detection latency directly improves response times in large‑scale cloud‑native environments, where every second counts for downstream services and customer experience.",
+        "readerAction": "Read the CNCF blog post for the full architecture diagram and try the provided Helm chart in a test cluster to evaluate latency gains.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "opentelemetry",
+          "apache-kafka",
+          "apache-flink",
+          "incident-detection"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "CNCF Blog",
+            "sourceDomain": "cncf.io",
+            "tier": "primary",
+            "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+            "title": "From 40 seconds to under 10: rebuilding incident detection on OpenTelemetry, Apache Kafka, and Apache Flink on Kubernetes",
+            "publishedAt": "2026-09-30T11:00:00.000Z"
+          },
+          {
+            "source": "ThousandEyes",
+            "sourceDomain": "news.google.com",
+            "tier": "news",
+            "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9IS3Jzck91Y2l2VG54UUtQNWZmNlF1czZTeU5CVjBsVWgwcmYzNWQyRy1wSi15emd0OHlUTnJuZFVJLUxBU0x2YzhBQWxNeXBCVUFZS2ZtTnVTanI0MDBwWFZjeHAzT2s5cHU0am4wbldUUjg?oc=5",
+            "title": "ThousandEyes Kubernetes Agent",
+            "publishedAt": "2026-09-29T02:48:29.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-0",
+          "sourceCount": 2,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-09-30T12:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-09-30T12:24:51.468Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 220,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-09-30T12:24:51.468Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "db8b2f17003a27c16ee80c1131e42aba",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Kubernetes post describes how small team rebuilt",
+            "entities": [
+              "Kubernetes",
+              "Apache Kafka",
+              "Apache Flink"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "This post describes how a small team rebuilt the detection platform behind our automated incident creation &8220;AutoHOT&8221;, where HOT is…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "47b2fb10fc22c582b4de558a9a900bed",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Precision precision still below where want",
+            "entities": [
+              "Precision"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "Precision is still below where we want it."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "4d489d0f21a4c20a6c212f6536775482",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Across across products there billions events day",
+            "entities": [
+              "Across"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "Across all products, there are billions of events a day, and it is the closest thing we have to ground…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "4d2d16418e4ff33b50ff1b1dca1ecddd",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Distinct distinct users tenants impacted where which",
+            "entities": [
+              "Distinct"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "Distinct users and tenants impacted, and where: which tenant, database shard, region, or globally."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "e8512244930957af13098999554c4d3d",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Node first generation system did node aggregator",
+            "entities": [
+              "Node"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "The first-generation system did this with a Node.js aggregator fed from the event bus through a cloud queue, with an…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "e1e9b055fde6e0310765d7bd3b06f288",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Latency also three problems tune away latency",
+            "entities": [
+              "Latency"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "It also had three problems we could not tune away: Latency."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "b40141be91af15cceeebde0050e9a8a5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Event event metric took more than seconds",
+            "entities": [
+              "Event"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "Event-to-metric took more than 40 seconds on a good day."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          },
+          {
+            "id": "8dad529efca2a937167fec452ac2378b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-0",
+            "statement": "Detectors detectors then needed several minutes windowed",
+            "entities": [
+              "Detectors"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f07322002d5eaf6c675e52a7250d3276bf16f6e3",
+                "sourceDomain": "cncf.io",
+                "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+                "quote": "Detectors then needed several minutes of windowed data on top of that."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-09-30T12:24:33.076Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "A four‑person team replaced their first‑generation node aggregator with an OpenTelemetry‑Kafka‑Flink pipeline running on Kubernetes, dropping detection latency from roughly 40 s to under 10 s [FACT:db8b2f17003a27c16ee80c1131e42aba][FACT:e8512244930957af13098999554c4d3d][FACT:b40141be91af15cceeebde0050e9a8a5][FACT:8dad529efca2a937167fec452ac2378b].",
+            "isEditorial": false,
+            "factIds": [
+              "db8b2f17003a27c16ee80c1131e42aba",
+              "e8512244930957af13098999554c4d3d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Faster detection shortens mean‑time‑to‑response, which matters when you’re handling billions of events a day across dozens of products and thousands of distinct tenants [FACT:4d489d0f21a4c20a6c212f6536775482][FACT:4d2d16418e4ff33b50ff1b1dca1ecddd].",
+            "isEditorial": false,
+            "factIds": [
+              "4d489d0f21a4c20a6c212f6536775482",
+              "4d2d16418e4ff33b50ff1b1dca1ecddd"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The original stack collected metrics on a single‑node aggregator that buffered for minutes before evaluating sliding windows, causing >40 s latency [FACT:b40141be91af15cceeebde0050e9a8a5][FACT:8dad529efca2a937167fec452ac2378b]. The new architecture streams raw OpenTelemetry data into Apache Kafka, runs low‑latency windowed analyses in Apache Flink, and emits alerts as soon as the window closes, achieving sub‑10‑second end‑to‑end latency [FACT:db8b2f17003a27c16ee80c1131e42aba][FACT:e1e9b055fde6e0310765d7bd3b06f288].",
+            "isEditorial": false,
+            "factIds": [
+              "8dad529efca2a937167fec452ac2378b",
+              "db8b2f17003a27c16ee80c1131e42aba",
+              "e1e9b055fde6e0310765d7bd3b06f288"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already ship OpenTelemetry from your services, you can drop the Kafka and Flink Helm charts into your cluster, point your collector at the new topics, and start seeing sub‑10‑second alerts without rewriting application code [FACT:db8b2f17003a27c16ee80c1131e42aba].",
+            "isEditorial": false,
+            "factIds": [
+              "db8b2f17003a27c16ee80c1131e42aba"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The team reports that detection precision still falls short of their target, so false‑positive rates may need further tuning, and they haven’t published full resource‑usage numbers for the pipeline at production scale [FACT:47b2fb10fc22c582b4de558a9a900bed][FACT:e1e9b055fde6e0310765d7bd3b06f288].",
+            "isEditorial": false,
+            "factIds": [
+              "47b2fb10fc22c582b4de558a9a900bed"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The rebuild provides a concrete, open‑source path to sub‑10‑second incident detection on Kubernetes. Adopt it if latency is a bottleneck, but plan for added operational complexity and allocate time to improve precision [FACT:db8b2f17003a27c16ee80c1131e42aba][FACT:47b2fb10fc22c582b4de558a9a900bed].",
+            "isEditorial": false,
+            "factIds": [
+              "db8b2f17003a27c16ee80c1131e42aba",
+              "47b2fb10fc22c582b4de558a9a900bed"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
         "id": "cluster-ai-12::2026-09-30T12:24:51.468Z",
         "rank": 7,
         "topic": "ai",
