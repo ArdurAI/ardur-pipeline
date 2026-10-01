@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-09-30T18:00:00.000Z",
-    "windowStart": "2026-09-30T18:00:00.000Z",
-    "windowEnd": "2026-10-01T00:00:00.000Z"
+    "id": "2026-10-01T00:00:00.000Z",
+    "windowStart": "2026-10-01T00:00:00.000Z",
+    "windowEnd": "2026-10-01T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-09-30T18:58:15.571Z",
-  "nextRefreshAt": "2026-10-01T00:00:00.000Z",
+  "publishedAt": "2026-10-01T05:04:52.728Z",
+  "nextRefreshAt": "2026-10-01T06:00:00.000Z",
   "runIds": {
-    "aggregation": "3ea1cbe8-060f-4889-b12e-e57b80324030",
-    "ranking": "rank-206c0732",
-    "top10": "top10:2026-09-30T18:00:00.000Z",
-    "articles": "synth-top10:2026-09-30T18:00:00.000Z-2026-09-30T18:58:34.882Z"
+    "aggregation": "d2c779a4-2b5d-47b6-83e4-ea66f6560ec1",
+    "ranking": "rank-13174e06",
+    "top10": "top10:2026-10-01T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-01T00:00:00.000Z-2026-10-01T05:05:12.232Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-09-30T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-09-30T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-09-30T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-01T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-01T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-01T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 66,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1544,
+      "count": 1365,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE84OHBuWi1pTXVVQkZBTFdhMUwwSXlNemRoTUdyaUJ2LURPS0FEUXVvVXBHNWhmVzJzMzhSVDZVT01kYl9UazV5QzFVeTd2LXZ6VUxtTnpCZEdld2xJVlFwa1J1Z0o?oc=5"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[kubernetes] degraded: 11 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1733,
+      "count": 1563,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 25,
+      "count": 24,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:73998: Important: gvfs security update"
+        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild Updated September 30"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Python Language Summit 2026"
+        "topic": "ai",
+        "headline": "Google Gemini 4 Argon closes the gap with OpenAI and Anthropic but doesn&039;t take a clear lead"
       },
       {
         "rank": 3,
         "topic": "platform",
-        "headline": "September 2026 Security Release"
+        "headline": "Python 3.10.22, 3.11.17, 3.12.15, 3.13.16 and 3.14.8 are now available"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "FTC opens probe into AI giants including Anthropic and OpenAI"
+        "headline": "F.T.C. Investigates OpenAI and Anthropic Over Potential Consumer Harms"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Quoting Anthropic Frontier Red Team"
+        "topic": "security",
+        "headline": "RHSA-2026:74088: Important: python3.9 security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Disrupting a coordinated model-distillation campaign"
+        "topic": "security",
+        "headline": "RHSA-2026:74133: Moderate: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Google drops Gems for Skills, joining OpenAI and Anthropic in the shift to agent-ready prompt formats"
+        "topic": "security",
+        "headline": "Google: AI Is Changing the Pace and Profile of Vulnerability Discovery"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager"
+        "topic": "kubernetes",
+        "headline": "What’s New in Kubernetes Resilience: Smarter Protection for VMs and Containers at Scale v9.0"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild CVE-2026-76504"
+        "topic": "ai",
+        "headline": "AI agents tried to hack Canadian government website, research firm says"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Cisco warns of new SD-WAN zero-day exploited in attacks"
+        "topic": "ai",
+        "headline": "Google’s new frontier AI model Gemini 4 Argon goes to cybersecurity defenders first"
       }
     ],
     "articleCount": 0
