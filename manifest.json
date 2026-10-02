@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-01T18:00:00.000Z",
-    "windowStart": "2026-10-01T18:00:00.000Z",
-    "windowEnd": "2026-10-02T00:00:00.000Z"
+    "id": "2026-10-02T00:00:00.000Z",
+    "windowStart": "2026-10-02T00:00:00.000Z",
+    "windowEnd": "2026-10-02T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-01T19:21:40.387Z",
-  "nextRefreshAt": "2026-10-02T00:00:00.000Z",
+  "publishedAt": "2026-10-02T04:54:30.254Z",
+  "nextRefreshAt": "2026-10-02T06:00:00.000Z",
   "runIds": {
-    "aggregation": "07a8c165-2faf-4aeb-b0d3-b473173ffbd4",
-    "ranking": "rank-5a3b73aa",
-    "top10": "top10:2026-10-01T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-01T18:00:00.000Z-2026-10-01T19:21:55.295Z"
+    "aggregation": "2b5d4230-f83d-4819-a33c-b39f9ae06558",
+    "ranking": "rank-c57fc379",
+    "top10": "top10:2026-10-02T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-02T00:00:00.000Z-2026-10-02T04:54:47.211Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-01T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-01T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-01T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-02T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-02T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-02T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1561,
+      "count": 1383,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-5] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 13 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[kubernetes] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1756,
+      "count": 1620,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 18,
+      "count": 19,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 30,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Announcing Rust 1.99.0"
+        "topic": "security",
+        "headline": "RHSA-2026:74438: Moderate: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "The Future of Platform Engineering report"
+        "topic": "security",
+        "headline": "RHSA-2026:74610: Important: freerdp security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:74581: Important: skopeo security update"
+        "topic": "platform",
+        "headline": "Announcing Rust 1.99.0"
       },
       {
         "rank": 4,
@@ -123,35 +123,35 @@
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:74464: Moderate: ghostscript security update"
+        "topic": "platform",
+        "headline": "The Future of Platform Engineering report"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild Updated September 30"
+        "headline": "Fortinet warns of critical FortiMail flaw exploited in zero-day attacks"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "The eternal complement"
+        "topic": "security",
+        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild Updated September 30"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Build agent memory with NVIDIA NeMo Agent Toolkit and Amazon S3 Vectors"
+        "headline": "The Den frees up 10-15 hours a week to grow with ChatGPT Work"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "Microsoft just launched native Linux container support on Windows 11"
+        "headline": "Dapr Runtime v1.19.0-rc.1"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "How Albertsons Companies is reimagining retail from the inside out"
+        "headline": "OpenAI reacts to FTC investigation into AI safety"
       }
     ],
-    "articleCount": 2
+    "articleCount": 0
   }
 }
