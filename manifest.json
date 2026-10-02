@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-02T00:00:00.000Z",
-    "windowStart": "2026-10-02T00:00:00.000Z",
-    "windowEnd": "2026-10-02T06:00:00.000Z"
+    "id": "2026-10-02T12:00:00.000Z",
+    "windowStart": "2026-10-02T12:00:00.000Z",
+    "windowEnd": "2026-10-02T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-02T04:54:30.254Z",
-  "nextRefreshAt": "2026-10-02T06:00:00.000Z",
+  "publishedAt": "2026-10-02T12:11:14.001Z",
+  "nextRefreshAt": "2026-10-02T18:00:00.000Z",
   "runIds": {
-    "aggregation": "2b5d4230-f83d-4819-a33c-b39f9ae06558",
-    "ranking": "rank-c57fc379",
-    "top10": "top10:2026-10-02T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-02T00:00:00.000Z-2026-10-02T04:54:47.211Z"
+    "aggregation": "1b630a9f-1525-4bea-bbff-5867eef7f405",
+    "ranking": "rank-ac24dc4f",
+    "top10": "top10:2026-10-02T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-02T12:00:00.000Z-2026-10-02T12:11:34.301Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-02T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-02T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-02T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-02T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-02T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-02T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1383,
+      "count": 1346,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,16 +50,16 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[kubernetes] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1620,
+      "count": 1607,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -72,24 +72,24 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 19,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 30,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:74438: Moderate: kernel security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:72785: Important: ruby security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:74610: Important: freerdp security update"
+        "headline": "RHSA-2026:73511: Moderate: gawk security update"
       },
       {
         "rank": 3,
         "topic": "platform",
-        "headline": "Announcing Rust 1.99.0"
+        "headline": "Envoy Gateway 1.9.1 Tightens Security and Addresses a Difficult Upgrade Path"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "Google debuts Gemini 4 Argon, its latest frontier model"
+        "topic": "ai",
+        "headline": "OpenAI fires workers for 'mishandling sensitive information'"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "The Future of Platform Engineering report"
+        "topic": "kubernetes",
+        "headline": "v1.37.7"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Fortinet warns of critical FortiMail flaw exploited in zero-day attacks"
+        "topic": "kubernetes",
+        "headline": "v1.38.5"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild Updated September 30"
+        "topic": "kubernetes",
+        "headline": "v1.39.2"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "The Den frees up 10-15 hours a week to grow with ChatGPT Work"
+        "topic": "security",
+        "headline": "Exploited Fortinet FortiMail Zero-Day Calls for Urgent Action"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.1"
+        "topic": "security",
+        "headline": "Critical FortiMail Zero-Day Flaw Exploited in Attacks Allows Unauthenticated Arbitrary File Writes"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "OpenAI reacts to FTC investigation into AI safety"
+        "headline": "PewDiePie unveils ‘uncensored’ Ajax AI model built to run on home PCs — creator says OpenAI banned him twice over model distillation used to build his product"
       }
     ],
     "articleCount": 0
