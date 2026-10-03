@@ -1,38 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-03T12:00:00.000Z",
-    "windowStart": "2026-10-03T12:00:00.000Z",
-    "windowEnd": "2026-10-03T18:00:00.000Z"
+    "id": "2026-10-03T18:00:00.000Z",
+    "windowStart": "2026-10-03T18:00:00.000Z",
+    "windowEnd": "2026-10-04T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-03T15:59:17.853Z",
-  "nextRefreshAt": "2026-10-03T18:00:00.000Z",
+  "publishedAt": "2026-10-03T19:11:43.793Z",
+  "nextRefreshAt": "2026-10-04T00:00:00.000Z",
   "runIds": {
-    "aggregation": "59aac458-950f-43aa-8eb8-ddac03bed407",
-    "ranking": "rank-0fc33e25",
-    "top10": "top10:2026-10-03T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-03T12:00:00.000Z-2026-10-03T15:59:38.703Z"
+    "aggregation": "50744241-a6a6-430a-af70-2faee183d88f",
+    "ranking": "rank-9c8241ea",
+    "top10": "top10:2026-10-03T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-03T18:00:00.000Z-2026-10-03T19:12:03.043Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-03T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-03T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-03T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-03T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-03T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-03T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 78,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1167,
+      "count": 1147,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
         "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1371,
+      "count": 1357,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 21,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 27,
       "sample": [
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -114,44 +114,44 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "\"Muse Gadgets\" turns AI hardware into an open-source DIY project"
+        "headline": "Apparently, OpenAI isn&039;t trying to build \"magic intelligence in the sky\" anymore"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Microsoft adds support for Linux containers in WSL"
+        "topic": "ai",
+        "headline": "Nvidia unveils security platform to stop AI agents from going rogue"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "A model guide for the GPT-6 family"
+        "topic": "kubernetes",
+        "headline": "Microsoft Bakes Linux Container Support Directly into Windows"
       },
       {
         "rank": 6,
         "topic": "platform",
-        "headline": "Zig 0.17 released"
+        "headline": "GitLab Vulnerability Under Active Exploitation Enables Unauthenticated Data Exfiltration"
       },
       {
         "rank": 7,
+        "topic": "ai",
+        "headline": "\"Muse Gadgets\" turns AI hardware into an open-source DIY project"
+      },
+      {
+        "rank": 8,
+        "topic": "platform",
+        "headline": "Zig 0.17 released"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "Fortra Patches Critical Vulnerabilities in BoKS"
       },
       {
-        "rank": 8,
+        "rank": 10,
         "topic": "ai",
         "headline": "Open-source \"BootLoops\" harness supports AI models in performing precise scientific calculations"
-      },
-      {
-        "rank": 9,
-        "topic": "ai",
-        "headline": "Springer Journal Retracts AI Review After Undeclared Generative AI Use"
-      },
-      {
-        "rank": 10,
-        "topic": "kubernetes",
-        "headline": "12 Home Depot Food Storage Finds To Look For On Your Next Shopping Trip"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
