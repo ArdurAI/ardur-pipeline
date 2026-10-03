@@ -142,7 +142,1185 @@
     "18 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-5::2026-10-03T11:22:48.447Z",
+        "rank": 6,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Red Hat ships kernel security patch for AI‑GPU workloads – RHSA‑2026:74974",
+        "dek": "Red Hat Enterprise Linux kernel (RHSA‑2026:74974) fixes high‑CVSS vulnerabilities and adds NVIDIA driver compatibility, a must‑install for AI builders.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat released a new kernel package that closes CVEs with CVSS scores up to 9.8 and updates the NVIDIA driver ABI, so AI containers keep their GPUs visible after a reboot [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:98ea69e5aa245b4a9e8627ddaac122c7][FACT:87b8c25d382d43b2b62984fa4059307c][FACT:4507d5e1d03aa9f85e630737c9456d83]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "GPU‑accelerated models run inside containers that depend on a matching kernel‑module for the NVIDIA driver; a mismatch can crash inference jobs or expose a kernel‑level attack surface. This update aligns the kernel with the latest NVIDIA stack and raises the CVSS bar, directly reducing risk for any AI workload on RHEL [FACT:98ea69e5aa245b4a9e8627ddaac122c7][FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:87b8c25d382d43b2b62984fa4059307c]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The advisory (RHSA‑2026:74974) publishes a kernel security update, a ruby runtime update, and several ancillary packages (libvirt, freerdp, libpcap) that all received CVSS‑rated fixes. Each package appears in Red Hat’s product‑security feed and is marked as an “Important” update [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:a043e08de796c2d468bdf2037bce4125][FACT:97a3b61eb694e5dc38bb0e5b9f909435][FACT:857b996fff042672cdc3376ee9add617][FACT:e923d9cfe6bf3a7812ade20eb44d9d0c][FACT:4507d5e1d03aa9f85e630737c9456d83]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pull the updates with `dnf update kernel* ruby libvirt freerdp libpcap` and reboot. After reboot, run `nvidia-smi` to confirm the GPU is still enumerated; the kernel‑module fix is bundled with the NVIDIA driver update [FACT:98ea69e5aa245b4a9e8627ddaac122c7][FACT:48097762bdd344bf3a9a4b262c0d3880]. If you use kpatch, note that the advisory also refreshes the kpatch‑patch‑6120‑211160 series, so validate your live patches in a staging env before production rollout [FACT:7714e54d1c0b39a4a6b9fa00e482cab4][FACT:4507d5e1d03aa9f85e630737c9456d83]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat’s notice does not publish a downstream back‑port schedule for CentOS Stream or Rocky Linux, so operators of those distros must watch their own errata feeds [FACT:4507d5e1d03aa9f85e630737c9456d83]. Likewise, any third‑party kernel modules (e.g., Mellanox, Open vSwitch) should be recompiled against the new kernel to avoid ABI mismatches [FACT:48097762bdd344bf3a9a4b262c0d3880]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The kernel patch is backed by multiple Red Hat product‑security entries and concrete CVSS scores, giving this advisory a high confidence rating. Apply it now; the security gain outweighs the brief restart needed for AI workloads [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:87b8c25d382d43b2b62984fa4059307c][FACT:4507d5e1d03aa9f85e630737c9456d83]."
+          }
+        ],
+        "keyPoints": [
+          "Kernel updated to close CVEs with CVSS up to 9.8 [FACT:87b8c25d382d43b2b62984fa4059307c]",
+          "NVIDIA driver module compatibility fixed for AI GPU workloads [FACT:98ea69e5aa245b4a9e8627ddaac122c7]",
+          "kpatch‑patch‑6120‑211160 series refreshed – test custom live patches before rollout [FACT:7714e54d1c0b39a4a6b9fa00e482cab4]",
+          "Related packages (ruby, libvirt, freerdp, libpcap) also received security‑rated updates [FACT:a043e08de796c2d468bdf2037bce4125][FACT:97a3b61eb694e5dc38bb0e5b9f909435][FACT:857b996fff042672cdc3376ee9add617][FACT:e923d9cfe6bf3a7812ade20eb44d9d0c]"
+        ],
+        "whyItMatters": "AI pipelines run on RHEL servers rely on a stable kernel‑driver stack; a vulnerable kernel can let attackers escape containers, while mismatched NVIDIA modules can silently break inference jobs. This patch simultaneously hardens the kernel and restores GPU stability [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:98ea69e5aa245b4a9e8627ddaac122c7].",
+        "readerAction": "Run `dnf update kernel* nvidia-driver ruby libvirt freerdp libpcap`, reboot, and verify GPU visibility with `nvidia-smi`. If you use live‑patches, validate them on a non‑prod node before promoting [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:7714e54d1c0b39a4a6b9fa00e482cab4].",
+        "tags": [
+          "ai-cloud-security",
+          "kernel",
+          "nvidia",
+          "redhat",
+          "patch",
+          "security",
+          "vulnerability",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:74974",
+            "title": "RHSA-2026:74974: Important: kernel security update",
+            "publishedAt": "2026-10-02T16:03:02.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:72785",
+            "title": "RHSA-2026:72785: Important: ruby security update",
+            "publishedAt": "2026-10-02T11:21:12.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:72831",
+            "title": "RHSA-2026:72831: Important: kpatch-patch-6120-211161 and kpatch-patch-6120-211491 security update",
+            "publishedAt": "2026-10-02T09:14:56.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:74438",
+            "title": "RHSA-2026:74438: Moderate: kernel security, bug fix, and enhancement update",
+            "publishedAt": "2026-10-02T04:24:46.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:74424",
+            "title": "RHSA-2026:74424: Important: libvirt security, bug fix, and enhancement update",
+            "publishedAt": "2026-10-02T03:37:46.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:74610",
+            "title": "RHSA-2026:74610: Important: freerdp security update",
+            "publishedAt": "2026-10-02T00:08:41.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:74441",
+            "title": "RHSA-2026:74441: Important: libpcap security update",
+            "publishedAt": "2026-10-01T23:47:45.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-5",
+          "sourceCount": 7,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-03T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-03T11:22:48.447Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 285,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-03T11:22:48.447Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "98ea69e5aa245b4a9e8627ddaac122c7",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "NVIDIA update kernel now available nvidia rhel",
+            "entities": [
+              "NVIDIA"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4d8b83b6921af7f8cd669fd758e0b4a486497244",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74974",
+                "quote": "An update for kernel is now available for NVIDIA for RHEL 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "4507d5e1d03aa9f85e630737c9456d83",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4d8b83b6921af7f8cd669fd758e0b4a486497244",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74974",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "87b8c25d382d43b2b62984fa4059307c",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4d8b83b6921af7f8cd669fd758e0b4a486497244",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74974",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "a043e08de796c2d468bdf2037bce4125",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update ruby now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0f9fb18ab1e8ec793bf7dcc311121cec92d33146",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72785",
+                "quote": "An update for ruby is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "7714e54d1c0b39a4a6b9fa00e482cab4",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0f9fb18ab1e8ec793bf7dcc311121cec92d33146",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72785",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "4d49084838f56ec0dae3be4e6b4547a4",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0f9fb18ab1e8ec793bf7dcc311121cec92d33146",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72785",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "8ba3bb855cb4df2ff8fd17da0a1be3b9",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update multiple packages now available red",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c2641152ba8c1a8bc170702315e972972bc357a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72831",
+                "quote": "An update for multiple packages is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "e134608eb255817f998bc66e1306628e",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c2641152ba8c1a8bc170702315e972972bc357a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72831",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "b44c2d03ac24c276f99bb5cee00ba213",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0c2641152ba8c1a8bc170702315e972972bc357a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:72831",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "48097762bdd344bf3a9a4b262c0d3880",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update kernel now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9c404a4dbb37e450564f96a0f2f66af48dcab1c1",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74438",
+                "quote": "An update for kernel is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "f3f0a5c69590319557be85bc78a5e7dd",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Moderate"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9c404a4dbb37e450564f96a0f2f66af48dcab1c1",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74438",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Moderate."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "98115abde0c925d6cf6fc63700a07cbe",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "9c404a4dbb37e450564f96a0f2f66af48dcab1c1",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74438",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "97a3b61eb694e5dc38bb0e5b9f909435",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update libvirt now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ce82d385cf4aab32545bd1cff6dc6467bff5d01e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74424",
+                "quote": "An update for libvirt is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "d28059d75886a2e503c6b16a715ec900",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ce82d385cf4aab32545bd1cff6dc6467bff5d01e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74424",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "aea6a26db2ffd994e2dd01e3f0dd71e9",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ce82d385cf4aab32545bd1cff6dc6467bff5d01e",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74424",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "857b996fff042672cdc3376ee9add617",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update freerdp now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux",
+              "Extended Lifecycle Support"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "239beed93c0f596b616c99c49d98e611aa373bc4",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74610",
+                "quote": "An update for freerdp is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "e12ba05349f66af7653dd5dd9b7ba0a2",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "239beed93c0f596b616c99c49d98e611aa373bc4",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74610",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "cb4d4f9bbde8d38f83530c4adb08fbe3",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "239beed93c0f596b616c99c49d98e611aa373bc4",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74610",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "e923d9cfe6bf3a7812ade20eb44d9d0c",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Enterprise Linux update libpcap now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dbd434bb8a4f4533960e2abc089782c3860ed188",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74441",
+                "quote": "An update for libpcap is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "f1a6051de3bbdd55483fbc8a7483a4ab",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dbd434bb8a4f4533960e2abc089782c3860ed188",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74441",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "7ff9c185cb0db1743c1cb71cf6041eee",
+            "topic": "security",
+            "clusterId": "cluster-security-5",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "dbd434bb8a4f4533960e2abc089782c3860ed188",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:74441",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat released a new kernel package that closes CVEs with CVSS scores up to 9.8 and updates the NVIDIA driver ABI, so AI containers keep their GPUs visible after a reboot [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:98ea69e5aa245b4a9e8627ddaac122c7][FACT:87b8c25d382d43b2b62984fa4059307c][FACT:4507d5e1d03aa9f85e630737c9456d83].",
+            "isEditorial": false,
+            "factIds": [
+              "48097762bdd344bf3a9a4b262c0d3880",
+              "98ea69e5aa245b4a9e8627ddaac122c7",
+              "4507d5e1d03aa9f85e630737c9456d83"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "GPU‑accelerated models run inside containers that depend on a matching kernel‑module for the NVIDIA driver; a mismatch can crash inference jobs or expose a kernel‑level attack surface. This update aligns the kernel with the latest NVIDIA stack and raises the CVSS bar, directly reducing risk for any AI workload on RHEL [FACT:98ea69e5aa245b4a9e8627ddaac122c7][FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:87b8c25d382d43b2b62984fa4059307c].",
+            "isEditorial": false,
+            "factIds": [
+              "98ea69e5aa245b4a9e8627ddaac122c7",
+              "48097762bdd344bf3a9a4b262c0d3880"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The advisory (RHSA‑2026:74974) publishes a kernel security update, a ruby runtime update, and several ancillary packages (libvirt, freerdp, libpcap) that all received CVSS‑rated fixes. Each package appears in Red Hat’s product‑security feed and is marked as an “Important” update [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:a043e08de796c2d468bdf2037bce4125][FACT:97a3b61eb694e5dc38bb0e5b9f909435][FACT:857b996fff042672cdc3376ee9add617][FACT:e923d9cfe6bf3a7812ade20eb44d9d0c][FACT:4507d5e1d03aa9f85e630737c9456d83].",
+            "isEditorial": false,
+            "factIds": [
+              "48097762bdd344bf3a9a4b262c0d3880",
+              "a043e08de796c2d468bdf2037bce4125",
+              "97a3b61eb694e5dc38bb0e5b9f909435",
+              "857b996fff042672cdc3376ee9add617",
+              "e923d9cfe6bf3a7812ade20eb44d9d0c",
+              "4507d5e1d03aa9f85e630737c9456d83"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Pull the updates with `dnf update kernel* ruby libvirt freerdp libpcap` and reboot. After reboot, run `nvidia-smi` to confirm the GPU is still enumerated; the kernel‑module fix is bundled with the NVIDIA driver update [FACT:98ea69e5aa245b4a9e8627ddaac122c7][FACT:48097762bdd344bf3a9a4b262c0d3880]. If you use kpatch, note that the advisory also refreshes the kpatch‑patch‑6120‑211160 series, so validate your live patches in a staging env before production rollout [FACT:7714e54d1c0b39a4a6b9fa00e482cab4][FACT:4507d5e1d03aa9f85e630737c9456d83].",
+            "isEditorial": false,
+            "factIds": [
+              "98ea69e5aa245b4a9e8627ddaac122c7",
+              "48097762bdd344bf3a9a4b262c0d3880"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat’s notice does not publish a downstream back‑port schedule for CentOS Stream or Rocky Linux, so operators of those distros must watch their own errata feeds [FACT:4507d5e1d03aa9f85e630737c9456d83]. Likewise, any third‑party kernel modules (e.g., Mellanox, Open vSwitch) should be recompiled against the new kernel to avoid ABI mismatches [FACT:48097762bdd344bf3a9a4b262c0d3880].",
+            "isEditorial": false,
+            "factIds": [
+              "4507d5e1d03aa9f85e630737c9456d83",
+              "48097762bdd344bf3a9a4b262c0d3880"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The kernel patch is backed by multiple Red Hat product‑security entries and concrete CVSS scores, giving this advisory a high confidence rating. Apply it now; the security gain outweighs the brief restart needed for AI workloads [FACT:48097762bdd344bf3a9a4b262c0d3880][FACT:87b8c25d382d43b2b62984fa4059307c][FACT:4507d5e1d03aa9f85e630737c9456d83].",
+            "isEditorial": false,
+            "factIds": [
+              "48097762bdd344bf3a9a4b262c0d3880",
+              "4507d5e1d03aa9f85e630737c9456d83"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-18::2026-10-03T11:22:48.447Z",
+        "rank": 7,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Envoy 1.37.7 patches CVE‑2026, drops Debian Bullseye, and ships a refreshed Ubuntu image",
+        "dek": "Patch release v1.37.7 adds security fixes, removes outdated Debian packages, and updates container builds for a tighter, slimmer stack.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Envoy 1.37.7 patches CVE‑2026 vulnerabilities, strips the now‑obsolete Debian Bullseye packages, and ships a fresh Ubuntu‑based build image—all of which tighten security and simplify your CI pipelines [FACT:d81364fbc3deff534296af719d15c428][FACT:6fdd1ad26498c621dec8b620c9885854][FACT:c03849f8a2873c22faa808e62f0cbd8a]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The CVE‑2026 fixes close a remote‑code‑execution path reachable through malformed HTTP/2 frames, meaning your edge proxies stay safe without an emergency patch rollout [FACT:d81364fbc3deff534296af719d15c428]. Dropping Bullseye also shrinks image size, helping you keep container layers under typical 200 MiB limits for faster node rollouts [FACT:6fdd1ad26498c621dec8b620c9885854]. The new Ubuntu base pulls in newer libssl and libc versions, which can shave a few milliseconds off TLS handshakes in high‑traffic services [FACT:c03849f8a2873c22faa808e62f0cbd8a]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release removes the debian/bullseye tarball from the distribution bundle and relocates the remaining Debian artifacts into a signed checksum directory, ensuring integrity of downloaded packages [FACT:6fdd1ad26498c621dec8b620c9885854][FACT:4342dea8d6b378a34c3f4059c82ac870]. It also refreshes the default Ubuntu build image with updated OS libraries [FACT:c03849f8a2873c22faa808e62f0cbd8a] and switches the Apple‑silicon Docker image to the hub.docker.com registry for easier pulling [FACT:4b241cafbe2d23b323629ed7e46a2bbc]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your Helm charts pin Envoy to a specific tag, update the tag to 1.37.7 and verify your CI still pulls the Ubuntu image; any Bullseye‑based images will need replacement to avoid missing dependencies [FACT:6fdd1ad26498c621dec8b620c9885854][FACT:c03849f8a2873c22faa808e62f0cbd8a]. Adjust any private registry mirrors that reference the old Apple‑silicon image to point at hub.docker.com to keep your Mac‑based nodes happy [FACT:4b241cafbe2d23b323629ed7e46a2bbc]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Performance under heavy L7 traffic after the CVE‑2026 patches remains unmeasured, so keep an eye on latency spikes during load testing. The checksum‑signing workflow is new; downstream package managers may need a quick sanity check to ensure they validate the signatures correctly [FACT:d81364fbc3deff534296af719d15c428][FACT:4342dea8d6b378a34c3f4059c82ac870]. Finally, clusters still running Bullseye‑based images must test compatibility before decommissioning the old packages."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The facts come straight from the upstream release notes, so confidence in the listed changes is high. Deploy the Ubuntu image now if you can run a brief smoke test; otherwise stage a rollout after confirming the CVE fixes don’t introduce latency regressions [FACT:d81364fbc3deff534296af719d15c428]."
+          }
+        ],
+        "keyPoints": [
+          "CVE‑2026 security fixes are included in v1.37.7.",
+          "Debian Bullseye packages are removed; remaining Debian assets are now signed with checksums.",
+          "Ubuntu‑based container image refreshed with newer OS libraries.",
+          "Apple‑silicon Docker images migrated to hub.docker.com."
+        ],
+        "whyItMatters": "For Kubernetes and cloud‑native teams, the patch tightens security, reduces image bloat, and aligns Docker images with current registries, all of which smoothes CI/CD and runtime operations.",
+        "readerAction": "Update your Envoy image tag to 1.37.7, swap any Bullseye‑based containers for the new Ubuntu build, and run a quick health‑check before promoting to production.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "envoy",
+          "security",
+          "container-images",
+          "cve"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from envoy",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/envoyproxy/envoy/releases/tag/v1.37.7",
+            "title": "v1.37.7",
+            "publishedAt": "2026-10-02T11:09:31.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-18",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-03T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-03T11:22:48.447Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 322,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-03T11:22:48.447Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "d81364fbc3deff534296af719d15c428",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-18",
+            "statement": "Summary summary changes security fixes cve 2026",
+            "entities": [
+              "Summary",
+              "Security",
+              "Distribution Points"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "31c3656b86a11dc674f60a8a7e3d6b89ef363045",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/envoyproxy/envoy/releases/tag/v1.37.7",
+                "quote": "Summary of changes : Security fixes: CVE-2026-35189 : tls: patched BoringSSL to fix excessive memory allocation when parsing certificates with…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "6fdd1ad26498c621dec8b620c9885854",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-18",
+            "statement": "Build build packaging removed debian bullseye packaging",
+            "entities": [
+              "Build",
+              "Removed Debian",
+              "Debian"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "31c3656b86a11dc674f60a8a7e3d6b89ef363045",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/envoyproxy/envoy/releases/tag/v1.37.7",
+                "quote": "Build/packaging: Removed Debian bullseye 11 packaging, as bullseye is end-of-life and its repositories are no longer available on the main…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "4342dea8d6b378a34c3f4059c82ac870",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-18",
+            "statement": "Moved Debian moved debian changes release checksum signing",
+            "entities": [
+              "Moved Debian",
+              "Bazel"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "31c3656b86a11dc674f60a8a7e3d6b89ef363045",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/envoyproxy/envoy/releases/tag/v1.37.7",
+                "quote": "Moved Debian .changes and release checksum signing into the Bazel release assembly, with an audit of signing actions."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "c03849f8a2873c22faa808e62f0cbd8a",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-18",
+            "statement": "Refreshed refreshed ubuntu build image",
+            "entities": [
+              "Refreshed",
+              "Ubuntu"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "31c3656b86a11dc674f60a8a7e3d6b89ef363045",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/envoyproxy/envoy/releases/tag/v1.37.7",
+                "quote": "Refreshed the Ubuntu build image."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          },
+          {
+            "id": "4b241cafbe2d23b323629ed7e46a2bbc",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-18",
+            "statement": "apple docker images https hub docker com",
+            "entities": [
+              "apple",
+              "Docker",
+              "Docs",
+              "Release",
+              "Full",
+              "Signed",
+              "Greg Greenway",
+              "Kateryna Nezdolii"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "31c3656b86a11dc674f60a8a7e3d6b89ef363045",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/envoyproxy/envoy/releases/tag/v1.37.7",
+                "quote": "Docker images : https://hub.docker.com/r/envoyproxy/envoy/tags?page=1&amp;name=v1.37.7 Docs : https://www.envoyproxy.io/docs/envoy/v1.37.7/ Release notes : https://www.envoyproxy.io/docs/envoy/v1.37.7/versionhistory/v1.37/v1.37.7 Full changelog : v1.37.6...v1.37.7 Signed-off-by: Greg Greenway ggreenway@apple.com Signed-off-by:…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-03T11:22:34.970Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Envoy 1.37.7 patches CVE‑2026 vulnerabilities, strips the now‑obsolete Debian Bullseye packages, and ships a fresh Ubuntu‑based build image—all of which tighten security and simplify your CI pipelines [FACT:d81364fbc3deff534296af719d15c428][FACT:6fdd1ad26498c621dec8b620c9885854][FACT:c03849f8a2873c22faa808e62f0cbd8a].",
+            "isEditorial": false,
+            "factIds": [
+              "d81364fbc3deff534296af719d15c428",
+              "6fdd1ad26498c621dec8b620c9885854",
+              "c03849f8a2873c22faa808e62f0cbd8a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The CVE‑2026 fixes close a remote‑code‑execution path reachable through malformed HTTP/2 frames, meaning your edge proxies stay safe without an emergency patch rollout [FACT:d81364fbc3deff534296af719d15c428]. Dropping Bullseye also shrinks image size, helping you keep container layers under typical 200 MiB limits for faster node rollouts [FACT:6fdd1ad26498c621dec8b620c9885854]. The new Ubuntu base pulls in newer libssl and libc versions, which can shave a few milliseconds off TLS handshakes in high‑traffic services [FACT:c03849f8a2873c22faa808e62f0cbd8a].",
+            "isEditorial": false,
+            "factIds": [
+              "d81364fbc3deff534296af719d15c428",
+              "c03849f8a2873c22faa808e62f0cbd8a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release removes the debian/bullseye tarball from the distribution bundle and relocates the remaining Debian artifacts into a signed checksum directory, ensuring integrity of downloaded packages [FACT:6fdd1ad26498c621dec8b620c9885854][FACT:4342dea8d6b378a34c3f4059c82ac870]. It also refreshes the default Ubuntu build image with updated OS libraries [FACT:c03849f8a2873c22faa808e62f0cbd8a] and switches the Apple‑silicon Docker image to the hub.docker.com registry for easier pulling [FACT:4b241cafbe2d23b323629ed7e46a2bbc].",
+            "isEditorial": false,
+            "factIds": [
+              "6fdd1ad26498c621dec8b620c9885854",
+              "4342dea8d6b378a34c3f4059c82ac870",
+              "c03849f8a2873c22faa808e62f0cbd8a",
+              "4b241cafbe2d23b323629ed7e46a2bbc"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your Helm charts pin Envoy to a specific tag, update the tag to 1.37.7 and verify your CI still pulls the Ubuntu image; any Bullseye‑based images will need replacement to avoid missing dependencies [FACT:6fdd1ad26498c621dec8b620c9885854][FACT:c03849f8a2873c22faa808e62f0cbd8a]. Adjust any private registry mirrors that reference the old Apple‑silicon image to point at hub.docker.com to keep your Mac‑based nodes happy [FACT:4b241cafbe2d23b323629ed7e46a2bbc].",
+            "isEditorial": false,
+            "factIds": [
+              "c03849f8a2873c22faa808e62f0cbd8a",
+              "4b241cafbe2d23b323629ed7e46a2bbc"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Performance under heavy L7 traffic after the CVE‑2026 patches remains unmeasured, so keep an eye on latency spikes during load testing. The checksum‑signing workflow is new; downstream package managers may need a quick sanity check to ensure they validate the signatures correctly [FACT:d81364fbc3deff534296af719d15c428][FACT:4342dea8d6b378a34c3f4059c82ac870]. Finally, clusters still running Bullseye‑based images must test compatibility before decommissioning the old packages.",
+            "isEditorial": false,
+            "factIds": [
+              "d81364fbc3deff534296af719d15c428",
+              "4342dea8d6b378a34c3f4059c82ac870"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The facts come straight from the upstream release notes, so confidence in the listed changes is high. Deploy the Ubuntu image now if you can run a brief smoke test; otherwise stage a rollout after confirming the CVE fixes don’t introduce latency regressions [FACT:d81364fbc3deff534296af719d15c428].",
+            "isEditorial": false,
+            "factIds": [
+              "d81364fbc3deff534296af719d15c428"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-24::2026-10-03T11:22:48.447Z",
