@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-03T06:00:00.000Z",
-    "windowStart": "2026-10-03T06:00:00.000Z",
-    "windowEnd": "2026-10-03T12:00:00.000Z"
+    "id": "2026-10-03T12:00:00.000Z",
+    "windowStart": "2026-10-03T12:00:00.000Z",
+    "windowEnd": "2026-10-03T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-03T11:22:34.770Z",
-  "nextRefreshAt": "2026-10-03T12:00:00.000Z",
+  "publishedAt": "2026-10-03T15:59:17.853Z",
+  "nextRefreshAt": "2026-10-03T18:00:00.000Z",
   "runIds": {
-    "aggregation": "34b1831a-630f-4684-862f-8ae667a14520",
-    "ranking": "rank-d554f230",
-    "top10": "top10:2026-10-03T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-03T06:00:00.000Z-2026-10-03T11:22:48.447Z"
+    "aggregation": "59aac458-950f-43aa-8eb8-ddac03bed407",
+    "ranking": "rank-0fc33e25",
+    "top10": "top10:2026-10-03T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-03T12:00:00.000Z-2026-10-03T15:59:38.703Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-03T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-03T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-03T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-03T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-03T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-03T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1200,
+      "count": 1167,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 7 distinct domains < floor 20",
         "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1443,
+      "count": 1371,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 31,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "YARA-X 1.21.0 Release, Sat, Oct 3rd"
+      },
+      {
+        "rank": 2,
         "topic": "platform",
         "headline": "AI Agents Are Disrupting Open Source Security Disclosure"
       },
       {
-        "rank": 2,
+        "rank": 3,
         "topic": "ai",
-        "headline": "A model guide for the GPT-6 family"
+        "headline": "\"Muse Gadgets\" turns AI hardware into an open-source DIY project"
       },
       {
-        "rank": 3,
+        "rank": 4,
         "topic": "kubernetes",
         "headline": "Microsoft adds support for Linux containers in WSL"
       },
       {
-        "rank": 4,
+        "rank": 5,
+        "topic": "ai",
+        "headline": "A model guide for the GPT-6 family"
+      },
+      {
+        "rank": 6,
+        "topic": "platform",
+        "headline": "Zig 0.17 released"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "Fortra Patches Critical Vulnerabilities in BoKS"
+      },
+      {
+        "rank": 8,
         "topic": "ai",
         "headline": "Open-source \"BootLoops\" harness supports AI models in performing precise scientific calculations"
       },
       {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "AI agents build 3D scenes from photos but have no idea if they got it right"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:74974: Important: kernel security update"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI&039;s internal model considered restarting itself after learning it was about to be shut down"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "Kiteworks &amp; Citrix Incidents Show Challenges of Zero-Day Response"
-      },
-      {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "KubeCon + CloudNativeCon North America 2026: Join the cloud native community at OpenTofu Day"
+        "topic": "ai",
+        "headline": "Springer Journal Retracts AI Review After Undeclared Generative AI Use"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "GitLab warns of critical RCE vulnerability in AI Gateway service"
+        "topic": "kubernetes",
+        "headline": "12 Home Depot Food Storage Finds To Look For On Your Next Shopping Trip"
       }
     ],
     "articleCount": 0
