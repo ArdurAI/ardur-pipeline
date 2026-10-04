@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-03T18:00:00.000Z",
-    "windowStart": "2026-10-03T18:00:00.000Z",
-    "windowEnd": "2026-10-04T00:00:00.000Z"
+    "id": "2026-10-04T00:00:00.000Z",
+    "windowStart": "2026-10-04T00:00:00.000Z",
+    "windowEnd": "2026-10-04T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-03T19:11:43.793Z",
-  "nextRefreshAt": "2026-10-04T00:00:00.000Z",
+  "publishedAt": "2026-10-04T05:07:52.371Z",
+  "nextRefreshAt": "2026-10-04T06:00:00.000Z",
   "runIds": {
-    "aggregation": "50744241-a6a6-430a-af70-2faee183d88f",
-    "ranking": "rank-9c8241ea",
-    "top10": "top10:2026-10-03T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-03T18:00:00.000Z-2026-10-03T19:12:03.043Z"
+    "aggregation": "d04523aa-f0fc-4758-8adf-639be898c0d0",
+    "ranking": "rank-f9aee4c1",
+    "top10": "top10:2026-10-04T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-04T00:00:00.000Z-2026-10-04T05:08:07.594Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-03T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-03T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-03T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-04T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-04T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-04T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 60,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1147,
+      "count": 1198,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1357,
+      "count": 1051,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 21,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "OpenAI safety employee quits, says 'time for trial and error is over'"
+      },
+      {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "I Quit OpenAI Because Its Culture Is Broken"
+      },
+      {
+        "rank": 3,
         "topic": "security",
         "headline": "YARA-X 1.21.0 Release, Sat, Oct 3rd"
       },
       {
-        "rank": 2,
-        "topic": "platform",
-        "headline": "AI Agents Are Disrupting Open Source Security Disclosure"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Apparently, OpenAI isn&039;t trying to build \"magic intelligence in the sky\" anymore"
-      },
-      {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Nvidia unveils security platform to stop AI agents from going rogue"
+        "topic": "platform",
+        "headline": "New Archestra's OpenAPPA Saturates Two Major Security Benchmarks with a 0% Attack Success Rate"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Microsoft Bakes Linux Container Support Directly into Windows"
+        "topic": "ai",
+        "headline": "Nvidia unveils security platform to stop AI agents from going rogue"
       },
       {
         "rank": 6,
@@ -134,24 +134,24 @@
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "\"Muse Gadgets\" turns AI hardware into an open-source DIY project"
+        "headline": "OpenAI reveals another hack into a government agency in Australia"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Zig 0.17 released"
+        "topic": "models",
+        "headline": "AI Inference Costs Plummet 47% Quarterly, EpochAI Reports"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Fortra Patches Critical Vulnerabilities in BoKS"
+        "topic": "kubernetes",
+        "headline": "Microsoft adds support for Linux containers in WSL"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Open-source \"BootLoops\" harness supports AI models in performing precise scientific calculations"
+        "topic": "models",
+        "headline": "\"Muse Gadgets\" turns AI hardware into an open-source DIY project"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
