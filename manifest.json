@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-05T12:00:00.000Z",
-    "windowStart": "2026-10-05T12:00:00.000Z",
-    "windowEnd": "2026-10-05T18:00:00.000Z"
+    "id": "2026-10-05T18:00:00.000Z",
+    "windowStart": "2026-10-05T18:00:00.000Z",
+    "windowEnd": "2026-10-06T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-05T14:05:33.146Z",
-  "nextRefreshAt": "2026-10-05T18:00:00.000Z",
+  "publishedAt": "2026-10-05T22:24:35.502Z",
+  "nextRefreshAt": "2026-10-06T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c1572975-9b7b-49e3-906f-9def5ac34d39",
-    "ranking": "rank-4434fe0a",
-    "top10": "top10:2026-10-05T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-05T12:00:00.000Z-2026-10-05T14:05:48.959Z"
+    "aggregation": "b52b8d93-b638-4c2d-b0a5-2755bdaa7ecd",
+    "ranking": "rank-47baca28",
+    "top10": "top10:2026-10-05T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-05T18:00:00.000Z-2026-10-05T22:24:49.329Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-05T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-05T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-05T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-05T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-05T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-05T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1082,
+      "count": 1184,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -52,23 +52,23 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1163,
+      "count": 1427,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 30,
       "sample": [
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:75747: Important: kernel security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:76045: Important: libpcap security update"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Security updates for Monday"
+        "topic": "ai",
+        "headline": "Meta and Microsoft pull back from Claude as Anthropic transforms from partner into competitor"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "Google&039;s new Gemini tiers cut free users to its weakest model and lock $5/month subscribers out of Pro"
+        "topic": "ai",
+        "headline": "New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI, Anthropic, Google, Meta testify at NYC AI hearing"
+        "topic": "security",
+        "headline": "Rejetto HFS servers now actively scanned for critical RCE flaw"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Picard 3.0 released"
+        "topic": "models",
+        "headline": "Supercharge regulated workloads with Claude Code and Amazon Bedrock"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Building advertising for the way people use AI"
+        "headline": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline"
+        "topic": "platform",
+        "headline": "The Platform Engineering Playbook for Production LLMs"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:75673: Important: mariadb-connector-c security update"
+        "topic": "models",
+        "headline": "Nvidia-Backed Reflection Unveils Open AI Model, Taking on China"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Exploitation of Citrix NetScaler Zero-Day Hits Appliances Patched Days Earlier"
+        "topic": "platform",
+        "headline": "Process and route critical security logs to Exabeam with Observability Pipelines"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Akka Tests Spec-Driven AI Delivery Across 65 Open Source Projects"
+        "topic": "ai",
+        "headline": "OpenAI Unveils ChatGPT Watermarking as European Union AI Rules Take Effect"
       }
     ],
     "articleCount": 0
