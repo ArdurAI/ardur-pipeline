@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-04T18:00:00.000Z",
-    "windowStart": "2026-10-04T18:00:00.000Z",
-    "windowEnd": "2026-10-05T00:00:00.000Z"
+    "id": "2026-10-05T00:00:00.000Z",
+    "windowStart": "2026-10-05T00:00:00.000Z",
+    "windowEnd": "2026-10-05T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-04T18:03:48.059Z",
-  "nextRefreshAt": "2026-10-05T00:00:00.000Z",
+  "publishedAt": "2026-10-05T04:53:36.939Z",
+  "nextRefreshAt": "2026-10-05T06:00:00.000Z",
   "runIds": {
-    "aggregation": "82d77342-e795-4f43-8dde-0629c615f72b",
-    "ranking": "rank-0f1159f6",
-    "top10": "top10:2026-10-04T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-04T18:00:00.000Z-2026-10-04T18:04:05.409Z"
+    "aggregation": "ed8c5f56-eace-4913-b6d3-03d39c8f9eeb",
+    "ranking": "rank-4e683449",
+    "top10": "top10:2026-10-05T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-05T00:00:00.000Z-2026-10-05T04:53:52.883Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-04T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-04T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-04T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-05T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-05T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-05T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1171,
+      "count": 1177,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-5] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1063,
+      "count": 964,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "AI agents reshape identity security"
-      },
-      {
-        "rank": 2,
         "topic": "models",
         "headline": "Google&039;s new Gemini tiers cut free users to its weakest model and lock $5/month subscribers out of Pro"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:75582: Important: librabbitmq security update"
+      },
+      {
         "rank": 3,
         "topic": "ai",
-        "headline": "PewDiePie unveils his custom AI model Ajax"
+        "headline": "Former Anthropic researcher Coxon to testify at New York City AI hearing, Bloomberg News reports"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Google's Android Security State Libraries Enable Component-Level Security Verification"
+        "topic": "security",
+        "headline": "AI agents reshape identity security"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Google researchers find a way to keep self-improving AI agents from memorizing their tests"
+        "topic": "security",
+        "headline": "Citrix patches NetScaler SAML zero-day exploited in attacks"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Pizza Bot: Open-Source Inbox for Background AI Agents"
+        "headline": "Legal risks mount for OpenAI"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Aleph Alpha unveils German-language AI model for public infrastructure"
+        "headline": "Why Observability Is Vital For AI And LLM Applications"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "NASA and IBM&039;s open source lunar model turns 17 years of orbiter data into a foundation for lunar science"
+        "topic": "platform",
+        "headline": "Fragments: October 4"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Imran Khan supporters march on Islamabad to demand his release after talks failed"
+        "topic": "ai",
+        "headline": "Anthropic Asks Claude Users to Share Voice Recordings for AI Training With a New Opt-In Setting"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Battery Transportation Containers Market To 2035: EV Battery Logistics Demand Drives Growth - News and Statistics"
+        "topic": "security",
+        "headline": "ISC Stormcast For Monday, October 5th, 2026 https://isc.sans.edu/podcastdetail/10122, Mon, Oct 5th"
       }
     ],
     "articleCount": 0
