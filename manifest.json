@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-06T06:00:00.000Z",
-    "windowStart": "2026-10-06T06:00:00.000Z",
-    "windowEnd": "2026-10-06T12:00:00.000Z"
+    "id": "2026-10-06T12:00:00.000Z",
+    "windowStart": "2026-10-06T12:00:00.000Z",
+    "windowEnd": "2026-10-06T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-06T06:10:06.996Z",
-  "nextRefreshAt": "2026-10-06T12:00:00.000Z",
+  "publishedAt": "2026-10-06T13:04:04.608Z",
+  "nextRefreshAt": "2026-10-06T18:00:00.000Z",
   "runIds": {
-    "aggregation": "874def39-5f61-4a2d-894a-6328214fa3eb",
-    "ranking": "rank-32d1de67",
-    "top10": "top10:2026-10-06T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-06T06:00:00.000Z-2026-10-06T06:10:33.671Z"
+    "aggregation": "16261291-f85a-4029-87ce-1ce5e5dc4284",
+    "ranking": "rank-13a26043",
+    "top10": "top10:2026-10-06T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-06T12:00:00.000Z-2026-10-06T13:04:23.833Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-06T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-06T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-06T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-06T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-06T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-06T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 69,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1201,
+      "count": 1310,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1408,
+      "count": 1502,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 23,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "RHSA-2026:75768: Important: vim security update"
+      },
+      {
+        "rank": 2,
+        "topic": "platform",
+        "headline": "Rossoctl for agent discoverability, security, and observability on Kubernetes"
+      },
+      {
+        "rank": 3,
         "topic": "models",
         "headline": "Introducing GLM 5.3 on Amazon Bedrock"
       },
       {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI"
-      },
-      {
-        "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:76134: Important: Red Hat Single Sign-On 7.6.13 for OpenShift image security update"
-      },
-      {
         "rank": 4,
         "topic": "ai",
-        "headline": "Meta and Microsoft pull back from Claude as Anthropic transforms from partner into competitor"
+        "headline": "OpenAI will watermark ChatGPT text in the EU but makes it optional for API users worldwide"
       },
       {
         "rank": 5,
+        "topic": "platform",
+        "headline": "OpenTelemetry Makes Kubernetes Attributes Processor Stable as Observability Schema Matures"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "Apple to Tighten Full Disk Access Controls in macOS Amid AI Risks"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "The U.S. has a new horse in the race to build the best open-source AI model"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "Microsoft Makes WSL Containers Generally Available, Adds Enterprise Controls"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Container & More Containers reviews"
-      },
-      {
-        "rank": 7,
-        "topic": "platform",
-        "headline": "Flagged by the Machine: How Google Ads Suspended an Open-Source macOS Term as Malicious"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "The Platform Engineering Playbook for Production LLMs"
-      },
-      {
         "rank": 9,
         "topic": "platform",
-        "headline": "Cloudflare Introduces CLI for AI Agents, Sunsetting Wrangler"
+        "headline": "Declarative clusters: GitOps deployment of hosted control planes on Red Hat OpenShift Virtualization"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Rejetto HFS servers now actively scanned for critical RCE flaw"
+        "headline": "Google Pauses OSS Product Bug Bounty Rewards After Surge in Invalid Automated Reports"
       }
     ],
     "articleCount": 0
