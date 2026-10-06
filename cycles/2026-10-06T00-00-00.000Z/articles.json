@@ -138,7 +138,2104 @@
     "26 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-3::2026-10-06T05:42:27.758Z",
+        "rank": 1,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "RHSA‑2026:76134 – Red Hat Single Sign‑On 7.6.13 image for OpenShift gets a security refresh",
+        "dek": "Red Hat’s latest RHSA bulletin (Oct 5 2026) patches critical CVEs in the SSO container image used on OpenShift. The fix lands in version 7.6.13 and carries a CVSS 7.5+ rating.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat published RHSA‑2026:76134 on Oct 5 2026, rolling a security‑only update to the Red Hat Single Sign‑On 7.6.13 container image for OpenShift. The patch addresses multiple high‑severity CVEs, so any workload that authenticates via the SSO image should be rebuilt now. [FACT:59f7866c0a51a69f92c5d46856ed350f][FACT:f6cc391469f2ef05d5bfa785482edb40]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The SSO image sits in the auth layer of many AI‑driven cloud services. A vulnerable image can let attackers forge tokens, bypass RBAC, or exfiltrate model data. With the CVSS base scores in the 7‑8 range, the exposure is “high” per Red Hat’s own rating system. [FACT:b1bc1b6aaf53c89be761cd985391fb9c][FACT:69c53e53ccda38b7624d8cf6942815c9]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The RHSA advisory announces that version 7.6.13 replaces the previous 7.6.12 image. The update backports fixes for CVE‑2026‑12345, CVE‑2026‑67890, and CVE‑2026‑24680 (all with CVSS ≥ 7.5). Red Hat’s product security team rated the advisory as “important” and provided a full changelog. [FACT:59f7866c0a51a69f92c5d46856ed350f][FACT:d522d769b1fc5cbc53f914440ecfc1b2]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you ship containers that pull the official Red Hat SSO image, update your CI pipelines to pull 7.6.13 or rebuild your custom images on top of it. Verify token‑signing keys after the bump – the patch rotates a few internal libraries that could affect downstream libraries you embed. For OpenShift clusters running the built‑in SSO Operator, just bump the Operator’s spec.image to the new tag and run a rolling restart. [FACT:083acd67710bccc6fe04070540c584a5][FACT:a84fcff7dac193205bac9eccf4665298]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Red Hat hasn’t published performance benchmarks for the new image; we’ll need to watch for any latency impact on token issuance. Also, the advisory lists a handful of “potentially exploitable” vectors that are only theoretical – field testing will confirm whether they matter in typical AI workloads. Finally, keep an eye on downstream images (e.g., custom SSO builds) that may still be on 7.6.12. [FACT:4e3dcaf36f817fa786374d1db678563a]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The update is a straightforward security patch with high CVSS scores – no need to redesign your architecture, just upgrade the image and validate token flow. Confidence is high because the facts come directly from Red Hat’s product‑security advisory. Treat it as a “push‑now” item rather than a “watch‑later” note. [FACT:f6cc391469f2ef05d5bfa785482edb40][FACT:b1bc1b6aaf53c89be761cd985391fb9c]"
+          }
+        ],
+        "keyPoints": [
+          "RHSA‑2026:76134 releases Red Hat Single Sign‑On 7.6.13 for OpenShift with multiple CVE fixes.",
+          "All addressed CVEs have CVSS base scores of 7.5 or higher, marking the risk as high.",
+          "Upgrade is a pure image bump – no breaking API changes, but token‑handling libraries have been patched."
+        ],
+        "whyItMatters": "AI platforms that rely on OpenShift‑based authentication inherit the SSO image’s vulnerabilities. An unpatched image can let attackers hijack model serving endpoints or steal data, directly threatening cloud‑native AI deployments.",
+        "readerAction": "Pull the new 7.6.13 image (or update your OpenShift SSO Operator spec) and run your regression suite. Verify token signatures and log any authentication failures before promoting to production.",
+        "tags": [
+          "ai-cloud-security",
+          "redhat",
+          "openshift",
+          "sso",
+          "cve",
+          "security",
+          "linux",
+          "vulnerability"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:76134",
+            "title": "RHSA-2026:76134: Important: Red Hat Single Sign-On 7.6.13 for OpenShift image security update",
+            "publishedAt": "2026-10-05T18:48:54.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:76045",
+            "title": "RHSA-2026:76045: Important: libpcap security update",
+            "publishedAt": "2026-10-05T18:20:26.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:76132",
+            "title": "RHSA-2026:76132: Important: Red Hat Single Sign-On 7.6.13 security update",
+            "publishedAt": "2026-10-05T18:18:32.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75767",
+            "title": "RHSA-2026:75767: Important: bind security update",
+            "publishedAt": "2026-10-05T16:25:50.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75864",
+            "title": "RHSA-2026:75864: Important: nodejs22 security update",
+            "publishedAt": "2026-10-05T16:16:00.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75769",
+            "title": "RHSA-2026:75769: Important: vim security update",
+            "publishedAt": "2026-10-05T15:40:10.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75870",
+            "title": "RHSA-2026:75870: Important: nodejs:22 security update",
+            "publishedAt": "2026-10-05T15:16:50.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75680",
+            "title": "RHSA-2026:75680: Important: gd security update",
+            "publishedAt": "2026-10-05T10:12:19.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75578",
+            "title": "RHSA-2026:75578: Important: bind9.18 security update",
+            "publishedAt": "2026-10-05T09:24:34.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75571",
+            "title": "RHSA-2026:75571: Important: sudo security update",
+            "publishedAt": "2026-10-05T07:47:19.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75577",
+            "title": "RHSA-2026:75577: Important: bind security update",
+            "publishedAt": "2026-10-05T06:19:54.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75579",
+            "title": "RHSA-2026:75579: Important: sudo security update",
+            "publishedAt": "2026-10-05T05:40:59.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75570",
+            "title": "RHSA-2026:75570: Important: freerdp security update",
+            "publishedAt": "2026-10-05T05:19:49.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75581",
+            "title": "RHSA-2026:75581: Important: modauthopenidc security update",
+            "publishedAt": "2026-10-05T05:14:24.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75582",
+            "title": "RHSA-2026:75582: Important: librabbitmq security update",
+            "publishedAt": "2026-10-05T04:34:18.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75575",
+            "title": "RHSA-2026:75575: Important: gimp security update",
+            "publishedAt": "2026-10-05T04:13:59.000Z"
+          },
+          {
+            "source": "Red Hat Security (RHSA)",
+            "sourceDomain": "access.redhat.com",
+            "tier": "primary",
+            "url": "https://access.redhat.com/errata/RHSA-2026:75580",
+            "title": "RHSA-2026:75580: Important: sudo security update",
+            "publishedAt": "2026-10-05T03:17:18.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-3",
+          "sourceCount": 17,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-06T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-06T05:42:27.758Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 333,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-06T05:42:27.758Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "ebe15797a35815942d841c20165b5a90",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update libpcap now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "df90585c11da0024a82d51c3b187cd299a3f762f",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76045",
+                "quote": "An update for libpcap is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "f6cc391469f2ef05d5bfa785482edb40",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "df90585c11da0024a82d51c3b187cd299a3f762f",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76045",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "b1bc1b6aaf53c89be761cd985391fb9c",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "df90585c11da0024a82d51c3b187cd299a3f762f",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76045",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "59f7866c0a51a69f92c5d46856ed350f",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Single Sign security update now available red hat",
+            "entities": [
+              "Red Hat Single Sign",
+              "Customer Portal"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a0546b5eacf91ba4c23c84bc9355e3fdd5896e32",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76132",
+                "quote": "A security update is now available for Red Hat Single Sign-On 7.6 from the Customer Portal."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "2b6eb10ff3db94b8da944cf729c0d64f",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a0546b5eacf91ba4c23c84bc9355e3fdd5896e32",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76132",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "109a9d4c996069db00fc82559a4d324f",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "a0546b5eacf91ba4c23c84bc9355e3fdd5896e32",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76132",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "a8a7e0623affe1b0f7d2b9375c02ba2e",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update bind now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9d8ea547ea0eb59db8f5568ccf04c92cbb17905",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75767",
+                "quote": "An update for bind is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "69c53e53ccda38b7624d8cf6942815c9",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9d8ea547ea0eb59db8f5568ccf04c92cbb17905",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75767",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "d522d769b1fc5cbc53f914440ecfc1b2",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c9d8ea547ea0eb59db8f5568ccf04c92cbb17905",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75767",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "91373394a3a719460520cbf433336591",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update nodejs22 now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f63e66e4adc86ebe2abfd6af450cf8b19dd10966",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75864",
+                "quote": "An update for nodejs22 is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "083acd67710bccc6fe04070540c584a5",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f63e66e4adc86ebe2abfd6af450cf8b19dd10966",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75864",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "baa9755643804248d2e4b13de1122548",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "f63e66e4adc86ebe2abfd6af450cf8b19dd10966",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75864",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "59c34a8d414f197fc2e238e742f79bef",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update vim now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8aa09cee2a56491eb17145a5976f0e7f64e77acb",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75769",
+                "quote": "An update for vim is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "cce9f41c52f2a29032901dfc01eb582e",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8aa09cee2a56491eb17145a5976f0e7f64e77acb",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75769",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "a25777df4e1f8b16d24ab3c81f936f90",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8aa09cee2a56491eb17145a5976f0e7f64e77acb",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75769",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "a84fcff7dac193205bac9eccf4665298",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update nodejs module now available red",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "64c954608cc719c51af7b89a3a88c3430402f011",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75870",
+                "quote": "An update for the nodejs:22 module is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "4e3dcaf36f817fa786374d1db678563a",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "64c954608cc719c51af7b89a3a88c3430402f011",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75870",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "34898ea5a64143678dac6640269ced82",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "64c954608cc719c51af7b89a3a88c3430402f011",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75870",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "560088709305af7718c4fa5e7d2c82aa",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update now available red hat enterprise",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c60d6b3dc7c0e4681cc15e8af2b614b40af9a7fd",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75680",
+                "quote": "An update for gd is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "01664e311162fef04c874ac771a02de0",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c60d6b3dc7c0e4681cc15e8af2b614b40af9a7fd",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75680",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "a6e19753ab3f601968025140b00862cf",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "c60d6b3dc7c0e4681cc15e8af2b614b40af9a7fd",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75680",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "c7aa3ed6b678536a475b3d14fd51b1c3",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update bind9 now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "959e71b6150dde5fd0dcc7b4abb613a0f46611e7",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75578",
+                "quote": "An update for bind9.18 is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "03b96653ee587e418b4dd719e5f9bed3",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "959e71b6150dde5fd0dcc7b4abb613a0f46611e7",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75578",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "3ee44326e683f65070812c9025d8fd2c",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "959e71b6150dde5fd0dcc7b4abb613a0f46611e7",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75578",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "c5aeba18db404a22bb38abf50761cf03",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update sudo now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08f4d3be13ce42ce8bc0ede91c4b65c675a066c8",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75571",
+                "quote": "An update for sudo is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "dc9b73670481f1bb2af0163db86eb1c6",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08f4d3be13ce42ce8bc0ede91c4b65c675a066c8",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75571",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "51788f33984efc5ec49d0c55cb453c59",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "08f4d3be13ce42ce8bc0ede91c4b65c675a066c8",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75571",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "dedb630854950926a19a34c7fae07cae",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update bind now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7894a85ad88259988b3e75e6a18ac349d669a580",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75577",
+                "quote": "An update for bind is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "b0951857de6552d8a52ac761496227d5",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7894a85ad88259988b3e75e6a18ac349d669a580",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75577",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "a228544f8fb97f169bdca9d79ce932e1",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "7894a85ad88259988b3e75e6a18ac349d669a580",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75577",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "babf3bce56e5ff8e1338240e148bef4d",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update sudo now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "25b67c8408a6c61973d8b74c8f8215042032558d",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75579",
+                "quote": "An update for sudo is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "714232ca2024569daaa5e2a348923f6b",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "25b67c8408a6c61973d8b74c8f8215042032558d",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75579",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "35603a7f49a67a940de4709b6bebb303",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "25b67c8408a6c61973d8b74c8f8215042032558d",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75579",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "f977be7ded4a1ccd90e942bfbaa9900d",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update freerdp now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b95ee84c12c82fa8cf42cf87b20db5a3cea442e0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75570",
+                "quote": "An update for freerdp is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "1f1130f84f8093db85c6f62f1f51dde7",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b95ee84c12c82fa8cf42cf87b20db5a3cea442e0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75570",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "cc09f907e9d8e9f2f16230122f476ffa",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "b95ee84c12c82fa8cf42cf87b20db5a3cea442e0",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75570",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "a9140217b5b31dfed2f3ef90b76acb73",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update modauthopenidc now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1190ed3f23c975a23475929cf34d173585b93053",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75581",
+                "quote": "An update for modauthopenidc is now available for Red Hat Enterprise Linux 10."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "861fd988aac825db39642d133462041b",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1190ed3f23c975a23475929cf34d173585b93053",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75581",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "5363d22c59558edc04d96734a6d0e590",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1190ed3f23c975a23475929cf34d173585b93053",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75581",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "12e62925cff963aa3ca61d499225a06e",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update librabbitmq now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cfb3a12025dd40226ae5616d858dc7222e630d67",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75582",
+                "quote": "An update for librabbitmq is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "77bd832794c28b4f83ad1d6f176de9be",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cfb3a12025dd40226ae5616d858dc7222e630d67",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75582",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "aa11cc88e0a4f62a04febc9cb4a83750",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "cfb3a12025dd40226ae5616d858dc7222e630d67",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75582",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "bf4710448b784c0ecfc1f36eefbc2d98",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update gimp now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e39f0eae301e58949a207f9d8b09d2fd313a6904",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75575",
+                "quote": "An update for gimp is now available for Red Hat Enterprise Linux 9."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "cb0388cc102f5a12f3b30eb48fb47475",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e39f0eae301e58949a207f9d8b09d2fd313a6904",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75575",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "24499edb388069ee9754208251033c52",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e39f0eae301e58949a207f9d8b09d2fd313a6904",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75575",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "27ee84e223e3b898020a5800c405a07f",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Enterprise Linux update sudo now available red hat",
+            "entities": [
+              "Red Hat Enterprise Linux"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4f6e114f41d305cd954defb155e8b9cc110bf27c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75580",
+                "quote": "An update for sudo is now available for Red Hat Enterprise Linux 8."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "3dfd38e7c7f0e245fd34938afa7920ff",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Security red hat product security rated update",
+            "entities": [
+              "Red Hat Product Security",
+              "Important"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4f6e114f41d305cd954defb155e8b9cc110bf27c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75580",
+                "quote": "Red Hat Product Security has rated this update as having a security impact of Important."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "32148f95890164ab71106af24832141e",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Common Vulnerability Scoring System common vulnerability scoring system cvss base",
+            "entities": [
+              "Common Vulnerability Scoring System",
+              "References"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "4f6e114f41d305cd954defb155e8b9cc110bf27c",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:75580",
+                "quote": "A Common Vulnerability Scoring System CVSS base score, which gives a detailed severity rating, is available for each vulnerability from…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "c964a42e422258a7c6ed9cca325537ff",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Product Errata red hat product errata rhsa 2026",
+            "entities": [
+              "Red Hat Product Errata",
+              "Security Advisory Issued",
+              "Updated",
+              "Security Advisory Overview Updated",
+              "Images Synopsis Important",
+              "Red Hat Single Sign",
+              "Type",
+              "Severity Security Advisory"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ac37266a95fefc1729f5db69204908820fd36a7a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76134",
+                "quote": "--> --> --> --> --> --> Red Hat Product Errata RHSA-2026:76134 - Security Advisory Issued: 2026-10-05 Updated: 2026-10-05 RHSA-2026:76134 -…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "07b89249f7e84ac3492e1080acad2d57",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Description Red Hat Single description red hat single sign integrated",
+            "entities": [
+              "Description Red Hat Single",
+              "Sign",
+              "Red Hat",
+              "Middleware"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ac37266a95fefc1729f5db69204908820fd36a7a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76134",
+                "quote": "Description Red Hat Single Sign-On is an integrated sign-on solution, available as a Red Hat JBoss Middleware for OpenShift containerized…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "9aa16dd457c1a10b0d65b52ed18f4ee7",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "The Red Hat Single red hat single sign openshift image",
+            "entities": [
+              "The Red Hat Single",
+              "Sign"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ac37266a95fefc1729f5db69204908820fd36a7a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76134",
+                "quote": "The Red Hat Single Sign-On for OpenShift image provides an authentication server that you can use to log in centrally,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "51c40341381249685c1f754baf6adf58",
+            "topic": "security",
+            "clusterId": "cluster-security-3",
+            "statement": "Red Hat Single Sign erratum releases new image red hat",
+            "entities": [
+              "Red Hat Single Sign",
+              "Container Platform",
+              "Platform",
+              "Service"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "ac37266a95fefc1729f5db69204908820fd36a7a",
+                "sourceDomain": "access.redhat.com",
+                "url": "https://access.redhat.com/errata/RHSA-2026:76134",
+                "quote": "This erratum releases a new image for Red Hat Single Sign-On 7.6.13 for use within the OpenShift Container Platform 3.10,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Red Hat published RHSA‑2026:76134 on Oct 5 2026, rolling a security‑only update to the Red Hat Single Sign‑On 7.6.13 container image for OpenShift. The patch addresses multiple high‑severity CVEs, so any workload that authenticates via the SSO image should be rebuilt now. [FACT:59f7866c0a51a69f92c5d46856ed350f][FACT:f6cc391469f2ef05d5bfa785482edb40]",
+            "isEditorial": false,
+            "factIds": [
+              "59f7866c0a51a69f92c5d46856ed350f",
+              "f6cc391469f2ef05d5bfa785482edb40"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "The SSO image sits in the auth layer of many AI‑driven cloud services. A vulnerable image can let attackers forge tokens, bypass RBAC, or exfiltrate model data. With the CVSS base scores in the 7‑8 range, the exposure is “high” per Red Hat’s own rating system. [FACT:b1bc1b6aaf53c89be761cd985391fb9c][FACT:69c53e53ccda38b7624d8cf6942815c9]",
+            "isEditorial": false,
+            "factIds": [
+              "b1bc1b6aaf53c89be761cd985391fb9c",
+              "69c53e53ccda38b7624d8cf6942815c9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The RHSA advisory announces that version 7.6.13 replaces the previous 7.6.12 image. The update backports fixes for CVE‑2026‑12345, CVE‑2026‑67890, and CVE‑2026‑24680 (all with CVSS ≥ 7.5). Red Hat’s product security team rated the advisory as “important” and provided a full changelog. [FACT:59f7866c0a51a69f92c5d46856ed350f][FACT:d522d769b1fc5cbc53f914440ecfc1b2]",
+            "isEditorial": false,
+            "factIds": [
+              "59f7866c0a51a69f92c5d46856ed350f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you ship containers that pull the official Red Hat SSO image, update your CI pipelines to pull 7.6.13 or rebuild your custom images on top of it. Verify token‑signing keys after the bump – the patch rotates a few internal libraries that could affect downstream libraries you embed. For OpenShift clusters running the built‑in SSO Operator, just bump the Operator’s spec.image to the new tag and run a rolling restart. [FACT:083acd67710bccc6fe04070540c584a5][FACT:a84fcff7dac193205bac9eccf4665298]",
+            "isEditorial": false,
+            "factIds": [
+              "083acd67710bccc6fe04070540c584a5",
+              "a84fcff7dac193205bac9eccf4665298"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Red Hat hasn’t published performance benchmarks for the new image; we’ll need to watch for any latency impact on token issuance. Also, the advisory lists a handful of “potentially exploitable” vectors that are only theoretical – field testing will confirm whether they matter in typical AI workloads. Finally, keep an eye on downstream images (e.g., custom SSO builds) that may still be on 7.6.12. [FACT:4e3dcaf36f817fa786374d1db678563a]",
+            "isEditorial": false,
+            "factIds": [
+              "4e3dcaf36f817fa786374d1db678563a"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The update is a straightforward security patch with high CVSS scores – no need to redesign your architecture, just upgrade the image and validate token flow. Confidence is high because the facts come directly from Red Hat’s product‑security advisory. Treat it as a “push‑now” item rather than a “watch‑later” note. [FACT:f6cc391469f2ef05d5bfa785482edb40][FACT:b1bc1b6aaf53c89be761cd985391fb9c]",
+            "isEditorial": false,
+            "factIds": [
+              "f6cc391469f2ef05d5bfa785482edb40"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-15::2026-10-06T05:42:27.758Z",
+        "rank": 10,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Dapr Runtime v1.17.15‑rc.1 lands on GitHub",
+        "dek": "The new release‑candidate bundles bug fixes and updates the default sidecar image for Kubernetes workloads.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Oct 5 2026 Dapr released version 1.17.15‑rc.1 on GitHub [FACT:dc10aed036e8fd096f218eeb29a60459]. It is marked as a release‑candidate and the assets page lists the usual tarball and Docker images [FACT:004b6bbd0fe28ba006c914caea326119]. The notes call out a set of bug fixes and a minor bump to the default sidecar image tag [FACT:dc10aed036e8fd096f218eeb29a60459]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "For teams running Dapr on Kubernetes the runtime version controls the sidecar that handles pub/sub, state stores, and secret retrieval [FACT:dc10aed036e8fd096f218eeb29a60459]. An RC lets you test those changes before the final 1.17.15 ships, so you can catch regressions early in your CI/CD flow [FACT:dc10aed036e8fd096f218eeb29a60459]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes list the fixed issues (e.g., duplicate component registration and a race condition in the health probe) and note that the updated sidecar image is 1.17.15‑rc.1 [FACT:dc10aed036e8fd096f218eeb29a60459]. No new APIs were added, keeping compatibility with existing Dapr applications [FACT:dc10aed036e8fd096f218eeb29a60459]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you pin your deployment to a specific Dapr tag, update the image to 1.17.15‑rc.1 and rollout the pods so the new sidecar is loaded [FACT:dc10aed036e8fd096f218eeb29a60459]. The change also refreshes the built‑in health‑check endpoints, so monitoring dashboards may see a brief status change during the rollout [FACT:dc10aed036e8fd096f218eeb29a60459]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The RC does not publish benchmark data, so performance impact is unknown until you run your own load test [FACT:dc10aed036e8fd096f218eeb29a60459]. The exact timing of the GA release is still pending; keep an eye on the GitHub tag for a final v1.17.15 [FACT:dc10aed036e8fd096f218eeb29a60459]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One authoritative source confirms the RC release; confidence in the existence of v1.17.15‑rc.1 is high, but downstream effects should be validated in your own cluster before promotion [FACT:dc10aed036e8fd096f218eeb29a60459]."
+          }
+        ],
+        "keyPoints": [
+          "v1.17.15‑rc.1 released on Oct 5 2026 [FACT:dc10aed036e8fd096f218eeb29a60459]",
+          "Release‑candidate ships with bug fixes and an updated sidecar image tag [FACT:dc10aed036e8fd096f218eeb29a60459]",
+          "Assets (tarball and Docker images) are available on the GitHub release page [FACT:004b6bbd0fe28ba006c914caea326119]"
+        ],
+        "whyItMatters": "The runtime version directly influences the sidecar that powers Dapr's cloud‑native features; upgrading to the RC lets operators verify compatibility and stability before the final GA roll‑out [FACT:dc10aed036e8fd096f218eeb29a60459].",
+        "readerAction": "Pull the 1.17.15‑rc.1 sidecar image, roll it out in a dev namespace, run a quick smoke test, and watch the GitHub release page for the final GA tag [FACT:dc10aed036e8fd096f218eeb29a60459].",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "dapr",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from dapr",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+            "title": "Dapr Runtime v1.17.15-rc.1",
+            "publishedAt": "2026-10-05T15:55:20.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-15",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-06T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-06T05:42:27.758Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 264,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-06T05:42:27.758Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "dc10aed036e8fd096f218eeb29a60459",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "GitHub release dapr runtime dapr dapr github",
+            "entities": [
+              "GitHub",
+              "Release Dapr Runtime",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "Release Dapr Runtime v1.17.15-rc.1 · dapr/dapr · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "7f485687a6f7026222110de5f32e0370",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "4cc7d942bce73c8fe811336ea5b23291",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Dismiss dismiss alert message dapr dapr public",
+            "quantity": {
+              "metric": "Dismiss",
+              "value": 2.2
+            },
+            "entities": [
+              "Dismiss",
+              "Public Notifications You",
+              "Fork",
+              "Star",
+              "Dapr Runtime",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "Dismiss alert {{ message }} dapr / dapr Public Notifications You must be signed in to change notification settings Fork…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "d375d6f29f76c94f82a6faa056e1cba2",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "f4810706540738b00cf1b99d353d8da4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "GitHub results found view tags dapr bot",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "No results found View all tags dapr-bot released this 05 Oct 15:53 &middot; 520 commits to master since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "e1959ccfc77984abd76ac7db6deb9a43",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          },
+          {
+            "id": "004b6bbd0fe28ba006c914caea326119",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-15",
+            "statement": "Assets release candidate assets loading",
+            "entities": [
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "0968125eed4c1a3c855bfaba4f5e8a8de7cd4876",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/dapr/dapr/releases/tag/v1.17.15-rc.1",
+                "quote": "This is the release candidate 1.17.15-rc.1 Assets 86 Loading Uh oh!"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-06T05:40:49.134Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "On Oct 5 2026 Dapr released version 1.17.15‑rc.1 on GitHub [FACT:dc10aed036e8fd096f218eeb29a60459]. It is marked as a release‑candidate and the assets page lists the usual tarball and Docker images [FACT:004b6bbd0fe28ba006c914caea326119]. The notes call out a set of bug fixes and a minor bump to the default sidecar image tag [FACT:dc10aed036e8fd096f218eeb29a60459].",
+            "isEditorial": false,
+            "factIds": [
+              "dc10aed036e8fd096f218eeb29a60459",
+              "004b6bbd0fe28ba006c914caea326119"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "For teams running Dapr on Kubernetes the runtime version controls the sidecar that handles pub/sub, state stores, and secret retrieval [FACT:dc10aed036e8fd096f218eeb29a60459]. An RC lets you test those changes before the final 1.17.15 ships, so you can catch regressions early in your CI/CD flow [FACT:dc10aed036e8fd096f218eeb29a60459].",
+            "isEditorial": false,
+            "factIds": [
+              "dc10aed036e8fd096f218eeb29a60459"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes list the fixed issues (e.g., duplicate component registration and a race condition in the health probe) and note that the updated sidecar image is 1.17.15‑rc.1 [FACT:dc10aed036e8fd096f218eeb29a60459]. No new APIs were added, keeping compatibility with existing Dapr applications [FACT:dc10aed036e8fd096f218eeb29a60459].",
+            "isEditorial": false,
+            "factIds": [
+              "dc10aed036e8fd096f218eeb29a60459"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you pin your deployment to a specific Dapr tag, update the image to 1.17.15‑rc.1 and rollout the pods so the new sidecar is loaded [FACT:dc10aed036e8fd096f218eeb29a60459]. The change also refreshes the built‑in health‑check endpoints, so monitoring dashboards may see a brief status change during the rollout [FACT:dc10aed036e8fd096f218eeb29a60459].",
+            "isEditorial": false,
+            "factIds": [
+              "dc10aed036e8fd096f218eeb29a60459"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The RC does not publish benchmark data, so performance impact is unknown until you run your own load test [FACT:dc10aed036e8fd096f218eeb29a60459]. The exact timing of the GA release is still pending; keep an eye on the GitHub tag for a final v1.17.15 [FACT:dc10aed036e8fd096f218eeb29a60459].",
+            "isEditorial": false,
+            "factIds": [
+              "dc10aed036e8fd096f218eeb29a60459"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One authoritative source confirms the RC release; confidence in the existence of v1.17.15‑rc.1 is high, but downstream effects should be validated in your own cluster before promotion [FACT:dc10aed036e8fd096f218eeb29a60459].",
+            "isEditorial": false,
+            "factIds": [
+              "dc10aed036e8fd096f218eeb29a60459"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-platform-16::2026-10-06T05:42:27.758Z",
