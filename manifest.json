@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-07T00:00:00.000Z",
-    "windowStart": "2026-10-07T00:00:00.000Z",
-    "windowEnd": "2026-10-07T06:00:00.000Z"
+    "id": "2026-10-07T12:00:00.000Z",
+    "windowStart": "2026-10-07T12:00:00.000Z",
+    "windowEnd": "2026-10-07T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-07T05:12:23.832Z",
-  "nextRefreshAt": "2026-10-07T06:00:00.000Z",
+  "publishedAt": "2026-10-07T12:58:42.538Z",
+  "nextRefreshAt": "2026-10-07T18:00:00.000Z",
   "runIds": {
-    "aggregation": "5c148e28-49b8-422c-baf2-87d71a0b3daf",
-    "ranking": "rank-f30df110",
-    "top10": "top10:2026-10-07T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-07T00:00:00.000Z-2026-10-07T05:12:39.151Z"
+    "aggregation": "735d0982-14ac-41e1-af14-4c3a128e5ad8",
+    "ranking": "rank-68d303b4",
+    "top10": "top10:2026-10-07T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-07T12:00:00.000Z-2026-10-07T12:58:58.973Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-07T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-07T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-07T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-07T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-07T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-07T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1389,
+      "count": 1377,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1602,
+      "count": 1599,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 17,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 21,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 29,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -104,54 +104,54 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:77028: Important: python3.12 security update"
+        "headline": "RHSA-2026:77359: Important: vim security update"
       },
       {
         "rank": 2,
+        "topic": "models",
+        "headline": "Introducing Mistral Large 4: Le chonk"
+      },
+      {
+        "rank": 3,
+        "topic": "kubernetes",
+        "headline": "CNCF Welcomes OVHcloud, One of Europe’s Largest Independent Cloud Providers, as a Platinum Member"
+      },
+      {
+        "rank": 4,
+        "topic": "platform",
+        "headline": "Start Your Next KMP App With Kotlin Toolchain 0.13"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic gives more security teams access to Claude with fewer safety restrictions"
+      },
+      {
+        "rank": 6,
         "topic": "kubernetes",
         "headline": "v1.56.0-next.2"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "llm-openai-decisions 0.1a0"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:76777: Moderate: glibc security update"
-      },
-      {
-        "rank": 6,
-        "topic": "models",
-        "headline": "Nvidia-Backed Reflection Unveils Open AI Model, Taking on China"
-      },
-      {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.18.5-rc.2"
-      },
-      {
-        "rank": 8,
         "topic": "ai",
         "headline": "OpenAI “rogue” agent activities found on Wikimedia projects"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "topic": "ai",
-        "headline": "Mistral Large 4 is Europe&039;s trillion-parameter answer to US models that refuse security work"
+        "headline": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance"
+      },
+      {
+        "rank": 9,
+        "topic": "security",
+        "headline": "Atlassian Patches Critical Vulnerability Affecting 8 Products"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v3.6.0-rc2"
+        "topic": "security",
+        "headline": "Hackers exploit critical Atlassian flaw after public PoC release"
       }
     ],
-    "articleCount": 0
+    "articleCount": 2
   }
 }
