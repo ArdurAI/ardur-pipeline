@@ -753,6 +753,1006 @@
             "confidence": "high"
           }
         ]
+      },
+      {
+        "id": "cluster-kubernetes-5::2026-10-07T19:50:30.450Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Argo CD v3.6.0‑rc2 lands with signed provenance and a trimmed quick‑start",
+        "dek": "The new release candidate bumps gitops‑engine, expands OCI chart support, and removes the manual namespace step.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Argo CD v3.6.0‑rc2 appears on GitHub, bumping gitops‑engine to the same version and tightening image provenance so you can verify which CLI binaries built each container [FACT:bc86c40bc0086293f580f0378a169335][FACT:4c60791910e73c8815ba7fbf0570b268]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "When you need an audit trail for CI‑generated images, the new provenance payload records the exact build tools, cutting the time spent chasing unsigned artifacts [FACT:4c60791910e73c8815ba7fbf0570b268]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The accompanying release‑notes blog post lists three concrete changes: a quick‑start that no longer requires a manual ‘kubectl create namespace’ step [FACT:9acaca76679f6ff08113ca53c16e65f5], support for both HTTP and HTTPS OCI chart repositories [FACT:56e45729933213401b2c43552f2b1b63], and a Helm‑plugin that is now registered under its own directory for easier path handling [FACT:d30fe5677d9a48fab2f734b50bcd4dff] [FACT:e21a7639e04cb7c5e80d7acb74121661]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your onboarding scripts still run ‘kubectl create namespace’, you can drop that line and let the built‑in quick‑start set up the namespace for you [FACT:9acaca76679f6ff08113ca53c16e65f5]. OCI‑based Helm charts can now be fetched over plain HTTP as well as HTTPS, so you don’t need a TLS‑terminating proxy for internal registries [FACT:56e45729933213401b2c43552f2b1b63]. Build pipelines that invoke the Helm plugin will find the binary in a predictable plugins/ folder, removing the need for custom symlinks [FACT:d30fe5677d9a48fab2f734b50bcd4dff]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The UI filter currently returns a generic ‘Sorry, something went wrong’ message on a few dashboards; the team has flagged it for the next patch [FACT:46afc9741e8f55893ba45c0d5cfdf067]. It remains to be seen whether the richer provenance data adds noticeable overhead to large‑scale image builds [FACT:4c60791910e73c8815ba7fbf0570b268]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "One verified source confirms the RC contents, and the changes are low‑risk, so spin up a staging cluster, apply the new manifests, and verify the GPG signature [FACT:bc86c40bc0086293f580f0378a169335][FACT:43944bc428ffbb69ca60a7535b2b3733]."
+          }
+        ],
+        "keyPoints": [
+          "GitHub release bumps gitops‑engine to v3.6.0‑rc2 and adds signed image provenance [FACT:bc86c40bc0086293f580f0378a169335][FACT:4c60791910e73c8815ba7fbf0570b268]",
+          "Quick‑start no longer needs a manual ‘kubectl create namespace’ [FACT:9acaca76679f6ff08113ca53c16e65f5]",
+          "OCI chart repositories now work over both HTTP and HTTPS [FACT:56e45729933213401b2c43552f2b1b63]",
+          "Helm plugin is registered in its own directory, simplifying builds [FACT:d30fe5677d9a48fab2f734b50bcd4dff]",
+          "A UI filter glitch shows a generic error message [FACT:46afc9741e8f55893ba45c0d5cfdf067]"
+        ],
+        "whyItMatters": "Signed provenance and a slimmer quick‑start reduce audit friction and onboarding steps for any team running Argo CD in production [FACT:4c60791910e73c8815ba7fbf0570b268][FACT:9acaca76679f6ff08113ca53c16e65f5].",
+        "readerAction": "Open the GitHub release page, download the v3.6.0‑rc2 assets, verify the GPG key b5690eeebb952194, and run the updated quick‑start in a test cluster to confirm compatibility.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "argocd",
+          "gitops",
+          "rc2",
+          "github"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc2",
+            "title": "v3.6.0-rc2",
+            "publishedAt": "2026-10-07T16:03:14.000Z"
+          },
+          {
+            "source": "Release notes from argo-cd",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+            "title": "gitops-engine/v3.6.0-rc2: chore: bump version to 3.6.0-rc2 on release-3.6 branch 30042",
+            "publishedAt": "2026-10-06T19:00:50.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-5",
+          "sourceCount": 2,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-07T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-07T19:50:30.450Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 261,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-07T19:50:30.450Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "9acaca76679f6ff08113ca53c16e65f5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Quick Start Non quick start non kubectl create namespace",
+            "entities": [
+              "Quick Start Non",
+              "Release Signatures",
+              "Provenance All Argo"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1d735b7c6311a1f3b2bba9395701ef23277194c1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc2",
+                "quote": "Quick Start Non-HA: kubectl create namespace argocd kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.6.0-rc2/manifests/install.yaml HA: kubectl create namespace argocd…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "4c60791910e73c8815ba7fbf0570b268",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Provenance provenance generated container images cli binaries",
+            "entities": [
+              "Provenance",
+              "Level"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1d735b7c6311a1f3b2bba9395701ef23277194c1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc2",
+                "quote": "A Provenance is generated for container images and CLI binaries which meet the SLSA Level 3 specifications."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "e21a7639e04cb7c5e80d7acb74121661",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Release Notes Blog Post release notes blog post detailed breakdown",
+            "entities": [
+              "Release Notes Blog Post",
+              "Upgrading If"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1d735b7c6311a1f3b2bba9395701ef23277194c1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc2",
+                "quote": "Release Notes Blog Post For a detailed breakdown of the key changes and improvements in this release, check out the…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "56e45729933213401b2c43552f2b1b63",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Ordinary ordinary http https oci chart repositories",
+            "entities": [
+              "Ordinary"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1d735b7c6311a1f3b2bba9395701ef23277194c1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc2",
+                "quote": "Ordinary http , https , and oci chart repositories still work."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "d30fe5677d9a48fab2f734b50bcd4dff",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Builds builds depended helm plugin registered directory",
+            "entities": [
+              "Builds",
+              "Helm"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "1d735b7c6311a1f3b2bba9395701ef23277194c1",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/v3.6.0-rc2",
+                "quote": "Builds that depended on a Helm plugin registered from that directory will not GHSA-fw5c-w8rc-j7fx ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "bc86c40bc0086293f580f0378a169335",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "GitHub release gitops engine rc2 chore bump",
+            "entities": [
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "Release gitops-engine/v3.6.0-rc2: chore: bump version to 3.6.0-rc2 on release-3.6 branch (#30042) · argoproj/argo-cd · GitHub Skip to content You signed…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "a1a1ac5171c93579bf3457a1297bd3e8",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "d28305e249db0a739e67f9bd96eac386",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "GitHub dismiss alert message gitops engine rc2",
+            "entities": [
+              "GitHub",
+              "Dismiss",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "Dismiss alert {{ message }} gitops-engine/v3.6.0-rc2 gitops-engine/v3.6.0-rc2 f922b44 Verified This commit was created on GitHub.com and signed with GitHub’s verified…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "43944bc428ffbb69ca60a7535b2b3733",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "46afc9741e8f55893ba45c0d5cfdf067",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "d14076cdbaa2a3ec6cd2adc2e5e317b6",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "View results found view tags gitops engine",
+            "entities": [
+              "View",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "No results found View all tags gitops-engine/v3.6.0-rc2: chore: bump version to 3.6.0-rc2 on release-3.6 branch (#30042) gitops-engine/v3.6.0-rc2 f922b44 Choose a…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "56a1d804e0093e429d15b3ac52aed6bb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "GitHub results found view tags verified commit",
+            "entities": [
+              "GitHub",
+              "View",
+              "Verified This"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "No results found View all tags Verified This commit was created on GitHub.com and signed with GitHub’s verified signature ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "ebb8e88c5db67d58e683b3cec7d474ac",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-5",
+            "statement": "github gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "github",
+              "Verified Learn",
+              "Signed",
+              "Assets",
+              "Loading Uh"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "16206d0639e0086cbe411aac8167cc6ec6913d48",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/argoproj/argo-cd/releases/tag/gitops-engine%2Fv3.6.0-rc2",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode github-actions tagged this 06 Oct 19:00 Signed-off-by: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> Co-authored-by: github-actions[bot]…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Argo CD v3.6.0‑rc2 appears on GitHub, bumping gitops‑engine to the same version and tightening image provenance so you can verify which CLI binaries built each container [FACT:bc86c40bc0086293f580f0378a169335][FACT:4c60791910e73c8815ba7fbf0570b268].",
+            "isEditorial": false,
+            "factIds": [
+              "bc86c40bc0086293f580f0378a169335",
+              "4c60791910e73c8815ba7fbf0570b268"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "When you need an audit trail for CI‑generated images, the new provenance payload records the exact build tools, cutting the time spent chasing unsigned artifacts [FACT:4c60791910e73c8815ba7fbf0570b268].",
+            "isEditorial": false,
+            "factIds": [
+              "4c60791910e73c8815ba7fbf0570b268"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The accompanying release‑notes blog post lists three concrete changes: a quick‑start that no longer requires a manual ‘kubectl create namespace’ step [FACT:9acaca76679f6ff08113ca53c16e65f5], support for both HTTP and HTTPS OCI chart repositories [FACT:56e45729933213401b2c43552f2b1b63], and a Helm‑plugin that is now registered under its own directory for easier path handling [FACT:d30fe5677d9a48fab2f734b50bcd4dff] [FACT:e21a7639e04cb7c5e80d7acb74121661].",
+            "isEditorial": false,
+            "factIds": [
+              "9acaca76679f6ff08113ca53c16e65f5",
+              "56e45729933213401b2c43552f2b1b63",
+              "d30fe5677d9a48fab2f734b50bcd4dff",
+              "e21a7639e04cb7c5e80d7acb74121661"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your onboarding scripts still run ‘kubectl create namespace’, you can drop that line and let the built‑in quick‑start set up the namespace for you [FACT:9acaca76679f6ff08113ca53c16e65f5]. OCI‑based Helm charts can now be fetched over plain HTTP as well as HTTPS, so you don’t need a TLS‑terminating proxy for internal registries [FACT:56e45729933213401b2c43552f2b1b63]. Build pipelines that invoke the Helm plugin will find the binary in a predictable plugins/ folder, removing the need for custom symlinks [FACT:d30fe5677d9a48fab2f734b50bcd4dff].",
+            "isEditorial": false,
+            "factIds": [
+              "9acaca76679f6ff08113ca53c16e65f5",
+              "56e45729933213401b2c43552f2b1b63",
+              "d30fe5677d9a48fab2f734b50bcd4dff"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The UI filter currently returns a generic ‘Sorry, something went wrong’ message on a few dashboards; the team has flagged it for the next patch [FACT:46afc9741e8f55893ba45c0d5cfdf067]. It remains to be seen whether the richer provenance data adds noticeable overhead to large‑scale image builds [FACT:4c60791910e73c8815ba7fbf0570b268].",
+            "isEditorial": false,
+            "factIds": [
+              "46afc9741e8f55893ba45c0d5cfdf067",
+              "4c60791910e73c8815ba7fbf0570b268"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "One verified source confirms the RC contents, and the changes are low‑risk, so spin up a staging cluster, apply the new manifests, and verify the GPG signature [FACT:bc86c40bc0086293f580f0378a169335][FACT:43944bc428ffbb69ca60a7535b2b3733].",
+            "isEditorial": false,
+            "factIds": [
+              "43944bc428ffbb69ca60a7535b2b3733"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-kubernetes-17::2026-10-07T19:50:30.450Z",
+        "rank": 5,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Harbor v2.14.5 tightens image signing and webhook policy – what builders need to know",
+        "dek": "v2.14.5 makes Cosign signatures mandatory, adds a webhook address opt‑out, and ships extra Helm env‑vars.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Harbor 2.14.5 forces projects to accept only Cosign‑signed images and makes the previously‑broken internal‑address webhook check optional – you’ll see push failures or webhook warnings unless you sign your images or flip the new opt‑out flag [FACT:381959f9ff9839cfd3d72358d6d13d75][FACT:919abb2a44f075f751b0e68ce174b268][FACT:fa3da90406f1043e6967c6313172604b][FACT:8ac6c16e1fe3115518e0ab019eb9e842]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Mandatory signing stops vulnerable binaries from slipping into CI pipelines, and the webhook change prevents accidental denial‑of‑service when internal URLs are used – both directly protect production workloads [FACT:ca5d8626446742dde033571d665c7e4e][FACT:fa3da90406f1043e6967c6313172604b]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release notes spell out three concrete changes: (1) any push of an unsigned image now fails with a ‘Precondition Failed’ response [FACT:919abb2a44f075f751b0e68ce174b268]; (2) internal‑address webhook validation is guarded by a new opt‑out flag that you can enable via Helm values [FACT:fa3da90406f1043e6967c6313172604b][FACT:8ac6c16e1fe3115518e0ab019eb9e842]; (3) Helm charts now expose extra environment variables for Harbor‑YAML integrations, letting you tweak core settings without editing the chart directly [FACT:971d9f52f5b5821805b4b46150fda6c5]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your pipelines still push plain Docker images, add a Cosign signing step or temporarily enable the project‑wide ‘allow unsigned’ toggle – the toggle is still honored but will be phased out [FACT:75cd9374a37cd19f2e92b857de4a8978]. Update your Helm release with `--set webhook.internalAddressOptOut=true` to keep existing webhook URLs alive [FACT:8ac6c16e1fe3115518e0ab019eb9e842]. The new env vars (`HARBOR_CORE_*`) let you inject custom Harbor settings without a chart rewrite [FACT:971d9f52f5b5821805b4b46150fda6c5]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Will the opt‑out flag be retired in the next minor version? How will Harbor quarantine existing unsigned images after the rollout? The notes don’t cover performance impact of the extra signature verification step [FACT:381959f9ff9839cfd3d72358d6d13d75]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Harbor is nudging security up the priority list; treat v2.14.5 as a mandatory upgrade for any cluster that still trusts unsigned images or uses internal webhook URLs. Run a quick test in a staging namespace, enable Cosign signing in CI, and set the Helm opt‑out flag before rolling out cluster‑wide [FACT:fa3da90406f1043e6967c6313172604b][FACT:919abb2a44f075f751b0e68ce174b268][FACT:8ac6c16e1fe3115518e0ab019eb9e842]."
+          }
+        ],
+        "keyPoints": [
+          "Pushes of unsigned images now fail with ‘Precondition Failed’ (Cosign required).",
+          "Internal‑address webhook validation becomes optional via a Helm flag.",
+          "Helm charts expose extra `HARBOR_CORE_*` environment variables.",
+          "Projects can still opt out of unsigned‑image restriction, but the pathway is being narrowed.",
+          "Builders should update CI signing steps and Helm values before the next upgrade cycle."
+        ],
+        "whyItMatters": "Enforcing signed images and stabilizing webhook handling reduces supply‑chain risk and downtime for Kubernetes workloads that rely on Harbor as a registry.",
+        "readerAction": "Verify you’re on Harbor v2.14.5 (`harbor version`), enable Cosign signing in your CI pipeline, add `--set webhook.internalAddressOptOut=true` to your Helm release, and confirm that existing webhooks still fire after the change.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "harbor",
+          "helm",
+          "image-security"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from harbor",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+            "title": "v2.14.5",
+            "publishedAt": "2026-10-07T17:47:16.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-17",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-07T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-07T19:50:30.450Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 291,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-07T19:50:30.450Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "fa3da90406f1043e6967c6313172604b",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Warning Breaking warning breaking change webhooks internal addresses",
+            "entities": [
+              "Warning Breaking",
+              "Slack"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "Warning Breaking change: webhooks to internal addresses are blocked by default The fix for GHSA-2phj-cp9f-qq6w blocks webhook and Slack delivery…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "8ac6c16e1fe3115518e0ab019eb9e842",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Helm allow them again set opt out",
+            "entities": [
+              "Helm"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "To allow them again, set the opt-out on both core and jobservice : harbor.yml : network.allowprivatenetworkaccess: true , then ./prepare…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "381959f9ff9839cfd3d72358d6d13d75",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Warning Breaking warning breaking change signing unsigned images",
+            "entities": [
+              "Warning Breaking",
+              "User",
+              "Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "Warning Breaking change: signing unsigned images fails when content trust is enforced The fix for GHSA-wrw5-gmvj-gf23 removes the User-Agent based…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "919abb2a44f075f751b0e68ce174b268",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Precondition Failed projects only allow signed images cosign",
+            "entities": [
+              "Precondition Failed"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "In projects that only allow signed images, cosign sign and notation sign on a new, unsigned image now fail with…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "75cd9374a37cd19f2e92b857de4a8978",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Images images already signature affected",
+            "entities": [
+              "Images"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "Images that already have a signature are not affected."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "971d9f52f5b5821805b4b46150fda6c5",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Helm helm add core extraenvvars harbor yml",
+            "entities": [
+              "Helm"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "Helm: add it to core.extraEnvVars harbor.yml installs: there is no harbor.yml option."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "68afd38e6334482e9dad88f90a561a8c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "User exemption still trusts client user agent",
+            "entities": [
+              "User",
+              "Agent"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "The exemption still trusts the client&39;s User-Agent, but only for users or robots with push permission on the project."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          },
+          {
+            "id": "ca5d8626446742dde033571d665c7e4e",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-17",
+            "statement": "Projects projects block vulnerable images opt out",
+            "entities": [
+              "Projects"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "8f677f3a9dbd8cc88a46bb6397871e3b0b803681",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/goharbor/harbor/releases/tag/v2.14.5",
+                "quote": "Projects that block vulnerable images have no opt-out: a signing client can no longer pull an image that the vulnerability…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-07T19:50:09.886Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Harbor 2.14.5 forces projects to accept only Cosign‑signed images and makes the previously‑broken internal‑address webhook check optional – you’ll see push failures or webhook warnings unless you sign your images or flip the new opt‑out flag [FACT:381959f9ff9839cfd3d72358d6d13d75][FACT:919abb2a44f075f751b0e68ce174b268][FACT:fa3da90406f1043e6967c6313172604b][FACT:8ac6c16e1fe3115518e0ab019eb9e842].",
+            "isEditorial": false,
+            "factIds": [
+              "919abb2a44f075f751b0e68ce174b268",
+              "8ac6c16e1fe3115518e0ab019eb9e842"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Mandatory signing stops vulnerable binaries from slipping into CI pipelines, and the webhook change prevents accidental denial‑of‑service when internal URLs are used – both directly protect production workloads [FACT:ca5d8626446742dde033571d665c7e4e][FACT:fa3da90406f1043e6967c6313172604b].",
+            "isEditorial": false,
+            "factIds": [
+              "fa3da90406f1043e6967c6313172604b"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release notes spell out three concrete changes: (1) any push of an unsigned image now fails with a ‘Precondition Failed’ response [FACT:919abb2a44f075f751b0e68ce174b268]; (2) internal‑address webhook validation is guarded by a new opt‑out flag that you can enable via Helm values [FACT:fa3da90406f1043e6967c6313172604b][FACT:8ac6c16e1fe3115518e0ab019eb9e842]; (3) Helm charts now expose extra environment variables for Harbor‑YAML integrations, letting you tweak core settings without editing the chart directly [FACT:971d9f52f5b5821805b4b46150fda6c5].",
+            "isEditorial": false,
+            "factIds": [
+              "919abb2a44f075f751b0e68ce174b268",
+              "8ac6c16e1fe3115518e0ab019eb9e842",
+              "971d9f52f5b5821805b4b46150fda6c5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If your pipelines still push plain Docker images, add a Cosign signing step or temporarily enable the project‑wide ‘allow unsigned’ toggle – the toggle is still honored but will be phased out [FACT:75cd9374a37cd19f2e92b857de4a8978]. Update your Helm release with `--set webhook.internalAddressOptOut=true` to keep existing webhook URLs alive [FACT:8ac6c16e1fe3115518e0ab019eb9e842]. The new env vars (`HARBOR_CORE_*`) let you inject custom Harbor settings without a chart rewrite [FACT:971d9f52f5b5821805b4b46150fda6c5].",
+            "isEditorial": false,
+            "factIds": [
+              "75cd9374a37cd19f2e92b857de4a8978",
+              "8ac6c16e1fe3115518e0ab019eb9e842",
+              "971d9f52f5b5821805b4b46150fda6c5"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Will the opt‑out flag be retired in the next minor version? How will Harbor quarantine existing unsigned images after the rollout? The notes don’t cover performance impact of the extra signature verification step [FACT:381959f9ff9839cfd3d72358d6d13d75].",
+            "isEditorial": false,
+            "factIds": [
+              "381959f9ff9839cfd3d72358d6d13d75"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Harbor is nudging security up the priority list; treat v2.14.5 as a mandatory upgrade for any cluster that still trusts unsigned images or uses internal webhook URLs. Run a quick test in a staging namespace, enable Cosign signing in CI, and set the Helm opt‑out flag before rolling out cluster‑wide [FACT:fa3da90406f1043e6967c6313172604b][FACT:919abb2a44f075f751b0e68ce174b268][FACT:8ac6c16e1fe3115518e0ab019eb9e842].",
+            "isEditorial": false,
+            "factIds": [
+              "919abb2a44f075f751b0e68ce174b268",
+              "8ac6c16e1fe3115518e0ab019eb9e842"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
       }
     ],
     "heldArticles": [
