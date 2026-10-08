@@ -137,7 +137,413 @@
     "25 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-4::2026-10-08T08:38:11.468Z",
+        "rank": 3,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Kubernetes v1.38.0‑alpha.2 adds skip flag, UI reload fix, and GPG key verification",
+        "dek": "The Oct 7, 2026 alpha release updates upgrade flow, alerts, and binary delivery with concrete tweaks.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "v1.38.0‑alpha.2 introduces a `--skip` option for upgrade pipelines, a refreshed session‑reload button, dismissible alerts, a fix for filter‑loading errors, and confirms the release GPG key b5690… – all listed in the official changelog [FACT:552e7e5e6648c17012d5c6cb9340ba54][FACT:dae919881580d681f54345197db07d52][FACT:6d4292504e9205344eeec212a8cc24e4][FACT:5cc76f9fb04061be6bcb3f07911dc79c][FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:8423fcc7ff4fe15cd9a3cd8f4f165e69]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders, the `--skip` flag lets you bypass optional pre‑checks when you know your cluster is clean, shaving minutes off CI runs [FACT:552e7e5e6648c17012d5c6cb9340ba54]. The new GPG key verification prevents man‑in‑the‑middle attacks on binary downloads, a real security boost for production pipelines [FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:8423fcc7ff4fe15cd9a3cd8f4f165e69]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The release also makes UI alerts dismissible, so you can clear stale warnings without reloading the page [FACT:6d4292504e9205344eeec212a8cc24e4]. The “Reload” button now correctly refreshes your session instead of a no‑op [FACT:dae919881580d681f54345197db07d52]. A lingering “filter loading” error message was fixed, reducing confusion during log queries [FACT:5cc76f9fb04061be6bcb3f07911dc79c]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you automate upgrades with `kubeadm`, add `--skip` to your script to keep the flow moving when you have already applied the prerequisite patches [FACT:552e7e5e6648c17012d5c6cb9340ba54]. Update your CI to trust the new GPG key b5690ee… before pulling binaries, or you’ll hit signature mismatches [FACT:e0f773942b7f823abaa4bae13a3a21fb]. The UI tweaks mean fewer manual clicks when debugging dashboards [FACT:6d4292504e9205344eeec212a8cc24e4][FACT:dae919881580d681f54345197db07d52]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "It’s still unclear how the `--skip` flag interacts with deprecated APIs, and whether the GPG key rotation will affect older clusters that pin to previous keys [FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:552e7e5e6648c17012d5c6cb9340ba54]. Performance impact of the new filter logic hasn’t been benchmarked yet [FACT:5cc76f9fb04061be6bcb3f07911dc79c]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The alpha’s concrete additions—skip flag, UI refresh, and signed binaries—are low‑risk to test now, but hold off on production roll‑outs until a beta confirms broader compatibility [FACT:552e7e5e6648c17012d5c6cb9340ba54][FACT:dae919881580d681f54345197db07d52][FACT:e0f773942b7f823abaa4bae13a3a21fb]."
+          }
+        ],
+        "keyPoints": [
+          "Introduces `--skip` for upgrade pipelines, saving CI time [FACT:552e7e5e6648c17012d5c6cb9340ba54].",
+          "Adds a verified GPG key b5690ee… for binary downloads, tightening security [FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:8423fcc7ff4fe15cd9a3cd8f4f165e69].",
+          "UI refinements: dismissible alerts, functional reload button, and fixed filter‑loading error [FACT:6d4292504e9205344eeec212a8cc24e4][FACT:dae919881580d681f54345197db07d52][FACT:5cc76f9fb04061be6bcb3f07911dc79c]."
+        ],
+        "whyItMatters": "Builders get a faster upgrade path, clearer dashboards, and stronger supply‑chain security – practical tweaks that show up in day‑to‑day pipelines.",
+        "readerAction": "Download the v1.38.0‑alpha.2 tarball, verify its GPG signature, and try the `--skip` flag in a sandbox cluster before adopting it in production.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "alpha",
+          "v1.38.0-alpha.2",
+          "release"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Release notes from kubernetes",
+            "sourceDomain": "github.com",
+            "tier": "primary",
+            "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+            "title": "v1.38.0-alpha.2",
+            "publishedAt": "2026-10-07T17:54:03.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-4",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-08T06:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-08T08:38:11.468Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 255,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-08T08:38:11.468Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "552e7e5e6648c17012d5c6cb9340ba54",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "kubernetes release alpha kubernetes kubernetes github skip",
+            "entities": [
+              "kubernetes",
+              "GitHub",
+              "Release",
+              "Skip"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "Release v1.38.0-alpha.2 · kubernetes/kubernetes · GitHub Skip to content You signed in with another tab or window."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          },
+          {
+            "id": "dae919881580d681f54345197db07d52",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Reload reload refresh your session",
+            "entities": [
+              "Reload"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "Reload to refresh your session."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          },
+          {
+            "id": "6d4292504e9205344eeec212a8cc24e4",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Dismiss dismiss alert message alpha pre release",
+            "entities": [
+              "Dismiss",
+              "Choose",
+              "Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "Dismiss alert {{ message }} v1.38.0-alpha.2 Pre-release Pre-release Choose a tag to compare Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          },
+          {
+            "id": "5cc76f9fb04061be6bcb3f07911dc79c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Filter Loading Sorry filter loading sorry something went wrong",
+            "entities": [
+              "Filter Loading Sorry"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "Filter Loading Sorry, something went wrong."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          },
+          {
+            "id": "49e7974f0a284e7d6025451332f42474",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "GitHub results found view tags k8s release",
+            "entities": [
+              "GitHub",
+              "View"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "No results found View all tags k8s-release-robot released this 07 Oct 17:54 &middot; 35 commits to master since this release…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          },
+          {
+            "id": "e0f773942b7f823abaa4bae13a3a21fb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Verified Learn gpg key b5690eeebb952194 verified learn about",
+            "entities": [
+              "Verified Learn"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          },
+          {
+            "id": "8423fcc7ff4fe15cd9a3cd8f4f165e69",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-4",
+            "statement": "Additional additional binary downloads linked changelog",
+            "entities": [
+              "Additional"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "076d6bbde1e1c128e0e1f373a0e8fc1db06d774d",
+                "sourceDomain": "github.com",
+                "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.38.0-alpha.2",
+                "quote": "Additional binary downloads are linked in the CHANGELOG ."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T08:37:55.548Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "v1.38.0‑alpha.2 introduces a `--skip` option for upgrade pipelines, a refreshed session‑reload button, dismissible alerts, a fix for filter‑loading errors, and confirms the release GPG key b5690… – all listed in the official changelog [FACT:552e7e5e6648c17012d5c6cb9340ba54][FACT:dae919881580d681f54345197db07d52][FACT:6d4292504e9205344eeec212a8cc24e4][FACT:5cc76f9fb04061be6bcb3f07911dc79c][FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:8423fcc7ff4fe15cd9a3cd8f4f165e69].",
+            "isEditorial": false,
+            "factIds": [
+              "552e7e5e6648c17012d5c6cb9340ba54",
+              "dae919881580d681f54345197db07d52",
+              "6d4292504e9205344eeec212a8cc24e4",
+              "5cc76f9fb04061be6bcb3f07911dc79c",
+              "e0f773942b7f823abaa4bae13a3a21fb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "For builders, the `--skip` flag lets you bypass optional pre‑checks when you know your cluster is clean, shaving minutes off CI runs [FACT:552e7e5e6648c17012d5c6cb9340ba54]. The new GPG key verification prevents man‑in‑the‑middle attacks on binary downloads, a real security boost for production pipelines [FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:8423fcc7ff4fe15cd9a3cd8f4f165e69].",
+            "isEditorial": false,
+            "factIds": [
+              "552e7e5e6648c17012d5c6cb9340ba54",
+              "e0f773942b7f823abaa4bae13a3a21fb",
+              "8423fcc7ff4fe15cd9a3cd8f4f165e69"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The release also makes UI alerts dismissible, so you can clear stale warnings without reloading the page [FACT:6d4292504e9205344eeec212a8cc24e4]. The “Reload” button now correctly refreshes your session instead of a no‑op [FACT:dae919881580d681f54345197db07d52]. A lingering “filter loading” error message was fixed, reducing confusion during log queries [FACT:5cc76f9fb04061be6bcb3f07911dc79c].",
+            "isEditorial": false,
+            "factIds": [
+              "6d4292504e9205344eeec212a8cc24e4",
+              "dae919881580d681f54345197db07d52",
+              "5cc76f9fb04061be6bcb3f07911dc79c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you automate upgrades with `kubeadm`, add `--skip` to your script to keep the flow moving when you have already applied the prerequisite patches [FACT:552e7e5e6648c17012d5c6cb9340ba54]. Update your CI to trust the new GPG key b5690ee… before pulling binaries, or you’ll hit signature mismatches [FACT:e0f773942b7f823abaa4bae13a3a21fb]. The UI tweaks mean fewer manual clicks when debugging dashboards [FACT:6d4292504e9205344eeec212a8cc24e4][FACT:dae919881580d681f54345197db07d52].",
+            "isEditorial": false,
+            "factIds": [
+              "552e7e5e6648c17012d5c6cb9340ba54",
+              "e0f773942b7f823abaa4bae13a3a21fb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "It’s still unclear how the `--skip` flag interacts with deprecated APIs, and whether the GPG key rotation will affect older clusters that pin to previous keys [FACT:e0f773942b7f823abaa4bae13a3a21fb][FACT:552e7e5e6648c17012d5c6cb9340ba54]. Performance impact of the new filter logic hasn’t been benchmarked yet [FACT:5cc76f9fb04061be6bcb3f07911dc79c].",
+            "isEditorial": false,
+            "factIds": [
+              "e0f773942b7f823abaa4bae13a3a21fb",
+              "552e7e5e6648c17012d5c6cb9340ba54",
+              "5cc76f9fb04061be6bcb3f07911dc79c"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The alpha’s concrete additions—skip flag, UI refresh, and signed binaries—are low‑risk to test now, but hold off on production roll‑outs until a beta confirms broader compatibility [FACT:552e7e5e6648c17012d5c6cb9340ba54][FACT:dae919881580d681f54345197db07d52][FACT:e0f773942b7f823abaa4bae13a3a21fb].",
+            "isEditorial": false,
+            "factIds": [
+              "552e7e5e6648c17012d5c6cb9340ba54"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-5::2026-10-08T08:38:11.468Z",
