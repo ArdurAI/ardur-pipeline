@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-08T06:00:00.000Z",
-    "windowStart": "2026-10-08T06:00:00.000Z",
-    "windowEnd": "2026-10-08T12:00:00.000Z"
+    "id": "2026-10-08T12:00:00.000Z",
+    "windowStart": "2026-10-08T12:00:00.000Z",
+    "windowEnd": "2026-10-08T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-08T08:37:55.347Z",
-  "nextRefreshAt": "2026-10-08T12:00:00.000Z",
+  "publishedAt": "2026-10-08T13:16:42.980Z",
+  "nextRefreshAt": "2026-10-08T18:00:00.000Z",
   "runIds": {
-    "aggregation": "dd0901d7-fcf0-4611-bce8-fe8974a76cd8",
-    "ranking": "rank-80a3953d",
-    "top10": "top10:2026-10-08T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-08T06:00:00.000Z-2026-10-08T08:38:11.468Z"
+    "aggregation": "c3da37d0-55ca-42da-9de5-ce0473399a1d",
+    "ranking": "rank-1363eee6",
+    "top10": "top10:2026-10-08T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-08T12:00:00.000Z-2026-10-08T13:17:14.817Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-08T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-08T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-08T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-08T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-08T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-08T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1425,
+      "count": 1378,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
+        "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1653,
+      "count": 1657,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
+        "topic": "models",
         "headline": "Introducing Claude Haiku 5.5 on AWS"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:77297: Important: resteasy security update"
+        "headline": "RHSA-2026:77396: Important: openssl security update"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "llm-mistral 0.16"
+        "topic": "security",
+        "headline": "RHSA-2026:78952: Moderate: tftp security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "ChatGPT with GPT-6 ditches mostly text output for interactive UI with charts, buttons, and mini apps"
+        "topic": "platform",
+        "headline": "Security updates for Thursday"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:78844: Moderate: kernel security update"
+        "topic": "kubernetes",
+        "headline": "Microsoft Makes Execution Containers Generally Available for AI Agents"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v2.15.3"
+        "topic": "platform",
+        "headline": "Migration toolkit for applications 8.3: Agentic code modernization, PVC mobility, and out-of-the-box generators"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI introduces new AI study tools for teenage students"
+        "topic": "security",
+        "headline": "RHSA-2026:79118: Low: libxml2 security update"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "CNCF Welcomes OVHcloud, One of Europe’s Largest Independent Cloud Providers, as a Platinum Member"
+        "headline": "v2.15.4-rc1"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Cloudflare Open Sources Decision Models for AI Agents"
+        "topic": "security",
+        "headline": "Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland"
+        "topic": "kubernetes",
+        "headline": "v2.13.6"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
