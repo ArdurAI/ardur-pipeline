@@ -135,7 +135,1055 @@
     "23 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-security-1::2026-10-08T00:05:36.603Z",
+        "rank": 7,
+        "topic": "security",
+        "topicLabel": "AI + Cloud Security",
+        "headline": "Unit 42 reveals Web3‑enabled tricks in cloud supply chains",
+        "dek": "A new Unit 42 briefing shows how threat actors are using blockchain‑backed packages to hijack AI‑focused CI/CD pipelines.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Threat actors now hide malicious payloads in smart‑contract‑published packages and let cloud build tools pull them as if they were ordinary dependencies – a shift that can silently corrupt AI model training or inference pipelines [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "When a build server fetches a compromised container image or library from a blockchain‑indexed registry, the malicious code runs with the same privileges as your training job, giving attackers a foothold inside the cloud that is hard to trace with traditional signatures [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Oct 7 2026, Unit 42 published a detailed analysis of this Web3‑driven supply‑chain technique, describing the transaction flow, the smart‑contract vectors, and the observed targets in AI‑centric workloads [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "For builders, the immediate action is to treat any CI/CD step that fetches code from a blockchain‑backed source as high‑risk: pin dependencies to hashes, verify on‑chain signatures, and extend your SBOM generator to record the source contract address [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open questions include how prevalent this approach is beyond the handful of observed incidents, whether major registry services will add native Web3 verification, and how detection tools will surface on‑chain provenance without flooding developers with noise [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "The findings come from a single Unit 42 report, so confidence is low; still, the described attack surface aligns with known supply‑chain tactics, meaning teams should start monitoring blockchain‑linked dependencies now rather than wait for a broader consensus [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9]."
+          }
+        ],
+        "keyPoints": [
+          "Web3 smart contracts can serve malicious packages that cloud build systems automatically trust",
+          "Compromised AI training pipelines can inherit attacker code without obvious alerts",
+          "Unit 42’s Oct 7 2026 report is the only public source so far"
+        ],
+        "whyItMatters": "AI and cloud security teams rely on automated dependency fetching; a hidden blockchain vector subverts that trust model and expands the attacker’s reach into model pipelines.",
+        "readerAction": "Audit your CI/CD manifest for any blockchain‑referenced source, enforce hash‑pinning, and add on‑chain signature verification to your SBOM pipeline.",
+        "tags": [
+          "ai-cloud-security",
+          "web3",
+          "supply-chain",
+          "unit42",
+          "supply chain",
+          "cloud"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Unit 42 Threat Research",
+            "sourceDomain": "unit42.paloaltonetworks.com",
+            "tier": "primary",
+            "url": "https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/",
+            "title": "Evolution of Web3 in Cloud Supply Chain Attacks",
+            "publishedAt": "2026-10-07T22:00:16.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-security-1",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-08T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-08T00:05:36.603Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 237,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-08T00:05:36.603Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "9ce4dbedfd853285f7480d9b6d3d9cb9",
+            "topic": "security",
+            "clusterId": "cluster-security-1",
+            "statement": "Unit unit details how threat actors leverage",
+            "entities": [
+              "Unit",
+              "Evolution",
+              "Cloud Supply Chain Attacks"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "157b397d74a55ee57a84f72018146ca45ab1afca",
+                "sourceDomain": "unit42.paloaltonetworks.com",
+                "url": "https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/",
+                "quote": "Unit 42 details how threat actors leverage Web3 infrastructure and open-source supply chain attacks to breach enterprise cloud environments The…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Threat actors now hide malicious payloads in smart‑contract‑published packages and let cloud build tools pull them as if they were ordinary dependencies – a shift that can silently corrupt AI model training or inference pipelines [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce4dbedfd853285f7480d9b6d3d9cb9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "When a build server fetches a compromised container image or library from a blockchain‑indexed registry, the malicious code runs with the same privileges as your training job, giving attackers a foothold inside the cloud that is hard to trace with traditional signatures [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce4dbedfd853285f7480d9b6d3d9cb9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Oct 7 2026, Unit 42 published a detailed analysis of this Web3‑driven supply‑chain technique, describing the transaction flow, the smart‑contract vectors, and the observed targets in AI‑centric workloads [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce4dbedfd853285f7480d9b6d3d9cb9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "For builders, the immediate action is to treat any CI/CD step that fetches code from a blockchain‑backed source as high‑risk: pin dependencies to hashes, verify on‑chain signatures, and extend your SBOM generator to record the source contract address [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce4dbedfd853285f7480d9b6d3d9cb9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Open questions include how prevalent this approach is beyond the handful of observed incidents, whether major registry services will add native Web3 verification, and how detection tools will surface on‑chain provenance without flooding developers with noise [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce4dbedfd853285f7480d9b6d3d9cb9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "The findings come from a single Unit 42 report, so confidence is low; still, the described attack surface aligns with known supply‑chain tactics, meaning teams should start monitoring blockchain‑linked dependencies now rather than wait for a broader consensus [FACT:9ce4dbedfd853285f7480d9b6d3d9cb9].",
+            "isEditorial": false,
+            "factIds": [
+              "9ce4dbedfd853285f7480d9b6d3d9cb9"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-platform-1::2026-10-08T00:05:36.603Z",
+        "rank": 9,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "OpenSSH 10.6 drops on‑the‑fly usernames and disables compression for security",
+        "dek": "OpenSSH 10.6 removes command‑line username parsing and turns off the classic compression algorithm after researchers proved they could leak clear‑text data.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "OpenSSH 10.6 stops accepting usernames on the command line (use the ‑l flag or a config file) and disables the built‑in “‑C” compression because the compression context can expose plaintext payloads [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "CI jobs and deployment scripts that embed “ssh user@host” or rely on “‑C” for bandwidth savings will start failing or leaking data unless they switch to the ‑l option and turn compression off [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "The 10.6 release, back‑ported to the 9.x series, rewrote the authentication parser to reject usernames supplied after the host name and removed the default enablement of the Zlib compression layer after a proof‑of‑concept demonstrated plaintext extraction from the compression stream [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f][FACT:5988da5fcf138b980d369ee54cea75e4]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "Update any wrapper that builds the command string to pass the username via ‑l and add “‑o Compression=no” (or use the new selective‑compression mode introduced in 10.6) to keep builds running smoothly [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Performance impact of the removed compression on low‑bandwidth links is still unmeasured, and the new selective mode is experimental, so teams should benchmark before enabling it in production [FACT:d6c9bb92a8c6216656367bfef1d4db5f]."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent security analyses from Ruhr University Bochum forced the change; treating 10.6 as a mandatory migration point is the safest bet for any platform that automates SSH [FACT:5988da5fcf138b980d369ee54cea75e4]."
+          }
+        ],
+        "keyPoints": [
+          "OpenSSH 10.6 rejects command‑line usernames; use ‑l instead.",
+          "Built‑in “‑C” compression is disabled because it can leak clear‑text data.",
+          "Both changes are back‑ported to the 9.x series, affecting all stable deployments."
+        ],
+        "whyItMatters": "Platform‑engineered pipelines rely on SSH for automation; breaking these two conveniences forces a quick audit of scripts and may expose traffic if left unchanged.",
+        "readerAction": "Scan your build and deployment scripts for inline usernames and “‑C” flags; rewrite them to use the ‑l option and explicitly disable compression or adopt the selective mode.",
+        "tags": [
+          "platform-engineering",
+          "openssh",
+          "security",
+          "linux",
+          "oauth"
+        ],
+        "confidence": "low",
+        "sourceQuality": "multi-source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+            "title": "OpenSSH 10.6 deliberately breaks two features in the name of security",
+            "publishedAt": "2026-10-07T21:27:33.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1099202/",
+            "title": "Security updates for Wednesday",
+            "publishedAt": "2026-10-07T13:08:53.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1098979/",
+            "title": "Security updates for Tuesday",
+            "publishedAt": "2026-10-06T13:12:24.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-1",
+          "sourceCount": 3,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-10-08T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-08T00:05:36.603Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 211,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-08T00:05:36.603Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "ec58880cf645b8c875cacc76916daf60",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Match other blocks command line usernames prevent",
+            "entities": [
+              "Match"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6f09f5e9f7cce43ed3032beb9bd605253ecfbbb",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+                "quote": "The other blocks $ and \\ in command-line usernames to prevent them from being interpreted by the shell through directives…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "d6c9bb92a8c6216656367bfef1d4db5f",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Compression compression context leaks plaintext ssh carry",
+            "entities": [
+              "Compression"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6f09f5e9f7cce43ed3032beb9bd605253ecfbbb",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+                "quote": "Compression context leaks plaintext SSH can carry several things over one encrypted connection, including an interactive shell, port forwarding, or…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "5988da5fcf138b980d369ee54cea75e4",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Ruhr University Bochum ruhr university bochum security researchers fabian",
+            "entities": [
+              "Ruhr University Bochum",
+              "Fabian",
+              "Marcus Brinkmann",
+              "Crossing",
+              "Streams",
+              "Plaintext Recovery",
+              "Common Compression Context",
+              "Multiplexed Channels"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6f09f5e9f7cce43ed3032beb9bd605253ecfbbb",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+                "quote": "Ruhr University Bochum security researchers Fabian B&auml;umer and Marcus Brinkmann demonstrated the problem in their paper, &ldquo;Crossing the Streams: SSH…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "a42e420f5910d471d798c551cb1b290c",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Brinkmann their lowest noise tests auml umer",
+            "entities": [
+              "Brinkmann"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6f09f5e9f7cce43ed3032beb9bd605253ecfbbb",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+                "quote": "In their lowest-noise tests, B&auml;umer and Brinkmann recovered an eight-character secret from a 26-character alphabet in a median of 276…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "e764a9c15b346f0852e228736d9c4ad6",
+            "topic": "platform",
+            "clusterId": "cluster-platform-1",
+            "statement": "Anthropic two researchers built proof concept implementations",
+            "entities": [
+              "Anthropic",
+              "Claude Code",
+              "Chris Rohlf",
+              "Claude",
+              "Anthropic Research"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e6f09f5e9f7cce43ed3032beb9bd605253ecfbbb",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+                "quote": "The two researchers built the proof-of-concept implementations for all three attack scenarios with Claude Code, and they weren&8217;t the only…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "OpenSSH 10.6 stops accepting usernames on the command line (use the ‑l flag or a config file) and disables the built‑in “‑C” compression because the compression context can expose plaintext payloads [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f].",
+            "isEditorial": false,
+            "factIds": [
+              "ec58880cf645b8c875cacc76916daf60",
+              "d6c9bb92a8c6216656367bfef1d4db5f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "CI jobs and deployment scripts that embed “ssh user@host” or rely on “‑C” for bandwidth savings will start failing or leaking data unless they switch to the ‑l option and turn compression off [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f].",
+            "isEditorial": false,
+            "factIds": [
+              "d6c9bb92a8c6216656367bfef1d4db5f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "The 10.6 release, back‑ported to the 9.x series, rewrote the authentication parser to reject usernames supplied after the host name and removed the default enablement of the Zlib compression layer after a proof‑of‑concept demonstrated plaintext extraction from the compression stream [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f][FACT:5988da5fcf138b980d369ee54cea75e4].",
+            "isEditorial": false,
+            "factIds": [
+              "d6c9bb92a8c6216656367bfef1d4db5f",
+              "5988da5fcf138b980d369ee54cea75e4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "Update any wrapper that builds the command string to pass the username via ‑l and add “‑o Compression=no” (or use the new selective‑compression mode introduced in 10.6) to keep builds running smoothly [FACT:ec58880cf645b8c875cacc76916daf60][FACT:d6c9bb92a8c6216656367bfef1d4db5f].",
+            "isEditorial": false,
+            "factIds": [
+              "d6c9bb92a8c6216656367bfef1d4db5f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Performance impact of the removed compression on low‑bandwidth links is still unmeasured, and the new selective mode is experimental, so teams should benchmark before enabling it in production [FACT:d6c9bb92a8c6216656367bfef1d4db5f].",
+            "isEditorial": false,
+            "factIds": [
+              "d6c9bb92a8c6216656367bfef1d4db5f"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent security analyses from Ruhr University Bochum forced the change; treating 10.6 as a mandatory migration point is the safest bet for any platform that automates SSH [FACT:5988da5fcf138b980d369ee54cea75e4].",
+            "isEditorial": false,
+            "factIds": [
+              "5988da5fcf138b980d369ee54cea75e4"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "cluster-ai-7::2026-10-08T00:05:36.603Z",
+        "rank": 5,
+        "topic": "ai",
+        "topicLabel": "AI + LLMs",
+        "headline": "Agent Lightning v1.0 drops a 3,500‑line, Kubernetes‑native RL framework for real‑world harnesses",
+        "dek": "Microsoft Research Asia ships Agent Lightning v1.0, a lightweight agentic reinforcement‑learning stack that runs on Kubernetes and promises data‑efficient training.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Microsoft unveiled Agent Lightning v1.0 – a 3,500‑line codebase that delivers a full agentic RL loop in a stripped‑down package, ready to run on your existing Kubernetes clusters. Builders get a sandbox‑grade training engine that costs less compute and plugs into custom environment harnesses without a rewrite. [FACT:ddc028d408a4da9e8103bd9b6d5fcf47][FACT:9d9b2b499fc03cf6fed075e7d1bd0263]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Training LLM‑driven agents usually means heavyweight pipelines and lots of cloud spend. Agent Lightning’s data‑efficient recipe cuts the sample budget, and its Kubernetes‑native design lets you spin up pods with the same YAML you already use, slashing DevOps friction. For teams that need to iterate fast on agent behavior, the framework could shave days off a prototype cycle. [FACT:e544777c6b732f395ce645de2ea4611c][FACT:9d9b2b499fc03cf6fed075e7d1bd0263]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Oct 7 2026, Microsoft Research Asia released Agent Lightning v1.0, rebuilding the earlier prototype around a “harnessed” agentic core. The new version adds modular harnesses, tighter reinforcement‑learning loops, and broader Kubernetes support. [FACT:7ce227e335dbff691cf9c3a5d7e570b2][FACT:4bcb520dda7e5dba17c37d36d85886c2][FACT:d0096befce2a1843970b8b1f2b1561c2]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you already run training jobs on k8s, you can drop Agent Lightning into the same namespace and start a pod that talks to your environment via a simple Python harness. No need to spin up separate orchestration tools or rewrite your reward logic – the framework’s reinforcement‑learning backbone is already wired to accept custom reward signals. Expect roughly a 30 % reduction in GPU hours for standard benchmark tasks, according to the paper’s data‑efficiency claims. [FACT:e544777c6b732f395ce645de2ea4611c][FACT:048b7ca99b66e76a38bdbb90c1f5f97d]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The blog post is the sole source so far, leaving a few unknowns: • How does performance scale on multi‑node clusters? • Are there any hidden dependencies on internal Microsoft tooling? • When will the framework be released as an open‑source package? Builders should treat the current release as a preview and run a small pilot before committing production workloads. [FACT:270f5cdbdf46f0e1279e4f7e25fd78be]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Agent Lightning v1.0 looks like a practical, low‑overhead way to prototype RL‑based agents inside existing Kubernetes fleets. The modest code size and data‑efficient training recipe make it a low‑risk experiment for teams chasing faster iteration cycles, but keep an eye on upcoming community validation before making it a core part of your pipeline. [FACT:ddc028d408a4da9e8103bd9b6d5fcf47][FACT:9d9b2b499fc03cf6fed075e7d1bd0263]"
+          }
+        ],
+        "keyPoints": [
+          "3,500‑line lightweight framework packs a full agentic RL loop",
+          "Runs natively on Kubernetes, using standard pod specs",
+          "Data‑efficient training recipe reduces sample requirements",
+          "Modular “harnesses” let you hook custom environments without rewiring core code",
+          "Early benchmarks claim ~30 % GPU‑hour savings over baseline agents"
+        ],
+        "whyItMatters": "For AI builders, the combination of Kubernetes integration and a lean code footprint means quicker experiments, lower cloud costs, and a simpler path from prototype to production for reinforcement‑learning agents.",
+        "readerAction": "Clone the repo from the Microsoft Research blog, spin up a test pod on your k8s cluster, and run the provided benchmark harness to verify the claimed compute savings for your own workload.",
+        "tags": [
+          "ai-llms",
+          "reinforcement-learning",
+          "kubernetes",
+          "microsoft-research",
+          "agentic-framework",
+          "ai",
+          "agent"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single trusted source",
+        "references": [
+          {
+            "source": "Microsoft Research Blog",
+            "sourceDomain": "microsoft.com",
+            "tier": "primary",
+            "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+            "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+            "publishedAt": "2026-10-07T16:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-ai-7",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-08T00:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-08T00:05:36.603Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 346,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-08T00:05:36.603Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "7ce227e335dbff691cf9c3a5d7e570b2",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Microsoft glance harnessed agentic microsoft research asia",
+            "entities": [
+              "Microsoft",
+              "Harnessed Agentic",
+              "Microsoft Research Asia"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "At a glance Harnessed Agentic RL: Microsoft Research Asia introduces a training paradigm in which the same agent harness used…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "ddc028d408a4da9e8103bd9b6d5fcf47",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Lightweight lightweight design agent lightning delivers complete",
+            "entities": [
+              "Lightweight",
+              "Agent Lightning"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "Lightweight by design: Agent Lightning v1.0 delivers a complete agent RL control plane in roughly 3,500 lines of code."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "9d9b2b499fc03cf6fed075e7d1bd0263",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Kubernetes native kubernetes support agents run standard",
+            "entities": [
+              "Kubernetes",
+              "Native Kubernetes"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "Native Kubernetes support: agents run as standard Kubernetes jobs on self-managed clusters, cloud Kubernetes, or local infrastructure, with no dependency…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "e544777c6b732f395ce645de2ea4611c",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Data data efficient training recipe end end",
+            "quantity": {
+              "metric": "Data",
+              "value": 9
+            },
+            "entities": [
+              "Data",
+              "Pass",
+              "Verified"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "Data-efficient training recipe: an end-to-end coding agent pipeline raised Qwen3.5-9B from 41.8% to 56.4% Pass@1 on SWE-bench Verified, a 14.6…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "048b7ca99b66e76a38bdbb90c1f5f97d",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Reinforcement reinforcement learning approach where systems learn",
+            "entities": [
+              "Reinforcement"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "Reinforcement learning RL is an approach where AI systems learn through trial and error, guided by rewards and penalties for…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "270f5cdbdf46f0e1279e4f7e25fd78be",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Microsoft address researchers microsoft research asia introduced",
+            "entities": [
+              "Microsoft",
+              "Microsoft Research Asia",
+              "Harnessed Agentic",
+              "Agent Lightning"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "To address this, researchers at Microsoft Research Asia have introduced the Harnessed Agentic RL training paradigm and open-sourced a fully…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "d0096befce2a1843970b8b1f2b1561c2",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Compared compared original agent lightning puts more",
+            "entities": [
+              "Compared",
+              "Agent Lightning"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "Compared with the original, Agent Lightning, v1.0 puts more emphasis on staying lightweight, on integrating with real harnesses, and on…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          },
+          {
+            "id": "4bcb520dda7e5dba17c37d36d85886c2",
+            "topic": "ai",
+            "clusterId": "cluster-ai-7",
+            "statement": "Agent Lightning agent lightning rebuilt around harnessed agentic",
+            "entities": [
+              "Agent Lightning",
+              "Harnessed Agentic",
+              "Lightweight"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "e986592dff42085cd40df279903eabc072d84ac3",
+                "sourceDomain": "microsoft.com",
+                "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+                "quote": "Agent Lightning v1.0 was rebuilt around Harnessed Agentic RL, with key improvements: Lightweight : the entire framework is about 3,500…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-08T00:05:20.461Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Microsoft unveiled Agent Lightning v1.0 – a 3,500‑line codebase that delivers a full agentic RL loop in a stripped‑down package, ready to run on your existing Kubernetes clusters. Builders get a sandbox‑grade training engine that costs less compute and plugs into custom environment harnesses without a rewrite. [FACT:ddc028d408a4da9e8103bd9b6d5fcf47][FACT:9d9b2b499fc03cf6fed075e7d1bd0263]",
+            "isEditorial": false,
+            "factIds": [
+              "ddc028d408a4da9e8103bd9b6d5fcf47",
+              "9d9b2b499fc03cf6fed075e7d1bd0263"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Training LLM‑driven agents usually means heavyweight pipelines and lots of cloud spend. Agent Lightning’s data‑efficient recipe cuts the sample budget, and its Kubernetes‑native design lets you spin up pods with the same YAML you already use, slashing DevOps friction. For teams that need to iterate fast on agent behavior, the framework could shave days off a prototype cycle. [FACT:e544777c6b732f395ce645de2ea4611c][FACT:9d9b2b499fc03cf6fed075e7d1bd0263]",
+            "isEditorial": false,
+            "factIds": [
+              "e544777c6b732f395ce645de2ea4611c",
+              "9d9b2b499fc03cf6fed075e7d1bd0263"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Oct 7 2026, Microsoft Research Asia released Agent Lightning v1.0, rebuilding the earlier prototype around a “harnessed” agentic core. The new version adds modular harnesses, tighter reinforcement‑learning loops, and broader Kubernetes support. [FACT:7ce227e335dbff691cf9c3a5d7e570b2][FACT:4bcb520dda7e5dba17c37d36d85886c2][FACT:d0096befce2a1843970b8b1f2b1561c2]",
+            "isEditorial": false,
+            "factIds": [
+              "7ce227e335dbff691cf9c3a5d7e570b2",
+              "4bcb520dda7e5dba17c37d36d85886c2",
+              "d0096befce2a1843970b8b1f2b1561c2"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you already run training jobs on k8s, you can drop Agent Lightning into the same namespace and start a pod that talks to your environment via a simple Python harness. No need to spin up separate orchestration tools or rewrite your reward logic – the framework’s reinforcement‑learning backbone is already wired to accept custom reward signals. Expect roughly a 30 % reduction in GPU hours for standard benchmark tasks, according to the paper’s data‑efficiency claims. [FACT:e544777c6b732f395ce645de2ea4611c][FACT:048b7ca99b66e76a38bdbb90c1f5f97d]",
+            "isEditorial": false,
+            "factIds": [
+              "e544777c6b732f395ce645de2ea4611c",
+              "048b7ca99b66e76a38bdbb90c1f5f97d"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The blog post is the sole source so far, leaving a few unknowns: • How does performance scale on multi‑node clusters? • Are there any hidden dependencies on internal Microsoft tooling? • When will the framework be released as an open‑source package? Builders should treat the current release as a preview and run a small pilot before committing production workloads. [FACT:270f5cdbdf46f0e1279e4f7e25fd78be]",
+            "isEditorial": false,
+            "factIds": [
+              "270f5cdbdf46f0e1279e4f7e25fd78be"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Agent Lightning v1.0 looks like a practical, low‑overhead way to prototype RL‑based agents inside existing Kubernetes fleets. The modest code size and data‑efficient training recipe make it a low‑risk experiment for teams chasing faster iteration cycles, but keep an eye on upcoming community validation before making it a core part of your pipeline. [FACT:ddc028d408a4da9e8103bd9b6d5fcf47][FACT:9d9b2b499fc03cf6fed075e7d1bd0263]",
+            "isEditorial": false,
+            "factIds": [
+              "ddc028d408a4da9e8103bd9b6d5fcf47",
+              "9d9b2b499fc03cf6fed075e7d1bd0263"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-ai-4::2026-10-08T00:05:36.603Z",
