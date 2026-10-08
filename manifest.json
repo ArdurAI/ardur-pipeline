@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-08T12:00:00.000Z",
-    "windowStart": "2026-10-08T12:00:00.000Z",
-    "windowEnd": "2026-10-08T18:00:00.000Z"
+    "id": "2026-10-08T18:00:00.000Z",
+    "windowStart": "2026-10-08T18:00:00.000Z",
+    "windowEnd": "2026-10-09T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-08T13:16:42.980Z",
-  "nextRefreshAt": "2026-10-08T18:00:00.000Z",
+  "publishedAt": "2026-10-08T23:08:00.411Z",
+  "nextRefreshAt": "2026-10-09T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c3da37d0-55ca-42da-9de5-ce0473399a1d",
-    "ranking": "rank-1363eee6",
-    "top10": "top10:2026-10-08T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-08T12:00:00.000Z-2026-10-08T13:17:14.817Z"
+    "aggregation": "fa2834df-56b1-4152-b337-36985e2c734a",
+    "ranking": "rank-24ad86b6",
+    "top10": "top10:2026-10-08T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-08T18:00:00.000Z-2026-10-08T23:08:17.981Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-08T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-08T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-08T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-08T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-08T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-08T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1378,
+      "count": 1586,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
+        "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1657,
+      "count": 1811,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "Introducing Claude Haiku 5.5 on AWS"
+        "topic": "platform",
+        "headline": "Upcoming Next.js Security Update for Upstream Vulnerabilities"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:77396: Important: openssl security update"
+        "topic": "ai",
+        "headline": "Introducing Claude Haiku 5.5 on AWS"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:78952: Moderate: tftp security update"
+        "headline": "RHSA-2026:73864: Important: OpenShift Container Platform 4.14.75 packages and security update"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Security updates for Thursday"
+        "topic": "security",
+        "headline": "RHSA-2026:79281: Moderate: glibc security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Microsoft Makes Execution Containers Generally Available for AI Agents"
+        "topic": "ai",
+        "headline": "Being mean to Claude can now get your account suspended under Anthropic&039;s new TOS"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Migration toolkit for applications 8.3: Agentic code modernization, PVC mobility, and out-of-the-box generators"
+        "topic": "ai",
+        "headline": "5 Steps to Create SimReady Assets for Robotics with Frontier AI Models"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:79118: Low: libxml2 security update"
+        "topic": "ai",
+        "headline": "Claude can now generate animated explainer videos and live data dashboards from text prompts"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v2.15.4-rc1"
+        "topic": "security",
+        "headline": "RHSA-2026:73851: Important: OpenShift Container Platform 4.16.72 bug fix update"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents"
+        "headline": "Making sure the checks get printed"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v2.13.6"
+        "topic": "platform",
+        "headline": "Cutting Provider Memory by 80%: crossplane-runtime v2.4 and Client Caching"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
