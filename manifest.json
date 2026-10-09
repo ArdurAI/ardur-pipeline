@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-09T12:00:00.000Z",
-    "windowStart": "2026-10-09T12:00:00.000Z",
-    "windowEnd": "2026-10-09T18:00:00.000Z"
+    "id": "2026-10-09T18:00:00.000Z",
+    "windowStart": "2026-10-09T18:00:00.000Z",
+    "windowEnd": "2026-10-10T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-09T12:53:27.307Z",
-  "nextRefreshAt": "2026-10-09T18:00:00.000Z",
+  "publishedAt": "2026-10-09T19:22:09.716Z",
+  "nextRefreshAt": "2026-10-10T00:00:00.000Z",
   "runIds": {
-    "aggregation": "8cfcc452-c1a6-4b9f-b5e8-1a9e807daff6",
-    "ranking": "rank-69faa5c5",
-    "top10": "top10:2026-10-09T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-09T12:00:00.000Z-2026-10-09T12:53:52.391Z"
+    "aggregation": "358551f3-b314-4648-9250-6dea79f26505",
+    "ranking": "rank-10e4d1fa",
+    "top10": "top10:2026-10-09T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-09T18:00:00.000Z-2026-10-09T19:22:25.232Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-09T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-09T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-09T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-09T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-09T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-09T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1355,
+      "count": 1472,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1592,
+      "count": 1700,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 4 — article held",
+        "Ungrounded claims persist after re-ask for entry 5 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 22,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:79784: Important: kernel security update"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic&039;s Claude Science creates the first complete ultraviolet map of the sky"
-      },
-      {
-        "rank": 3,
         "topic": "platform",
         "headline": "Upcoming Next.js Security Update for Upstream Vulnerabilities"
       },
       {
-        "rank": 4,
+        "rank": 2,
+        "topic": "platform",
+        "headline": "Python 3.15 released"
+      },
+      {
+        "rank": 3,
         "topic": "security",
-        "headline": "Anthropic launches free AI security scans for open-source projects"
+        "headline": "RHSA-2026:79786: Important: kernel security update"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Anthropic launches a free AI scanner for open-source projects"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Unpatched AhsayCBS Vulnerabilities Exploited in the Wild"
+        "topic": "ai",
+        "headline": "Anthropic&039;s Claude can now orchestrate up to 1,000 AI agents in parallel through dynamic workflows"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.17.16"
       },
       {
         "rank": 7,
-        "topic": "ai",
+        "topic": "security",
         "headline": "Anthropic Launches Free AI Vulnerability Scanner for Open-Source Projects"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v5.0.11: github: workflows: retain master metadata push trigger"
+        "topic": "ai",
+        "headline": "OpenAI revenue keeps surging as company seeks $30 billion in fresh capital"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI fires 3 safety researchers in dispute over AI risks"
+        "topic": "kubernetes",
+        "headline": "v1.18.16"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Max severity SonicWall SMA1000 flaw now exploited in attacks"
+        "headline": "Unpatched AhsayCBS Vulnerabilities Exploited in the Wild"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }

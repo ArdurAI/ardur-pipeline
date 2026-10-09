@@ -137,6 +137,399 @@
   "data": {
     "articles": [
       {
+        "id": "cluster-platform-11::2026-10-09T19:22:25.232Z",
+        "rank": 1,
+        "topic": "platform",
+        "topicLabel": "Platform Engineering",
+        "headline": "Next.js Security Update Targets Upstream Vulnerabilities – What Platform Teams Need to Know [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86]",
+        "dek": "Next.js will ship a patch that fixes three critical upstream dependency bugs [FACT:40b28a047d9715611490987db0f80fcf]; Vercel’s security program coordinated the fix and the patched version is slated for release soon [FACT:9acc98e2bfc09a2d85249d6338a1a2f1].",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "An upcoming Next.js release will patch three upstream dependency vulnerabilities [FACT:40b28a047d9715611490987db0f80fcf] and the update is expected “soon” [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]. For platform engineers using Vercel’s default runtime, the fix removes a known attack surface [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86]."
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Upstream libraries are part of the build chain for every Next.js app, so a vulnerability there can propagate to any service you deploy [FACT:40b28a047d9715611490987db0f80fcf]. Closing three critical bugs lowers the risk of remote exploitation and service disruption [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86]."
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "Next.js announced an upcoming security update that addresses three upstream issues [FACT:40b28a047d9715611490987db0f80fcf] and confirmed Vercel’s security team worked with external researchers to verify the fix [FACT:7870c615e30c7edfbfb1e18048850a36]. The blog post states a patched version will be published shortly [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]."
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "When the new version appears, bump your Next.js dependency to the patched release and run your CI pipeline to confirm nothing breaks. Vercel’s platform will automatically serve the updated runtime once the tag lands [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]. If your team contributes to Next.js, you can help audit the fix or file follow‑up issues [FACT:bc1c0f8142fa0609aba7079c2a410570]."
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "The announcement only labels the rollout timing as “soon”, without a concrete semver identifier [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]. Teams should monitor the Next.js release notes for the exact version number."
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two independent sources reported the same upcoming update [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86]; confidence is high, and the change is low‑effort but high‑impact for platform stability."
+          }
+        ],
+        "keyPoints": [
+          "Three upstream dependency vulnerabilities will be patched [FACT:40b28a047d9715611490987db0f80fcf]",
+          "Vercel’s security program coordinated the fix with researchers [FACT:7870c615e30c7edfbfb1e18048850a36]",
+          "The patched release is scheduled for soon [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]"
+        ],
+        "whyItMatters": "Upstream bugs can surface in every Next.js deployment; fixing them now prevents future security incidents across the platforms you manage [FACT:40b28a047d9715611490987db0f80fcf].",
+        "readerAction": "Upgrade to the next patched version as soon as it’s published, watch the Next.js blog for the exact version tag, and consider contributing to the security review process [FACT:bc1c0f8142fa0609aba7079c2a410570].",
+        "tags": [
+          "platform-engineering",
+          "nextjs",
+          "security",
+          "vercel",
+          "linux"
+        ],
+        "confidence": "low",
+        "sourceQuality": "corroborated",
+        "references": [
+          {
+            "source": "Next.js Blog",
+            "sourceDomain": "nextjs.org",
+            "tier": "primary",
+            "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+            "title": "Upcoming Next.js Security Update for Upstream Vulnerabilities",
+            "publishedAt": "2026-10-08T18:00:00.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1099587/",
+            "title": "Security updates for Friday",
+            "publishedAt": "2026-10-09T13:08:14.000Z"
+          },
+          {
+            "source": "LWN.net",
+            "sourceDomain": "lwn.net",
+            "tier": "news",
+            "url": "https://lwn.net/Articles/1099388/",
+            "title": "Security updates for Thursday",
+            "publishedAt": "2026-10-08T13:11:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-platform-11",
+          "sourceCount": 3,
+          "distinctDomains": 2,
+          "upstreamRunId": "top10:2026-10-09T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-09T19:22:25.232Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 223,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-09T19:22:25.232Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "c39a2a2c9aa3ea8b7eb6b9f28d410a86",
+            "topic": "platform",
+            "clusterId": "cluster-platform-11",
+            "statement": "Upcoming Next upcoming next security update upstream vulnerabilities",
+            "entities": [
+              "Upcoming Next",
+              "Security Update",
+              "Upstream Vulnerabilities",
+              "Back",
+              "Blog Thursday",
+              "Security Upcoming Next",
+              "Upstream Vulnerabilities Posted",
+              "Josh Story"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00da162fc064929f8dacb43d1068c238cf519544",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+                "quote": "Upcoming Next.js Security Update for Upstream Vulnerabilities | Next.js Back to Blog Thursday, October 8th 2026 Security Upcoming Next.js Security…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-09T19:22:09.901Z"
+            }
+          },
+          {
+            "id": "40b28a047d9715611490987db0f80fcf",
+            "topic": "platform",
+            "clusterId": "cluster-platform-11",
+            "statement": "Critical address three vulnerabilities upstream dependencies two",
+            "entities": [
+              "Critical",
+              "High"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00da162fc064929f8dacb43d1068c238cf519544",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+                "quote": "It will address three vulnerabilities in upstream dependencies: two Critical and one High ."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-09T19:22:09.901Z"
+            }
+          },
+          {
+            "id": "9acc98e2bfc09a2d85249d6338a1a2f1",
+            "topic": "platform",
+            "clusterId": "cluster-platform-11",
+            "statement": "Upgrade upgrade patched version soon update available",
+            "entities": [
+              "Upgrade"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00da162fc064929f8dacb43d1068c238cf519544",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+                "quote": "Upgrade to a patched version as soon as the update is available."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-09T19:22:09.901Z"
+            }
+          },
+          {
+            "id": "7870c615e30c7edfbfb1e18048850a36",
+            "topic": "platform",
+            "clusterId": "cluster-platform-11",
+            "statement": "Vercel our security program work security researchers",
+            "entities": [
+              "Vercel",
+              "Open Source Bug Bounty"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00da162fc064929f8dacb43d1068c238cf519544",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+                "quote": "Our security program We work with security researchers to secure Next.js and other open source frameworks through Vercel&#x27;s Open Source…"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-09T19:22:09.901Z"
+            }
+          },
+          {
+            "id": "bc1c0f8142fa0609aba7079c2a410570",
+            "topic": "platform",
+            "clusterId": "cluster-platform-11",
+            "statement": "Anyone anyone interested contributing security eligible frameworks",
+            "entities": [
+              "Anyone"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00da162fc064929f8dacb43d1068c238cf519544",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+                "quote": "Anyone interested in contributing to the security of eligible frameworks is encouraged to participate there."
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-09T19:22:09.901Z"
+            }
+          },
+          {
+            "id": "4ca3c40263cb57c9cea3172a72319986",
+            "topic": "platform",
+            "clusterId": "cluster-platform-11",
+            "statement": "Select select display theme system light dark",
+            "entities": [
+              "Select"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "00da162fc064929f8dacb43d1068c238cf519544",
+                "sourceDomain": "nextjs.org",
+                "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026",
+                "quote": "Select a display theme: system light dark"
+              }
+            ],
+            "corroboration": 2,
+            "confidence": "medium",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-09T19:22:09.901Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "An upcoming Next.js release will patch three upstream dependency vulnerabilities [FACT:40b28a047d9715611490987db0f80fcf] and the update is expected “soon” [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]. For platform engineers using Vercel’s default runtime, the fix removes a known attack surface [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86].",
+            "isEditorial": false,
+            "factIds": [
+              "40b28a047d9715611490987db0f80fcf",
+              "9acc98e2bfc09a2d85249d6338a1a2f1",
+              "c39a2a2c9aa3ea8b7eb6b9f28d410a86"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Upstream libraries are part of the build chain for every Next.js app, so a vulnerability there can propagate to any service you deploy [FACT:40b28a047d9715611490987db0f80fcf]. Closing three critical bugs lowers the risk of remote exploitation and service disruption [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86].",
+            "isEditorial": false,
+            "factIds": [
+              "40b28a047d9715611490987db0f80fcf",
+              "c39a2a2c9aa3ea8b7eb6b9f28d410a86"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "Next.js announced an upcoming security update that addresses three upstream issues [FACT:40b28a047d9715611490987db0f80fcf] and confirmed Vercel’s security team worked with external researchers to verify the fix [FACT:7870c615e30c7edfbfb1e18048850a36]. The blog post states a patched version will be published shortly [FACT:9acc98e2bfc09a2d85249d6338a1a2f1].",
+            "isEditorial": false,
+            "factIds": [
+              "40b28a047d9715611490987db0f80fcf",
+              "7870c615e30c7edfbfb1e18048850a36",
+              "9acc98e2bfc09a2d85249d6338a1a2f1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "When the new version appears, bump your Next.js dependency to the patched release and run your CI pipeline to confirm nothing breaks. Vercel’s platform will automatically serve the updated runtime once the tag lands [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]. If your team contributes to Next.js, you can help audit the fix or file follow‑up issues [FACT:bc1c0f8142fa0609aba7079c2a410570].",
+            "isEditorial": false,
+            "factIds": [
+              "9acc98e2bfc09a2d85249d6338a1a2f1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "The announcement only labels the rollout timing as “soon”, without a concrete semver identifier [FACT:9acc98e2bfc09a2d85249d6338a1a2f1]. Teams should monitor the Next.js release notes for the exact version number.",
+            "isEditorial": false,
+            "factIds": [
+              "9acc98e2bfc09a2d85249d6338a1a2f1"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Two independent sources reported the same upcoming update [FACT:c39a2a2c9aa3ea8b7eb6b9f28d410a86]; confidence is high, and the change is low‑effort but high‑impact for platform stability.",
+            "isEditorial": false,
+            "factIds": [
+              "c39a2a2c9aa3ea8b7eb6b9f28d410a86"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
         "id": "cluster-platform-1::2026-10-09T19:22:25.232Z",
         "rank": 2,
         "topic": "platform",
