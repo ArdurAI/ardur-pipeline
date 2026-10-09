@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-09T00:00:00.000Z",
-    "windowStart": "2026-10-09T00:00:00.000Z",
-    "windowEnd": "2026-10-09T06:00:00.000Z"
+    "id": "2026-10-09T12:00:00.000Z",
+    "windowStart": "2026-10-09T12:00:00.000Z",
+    "windowEnd": "2026-10-09T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-09T05:25:41.023Z",
-  "nextRefreshAt": "2026-10-09T06:00:00.000Z",
+  "publishedAt": "2026-10-09T12:53:27.307Z",
+  "nextRefreshAt": "2026-10-09T18:00:00.000Z",
   "runIds": {
-    "aggregation": "54775d24-6f48-4563-ac29-8016b6efd6e4",
-    "ranking": "rank-181246cc",
-    "top10": "top10:2026-10-09T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-09T00:00:00.000Z-2026-10-09T05:25:54.478Z"
+    "aggregation": "8cfcc452-c1a6-4b9f-b5e8-1a9e807daff6",
+    "ranking": "rank-69faa5c5",
+    "top10": "top10:2026-10-09T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-09T12:00:00.000Z-2026-10-09T12:53:52.391Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-09T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-09T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-09T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-09T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-09T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-09T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,64 +32,64 @@
     },
     {
       "category": "other",
-      "count": 1448,
+      "count": 1355,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
       "category": "blocked-fetch",
-      "count": 6,
+      "count": 9,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[security] source blog.qualys.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1670,
+      "count": 1592,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "RHSA-2026:79784: Important: kernel security update"
+      },
+      {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Anthropic&039;s Claude Science creates the first complete ultraviolet map of the sky"
+      },
+      {
+        "rank": 3,
         "topic": "platform",
         "headline": "Upcoming Next.js Security Update for Upstream Vulnerabilities"
       },
       {
-        "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:73864: Important: OpenShift Container Platform 4.14.75 packages and security update"
-      },
-      {
-        "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:79281: Moderate: glibc security, bug fix, and enhancement update"
-      },
-      {
         "rank": 4,
-        "topic": "ai",
-        "headline": "ttok 1.0"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Friday Five — October 9, 2026 | Red Hat"
-      },
-      {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v2.15.4"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Microsoft Makes Execution Containers Generally Available for AI Agents"
-      },
-      {
-        "rank": 8,
         "topic": "security",
         "headline": "Anthropic launches free AI security scans for open-source projects"
       },
       {
+        "rank": 5,
+        "topic": "security",
+        "headline": "Unpatched AhsayCBS Vulnerabilities Exploited in the Wild"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Anthropic Launches Free AI Vulnerability Scanner for Open-Source Projects"
+      },
+      {
+        "rank": 8,
+        "topic": "kubernetes",
+        "headline": "v5.0.11: github: workflows: retain master metadata push trigger"
+      },
+      {
         "rank": 9,
         "topic": "ai",
-        "headline": "Anthropic bans users from ‘needless abusive or cruel behavior’ towards Claude"
+        "headline": "OpenAI fires 3 safety researchers in dispute over AI risks"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "5 Steps to Create SimReady Assets for Robotics with Frontier AI Models"
+        "topic": "security",
+        "headline": "Max severity SonicWall SMA1000 flaw now exploited in attacks"
       }
     ],
     "articleCount": 0
