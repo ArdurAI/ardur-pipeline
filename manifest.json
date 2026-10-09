@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-08T18:00:00.000Z",
-    "windowStart": "2026-10-08T18:00:00.000Z",
-    "windowEnd": "2026-10-09T00:00:00.000Z"
+    "id": "2026-10-09T00:00:00.000Z",
+    "windowStart": "2026-10-09T00:00:00.000Z",
+    "windowEnd": "2026-10-09T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-08T23:08:00.411Z",
-  "nextRefreshAt": "2026-10-09T00:00:00.000Z",
+  "publishedAt": "2026-10-09T05:25:41.023Z",
+  "nextRefreshAt": "2026-10-09T06:00:00.000Z",
   "runIds": {
-    "aggregation": "fa2834df-56b1-4152-b337-36985e2c734a",
-    "ranking": "rank-24ad86b6",
-    "top10": "top10:2026-10-08T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-08T18:00:00.000Z-2026-10-08T23:08:17.981Z"
+    "aggregation": "54775d24-6f48-4563-ac29-8016b6efd6e4",
+    "ranking": "rank-181246cc",
+    "top10": "top10:2026-10-09T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-09T00:00:00.000Z-2026-10-09T05:25:54.478Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-08T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-08T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-08T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-09T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-09T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-09T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1586,
+      "count": 1448,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1811,
+      "count": 1670,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 23,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Introducing Claude Haiku 5.5 on AWS"
-      },
-      {
-        "rank": 3,
         "topic": "security",
         "headline": "RHSA-2026:73864: Important: OpenShift Container Platform 4.14.75 packages and security update"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "topic": "security",
         "headline": "RHSA-2026:79281: Moderate: glibc security, bug fix, and enhancement update"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "topic": "ai",
-        "headline": "Being mean to Claude can now get your account suspended under Anthropic&039;s new TOS"
+        "headline": "ttok 1.0"
+      },
+      {
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "Friday Five — October 9, 2026 | Red Hat"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "5 Steps to Create SimReady Assets for Robotics with Frontier AI Models"
+        "topic": "kubernetes",
+        "headline": "v2.15.4"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Claude can now generate animated explainer videos and live data dashboards from text prompts"
+        "topic": "kubernetes",
+        "headline": "Microsoft Makes Execution Containers Generally Available for AI Agents"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:73851: Important: OpenShift Container Platform 4.16.72 bug fix update"
+        "headline": "Anthropic launches free AI security scans for open-source projects"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Making sure the checks get printed"
+        "topic": "ai",
+        "headline": "Anthropic bans users from ‘needless abusive or cruel behavior’ towards Claude"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Cutting Provider Memory by 80%: crossplane-runtime v2.4 and Client Caching"
+        "topic": "ai",
+        "headline": "5 Steps to Create SimReady Assets for Robotics with Frontier AI Models"
       }
     ],
     "articleCount": 0
