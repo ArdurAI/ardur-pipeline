@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-09T18:00:00.000Z",
-    "windowStart": "2026-10-09T18:00:00.000Z",
-    "windowEnd": "2026-10-10T00:00:00.000Z"
+    "id": "2026-10-10T00:00:00.000Z",
+    "windowStart": "2026-10-10T00:00:00.000Z",
+    "windowEnd": "2026-10-10T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-09T19:22:09.716Z",
-  "nextRefreshAt": "2026-10-10T00:00:00.000Z",
+  "publishedAt": "2026-10-10T05:09:45.692Z",
+  "nextRefreshAt": "2026-10-10T06:00:00.000Z",
   "runIds": {
-    "aggregation": "358551f3-b314-4648-9250-6dea79f26505",
-    "ranking": "rank-10e4d1fa",
-    "top10": "top10:2026-10-09T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-09T18:00:00.000Z-2026-10-09T19:22:25.232Z"
+    "aggregation": "6671395a-9e93-474e-b6ea-8dd0cc9b9e70",
+    "ranking": "rank-6683911e",
+    "top10": "top10:2026-10-10T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-10T00:00:00.000Z-2026-10-10T05:10:04.962Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-09T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-09T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-09T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-10T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-10T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-10T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1472,
+      "count": 1245,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVWmpWcUY1SVAtVWc2bnhmNHhSOWVFYnY4aGR3RG4xRHZwWlNNdFhwRS1aSUZhQk5kNUpGRnhBdU03T01rU0JXaWdnQ1hPck1RT0lCbE03V3Q5Ti05?oc=5"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1700,
+      "count": 1494,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 21,
       "sample": [
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held",
-        "Ungrounded claims persist after re-ask for entry 5 — article held"
+        "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 22,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Upcoming Next.js Security Update for Upstream Vulnerabilities"
+        "topic": "kubernetes",
+        "headline": "Microsoft Execution Containers for AI Agents Reach GA on Windows 11"
       },
       {
         "rank": 2,
         "topic": "platform",
-        "headline": "Python 3.15 released"
+        "headline": "Upcoming Next.js Security Update for Upstream Vulnerabilities"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:79786: Important: kernel security update"
+        "topic": "platform",
+        "headline": "Python 3.15 released"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic launches a free AI scanner for open-source projects"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0-rc.2"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic&039;s Claude can now orchestrate up to 1,000 AI agents in parallel through dynamic workflows"
+        "headline": "An Anthropic AI model sent a false homicide tip to Philadelphia police"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.17.16"
+        "topic": "ai",
+        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "Anthropic Launches Free AI Vulnerability Scanner for Open-Source Projects"
+        "headline": "RHSA-2026:79786: Important: kernel security update"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "OpenAI revenue keeps surging as company seeks $30 billion in fresh capital"
+        "headline": "Anthropic launches a free AI scanner for open-source projects"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.18.16"
+        "topic": "ai",
+        "headline": "Deno is joining Cloudflare"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Unpatched AhsayCBS Vulnerabilities Exploited in the Wild"
+        "topic": "kubernetes",
+        "headline": "Kubernetes v1.37 is now available on OCI Kubernetes Engine OKE"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
