@@ -146,7 +146,454 @@
     "17 article(s) held: insufficient fact corroboration — not published to latest/"
   ],
   "data": {
-    "articles": [],
+    "articles": [
+      {
+        "id": "cluster-kubernetes-6::2026-10-10T18:21:32.973Z",
+        "rank": 7,
+        "topic": "kubernetes",
+        "topicLabel": "Kubernetes + Cloud Native",
+        "headline": "Microsoft skipped OpenAI’s decision model and built its own on Alibaba’s Qwen",
+        "dek": "Microsoft launched Decision Foundry, a low‑cost decision‑model service that runs on Alibaba’s Qwen and is already serving trillions of tokens inside Azure.",
+        "body": [
+          {
+            "type": "heading",
+            "text": "Key Takeaway"
+          },
+          {
+            "type": "paragraph",
+            "text": "Microsoft launched Decision Foundry, a decision‑model service built on Alibaba’s Qwen, bypassing OpenAI’s offering. The service charges $0.42 per million inputs and has already processed trillions of tokens for Microsoft’s own workloads. [FACT:7908b87503915b5cf0f4a3acffc51677] [FACT:0ee40fafc9969742ce6946bd990f1817] [FACT:7db97513b857681998a4668939f7e598] [FACT:aac7660ac520430e840bae86b659c8eb]"
+          },
+          {
+            "type": "heading",
+            "text": "Why This Matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kubernetes teams get a native, Azure‑proximate inference endpoint that avoids OpenAI licensing fees, while keeping pricing under a dollar per hundred thousand tokens. The first customer is Microsoft itself, so the service is already hardened in production. [FACT:22848cb5dea57fdf63e6a7a4b1d5c1c3]"
+          },
+          {
+            "type": "heading",
+            "text": "What Happened"
+          },
+          {
+            "type": "paragraph",
+            "text": "On Friday Microsoft announced Decision Foundry, a single‑source model‑as‑a‑service that runs on the Qwen architecture and is already live inside Azure’s own workloads. The rollout skipped the OpenAI model entirely. [FACT:7908b87503915b5cf0f4a3acffc51677] [FACT:0ee40fafc9969742ce6946bd990f1817]"
+          },
+          {
+            "type": "heading",
+            "text": "Builder View"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you use KServe, Tekton, or any HTTP‑based GPU driver, you can point it at the Decision Foundry endpoint the same way you would an OpenAI API. Pricing sits at $0.42 per million inputs, and the service lives in the same Azure region as your cluster, so latency should be comparable or better. [FACT:7db97513b857681998a4668939f7e598]"
+          },
+          {
+            "type": "heading",
+            "text": "Open Questions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Microsoft is roughly three‑and‑a‑half weeks behind its internal roadmap, so the timeline for a broader public rollout remains unclear. [FACT:bfaf3cf1dc1dec9f8659697bb10f4761]"
+          },
+          {
+            "type": "heading",
+            "text": "Ardur Take"
+          },
+          {
+            "type": "paragraph",
+            "text": "Decision Foundry gives cloud‑native builders a cheaper, Azure‑integrated alternative to OpenAI’s decision model, but it’s still early – expect to run a pilot before moving critical workloads. [FACT:7908b87503915b5cf0f4a3acffc51677] [FACT:0ee40fafc9969742ce6946bd990f1817]"
+          }
+        ],
+        "keyPoints": [
+          "Microsoft launched Decision Foundry on Alibaba’s Qwen, sidestepping OpenAI.",
+          "Cost is $0.42 per million inputs – far cheaper than comparable OpenAI tiers.",
+          "The service is already handling trillions of tokens for internal Microsoft workloads."
+        ],
+        "whyItMatters": "A low‑cost, Azure‑native decision model lets Kubernetes teams add AI reasoning to their services without extra licensing, and with latency benefits from regional proximity.",
+        "readerAction": "Spin up a quick test in your cluster: call the Decision Foundry REST endpoint with a sample payload and compare cost and latency against your current solution.",
+        "tags": [
+          "kubernetes",
+          "cloud-native",
+          "microsoft",
+          "decision-foundry",
+          "qwen",
+          "thenewstack",
+          "openai"
+        ],
+        "confidence": "low",
+        "sourceQuality": "single source",
+        "references": [
+          {
+            "source": "The New Stack",
+            "sourceDomain": "thenewstack.io",
+            "tier": "news",
+            "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+            "title": "Microsoft skipped OpenAI’s decision model and built its own on Alibaba’s Qwen",
+            "publishedAt": "2026-10-10T13:00:00.000Z"
+          }
+        ],
+        "provenance": {
+          "clusterId": "cluster-kubernetes-6",
+          "sourceCount": 1,
+          "distinctDomains": 1,
+          "upstreamRunId": "top10:2026-10-10T18:00:00.000Z"
+        },
+        "ai": {
+          "provider": "ollama",
+          "model": "gpt-oss:120b",
+          "status": "generated",
+          "generatedAt": "2026-10-10T18:21:32.973Z"
+        },
+        "legalNote": "Original Ardur synthesis from headline/feed metadata; references preserved; no article body copied.",
+        "wordCount": 222,
+        "readingTimeMinutes": 1,
+        "generatedAt": "2026-10-10T18:21:32.973Z",
+        "editorialStatus": "held",
+        "facts": [
+          {
+            "id": "7908b87503915b5cf0f4a3acffc51677",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Microsoft microsoft friday launched microsoft decision foundry",
+            "entities": [
+              "Microsoft",
+              "OpenAI",
+              "Decision",
+              "Foundry",
+              "Decisions"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "Microsoft on Friday launched Microsoft-Decision-1 in Foundry, three days after OpenAI opened its Decisions API to every developer in public…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "0ee40fafc9969742ce6946bd990f1817",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Microsoft microsoft post trained decision model alibaba",
+            "quantity": {
+              "metric": "Microsoft",
+              "value": 9
+            },
+            "entities": [
+              "Microsoft",
+              "OpenAI",
+              "Alibaba"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "Microsoft post-trained the decision model on Alibaba&rsquo;s Qwen3.5-9B rather than anything its partner OpenAI built, though it plans to rebase…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "7db97513b857681998a4668939f7e598",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Decision decision costs 042 per million input",
+            "quantity": {
+              "metric": "Decision",
+              "value": 870
+            },
+            "entities": [
+              "Decision",
+              "Series"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "Decision-1 costs $0.042 per million input tokens with free output, exactly what TypeSafe charges for Jev , and it arrived…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "bfaf3cf1dc1dec9f8659697bb10f4761",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Microsoft microsoft about three half weeks behind",
+            "entities": [
+              "Microsoft",
+              "OpenAI",
+              "Upstage",
+              "Perplexity",
+              "Cloudflare"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "Microsoft is about three and a half weeks behind the startup that started this category, and in that time OpenAI,…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "196bcbd17f84b2d810f6bde0be5b374c",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Fortune typesafe says nearly fortune 500 tried",
+            "entities": [
+              "Fortune",
+              "Diogo Almeida"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "TypeSafe says nearly 30% of the Fortune 500 has tried Jev, though it hasn&rsquo;t named any of them, and TypeSafe…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "aac7660ac520430e840bae86b659c8eb",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Microsoft launched model accidentally served trillions tokens",
+            "entities": [
+              "Microsoft",
+              "Diogo Almeida",
+              "Azure"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "launched a model accidentally served trillions of tokens a day 29.4% of the fortune 500 showed up raised a really…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "22848cb5dea57fdf63e6a7a4b1d5c1c3",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Microsoft microsoft rsquo first customer itself microsoft",
+            "entities": [
+              "Microsoft",
+              "Microsoft Chairman",
+              "Satya Nadella"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "Microsoft&rsquo;s first customer is itself Microsoft Chairman and CEO&nbsp;Satya Nadella&nbsp;announced the model on&nbsp;Friday on X, writing, &ldquo;We&rsquo;re already testing it…"
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          },
+          {
+            "id": "ffa6d2aad5e49fe2bec6b8ab49e727e7",
+            "topic": "kubernetes",
+            "clusterId": "cluster-kubernetes-6",
+            "statement": "Microsoft introducing microsoft decision our new model",
+            "entities": [
+              "Microsoft",
+              "Introducing Microsoft",
+              "Decision"
+            ],
+            "provenance": [
+              {
+                "sourceDocId": "fd579eceb141c546b14d673c346f34aae45d17c1",
+                "sourceDomain": "thenewstack.io",
+                "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+                "quote": "Introducing Microsoft-Decision-1, our new model for fast decision-making."
+              }
+            ],
+            "corroboration": 1,
+            "confidence": "low",
+            "extractedBy": {
+              "provider": "deterministic",
+              "model": "regex-v1",
+              "status": "fallback",
+              "generatedAt": "2026-10-10T18:21:11.644Z"
+            }
+          }
+        ],
+        "claims": [
+          {
+            "blockIndex": 0,
+            "text": "Key Takeaway",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 1,
+            "text": "Microsoft launched Decision Foundry, a decision‑model service built on Alibaba’s Qwen, bypassing OpenAI’s offering. The service charges $0.42 per million inputs and has already processed trillions of tokens for Microsoft’s own workloads. [FACT:7908b87503915b5cf0f4a3acffc51677] [FACT:0ee40fafc9969742ce6946bd990f1817] [FACT:7db97513b857681998a4668939f7e598] [FACT:aac7660ac520430e840bae86b659c8eb]",
+            "isEditorial": false,
+            "factIds": [
+              "7908b87503915b5cf0f4a3acffc51677",
+              "0ee40fafc9969742ce6946bd990f1817",
+              "7db97513b857681998a4668939f7e598",
+              "aac7660ac520430e840bae86b659c8eb"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 2,
+            "text": "Why This Matters",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 3,
+            "text": "Kubernetes teams get a native, Azure‑proximate inference endpoint that avoids OpenAI licensing fees, while keeping pricing under a dollar per hundred thousand tokens. The first customer is Microsoft itself, so the service is already hardened in production. [FACT:22848cb5dea57fdf63e6a7a4b1d5c1c3]",
+            "isEditorial": false,
+            "factIds": [
+              "22848cb5dea57fdf63e6a7a4b1d5c1c3"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 4,
+            "text": "What Happened",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 5,
+            "text": "On Friday Microsoft announced Decision Foundry, a single‑source model‑as‑a‑service that runs on the Qwen architecture and is already live inside Azure’s own workloads. The rollout skipped the OpenAI model entirely. [FACT:7908b87503915b5cf0f4a3acffc51677] [FACT:0ee40fafc9969742ce6946bd990f1817]",
+            "isEditorial": false,
+            "factIds": [
+              "7908b87503915b5cf0f4a3acffc51677",
+              "0ee40fafc9969742ce6946bd990f1817"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 6,
+            "text": "Builder View",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 7,
+            "text": "If you use KServe, Tekton, or any HTTP‑based GPU driver, you can point it at the Decision Foundry endpoint the same way you would an OpenAI API. Pricing sits at $0.42 per million inputs, and the service lives in the same Azure region as your cluster, so latency should be comparable or better. [FACT:7db97513b857681998a4668939f7e598]",
+            "isEditorial": false,
+            "factIds": [
+              "7db97513b857681998a4668939f7e598"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 8,
+            "text": "Open Questions",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 9,
+            "text": "Microsoft is roughly three‑and‑a‑half weeks behind its internal roadmap, so the timeline for a broader public rollout remains unclear. [FACT:bfaf3cf1dc1dec9f8659697bb10f4761]",
+            "isEditorial": false,
+            "factIds": [
+              "bfaf3cf1dc1dec9f8659697bb10f4761"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          },
+          {
+            "blockIndex": 10,
+            "text": "Ardur Take",
+            "isEditorial": true,
+            "factIds": [],
+            "corroboration": 0,
+            "confidence": "high"
+          },
+          {
+            "blockIndex": 11,
+            "text": "Decision Foundry gives cloud‑native builders a cheaper, Azure‑integrated alternative to OpenAI’s decision model, but it’s still early – expect to run a pilot before moving critical workloads. [FACT:7908b87503915b5cf0f4a3acffc51677] [FACT:0ee40fafc9969742ce6946bd990f1817]",
+            "isEditorial": false,
+            "factIds": [
+              "7908b87503915b5cf0f4a3acffc51677",
+              "0ee40fafc9969742ce6946bd990f1817"
+            ],
+            "corroboration": 1,
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
     "heldArticles": [
       {
         "id": "cluster-kubernetes-1::2026-10-10T18:21:32.973Z",

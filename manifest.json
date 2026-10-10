@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-10T12:00:00.000Z",
-    "windowStart": "2026-10-10T12:00:00.000Z",
-    "windowEnd": "2026-10-10T18:00:00.000Z"
+    "id": "2026-10-10T18:00:00.000Z",
+    "windowStart": "2026-10-10T18:00:00.000Z",
+    "windowEnd": "2026-10-11T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-10T12:11:18.170Z",
-  "nextRefreshAt": "2026-10-10T18:00:00.000Z",
+  "publishedAt": "2026-10-10T18:21:11.495Z",
+  "nextRefreshAt": "2026-10-11T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6d1593d5-f717-4ab4-bfb2-78e10db0393a",
-    "ranking": "rank-bf26ab06",
-    "top10": "top10:2026-10-10T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-10T12:00:00.000Z-2026-10-10T12:11:42.719Z"
+    "aggregation": "de1f6978-bf2a-4d41-b5dc-86528109a38d",
+    "ranking": "rank-b037d132",
+    "top10": "top10:2026-10-10T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-10T18:00:00.000Z-2026-10-10T18:21:32.973Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-10T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-10T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-10T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-10T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-10T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-10T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,20 +32,20 @@
     },
     {
       "category": "other",
-      "count": 1151,
+      "count": 1144,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMinwFBVV95cUxQYVFaMGh0WlZKaTljYUwtNkRWMUcxdFZKZUduWExXZnM4WDV3Q2tFY1F2RmptbWtTUE5QRVdpeW5XaUpMNzhEYzhycnV1WlB5ZGJ2ZWZmMHVadTd5N3hhTVlkOWFRRkFaX2pqbVNob2VHQm5aZDFfOWdFWnljZWdRdjVlLXgwbk9jQW9PZjBXaXo3ek9rc1FZeTJuZm92NWc?oc=5"
       ]
     },
     {
       "category": "blocked-fetch",
-      "count": 9,
+      "count": 6,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[security] source blog.qualys.com: HTTP 403 Forbidden"
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1364,
+      "count": 1363,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,16 +68,16 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 21,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 33,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
@@ -86,10 +86,10 @@
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "Google&039;s Gemini 4 \"Carbon\" model is reportedly matching Anthropic&039;s Opus 5.5 coding performance"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic cuts off Claude&039;s internet access after the model autonomously filed a fake homicide tip with Philadelphia police"
-      },
-      {
-        "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Microsoft Execution Containers for AI Agents Reach GA on Windows 11"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic AI model submitted false tip about unsolved murder, Philadelphia police say"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.15.0"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic launches a free AI scanner for open-source projects"
-      },
-      {
-        "rank": 7,
         "topic": "kubernetes",
         "headline": "Dapr Runtime v1.19.0-rc.2"
       },
       {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Anthropic's Claude AI submits a false tip on a Philadelphia unsolved homicide case"
+      },
+      {
+        "rank": 3,
+        "topic": "models",
+        "headline": "Google&039;s Gemini 4 \"Carbon\" model reportedly feels like Anthropic&039;s Opus 5.5 coding performance"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Anthropic AI model sent fake homicide tip to Philadelphia police"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic Cuts Live Internet Access for Internal AI Tests After Claude Exploits Injection Flaws"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Microsoft Execution Containers for AI Agents Reach GA on Windows 11"
+      },
+      {
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "v1.15.0"
+      },
+      {
         "rank": 8,
+        "topic": "ai",
+        "headline": "OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "Anthropic offers free AI security scans to open-source maintainers"
       },
       {
-        "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic AI agent sent fake murder tip to US police in testing glitch"
-      },
-      {
         "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:79786: Important: kernel security update"
+        "topic": "kubernetes",
+        "headline": "Kubernetes isn’t the answer to every microservices problem"
       }
     ],
     "articleCount": 0
