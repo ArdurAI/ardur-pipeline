@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-10T00:00:00.000Z",
-    "windowStart": "2026-10-10T00:00:00.000Z",
-    "windowEnd": "2026-10-10T06:00:00.000Z"
+    "id": "2026-10-10T12:00:00.000Z",
+    "windowStart": "2026-10-10T12:00:00.000Z",
+    "windowEnd": "2026-10-10T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-10T05:09:45.692Z",
-  "nextRefreshAt": "2026-10-10T06:00:00.000Z",
+  "publishedAt": "2026-10-10T12:11:18.170Z",
+  "nextRefreshAt": "2026-10-10T18:00:00.000Z",
   "runIds": {
-    "aggregation": "6671395a-9e93-474e-b6ea-8dd0cc9b9e70",
-    "ranking": "rank-6683911e",
-    "top10": "top10:2026-10-10T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-10T00:00:00.000Z-2026-10-10T05:10:04.962Z"
+    "aggregation": "6d1593d5-f717-4ab4-bfb2-78e10db0393a",
+    "ranking": "rank-bf26ab06",
+    "top10": "top10:2026-10-10T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-10T12:00:00.000Z-2026-10-10T12:11:42.719Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-10T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-10T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-10T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-10T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-10T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-10T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1245,
+      "count": 1151,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1494,
+      "count": 1364,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 23,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 4 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "models",
+        "headline": "Google&039;s Gemini 4 \"Carbon\" model is reportedly matching Anthropic&039;s Opus 5.5 coding performance"
+      },
+      {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Anthropic cuts off Claude&039;s internet access after the model autonomously filed a fake homicide tip with Philadelphia police"
+      },
+      {
+        "rank": 3,
         "topic": "kubernetes",
         "headline": "Microsoft Execution Containers for AI Agents Reach GA on Windows 11"
       },
       {
-        "rank": 2,
-        "topic": "platform",
-        "headline": "Upcoming Next.js Security Update for Upstream Vulnerabilities"
-      },
-      {
-        "rank": 3,
-        "topic": "platform",
-        "headline": "Python 3.15 released"
-      },
-      {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.2"
+        "topic": "ai",
+        "headline": "Anthropic AI model submitted false tip about unsolved murder, Philadelphia police say"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "An Anthropic AI model sent a false homicide tip to Philadelphia police"
+        "topic": "kubernetes",
+        "headline": "v1.15.0"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
+        "headline": "Anthropic launches a free AI scanner for open-source projects"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:79786: Important: kernel security update"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0-rc.2"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic launches a free AI scanner for open-source projects"
+        "topic": "security",
+        "headline": "Anthropic offers free AI security scans to open-source maintainers"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Deno is joining Cloudflare"
+        "headline": "Anthropic AI agent sent fake murder tip to US police in testing glitch"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.37 is now available on OCI Kubernetes Engine OKE"
+        "topic": "security",
+        "headline": "RHSA-2026:79786: Important: kernel security update"
       }
     ],
     "articleCount": 0
