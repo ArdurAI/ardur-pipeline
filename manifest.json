@@ -1,51 +1,51 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-11T00:00:00.000Z",
-    "windowStart": "2026-10-11T00:00:00.000Z",
-    "windowEnd": "2026-10-11T06:00:00.000Z"
+    "id": "2026-10-11T12:00:00.000Z",
+    "windowStart": "2026-10-11T12:00:00.000Z",
+    "windowEnd": "2026-10-11T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-11T04:59:43.247Z",
-  "nextRefreshAt": "2026-10-11T06:00:00.000Z",
+  "publishedAt": "2026-10-11T12:25:33.760Z",
+  "nextRefreshAt": "2026-10-11T18:00:00.000Z",
   "runIds": {
-    "aggregation": "a4c2105d-1489-4f0c-88f7-8bcb19232cc5",
-    "ranking": "rank-16f10b81",
-    "top10": "top10:2026-10-11T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-11T00:00:00.000Z-2026-10-11T05:00:00.423Z"
+    "aggregation": "76ff301a-8269-4164-80d0-c7c7da1a41dd",
+    "ranking": "rank-baee85fa",
+    "top10": "top10:2026-10-11T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-11T12:00:00.000Z-2026-10-11T12:25:47.094Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-11T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-11T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-11T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-11T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-11T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-11T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 60,
+      "count": 57,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1116,
+      "count": 1177,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "blocked-fetch",
-      "count": 6,
+      "count": 9,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[security] source blog.qualys.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -59,16 +59,16 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1086,
+      "count": 1030,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 39,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 12,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "Nvidia in talks to acquire US ‘open’ model start-up Reflection AI"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "Anthropic’s Claude AI submits a false tip on a Philadelphia unsolved homicide case"
       },
       {
+        "rank": 2,
+        "topic": "models",
+        "headline": "Nvidia in talks to acquire US ‘open’ model start-up Reflection AI"
+      },
+      {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.2"
+        "topic": "security",
+        "headline": "Anthropic Launches Free AI Security Scanner To Help Open-Source Projects Find and Fix Vulnerabilities"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Do AI Labs Like Anthropic and OpenAI Have Economic Moats?"
+        "headline": "Microsoft&039;s Nadella bows to Trump&039;s language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Philadelphia police receive false homicide tip from Anthropic AI model"
+        "topic": "platform",
+        "headline": "Foresight AI Brings Gremlin Agents to Reliability Engineering"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "Google&039;s Gemini 4 \"Carbon\" model reportedly feels like Anthropic&039;s Opus 5.5 coding performance"
+        "topic": "kubernetes",
+        "headline": "Pakistan's president suspends provincial government led by Khan’s party ahead of march - San Antonio Express-News"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Microsoft Execution Containers for AI Agents Reach GA on Windows 11"
+        "topic": "ai",
+        "headline": "Anthropic Says Its Claude AI Agent Sent a Fake Tip Into a Real Murder Case"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Runtime: Anthropic throws open source a token gesture"
+        "headline": "Anthropic discloses fake police tip among rogue AI incidents"
       },
       {
         "rank": 9,
         "topic": "models",
-        "headline": "Dwarf Fortress uses version control now"
+        "headline": "Cheaper AI tokens are driving more demand, and that&039;s Jensen Huang&039;s best-case scenario"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Three shipping containers transformed into one luxurious home"
+        "headline": "Dapr Runtime v1.19.0-rc.2"
       }
     ],
     "articleCount": 0
