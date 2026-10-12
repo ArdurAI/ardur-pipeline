@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-11T18:00:00.000Z",
-    "windowStart": "2026-10-11T18:00:00.000Z",
-    "windowEnd": "2026-10-12T00:00:00.000Z"
+    "id": "2026-10-12T00:00:00.000Z",
+    "windowStart": "2026-10-12T00:00:00.000Z",
+    "windowEnd": "2026-10-12T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-11T18:43:35.728Z",
-  "nextRefreshAt": "2026-10-12T00:00:00.000Z",
+  "publishedAt": "2026-10-12T05:14:00.436Z",
+  "nextRefreshAt": "2026-10-12T06:00:00.000Z",
   "runIds": {
-    "aggregation": "01bd9c31-eb92-4be0-ad21-4c3b95222020",
-    "ranking": "rank-739bb322",
-    "top10": "top10:2026-10-11T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-11T18:00:00.000Z-2026-10-11T18:43:48.949Z"
+    "aggregation": "13bec6d3-c027-4f80-9da3-5d9a2cfc015d",
+    "ranking": "rank-1a41ecb4",
+    "top10": "top10:2026-10-12T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-12T00:00:00.000Z-2026-10-12T05:14:12.085Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-11T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-11T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-11T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-12T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-12T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-12T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1128,
+      "count": 1188,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,11 +59,11 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1044,
+      "count": 1017,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -71,17 +71,17 @@
       "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 39,
+      "count": 38,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 11,
+    "heldArticles": 12,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Pakistani president suspends provincial government led by Khan’s party ahead of march"
+        "topic": "security",
+        "headline": "RHSA-2026:80507: Important: emacs security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic | History, Controversies, & Claude AI"
-      },
-      {
-        "rank": 4,
         "topic": "models",
         "headline": "Nvidia in talks to acquire US ‘open’ model start-up Reflection AI"
       },
       {
-        "rank": 5,
+        "rank": 3,
+        "topic": "kubernetes",
+        "headline": "Why Observability Is Critical For Kubernetes"
+      },
+      {
+        "rank": 4,
         "topic": "security",
-        "headline": "Anthropic Launches Free AI Security Scanner To Help Open-Source Projects Find and Fix Vulnerabilities"
+        "headline": "RHSA-2026:80514: Moderate: compat-openssl11 security update"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Microsoft&039;s Nadella bows to Trump&039;s language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "Claude found 29,000 possible bugs in open source. Only 516 have been fixed."
+        "headline": "Pakistani president suspends provincial government led by Khan’s party ahead of march"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic launches free AI vulnerability scanner for open-source maintainers, with no human review"
+        "topic": "security",
+        "headline": "Anthropic Launches Free AI Security Scanner To Help Open-Source Projects Find and Fix Vulnerabilities"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "AI agents overstate their results and remain far from autonomous research, study finds"
+        "topic": "security",
+        "headline": "ISC Stormcast For Monday, October 12th, 2026 https://isc.sans.edu/podcastdetail/10132, Mon, Oct 12th"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Foresight AI Brings Gremlin Agents to Reliability Engineering"
+        "topic": "ai",
+        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Prefillable Polymer Containers Market Driven by Biologics Shift to Reach 2035 Growth"
+        "headline": "CloudCon Sydney to tackle AI & Kubernetes in production"
       }
     ],
     "articleCount": 0
