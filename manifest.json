@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-12T00:00:00.000Z",
-    "windowStart": "2026-10-12T00:00:00.000Z",
-    "windowEnd": "2026-10-12T06:00:00.000Z"
+    "id": "2026-10-12T12:00:00.000Z",
+    "windowStart": "2026-10-12T12:00:00.000Z",
+    "windowEnd": "2026-10-12T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-12T05:14:00.436Z",
-  "nextRefreshAt": "2026-10-12T06:00:00.000Z",
+  "publishedAt": "2026-10-12T14:54:54.705Z",
+  "nextRefreshAt": "2026-10-12T18:00:00.000Z",
   "runIds": {
-    "aggregation": "13bec6d3-c027-4f80-9da3-5d9a2cfc015d",
-    "ranking": "rank-1a41ecb4",
-    "top10": "top10:2026-10-12T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-12T00:00:00.000Z-2026-10-12T05:14:12.085Z"
+    "aggregation": "bc45be0f-1f8d-4aa0-a165-dc87ba364ac5",
+    "ranking": "rank-88e2bbc9",
+    "top10": "top10:2026-10-12T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-12T12:00:00.000Z-2026-10-12T14:55:44.160Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-12T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-12T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-12T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-12T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-12T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-12T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 57,
+      "count": 60,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1188,
+      "count": 1114,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 2 distinct domains < floor 20",
+        "[models] degraded: 2 distinct domains < floor 20",
+        "[platform] degraded: 8 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1017,
+      "count": 1264,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 38,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 12,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:80507: Important: emacs security update"
+        "headline": "RHSA-2026:80741: Important: python-tornado security update"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Nvidia in talks to acquire US ‘open’ model start-up Reflection AI"
+        "topic": "security",
+        "headline": "RHSA-2026:80664: Moderate: environment-modules security update"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Why Observability Is Critical For Kubernetes"
+        "topic": "models",
+        "headline": "Will NVIDIA Acquire US Open-Model Startup Reflection AI?"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:80514: Moderate: compat-openssl11 security update"
+        "headline": "Bricksforge WordPress Plugin Vulnerability Exploited in the Wild"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Microsoft&039;s Nadella bows to Trump&039;s language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic"
+        "topic": "models",
+        "headline": "Marvell Unveils Second-generation Structera X, Industry-first Six-channel CXL 3.2 Memory Expanders for AI Inference"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "Pakistani president suspends provincial government led by Khan’s party ahead of march"
+        "headline": "Why Observability Is Critical For Kubernetes"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Anthropic Launches Free AI Security Scanner To Help Open-Source Projects Find and Fix Vulnerabilities"
+        "topic": "kubernetes",
+        "headline": "Pakistani president suspends provincial government led by Khan’s party ahead of march - San Antonio Express-News"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "ISC Stormcast For Monday, October 12th, 2026 https://isc.sans.edu/podcastdetail/10132, Mon, Oct 12th"
+        "topic": "kubernetes",
+        "headline": "v1.21.2"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
+        "topic": "security",
+        "headline": "Attackers Exploit CVSS 10.0 Bricksforge WordPress Flaw Enabling Unauthenticated RCE"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "CloudCon Sydney to tackle AI & Kubernetes in production"
+        "headline": "v3.3.16"
       }
     ],
     "articleCount": 0
