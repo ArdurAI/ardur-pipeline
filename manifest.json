@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-13T00:00:00.000Z",
-    "windowStart": "2026-10-13T00:00:00.000Z",
-    "windowEnd": "2026-10-13T06:00:00.000Z"
+    "id": "2026-10-13T06:00:00.000Z",
+    "windowStart": "2026-10-13T06:00:00.000Z",
+    "windowEnd": "2026-10-13T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-13T00:31:03.721Z",
-  "nextRefreshAt": "2026-10-13T06:00:00.000Z",
+  "publishedAt": "2026-10-13T06:12:53.176Z",
+  "nextRefreshAt": "2026-10-13T12:00:00.000Z",
   "runIds": {
-    "aggregation": "e38c007f-634c-47d3-9d00-cbf58bdfdb04",
-    "ranking": "rank-ebcb76cd",
-    "top10": "top10:2026-10-13T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-13T00:00:00.000Z-2026-10-13T00:31:28.874Z"
+    "aggregation": "e334f792-51e5-4b52-a430-67a52c4878cf",
+    "ranking": "rank-a0118b44",
+    "top10": "top10:2026-10-13T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-13T06:00:00.000Z-2026-10-13T06:13:15.578Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-13T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-13T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-13T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-13T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-13T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-13T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1176,
+      "count": 1139,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,32 +54,32 @@
       "sample": [
         "[ai] degraded: 6 distinct domains < floor 20",
         "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1401,
+      "count": 1364,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -104,12 +104,12 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:81613: Important: pcre2 security update"
+        "headline": "RHSA-2026:81884: Important: thunderbird security update"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Meta&039;s new frontier model Muse Wonder Full breaks into the AI top tier"
+        "headline": "Meta unveils new frontier-class AI models to compete with OpenAI, Anthropic"
       },
       {
         "rank": 3,
@@ -119,7 +119,7 @@
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Meta unveils new frontier-class AI models to compete with OpenAI, Anthropic"
+        "headline": "Meta&039;s new frontier model Muse Wonder Full breaks into the AI top tier"
       },
       {
         "rank": 5,
@@ -128,28 +128,28 @@
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "ADDING and REPLACING Marvell Unveils Second-generation Structera X, Industry-first Six-channel CXL 3.2 Memory Expanders for AI Inference"
+        "topic": "platform",
+        "headline": "Platform Engineering For LLM Applications"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.38.7"
+        "headline": "v2.14.6-rc1"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Run multi-node inference workloads using Ray LLM Deep Learning Containers"
+        "topic": "models",
+        "headline": "ADDING and REPLACING Marvell Unveils Second-generation Structera X, Industry-first Six-channel CXL 3.2 Memory Expanders for AI Inference"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.37.9"
+        "topic": "ai",
+        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.36.13"
+        "headline": "Governed Software Factory: Harness & Cosmos"
       }
     ],
     "articleCount": 0
