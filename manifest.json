@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-13T06:00:00.000Z",
-    "windowStart": "2026-10-13T06:00:00.000Z",
-    "windowEnd": "2026-10-13T12:00:00.000Z"
+    "id": "2026-10-13T12:00:00.000Z",
+    "windowStart": "2026-10-13T12:00:00.000Z",
+    "windowEnd": "2026-10-13T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-13T06:12:53.176Z",
-  "nextRefreshAt": "2026-10-13T12:00:00.000Z",
+  "publishedAt": "2026-10-13T14:02:28.480Z",
+  "nextRefreshAt": "2026-10-13T18:00:00.000Z",
   "runIds": {
-    "aggregation": "e334f792-51e5-4b52-a430-67a52c4878cf",
-    "ranking": "rank-a0118b44",
-    "top10": "top10:2026-10-13T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-13T06:00:00.000Z-2026-10-13T06:13:15.578Z"
+    "aggregation": "2d2ce991-2394-41dd-9511-64709e2e3ede",
+    "ranking": "rank-404ca1f3",
+    "top10": "top10:2026-10-13T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-13T12:00:00.000Z-2026-10-13T14:02:47.108Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-13T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-13T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-13T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-13T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-13T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-13T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,16 +32,16 @@
     },
     {
       "category": "other",
-      "count": 1139,
+      "count": 1259,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "blocked-fetch",
-      "count": 9,
+      "count": 12,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1364,
+      "count": 1517,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:81884: Important: thunderbird security update"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Meta unveils new frontier-class AI models to compete with OpenAI, Anthropic"
-      },
-      {
-        "rank": 3,
         "topic": "platform",
         "headline": "Docker Hub security advisory: personal access tokens transferred during account-to-organization conversions"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Meta&039;s new frontier model Muse Wonder Full breaks into the AI top tier"
-      },
-      {
-        "rank": 5,
+        "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:80798: Moderate: glibc security update"
+        "headline": "RHSA-2026:82154: Moderate: libreswan security update"
       },
       {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "Platform Engineering For LLM Applications"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v2.14.6-rc1"
-      },
-      {
-        "rank": 8,
+        "rank": 3,
         "topic": "models",
         "headline": "ADDING and REPLACING Marvell Unveils Second-generation Structera X, Industry-first Six-channel CXL 3.2 Memory Expanders for AI Inference"
       },
       {
-        "rank": 9,
+        "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip"
+        "headline": "Meta unveils new frontier-class AI models to compete with OpenAI, Anthropic"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic warns AI models could soon copy themselves across home devices"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:82040: Important: python-tornado security update"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Anthropic says it cut Claude reasoning token theft by up to 99% in fight against industrial-scale distillation"
+      },
+      {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "Run multi-node inference workloads using Ray LLM Deep Learning Containers"
+      },
+      {
+        "rank": 9,
+        "topic": "models",
+        "headline": "Meta&039;s new frontier model Muse Wonder Full breaks into the AI top tier"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Governed Software Factory: Harness & Cosmos"
+        "topic": "platform",
+        "headline": "ZCS Command Injection via SNMP Handlers Enables Unauthenticated Remote Code Execution"
       }
     ],
     "articleCount": 0
