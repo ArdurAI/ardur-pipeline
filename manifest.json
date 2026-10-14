@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-14T00:00:00.000Z",
-    "windowStart": "2026-10-14T00:00:00.000Z",
-    "windowEnd": "2026-10-14T06:00:00.000Z"
+    "id": "2026-10-14T06:00:00.000Z",
+    "windowStart": "2026-10-14T06:00:00.000Z",
+    "windowEnd": "2026-10-14T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-14T01:00:20.902Z",
-  "nextRefreshAt": "2026-10-14T06:00:00.000Z",
+  "publishedAt": "2026-10-14T07:18:54.762Z",
+  "nextRefreshAt": "2026-10-14T12:00:00.000Z",
   "runIds": {
-    "aggregation": "893058f8-4c57-4226-9c6c-262a8f5e3d90",
-    "ranking": "rank-34973c42",
-    "top10": "top10:2026-10-14T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-14T00:00:00.000Z-2026-10-14T01:00:47.246Z"
+    "aggregation": "d98d2df5-17da-4891-81ad-67da2b056120",
+    "ranking": "rank-61fbccd1",
+    "top10": "top10:2026-10-14T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-14T06:00:00.000Z-2026-10-14T07:19:55.988Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-14T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-14T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-14T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-14T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-14T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-14T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1321,
+      "count": 1326,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,18 +52,18 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
         "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1570,
+      "count": 1548,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,33 +103,33 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
+        "topic": "ai",
         "headline": "llm-gemini 0.35"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Zero-Days Lurk in Microsoft's Overgrown October Patch Tuesday"
+        "headline": "RHSA-2026:82728: Important: libsoup3 security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Microsoft Patches More Than 1,400 Security Flaws"
+        "topic": "kubernetes",
+        "headline": "v1.69.0/v0.163.0"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:82345: Important: OpenEXR security update"
+        "headline": "Microsoft Patches More Than 1,400 Security Flaws"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.56.0-next.3"
+        "topic": "security",
+        "headline": "Zero-Days Lurk in Microsoft's Overgrown October Patch Tuesday"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Docker Hub security advisory: personal access tokens transferred during account-to-organization conversions"
+        "topic": "kubernetes",
+        "headline": "v1.56.0-next.3"
       },
       {
         "rank": 7,
@@ -139,17 +139,17 @@
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Redesigning source control at Anthropic"
+        "headline": "OpenAI engineer arrested in bugging of executive conference room"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "How to Rewrite Apache Spark UDFs for GPU Acceleration with AI Agents"
+        "topic": "security",
+        "headline": "Microsoft’s October 2026 Patch Tuesday addresses 1407 CVEs CVE-2026-96951"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "OpenAI employee arrested by FBI after listening device found at its office"
+        "headline": "Redesigning source control at Anthropic"
       }
     ],
     "articleCount": 0
