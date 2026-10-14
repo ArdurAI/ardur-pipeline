@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-14T06:00:00.000Z",
-    "windowStart": "2026-10-14T06:00:00.000Z",
-    "windowEnd": "2026-10-14T12:00:00.000Z"
+    "id": "2026-10-14T12:00:00.000Z",
+    "windowStart": "2026-10-14T12:00:00.000Z",
+    "windowEnd": "2026-10-14T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-14T07:18:54.762Z",
-  "nextRefreshAt": "2026-10-14T12:00:00.000Z",
+  "publishedAt": "2026-10-14T13:28:01.171Z",
+  "nextRefreshAt": "2026-10-14T18:00:00.000Z",
   "runIds": {
-    "aggregation": "d98d2df5-17da-4891-81ad-67da2b056120",
-    "ranking": "rank-61fbccd1",
-    "top10": "top10:2026-10-14T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-14T06:00:00.000Z-2026-10-14T07:19:55.988Z"
+    "aggregation": "b673d0ec-0d5d-46cc-a85c-039939ee85a1",
+    "ranking": "rank-178d6623",
+    "top10": "top10:2026-10-14T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-14T12:00:00.000Z-2026-10-14T13:28:19.851Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-14T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-14T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-14T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-14T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-14T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-14T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1326,
+      "count": 1354,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,16 +54,16 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1548,
+      "count": 1564,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 29,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "llm-gemini 0.35"
+        "headline": "Redesigning source control at Anthropic"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:82728: Important: libsoup3 security update"
+        "topic": "ai",
+        "headline": "llm-gemini 0.35"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.69.0/v0.163.0"
+        "topic": "security",
+        "headline": "RHSA-2026:82860: Important: kernel-rt security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Microsoft Patches More Than 1,400 Security Flaws"
+        "topic": "platform",
+        "headline": "Security updates for Wednesday"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Zero-Days Lurk in Microsoft's Overgrown October Patch Tuesday"
+        "headline": "Microsoft Patches Record 1,413 Vulnerabilities, Including Exploited Windows Zero-Day"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "v1.56.0-next.3"
+        "headline": "v1.69.0/v0.163.0"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "containerd 2.4.2"
+        "topic": "security",
+        "headline": "CISA warns admins to immediately fix Ivanti flaw exploited as zero-day"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI engineer arrested in bugging of executive conference room"
+        "topic": "security",
+        "headline": "Zero-Days Lurk in Microsoft's Overgrown October Patch Tuesday"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Microsoft’s October 2026 Patch Tuesday addresses 1407 CVEs CVE-2026-96951"
+        "topic": "ai",
+        "headline": "The EU’s next chapter in AI is agentic"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Redesigning source control at Anthropic"
+        "topic": "models",
+        "headline": "Intel is revealing specs for its new GPU D-series AI inference chip at industry summit"
       }
     ],
     "articleCount": 0
