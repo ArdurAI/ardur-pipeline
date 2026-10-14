@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-13T18:00:00.000Z",
-    "windowStart": "2026-10-13T18:00:00.000Z",
-    "windowEnd": "2026-10-14T00:00:00.000Z"
+    "id": "2026-10-14T00:00:00.000Z",
+    "windowStart": "2026-10-14T00:00:00.000Z",
+    "windowEnd": "2026-10-14T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-13T21:05:37.717Z",
-  "nextRefreshAt": "2026-10-14T00:00:00.000Z",
+  "publishedAt": "2026-10-14T01:00:20.902Z",
+  "nextRefreshAt": "2026-10-14T06:00:00.000Z",
   "runIds": {
-    "aggregation": "785742fb-f78b-4729-a7c2-c51cbb55d897",
-    "ranking": "rank-fdebf7af",
-    "top10": "top10:2026-10-13T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-13T18:00:00.000Z-2026-10-13T21:05:51.203Z"
+    "aggregation": "893058f8-4c57-4226-9c6c-262a8f5e3d90",
+    "ranking": "rank-34973c42",
+    "top10": "top10:2026-10-14T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-14T00:00:00.000Z-2026-10-14T01:00:47.246Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-13T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-13T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-13T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-14T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-14T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-14T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 69,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1396,
+      "count": 1321,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1642,
+      "count": 1570,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 74,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:82345: Important: OpenEXR security update"
+        "topic": "models",
+        "headline": "llm-gemini 0.35"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Docker Hub security advisory: personal access tokens transferred during account-to-organization conversions"
+        "topic": "security",
+        "headline": "Zero-Days Lurk in Microsoft's Overgrown October Patch Tuesday"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Meta launches Muse Wonder, catching OpenAI, Anthropic: How to try it, benchmark results"
+        "topic": "security",
+        "headline": "Microsoft Patches More Than 1,400 Security Flaws"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:82280: Moderate: tftp security update"
+        "headline": "RHSA-2026:82345: Important: OpenEXR security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Gemini 4 Argon is now available worldwide as Google&039;s most capable frontier model"
+        "topic": "kubernetes",
+        "headline": "v1.56.0-next.3"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "ADDING and REPLACING Marvell Unveils Second-generation Structera X, Industry-first Six-channel CXL 3.2 Memory Expanders for AI Inference"
+        "topic": "platform",
+        "headline": "Docker Hub security advisory: personal access tokens transferred during account-to-organization conversions"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.40.0"
+        "headline": "containerd 2.4.2"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Ivanti Zero-Day Chain Gave Attackers Root Access to Fully Patched VPN"
+        "topic": "ai",
+        "headline": "Redesigning source control at Anthropic"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Meta releases its first frontier model, Muse Wonder"
+        "topic": "ai",
+        "headline": "How to Rewrite Apache Spark UDFs for GPU Acceleration with AI Agents"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Ivanti Connect Secure zero-day exploited in the wild CVE-2026-104935"
+        "topic": "ai",
+        "headline": "OpenAI employee arrested by FBI after listening device found at its office"
       }
     ],
     "articleCount": 0
