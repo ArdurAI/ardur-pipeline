@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-15T00:00:00.000Z",
-    "windowStart": "2026-10-15T00:00:00.000Z",
-    "windowEnd": "2026-10-15T06:00:00.000Z"
+    "id": "2026-10-15T06:00:00.000Z",
+    "windowStart": "2026-10-15T06:00:00.000Z",
+    "windowEnd": "2026-10-15T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-15T03:57:51.335Z",
-  "nextRefreshAt": "2026-10-15T06:00:00.000Z",
+  "publishedAt": "2026-10-15T09:05:07.884Z",
+  "nextRefreshAt": "2026-10-15T12:00:00.000Z",
   "runIds": {
-    "aggregation": "d5d3807d-b1f6-40af-9b21-02f135866e04",
-    "ranking": "rank-58ca8c90",
-    "top10": "top10:2026-10-15T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-15T00:00:00.000Z-2026-10-15T03:58:13.702Z"
+    "aggregation": "9c8a01f2-c7ef-48a3-9956-5294e56a3394",
+    "ranking": "rank-ffc3e574",
+    "top10": "top10:2026-10-15T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-15T06:00:00.000Z-2026-10-15T09:05:28.884Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-15T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-15T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-15T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-15T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-15T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-15T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 84,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1485,
+      "count": 1373,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1698,
+      "count": 1577,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 28,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 74,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:79166: Important: OpenShift Container Platform 4.19.51 packages and security update"
+        "topic": "ai",
+        "headline": "llm-gemini 0.35"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:83224: Critical: cjose security update"
+        "headline": "RHSA-2026:83518: Important: mariadb-connector-c security update"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Amp puts AI agents to work beyond code with OpenAI models"
+        "topic": "security",
+        "headline": "RHSA-2026:79035: Important: OpenShift Container Platform 4.18.57 bug fix and security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic Says Revenue Jumped 45% to $16.8 Billion in Third Quarter"
+        "topic": "platform",
+        "headline": "Article: Server-Side DPoP and Token Exchange in Spring Security 7"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "AI Agent Security Risks: What Can Go Wrong When Agents Act on Their Own"
+        "topic": "security",
+        "headline": "Cisco Warns of Exploited Secure Email Gateway Vulnerability"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "GitLab Fixes CVSS 10 Flaw in CI/CD Regex Engine, Plus 23 Other Vulnerabilities"
+        "topic": "security",
+        "headline": "RHSA-2026:83460: Critical: idm:DL1 security, bug fix, and enhancement update"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "llm-gemini 0.35"
+        "topic": "ai",
+        "headline": "Anthropic's third-quarter revenue is said to hit $16.8 billion ahead of IPO"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "How Block is building AI-powered security with OpenAI technology"
+        "topic": "kubernetes",
+        "headline": "Containers float in the water after a vessel sank near the Strait of Hormuz"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "OpenAI sued by 8 states over ChatGPT safety concerns"
+        "headline": "Amp puts AI agents to work beyond code with OpenAI models"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Ivanti ICS Zero-Day Attacks Highlight Vendor Patching Hurdles"
+        "topic": "ai",
+        "headline": "Do AI Labs Like Anthropic and OpenAI Have Economic Moats?"
       }
     ],
     "articleCount": 0
