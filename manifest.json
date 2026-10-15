@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-15T12:00:00.000Z",
-    "windowStart": "2026-10-15T12:00:00.000Z",
-    "windowEnd": "2026-10-15T18:00:00.000Z"
+    "id": "2026-10-15T18:00:00.000Z",
+    "windowStart": "2026-10-15T18:00:00.000Z",
+    "windowEnd": "2026-10-16T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-15T14:46:21.612Z",
-  "nextRefreshAt": "2026-10-15T18:00:00.000Z",
+  "publishedAt": "2026-10-15T19:47:16.229Z",
+  "nextRefreshAt": "2026-10-16T00:00:00.000Z",
   "runIds": {
-    "aggregation": "4cf22bb9-c214-4a24-8949-f7096b73ed08",
-    "ranking": "rank-b1262b16",
-    "top10": "top10:2026-10-15T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-15T12:00:00.000Z-2026-10-15T14:47:30.934Z"
+    "aggregation": "67730146-6de7-47a1-b855-8450feb20568",
+    "ranking": "rank-2d9417a4",
+    "top10": "top10:2026-10-15T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-15T18:00:00.000Z-2026-10-15T19:47:31.632Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-15T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-15T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-15T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-15T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-15T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-15T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 96,
+      "count": 72,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1425,
+      "count": 1608,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[kubernetes] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1644,
+      "count": 1818,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 22,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 80,
-    "degradedTopics": 5,
+    "failedSources": 74,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:83571: Important: ruby security update"
+        "headline": "CVE-2026-0317 PAN-OS: Denial of Service Vulnerability Severity: LOW"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Cisco Warns of Exploited Secure Email Gateway Vulnerability"
+        "headline": "RHSA-2026:77547: Important: OpenShift Container Platform 4.17.59 packages and security update"
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:83608: Important: mariadb-connector-c security update"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "CVE-2026-0322 PAN-OS: Authenticated Remote Code Execution RCE in the Management Interface Severity: HIGH"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Amp puts AI agents to work beyond code with OpenAI models"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta"
+      },
+      {
+        "rank": 7,
         "topic": "ai",
         "headline": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO"
       },
       {
-        "rank": 4,
-        "topic": "models",
-        "headline": "​Intel Unveils D-Series GPUs for AI Inference"
-      },
-      {
-        "rank": 5,
-        "topic": "platform",
-        "headline": "Seven stable kernels for Thursday with fix for critical vulnerability"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:83460: Critical: idm:DL1 security, bug fix, and enhancement update"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v3.6.0-rc3: chore: bump version to 3.6.0-rc3 on release-3.6 branch 30219"
-      },
-      {
         "rank": 8,
-        "topic": "security",
-        "headline": "Next.js Ships Out-of-Band Patch for Two Critical RCE Flaws in Caching and SVG Processing"
+        "topic": "kubernetes",
+        "headline": "Open Source Security Signals | Q3 2026"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Introducing Evo Agentic AppSec: Security That Keeps Up With AI Development"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0-rc.3"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Burglars stealing gas, fuel containers from garages"
+        "headline": "v3.6.0-rc3"
       }
     ],
     "articleCount": 0
