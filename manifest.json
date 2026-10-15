@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-15T06:00:00.000Z",
-    "windowStart": "2026-10-15T06:00:00.000Z",
-    "windowEnd": "2026-10-15T12:00:00.000Z"
+    "id": "2026-10-15T12:00:00.000Z",
+    "windowStart": "2026-10-15T12:00:00.000Z",
+    "windowEnd": "2026-10-15T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-15T09:05:07.884Z",
-  "nextRefreshAt": "2026-10-15T12:00:00.000Z",
+  "publishedAt": "2026-10-15T14:46:21.612Z",
+  "nextRefreshAt": "2026-10-15T18:00:00.000Z",
   "runIds": {
-    "aggregation": "9c8a01f2-c7ef-48a3-9956-5294e56a3394",
-    "ranking": "rank-ffc3e574",
-    "top10": "top10:2026-10-15T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-15T06:00:00.000Z-2026-10-15T09:05:28.884Z"
+    "aggregation": "4cf22bb9-c214-4a24-8949-f7096b73ed08",
+    "ranking": "rank-b1262b16",
+    "top10": "top10:2026-10-15T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-15T12:00:00.000Z-2026-10-15T14:47:30.934Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-15T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-15T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-15T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-15T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-15T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-15T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 96,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1373,
+      "count": 1425,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,37 +59,37 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1577,
+      "count": 1644,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 28,
+      "count": 22,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
+    "failedSources": 80,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "llm-gemini 0.35"
+        "topic": "security",
+        "headline": "RHSA-2026:83571: Important: ruby security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:83518: Important: mariadb-connector-c security update"
+        "headline": "Cisco Warns of Exploited Secure Email Gateway Vulnerability"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:79035: Important: OpenShift Container Platform 4.18.57 bug fix and security update"
+        "topic": "ai",
+        "headline": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Article: Server-Side DPoP and Token Exchange in Spring Security 7"
+        "topic": "models",
+        "headline": "​Intel Unveils D-Series GPUs for AI Inference"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Cisco Warns of Exploited Secure Email Gateway Vulnerability"
+        "topic": "platform",
+        "headline": "Seven stable kernels for Thursday with fix for critical vulnerability"
       },
       {
         "rank": 6,
@@ -133,23 +133,23 @@
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic's third-quarter revenue is said to hit $16.8 billion ahead of IPO"
+        "topic": "kubernetes",
+        "headline": "v3.6.0-rc3: chore: bump version to 3.6.0-rc3 on release-3.6 branch 30219"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Containers float in the water after a vessel sank near the Strait of Hormuz"
+        "topic": "security",
+        "headline": "Next.js Ships Out-of-Band Patch for Two Critical RCE Flaws in Caching and SVG Processing"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Amp puts AI agents to work beyond code with OpenAI models"
+        "topic": "platform",
+        "headline": "Introducing Evo Agentic AppSec: Security That Keeps Up With AI Development"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Do AI Labs Like Anthropic and OpenAI Have Economic Moats?"
+        "topic": "kubernetes",
+        "headline": "Burglars stealing gas, fuel containers from garages"
       }
     ],
     "articleCount": 0
