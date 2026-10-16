@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-16T06:00:00.000Z",
-    "windowStart": "2026-10-16T06:00:00.000Z",
-    "windowEnd": "2026-10-16T12:00:00.000Z"
+    "id": "2026-10-16T12:00:00.000Z",
+    "windowStart": "2026-10-16T12:00:00.000Z",
+    "windowEnd": "2026-10-16T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-16T08:53:59.750Z",
-  "nextRefreshAt": "2026-10-16T12:00:00.000Z",
+  "publishedAt": "2026-10-16T14:40:53.685Z",
+  "nextRefreshAt": "2026-10-16T18:00:00.000Z",
   "runIds": {
-    "aggregation": "c3a55674-d64f-4331-a5dc-bf71c00dd5bf",
-    "ranking": "rank-a3f12306",
-    "top10": "top10:2026-10-16T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-16T06:00:00.000Z-2026-10-16T08:54:16.730Z"
+    "aggregation": "31aac2b3-0f4a-4ef9-a6e5-a4c263b1b925",
+    "ranking": "rank-a5574886",
+    "top10": "top10:2026-10-16T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-16T12:00:00.000Z-2026-10-16T14:41:19.314Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-16T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-16T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-16T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-16T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-16T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-16T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1431,
+      "count": 1388,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1665,
+      "count": 1637,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 4 — article held"
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning"
+        "topic": "models",
+        "headline": "Nvidia&039;s Nemotron 3.5 Super VL is an open model built to run enterprise AI agents nonstop"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "China-Linked Hackers Exploited BeyondTrust Zero-Day to Take Over Remote Support Servers"
+        "headline": "Suspected Chinese espionage attackers abusing BeyondTrust IT support zero-day"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "BeyondTrust patches zero-day exploited in attacks since August"
+        "headline": "Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta"
+        "topic": "platform",
+        "headline": "Introducing Evo Agentic AppSec: Security That Keeps Up With AI Development"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:83520: Important: Red Hat build of Quarkus 3.33.4 release and security update"
+        "headline": "China-Linked Hackers Exploited BeyondTrust Zero-Day to Take Over Remote Support Servers"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:77611: Important: OpenShift Container Platform 4.16.73 packages and security update"
+        "topic": "ai",
+        "headline": "NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO"
+        "topic": "security",
+        "headline": "BeyondTrust patches zero-day exploited in attacks since August"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Running a Green CI Pipeline Isn&39;t the Hard Part Anymore"
+        "topic": "ai",
+        "headline": "Ledger Unveils Ledger Atom: A Security-First Device for AI Agents and Digital Ownership"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "Friday Five — October 16, 2026 | Red Hat"
+        "headline": "Fluent Bit 5.1.4"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Sullivan & Cromwell brings legal expertise into agreement review"
+        "headline": "Meshy Debuts New In-House AI Model with Meshy Edit, Letting Users Change Selected Parts of a 3D Model with One Prompt"
       }
     ],
     "articleCount": 0
