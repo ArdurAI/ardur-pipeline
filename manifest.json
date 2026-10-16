@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-15T18:00:00.000Z",
-    "windowStart": "2026-10-15T18:00:00.000Z",
-    "windowEnd": "2026-10-16T00:00:00.000Z"
+    "id": "2026-10-16T00:00:00.000Z",
+    "windowStart": "2026-10-16T00:00:00.000Z",
+    "windowEnd": "2026-10-16T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-15T19:47:16.229Z",
-  "nextRefreshAt": "2026-10-16T00:00:00.000Z",
+  "publishedAt": "2026-10-16T03:54:09.960Z",
+  "nextRefreshAt": "2026-10-16T06:00:00.000Z",
   "runIds": {
-    "aggregation": "67730146-6de7-47a1-b855-8450feb20568",
-    "ranking": "rank-2d9417a4",
-    "top10": "top10:2026-10-15T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-15T18:00:00.000Z-2026-10-15T19:47:31.632Z"
+    "aggregation": "85d9d379-9f02-471b-910e-f4302f09bdcc",
+    "ranking": "rank-27389f93",
+    "top10": "top10:2026-10-16T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-16T00:00:00.000Z-2026-10-16T03:54:29.807Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-15T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-15T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-15T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-16T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-16T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-16T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 75,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1608,
+      "count": 1500,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1818,
+      "count": 1749,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 19,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 21,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
-    "degradedTopics": 4,
+    "failedSources": 78,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "CVE-2026-0317 PAN-OS: Denial of Service Vulnerability Severity: LOW"
+        "topic": "models",
+        "headline": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:77547: Important: OpenShift Container Platform 4.17.59 packages and security update"
+        "headline": "RHSA-2026:83520: Important: Red Hat build of Quarkus 3.33.4 release and security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:83608: Important: mariadb-connector-c security update"
+        "headline": "RHSA-2026:77611: Important: OpenShift Container Platform 4.16.73 packages and security update"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "CVE-2026-0322 PAN-OS: Authenticated Remote Code Execution RCE in the Management Interface Severity: HIGH"
+        "headline": "RHSA-2026:83608: Important: mariadb-connector-c security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Amp puts AI agents to work beyond code with OpenAI models"
+        "topic": "security",
+        "headline": "CVE-2026-0320 PAN-OS: Authenticated Admin Command Injection Vulnerability Severity: MEDIUM"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta"
+        "headline": "Sullivan & Cromwell brings legal expertise into agreement review"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO"
+        "headline": "Why are eight US states suing OpenAI?"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "Open Source Security Signals | Q3 2026"
+        "headline": "Friday Five — October 16, 2026 | Red Hat"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.3"
+        "topic": "ai",
+        "headline": "Bringing GPT-Rosalind to academic research labs"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v3.6.0-rc3"
+        "headline": "Open Source Security Signals | Q3 2026"
       }
     ],
     "articleCount": 0
