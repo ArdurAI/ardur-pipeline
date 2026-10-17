@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-16T18:00:00.000Z",
-    "windowStart": "2026-10-16T18:00:00.000Z",
-    "windowEnd": "2026-10-17T00:00:00.000Z"
+    "id": "2026-10-17T00:00:00.000Z",
+    "windowStart": "2026-10-17T00:00:00.000Z",
+    "windowEnd": "2026-10-17T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-16T19:27:55.552Z",
-  "nextRefreshAt": "2026-10-17T00:00:00.000Z",
+  "publishedAt": "2026-10-17T03:44:12.530Z",
+  "nextRefreshAt": "2026-10-17T06:00:00.000Z",
   "runIds": {
-    "aggregation": "f01b941b-8390-4594-8acb-de4c8cbdef3b",
-    "ranking": "rank-9c668b33",
-    "top10": "top10:2026-10-16T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-16T18:00:00.000Z-2026-10-16T19:28:09.732Z"
+    "aggregation": "ccebdeb7-5026-4173-9b66-685da588bd14",
+    "ranking": "rank-07ccb547",
+    "top10": "top10:2026-10-17T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-17T00:00:00.000Z-2026-10-17T03:44:27.945Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-16T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-16T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-16T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-17T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-17T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-17T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1470,
+      "count": 1314,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1698,
+      "count": 1520,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 23,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 78,
+    "failedSources": 80,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:83796: Important: kernel security update"
+        "topic": "ai",
+        "headline": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Nvidia&039;s Nemotron 3.5 Super VL is an open model built to run enterprise AI agents nonstop"
+        "topic": "security",
+        "headline": "RHSA-2026:83797: Important: kernel security update"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "Microsoft Maia 300 targets multi-gigawatt AI inference deployments"
+        "topic": "security",
+        "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "Google&039;s Gemini 4 Argon is closer to the AI frontier than any Google model in months"
+        "topic": "ai",
+        "headline": "How Itaú is building generative AI for its entire customer base"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Proofpoint lines up $6.3 billion deal for Varonis’ data security"
+        "topic": "ai",
+        "headline": "Anthropic offers Blackstone double-digit yield in latest chip financing"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "I think Apple, Meta's Muse AI model is great product, says Slow Ventures' Lessin"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0-rc.4"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "AI agents turn one request into about 20. Kubernetes is evolving to handle it."
+        "topic": "security",
+        "headline": "BeyondTrust Remote Support Zero-Day Continues Trend of Exploited Edge Bugs"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Suspected Chinese espionage attackers abusing BeyondTrust IT support zero-day"
+        "topic": "ai",
+        "headline": "Bringing GPT-Rosalind to academic research labs"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day"
+        "headline": "Proofpoint lines up $6.3 billion deal for Varonis’ data security"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Google EnvHarness Enables Self-Evolving Agents to Learn in Dynamics Environments"
+        "topic": "models",
+        "headline": "Microsoft Maia 300 targets multi-gigawatt AI inference deployments"
       }
     ],
     "articleCount": 0
