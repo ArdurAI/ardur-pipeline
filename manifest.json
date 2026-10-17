@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-17T06:00:00.000Z",
-    "windowStart": "2026-10-17T06:00:00.000Z",
-    "windowEnd": "2026-10-17T12:00:00.000Z"
+    "id": "2026-10-17T12:00:00.000Z",
+    "windowStart": "2026-10-17T12:00:00.000Z",
+    "windowEnd": "2026-10-17T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-17T08:24:18.097Z",
-  "nextRefreshAt": "2026-10-17T12:00:00.000Z",
+  "publishedAt": "2026-10-17T13:32:29.909Z",
+  "nextRefreshAt": "2026-10-17T18:00:00.000Z",
   "runIds": {
-    "aggregation": "946c999a-46ec-4bab-99c4-2cc2c7f5c9ff",
-    "ranking": "rank-743cb2c6",
-    "top10": "top10:2026-10-17T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-17T06:00:00.000Z-2026-10-17T08:24:33.054Z"
+    "aggregation": "6a548013-bc31-4c24-a074-bb3842c0afda",
+    "ranking": "rank-f58fe28a",
+    "top10": "top10:2026-10-17T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-17T12:00:00.000Z-2026-10-17T13:32:43.016Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-17T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-17T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-17T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-17T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-17T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-17T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1210,
+      "count": 1157,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -53,13 +53,13 @@
       "count": 15,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1384,
+      "count": 1358,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic offers Blackstone double-digit yield in chip-financing deal, FT reports"
-      },
-      {
-        "rank": 3,
         "topic": "security",
         "headline": "RHSA-2026:83797: Important: kernel security update"
       },
       {
-        "rank": 4,
+        "rank": 2,
         "topic": "security",
         "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
       },
       {
+        "rank": 3,
+        "topic": "ai",
+        "headline": "Deepseek V4.1 Flash 1017 beats larger rivals in agentic tasks while once again massively cutting per-task costs"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "BeyondTrust Remote Support Zero-Day Continues Trend of Exploited Edge Bugs"
+      },
+      {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic quietly pitches its own AI safety bill to lawmakers"
+        "headline": "Mathematicians say OpenAI doesn&039;t understand its own Navier-Stokes proof"
       },
       {
         "rank": 6,
@@ -133,23 +133,23 @@
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "How Itaú is building generative AI for its entire customer base"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "BeyondTrust Remote Support Zero-Day Continues Trend of Exploited Edge Bugs"
-      },
-      {
-        "rank": 9,
         "topic": "kubernetes",
         "headline": "Dapr Runtime v1.19.0-rc.4"
       },
       {
+        "rank": 8,
+        "topic": "ai",
+        "headline": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore"
+      },
+      {
+        "rank": 9,
+        "topic": "ai",
+        "headline": "How Itaú is building generative AI for its entire customer base"
+      },
+      {
         "rank": 10,
-        "topic": "security",
-        "headline": "Proofpoint lines up $6.3 billion deal for Varonis’ data security"
+        "topic": "kubernetes",
+        "headline": "Depyrogenated Glass Containers Market To 2035: Biologics Demand Supports Growth - News and Statistics"
       }
     ],
     "articleCount": 0
