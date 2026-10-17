@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-17T00:00:00.000Z",
-    "windowStart": "2026-10-17T00:00:00.000Z",
-    "windowEnd": "2026-10-17T06:00:00.000Z"
+    "id": "2026-10-17T06:00:00.000Z",
+    "windowStart": "2026-10-17T06:00:00.000Z",
+    "windowEnd": "2026-10-17T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-17T03:44:12.530Z",
-  "nextRefreshAt": "2026-10-17T06:00:00.000Z",
+  "publishedAt": "2026-10-17T08:24:18.097Z",
+  "nextRefreshAt": "2026-10-17T12:00:00.000Z",
   "runIds": {
-    "aggregation": "ccebdeb7-5026-4173-9b66-685da588bd14",
-    "ranking": "rank-07ccb547",
-    "top10": "top10:2026-10-17T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-17T00:00:00.000Z-2026-10-17T03:44:27.945Z"
+    "aggregation": "946c999a-46ec-4bab-99c4-2cc2c7f5c9ff",
+    "ranking": "rank-743cb2c6",
+    "top10": "top10:2026-10-17T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-17T06:00:00.000Z-2026-10-17T08:24:33.054Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-17T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-17T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-17T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-17T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-17T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-17T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1314,
+      "count": 1210,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
         "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1520,
+      "count": 1384,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -72,21 +72,21 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 29,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 80,
+    "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 22,
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:83797: Important: kernel security update"
+        "topic": "ai",
+        "headline": "Anthropic offers Blackstone double-digit yield in chip-financing deal, FT reports"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
+        "headline": "RHSA-2026:83797: Important: kernel security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "How Itaú is building generative AI for its entire customer base"
+        "topic": "security",
+        "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic offers Blackstone double-digit yield in latest chip financing"
+        "headline": "Anthropic quietly pitches its own AI safety bill to lawmakers"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.4"
+        "topic": "platform",
+        "headline": "Reverse Engineer Anything Project Brings AI Agents to Binary Analysis"
       },
       {
         "rank": 7,
+        "topic": "ai",
+        "headline": "How Itaú is building generative AI for its entire customer base"
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "BeyondTrust Remote Support Zero-Day Continues Trend of Exploited Edge Bugs"
       },
       {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Bringing GPT-Rosalind to academic research labs"
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "Proofpoint lines up $6.3 billion deal for Varonis’ data security"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0-rc.4"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Microsoft Maia 300 targets multi-gigawatt AI inference deployments"
+        "topic": "security",
+        "headline": "Proofpoint lines up $6.3 billion deal for Varonis’ data security"
       }
     ],
     "articleCount": 0
