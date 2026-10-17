@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-17T12:00:00.000Z",
-    "windowStart": "2026-10-17T12:00:00.000Z",
-    "windowEnd": "2026-10-17T18:00:00.000Z"
+    "id": "2026-10-17T18:00:00.000Z",
+    "windowStart": "2026-10-17T18:00:00.000Z",
+    "windowEnd": "2026-10-18T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-17T13:32:29.909Z",
-  "nextRefreshAt": "2026-10-17T18:00:00.000Z",
+  "publishedAt": "2026-10-17T20:21:27.588Z",
+  "nextRefreshAt": "2026-10-18T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6a548013-bc31-4c24-a074-bb3842c0afda",
-    "ranking": "rank-f58fe28a",
-    "top10": "top10:2026-10-17T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-17T12:00:00.000Z-2026-10-17T13:32:43.016Z"
+    "aggregation": "cfd59e46-21b3-4afe-8f47-e10708765a48",
+    "ranking": "rank-007d44ba",
+    "top10": "top10:2026-10-17T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-17T18:00:00.000Z-2026-10-17T20:21:43.382Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-17T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-17T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-17T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-17T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-17T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-17T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 66,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1157,
+      "count": 1175,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1358,
+      "count": 1370,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 20,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held",
+        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 35,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 78,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:83797: Important: kernel security update"
+        "topic": "models",
+        "headline": "Apple and Meta team up to run Meta’s Muse Spark Open model on Macs"
       },
       {
         "rank": 2,
+        "topic": "kubernetes",
+        "headline": "v1.19.2-rc3"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "Drupal patches critical RCE flaws, warns exploits may emerge soon"
+      },
+      {
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "v1.19.2-rc.2"
+      },
+      {
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "AI agents vs. Kubernetes: where each belongs in the control loop"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "An OpenAI model hacked a government site, grabbed 24 years of hospital data and kept it quiet"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Codex CLI 0.163 Update: Mid-Response Steering by Default - https://tech-insider.org/"
+      },
+      {
+        "rank": 8,
         "topic": "security",
         "headline": "CVE-2026-0307 GlobalProtect App: Local Privilege Escalation Vulnerabilities Severity: MEDIUM"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Deepseek V4.1 Flash 1017 beats larger rivals in agentic tasks while once again massively cutting per-task costs"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "BeyondTrust Remote Support Zero-Day Continues Trend of Exploited Edge Bugs"
-      },
-      {
-        "rank": 5,
-        "topic": "ai",
-        "headline": "Mathematicians say OpenAI doesn&039;t understand its own Navier-Stokes proof"
-      },
-      {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "Reverse Engineer Anything Project Brings AI Agents to Binary Analysis"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.4"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore"
-      },
-      {
         "rank": 9,
-        "topic": "ai",
-        "headline": "How Itaú is building generative AI for its entire customer base"
+        "topic": "security",
+        "headline": "RHSA-2026:83797: Important: kernel security update"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Depyrogenated Glass Containers Market To 2035: Biologics Demand Supports Growth - News and Statistics"
+        "topic": "ai",
+        "headline": "Complete AI Agents Publishes 9,866 AI Agent Templates for Everyday Business Tasks"
       }
     ],
     "articleCount": 0
