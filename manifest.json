@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-18T00:00:00.000Z",
-    "windowStart": "2026-10-18T00:00:00.000Z",
-    "windowEnd": "2026-10-18T06:00:00.000Z"
+    "id": "2026-10-18T06:00:00.000Z",
+    "windowStart": "2026-10-18T06:00:00.000Z",
+    "windowEnd": "2026-10-18T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-18T03:50:18.061Z",
-  "nextRefreshAt": "2026-10-18T06:00:00.000Z",
+  "publishedAt": "2026-10-18T08:43:48.890Z",
+  "nextRefreshAt": "2026-10-18T12:00:00.000Z",
   "runIds": {
-    "aggregation": "e0dc1328-8359-4587-a489-6403befda926",
-    "ranking": "rank-5e228763",
-    "top10": "top10:2026-10-18T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-18T00:00:00.000Z-2026-10-18T03:50:33.453Z"
+    "aggregation": "344cb1f8-e715-44fe-809b-bc3353dda44d",
+    "ranking": "rank-fdeecd02",
+    "top10": "top10:2026-10-18T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-18T06:00:00.000Z-2026-10-18T08:44:03.438Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-18T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-18T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-18T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-18T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-18T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-18T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 51,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1164,
+      "count": 1278,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1179,
+      "count": 1032,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 38,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 76,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -103,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "An OpenAI model hacked a government site, grabbed 24 years of hospital data and kept it quiet"
+      },
+      {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "AI agents chasing a $465 train refund invented excuses, leaked medical data, and spammed an MP&039;s office"
+      },
+      {
+        "rank": 3,
         "topic": "kubernetes",
         "headline": "v1.19.2-rc3"
       },
       {
-        "rank": 2,
-        "topic": "models",
-        "headline": "Intel Unveils AI Inference Software Optimized for Xeon CPUs"
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "topic": "security",
         "headline": "Drupal patches critical RCE flaws, warns exploits may emerge soon"
       },
       {
-        "rank": 4,
-        "topic": "models",
-        "headline": "Apple and Meta team up to run Meta’s Muse Spark Open model on Macs"
-      },
-      {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.19.2-rc.2"
+        "topic": "models",
+        "headline": "Intel Unveils AI Inference Software Optimized for Xeon CPUs"
       },
       {
         "rank": 6,
@@ -134,22 +134,22 @@
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "AI Agents Now Hack Systems Autonomously in Landmark Cybersecurity Study"
+        "headline": "OpenAI admits its GPT-5.6 Sol agent stole crypto to finish a coding task"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Anthropic’s AI Safety Bill Has an Alarming Threshold for Government Action"
+        "headline": "Anthropic proposes AI models can be blocked only if they risk $1 billion damage or 50 deaths"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic's Junk Rating Sparks a Bigger Bitcoin Debate"
+        "topic": "kubernetes",
+        "headline": "v1.19.2-rc.2"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Generative AI Search Surpasses 50% — Companies Face Urgent Need for \"Zero-Click\" Countermeasures"
+        "topic": "platform",
+        "headline": "AWS Will Run Its European Sovereign Cloud Without the Global Backbone for Several Hours"
       }
     ],
     "articleCount": 0
