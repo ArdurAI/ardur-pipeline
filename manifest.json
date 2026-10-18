@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-18T12:00:00.000Z",
-    "windowStart": "2026-10-18T12:00:00.000Z",
-    "windowEnd": "2026-10-18T18:00:00.000Z"
+    "id": "2026-10-18T18:00:00.000Z",
+    "windowStart": "2026-10-18T18:00:00.000Z",
+    "windowEnd": "2026-10-19T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-18T13:51:27.430Z",
-  "nextRefreshAt": "2026-10-18T18:00:00.000Z",
+  "publishedAt": "2026-10-18T20:21:45.763Z",
+  "nextRefreshAt": "2026-10-19T00:00:00.000Z",
   "runIds": {
-    "aggregation": "46c64de7-433d-4058-994e-a0792b905886",
-    "ranking": "rank-d4b31ae2",
-    "top10": "top10:2026-10-18T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-18T12:00:00.000Z-2026-10-18T13:51:43.665Z"
+    "aggregation": "80120846-aa50-4bc9-92b5-073f444eef61",
+    "ranking": "rank-80f9af02",
+    "top10": "top10:2026-10-18T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-18T18:00:00.000Z-2026-10-18T20:22:02.466Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-18T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-18T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-18T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-18T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-18T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-18T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 51,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1290,
+      "count": 1242,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1026,
+      "count": 1020,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 22,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 39,
+      "count": 41,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 76,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 11,
+    "heldArticles": 9,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic has nearly stopped hiring junior staff because AI agents now work six times as many hours"
+        "headline": "Anthropic to commit 5% stake to new public benefit fund"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "DeepSeek unveils faster, cheaper AI model, with improved performance"
+        "headline": "Anthropic Proposes AI Safety Bill Giving US Government Power to Block High-Risk Models"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "US Cybersecurity Job Postings Fall 26% as AI Security Engineer Demand Soars"
+        "topic": "ai",
+        "headline": "Meta and Apple Team Up to Launch a Powerhouse Open-Source AI Model"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Orphaned VBA Projects Inside DWG Files: YARA Rule, Sun, Oct 18th"
+        "topic": "kubernetes",
+        "headline": "Scale isn&8217;t one number: three ways a Kubernetes control plane runs out of room"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropics&039; Claude cracks a 25-year-old NSA cryptography mystery in under 30 minutes"
+        "topic": "platform",
+        "headline": "Google Adopts Pyrefly for Faster, More Accurate Python Type Checking"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "AI agents have bad taste in long-term decisions and a new benchmark proves it"
+        "headline": "Google open sources Harness2, letting AI agents rewrite their own playbook"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v1.19.2-rc3"
+        "topic": "security",
+        "headline": "US Cybersecurity Job Postings Fall 26% as AI Security Engineer Demand Soars"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Drupal patches critical RCE flaws, warns exploits may emerge soon"
+        "topic": "kubernetes",
+        "headline": "Gemini 4 Argon vs. Claude Opus 5.5: Half the price and about half as accurate"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Intel Unveils AI Inference Software Optimized for Xeon CPUs"
+        "topic": "security",
+        "headline": "Blue Mantis Introduces Mantis Genius to Help Organizations Identify Cloud Security Risks and Costs"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Four Gemini 4 Argon agents beat Minecraft without any human help"
+        "topic": "security",
+        "headline": "Orphaned VBA Projects Inside DWG Files: YARA Rule, Sun, Oct 18th"
       }
     ],
     "articleCount": 0
