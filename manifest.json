@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-19T00:00:00.000Z",
-    "windowStart": "2026-10-19T00:00:00.000Z",
-    "windowEnd": "2026-10-19T06:00:00.000Z"
+    "id": "2026-10-19T12:00:00.000Z",
+    "windowStart": "2026-10-19T12:00:00.000Z",
+    "windowEnd": "2026-10-19T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-19T04:23:26.940Z",
-  "nextRefreshAt": "2026-10-19T06:00:00.000Z",
+  "publishedAt": "2026-10-19T12:38:50.247Z",
+  "nextRefreshAt": "2026-10-19T18:00:00.000Z",
   "runIds": {
-    "aggregation": "58b2130b-3664-41db-aff3-dd836afb4c03",
-    "ranking": "rank-77886bb2",
-    "top10": "top10:2026-10-19T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-19T00:00:00.000Z-2026-10-19T04:23:39.361Z"
+    "aggregation": "91be81bb-7cfe-4ebc-85e4-528eab03dab7",
+    "ranking": "rank-bf46b7d6",
+    "top10": "top10:2026-10-19T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-19T12:00:00.000Z-2026-10-19T12:39:06.379Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-19T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-19T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-19T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-19T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-19T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-19T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1228,
+      "count": 1144,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 976,
+      "count": 1050,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 76,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:84586: Important: libsoup security update"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic commits 5% of shares to new public benefit fund that could address AI job disruption"
-      },
-      {
-        "rank": 3,
         "topic": "ai",
         "headline": "llm-tools-datasette 0.1.1"
       },
       {
-        "rank": 4,
+        "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:84587: Moderate: perl-URI security update"
+        "headline": "RHSA-2026:84887: Moderate: libreswan security update"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:84744: Important: gimp:2.8 security update"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Anthropic pledges at least 5% of shares to public-benefit fund"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:84595: Moderate: cockpit-files security update"
+        "topic": "ai",
+        "headline": "AI agents are only as good as the personal information you share. That raises privacy concerns"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:84594: Moderate: environment-modules security update"
+        "topic": "platform",
+        "headline": "Article: From Microservices to Agents: The Next Evolution of Distributed Systems"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic Unveils Internal Employment Report: AI Agents Work 6x Longer Than Humans, Ushering in the \"Meta-Work Era\""
+        "headline": "DeepSeek releases V4.1-Flash-1017 AI model with better scores"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Sam Altman’s World Debuts ID Verification for AI Agents"
+        "topic": "kubernetes",
+        "headline": "0.45.1"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "GMIF2026: AI Inference Powers the \"Token Factory\" and Drives System-Level Rethinking of Memory & Storage"
+        "topic": "security",
+        "headline": "Training AIs to Solve CAPTCHAs"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Google Adopts Pyrefly for Faster, More Accurate Python Type Checking"
+        "topic": "kubernetes",
+        "headline": "NVIDIA Open Sources Run:ai Under Apache 2.0 for Kubernetes GPU Orchestration"
       }
     ],
     "articleCount": 0
