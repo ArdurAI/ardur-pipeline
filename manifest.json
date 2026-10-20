@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-20T06:00:00.000Z",
-    "windowStart": "2026-10-20T06:00:00.000Z",
-    "windowEnd": "2026-10-20T12:00:00.000Z"
+    "id": "2026-10-20T12:00:00.000Z",
+    "windowStart": "2026-10-20T12:00:00.000Z",
+    "windowEnd": "2026-10-20T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-20T11:11:56.414Z",
-  "nextRefreshAt": "2026-10-20T12:00:00.000Z",
+  "publishedAt": "2026-10-20T16:36:20.590Z",
+  "nextRefreshAt": "2026-10-20T18:00:00.000Z",
   "runIds": {
-    "aggregation": "4df96f4b-68da-4b07-8374-c2137592decc",
-    "ranking": "rank-f372f1d8",
-    "top10": "top10:2026-10-20T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-20T06:00:00.000Z-2026-10-20T11:12:11.324Z"
+    "aggregation": "80312a43-410a-4ad5-b15c-f85855fdd6fb",
+    "ranking": "rank-c1091e98",
+    "top10": "top10:2026-10-20T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-20T12:00:00.000Z-2026-10-20T16:36:33.794Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-20T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-20T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-20T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-20T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-20T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-20T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 60,
+      "count": 57,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1272,
+      "count": 1444,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source the-decoder.com: HTTP 404 Not Found"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1503,
+      "count": 1734,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 76,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "llm-tools-datasette 0.1.1"
+        "topic": "security",
+        "headline": "RHSA-2026:85944: Important: gvfs security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 Updated October 19"
+        "topic": "models",
+        "headline": "llm-d 1.0 Advances Open, Cost-Efficient AI Inference for Production Scale"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:85847: Moderate: openssh security update"
+        "headline": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 Updated October 19"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:85848: Important: rust-sequoia-sq security update"
+        "topic": "ai",
+        "headline": "Discover tools at runtime with AWS Agent Registry"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "Intel unveils the GPU D-series, 160 GB for AI inference"
+        "topic": "platform",
+        "headline": "Security updates for Tuesday"
       },
       {
         "rank": 6,
@@ -133,23 +133,23 @@
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v1.19.2-rc.5: chore: pass GORELEASERCURRENTTAG to the goreleaser 18124"
+        "topic": "security",
+        "headline": "RHSA-2026:85847: Moderate: openssh security update"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: OpenAI seeks to accelerate fundraising ahead of Anthropic IPO, sources say"
+        "topic": "kubernetes",
+        "headline": "Expand what’s possible with Grafana: The Grafana Marketplace is now generally available"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Harness Launches VegaLoad: Open-Source Load Testing"
+        "topic": "models",
+        "headline": "Securing AI agent identity with X.509 PKI on AWS"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Trying to waste less food? This new kitchen gadget is $50 off now - Amarillo Globe-News"
+        "topic": "platform",
+        "headline": "OpenBSD 8.0 released"
       }
     ],
     "articleCount": 0
