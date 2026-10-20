@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-20T12:00:00.000Z",
-    "windowStart": "2026-10-20T12:00:00.000Z",
-    "windowEnd": "2026-10-20T18:00:00.000Z"
+    "id": "2026-10-20T18:00:00.000Z",
+    "windowStart": "2026-10-20T18:00:00.000Z",
+    "windowEnd": "2026-10-21T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-20T16:36:20.590Z",
-  "nextRefreshAt": "2026-10-20T18:00:00.000Z",
+  "publishedAt": "2026-10-20T21:25:22.793Z",
+  "nextRefreshAt": "2026-10-21T00:00:00.000Z",
   "runIds": {
-    "aggregation": "80312a43-410a-4ad5-b15c-f85855fdd6fb",
-    "ranking": "rank-c1091e98",
-    "top10": "top10:2026-10-20T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-20T12:00:00.000Z-2026-10-20T16:36:33.794Z"
+    "aggregation": "dbd7ef7c-1695-46b9-ae53-a69015832d62",
+    "ranking": "rank-62a03cbb",
+    "top10": "top10:2026-10-20T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-20T18:00:00.000Z-2026-10-20T21:25:40.043Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-20T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-20T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-20T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-20T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-20T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-20T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 57,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1444,
+      "count": 1667,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1734,
+      "count": 1908,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -70,18 +70,18 @@
       "category": "copyright-gate",
       "count": 31,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 11,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (timeout) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:85944: Important: gvfs security update"
+        "headline": "RHSA-2026:86124: Important: rsyslog security update"
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "llm-d 1.0 Advances Open, Cost-Efficient AI Inference for Production Scale"
+        "topic": "security",
+        "headline": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 Updated October 20"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 Updated October 19"
+        "topic": "ai",
+        "headline": "OpenAI acquires Orchestra Bio"
       },
       {
         "rank": 4,
+        "topic": "models",
+        "headline": "llm-d 1.0 hardens open-source AI inference for day 2 production operations"
+      },
+      {
+        "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:85958: Moderate: openssh security update"
+      },
+      {
+        "rank": 6,
+        "topic": "models",
+        "headline": "Deepseek open-sources the inference engine that powers its fastest and cheapest AI model"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "FairStress: A deeper evaluation of fairness in LLM decision-making"
+      },
+      {
+        "rank": 8,
         "topic": "ai",
         "headline": "Discover tools at runtime with AWS Agent Registry"
       },
       {
-        "rank": 5,
-        "topic": "platform",
-        "headline": "Security updates for Tuesday"
-      },
-      {
-        "rank": 6,
-        "topic": "security",
-        "headline": "Possible new Cellebrite iPhone Radio Zero-Day"
-      },
-      {
-        "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:85847: Moderate: openssh security update"
-      },
-      {
-        "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Expand what’s possible with Grafana: The Grafana Marketplace is now generally available"
-      },
-      {
         "rank": 9,
-        "topic": "models",
-        "headline": "Securing AI agent identity with X.509 PKI on AWS"
+        "topic": "ai",
+        "headline": "Work management context for AI agents with Smartsheet MCP on AWS"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "OpenBSD 8.0 released"
+        "headline": "Critical PHP security update coming"
       }
     ],
     "articleCount": 0
