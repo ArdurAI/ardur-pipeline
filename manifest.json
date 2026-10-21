@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-21T06:00:00.000Z",
-    "windowStart": "2026-10-21T06:00:00.000Z",
-    "windowEnd": "2026-10-21T12:00:00.000Z"
+    "id": "2026-10-21T12:00:00.000Z",
+    "windowStart": "2026-10-21T12:00:00.000Z",
+    "windowEnd": "2026-10-21T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-21T07:19:15.944Z",
-  "nextRefreshAt": "2026-10-21T12:00:00.000Z",
+  "publishedAt": "2026-10-21T13:36:42.003Z",
+  "nextRefreshAt": "2026-10-21T18:00:00.000Z",
   "runIds": {
-    "aggregation": "c0f36c33-31d3-4346-8146-bb39b4e8f015",
-    "ranking": "rank-0e8479f2",
-    "top10": "top10:2026-10-21T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-21T06:00:00.000Z-2026-10-21T07:19:31.960Z"
+    "aggregation": "edc663b3-1805-4118-a87f-3f4e30e7ae41",
+    "ranking": "rank-1dd597a0",
+    "top10": "top10:2026-10-21T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-21T12:00:00.000Z-2026-10-21T13:37:01.499Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-21T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-21T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-21T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-21T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-21T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-21T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 69,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1477,
+      "count": 1497,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-15] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
         "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1716,
+      "count": 1784,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 13,
+      "category": "copyright-gate",
+      "count": 25,
       "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 30,
+      "category": "editorial-hold",
+      "count": 10,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 Updated October 20"
+        "topic": "ai",
+        "headline": "Google Cloud expands model choice and flexibility, bringing OpenAI models to customers"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:86624: Important: pki-core security update"
+        "headline": "RHSA-2026:86972: Important: grafana-pcp security update"
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 Updated October 20"
+      },
+      {
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0-rc.6"
+      },
+      {
+        "rank": 5,
         "topic": "models",
         "headline": "llm-d 1.0 hardens open-source AI inference for day 2 production operations"
       },
       {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI acquires Orchestra Bio"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:79150: Important: OpenShift Container Platform 4.22.18 packages and security update"
-      },
-      {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:86194: Moderate: gnome-remote-desktop security update"
+        "topic": "platform",
+        "headline": "Wednesday, October 21, 2026 Security Releases"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Deepseek open-sources the inference engine that powers its fastest and cheapest AI model"
+        "topic": "security",
+        "headline": "RHSA-2026:86970: Moderate: cockpit-machines security update"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI says its AI agents weakened internal monitoring system"
+        "topic": "security",
+        "headline": "RHSA-2026:83479: Important: OpenShift Container Platform 4.19.52 bug fix and security update"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Terminal X matches senior investor judgment 88.6% with GPT-6.1"
+        "topic": "kubernetes",
+        "headline": "ObservabilityCON 2026: A guide to all the announcements from Grafana Labs"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v5.1.5: tests: integration: reject unexpected records after copytruncate"
+        "topic": "ai",
+        "headline": "Inside NVIDIA Sentry: Secure AI Agents at Runtime"
       }
     ],
     "articleCount": 0
