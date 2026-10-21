@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-20T18:00:00.000Z",
-    "windowStart": "2026-10-20T18:00:00.000Z",
-    "windowEnd": "2026-10-21T00:00:00.000Z"
+    "id": "2026-10-21T00:00:00.000Z",
+    "windowStart": "2026-10-21T00:00:00.000Z",
+    "windowEnd": "2026-10-21T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-20T21:25:22.793Z",
-  "nextRefreshAt": "2026-10-21T00:00:00.000Z",
+  "publishedAt": "2026-10-21T00:28:05.163Z",
+  "nextRefreshAt": "2026-10-21T06:00:00.000Z",
   "runIds": {
-    "aggregation": "dbd7ef7c-1695-46b9-ae53-a69015832d62",
-    "ranking": "rank-62a03cbb",
-    "top10": "top10:2026-10-20T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-20T18:00:00.000Z-2026-10-20T21:25:40.043Z"
+    "aggregation": "b38c41fc-6795-4836-a1e6-bf50cc474c60",
+    "ranking": "rank-c73e845b",
+    "top10": "top10:2026-10-21T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-21T00:00:00.000Z-2026-10-21T00:28:20.633Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-20T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-20T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-20T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-21T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-21T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-21T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1667,
+      "count": 1550,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1908,
+      "count": 1803,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 31,
-      "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
-      ]
-    },
-    {
       "category": "editorial-hold",
       "count": 11,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (timeout) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 29,
+      "sample": [
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:86124: Important: rsyslog security update"
+        "headline": "RHSA-2026:86331: Important: glycin-loaders security update"
       },
       {
         "rank": 2,
@@ -124,7 +124,7 @@
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:85958: Moderate: openssh security update"
+        "headline": "RHSA-2026:86194: Moderate: gnome-remote-desktop security update"
       },
       {
         "rank": 6,
@@ -133,23 +133,23 @@
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "FairStress: A deeper evaluation of fairness in LLM decision-making"
+        "topic": "security",
+        "headline": "RHSA-2026:86171: Critical: .NET 9.0 security, bug fix, and enhancement update"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Discover tools at runtime with AWS Agent Registry"
+        "headline": "FairStress: A deeper evaluation of fairness in LLM decision-making"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "Work management context for AI agents with Smartsheet MCP on AWS"
+        "headline": "Discover tools at runtime with AWS Agent Registry"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Critical PHP security update coming"
+        "topic": "ai",
+        "headline": "DeepSeek Opens DeepInfer, Presses OpenAI, Anthropic 2026"
       }
     ],
     "articleCount": 0
