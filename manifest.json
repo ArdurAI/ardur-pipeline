@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-22T12:00:00.000Z",
-    "windowStart": "2026-10-22T12:00:00.000Z",
-    "windowEnd": "2026-10-22T18:00:00.000Z"
+    "id": "2026-10-22T18:00:00.000Z",
+    "windowStart": "2026-10-22T18:00:00.000Z",
+    "windowEnd": "2026-10-23T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-22T16:55:01.509Z",
-  "nextRefreshAt": "2026-10-22T18:00:00.000Z",
+  "publishedAt": "2026-10-22T21:21:58.081Z",
+  "nextRefreshAt": "2026-10-23T00:00:00.000Z",
   "runIds": {
-    "aggregation": "f781641f-e18d-43d8-8cf6-0d4dce2cb4b2",
-    "ranking": "rank-019d8864",
-    "top10": "top10:2026-10-22T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-22T12:00:00.000Z-2026-10-22T16:55:19.114Z"
+    "aggregation": "ced0644f-a35c-41c3-b96d-86fef29f9ff2",
+    "ranking": "rank-e719b5aa",
+    "top10": "top10:2026-10-22T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-22T18:00:00.000Z-2026-10-22T21:22:13.919Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-22T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-22T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-22T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-22T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-22T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-22T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,14 +25,14 @@
       "category": "http-error",
       "count": 72,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1646,
+      "count": 1750,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1866,
+      "count": 1997,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 14,
       "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "OpenAI models are coming to Google Cloud"
+        "topic": "platform",
+        "headline": "Security Update on PHP2Shell: Impact for Docker Customers"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "ActiveState Partners with Docker to Secure the Open Source in Enterprise Containers"
+        "topic": "security",
+        "headline": "RHSA-2026:88396: Important: grafana security update"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Claude Duet app is Anthropic’s bet on agents"
+        "headline": "OpenAI models are coming to Google Cloud"
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "PHP Patches Two Critical Unauthenticated RCEs CVE-2026-109618, CVE-2026-109619: Update Now"
+      },
+      {
+        "rank": 5,
         "topic": "kubernetes",
         "headline": "Dapr Runtime v1.19.0"
       },
       {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:87911: Important: grafana-pcp security update"
-      },
-      {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "3.15.1 / 2026-10-21"
+        "headline": "ActiveState Partners with Docker to Secure the Open Source in Enterprise Containers"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "Wednesday, October 21, 2026 Security Releases"
+        "topic": "ai",
+        "headline": "Claude Duet app is Anthropic’s bet on agents"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v3.6.0-rc4"
+        "topic": "ai",
+        "headline": "Inside NVIDIA Sentry: Secure AI Agents at Runtime"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "What FDE means at OpenAI"
+        "topic": "security",
+        "headline": "RHSA-2026:88211: Moderate: openssh security update"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
+        "topic": "ai",
+        "headline": "Uber brings ChatGPT Work to all employees with OpenAI"
       }
     ],
     "articleCount": 0
