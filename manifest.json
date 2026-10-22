@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-22T06:00:00.000Z",
-    "windowStart": "2026-10-22T06:00:00.000Z",
-    "windowEnd": "2026-10-22T12:00:00.000Z"
+    "id": "2026-10-22T12:00:00.000Z",
+    "windowStart": "2026-10-22T12:00:00.000Z",
+    "windowEnd": "2026-10-22T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-22T11:27:45.921Z",
-  "nextRefreshAt": "2026-10-22T12:00:00.000Z",
+  "publishedAt": "2026-10-22T16:55:01.509Z",
+  "nextRefreshAt": "2026-10-22T18:00:00.000Z",
   "runIds": {
-    "aggregation": "228b8262-6500-47dc-b99f-566b65801c68",
-    "ranking": "rank-0e9ae9a2",
-    "top10": "top10:2026-10-22T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-22T06:00:00.000Z-2026-10-22T11:28:02.246Z"
+    "aggregation": "f781641f-e18d-43d8-8cf6-0d4dce2cb4b2",
+    "ranking": "rank-019d8864",
+    "top10": "top10:2026-10-22T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-22T12:00:00.000Z-2026-10-22T16:55:19.114Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-22T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-22T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-22T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-22T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-22T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-22T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,64 +32,64 @@
     },
     {
       "category": "other",
-      "count": 1555,
+      "count": 1646,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "blocked-fetch",
-      "count": 9,
+      "count": 6,
       "sample": [
         "[ai] source importai.substack.com: HTTP 403 Forbidden",
         "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[platform] source hacks.mozilla.org: HTTP 403 Forbidden"
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[kubernetes] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1755,
+      "count": 1866,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 27,
-      "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 11,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 1 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 24,
+      "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
-    "degradedTopics": 4,
+    "failedSources": 72,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Anthropic takes on Grok Bot, Meta&039;s Muse, and OpenAI&039;s Dots with its always-on agent \"Claude Duet\""
+        "headline": "OpenAI models are coming to Google Cloud"
       },
       {
         "rank": 2,
         "topic": "kubernetes",
-        "headline": "3.15.1 / 2026-10-21"
+        "headline": "ActiveState Partners with Docker to Secure the Open Source in Enterprise Containers"
       },
       {
         "rank": 3,
+        "topic": "ai",
+        "headline": "Claude Duet app is Anthropic’s bet on agents"
+      },
+      {
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.0"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:87911: Important: grafana-pcp security update"
       },
       {
-        "rank": 4,
-        "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
-      },
-      {
-        "rank": 5,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.0-rc.7"
-      },
-      {
         "rank": 6,
+        "topic": "kubernetes",
+        "headline": "3.15.1 / 2026-10-21"
+      },
+      {
+        "rank": 7,
+        "topic": "platform",
+        "headline": "Wednesday, October 21, 2026 Security Releases"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "v3.6.0-rc4"
       },
       {
-        "rank": 7,
-        "topic": "models",
-        "headline": "Design Proteins with RFD4-Proteina Using Reward-Guided Inference-Time Search"
-      },
-      {
-        "rank": 8,
-        "topic": "models",
-        "headline": "llm-d 1.0 makes distributed AI inference production-ready"
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "Node.js Brotli Decoder Bug Could Allow Remote Code Execution in All Supported Versions"
+        "topic": "ai",
+        "headline": "What FDE means at OpenAI"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Ruby 4.0.8 Released"
+        "topic": "security",
+        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
       }
     ],
     "articleCount": 0
