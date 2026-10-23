@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-23T12:00:00.000Z",
-    "windowStart": "2026-10-23T12:00:00.000Z",
-    "windowEnd": "2026-10-23T18:00:00.000Z"
+    "id": "2026-10-23T18:00:00.000Z",
+    "windowStart": "2026-10-23T18:00:00.000Z",
+    "windowEnd": "2026-10-24T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-23T13:14:19.363Z",
-  "nextRefreshAt": "2026-10-23T18:00:00.000Z",
+  "publishedAt": "2026-10-23T18:12:06.038Z",
+  "nextRefreshAt": "2026-10-24T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b9f9ba9f-9c56-4d7f-90a7-0c34e24b7d17",
-    "ranking": "rank-50ec4187",
-    "top10": "top10:2026-10-23T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-23T12:00:00.000Z-2026-10-23T13:14:36.899Z"
+    "aggregation": "916c72f0-e982-49b8-88bc-4e631c524fdd",
+    "ranking": "rank-3fa95f8f",
+    "top10": "top10:2026-10-23T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-23T18:00:00.000Z-2026-10-23T18:12:23.492Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-23T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-23T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-23T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-23T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-23T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-23T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 72,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1450,
+      "count": 1602,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1719,
+      "count": 1856,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 10,
       "sample": [
         "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "Security updates for Friday"
+        "headline": "Security Update on PHP2Shell: Impact for Docker Customers"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:88668: Critical: ca-certificates security update"
+        "headline": "RHSA-2026:88720: Important: php security update"
       },
       {
         "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:88563: Critical: ca-certificates security update"
+      },
+      {
+        "rank": 4,
         "topic": "models",
         "headline": "llm-d 1.0 Targets Lower AI Inference Costs ..."
       },
       {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:88561: Important: php security update"
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation"
       },
       {
-        "rank": 5,
+        "rank": 6,
         "topic": "ai",
         "headline": "Anthropic&039;s Claude now writes code and proves it safe automatically"
       },
       {
-        "rank": 6,
+        "rank": 7,
+        "topic": "security",
+        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
+      },
+      {
+        "rank": 8,
         "topic": "platform",
         "headline": "Ruby 3.3.13 Released"
       },
       {
-        "rank": 7,
+        "rank": 9,
         "topic": "security",
         "headline": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do"
       },
       {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI lowers valuation target, raises up to $30 billion"
-      },
-      {
-        "rank": 9,
-        "topic": "security",
-        "headline": "Attackers Exploit Third VeloCloud Orchestrator Zero-Day in Four Months"
-      },
-      {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "How to run fewer tests and speed up CI with CircleCI Smarter Testing"
+        "topic": "ai",
+        "headline": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring"
       }
     ],
     "articleCount": 0
