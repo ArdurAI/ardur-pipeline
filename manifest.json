@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-23T06:00:00.000Z",
-    "windowStart": "2026-10-23T06:00:00.000Z",
-    "windowEnd": "2026-10-23T12:00:00.000Z"
+    "id": "2026-10-23T12:00:00.000Z",
+    "windowStart": "2026-10-23T12:00:00.000Z",
+    "windowEnd": "2026-10-23T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-23T07:13:48.977Z",
-  "nextRefreshAt": "2026-10-23T12:00:00.000Z",
+  "publishedAt": "2026-10-23T13:14:19.363Z",
+  "nextRefreshAt": "2026-10-23T18:00:00.000Z",
   "runIds": {
-    "aggregation": "bc42077a-48a0-4ef6-b3ec-4f0c00e609b0",
-    "ranking": "rank-d20707e9",
-    "top10": "top10:2026-10-23T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-23T06:00:00.000Z-2026-10-23T07:14:07.889Z"
+    "aggregation": "b9f9ba9f-9c56-4d7f-90a7-0c34e24b7d17",
+    "ranking": "rank-50ec4187",
+    "top10": "top10:2026-10-23T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-23T12:00:00.000Z-2026-10-23T13:14:36.899Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-23T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-23T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-23T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-23T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-23T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-23T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1541,
+      "count": 1450,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1818,
+      "count": 1719,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:88550: Critical: ca-certificates security update"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic takes on Grok Bot, Meta&039;s Muse, and OpenAI&039;s Dots with its always-on agent \"Claude Duet\""
+        "topic": "security",
+        "headline": "RHSA-2026:88668: Critical: ca-certificates security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:88532: Important: php:7.4 security update"
+        "topic": "models",
+        "headline": "llm-d 1.0 Targets Lower AI Inference Costs ..."
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:88561: Important: php security update"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "Anthropic&039;s Claude now writes code and proves it safe automatically"
+      },
+      {
+        "rank": 6,
         "topic": "platform",
         "headline": "Ruby 3.3.13 Released"
       },
       {
-        "rank": 5,
-        "topic": "platform",
-        "headline": "Security Update on PHP2Shell: Impact for Docker Customers"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI and Poland’s NASK partner to advance AI safety and security"
-      },
-      {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "How to run fewer tests and speed up CI with CircleCI Smarter Testing"
+        "topic": "security",
+        "headline": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "ActiveState Partners with Docker to Secure the Open Source in Enterprise Containers"
+        "topic": "ai",
+        "headline": "OpenAI lowers valuation target, raises up to $30 billion"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
+        "headline": "Attackers Exploit Third VeloCloud Orchestrator Zero-Day in Four Months"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v2.14.6"
+        "headline": "How to run fewer tests and speed up CI with CircleCI Smarter Testing"
       }
     ],
     "articleCount": 0
