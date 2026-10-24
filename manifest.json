@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-24T00:00:00.000Z",
-    "windowStart": "2026-10-24T00:00:00.000Z",
-    "windowEnd": "2026-10-24T06:00:00.000Z"
+    "id": "2026-10-24T06:00:00.000Z",
+    "windowStart": "2026-10-24T06:00:00.000Z",
+    "windowEnd": "2026-10-24T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-24T03:58:36.252Z",
-  "nextRefreshAt": "2026-10-24T06:00:00.000Z",
+  "publishedAt": "2026-10-24T08:49:12.636Z",
+  "nextRefreshAt": "2026-10-24T12:00:00.000Z",
   "runIds": {
-    "aggregation": "018f61b0-d59c-41d5-9a2d-24bcabad6dba",
-    "ranking": "rank-862a4138",
-    "top10": "top10:2026-10-24T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-24T00:00:00.000Z-2026-10-24T03:58:51.917Z"
+    "aggregation": "ac6b30cc-f8c5-4f60-92f3-cfd6366dbc9e",
+    "ranking": "rank-829a8bca",
+    "top10": "top10:2026-10-24T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-24T06:00:00.000Z-2026-10-24T08:49:27.117Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-24T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-24T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-24T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-24T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-24T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-24T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,17 +25,17 @@
       "category": "http-error",
       "count": 75,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1459,
+      "count": 1280,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1730,
+      "count": 1530,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 14,
+      "category": "copyright-gate",
+      "count": 31,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 30,
+      "category": "editorial-hold",
+      "count": 17,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:88835: Important: php:8.2 security update"
+        "headline": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud"
       },
       {
         "rank": 3,
-        "topic": "platform",
-        "headline": "Security Update on PHP2Shell: Impact for Docker Customers"
+        "topic": "security",
+        "headline": "RHSA-2026:88835: Important: php:8.2 security update"
       },
       {
         "rank": 4,
         "topic": "models",
-        "headline": "llm-d 1.0 Targets Lower AI Inference Costs ..."
+        "headline": "OpenAI Says It's Cutting Off Internet Access For Frontier Model Training"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
+        "topic": "platform",
+        "headline": "Google’s Data Agent Kit Hits GA, Splitting Agent Guardrails Between Skills and IAM"
       },
       {
         "rank": 6,
+        "topic": "models",
+        "headline": "llm-d 1.0 Targets Lower AI Inference Costs ..."
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "UK government sets out $800 million of AI security funding"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "v1.15.1"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI resumes frontier AI training after security overhaul, discloses flaw in widely used software"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "How to Identify Compromised eMudhra Certificates With Qualys CVE-2026-111943 and CVE-2026-111944"
-      },
-      {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.14.3 LTS"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Anthropic reveals Mythos 5 tried submitting malicious code to an open-source project"
+        "headline": "OpenAI resumes frontier AI training after security overhaul, discloses flaw in widely used software"
       }
     ],
     "articleCount": 0
