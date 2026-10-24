@@ -1,41 +1,41 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-24T06:00:00.000Z",
-    "windowStart": "2026-10-24T06:00:00.000Z",
-    "windowEnd": "2026-10-24T12:00:00.000Z"
+    "id": "2026-10-24T12:00:00.000Z",
+    "windowStart": "2026-10-24T12:00:00.000Z",
+    "windowEnd": "2026-10-24T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-24T08:49:12.636Z",
-  "nextRefreshAt": "2026-10-24T12:00:00.000Z",
+  "publishedAt": "2026-10-24T13:54:50.172Z",
+  "nextRefreshAt": "2026-10-24T18:00:00.000Z",
   "runIds": {
-    "aggregation": "ac6b30cc-f8c5-4f60-92f3-cfd6366dbc9e",
-    "ranking": "rank-829a8bca",
-    "top10": "top10:2026-10-24T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-24T06:00:00.000Z-2026-10-24T08:49:27.117Z"
+    "aggregation": "db7be0cc-b793-460c-9928-b84eb11352e2",
+    "ranking": "rank-ed3a5b73",
+    "top10": "top10:2026-10-24T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-24T12:00:00.000Z-2026-10-24T13:55:05.311Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-24T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-24T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-24T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-24T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-24T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-24T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 69,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1280,
+      "count": 1200,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1530,
+      "count": 1448,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 16,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:88779: Critical: ca-certificates security update"
-      },
-      {
-        "rank": 2,
-        "topic": "security",
-        "headline": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud"
-      },
-      {
-        "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:88835: Important: php:8.2 security update"
-      },
-      {
-        "rank": 4,
         "topic": "models",
         "headline": "OpenAI Says It's Cutting Off Internet Access For Frontier Model Training"
       },
       {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "UK funds £100m AI biosecurity lab with OpenAI and Anthropic"
+      },
+      {
+        "rank": 3,
+        "topic": "kubernetes",
+        "headline": "Why Kubernetes autoscalers keep fighting each other and why the solution must be autonomous"
+      },
+      {
+        "rank": 4,
+        "topic": "security",
+        "headline": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud"
+      },
+      {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Google’s Data Agent Kit Hits GA, Splitting Agent Guardrails Between Skills and IAM"
-      },
-      {
-        "rank": 6,
-        "topic": "models",
-        "headline": "llm-d 1.0 Targets Lower AI Inference Costs ..."
-      },
-      {
-        "rank": 7,
         "topic": "security",
         "headline": "UK government sets out $800 million of AI security funding"
       },
       {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:88779: Critical: ca-certificates security update"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:88835: Important: php:8.2 security update"
+      },
+      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.15.1"
+        "topic": "ai",
+        "headline": "Anthropic debuts Claude Duet personal AI agent. Here's what to know."
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Security updates for Friday"
+        "topic": "ai",
+        "headline": "OpenAI&039;s isolated AI agents found ways to talk to each other through CPU cache"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI resumes frontier AI training after security overhaul, discloses flaw in widely used software"
+        "topic": "models",
+        "headline": "llm-d 1.0 Targets Lower AI Inference Costs ..."
       }
     ],
     "articleCount": 0
