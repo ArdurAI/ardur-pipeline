@@ -1,38 +1,38 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-23T18:00:00.000Z",
-    "windowStart": "2026-10-23T18:00:00.000Z",
-    "windowEnd": "2026-10-24T00:00:00.000Z"
+    "id": "2026-10-24T00:00:00.000Z",
+    "windowStart": "2026-10-24T00:00:00.000Z",
+    "windowEnd": "2026-10-24T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-23T18:12:06.038Z",
-  "nextRefreshAt": "2026-10-24T00:00:00.000Z",
+  "publishedAt": "2026-10-24T03:58:36.252Z",
+  "nextRefreshAt": "2026-10-24T06:00:00.000Z",
   "runIds": {
-    "aggregation": "916c72f0-e982-49b8-88bc-4e631c524fdd",
-    "ranking": "rank-3fa95f8f",
-    "top10": "top10:2026-10-23T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-23T18:00:00.000Z-2026-10-23T18:12:23.492Z"
+    "aggregation": "018f61b0-d59c-41d5-9a2d-24bcabad6dba",
+    "ranking": "rank-862a4138",
+    "top10": "top10:2026-10-24T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-24T00:00:00.000Z-2026-10-24T03:58:51.917Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-23T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-23T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-23T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-24T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-24T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-24T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 75,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1602,
+      "count": 1459,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1856,
+      "count": 1730,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 10,
+      "count": 14,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security Update on PHP2Shell: Impact for Docker Customers"
+        "topic": "security",
+        "headline": "RHSA-2026:88779: Critical: ca-certificates security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:88720: Important: php security update"
+        "headline": "RHSA-2026:88835: Important: php:8.2 security update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:88563: Critical: ca-certificates security update"
+        "topic": "platform",
+        "headline": "Security Update on PHP2Shell: Impact for Docker Customers"
       },
       {
         "rank": 4,
@@ -123,33 +123,33 @@
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic&039;s Claude now writes code and proves it safe automatically"
-      },
-      {
-        "rank": 7,
         "topic": "security",
         "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
       },
       {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "v1.15.1"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI resumes frontier AI training after security overhaul, discloses flaw in widely used software"
+      },
+      {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Ruby 3.3.13 Released"
+        "topic": "security",
+        "headline": "How to Identify Compromised eMudhra Certificates With Qualys CVE-2026-111943 and CVE-2026-111944"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do"
+        "topic": "kubernetes",
+        "headline": "v1.14.3 LTS"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring"
+        "headline": "Anthropic reveals Mythos 5 tried submitting malicious code to an open-source project"
       }
     ],
     "articleCount": 0
