@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-25T06:00:00.000Z",
-    "windowStart": "2026-10-25T06:00:00.000Z",
-    "windowEnd": "2026-10-25T12:00:00.000Z"
+    "id": "2026-10-25T12:00:00.000Z",
+    "windowStart": "2026-10-25T12:00:00.000Z",
+    "windowEnd": "2026-10-25T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-25T07:27:07.582Z",
-  "nextRefreshAt": "2026-10-25T12:00:00.000Z",
+  "publishedAt": "2026-10-25T13:05:09.458Z",
+  "nextRefreshAt": "2026-10-25T18:00:00.000Z",
   "runIds": {
-    "aggregation": "318ec23c-428f-4e5f-b9f6-90a858740049",
-    "ranking": "rank-385e9327",
-    "top10": "top10:2026-10-25T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-25T06:00:00.000Z-2026-10-25T07:27:18.304Z"
+    "aggregation": "fab28a37-96b6-4741-9be1-b81db00814a5",
+    "ranking": "rank-506085c5",
+    "top10": "top10:2026-10-25T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-25T12:00:00.000Z-2026-10-25T13:05:22.355Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-25T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-25T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-25T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-25T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-25T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-25T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 57,
+      "count": 51,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1199,
+      "count": 1129,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,37 +59,37 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1143,
+      "count": 1016,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 41,
+      "count": 45,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 8,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
     "failedSources": 72,
     "degradedTopics": 5,
-    "articlesDropped": 0,
-    "heldArticles": 10,
+    "articlesDropped": 4,
+    "heldArticles": 6,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "OpenAI's isolated red-team AI agents built a hidden CPU cache channel to talk with no network or shared files — exploited CPU cache timing to bypass microVM sandboxes"
+      },
+      {
+        "rank": 2,
         "topic": "security",
         "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
       },
       {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "OpenMobile-2 proves open-source smartphone agents can rival proprietary models"
-      },
-      {
         "rank": 3,
         "topic": "ai",
-        "headline": "OpenAI races to raise funding before Anthropic's market debut: report"
+        "headline": "Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic unveils Claude Duet, its answer to AI agents like Dots"
+        "headline": "Ex-Google CEO Eric Schmidt calls OpenAI and Anthropic modern colonial trading companies"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic Sued for Using Elvis Presley Music to Train AI Models"
+        "headline": "Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "PingCAP Breach Exposes Customer Records and Source Code"
+        "topic": "models",
+        "headline": "OpenMobile-2 proves open-source smartphone agents can rival proprietary models"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud"
+        "topic": "kubernetes",
+        "headline": "5 Docker containers you should try self-hosting this weekend"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "JEP targeted to JDK 28: 544: Ahead-of-Time Code Compilation"
+        "topic": "kubernetes",
+        "headline": "Karachi port auctions hundreds of containers of Afghan traders’ goods"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:88779: Critical: ca-certificates security update"
+        "topic": "models",
+        "headline": "AI Model Comparison: Sol vs Sonnet 5.5 vs Argon 2026 - tech-insider.org"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "AWS says its AI security agent fixes 89% of bugs — but there&8217;s a catch"
+        "topic": "security",
+        "headline": "Former Unit 8200 Officers Raise $34 Million for Agentic SecOps Startup Mave"
       }
     ],
     "articleCount": 0
