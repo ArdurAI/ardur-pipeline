@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-25T18:00:00.000Z",
-    "windowStart": "2026-10-25T18:00:00.000Z",
-    "windowEnd": "2026-10-26T00:00:00.000Z"
+    "id": "2026-10-26T00:00:00.000Z",
+    "windowStart": "2026-10-26T00:00:00.000Z",
+    "windowEnd": "2026-10-26T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-25T20:37:41.166Z",
-  "nextRefreshAt": "2026-10-26T00:00:00.000Z",
+  "publishedAt": "2026-10-26T04:27:31.641Z",
+  "nextRefreshAt": "2026-10-26T06:00:00.000Z",
   "runIds": {
-    "aggregation": "2ad96330-5841-4d3d-8ba0-7b9b11b6b052",
-    "ranking": "rank-93326422",
-    "top10": "top10:2026-10-25T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-25T18:00:00.000Z-2026-10-25T20:37:54.043Z"
+    "aggregation": "2b90a6f1-8c3d-46a0-b0b0-6cde95fd513c",
+    "ranking": "rank-e92bfd53",
+    "top10": "top10:2026-10-26T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-26T00:00:00.000Z-2026-10-26T04:27:44.454Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-25T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-25T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-25T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-26T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-26T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-26T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1229,
+      "count": 1160,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiigFBVV95cUxPUlUxWHp4ZmZWcUR2azNkdF9GYWNEZUhxeFN2VzBYYjNFZXd2bVJsQmZ0Z1VUQXl3SnFaUUpGZWx0akVKdG1nQ0drZ2xFZGdTU2JfWGVIRkFyR2FpVHlTTU5jZ3djUHhuVW53ODdCeExHYzdMUXZuN3U1eG9TUVFYc1VxV0F4SkJaRHc?oc=5"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 2 distinct domains < floor 20",
-        "[models] degraded: 2 distinct domains < floor 20",
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
         "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1137,
+      "count": 1026,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 39,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 5,
+      "count": 11,
       "sample": [
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
-        "12 article(s) held (AI unavailable or grounding failed)"
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 12,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "security",
+        "headline": "RHSA-2026:89747: Important: xorg-x11-server security update"
+      },
+      {
+        "rank": 2,
         "topic": "kubernetes",
         "headline": "Is Kubernetes ready for AI agents?"
       },
       {
-        "rank": 2,
-        "topic": "security",
-        "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
-      },
-      {
         "rank": 3,
-        "topic": "platform",
-        "headline": "PHP Patches Two Critical RCE Flaws That Were Already Under Attack"
+        "topic": "security",
+        "headline": "RHSA-2026:89738: Important: compat-openssl11 security update"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "PyTorch Conference 2026: Google and Meta Open-Source TorchTPU for Native PyTorch on TPUs"
+        "topic": "ai",
+        "headline": "Anthropic's Claude bypassed a paywall to access Georgia voter data without authorization"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "PHP2Shell Exploitation Hits Government Entity Amid Global Scanning and Signs of AI-Assisted Hacking"
+        "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs"
+        "topic": "security",
+        "headline": "RHSA-2026:89734: Important: jackson-core, jackson-databind, jackson-jaxrs-providers, and jackson-modules-base security update"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Ex-Google CEO Eric Schmidt calls OpenAI and Anthropic modern colonial trading companies"
+        "topic": "platform",
+        "headline": "PHP Patches Two Critical RCE Flaws That Were Already Under Attack"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic sued for allegedly using 274 Elvis Presley songs to train AI models"
+        "topic": "models",
+        "headline": "OpenAI to Cut Off Internet Access for Frontier Model Training; AIs Covertly Communicate via CPU Cache"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": ".NET October 2026 Out-of-Band Security Updates"
+        "topic": "ai",
+        "headline": "OpenAI Unveils New GPT-6.1 Terra Model: Has It Surpassed the AI Flagship Performance Benchmarks?"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Nvidia discusses $2,000-per-GPU annual fee for running AI agents"
+        "headline": "Anthropic sued for allegedly using 274 Elvis Presley songs to train AI models"
       }
     ],
     "articleCount": 0
