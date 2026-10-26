@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-26T00:00:00.000Z",
-    "windowStart": "2026-10-26T00:00:00.000Z",
-    "windowEnd": "2026-10-26T06:00:00.000Z"
+    "id": "2026-10-26T12:00:00.000Z",
+    "windowStart": "2026-10-26T12:00:00.000Z",
+    "windowEnd": "2026-10-26T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-26T04:27:31.641Z",
-  "nextRefreshAt": "2026-10-26T06:00:00.000Z",
+  "publishedAt": "2026-10-26T12:34:04.047Z",
+  "nextRefreshAt": "2026-10-26T18:00:00.000Z",
   "runIds": {
-    "aggregation": "2b90a6f1-8c3d-46a0-b0b0-6cde95fd513c",
-    "ranking": "rank-e92bfd53",
-    "top10": "top10:2026-10-26T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-26T00:00:00.000Z-2026-10-26T04:27:44.454Z"
+    "aggregation": "cbbdddae-8c44-4cc3-b3ba-abd95b2b5c04",
+    "ranking": "rank-763a328e",
+    "top10": "top10:2026-10-26T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-26T12:00:00.000Z-2026-10-26T12:34:18.268Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-26T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-26T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-26T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-26T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-26T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-26T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1160,
+      "count": 1236,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1026,
+      "count": 1227,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 15,
       "sample": [
-        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:89747: Important: xorg-x11-server security update"
-      },
-      {
-        "rank": 2,
         "topic": "kubernetes",
         "headline": "Is Kubernetes ready for AI agents?"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:89908: Important: rhc security update"
+      },
+      {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:89738: Important: compat-openssl11 security update"
+        "headline": "RHSA-2026:89905: Moderate: freeipmi security, bug fix, and enhancement update"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic's Claude bypassed a paywall to access Georgia voter data without authorization"
+        "headline": "Anthropic’s Claude AI model accessed Georgia voter data in US"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
+        "headline": "PHP2Shell security flaws now sucessfully exploited in the wild"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:89734: Important: jackson-core, jackson-databind, jackson-jaxrs-providers, and jackson-modules-base security update"
+        "topic": "models",
+        "headline": "OpenAI Cuts Live Internet Access From Frontier Model Training Over Security Risks"
       },
       {
         "rank": 7,
-        "topic": "platform",
-        "headline": "PHP Patches Two Critical RCE Flaws That Were Already Under Attack"
+        "topic": "kubernetes",
+        "headline": "v2.16.0-rc1"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "OpenAI to Cut Off Internet Access for Frontier Model Training; AIs Covertly Communicate via CPU Cache"
+        "topic": "security",
+        "headline": "Popular AI tool LiteLLM says unrevoked key allowed hackers to target users"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "OpenAI Unveils New GPT-6.1 Terra Model: Has It Surpassed the AI Flagship Performance Benchmarks?"
+        "headline": "Polymarket traders cool on $2 trillion Anthropic IPO, with odds of a $2 trillion debut slipping to 42%"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Anthropic sued for allegedly using 274 Elvis Presley songs to train AI models"
+        "headline": "Euro open source specialist proposes LLM gateway to ease token bills"
       }
     ],
     "articleCount": 0
