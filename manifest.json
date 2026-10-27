@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-27T06:00:00.000Z",
-    "windowStart": "2026-10-27T06:00:00.000Z",
-    "windowEnd": "2026-10-27T12:00:00.000Z"
+    "id": "2026-10-27T12:00:00.000Z",
+    "windowStart": "2026-10-27T12:00:00.000Z",
+    "windowEnd": "2026-10-27T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-27T11:51:53.227Z",
-  "nextRefreshAt": "2026-10-27T12:00:00.000Z",
+  "publishedAt": "2026-10-27T17:45:36.548Z",
+  "nextRefreshAt": "2026-10-27T18:00:00.000Z",
   "runIds": {
-    "aggregation": "2b7bd803-1309-4f76-82c8-7509e1e3b259",
-    "ranking": "rank-7eef07bb",
-    "top10": "top10:2026-10-27T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-27T06:00:00.000Z-2026-10-27T11:52:21.132Z"
+    "aggregation": "c9ff4f1e-014f-459e-a2d5-381ce619d298",
+    "ranking": "rank-d6b31f3d",
+    "top10": "top10:2026-10-27T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-27T12:00:00.000Z-2026-10-27T17:45:58.681Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-27T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-27T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-27T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-27T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-27T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-27T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1337,
+      "count": 1437,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-6] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiWkFVX3lxTE15b1Qtc2pkZW1HeW53R2RQdzVlX0VETm9aMWZ3cWVJbHFHZWQzeVNBSXZaREp6VTI0T28yTlJCdUVYQmdJckNwVGhNbzYtRjIyQUcyTTA4STZ2dw?oc=5"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1562,
+      "count": 1685,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 24,
+      "category": "editorial-hold",
+      "count": 10,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 18,
+      "category": "copyright-gate",
+      "count": 22,
       "sample": [
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 29,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "GPT-6.1 Terra"
+        "topic": "kubernetes",
+        "headline": "v1.57.0-next.0"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic uses its IPO letter to renew its pledge that Claude will never show ads"
+        "headline": "GPT-6.1 Terra"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:90725: Important: rhc security update"
+        "topic": "ai",
+        "headline": "Anthropic's IPO is risky business"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "v1.70.0/v0.164.0"
+        "topic": "security",
+        "headline": "Fortinet Expands AI Security with the FortiGuard Inline AI Security Service"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Apple backports CoreGraphics zero-day patches to older iPhones"
+        "headline": "RHSA-2026:90725: Important: rhc security update"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Dell CSM CVSS 10.0 Flaw: Container Security Fix 2026"
+        "topic": "models",
+        "headline": "3 Ways to Boost MoE Inference on NVIDIA DGX Spark"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v2.16.0-rc1"
+        "headline": "v3.16.0-rc.0"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Akamai launches AI inference and agent sandbox products"
+        "topic": "security",
+        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: CRITICAL"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution"
+        "topic": "platform",
+        "headline": "Blazor Welcomes Open-Source Contributions from Infragistics"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability CVE-2026-111497 on Palo Alto Networks Products Severity: CRITICAL"
+        "headline": "Apple backports CoreGraphics zero-day patches to older iPhones"
       }
     ],
     "articleCount": 0
