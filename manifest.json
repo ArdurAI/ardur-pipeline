@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-27T00:00:00.000Z",
-    "windowStart": "2026-10-27T00:00:00.000Z",
-    "windowEnd": "2026-10-27T06:00:00.000Z"
+    "id": "2026-10-27T06:00:00.000Z",
+    "windowStart": "2026-10-27T06:00:00.000Z",
+    "windowEnd": "2026-10-27T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-27T04:23:00.923Z",
-  "nextRefreshAt": "2026-10-27T06:00:00.000Z",
+  "publishedAt": "2026-10-27T11:51:53.227Z",
+  "nextRefreshAt": "2026-10-27T12:00:00.000Z",
   "runIds": {
-    "aggregation": "a9fe614e-8793-4f9b-8256-eca0b155cbdc",
-    "ranking": "rank-9694a349",
-    "top10": "top10:2026-10-27T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-27T00:00:00.000Z-2026-10-27T04:24:37.571Z"
+    "aggregation": "2b7bd803-1309-4f76-82c8-7509e1e3b259",
+    "ranking": "rank-7eef07bb",
+    "top10": "top10:2026-10-27T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-27T06:00:00.000Z-2026-10-27T11:52:21.132Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-27T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-27T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-27T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-27T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-27T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-27T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 93,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 359,
+      "count": 1337,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source news.google.com: HTTP 503 Service Unavailable"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 570,
+      "count": 1562,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,29 +67,29 @@
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 5,
+      "category": "copyright-gate",
+      "count": 24,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "35 article(s) held (AI unavailable or grounding failed)"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 16,
+      "category": "editorial-hold",
+      "count": 18,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 82,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 35,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:90523: Important: xdg-dbus-proxy security update"
+        "topic": "ai",
+        "headline": "Anthropic uses its IPO letter to renew its pledge that Claude will never show ads"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:90365: Important: kernel security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:90725: Important: rhc security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:90494: Important: python-urllib3 security update"
-      },
-      {
-        "rank": 5,
         "topic": "kubernetes",
         "headline": "v1.70.0/v0.164.0"
       },
       {
-        "rank": 6,
+        "rank": 5,
         "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: HIGH"
+        "headline": "Apple backports CoreGraphics zero-day patches to older iPhones"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Dell CSM CVSS 10.0 Flaw: Container Security Fix 2026"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.40.2"
+        "headline": "v2.16.0-rc1"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v1.39.6"
+        "topic": "models",
+        "headline": "Akamai launches AI inference and agent sandbox products"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.38.9"
+        "topic": "security",
+        "headline": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "$ Python's experimental JIT to be removed"
+        "topic": "security",
+        "headline": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability CVE-2026-111497 on Palo Alto Networks Products Severity: CRITICAL"
       }
     ],
     "articleCount": 0
