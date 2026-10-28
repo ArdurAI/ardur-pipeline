@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-28T06:00:00.000Z",
-    "windowStart": "2026-10-28T06:00:00.000Z",
-    "windowEnd": "2026-10-28T12:00:00.000Z"
+    "id": "2026-10-28T12:00:00.000Z",
+    "windowStart": "2026-10-28T12:00:00.000Z",
+    "windowEnd": "2026-10-28T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-28T08:05:35.324Z",
-  "nextRefreshAt": "2026-10-28T12:00:00.000Z",
+  "publishedAt": "2026-10-28T12:38:12.880Z",
+  "nextRefreshAt": "2026-10-28T18:00:00.000Z",
   "runIds": {
-    "aggregation": "27612a29-a111-4b0c-895f-4cf0012ebae0",
-    "ranking": "rank-a23ee0b0",
-    "top10": "top10:2026-10-28T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-28T06:00:00.000Z-2026-10-28T08:06:26.355Z"
+    "aggregation": "d02f7147-82a1-418d-b6fc-68bc8c9db424",
+    "ranking": "rank-b1e37dec",
+    "top10": "top10:2026-10-28T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-28T12:00:00.000Z-2026-10-28T12:38:34.396Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-28T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-28T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-28T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-28T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-28T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-28T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1346,
+      "count": 1334,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source microsoft.com: The operation was aborted due to timeout"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1589,
+      "count": 1598,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 33,
+      "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 12,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 29,
-      "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 76,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "platform",
-        "headline": "What is platform engineering?"
+        "headline": "Microsoft's October Security Update Fixes 1,400+ Vulnerabilities, One Exploited in the Wild"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "GPT-6.1 Terra"
+        "headline": "Legora is building the agentic operating system for legal work"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "Kubernetes security tool gives IT a leg up on DevSecOps"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability CVE-2026-111497 on Palo Alto Networks Products Severity: CRITICAL"
-      },
-      {
-        "rank": 6,
         "topic": "ai",
         "headline": "OpenAI plans to buy Google's AI chips, The Information reports"
       },
       {
-        "rank": 7,
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "v1.38.0-alpha.3"
+      },
+      {
+        "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:89714: Critical: OpenShift Container Platform 4.16.74 bug fix and security update"
+        "headline": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Kubernetes security tool gives IT a leg up on DevSecOps"
+      },
+      {
+        "rank": 7,
+        "topic": "models",
+        "headline": "Akamai launches AI inference service and agent sandbox"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: CRITICAL"
+        "headline": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability CVE-2026-111497 on Palo Alto Networks Products Severity: CRITICAL"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.36.6"
+        "topic": "ai",
+        "headline": "Cisco open sources tool for detecting AI agents on hacking sprees"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.37.2"
+        "topic": "security",
+        "headline": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass"
       }
     ],
     "articleCount": 0
