@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-27T18:00:00.000Z",
-    "windowStart": "2026-10-27T18:00:00.000Z",
-    "windowEnd": "2026-10-28T00:00:00.000Z"
+    "id": "2026-10-28T00:00:00.000Z",
+    "windowStart": "2026-10-28T00:00:00.000Z",
+    "windowEnd": "2026-10-28T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-27T21:59:10.870Z",
-  "nextRefreshAt": "2026-10-28T00:00:00.000Z",
+  "publishedAt": "2026-10-28T01:10:22.045Z",
+  "nextRefreshAt": "2026-10-28T06:00:00.000Z",
   "runIds": {
-    "aggregation": "02ee2b9f-ed4d-429a-970a-e828aec00beb",
-    "ranking": "rank-7f9eabcd",
-    "top10": "top10:2026-10-27T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-27T18:00:00.000Z-2026-10-27T21:59:37.878Z"
+    "aggregation": "6c734a45-2288-4cd6-b0d4-a075baa46566",
+    "ranking": "rank-fe6837cb",
+    "top10": "top10:2026-10-28T00:00:00.000Z",
+    "articles": "synth-top10:2026-10-28T00:00:00.000Z-2026-10-28T01:10:47.947Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-27T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-27T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-27T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-28T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-28T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-28T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1538,
+      "count": 1485,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1761,
+      "count": 1698,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 15,
       "sample": [
         "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 25,
       "sample": [
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "GPT-6.1 Terra"
+        "topic": "platform",
+        "headline": "What is platform engineering?"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "What is platform engineering?"
+        "topic": "ai",
+        "headline": "GPT-6.1 Terra"
       },
       {
         "rank": 3,
@@ -128,28 +128,28 @@
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Anthropic uses its IPO letter to renew its pledge that Claude will never show ads"
+      },
+      {
+        "rank": 7,
+        "topic": "kubernetes",
+        "headline": "OWASP Top 10 Kubernetes Security Risks Explained: Why Credentials Deserve a Closer Look"
+      },
+      {
+        "rank": 8,
         "topic": "models",
         "headline": "3 Ways to Boost MoE Inference on NVIDIA DGX Spark"
       },
       {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "How Check Point accelerates vulnerability research with Daybreak"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "“The panic hasn’t turned into patching”: What security researchers really think about the PHP2Shell response"
-      },
-      {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v3.16.0-rc.1"
+        "topic": "platform",
+        "headline": "Upcoming Next.js November Security Release"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT"
+        "topic": "models",
+        "headline": "Akamai Technologies Launches AI Inference Service, Agent Execution Environment"
       }
     ],
     "articleCount": 0
