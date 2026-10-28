@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-28T00:00:00.000Z",
-    "windowStart": "2026-10-28T00:00:00.000Z",
-    "windowEnd": "2026-10-28T06:00:00.000Z"
+    "id": "2026-10-28T06:00:00.000Z",
+    "windowStart": "2026-10-28T06:00:00.000Z",
+    "windowEnd": "2026-10-28T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-28T01:10:22.045Z",
-  "nextRefreshAt": "2026-10-28T06:00:00.000Z",
+  "publishedAt": "2026-10-28T08:05:35.324Z",
+  "nextRefreshAt": "2026-10-28T12:00:00.000Z",
   "runIds": {
-    "aggregation": "6c734a45-2288-4cd6-b0d4-a075baa46566",
-    "ranking": "rank-fe6837cb",
-    "top10": "top10:2026-10-28T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-28T00:00:00.000Z-2026-10-28T01:10:47.947Z"
+    "aggregation": "27612a29-a111-4b0c-895f-4cf0012ebae0",
+    "ranking": "rank-a23ee0b0",
+    "top10": "top10:2026-10-28T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-28T06:00:00.000Z-2026-10-28T08:06:26.355Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-28T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-28T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-28T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-28T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-28T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-28T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1485,
+      "count": 1346,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai] source microsoft.com: The operation was aborted due to timeout"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1698,
+      "count": 1589,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 12,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 29,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 76,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -114,42 +114,42 @@
       {
         "rank": 3,
         "topic": "kubernetes",
-        "headline": "v1.57.0-next.0"
+        "headline": "Kubernetes security tool gives IT a leg up on DevSecOps"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:90887: Important: emacs security update"
+        "headline": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:89714: Critical: OpenShift Container Platform 4.16.74 bug fix and security update"
+        "headline": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability CVE-2026-111497 on Palo Alto Networks Products Severity: CRITICAL"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic uses its IPO letter to renew its pledge that Claude will never show ads"
+        "headline": "OpenAI plans to buy Google's AI chips, The Information reports"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "OWASP Top 10 Kubernetes Security Risks Explained: Why Credentials Deserve a Closer Look"
+        "topic": "security",
+        "headline": "RHSA-2026:89714: Critical: OpenShift Container Platform 4.16.74 bug fix and security update"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "3 Ways to Boost MoE Inference on NVIDIA DGX Spark"
+        "topic": "security",
+        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: CRITICAL"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Upcoming Next.js November Security Release"
+        "topic": "kubernetes",
+        "headline": "v1.36.6"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Akamai Technologies Launches AI Inference Service, Agent Execution Environment"
+        "topic": "kubernetes",
+        "headline": "v1.37.2"
       }
     ],
     "articleCount": 0
