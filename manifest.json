@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-29T00:00:00.000Z",
-    "windowStart": "2026-10-29T00:00:00.000Z",
-    "windowEnd": "2026-10-29T06:00:00.000Z"
+    "id": "2026-10-29T12:00:00.000Z",
+    "windowStart": "2026-10-29T12:00:00.000Z",
+    "windowEnd": "2026-10-29T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-29T05:04:19.528Z",
-  "nextRefreshAt": "2026-10-29T06:00:00.000Z",
+  "publishedAt": "2026-10-29T12:36:13.466Z",
+  "nextRefreshAt": "2026-10-29T18:00:00.000Z",
   "runIds": {
-    "aggregation": "6f6fa53d-4388-4166-9a6a-6f30f918466b",
-    "ranking": "rank-9beefe3c",
-    "top10": "top10:2026-10-29T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-29T00:00:00.000Z-2026-10-29T05:04:38.934Z"
+    "aggregation": "2e5c80a2-8727-4ff1-8b5f-6b6953cd6b67",
+    "ranking": "rank-885909b4",
+    "top10": "top10:2026-10-29T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-29T12:00:00.000Z-2026-10-29T12:36:34.618Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-29T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-29T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-29T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-29T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-29T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-29T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,10 +32,10 @@
     },
     {
       "category": "other",
-      "count": 1340,
+      "count": 1343,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1542,
+      "count": 1541,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 35,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 12,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "security",
-        "headline": "Upwind Security Raises $400 Million at $3.8 Billion Valuation"
+        "headline": "RHSA-2026:88350: Critical: OpenJDK 21.0.13 Security Update for Portable Linux Builds"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:92061: Important: kpatch-patch-6120-211161 and kpatch-patch-6120-211491 security update"
+        "headline": "RHSA-2026:92353: Important: librsvg2 security update"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic unveils additional Claude tools for lawyers"
+        "topic": "security",
+        "headline": "New Cisco firewall zero-day exploited to crash SSL VPN devices"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "Google Deepmind releases Gemini 4 Carbon just two weeks after Argon with gains across the board"
+        "topic": "security",
+        "headline": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "RHSA-2026:91648: Moderate: kernel security update"
+        "topic": "models",
+        "headline": "Akamai wants to be the Goldilocks of AI inference"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Google opens Android development to third-party AI agents and unveils new Gemini APIs"
+        "headline": "OpenAI Now Makes Up 11% of Microsoft’s Revenue"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns"
+        "topic": "kubernetes",
+        "headline": "The 5 essential layers of AI agent sandboxing on Kubernetes"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "PHP2Shell Won't Be the Last. Here's Where the Next One Will Show Up First."
+        "topic": "platform",
+        "headline": "Security updates for Wednesday"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Building an Agentic AI Platform on Amazon Bedrock AgentCore"
+        "headline": "Anthropic Says Nobody Needs a Mental Model of Claude Code. Practitioners Are Testing That"
       }
     ],
     "articleCount": 0
