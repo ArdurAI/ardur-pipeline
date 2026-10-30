@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-30T12:00:00.000Z",
-    "windowStart": "2026-10-30T12:00:00.000Z",
-    "windowEnd": "2026-10-30T18:00:00.000Z"
+    "id": "2026-10-30T18:00:00.000Z",
+    "windowStart": "2026-10-30T18:00:00.000Z",
+    "windowEnd": "2026-10-31T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-30T12:27:43.046Z",
-  "nextRefreshAt": "2026-10-30T18:00:00.000Z",
+  "publishedAt": "2026-10-30T19:04:23.289Z",
+  "nextRefreshAt": "2026-10-31T00:00:00.000Z",
   "runIds": {
-    "aggregation": "a58242f1-8c2d-4a43-85fd-66566e9f70fd",
-    "ranking": "rank-59b2d56b",
-    "top10": "top10:2026-10-30T12:00:00.000Z",
-    "articles": "synth-top10:2026-10-30T12:00:00.000Z-2026-10-30T12:27:59.136Z"
+    "aggregation": "d044a9da-46e4-4e44-a460-a18de80dd00c",
+    "ranking": "rank-3d05e453",
+    "top10": "top10:2026-10-30T18:00:00.000Z",
+    "articles": "synth-top10:2026-10-30T18:00:00.000Z-2026-10-30T19:04:39.204Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-30T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-30T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-30T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-30T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-30T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-30T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 78,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1330,
+      "count": 1385,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1556,
+      "count": 1692,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 11,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:93045: Important: Red Hat OpenStack Platform 17.1 python-botocore security update"
+        "headline": "RHSA-2026:93071: Critical: ipa security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:92907: Moderate: curl security update"
+        "headline": "RHSA-2026:93065: Important: Red Hat Ansible Automation Platform 2.4 Product Security and Bug Fix Update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV"
+        "headline": "RHSA-2026:93045: Important: Red Hat OpenStack Platform 17.1 python-botocore security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Fresh WordPress Vulnerability in Attackers&8217; Crosshairs"
+        "topic": "ai",
+        "headline": "Making it easier for websites to express AI training preferences"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Mistral open-sources AI model despite warning it could aid cyberattacks"
+        "headline": "Community safety report and new protections for teens"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic’s open source vuln scans shift bottleneck to maintainers"
+        "topic": "platform",
+        "headline": "Remote code execution on Linux systems with multipath TCP"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "GitLab Orbit, Now Generally Available, Makes AI Agents More Accurate and Less Expensive to Run"
+        "headline": "Anthropic Unveils Paperwork for Blockbuster IPO"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Kodee’s Kotlin Roundup: Shipaton 2026 Winners, Kotlin 2.5.0-Beta2, and KotlinConf 2027"
+        "topic": "security",
+        "headline": "CISA says max severity GitLab flaw now exploited in the wild"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Paris-based Mistral releases \"Le Chonk,\" a strong coding model that still trails China overall"
+        "topic": "kubernetes",
+        "headline": "Kubernetes just formed a workload conformance group. Here’s why it matters for AI teams."
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "KubeCon + CloudNativeCon NA 2026: End User TAB recommendations and tips"
+        "topic": "platform",
+        "headline": "Integrate Jev decision models with Apache Camel and Red Hat OpenShift"
       }
     ],
     "articleCount": 0
