@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-30T00:00:00.000Z",
-    "windowStart": "2026-10-30T00:00:00.000Z",
-    "windowEnd": "2026-10-30T06:00:00.000Z"
+    "id": "2026-10-30T12:00:00.000Z",
+    "windowStart": "2026-10-30T12:00:00.000Z",
+    "windowEnd": "2026-10-30T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-30T05:03:44.401Z",
-  "nextRefreshAt": "2026-10-30T06:00:00.000Z",
+  "publishedAt": "2026-10-30T12:27:43.046Z",
+  "nextRefreshAt": "2026-10-30T18:00:00.000Z",
   "runIds": {
-    "aggregation": "931c9e43-d94f-4a47-a439-92bde9f9dc8c",
-    "ranking": "rank-0616e26a",
-    "top10": "top10:2026-10-30T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-30T00:00:00.000Z-2026-10-30T05:04:01.986Z"
+    "aggregation": "a58242f1-8c2d-4a43-85fd-66566e9f70fd",
+    "ranking": "rank-59b2d56b",
+    "top10": "top10:2026-10-30T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-30T12:00:00.000Z-2026-10-30T12:27:59.136Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-30T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-30T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-30T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-30T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-30T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-30T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 69,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1414,
+      "count": 1330,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1661,
+      "count": 1556,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 33,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 14,
+      "count": 20,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 429) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:92907: Moderate: curl security update"
+        "headline": "RHSA-2026:93045: Important: Red Hat OpenStack Platform 17.1 python-botocore security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:92323: Important: expat security update"
+        "headline": "RHSA-2026:92907: Moderate: curl security update"
       },
       {
         "rank": 3,
-        "topic": "models",
-        "headline": "Akamai wants to be the Goldilocks of AI inference"
+        "topic": "security",
+        "headline": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:92145: Critical: cjose security update"
+        "headline": "Fresh WordPress Vulnerability in Attackers&8217; Crosshairs"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "KubeCon + CloudNativeCon NA 2026: End User TAB recommendations and tips"
+        "topic": "ai",
+        "headline": "Mistral open-sources AI model despite warning it could aid cyberattacks"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP CVE-2026-109618, CVE-2026-109619 on Palo Alto Networks Products Severity: CRITICAL"
+        "topic": "ai",
+        "headline": "Anthropic’s open source vuln scans shift bottleneck to maintainers"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic Unveils Paperwork for Blockbuster IPO"
+        "headline": "GitLab Orbit, Now Generally Available, Makes AI Agents More Accurate and Less Expensive to Run"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "How we detect frontier model misalignment"
+        "topic": "platform",
+        "headline": "Kodee’s Kotlin Roundup: Shipaton 2026 Winners, Kotlin 2.5.0-Beta2, and KotlinConf 2027"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "v1.22.0"
+        "topic": "models",
+        "headline": "Paris-based Mistral releases \"Le Chonk,\" a strong coding model that still trails China overall"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v1.13.5"
+        "headline": "KubeCon + CloudNativeCon NA 2026: End User TAB recommendations and tips"
       }
     ],
     "articleCount": 0
