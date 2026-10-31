@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-31T00:00:00.000Z",
-    "windowStart": "2026-10-31T00:00:00.000Z",
-    "windowEnd": "2026-10-31T06:00:00.000Z"
+    "id": "2026-10-31T06:00:00.000Z",
+    "windowStart": "2026-10-31T06:00:00.000Z",
+    "windowEnd": "2026-10-31T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-31T04:52:14.109Z",
-  "nextRefreshAt": "2026-10-31T06:00:00.000Z",
+  "publishedAt": "2026-10-31T11:56:59.462Z",
+  "nextRefreshAt": "2026-10-31T12:00:00.000Z",
   "runIds": {
-    "aggregation": "2cab70dc-d244-4130-9f48-d9a144a2adf8",
-    "ranking": "rank-249d8b86",
-    "top10": "top10:2026-10-31T00:00:00.000Z",
-    "articles": "synth-top10:2026-10-31T00:00:00.000Z-2026-10-31T04:52:30.975Z"
+    "aggregation": "09dde61d-6ffb-4088-bfd1-fd9d097c7649",
+    "ranking": "rank-8cbcc69c",
+    "top10": "top10:2026-10-31T06:00:00.000Z",
+    "articles": "synth-top10:2026-10-31T06:00:00.000Z-2026-10-31T11:57:14.453Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-31T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-31T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-31T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-31T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-31T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-31T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1299,
+      "count": 1149,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1562,
+      "count": 1361,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 34,
+      "category": "editorial-hold",
+      "count": 22,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 16,
+      "category": "copyright-gate",
+      "count": 30,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 429) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 429) and no facts — article held"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:93077: Critical: python-pillow security update"
+        "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:93072: Important: bind9.18 security update"
+        "topic": "ai",
+        "headline": "3 Major Risks With Anthropic's IPO"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability CVE-2026-111497 on Palo Alto Networks Products Severity: CRITICAL"
+        "headline": "YARA-X 1.22.1 Release, Sat, Oct 31st"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Fair use benefits everyone"
+        "topic": "security",
+        "headline": "RHSA-2026:93077: Critical: python-pillow security update"
       },
       {
         "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:93072: Important: bind9.18 security update"
+      },
+      {
+        "rank": 6,
+        "topic": "platform",
+        "headline": "LocalStack for Azure Enters Public Preview with Security Settings Stored but Not Enforced"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI raises just $11 billion of its $30 billion target as big investors lose their AI appetite"
+      },
+      {
+        "rank": 8,
         "topic": "platform",
         "headline": "Remote code execution on Linux systems with multipath TCP"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "How to run coding agents in parallel without piling up PRs"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "CISA says max severity GitLab flaw now exploited in the wild"
-      },
-      {
         "rank": 9,
         "topic": "ai",
-        "headline": "Quick ratio of Anthropic PBC – NASDAQ:ANT"
+        "headline": "Anthropic's Gross Margin Rocketed to 85% From 12% in a Year, but the S-1 Warns It Won't Last"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Making it easier for websites to express AI training preferences"
+        "topic": "kubernetes",
+        "headline": "llm-d 1.0 on Kubernetes: 13 Steps, 75 Min 2026 - https://tech-insider.org/"
       }
     ],
     "articleCount": 0
