@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-31T06:00:00.000Z",
-    "windowStart": "2026-10-31T06:00:00.000Z",
-    "windowEnd": "2026-10-31T12:00:00.000Z"
+    "id": "2026-10-31T12:00:00.000Z",
+    "windowStart": "2026-10-31T12:00:00.000Z",
+    "windowEnd": "2026-10-31T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-31T11:56:59.462Z",
-  "nextRefreshAt": "2026-10-31T12:00:00.000Z",
+  "publishedAt": "2026-10-31T12:08:26.385Z",
+  "nextRefreshAt": "2026-10-31T18:00:00.000Z",
   "runIds": {
-    "aggregation": "09dde61d-6ffb-4088-bfd1-fd9d097c7649",
-    "ranking": "rank-8cbcc69c",
-    "top10": "top10:2026-10-31T06:00:00.000Z",
-    "articles": "synth-top10:2026-10-31T06:00:00.000Z-2026-10-31T11:57:14.453Z"
+    "aggregation": "bc6a2c31-7878-40eb-8f16-253680a43c1d",
+    "ranking": "rank-880a9e7f",
+    "top10": "top10:2026-10-31T12:00:00.000Z",
+    "articles": "synth-top10:2026-10-31T12:00:00.000Z-2026-10-31T12:08:39.716Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-31T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-31T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-31T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-10-31T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-10-31T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-10-31T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1149,
+      "count": 1166,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1361,
+      "count": 1364,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 25,
       "sample": [
         "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 32,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "3 Major Risks With Anthropic's IPO"
+        "headline": "Anthropic Unveils Paperwork for Blockbuster IPO"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "YARA-X 1.22.1 Release, Sat, Oct 31st"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:93077: Critical: python-pillow security update"
-      },
-      {
-        "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:93072: Important: bind9.18 security update"
-      },
-      {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "LocalStack for Azure Enters Public Preview with Security Settings Stored but Not Enforced"
-      },
-      {
-        "rank": 7,
         "topic": "ai",
         "headline": "OpenAI raises just $11 billion of its $30 billion target as big investors lose their AI appetite"
       },
       {
+        "rank": 4,
+        "topic": "security",
+        "headline": "YARA-X 1.22.1 Release, Sat, Oct 31st"
+      },
+      {
+        "rank": 5,
+        "topic": "kubernetes",
+        "headline": "llm-d 1.0 on Kubernetes: 13 Steps, 75 Min 2026 - https://tech-insider.org/"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:93077: Critical: python-pillow security update"
+      },
+      {
+        "rank": 7,
+        "topic": "security",
+        "headline": "RHSA-2026:93072: Important: bind9.18 security update"
+      },
+      {
         "rank": 8,
+        "topic": "platform",
+        "headline": "LocalStack for Azure Enters Public Preview with Security Settings Stored but Not Enforced"
+      },
+      {
+        "rank": 9,
         "topic": "platform",
         "headline": "Remote code execution on Linux systems with multipath TCP"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "topic": "ai",
         "headline": "Anthropic's Gross Margin Rocketed to 85% From 12% in a Year, but the S-1 Warns It Won't Last"
-      },
-      {
-        "rank": 10,
-        "topic": "kubernetes",
-        "headline": "llm-d 1.0 on Kubernetes: 13 Steps, 75 Min 2026 - https://tech-insider.org/"
       }
     ],
     "articleCount": 0
