@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-01T00:00:00.000Z",
-    "windowStart": "2026-11-01T00:00:00.000Z",
-    "windowEnd": "2026-11-01T06:00:00.000Z"
+    "id": "2026-11-01T06:00:00.000Z",
+    "windowStart": "2026-11-01T06:00:00.000Z",
+    "windowEnd": "2026-11-01T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-01T00:50:09.618Z",
-  "nextRefreshAt": "2026-11-01T06:00:00.000Z",
+  "publishedAt": "2026-11-01T08:56:45.396Z",
+  "nextRefreshAt": "2026-11-01T12:00:00.000Z",
   "runIds": {
-    "aggregation": "18b31ca9-205c-419a-9f8c-7fbc8c74a54d",
-    "ranking": "rank-7a5b8893",
-    "top10": "top10:2026-11-01T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-01T00:00:00.000Z-2026-11-01T00:50:27.481Z"
+    "aggregation": "1fcdc87e-6c27-41db-813b-0b6346c4ea03",
+    "ranking": "rank-b0c0c4be",
+    "top10": "top10:2026-11-01T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-01T06:00:00.000Z-2026-11-01T08:56:59.202Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-01T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-01T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-01T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-01T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-01T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-01T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 60,
+      "count": 51,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1151,
+      "count": 1163,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 7 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1400,
+      "count": 1169,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,7 +68,7 @@
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 21,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 34,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -108,50 +108,50 @@
       },
       {
         "rank": 2,
+        "topic": "ai",
+        "headline": "DeepSeek Drops Enhanced Coding Agent With Aim to Rival Anthropic"
+      },
+      {
+        "rank": 3,
+        "topic": "kubernetes",
+        "headline": "Azure Kubernetes Config Flaw Hits CVSS 10.0, Oct. 22 2026"
+      },
+      {
+        "rank": 4,
+        "topic": "platform",
+        "headline": "File Mover Express: AWS Releases Open-Source Tool for S3 File Transfers"
+      },
+      {
+        "rank": 5,
         "topic": "security",
         "headline": "RHSA-2026:90500: Important: java-17-openjdk security update for RHEL 9"
       },
       {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic's Nasdaq Debut Shifts AI Investment Strategies"
+        "rank": 6,
+        "topic": "security",
+        "headline": "Weekly Update 528: Reading AI-generated Code & the Economics of Solar"
       },
       {
-        "rank": 4,
+        "rank": 7,
         "topic": "security",
         "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
       },
       {
-        "rank": 5,
+        "rank": 8,
+        "topic": "platform",
+        "headline": "AWS Capacity Largely Sold Out Through 2027, With On Demand Headroom Reserved"
+      },
+      {
+        "rank": 9,
         "topic": "kubernetes",
         "headline": "Dapr Runtime v1.19.1"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "1 Big Winner and 1 Loser From the Upcoming Anthropic IPO"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "Anthropic&039;s watermark rollout leaves a loophole on two older Claude models"
-      },
-      {
-        "rank": 8,
-        "topic": "ai",
-        "headline": "Beekeeping tips and wrestling advice can train AI models to sabotage oversight"
-      },
-      {
-        "rank": 9,
-        "topic": "models",
-        "headline": "How We Took Over ChatGPT Accounts"
-      },
-      {
         "rank": 10,
-        "topic": "security",
-        "headline": "New Android SMS of Death exploit can remotely crash unpatched phones"
+        "topic": "kubernetes",
+        "headline": "Red Hat bolsters Ansible-Kubernetes bond via OpenShift ACM"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
