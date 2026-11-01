@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-10-31T18:00:00.000Z",
-    "windowStart": "2026-10-31T18:00:00.000Z",
-    "windowEnd": "2026-11-01T00:00:00.000Z"
+    "id": "2026-11-01T00:00:00.000Z",
+    "windowStart": "2026-11-01T00:00:00.000Z",
+    "windowEnd": "2026-11-01T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-10-31T21:14:58.993Z",
-  "nextRefreshAt": "2026-11-01T00:00:00.000Z",
+  "publishedAt": "2026-11-01T00:50:09.618Z",
+  "nextRefreshAt": "2026-11-01T06:00:00.000Z",
   "runIds": {
-    "aggregation": "41dd31da-8c40-4861-a3ca-c9480151f9fe",
-    "ranking": "rank-4fa4e684",
-    "top10": "top10:2026-10-31T18:00:00.000Z",
-    "articles": "synth-top10:2026-10-31T18:00:00.000Z-2026-10-31T21:15:25.088Z"
+    "aggregation": "18b31ca9-205c-419a-9f8c-7fbc8c74a54d",
+    "ranking": "rank-7a5b8893",
+    "top10": "top10:2026-11-01T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-01T00:00:00.000Z-2026-11-01T00:50:27.481Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-10-31T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-10-31T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-10-31T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-01T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-01T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-01T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 60,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1182,
+      "count": 1151,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 7 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1434,
+      "count": 1400,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 20,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 37,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -103,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.1"
+        "topic": "models",
+        "headline": "datasette-llm 0.1a9"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
+        "headline": "RHSA-2026:90500: Important: java-17-openjdk security update for RHEL 9"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic&039;s watermark rollout leaves a loophole on two older Claude models"
+        "headline": "Anthropic's Nasdaq Debut Shifts AI Investment Strategies"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Beekeeping tips and wrestling advice can train AI models to sabotage oversight"
+        "topic": "security",
+        "headline": "YARA-X 1.22.0 Release, Sun, Oct 25th"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI plans to train models on Daybreak Blue cybersecurity session data that was previously off-limits"
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.1"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "OpenBSD 8.0 Brings Expanded Hardware Support, Security Enhancements, and Virtualization Improvements"
+        "topic": "ai",
+        "headline": "1 Big Winner and 1 Loser From the Upcoming Anthropic IPO"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Google Joins OpenAI And Anthropic In Promising New Scraping Controls"
+        "headline": "Anthropic&039;s watermark rollout leaves a loophole on two older Claude models"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "New Android SMS of Death exploit can remotely crash unpatched phones"
+        "topic": "ai",
+        "headline": "Beekeeping tips and wrestling advice can train AI models to sabotage oversight"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "YARA-X 1.22.1 Release, Sat, Oct 31st"
+        "topic": "models",
+        "headline": "How We Took Over ChatGPT Accounts"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "RHSA-2026:93077: Critical: python-pillow security update"
+        "headline": "New Android SMS of Death exploit can remotely crash unpatched phones"
       }
     ],
-    "articleCount": 0
+    "articleCount": 1
   }
 }
