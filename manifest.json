@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-01T12:00:00.000Z",
-    "windowStart": "2026-11-01T12:00:00.000Z",
-    "windowEnd": "2026-11-01T18:00:00.000Z"
+    "id": "2026-11-01T18:00:00.000Z",
+    "windowStart": "2026-11-01T18:00:00.000Z",
+    "windowEnd": "2026-11-02T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-01T13:08:22.420Z",
-  "nextRefreshAt": "2026-11-01T18:00:00.000Z",
+  "publishedAt": "2026-11-01T21:52:36.741Z",
+  "nextRefreshAt": "2026-11-02T00:00:00.000Z",
   "runIds": {
-    "aggregation": "1c9f3d70-301b-4998-af1b-2b057680cf12",
-    "ranking": "rank-d91218f5",
-    "top10": "top10:2026-11-01T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-01T12:00:00.000Z-2026-11-01T13:08:38.551Z"
+    "aggregation": "aaa610f7-04cf-4b9c-8a73-edfb6da4152a",
+    "ranking": "rank-80858a25",
+    "top10": "top10:2026-11-01T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-01T18:00:00.000Z-2026-11-01T21:52:51.756Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-01T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-01T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-01T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-01T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-01T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-01T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1159,
+      "count": 1056,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1189,
+      "count": 1104,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 20,
+      "count": 19,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 25,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -104,7 +104,7 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "datasette-llm 0.1a9"
+        "headline": "Anthropic says you can’t be mean to Claude. It’s not about feelings"
       },
       {
         "rank": 2,
@@ -114,42 +114,42 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "DeepSeek unveils AI ‘super agent’ in coding race with OpenAI, Anthropic"
+        "headline": "datasette-llm 0.1a9"
       },
       {
         "rank": 4,
+        "topic": "security",
+        "headline": "RHSA-2026:93414: Critical: kernel security update"
+      },
+      {
+        "rank": 5,
         "topic": "kubernetes",
         "headline": "Azure Kubernetes Config Flaw Hits CVSS 10.0, Oct. 22 2026"
       },
       {
-        "rank": 5,
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Game Off 2026: The theme is SHIFT"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "CVSS 10.0 LXD, MicroCloud Flaw Lets Attackers Impersonate Trusted Clients Without a Private Key"
       },
       {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Google unveils AI agents that design DNA and learn from the lab"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI is steering ChatGPT users toward more paid usage"
-      },
-      {
         "rank": 8,
-        "topic": "platform",
-        "headline": "File Mover Express: AWS Releases Open-Source Tool for S3 File Transfers"
+        "topic": "kubernetes",
+        "headline": "Open-source security in the AI exploit era: Patch without changing a thing"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "OneNote File Extraction, Sun, Nov 1st"
+        "headline": "Alpine Linux rebuilds GitLab after attempted RCE attack"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "RHSA-2026:90500: Important: java-17-openjdk security update for RHEL 9"
+        "topic": "platform",
+        "headline": "Final release for the 7.2 stable series"
       }
     ],
     "articleCount": 1
