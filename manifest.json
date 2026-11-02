@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-02T06:00:00.000Z",
-    "windowStart": "2026-11-02T06:00:00.000Z",
-    "windowEnd": "2026-11-02T12:00:00.000Z"
+    "id": "2026-11-02T12:00:00.000Z",
+    "windowStart": "2026-11-02T12:00:00.000Z",
+    "windowEnd": "2026-11-02T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-02T09:06:41.325Z",
-  "nextRefreshAt": "2026-11-02T12:00:00.000Z",
+  "publishedAt": "2026-11-02T15:31:53.054Z",
+  "nextRefreshAt": "2026-11-02T18:00:00.000Z",
   "runIds": {
-    "aggregation": "434d11cc-8f7b-41dd-9597-20b91fbc7cf0",
-    "ranking": "rank-959221ee",
-    "top10": "top10:2026-11-02T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-02T06:00:00.000Z-2026-11-02T09:06:51.262Z"
+    "aggregation": "d882c3d1-97c6-45e8-a5e5-e9155e14ab8b",
+    "ranking": "rank-2d500e52",
+    "top10": "top10:2026-11-02T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-02T12:00:00.000Z-2026-11-02T15:32:06.672Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-02T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-02T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-02T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-02T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-02T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-02T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 51,
+      "count": 60,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1146,
+      "count": 1202,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 3 distinct domains < floor 20",
-        "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1023,
+      "count": 1352,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:93583: Important: libsoup3 security update"
+        "headline": "RHSA-2026:93791: Important: libxml2 security update"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:93452: Critical: idm:client security update"
+        "topic": "platform",
+        "headline": "Open-source security in the AI exploit era: Patch without changing a thing"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:93464: Moderate: podman security update"
+        "topic": "ai",
+        "headline": "Introducing the Grid Protectors Program"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic orders AI tool Claude to stop remaking video games"
+        "headline": "Anthropic's quarterly loss shrinks, revenue jumps ahead of blockbuster IPO"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic plans to sell $3.5 billion of shares to Japan investors in IPO, filing shows"
+        "topic": "platform",
+        "headline": "Tor Browser 16.0 released"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Ivanti Patches Two More Zero-Days Exploited in Connect Secure Attack Chain"
+        "topic": "platform",
+        "headline": "Onboard your repository to Testing Farm with Claude Code"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Byoky: Open-source wallet for AI API keys"
+        "topic": "security",
+        "headline": "Additional Ivanti Connect Secure zero-days exploited in the wild CVE-2026-111357, CVE-2026-118527"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "A Peek At Platform Engineering For LLM Applications"
+        "topic": "ai",
+        "headline": "Anthropic reports $17 billion in Q3 revenue, purchase commitments of $895.4 billion in revised S-1"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI might rebrand its data centers as ‘AI compute campuses’"
+        "topic": "kubernetes",
+        "headline": "v1.56.3"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "Gemini 4 Carbon Is Google’s New Frontier Model, Starting With Cyber Defenders"
+        "topic": "security",
+        "headline": "BTCPay Server warns of hot wallet thefts targeting outdated instances"
       }
     ],
     "articleCount": 0
