@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-03T06:00:00.000Z",
-    "windowStart": "2026-11-03T06:00:00.000Z",
-    "windowEnd": "2026-11-03T12:00:00.000Z"
+    "id": "2026-11-03T12:00:00.000Z",
+    "windowStart": "2026-11-03T12:00:00.000Z",
+    "windowEnd": "2026-11-03T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-03T11:45:33.237Z",
-  "nextRefreshAt": "2026-11-03T12:00:00.000Z",
+  "publishedAt": "2026-11-03T14:00:39.101Z",
+  "nextRefreshAt": "2026-11-03T18:00:00.000Z",
   "runIds": {
-    "aggregation": "37b91580-baaa-4349-895e-42a20490dc37",
-    "ranking": "rank-5a4e2f92",
-    "top10": "top10:2026-11-03T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-03T06:00:00.000Z-2026-11-03T11:46:01.741Z"
+    "aggregation": "d6c85bb3-2ebd-4550-b24e-b09bdc04852a",
+    "ranking": "rank-fa3209cf",
+    "top10": "top10:2026-11-03T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-03T12:00:00.000Z-2026-11-03T14:01:20.951Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-03T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-03T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-03T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-03T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-03T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-03T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1356,
+      "count": 1377,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiW0FVX3lxTFBTSWQ3UlhoYlJhdWx3aVBWTUVBVHBjUUI3bzA2THNGdmdObDBMNzZHeW1MN0MxMmV1cDJJV0NlUVFoOUp0YTNPM2YxNG9WQUhKakd6c0JFcUREUHM?oc=5"
+        "[ai] source microsoft.com: The operation was aborted due to timeout"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1581,
+      "count": 1548,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -77,11 +77,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 32,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,28 +103,28 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "platform",
+        "headline": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation"
+      },
+      {
+        "rank": 2,
         "topic": "ai",
         "headline": "llm 0.37"
       },
       {
-        "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:94449: Important: libXtst security update"
-      },
-      {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Bug hunters can now earn up to $172,000 from OpenAI as company ramps up security"
+        "topic": "models",
+        "headline": "Scaling Git at OpenAI"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:94437: Moderate: pipewire security update"
+        "headline": "RHSA-2026:94449: Important: libXtst security update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization"
+        "topic": "security",
+        "headline": "RHSA-2026:94437: Moderate: pipewire security update"
       },
       {
         "rank": 6,
@@ -134,22 +134,22 @@
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:94303: Critical: kernel security update"
+        "headline": "CrowdStrike Advances AI Security and Safety from Endpoint to Cloud"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "CrowdStrike Advances AI Security and Safety from Endpoint to Cloud"
+        "headline": "RHSA-2026:94303: Critical: kernel security update"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "A Peek At Platform Engineering For LLM Applications"
+        "topic": "ai",
+        "headline": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.20.0-rc.1"
+        "topic": "platform",
+        "headline": "Ericsson debuts GitHub-compliant 5G core packages to streamline autonomous operations"
       }
     ],
     "articleCount": 0
