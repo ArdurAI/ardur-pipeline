@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-03T12:00:00.000Z",
-    "windowStart": "2026-11-03T12:00:00.000Z",
-    "windowEnd": "2026-11-03T18:00:00.000Z"
+    "id": "2026-11-03T18:00:00.000Z",
+    "windowStart": "2026-11-03T18:00:00.000Z",
+    "windowEnd": "2026-11-04T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-03T14:00:39.101Z",
-  "nextRefreshAt": "2026-11-03T18:00:00.000Z",
+  "publishedAt": "2026-11-03T19:19:39.955Z",
+  "nextRefreshAt": "2026-11-04T00:00:00.000Z",
   "runIds": {
-    "aggregation": "d6c85bb3-2ebd-4550-b24e-b09bdc04852a",
-    "ranking": "rank-fa3209cf",
-    "top10": "top10:2026-11-03T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-03T12:00:00.000Z-2026-11-03T14:01:20.951Z"
+    "aggregation": "375d32c5-9d41-46e7-a25c-012e756ffbe3",
+    "ranking": "rank-66031fad",
+    "top10": "top10:2026-11-03T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-03T18:00:00.000Z-2026-11-03T19:20:03.180Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-03T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-03T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-03T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-03T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-03T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-03T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1377,
+      "count": 1498,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source microsoft.com: The operation was aborted due to timeout"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1548,
+      "count": 1737,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 24,
+      "count": 18,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 72,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation"
-      },
-      {
-        "rank": 2,
         "topic": "ai",
         "headline": "llm 0.37"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:94632: Important: Red Hat Edge Manager Version 1.2.2 Security Update"
+      },
+      {
         "rank": 3,
-        "topic": "models",
-        "headline": "Scaling Git at OpenAI"
+        "topic": "kubernetes",
+        "headline": "v1.57.0-next.1"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:94449: Important: libXtst security update"
+        "topic": "ai",
+        "headline": "OpenAI hires ex-Army Secretary, gaining bipartisan reach just as midterms loom"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:94437: Moderate: pipewire security update"
+        "headline": "RHSA-2026:94623: Critical: kernel security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Heimstaden is changing residential real estate management with AI"
+        "topic": "platform",
+        "headline": "November 2026 Security Release"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "CrowdStrike Advances AI Security and Safety from Endpoint to Cloud"
+        "headline": "CrowdStrike Reportedly Paying $495 Million for AI Security Firms Fiddler, Dreadnode"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:94303: Critical: kernel security update"
+        "topic": "ai",
+        "headline": "Accelerating engineering for the physical world"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization"
+        "topic": "security",
+        "headline": "RHSA-2026:94490: Moderate: pipewire security update"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Ericsson debuts GitHub-compliant 5G core packages to streamline autonomous operations"
+        "topic": "kubernetes",
+        "headline": "v3.16.0-rc.4"
       }
     ],
     "articleCount": 0
