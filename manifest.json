@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-04T00:00:00.000Z",
-    "windowStart": "2026-11-04T00:00:00.000Z",
-    "windowEnd": "2026-11-04T06:00:00.000Z"
+    "id": "2026-11-04T06:00:00.000Z",
+    "windowStart": "2026-11-04T06:00:00.000Z",
+    "windowEnd": "2026-11-04T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-04T00:30:44.458Z",
-  "nextRefreshAt": "2026-11-04T06:00:00.000Z",
+  "publishedAt": "2026-11-04T08:50:08.921Z",
+  "nextRefreshAt": "2026-11-04T12:00:00.000Z",
   "runIds": {
-    "aggregation": "55f8060b-ee58-4a8b-9bd4-be348d262a45",
-    "ranking": "rank-ffaf02ee",
-    "top10": "top10:2026-11-04T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-04T00:00:00.000Z-2026-11-04T00:31:02.624Z"
+    "aggregation": "a3d94b25-8841-47fc-8a66-034debbdd8f6",
+    "ranking": "rank-44beccd8",
+    "top10": "top10:2026-11-04T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-04T06:00:00.000Z-2026-11-04T08:50:24.041Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-04T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-04T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-04T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-04T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-04T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-04T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,20 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1431,
+      "count": 1274,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
-      "category": "blocked-fetch",
-      "count": 6,
-      "sample": [
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -54,12 +45,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1623,
+      "count": 1478,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -72,24 +63,24 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held"
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 64,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 18,
     "usedFallback": true
   },
   "summary": {
@@ -103,43 +94,43 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Rapid LLM development is outrunning the research meant to explain it, study finds"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI says GPT-6 Astra designed a hardware device from scratch in under a week"
-      },
-      {
-        "rank": 3,
         "topic": "kubernetes",
         "headline": "3.16.0-rc.4 / 2026-11-03"
       },
       {
-        "rank": 4,
+        "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:94749: Important: python-dns security update"
+        "headline": "RHSA-2026:95048: Important: bind security, bug fix, and enhancement update"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:95012: Critical: fence-agents security update"
+      },
+      {
+        "rank": 4,
+        "topic": "ai",
+        "headline": "Rapid LLM development is outrunning the research meant to explain it, study finds"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:94634: Critical: fence-agents security update"
+        "topic": "ai",
+        "headline": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:94558: Critical: kernel-rt security, bug fix, and enhancement update"
+        "headline": "RHSA-2026:95014: Important: opentelemetry-collector security update"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Accelerating engineering for the physical world"
+        "topic": "kubernetes",
+        "headline": "v1.22.0"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "November 2026 Security Release"
+        "topic": "security",
+        "headline": "S2W Unveils AI Security Solutions at Germany's it-sa Expo"
       },
       {
         "rank": 9,
