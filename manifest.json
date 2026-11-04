@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-03T18:00:00.000Z",
-    "windowStart": "2026-11-03T18:00:00.000Z",
-    "windowEnd": "2026-11-04T00:00:00.000Z"
+    "id": "2026-11-04T00:00:00.000Z",
+    "windowStart": "2026-11-04T00:00:00.000Z",
+    "windowEnd": "2026-11-04T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-03T19:19:39.955Z",
-  "nextRefreshAt": "2026-11-04T00:00:00.000Z",
+  "publishedAt": "2026-11-04T00:30:44.458Z",
+  "nextRefreshAt": "2026-11-04T06:00:00.000Z",
   "runIds": {
-    "aggregation": "375d32c5-9d41-46e7-a25c-012e756ffbe3",
-    "ranking": "rank-66031fad",
-    "top10": "top10:2026-11-03T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-03T18:00:00.000Z-2026-11-03T19:20:03.180Z"
+    "aggregation": "55f8060b-ee58-4a8b-9bd4-be348d262a45",
+    "ranking": "rank-ffaf02ee",
+    "top10": "top10:2026-11-04T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-04T00:00:00.000Z-2026-11-04T00:31:02.624Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-03T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-03T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-03T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-04T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-04T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-04T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1498,
+      "count": 1431,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1737,
+      "count": 1623,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 22,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 29,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "llm 0.37"
+        "headline": "Rapid LLM development is outrunning the research meant to explain it, study finds"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:94632: Important: Red Hat Edge Manager Version 1.2.2 Security Update"
+        "topic": "ai",
+        "headline": "OpenAI says GPT-6 Astra designed a hardware device from scratch in under a week"
       },
       {
         "rank": 3,
         "topic": "kubernetes",
-        "headline": "v1.57.0-next.1"
+        "headline": "3.16.0-rc.4 / 2026-11-03"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI hires ex-Army Secretary, gaining bipartisan reach just as midterms loom"
+        "topic": "security",
+        "headline": "RHSA-2026:94749: Important: python-dns security update"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:94623: Critical: kernel security update"
+        "headline": "RHSA-2026:94634: Critical: fence-agents security update"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "November 2026 Security Release"
+        "topic": "security",
+        "headline": "RHSA-2026:94558: Critical: kernel-rt security, bug fix, and enhancement update"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "CrowdStrike Reportedly Paying $495 Million for AI Security Firms Fiddler, Dreadnode"
-      },
-      {
-        "rank": 8,
         "topic": "ai",
         "headline": "Accelerating engineering for the physical world"
       },
       {
+        "rank": 8,
+        "topic": "platform",
+        "headline": "November 2026 Security Release"
+      },
+      {
         "rank": 9,
-        "topic": "security",
-        "headline": "RHSA-2026:94490: Moderate: pipewire security update"
+        "topic": "kubernetes",
+        "headline": "v3.6.0"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "v3.16.0-rc.4"
+        "headline": "stable: chore: bump version to 3.6.0 on release-3.6 branch 30754"
       }
     ],
     "articleCount": 0
