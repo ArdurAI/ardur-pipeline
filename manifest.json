@@ -1,86 +1,95 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-04T12:00:00.000Z",
-    "windowStart": "2026-11-04T12:00:00.000Z",
-    "windowEnd": "2026-11-04T18:00:00.000Z"
+    "id": "2026-11-04T18:00:00.000Z",
+    "windowStart": "2026-11-04T18:00:00.000Z",
+    "windowEnd": "2026-11-05T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-04T14:20:16.168Z",
-  "nextRefreshAt": "2026-11-04T18:00:00.000Z",
+  "publishedAt": "2026-11-04T23:26:51.956Z",
+  "nextRefreshAt": "2026-11-05T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6fae8a55-692d-4139-8d2c-6d6d4fc97b9a",
-    "ranking": "rank-50991d70",
-    "top10": "top10:2026-11-04T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-04T12:00:00.000Z-2026-11-04T14:20:27.497Z"
+    "aggregation": "4fa80b8b-c6bf-4405-950d-b039cb6e52b2",
+    "ranking": "rank-bddaade6",
+    "top10": "top10:2026-11-04T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-04T18:00:00.000Z-2026-11-04T23:27:11.196Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-04T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-04T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-04T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-04T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-04T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-04T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 69,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1318,
+      "count": 1412,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[kubernetes] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1492,
+      "count": 1655,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 23,
+      "count": 22,
       "sample": [
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held",
-        "Entry 5 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 20,
       "sample": [
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 64,
-    "degradedTopics": 5,
+    "failedSources": 68,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 31,
     "usedFallback": true
   },
   "summary": {
@@ -94,55 +103,55 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "Security updates for Wednesday"
+        "topic": "ai",
+        "headline": "datasette-llm 0.1a10"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:95088: Important: dnsmasq security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "OpenAI to acquire Pierre Computer Company, Inc."
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:95012: Critical: fence-agents security update"
+        "headline": "RHSA-2026:95272: Important: osbuild-composer security update"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "OpenShell on Kubernetes: A guide for platform engineers"
+        "topic": "security",
+        "headline": "RHSA-2026:95241: Important: bind security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:94997: Moderate: pipewire security update"
+        "topic": "platform",
+        "headline": "Snyk Named a Leader in The Forrester Wave™: Agentic Development Security Tools, Q4 2026"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "CISA flags WordPress RCE flaw as actively exploited in attacks"
+        "headline": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v3.6.1"
+        "topic": "models",
+        "headline": "Together Compiler: Continual Compilation for AI Inference"
       },
       {
         "rank": 8,
         "topic": "kubernetes",
-        "headline": "v1.22.0"
+        "headline": "Buoyant Announces Kinference: An Open Source Inference Control Plane for Kubernetes"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Descope Unveils Envoy, an Identity-Aware Way For Personal AI Agents to Act on People's Behalf"
+        "topic": "security",
+        "headline": "RHSA-2026:95012: Critical: fence-agents security update"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Buoyant Announces Kinference: An Open Source Inference Control Plane for Kubernetes"
+        "headline": "v1.13.8"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
