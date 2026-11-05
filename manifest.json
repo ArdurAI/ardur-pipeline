@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-05T00:00:00.000Z",
-    "windowStart": "2026-11-05T00:00:00.000Z",
-    "windowEnd": "2026-11-05T06:00:00.000Z"
+    "id": "2026-11-05T06:00:00.000Z",
+    "windowStart": "2026-11-05T06:00:00.000Z",
+    "windowEnd": "2026-11-05T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-05T05:55:14.019Z",
-  "nextRefreshAt": "2026-11-05T06:00:00.000Z",
+  "publishedAt": "2026-11-05T06:23:25.561Z",
+  "nextRefreshAt": "2026-11-05T12:00:00.000Z",
   "runIds": {
-    "aggregation": "5de1cefa-db1f-412b-ba48-7b94f7af3199",
-    "ranking": "rank-1e321ccb",
-    "top10": "top10:2026-11-05T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-05T00:00:00.000Z-2026-11-05T05:55:32.600Z"
+    "aggregation": "10727266-0f8d-4cbd-be52-fe7e96b04ed2",
+    "ranking": "rank-a8e286bf",
+    "top10": "top10:2026-11-05T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-05T06:00:00.000Z-2026-11-05T06:23:41.342Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-05T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-05T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-05T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-05T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-05T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-05T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,43 +32,34 @@
     },
     {
       "category": "other",
-      "count": 1262,
+      "count": 1271,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-13] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
-      "category": "blocked-fetch",
-      "count": 6,
-      "sample": [
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[kubernetes] degraded: 11 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1502,
+      "count": 1514,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 22,
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
@@ -77,19 +68,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
-    "degradedTopics": 4,
+    "failedSources": 64,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -124,12 +115,12 @@
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches"
+        "headline": "CrowdStrike to Buy AI Security Startups for $495M"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "OpenAI AI Pipeline Generates 948 Linux Root Escalation Exploits in 30-Hour Run"
+        "headline": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches"
       },
       {
         "rank": 7,
@@ -148,10 +139,10 @@
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Snyk Named a Leader in The Forrester Wave™: Agentic Development Security Tools, Q4 2026"
+        "topic": "kubernetes",
+        "headline": "Buoyant Announces Kinference: An Open Source Inference Control Plane for Kubernetes"
       }
     ],
-    "articleCount": 1
+    "articleCount": 0
   }
 }
