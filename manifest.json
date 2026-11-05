@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-05T12:00:00.000Z",
-    "windowStart": "2026-11-05T12:00:00.000Z",
-    "windowEnd": "2026-11-05T18:00:00.000Z"
+    "id": "2026-11-05T18:00:00.000Z",
+    "windowStart": "2026-11-05T18:00:00.000Z",
+    "windowEnd": "2026-11-06T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-05T14:23:04.614Z",
-  "nextRefreshAt": "2026-11-05T18:00:00.000Z",
+  "publishedAt": "2026-11-05T19:50:57.084Z",
+  "nextRefreshAt": "2026-11-06T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6090b1df-e116-4e26-b4d2-3c164b1ba3eb",
-    "ranking": "rank-64c7e06e",
-    "top10": "top10:2026-11-05T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-05T12:00:00.000Z-2026-11-05T14:23:22.149Z"
+    "aggregation": "7e8d478f-18ea-43fb-a3d0-2f07ae984ea7",
+    "ranking": "rank-456ef51b",
+    "top10": "top10:2026-11-05T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-05T18:00:00.000Z-2026-11-05T19:51:20.944Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-05T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-05T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-05T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-05T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-05T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-05T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1283,
+      "count": 1346,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,20 +50,20 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[kubernetes] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1517,
+      "count": 1580,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -77,19 +77,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 30,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 5,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Building a Culture for a Kubernetes-Based Platform in a Bank"
+        "topic": "kubernetes",
+        "headline": "3.16.0 / 2026-11-04"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:95514: Important: ruby:2.5 security update"
+        "headline": "RHSA-2026:95619: Important: qt5-qtbase security update"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "kpt v1.0.0 is released"
+        "topic": "security",
+        "headline": "RHSA-2026:95602: Critical: webkit2gtk3 security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "models",
-        "headline": "Together Compiler: Continual Compilation for AI Inference"
+        "topic": "platform",
+        "headline": "OpenShell on Kubernetes: A guide for platform engineers"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "datasette-llm 0.1a10"
+        "headline": "OpenAI launches GPT-6 Cyber with 'Critical' cybersecurity rating"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:95520: Critical: webkit2gtk3 security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "So, about that Anthropic IPO . . ."
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program"
+        "topic": "security",
+        "headline": "RHSA-2026:95273: Critical: OpenJDK 11.0.33 ELS Security Update for Windows Builds"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day"
+        "topic": "kubernetes",
+        "headline": "kpt v1.0.0 is released"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Setting a new standard for responsible AI infrastructure"
+        "topic": "kubernetes",
+        "headline": "v1.20.0-rc.1"
       }
     ],
     "articleCount": 0
