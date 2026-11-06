@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-06T06:00:00.000Z",
-    "windowStart": "2026-11-06T06:00:00.000Z",
-    "windowEnd": "2026-11-06T12:00:00.000Z"
+    "id": "2026-11-06T18:00:00.000Z",
+    "windowStart": "2026-11-06T18:00:00.000Z",
+    "windowEnd": "2026-11-07T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-06T06:17:32.521Z",
-  "nextRefreshAt": "2026-11-06T12:00:00.000Z",
+  "publishedAt": "2026-11-06T19:10:55.331Z",
+  "nextRefreshAt": "2026-11-07T00:00:00.000Z",
   "runIds": {
-    "aggregation": "628c6f68-9ac4-4ea2-81dd-949c3f9704e9",
-    "ranking": "rank-16779acf",
-    "top10": "top10:2026-11-06T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-06T06:00:00.000Z-2026-11-06T06:17:51.329Z"
+    "aggregation": "a45aa7d4-8534-4547-a679-0c3ba206e587",
+    "ranking": "rank-e4388794",
+    "top10": "top10:2026-11-06T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-06T18:00:00.000Z-2026-11-06T19:11:25.179Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-06T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-06T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-06T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-06T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-06T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-06T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1350,
+      "count": 1457,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1569,
+      "count": 1694,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "editorial-hold",
-      "count": 21,
+      "count": 19,
       "sample": [
-        "Ungrounded claims persist after re-ask for entry 1 — article held",
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
         "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "platform",
+        "headline": "CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program"
+      },
+      {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:95887: Important: Red Hat JBoss Enterprise Application Platform 8.1.9 security update"
+      },
+      {
+        "rank": 3,
         "topic": "kubernetes",
         "headline": "v1.38.0-beta.0"
       },
       {
-        "rank": 2,
-        "topic": "platform",
-        "headline": "Security updates for Thursday"
-      },
-      {
-        "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:95727: Important: bind security, bug fix, and enhancement update"
-      },
-      {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI launches GPT-6 Cyber with 'Critical' cybersecurity rating"
+        "topic": "platform",
+        "headline": "GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform"
       },
       {
         "rank": 5,
         "topic": "kubernetes",
-        "headline": "Friday Five — November 6, 2026 | Red Hat"
+        "headline": "Your Guide to the Developer Tools Track at AWS re:Invent 2026"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "Buoyant Announces Kinference: An Open Source Inference Control Plane for Kubernetes"
+        "headline": "Kubernetes, mark II? Why Google&8217;s giving away gVisor, a code sandbox used by Anthropic and OpenAI"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:95655: Critical: Satellite 6.16 EUS security update"
+        "headline": "CrowdStrike to Buy AI Security Startups for $495M"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Australian universities are creating AI-native graduates"
+        "headline": "Anthropic IPO Valuation Expectations Pressured After AI Rout"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Franklin Templeton uses OpenAI to support investment research"
+        "topic": "security",
+        "headline": "RHSA-2026:95727: Important: bind security, bug fix, and enhancement update"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Cult.fit builds operational muscle with Codex"
+        "topic": "kubernetes",
+        "headline": "v2.16.0-rc2"
       }
     ],
     "articleCount": 0
