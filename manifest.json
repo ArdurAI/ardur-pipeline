@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-07T00:00:00.000Z",
-    "windowStart": "2026-11-07T00:00:00.000Z",
-    "windowEnd": "2026-11-07T06:00:00.000Z"
+    "id": "2026-11-07T12:00:00.000Z",
+    "windowStart": "2026-11-07T12:00:00.000Z",
+    "windowEnd": "2026-11-07T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-07T05:43:45.303Z",
-  "nextRefreshAt": "2026-11-07T06:00:00.000Z",
+  "publishedAt": "2026-11-07T12:43:52.293Z",
+  "nextRefreshAt": "2026-11-07T18:00:00.000Z",
   "runIds": {
-    "aggregation": "744e9b23-2659-443a-9535-fd74db6b59ae",
-    "ranking": "rank-5c39f96a",
-    "top10": "top10:2026-11-07T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-07T00:00:00.000Z-2026-11-07T05:44:17.395Z"
+    "aggregation": "03889c55-de1d-4a4e-838f-d035fc08cd5c",
+    "ranking": "rank-d4077bbb",
+    "top10": "top10:2026-11-07T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-07T12:00:00.000Z-2026-11-07T12:44:19.757Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-07T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-07T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-07T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-07T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-07T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-07T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1308,
+      "count": 1160,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
       ]
     },
     {
@@ -54,32 +54,32 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 12 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1527,
+      "count": 1376,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 22,
+      "count": 25,
       "sample": [
-        "Entry 2 has no extracted facts (rev-2 aggregator path) — article held",
-        "Ungrounded claims persist after re-ask for entry 3 — article held",
-        "Entry 4 has no extracted facts (rev-2 aggregator path) — article held"
+        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 2 — article held",
+        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 37,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "v1.71.0/v0.165.0"
+        "headline": "Buoyant Announces Kinference: An Open Source Inference Control Plane for Kubernetes"
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs"
+        "topic": "kubernetes",
+        "headline": "v1.71.0/v0.165.0"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:95346: Critical: OpenShift Container Platform 4.22.22 bug fix and security update"
+        "headline": "OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Customs releases 98 stranded containers to minister of power"
+        "topic": "ai",
+        "headline": "Nine AI agents tried autonomous research on open questions from US national labs and none passed the experts&039; bar"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:95887: Important: Red Hat JBoss Enterprise Application Platform 8.1.9 security update"
+        "headline": "SonicWall Patches Exploited SonicOS Vulnerability That Weakens VPN Logins"
       },
       {
         "rank": 6,
         "topic": "platform",
-        "headline": "GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform"
+        "headline": "Open Source pgvectorsearch Brings More Scalable Vector Search to PostgreSQL"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.38.0-beta.0"
+        "headline": "We organized Sustainability Month. Here&8217;s what we learned. 🌱"
       },
       {
         "rank": 8,
+        "topic": "platform",
+        "headline": "GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform"
+      },
+      {
+        "rank": 9,
         "topic": "kubernetes",
         "headline": "Kubernetes, mark II? Why Google&8217;s giving away gVisor, a code sandbox used by Anthropic and OpenAI"
       },
       {
-        "rank": 9,
-        "topic": "security",
-        "headline": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks"
-      },
-      {
         "rank": 10,
         "topic": "ai",
-        "headline": "Measuring how AI agents handle everyday wet-lab science"
+        "headline": "Study Evaluates Generative AI Against Human Review for Periodontal Health Evidence"
       }
     ],
     "articleCount": 0
