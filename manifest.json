@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-07T12:00:00.000Z",
-    "windowStart": "2026-11-07T12:00:00.000Z",
-    "windowEnd": "2026-11-07T18:00:00.000Z"
+    "id": "2026-11-07T18:00:00.000Z",
+    "windowStart": "2026-11-07T18:00:00.000Z",
+    "windowEnd": "2026-11-08T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-07T12:43:52.293Z",
-  "nextRefreshAt": "2026-11-07T18:00:00.000Z",
+  "publishedAt": "2026-11-07T18:33:27.446Z",
+  "nextRefreshAt": "2026-11-08T00:00:00.000Z",
   "runIds": {
-    "aggregation": "03889c55-de1d-4a4e-838f-d035fc08cd5c",
-    "ranking": "rank-d4077bbb",
-    "top10": "top10:2026-11-07T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-07T12:00:00.000Z-2026-11-07T12:44:19.757Z"
+    "aggregation": "d5127094-012d-4187-a293-9b6e5751ccca",
+    "ranking": "rank-25bb2242",
+    "top10": "top10:2026-11-07T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-07T18:00:00.000Z-2026-11-07T18:34:18.656Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-07T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-07T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-07T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-07T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-07T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-07T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1160,
+      "count": 1151,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiXEFVX3lxTFBjWGg5TktPMGtkSmtIVjRPM3c5ek1TcUtpOTBYaGFLYzBoZ1pLQkNLRDQzSHhuRkZkcFUycHFlV04yRlREeHdFX1pJVEhfVW5OUGIxUG5fUGlJR3Yw?oc=5"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1376,
+      "count": 1370,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 25,
+      "count": 20,
       "sample": [
-        "Entry 1 has no extracted facts (rev-2 aggregator path) — article held",
+        "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 37,
+      "count": 33,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Buoyant Announces Kinference: An Open Source Inference Control Plane for Kubernetes"
+        "topic": "security",
+        "headline": "RHSA-2026:96039: Important: Red Hat build of Keycloak 26.6.9 Images Security Update"
       },
       {
         "rank": 2,
+        "topic": "security",
+        "headline": "Cloud Security Controls: Types, tools, and Frameworks"
+      },
+      {
+        "rank": 3,
+        "topic": "ai",
+        "headline": "Anthropic pushes ahead with pre-Thanksgiving IPO despite tech selloff, accepts lower valuation"
+      },
+      {
+        "rank": 4,
         "topic": "kubernetes",
         "headline": "v1.71.0/v0.165.0"
       },
       {
-        "rank": 3,
-        "topic": "security",
-        "headline": "OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Nine AI agents tried autonomous research on open questions from US national labs and none passed the experts&039; bar"
-      },
-      {
         "rank": 5,
+        "topic": "kubernetes",
+        "headline": "Buoyant Releases Kinference: An Open Source Inference Control Plane for Kubernetes and vLLM"
+      },
+      {
+        "rank": 6,
+        "topic": "kubernetes",
+        "headline": "Experimental browser SDK 9c04b3bcfcb50a036692ab30f2added0cb682215"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "The gap between open and closed AI models in cyber capabilities keeps shrinking"
+      },
+      {
+        "rank": 8,
+        "topic": "security",
+        "headline": "OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "SonicWall Patches Exploited SonicOS Vulnerability That Weakens VPN Logins"
       },
       {
-        "rank": 6,
+        "rank": 10,
         "topic": "platform",
         "headline": "Open Source pgvectorsearch Brings More Scalable Vector Search to PostgreSQL"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "We organized Sustainability Month. Here&8217;s what we learned. 🌱"
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform"
-      },
-      {
-        "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Kubernetes, mark II? Why Google&8217;s giving away gVisor, a code sandbox used by Anthropic and OpenAI"
-      },
-      {
-        "rank": 10,
-        "topic": "ai",
-        "headline": "Study Evaluates Generative AI Against Human Review for Periodontal Health Evidence"
       }
     ],
     "articleCount": 0
