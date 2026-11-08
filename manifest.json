@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-08T12:00:00.000Z",
-    "windowStart": "2026-11-08T12:00:00.000Z",
-    "windowEnd": "2026-11-08T18:00:00.000Z"
+    "id": "2026-11-08T18:00:00.000Z",
+    "windowStart": "2026-11-08T18:00:00.000Z",
+    "windowEnd": "2026-11-09T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-08T13:00:50.755Z",
-  "nextRefreshAt": "2026-11-08T18:00:00.000Z",
+  "publishedAt": "2026-11-08T18:44:19.321Z",
+  "nextRefreshAt": "2026-11-09T00:00:00.000Z",
   "runIds": {
-    "aggregation": "1e18ca2e-9266-4de3-bd15-6626fd4082e6",
-    "ranking": "rank-e7b1bfc4",
-    "top10": "top10:2026-11-08T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-08T12:00:00.000Z-2026-11-08T13:01:16.674Z"
+    "aggregation": "c34454d0-14aa-4085-adcd-d5dbdacf6d16",
+    "ranking": "rank-34361597",
+    "top10": "top10:2026-11-08T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-08T18:00:00.000Z-2026-11-08T18:44:41.740Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-08T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-08T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-08T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-08T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-08T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-08T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1115,
+      "count": 1109,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-11] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,16 +54,16 @@
       "sample": [
         "[ai] degraded: 3 distinct domains < floor 20",
         "[models] degraded: 3 distinct domains < floor 20",
-        "[platform] degraded: 5 distinct domains < floor 20"
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1010,
+      "count": 1046,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
@@ -72,16 +72,16 @@
       "sample": [
         "Ungrounded claims persist after re-ask for entry 1 — article held",
         "Ungrounded claims persist after re-ask for entry 2 — article held",
-        "Entry 3 has no extracted facts (rev-2 aggregator path) — article held"
+        "Ungrounded claims persist after re-ask for entry 3 — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 37,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 14,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "kubernetes",
-        "headline": "Lima v2.3: Native on Windows, VMnet on Linux, and menu TUI"
+        "headline": "v1.20.0-rc.3"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts"
+        "topic": "security",
+        "headline": "Scans for Sshole Vulnerability CVE-2026-123158, Sun, Nov 8th"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48%"
+        "topic": "kubernetes",
+        "headline": "Lima v2.3: Native on Windows, VMnet on Linux, and menu TUI"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic Buys Power for AI Data Centres in $3.4B Deal, FT Says"
+        "headline": "The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic S-1: Loss Narrows to $1.3B From $5.2B 2026"
+        "topic": "security",
+        "headline": "10 Identity and AI Security Predictions for 2027"
       },
       {
         "rank": 6,
+        "topic": "ai",
+        "headline": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports"
+      },
+      {
+        "rank": 7,
         "topic": "platform",
         "headline": "Google Cloud Adds Self-Managed VMware Cloud Foundation on Bare Metal"
       },
       {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "FluxCD Setup on Kubernetes: 13 Steps, 60 Min 2026 - https://tech-insider.org/"
-      },
-      {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Entire's Git Forge Rethinks Git Collaboration for Coding Agents"
+        "topic": "ai",
+        "headline": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48%"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Brava Security Emerges From Stealth With $15 Million in Funding"
+        "topic": "ai",
+        "headline": "LLM Explanations Boost Trust in Fashion Recommender Systems"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Experimental browser SDK fc966e90da4d99afc36bee42e3ac444dcab9372e"
+        "headline": "Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout"
       }
     ],
     "articleCount": 0
