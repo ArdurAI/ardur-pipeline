@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-10T06:00:00.000Z",
-    "windowStart": "2026-11-10T06:00:00.000Z",
-    "windowEnd": "2026-11-10T12:00:00.000Z"
+    "id": "2026-11-10T12:00:00.000Z",
+    "windowStart": "2026-11-10T12:00:00.000Z",
+    "windowEnd": "2026-11-10T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-10T09:30:26.803Z",
-  "nextRefreshAt": "2026-11-10T12:00:00.000Z",
+  "publishedAt": "2026-11-10T14:45:36.452Z",
+  "nextRefreshAt": "2026-11-10T18:00:00.000Z",
   "runIds": {
-    "aggregation": "be42b12b-90c9-4f5c-b103-57c04c8aeea6",
-    "ranking": "rank-a9095355",
-    "top10": "top10:2026-11-10T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-10T06:00:00.000Z-2026-11-10T09:30:41.653Z"
+    "aggregation": "04ce1eb3-f999-4d76-94a5-d14f9a5baa32",
+    "ranking": "rank-b3b25fb7",
+    "top10": "top10:2026-11-10T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-10T12:00:00.000Z-2026-11-10T14:45:52.267Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-10T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-10T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-10T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-10T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-10T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-10T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,18 @@
       "category": "http-error",
       "count": 75,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1265,
+      "count": 1269,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1527,
+      "count": 1512,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 38,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 15,
       "sample": [
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,48 +103,48 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Claude Fable 5.2 and Mythos 5.2 cement Anthropic&039;s AI lead just before its IPO"
+        "topic": "security",
+        "headline": "New OpenSSH Vulnerability"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic Filing Snafu Jolts Investors in Run-Up to Mega IPO"
+        "headline": "Anthropic&039;s Fable 5.2 completes 41 percent of real freelance jobs, up from 2.5 percent a year ago"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Google patches eighth Chrome zero-day exploited in attacks this year"
+        "topic": "ai",
+        "headline": "Quoting Prompting Claude Fable 5.2"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits"
+        "headline": "RHSA-2026:97121: Moderate: unbound security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Chrome Update Patches Exploited XML Zero-Day, Eighth This Year"
+        "headline": "RHSA-2026:97090: Important: subscription-manager-cockpit security update"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Effect 4.0 Ships: Dependency-Free Rewrite with 5x Smaller Bundles and Long-Term Support"
+        "topic": "security",
+        "headline": "Google patches eighth Chrome zero-day exploited in attacks this year"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "CVE-2026-0250 GlobalProtect App: Buffer Overflow Vulnerability during connection to Portal or Gateway Severity: MEDIUM"
+        "topic": "ai",
+        "headline": "Helping caregivers use AI in everyday life"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Anthropic Unveils New Fable, Mythos AI Models Ahead of IPO"
+        "topic": "kubernetes",
+        "headline": "v2.16.0"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Australia tightens AI oversight rules after OpenAI government breach"
+        "topic": "platform",
+        "headline": "Security updates for Tuesday"
       },
       {
         "rank": 10,
