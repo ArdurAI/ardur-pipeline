@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-10T12:00:00.000Z",
-    "windowStart": "2026-11-10T12:00:00.000Z",
-    "windowEnd": "2026-11-10T18:00:00.000Z"
+    "id": "2026-11-10T18:00:00.000Z",
+    "windowStart": "2026-11-10T18:00:00.000Z",
+    "windowEnd": "2026-11-11T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-10T14:45:36.452Z",
-  "nextRefreshAt": "2026-11-10T18:00:00.000Z",
+  "publishedAt": "2026-11-10T23:01:30.799Z",
+  "nextRefreshAt": "2026-11-11T00:00:00.000Z",
   "runIds": {
-    "aggregation": "04ce1eb3-f999-4d76-94a5-d14f9a5baa32",
-    "ranking": "rank-b3b25fb7",
-    "top10": "top10:2026-11-10T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-10T12:00:00.000Z-2026-11-10T14:45:52.267Z"
+    "aggregation": "bc1e0acf-6311-42ee-a3e1-81381e882bf7",
+    "ranking": "rank-605fcfb6",
+    "top10": "top10:2026-11-10T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-10T18:00:00.000Z-2026-11-10T23:02:10.855Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-10T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-10T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-10T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-10T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-10T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-10T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 66,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1269,
+      "count": 1453,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai] source microsoft.com: The operation was aborted due to timeout"
       ]
     },
     {
@@ -54,42 +54,42 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1512,
+      "count": 1641,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "New OpenSSH Vulnerability"
+        "topic": "models",
+        "headline": "llm-gemini 0.36"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic&039;s Fable 5.2 completes 41 percent of real freelance jobs, up from 2.5 percent a year ago"
+        "topic": "security",
+        "headline": "Microsoft Fixes Nearly 1,100 Security Vulnerabilities"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Quoting Prompting Claude Fable 5.2"
+        "topic": "kubernetes",
+        "headline": "CNCF Welcomes CoreWeave as a Platinum Member to Further Open Source AI Infrastructure"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:97121: Moderate: unbound security, bug fix, and enhancement update"
+        "headline": "New OpenSSH Vulnerability"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:97090: Important: subscription-manager-cockpit security update"
+        "headline": "RHSA-2026:97880: Important: php:8.4 security update"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Google patches eighth Chrome zero-day exploited in attacks this year"
+        "topic": "kubernetes",
+        "headline": "CNCF Welcomes Twelve New Members as Organizations Look to Run AI Agents on Open, Sovereign Infrastructure"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Helping caregivers use AI in everyday life"
+        "topic": "security",
+        "headline": "RHSA-2026:97858: Moderate: python-jwcrypto security update"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "v2.16.0"
+        "topic": "ai",
+        "headline": "Microsoft Stock Drops After Anthropic Unveils Tools to Rival Office"
       },
       {
         "rank": 9,
         "topic": "platform",
-        "headline": "Security updates for Tuesday"
+        "headline": "CNCF Technology Radar: Platform Engineering Ownership Shapes AI Infrastructure Strategies"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Broadcom open-sources its Kubernetes VM manager"
+        "topic": "platform",
+        "headline": "Git security vulnerabilities announced"
       }
     ],
     "articleCount": 0
