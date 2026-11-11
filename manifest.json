@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-11T00:00:00.000Z",
-    "windowStart": "2026-11-11T00:00:00.000Z",
-    "windowEnd": "2026-11-11T06:00:00.000Z"
+    "id": "2026-11-11T12:00:00.000Z",
+    "windowStart": "2026-11-11T12:00:00.000Z",
+    "windowEnd": "2026-11-11T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-11T05:29:52.991Z",
-  "nextRefreshAt": "2026-11-11T06:00:00.000Z",
+  "publishedAt": "2026-11-11T13:52:09.270Z",
+  "nextRefreshAt": "2026-11-11T18:00:00.000Z",
   "runIds": {
-    "aggregation": "6a73fd2c-85c7-40ac-b3fb-99c91e2e3577",
-    "ranking": "rank-5e8cf7dd",
-    "top10": "top10:2026-11-11T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-11T00:00:00.000Z-2026-11-11T05:30:07.124Z"
+    "aggregation": "044b08fc-4e32-4607-b74e-f4579726d6cc",
+    "ranking": "rank-14c61216",
+    "top10": "top10:2026-11-11T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-11T12:00:00.000Z-2026-11-11T13:52:21.804Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-11T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-11T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-11T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-11T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-11T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-11T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 69,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1389,
+      "count": 1328,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,35 +52,35 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1593,
+      "count": 1509,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 28,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 17,
       "sample": [
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 15,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,13 +103,13 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
+        "topic": "ai",
         "headline": "llm-gemini 0.36"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "v1.57.0-next.2"
+        "topic": "platform",
+        "headline": "CNCF Technology Radar: Platform Engineering Ownership Shapes AI Infrastructure Strategies"
       },
       {
         "rank": 3,
@@ -118,33 +118,33 @@
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "CNCF Launches Certified Kubernetes Network Engineer Certification CKNE to Advance Production Ready Networking Skills for AI Era"
+        "topic": "security",
+        "headline": "RHSA-2026:98621: Important: gstreamer1-plugins-bad-free security update"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "CNCF Welcomes CoreWeave as a Platinum Member to Further Open Source AI Infrastructure"
+        "topic": "security",
+        "headline": "RHSA-2026:98598: Critical: freerdp security, bug fix, and enhancement update"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "New OpenSSH Vulnerability"
+        "headline": "RHSA-2026:98951: Important: xorg-x11-server-Xwayland security update"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:98130: Important: httpd:2.4 security update"
+        "topic": "kubernetes",
+        "headline": "CNCF Launches Certified Kubernetes Network Engineer Certification CKNE to Advance Production Ready Networking Skills for AI Era"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Microsoft Patch Tuesday for November 2026 — Snort rules and prominent vulnerabilities"
+        "topic": "kubernetes",
+        "headline": "CNCF Welcomes CoreWeave as a Platinum Member to Further Open Source AI Infrastructure"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "CNCF Welcomes Twelve New Members as Organizations Look to Run AI Agents on Open, Sovereign Infrastructure"
+        "topic": "ai",
+        "headline": "Enterprise sales push OpenAI&039;s quarterly revenue to $10 billion, though it still trails Anthropic"
       },
       {
         "rank": 10,
