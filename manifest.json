@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-11T18:00:00.000Z",
-    "windowStart": "2026-11-11T18:00:00.000Z",
-    "windowEnd": "2026-11-12T00:00:00.000Z"
+    "id": "2026-11-12T00:00:00.000Z",
+    "windowStart": "2026-11-12T00:00:00.000Z",
+    "windowEnd": "2026-11-12T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-11T21:08:53.453Z",
-  "nextRefreshAt": "2026-11-12T00:00:00.000Z",
+  "publishedAt": "2026-11-12T00:28:30.028Z",
+  "nextRefreshAt": "2026-11-12T06:00:00.000Z",
   "runIds": {
-    "aggregation": "6f8c34e7-73fa-466d-ad42-a8f51b386852",
-    "ranking": "rank-270cfd1d",
-    "top10": "top10:2026-11-11T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-11T18:00:00.000Z-2026-11-11T21:09:07.768Z"
+    "aggregation": "2f31e62c-591e-4732-a5fd-2f8d2a8bc144",
+    "ranking": "rank-ae9065b5",
+    "top10": "top10:2026-11-12T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-12T00:00:00.000Z-2026-11-12T00:28:44.530Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-11T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-11T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-11T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-12T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-12T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-12T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 63,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1403,
+      "count": 1523,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1622,
+      "count": 1700,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,10 +68,10 @@
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 24,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
@@ -79,9 +79,9 @@
       "category": "editorial-hold",
       "count": 12,
       "sample": [
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "Gemini Decisions API"
+      },
+      {
+        "rank": 2,
         "topic": "kubernetes",
         "headline": "CNCF Welcomes Adyen as Platinum End User Member to Advance Open Source Financial Infrastructure"
       },
       {
-        "rank": 2,
-        "topic": "models",
-        "headline": "Google joins the decision-model wave with Gemini Decision 1, scoring 1,000 questions in a single pass"
-      },
-      {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Anthropic's IPO roadshow video"
+        "topic": "security",
+        "headline": "RHSA-2026:99145: Important: .NET 9.0 security, bug fix, and enhancement update"
       },
       {
         "rank": 4,
+        "topic": "models",
+        "headline": "aws-emulator"
+      },
+      {
+        "rank": 5,
         "topic": "ai",
         "headline": "Accelerating generative AI delivery with reusable assets"
       },
       {
-        "rank": 5,
+        "rank": 6,
         "topic": "kubernetes",
         "headline": "Why Nvidia gave OpenShell to the CNCF"
       },
       {
-        "rank": 6,
+        "rank": 7,
         "topic": "ai",
         "headline": "Evaluating the Evaluators: Investigating LLM Judges for Personalized Writing Style Assessment"
       },
       {
-        "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:99089: Moderate: gcc security update"
-      },
-      {
         "rank": 8,
         "topic": "security",
-        "headline": "RHSA-2026:99090: Important: gstreamer1 security update"
+        "headline": "RHSA-2026:99155: Important: qt6-qtbase security update"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "RHSA-2026:99008: Critical: Red Hat Ansible Automation Platform 2.6 Product Security and Bug Fix Update"
+        "headline": "RHSA-2026:99174: Moderate: tomcat9 security update"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "CVE-2026-0325 PAN-OS: GlobalProtect Authorization Bypass Vulnerability Severity: LOW"
+        "headline": "RHSA-2026:99118: Important: gstreamer1-plugins-bad-free security update"
       }
     ],
     "articleCount": 0
