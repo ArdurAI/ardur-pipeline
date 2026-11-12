@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-12T12:00:00.000Z",
-    "windowStart": "2026-11-12T12:00:00.000Z",
-    "windowEnd": "2026-11-12T18:00:00.000Z"
+    "id": "2026-11-12T18:00:00.000Z",
+    "windowStart": "2026-11-12T18:00:00.000Z",
+    "windowEnd": "2026-11-13T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-12T12:24:03.513Z",
-  "nextRefreshAt": "2026-11-12T18:00:00.000Z",
+  "publishedAt": "2026-11-12T21:23:29.560Z",
+  "nextRefreshAt": "2026-11-13T00:00:00.000Z",
   "runIds": {
-    "aggregation": "0a5523e7-2335-408e-a6bc-fe7b05c62926",
-    "ranking": "rank-ffe915ab",
-    "top10": "top10:2026-11-12T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-12T12:00:00.000Z-2026-11-12T12:24:22.690Z"
+    "aggregation": "44ef3d0c-b945-4542-94b8-06ca478a0595",
+    "ranking": "rank-8582c972",
+    "top10": "top10:2026-11-12T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-12T18:00:00.000Z-2026-11-12T21:23:46.984Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-12T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-12T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-12T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-12T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-12T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-12T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1361,
+      "count": 1580,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,34 +54,34 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1524,
+      "count": 1799,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 12,
       "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 28,
+      "count": 27,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "llm 0.37.2"
+        "topic": "platform",
+        "headline": "Rust 1.100.0 released"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "aws-emulator"
+        "headline": "Anthropic’s blockbuster IPO just got harder after Jensen Huang’s dramatic exit as Nvidia CEO"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Should You Buy Anthropic IPO Stock? Here’s What History Says"
+        "topic": "kubernetes",
+        "headline": "CNCF Recognizes Cloud Native Champions in 2026 Community Awards"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:99600: Important: cockpit security update"
+        "headline": "RHSA-2026:99849: Important: perl-CGI security update"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:99595: Moderate: rpm security update"
+        "headline": "RHSA-2026:99864: Moderate: glib2 security update"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Build autonomous AI agents with Amazon Bedrock and Spring AI"
+        "headline": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "Why Nvidia gave OpenShell to the CNCF"
+        "topic": "security",
+        "headline": "RHSA-2026:99749: Important: thunderbird security, bug fix, and enhancement update"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Exploit Attempts for GPUStack Authentication Bypass CVE-2026-102895, Thu, Nov 12th"
+        "topic": "models",
+        "headline": "Four Amazon Bedrock inference choices that affect cost"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "CNCF Welcomes Adyen as Platinum End User Member to Advance Open Source Financial Infrastructure"
+        "topic": "security",
+        "headline": "The Growth Rocketship: Proving Cloud Security and AI at AWS"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.20.0"
+        "topic": "ai",
+        "headline": "Building a self-service LLM gateway with Amazon Bedrock and LiteLLM"
       }
     ],
     "articleCount": 0
