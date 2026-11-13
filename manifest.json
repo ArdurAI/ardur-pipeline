@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-13T06:00:00.000Z",
-    "windowStart": "2026-11-13T06:00:00.000Z",
-    "windowEnd": "2026-11-13T12:00:00.000Z"
+    "id": "2026-11-13T18:00:00.000Z",
+    "windowStart": "2026-11-13T18:00:00.000Z",
+    "windowEnd": "2026-11-14T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-13T06:21:06.559Z",
-  "nextRefreshAt": "2026-11-13T12:00:00.000Z",
+  "publishedAt": "2026-11-13T19:32:01.722Z",
+  "nextRefreshAt": "2026-11-14T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c343ae92-8e89-4b73-88a5-32e0bbe2416c",
-    "ranking": "rank-f8a72489",
-    "top10": "top10:2026-11-13T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-13T06:00:00.000Z-2026-11-13T06:21:26.684Z"
+    "aggregation": "6226bfcc-ffb6-4e09-ba3a-9b5ecf4287c6",
+    "ranking": "rank-c9950ea6",
+    "top10": "top10:2026-11-13T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-13T18:00:00.000Z-2026-11-13T19:32:25.411Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-13T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-13T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-13T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-13T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-13T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-13T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 81,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1364,
+      "count": 1403,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ab0pjcFNKdWdXUVFfbEMyNnBKUm56eDlpLXRjWktkSWtKNFBpQml6US05eHBPWnhCajF4V1lnZUhrZHY5U0dJb29BYldsRjlhWUxjVkFPdlhibmRYNkFMb1dn?oc=5"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1620,
+      "count": 1698,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,16 +68,16 @@
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 38,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 11,
       "sample": [
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Rust 1.100.0 released"
+        "topic": "models",
+        "headline": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:99741: Important: mysql:8.4 security update"
+        "topic": "ai",
+        "headline": "OpenAI launches ChatGPT Wallet, allowing its 'dots' AI agents to make purchases for users"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "CNCF Recognizes Cloud Native Champions in 2026 Community Awards"
+        "topic": "ai",
+        "headline": "Anthropic&039;s Claude for Manufacturing plugs AI directly into factory software to automate industrial workflows"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:99865: Moderate: xorg-x11-server security update"
+        "topic": "ai",
+        "headline": "Anthropic to IPO amid Nvidia fiasco"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron"
+        "topic": "models",
+        "headline": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "RHSA-2026:99947: Critical: Red Hat OpenStack Platform 17.1 openstack-manila security update"
+        "headline": "Check Point warns of zero-day flaw exploited for root access"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "The Growth Rocketship: Proving Cloud Security and AI at AWS"
+        "topic": "kubernetes",
+        "headline": "Google retools Kubernetes for agentic workloads"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Helm v4.3.2"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Friday Five — November 13, 2026 | Red Hat"
+        "topic": "security",
+        "headline": "Nightmare Eclipse Drops Windows Zero-Day Exploit &8216;SignDrop&8217;"
       }
     ],
     "articleCount": 0
