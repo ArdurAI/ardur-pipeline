@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-12T18:00:00.000Z",
-    "windowStart": "2026-11-12T18:00:00.000Z",
-    "windowEnd": "2026-11-13T00:00:00.000Z"
+    "id": "2026-11-13T00:00:00.000Z",
+    "windowStart": "2026-11-13T00:00:00.000Z",
+    "windowEnd": "2026-11-13T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-12T21:23:29.560Z",
-  "nextRefreshAt": "2026-11-13T00:00:00.000Z",
+  "publishedAt": "2026-11-13T02:29:51.838Z",
+  "nextRefreshAt": "2026-11-13T06:00:00.000Z",
   "runIds": {
-    "aggregation": "44ef3d0c-b945-4542-94b8-06ca478a0595",
-    "ranking": "rank-8582c972",
-    "top10": "top10:2026-11-12T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-12T18:00:00.000Z-2026-11-12T21:23:46.984Z"
+    "aggregation": "2f8956ee-15dd-46e4-a43e-43a290786687",
+    "ranking": "rank-55e225e4",
+    "top10": "top10:2026-11-13T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-13T00:00:00.000Z-2026-11-13T02:30:18.211Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-12T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-12T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-12T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-13T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-13T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-13T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 75,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1580,
+      "count": 1456,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1799,
+      "count": 1707,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 12,
-      "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 26,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 13,
+      "sample": [
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 25,
     "usedFallback": true
   },
   "summary": {
@@ -103,43 +103,43 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "llm-gemini 0.37"
+      },
+      {
+        "rank": 2,
         "topic": "platform",
         "headline": "Rust 1.100.0 released"
       },
       {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic’s blockbuster IPO just got harder after Jensen Huang’s dramatic exit as Nvidia CEO"
-      },
-      {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "CNCF Recognizes Cloud Native Champions in 2026 Community Awards"
+        "topic": "security",
+        "headline": "RHSA-2026:99741: Important: mysql:8.4 security update"
       },
       {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:99849: Important: perl-CGI security update"
+        "headline": "RHSA-2026:99947: Critical: Red Hat OpenStack Platform 17.1 openstack-manila security update"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:99864: Moderate: glib2 security update"
+        "topic": "kubernetes",
+        "headline": "CNCF Recognizes Cloud Native Champions in 2026 Community Awards"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B"
+        "headline": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "RHSA-2026:99749: Important: thunderbird security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "Claude Meetings lets Anthropic&039;s AI join your video calls"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Four Amazon Bedrock inference choices that affect cost"
+        "topic": "security",
+        "headline": "RHSA-2026:99864: Moderate: glib2 security update"
       },
       {
         "rank": 9,
@@ -149,7 +149,7 @@
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "Building a self-service LLM gateway with Amazon Bedrock and LiteLLM"
+        "headline": "Gondola doubles revenue as its team builds more with Codex"
       }
     ],
     "articleCount": 0
