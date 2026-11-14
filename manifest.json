@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-14T06:00:00.000Z",
-    "windowStart": "2026-11-14T06:00:00.000Z",
-    "windowEnd": "2026-11-14T12:00:00.000Z"
+    "id": "2026-11-14T12:00:00.000Z",
+    "windowStart": "2026-11-14T12:00:00.000Z",
+    "windowEnd": "2026-11-14T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-14T06:01:49.484Z",
-  "nextRefreshAt": "2026-11-14T12:00:00.000Z",
+  "publishedAt": "2026-11-14T16:28:58.666Z",
+  "nextRefreshAt": "2026-11-14T18:00:00.000Z",
   "runIds": {
-    "aggregation": "5640af5d-f385-4155-aa34-f71c3d5a0ad6",
-    "ranking": "rank-91dcc102",
-    "top10": "top10:2026-11-14T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-14T06:00:00.000Z-2026-11-14T06:02:17.071Z"
+    "aggregation": "aacc7f8b-368b-4932-9413-972e1b6b26d2",
+    "ranking": "rank-873ad0cc",
+    "top10": "top10:2026-11-14T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-14T12:00:00.000Z-2026-11-14T16:29:23.895Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-14T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-14T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-14T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-14T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-14T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-14T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1334,
+      "count": 1164,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ab0pjcFNKdWdXUVFfbEMyNnBKUm56eDlpLXRjWktkSWtKNFBpQml6US05eHBPWnhCajF4V1lnZUhrZHY5U0dJb29BYldsRjlhWUxjVkFPdlhibmRYNkFMb1dn?oc=5"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 10 distinct domains < floor 20",
-        "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 9 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1601,
+      "count": 1443,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 12,
+      "count": 9,
       "sample": [
         "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 36,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "LMSYS Org Launches SGLang Consortium with NVIDIA, AMD, Intel, Google, Meta, Cloudflare, Modal and RadixArk to Advance Open-Source AI Inference"
+        "topic": "ai",
+        "headline": "Wall Street Makes Its Pitch for Anthropic’s I.P.O."
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "llm-gemini 0.37"
+        "topic": "ai",
+        "headline": "OpenAI Launches ChatGPT Wallet to Let AI Agents Shop—Without Crypto"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "Shield helps technicians hand off legacy portal work with OpenAI"
+        "topic": "security",
+        "headline": "Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA"
+        "topic": "ai",
+        "headline": "Anthropic's IPO: All-Country and Other Funds to Hold Up to ¥40,000 Worth; Nasdaq Debut Set for the 19th"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "datasette-cluster-map 0.19"
+        "headline": "Investor Focus: Nvidia CEO Crisis, Anthropic IPO Valuation, and Undervalued UK Stocks After Earnings"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "datasette-leaflet 0.3"
+        "topic": "models",
+        "headline": "Runway&039;s open-source Praxis-1 turns video AI into a robot controller"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "OpenAI launches ChatGPT Wallet, allowing its 'dots' AI agents to make purchases for users"
+        "topic": "platform",
+        "headline": "Google Cloud Moves the Compute Engine API to Immutable Date-Based Versions"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem"
+        "topic": "kubernetes",
+        "headline": "Anthropic wants you to build on Claude. There’s a catch."
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Check Point warns of zero-day flaw exploited for root access"
+        "topic": "models",
+        "headline": "NVIDIA, AMD, and Intel Establish SGLang Consortium: Joint Development for Open AI Inference"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "FBI flash alert says Artex tool automating cyberattacks at ‘machine speed’"
+        "topic": "platform",
+        "headline": "Open Source DocumentDB 1.0 Reaches General Availability"
       }
     ],
     "articleCount": 0
