@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-14T00:00:00.000Z",
-    "windowStart": "2026-11-14T00:00:00.000Z",
-    "windowEnd": "2026-11-14T06:00:00.000Z"
+    "id": "2026-11-14T06:00:00.000Z",
+    "windowStart": "2026-11-14T06:00:00.000Z",
+    "windowEnd": "2026-11-14T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-14T00:48:21.210Z",
-  "nextRefreshAt": "2026-11-14T06:00:00.000Z",
+  "publishedAt": "2026-11-14T06:01:49.484Z",
+  "nextRefreshAt": "2026-11-14T12:00:00.000Z",
   "runIds": {
-    "aggregation": "1b71f2e8-303f-438e-bddc-6d6a5ad4d36a",
-    "ranking": "rank-c0a180a3",
-    "top10": "top10:2026-11-14T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-14T00:00:00.000Z-2026-11-14T00:48:45.208Z"
+    "aggregation": "5640af5d-f385-4155-aa34-f71c3d5a0ad6",
+    "ranking": "rank-91dcc102",
+    "top10": "top10:2026-11-14T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-14T06:00:00.000Z-2026-11-14T06:02:17.071Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-14T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-14T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-14T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-14T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-14T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-14T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 72,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1415,
+      "count": 1334,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ab0pjcFNKdWdXUVFfbEMyNnBKUm56eDlpLXRjWktkSWtKNFBpQml6US05eHBPWnhCajF4V1lnZUhrZHY5U0dJb29BYldsRjlhWUxjVkFPdlhibmRYNkFMb1dn?oc=5"
+        "[ai/cluster-ai-6] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ab0pjcFNKdWdXUVFfbEMyNnBKUm56eDlpLXRjWktkSWtKNFBpQml6US05eHBPWnhCajF4V1lnZUhrZHY5U0dJb29BYldsRjlhWUxjVkFPdlhibmRYNkFMb1dn?oc=5"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 10 distinct domains < floor 20",
         "[models] degraded: 10 distinct domains < floor 20",
-        "[platform] degraded: 17 distinct domains < floor 20"
+        "[platform] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1752,
+      "count": 1601,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 27,
+      "category": "editorial-hold",
+      "count": 12,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 11,
+      "category": "copyright-gate",
+      "count": 32,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "llm-gemini 0.37"
+        "topic": "models",
+        "headline": "LMSYS Org Launches SGLang Consortium with NVIDIA, AMD, Intel, Google, Meta, Cloudflare, Modal and RadixArk to Advance Open-Source AI Inference"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Shield helps technicians hand off legacy portal work with OpenAI"
+        "topic": "models",
+        "headline": "llm-gemini 0.37"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic&039;s Claude for Manufacturing plugs AI directly into factory software to automate industrial workflows"
+        "headline": "Shield helps technicians hand off legacy portal work with OpenAI"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "OpenAI rebuilt AI shopping from scratch with ChatGPT Wallet"
+        "topic": "models",
+        "headline": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA"
       },
       {
         "rank": 5,
-        "topic": "models",
+        "topic": "ai",
         "headline": "datasette-cluster-map 0.19"
       },
       {
         "rank": 6,
-        "topic": "models",
+        "topic": "ai",
         "headline": "datasette-leaflet 0.3"
       },
       {
         "rank": 7,
+        "topic": "ai",
+        "headline": "OpenAI launches ChatGPT Wallet, allowing its 'dots' AI agents to make purchases for users"
+      },
+      {
+        "rank": 8,
         "topic": "models",
         "headline": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem"
       },
       {
-        "rank": 8,
-        "topic": "security",
-        "headline": "FBI flash alert says Artex tool automating cyberattacks at ‘machine speed’"
-      },
-      {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Are OpenShell and Agent Substrate changing open source?"
+        "topic": "security",
+        "headline": "Check Point warns of zero-day flaw exploited for root access"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Check Point warns of zero-day flaw exploited for root access"
+        "headline": "FBI flash alert says Artex tool automating cyberattacks at ‘machine speed’"
       }
     ],
     "articleCount": 0
