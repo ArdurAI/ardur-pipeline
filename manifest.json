@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-13T18:00:00.000Z",
-    "windowStart": "2026-11-13T18:00:00.000Z",
-    "windowEnd": "2026-11-14T00:00:00.000Z"
+    "id": "2026-11-14T00:00:00.000Z",
+    "windowStart": "2026-11-14T00:00:00.000Z",
+    "windowEnd": "2026-11-14T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-13T19:32:01.722Z",
-  "nextRefreshAt": "2026-11-14T00:00:00.000Z",
+  "publishedAt": "2026-11-14T00:48:21.210Z",
+  "nextRefreshAt": "2026-11-14T06:00:00.000Z",
   "runIds": {
-    "aggregation": "6226bfcc-ffb6-4e09-ba3a-9b5ecf4287c6",
-    "ranking": "rank-c9950ea6",
-    "top10": "top10:2026-11-13T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-13T18:00:00.000Z-2026-11-13T19:32:25.411Z"
+    "aggregation": "1b71f2e8-303f-438e-bddc-6d6a5ad4d36a",
+    "ranking": "rank-c0a180a3",
+    "top10": "top10:2026-11-14T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-14T00:00:00.000Z-2026-11-14T00:48:45.208Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-13T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-13T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-13T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-14T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-14T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-14T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1403,
+      "count": 1415,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ab0pjcFNKdWdXUVFfbEMyNnBKUm56eDlpLXRjWktkSWtKNFBpQml6US05eHBPWnhCajF4V1lnZUhrZHY5U0dJb29BYldsRjlhWUxjVkFPdlhibmRYNkFMb1dn?oc=5"
+        "[ai/cluster-ai-7] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ab0pjcFNKdWdXUVFfbEMyNnBKUm56eDlpLXRjWktkSWtKNFBpQml6US05eHBPWnhCajF4V1lnZUhrZHY5U0dJb29BYldsRjlhWUxjVkFPdlhibmRYNkFMb1dn?oc=5"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 10 distinct domains < floor 20",
+        "[models] degraded: 10 distinct domains < floor 20",
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1698,
+      "count": 1752,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 38,
+      "count": 27,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 11,
       "sample": [
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 13,
+    "heldArticles": 24,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "models",
-        "headline": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA"
+        "topic": "ai",
+        "headline": "Shield helps technicians hand off legacy portal work with OpenAI"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "OpenAI launches ChatGPT Wallet, allowing its 'dots' AI agents to make purchases for users"
+        "headline": "Anthropic&039;s Claude for Manufacturing plugs AI directly into factory software to automate industrial workflows"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic&039;s Claude for Manufacturing plugs AI directly into factory software to automate industrial workflows"
+        "headline": "OpenAI rebuilt AI shopping from scratch with ChatGPT Wallet"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Anthropic to IPO amid Nvidia fiasco"
+        "topic": "models",
+        "headline": "datasette-cluster-map 0.19"
       },
       {
         "rank": 6,
         "topic": "models",
-        "headline": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem"
+        "headline": "datasette-leaflet 0.3"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Check Point warns of zero-day flaw exploited for root access"
+        "topic": "models",
+        "headline": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Google retools Kubernetes for agentic workloads"
+        "topic": "security",
+        "headline": "FBI flash alert says Artex tool automating cyberattacks at ‘machine speed’"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Security updates for Friday"
+        "topic": "kubernetes",
+        "headline": "Are OpenShell and Agent Substrate changing open source?"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Nightmare Eclipse Drops Windows Zero-Day Exploit &8216;SignDrop&8217;"
+        "headline": "Check Point warns of zero-day flaw exploited for root access"
       }
     ],
     "articleCount": 0
