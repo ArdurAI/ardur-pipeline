@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-15T06:00:00.000Z",
-    "windowStart": "2026-11-15T06:00:00.000Z",
-    "windowEnd": "2026-11-15T12:00:00.000Z"
+    "id": "2026-11-15T12:00:00.000Z",
+    "windowStart": "2026-11-15T12:00:00.000Z",
+    "windowEnd": "2026-11-15T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-15T06:06:32.481Z",
-  "nextRefreshAt": "2026-11-15T12:00:00.000Z",
+  "publishedAt": "2026-11-15T13:43:40.404Z",
+  "nextRefreshAt": "2026-11-15T18:00:00.000Z",
   "runIds": {
-    "aggregation": "5d4a8a26-c282-4597-be9c-b6f7fa9801d9",
-    "ranking": "rank-d8ac7944",
-    "top10": "top10:2026-11-15T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-15T06:00:00.000Z-2026-11-15T06:06:45.938Z"
+    "aggregation": "e521116b-a945-43a7-8a5e-f72ae7bf0eca",
+    "ranking": "rank-184e56ba",
+    "top10": "top10:2026-11-15T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-15T12:00:00.000Z-2026-11-15T13:44:02.307Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-15T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-15T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-15T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-15T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-15T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-15T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1144,
+      "count": 1187,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 6 distinct domains < floor 20"
+        "[ai] degraded: 3 distinct domains < floor 20",
+        "[models] degraded: 3 distinct domains < floor 20",
+        "[platform] degraded: 3 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1199,
+      "count": 1059,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 38,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 14,
+      "count": 11,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 13,
     "usedFallback": true
   },
   "summary": {
@@ -109,47 +109,47 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Tom Lee Says Retail Investors May Be Cashing Out Ahead Of Anthropic’s Nasdaq Debut"
+        "headline": "Anthropic’s IPO is the next big test for AI"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "OpenAI, Anthropic, Google and Other AI Giants Face Lawsuit Demanding Development Freeze"
+        "headline": "Anthropic | History, Controversies, & Claude AI"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "datasette-vega 0.7"
+        "topic": "platform",
+        "headline": "Cloudflare Introduces Private Origins for Application Services"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Cohere Finding Shows Self-Hosted Open-Weight Models Still Need Egress Controls"
+        "topic": "ai",
+        "headline": "Tom Lee Says Retail Investors May Be Cashing Out Ahead Of Anthropic’s Nasdaq Debut"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection"
+        "topic": "models",
+        "headline": "Why AI Inference Now Drives Energy, Water, and Carbon Costs"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "Chinese chipmakers say AI inference shift reshapes memory, computing design"
+        "topic": "security",
+        "headline": "Pentagon Renames CDAO ‘Super Intelligence Office’"
       },
       {
         "rank": 8,
         "topic": "models",
-        "headline": "Runway&039;s open-source Praxis-1 turns video AI into a robot controller"
+        "headline": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Google optimizes kubernetes for agentic workloads - SC Media"
+        "topic": "security",
+        "headline": "Cycode named an Overall Leader in the KuppingerCole Leadership Compass for Software Supply Chain Security"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Google Cloud Moves the Compute Engine API to Immutable Date-Based Versions"
+        "headline": "Anthropic Outlines Its AI-Powered Code Review Process for Claude Code"
       }
     ],
     "articleCount": 0
