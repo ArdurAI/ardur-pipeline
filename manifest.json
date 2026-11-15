@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-15T12:00:00.000Z",
-    "windowStart": "2026-11-15T12:00:00.000Z",
-    "windowEnd": "2026-11-15T18:00:00.000Z"
+    "id": "2026-11-15T18:00:00.000Z",
+    "windowStart": "2026-11-15T18:00:00.000Z",
+    "windowEnd": "2026-11-16T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-15T13:43:40.404Z",
-  "nextRefreshAt": "2026-11-15T18:00:00.000Z",
+  "publishedAt": "2026-11-15T18:45:23.133Z",
+  "nextRefreshAt": "2026-11-16T00:00:00.000Z",
   "runIds": {
-    "aggregation": "e521116b-a945-43a7-8a5e-f72ae7bf0eca",
-    "ranking": "rank-184e56ba",
-    "top10": "top10:2026-11-15T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-15T12:00:00.000Z-2026-11-15T13:44:02.307Z"
+    "aggregation": "6be42923-2868-4077-8e7e-955ed89ff2f6",
+    "ranking": "rank-56e918b7",
+    "top10": "top10:2026-11-15T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-15T18:00:00.000Z-2026-11-15T18:45:36.684Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-15T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-15T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-15T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-15T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-15T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-15T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 54,
+      "count": 51,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1187,
+      "count": 1163,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1059,
+      "count": 1074,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -70,9 +70,9 @@
       "category": "copyright-gate",
       "count": 38,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
@@ -81,12 +81,12 @@
       "sample": [
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 10 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 13,
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic’s IPO is the next big test for AI"
+        "topic": "security",
+        "headline": "YARA-X 1.23.0 Release, Sun, Nov 15th"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic | History, Controversies, & Claude AI"
+        "headline": "Anthropic&039;s Claude Fable 5.2 doesn&039;t generate images, it paints them"
       },
       {
         "rank": 4,
-        "topic": "platform",
-        "headline": "Cloudflare Introduces Private Origins for Application Services"
+        "topic": "ai",
+        "headline": "Nvidia's first post-Jensen earnings and Anthropic's IPO: What to watch this week"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Tom Lee Says Retail Investors May Be Cashing Out Ahead Of Anthropic’s Nasdaq Debut"
+        "headline": "Potential Jensen Huang Comeback Threatens To Derail Rumored Anthropic Push Against Open-Source AI, As NVIDIA Board Urged Not To Rush Permanent CEO Replacement"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "Why AI Inference Now Drives Energy, Water, and Carbon Costs"
+        "topic": "kubernetes",
+        "headline": "Cyprus can Be Vietnam’s door to Europe, but not for containers"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Pentagon Renames CDAO ‘Super Intelligence Office’"
+        "topic": "platform",
+        "headline": "Cloudflare Introduces Private Origins for Application Services"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU"
+        "topic": "kubernetes",
+        "headline": "Cell Culture Media Storage Containers Market Faces a Qualification Trade-Off Between Bottles and Single-Use Bags"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Cycode named an Overall Leader in the KuppingerCole Leadership Compass for Software Supply Chain Security"
+        "headline": "FBI warns ARTEX AI hacking tool is powering global cyberattacks"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Anthropic Outlines Its AI-Powered Code Review Process for Claude Code"
+        "topic": "kubernetes",
+        "headline": "Juliana Free Zone Port Handles Over 221,000 Containers in 2026"
       }
     ],
     "articleCount": 0
