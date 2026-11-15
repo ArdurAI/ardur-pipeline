@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-14T18:00:00.000Z",
-    "windowStart": "2026-11-14T18:00:00.000Z",
-    "windowEnd": "2026-11-15T00:00:00.000Z"
+    "id": "2026-11-15T00:00:00.000Z",
+    "windowStart": "2026-11-15T00:00:00.000Z",
+    "windowEnd": "2026-11-15T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-14T22:09:58.043Z",
-  "nextRefreshAt": "2026-11-15T00:00:00.000Z",
+  "publishedAt": "2026-11-15T05:41:52.444Z",
+  "nextRefreshAt": "2026-11-15T06:00:00.000Z",
   "runIds": {
-    "aggregation": "ec7f2145-5231-4678-bc70-00ca40b76fa0",
-    "ranking": "rank-e188e962",
-    "top10": "top10:2026-11-14T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-14T18:00:00.000Z-2026-11-14T22:10:25.034Z"
+    "aggregation": "19569552-9c43-4c3c-ad74-55f4847371ed",
+    "ranking": "rank-b0abbe75",
+    "top10": "top10:2026-11-15T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-15T00:00:00.000Z-2026-11-15T05:42:05.570Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-14T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-14T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-14T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-15T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-15T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-15T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 54,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1160,
+      "count": 1153,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[ai] degraded: 7 distinct domains < floor 20",
+        "[models] degraded: 7 distinct domains < floor 20",
+        "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1419,
+      "count": 1236,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 35,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 13,
       "sample": [
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -104,47 +104,47 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "New Rally Shaky, But Many Stocks Set Up. Nvidia, Anthropic Ahead."
+        "headline": "datasette-llm 0.1a11"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic CEO Amodei admits \"there&039;s a huge uncertainty in what&039;s going to happen next year\" days before a record IPO"
+        "headline": "Tom Lee Says Retail Investors May Be Cashing Out Ahead Of Anthropic’s Nasdaq Debut"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5"
+        "headline": "datasette-vega 0.7"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Anthropic's IPO: All-Country and Other Funds to Hold Up to ¥40,000 Worth; Nasdaq Debut Set for the 19th"
+        "headline": "Wall Street Week Ahead: Nvidia Faces the Music, Anthropic Passes the Hat — And Wall Street Gets the AI Bill"
       },
       {
         "rank": 5,
+        "topic": "platform",
+        "headline": "Cohere Finding Shows Self-Hosted Open-Weight Models Still Need Egress Controls"
+      },
+      {
+        "rank": 6,
         "topic": "security",
         "headline": "Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection"
       },
       {
-        "rank": 6,
+        "rank": 7,
         "topic": "models",
-        "headline": "Open-source AI without Jensen - by Nathan Lambert"
+        "headline": "Chinese chipmakers say AI inference shift reshapes memory, computing design"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "topic": "models",
         "headline": "Runway&039;s open-source Praxis-1 turns video AI into a robot controller"
       },
       {
-        "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Homeowner sanitizes emergency water containers, only to notice concerning smell a week later"
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "Upcoming Speaking Engagements"
+        "topic": "kubernetes",
+        "headline": "Google optimizes kubernetes for agentic workloads - SC Media"
       },
       {
         "rank": 10,
