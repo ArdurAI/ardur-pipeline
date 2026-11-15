@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-15T00:00:00.000Z",
-    "windowStart": "2026-11-15T00:00:00.000Z",
-    "windowEnd": "2026-11-15T06:00:00.000Z"
+    "id": "2026-11-15T06:00:00.000Z",
+    "windowStart": "2026-11-15T06:00:00.000Z",
+    "windowEnd": "2026-11-15T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-15T05:41:52.444Z",
-  "nextRefreshAt": "2026-11-15T06:00:00.000Z",
+  "publishedAt": "2026-11-15T06:06:32.481Z",
+  "nextRefreshAt": "2026-11-15T12:00:00.000Z",
   "runIds": {
-    "aggregation": "19569552-9c43-4c3c-ad74-55f4847371ed",
-    "ranking": "rank-b0abbe75",
-    "top10": "top10:2026-11-15T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-15T00:00:00.000Z-2026-11-15T05:42:05.570Z"
+    "aggregation": "5d4a8a26-c282-4597-be9c-b6f7fa9801d9",
+    "ranking": "rank-d8ac7944",
+    "top10": "top10:2026-11-15T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-15T06:00:00.000Z-2026-11-15T06:06:45.938Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-15T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-15T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-15T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-15T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-15T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-15T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,14 +25,14 @@
       "category": "http-error",
       "count": 54,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1153,
+      "count": 1144,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
         "[platform] degraded: 6 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1236,
+      "count": 1199,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,19 +68,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 32,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 14,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 19,
     "usedFallback": true
   },
   "summary": {
@@ -114,12 +114,12 @@
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "datasette-vega 0.7"
+        "headline": "OpenAI, Anthropic, Google and Other AI Giants Face Lawsuit Demanding Development Freeze"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Wall Street Week Ahead: Nvidia Faces the Music, Anthropic Passes the Hat — And Wall Street Gets the AI Bill"
+        "headline": "datasette-vega 0.7"
       },
       {
         "rank": 5,
