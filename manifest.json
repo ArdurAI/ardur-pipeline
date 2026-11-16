@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-16T12:00:00.000Z",
-    "windowStart": "2026-11-16T12:00:00.000Z",
-    "windowEnd": "2026-11-16T18:00:00.000Z"
+    "id": "2026-11-16T18:00:00.000Z",
+    "windowStart": "2026-11-16T18:00:00.000Z",
+    "windowEnd": "2026-11-17T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-16T15:18:27.968Z",
-  "nextRefreshAt": "2026-11-16T18:00:00.000Z",
+  "publishedAt": "2026-11-16T21:56:00.552Z",
+  "nextRefreshAt": "2026-11-17T00:00:00.000Z",
   "runIds": {
-    "aggregation": "c5af5b1d-fdea-401d-a607-1dfae4a86203",
-    "ranking": "rank-6add8ab8",
-    "top10": "top10:2026-11-16T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-16T12:00:00.000Z-2026-11-16T15:18:49.150Z"
+    "aggregation": "6f0d526f-1a7f-4743-ba8c-d0694d4893d7",
+    "ranking": "rank-827ec2e8",
+    "top10": "top10:2026-11-16T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-16T18:00:00.000Z-2026-11-16T21:56:18.926Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-16T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-16T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-16T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-16T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-16T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-16T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,62 +25,71 @@
       "category": "http-error",
       "count": 87,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1081,
+      "count": 981,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 10 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1269,
+      "count": 1295,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 13,
-      "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 23,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 10,
+      "sample": [
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 64,
+    "failedSources": 72,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 28,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -95,42 +104,42 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Advancing computer-use agents for healthcare teams"
+        "headline": "California sues OpenAI over AI models’ cyberattacks on Hugging Face, other companies"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Security updates for Monday"
+        "topic": "ai",
+        "headline": "California is suing OpenAI over its ‘rogue’ AI agent hack"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "The King’s Trust and OpenAI launch £1m partnership"
+        "headline": "NVIDIA Vera Rubin NVL72 Leads Agentic Inference Performance on MLPerf Endpoints v1.0"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "More ways to move care forward with ChatGPT for Healthcare"
+        "headline": "Strengthening the fight against online child sexual abuse with new tools and support"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "Scans for LiteLLM/Starlette CVE-2026-42271, CVE-2026-48710, Mon, Nov 16th"
+        "topic": "platform",
+        "headline": "Security patches are supposed to protect you. Google found AI agents turning them into exploits."
       },
       {
         "rank": 6,
         "topic": "models",
-        "headline": "Intel, RadixArk Optimize SGLang for AI Inference on Intel Platforms"
+        "headline": "TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Tenable One Adversary View brings Claude Mythos’ adversarial reasoning to your environment"
+        "topic": "kubernetes",
+        "headline": "PHP2Shell: Using AWS Transform to move legacy PHP onto a patched runtime"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "OpenAI Debuts ChatGPT Payment Method"
+        "topic": "models",
+        "headline": "NVIDIA Vera Rubin NVL72 Achieves up to 2x Blackwell Ultra Performance in MLPerf Training v6.1"
       },
       {
         "rank": 9,
@@ -139,8 +148,8 @@
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "Microsoft 365 Outage: Testing Infrastructure Resilience"
+        "topic": "security",
+        "headline": "Scans for LiteLLM/Starlette CVE-2026-42271, CVE-2026-48710, Mon, Nov 16th"
       }
     ],
     "articleCount": 0
