@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-16T00:00:00.000Z",
-    "windowStart": "2026-11-16T00:00:00.000Z",
-    "windowEnd": "2026-11-16T06:00:00.000Z"
+    "id": "2026-11-16T06:00:00.000Z",
+    "windowStart": "2026-11-16T06:00:00.000Z",
+    "windowEnd": "2026-11-16T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-16T05:41:43.000Z",
-  "nextRefreshAt": "2026-11-16T06:00:00.000Z",
+  "publishedAt": "2026-11-16T06:05:21.270Z",
+  "nextRefreshAt": "2026-11-16T12:00:00.000Z",
   "runIds": {
-    "aggregation": "9339a610-d09c-4a9e-a6ec-01c2744c8f4d",
-    "ranking": "rank-36482fd7",
-    "top10": "top10:2026-11-16T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-16T00:00:00.000Z-2026-11-16T05:41:52.841Z"
+    "aggregation": "485e09a9-2eba-4c53-a0a3-ff05fcfe9b38",
+    "ranking": "rank-939d8ed9",
+    "top10": "top10:2026-11-16T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-16T06:00:00.000Z-2026-11-16T06:05:34.021Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-16T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-16T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-16T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-16T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-16T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-16T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,27 @@
       "category": "http-error",
       "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1040,
+      "count": 1031,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiX0FVX3lxTE0xMG5vSllDdjVHa3N1MmhSV2VBMnJIZ0tMcXg3dzJmY2ZvS2V3Zk9zaXRZY1h5enlLRzJDMURCbUZjN3ZJNnJuR1g2TnMxZ1hOaXdZQ21paTRXLWJ4dDl3?oc=5"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMilwFBVV95cUxPRFRkVE1YOE9DRHJYZWdrbUthRFdhVjAzYVVOTFNTVE5kQTdNdWJuWHJlMTdJTTUyNUhtZ1I1RHF6ODZwMFZrRzU2SGxudnh1SGJkSjA2Y1VDdHRBS09hRDJYRVFTS2lvclFhTlY5NjlteUl0X0VacU9nX2lrVHFVQXV6SnBfOXBBLVdBMWoyMWVhRjNrZWg0?oc=5"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -50,11 +59,20 @@
     },
     {
       "category": "ai-fallback",
-      "count": 924,
+      "count": 908,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 12,
+      "sample": [
+        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
@@ -62,22 +80,13 @@
       "count": 31,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 11,
-      "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 64,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
     "heldArticles": 20,
@@ -95,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "Asian shares fall before Nvidia earnings, Anthropic IPO test tech rally"
+        "headline": "datasette-llm 0.1a11"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic’s giant IPO puts the heat on OpenAI"
+        "headline": "Asian shares fall before Nvidia earnings, Anthropic IPO test tech rally"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Alibaba unveils new flagship AI model with safety upgrades"
+        "headline": "Anthropic’s giant IPO puts the heat on OpenAI"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "v2.21.1"
+        "topic": "ai",
+        "headline": "Alibaba unveils new flagship AI model with safety upgrades"
       },
       {
         "rank": 5,
         "topic": "kubernetes",
-        "headline": "Helm v4.3.2"
+        "headline": "v2.21.1"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "datasette-maplibre 0.1a0"
+        "topic": "kubernetes",
+        "headline": "Helm v4.3.2"
       },
       {
         "rank": 7,
         "topic": "models",
-        "headline": "Intel Partners With RadixArk to Optimize SGLang Open-Source AI Inference Across CPUs and Accelerators"
+        "headline": "datasette-maplibre 0.1a0"
       },
       {
         "rank": 8,
+        "topic": "models",
+        "headline": "Intel Partners With RadixArk to Optimize SGLang Open-Source AI Inference Across CPUs and Accelerators"
+      },
+      {
+        "rank": 9,
         "topic": "security",
         "headline": "YARA-X 1.23.0 Release, Sun, Nov 15th"
       },
       {
-        "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Debug Kubernetes Deployment Failures with AI"
-      },
-      {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "From farm waste to new products and rural jobs: how empty chemical containers are being recycled"
+        "headline": "Debug Kubernetes Deployment Failures with AI"
       }
     ],
     "articleCount": 0
