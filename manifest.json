@@ -1,95 +1,86 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-16T06:00:00.000Z",
-    "windowStart": "2026-11-16T06:00:00.000Z",
-    "windowEnd": "2026-11-16T12:00:00.000Z"
+    "id": "2026-11-16T12:00:00.000Z",
+    "windowStart": "2026-11-16T12:00:00.000Z",
+    "windowEnd": "2026-11-16T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-16T06:05:21.270Z",
-  "nextRefreshAt": "2026-11-16T12:00:00.000Z",
+  "publishedAt": "2026-11-16T15:18:27.968Z",
+  "nextRefreshAt": "2026-11-16T18:00:00.000Z",
   "runIds": {
-    "aggregation": "485e09a9-2eba-4c53-a0a3-ff05fcfe9b38",
-    "ranking": "rank-939d8ed9",
-    "top10": "top10:2026-11-16T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-16T06:00:00.000Z-2026-11-16T06:05:34.021Z"
+    "aggregation": "c5af5b1d-fdea-401d-a607-1dfae4a86203",
+    "ranking": "rank-6add8ab8",
+    "top10": "top10:2026-11-16T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-16T12:00:00.000Z-2026-11-16T15:18:49.150Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-16T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-16T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-16T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-16T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-16T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-16T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 87,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1031,
+      "count": 1081,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMilwFBVV95cUxPRFRkVE1YOE9DRHJYZWdrbUthRFdhVjAzYVVOTFNTVE5kQTdNdWJuWHJlMTdJTTUyNUhtZ1I1RHF6ODZwMFZrRzU2SGxudnh1SGJkSjA2Y1VDdHRBS09hRDJYRVFTS2lvclFhTlY5NjlteUl0X0VacU9nX2lrVHFVQXV6SnBfOXBBLVdBMWoyMWVhRjNrZWg0?oc=5"
-      ]
-    },
-    {
-      "category": "blocked-fetch",
-      "count": 6,
-      "sample": [
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 4 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 908,
+      "count": 1269,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 12,
+      "count": 13,
       "sample": [
         "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 23,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 64,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 20,
+    "heldArticles": 28,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +95,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "datasette-llm 0.1a11"
+        "headline": "Advancing computer-use agents for healthcare teams"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Asian shares fall before Nvidia earnings, Anthropic IPO test tech rally"
+        "topic": "platform",
+        "headline": "Security updates for Monday"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic’s giant IPO puts the heat on OpenAI"
+        "headline": "The King’s Trust and OpenAI launch £1m partnership"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Alibaba unveils new flagship AI model with safety upgrades"
+        "headline": "More ways to move care forward with ChatGPT for Healthcare"
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v2.21.1"
+        "topic": "security",
+        "headline": "Scans for LiteLLM/Starlette CVE-2026-42271, CVE-2026-48710, Mon, Nov 16th"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "Helm v4.3.2"
+        "topic": "models",
+        "headline": "Intel, RadixArk Optimize SGLang for AI Inference on Intel Platforms"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "datasette-maplibre 0.1a0"
+        "topic": "security",
+        "headline": "Tenable One Adversary View brings Claude Mythos’ adversarial reasoning to your environment"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Intel Partners With RadixArk to Optimize SGLang Open-Source AI Inference Across CPUs and Accelerators"
+        "topic": "ai",
+        "headline": "OpenAI Debuts ChatGPT Payment Method"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "YARA-X 1.23.0 Release, Sun, Nov 15th"
+        "topic": "kubernetes",
+        "headline": "The 2026 Flaky-Test Tooling Landscape: An Honest Comparison"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Debug Kubernetes Deployment Failures with AI"
+        "headline": "Microsoft 365 Outage: Testing Infrastructure Resilience"
       }
     ],
     "articleCount": 0
