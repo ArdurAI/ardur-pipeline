@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-17T06:00:00.000Z",
-    "windowStart": "2026-11-17T06:00:00.000Z",
-    "windowEnd": "2026-11-17T12:00:00.000Z"
+    "id": "2026-11-17T18:00:00.000Z",
+    "windowStart": "2026-11-17T18:00:00.000Z",
+    "windowEnd": "2026-11-18T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-17T07:42:08.250Z",
-  "nextRefreshAt": "2026-11-17T12:00:00.000Z",
+  "publishedAt": "2026-11-17T20:40:58.783Z",
+  "nextRefreshAt": "2026-11-18T00:00:00.000Z",
   "runIds": {
-    "aggregation": "1e13b63a-0798-4f0b-a264-342e4746d309",
-    "ranking": "rank-550f219e",
-    "top10": "top10:2026-11-17T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-17T06:00:00.000Z-2026-11-17T07:42:30.647Z"
+    "aggregation": "5965177e-63f4-4a4e-ae47-a7b9eed8357b",
+    "ranking": "rank-9be262d8",
+    "top10": "top10:2026-11-17T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-17T18:00:00.000Z-2026-11-17T20:41:19.152Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-17T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-17T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-17T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-17T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-17T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-17T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 84,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1305,
+      "count": 1497,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE83cWRYTHNDZHBNSV9DY1Y1aElkZ2diVzBlOWkxVFlKV1ZuWXRJSjE5bzBubDVUaEZfWk9JWTlJSkNGUHlIczJvRWtnWkY0OUhOSndXcjFhYTFFU0ZBWUpMWm9zMm4?oc=5"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 15,
+      "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[kubernetes] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1599,
+      "count": 1824,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 31,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
+        "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
+        "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 9,
+      "count": 15,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 70,
-    "degradedTopics": 5,
+    "failedSources": 68,
+    "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "llm 0.37.3"
+        "headline": "OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Strengthening NATO and allied cyber defenses with AI"
+        "headline": "Build WhatsApp AI agents with Amazon Bedrock AgentCore"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "California sues OpenAI over hacking risks"
+        "headline": "Microsoft unveils AI models for coding, cybersecurity as it takes on Anthropic, OpenAI"
       },
       {
         "rank": 4,
-        "topic": "ai",
-        "headline": "COMMENTARY: Anthropic debuts to skeptics and dogged believers"
+        "topic": "models",
+        "headline": "How ArisGlobal scaled generative AI inference on Amazon Bedrock"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "ARTEX Moves at Machine Speed: What Risk Owners Need to Change"
+        "topic": "ai",
+        "headline": "Astra for Law leads in legal intelligence"
       },
       {
         "rank": 6,
-        "topic": "models",
-        "headline": "NVIDIA Vera Rubin NVL72 Leads Agentic Inference Performance on MLPerf Endpoints v1.0"
+        "topic": "kubernetes",
+        "headline": "Enforcing zero-trust dependency policies in AWS CodeBuild with JFrog Curation"
       },
       {
         "rank": 7,
         "topic": "security",
-        "headline": "N-able Patches 17 N-central Flaws as Attackers Exploit Earlier Bugs to Deploy Crypto Miners"
+        "headline": "CVE-2026-114938: Reported Critical Pre-authentication Remote Code Execution in Java 17"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:100528: Critical: fence-agents security update"
+        "topic": "kubernetes",
+        "headline": "Maintainers don&8217;t need more AI bug reports. They need fixes."
       },
       {
         "rank": 9,
         "topic": "models",
-        "headline": "Quoting Go Proverbs"
+        "headline": "Reason over time-series data with OpenTSLM on Amazon SageMaker JumpStart"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient"
+        "topic": "platform",
+        "headline": "Red Hat Enterprise Linux GitHub hosted runner images now generally available"
       }
     ],
     "articleCount": 0
