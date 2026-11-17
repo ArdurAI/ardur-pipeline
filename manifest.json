@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-17T00:00:00.000Z",
-    "windowStart": "2026-11-17T00:00:00.000Z",
-    "windowEnd": "2026-11-17T06:00:00.000Z"
+    "id": "2026-11-17T06:00:00.000Z",
+    "windowStart": "2026-11-17T06:00:00.000Z",
+    "windowEnd": "2026-11-17T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-17T00:05:08.723Z",
-  "nextRefreshAt": "2026-11-17T06:00:00.000Z",
+  "publishedAt": "2026-11-17T07:42:08.250Z",
+  "nextRefreshAt": "2026-11-17T12:00:00.000Z",
   "runIds": {
-    "aggregation": "7b2ebe59-0475-4911-9caf-cc96d0ba81bd",
-    "ranking": "rank-f1bf640d",
-    "top10": "top10:2026-11-17T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-17T00:00:00.000Z-2026-11-17T00:05:25.459Z"
+    "aggregation": "1e13b63a-0798-4f0b-a264-342e4746d309",
+    "ranking": "rank-550f219e",
+    "top10": "top10:2026-11-17T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-17T06:00:00.000Z-2026-11-17T07:42:30.647Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-17T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-17T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-17T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-17T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-17T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-17T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 78,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,55 +32,64 @@
     },
     {
       "category": "other",
-      "count": 921,
+      "count": 1305,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 11 distinct domains < floor 20",
-        "[models] degraded: 11 distinct domains < floor 20",
-        "[platform] degraded: 15 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1217,
+      "count": 1599,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 26,
+      "count": 25,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 10,
+      "count": 9,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 70,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 25,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -95,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "California sues OpenAI over hacking risks"
+        "headline": "llm 0.37.3"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "NVIDIA Vera Rubin NVL72 Leads Agentic Inference Performance on MLPerf Endpoints v1.0"
+        "headline": "Strengthening NATO and allied cyber defenses with AI"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Anthropic&039;s Claude Fable 5.2 doesn&039;t generate images, it paints them"
+        "headline": "California sues OpenAI over hacking risks"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Strengthening the fight against online child sexual abuse with new tools and support"
+        "headline": "COMMENTARY: Anthropic debuts to skeptics and dogged believers"
       },
       {
         "rank": 5,
-        "topic": "platform",
-        "headline": "Security patches are supposed to protect you. Google found AI agents turning them into exploits."
+        "topic": "security",
+        "headline": "ARTEX Moves at Machine Speed: What Risk Owners Need to Change"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "California sues OpenAI for Hugging Face and other incidents, alleging deception and recklessness"
+        "topic": "models",
+        "headline": "NVIDIA Vera Rubin NVL72 Leads Agentic Inference Performance on MLPerf Endpoints v1.0"
       },
       {
         "rank": 7,
-        "topic": "models",
-        "headline": "TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient"
+        "topic": "security",
+        "headline": "N-able Patches 17 N-central Flaws as Attackers Exploit Earlier Bugs to Deploy Crypto Miners"
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "PHP2Shell: Using AWS Transform to move legacy PHP onto a patched runtime"
+        "topic": "security",
+        "headline": "RHSA-2026:100528: Critical: fence-agents security update"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "The 2026 Flaky-Test Tooling Landscape: An Honest Comparison"
+        "topic": "models",
+        "headline": "Quoting Go Proverbs"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "Introducing spatial CSS: A developer preview"
+        "topic": "models",
+        "headline": "TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient"
       }
     ],
     "articleCount": 0
