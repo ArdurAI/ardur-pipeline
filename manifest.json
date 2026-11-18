@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-17T18:00:00.000Z",
-    "windowStart": "2026-11-17T18:00:00.000Z",
-    "windowEnd": "2026-11-18T00:00:00.000Z"
+    "id": "2026-11-18T00:00:00.000Z",
+    "windowStart": "2026-11-18T00:00:00.000Z",
+    "windowEnd": "2026-11-18T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-17T20:40:58.783Z",
-  "nextRefreshAt": "2026-11-18T00:00:00.000Z",
+  "publishedAt": "2026-11-18T03:28:32.840Z",
+  "nextRefreshAt": "2026-11-18T06:00:00.000Z",
   "runIds": {
-    "aggregation": "5965177e-63f4-4a4e-ae47-a7b9eed8357b",
-    "ranking": "rank-9be262d8",
-    "top10": "top10:2026-11-17T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-17T18:00:00.000Z-2026-11-17T20:41:19.152Z"
+    "aggregation": "c40f1602-922d-42e2-b7f0-6a5cb2d73bd1",
+    "ranking": "rank-2ee02750",
+    "top10": "top10:2026-11-18T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-18T00:00:00.000Z-2026-11-18T03:28:51.119Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-17T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-17T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-17T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-18T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-18T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-18T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 81,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1497,
+      "count": 1492,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE83cWRYTHNDZHBNSV9DY1Y1aElkZ2diVzBlOWkxVFlKV1ZuWXRJSjE5bzBubDVUaEZfWk9JWTlJSkNGUHlIczJvRWtnWkY0OUhOSndXcjFhYTFFU0ZBWUpMWm9zMm4?oc=5"
+        "[ai/cluster-ai-3] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE83cWRYTHNDZHBNSV9DY1Y1aElkZ2diVzBlOWkxVFlKV1ZuWXRJSjE5bzBubDVUaEZfWk9JWTlJSkNGUHlIczJvRWtnWkY0OUhOSndXcjFhYTFFU0ZBWUpMWm9zMm4?oc=5"
       ]
     },
     {
@@ -54,21 +54,21 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 15 distinct domains < floor 20"
+        "[kubernetes] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1824,
+      "count": 1806,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 31,
+      "count": 34,
       "sample": [
         "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
         "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
@@ -77,11 +77,11 @@
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 23,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains"
+        "topic": "security",
+        "headline": "Java4Shell CVE-2026-114938: Frequently asked questions about OpenJDK remote code execution vulnerability"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Build WhatsApp AI agents with Amazon Bedrock AgentCore"
+        "headline": "OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Microsoft unveils AI models for coding, cybersecurity as it takes on Anthropic, OpenAI"
+        "headline": "Cut generative AI costs: Code for rules, models for judgment"
       },
       {
         "rank": 4,
@@ -124,12 +124,12 @@
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Astra for Law leads in legal intelligence"
+        "headline": "Microsoft unveils AI models for coding, cybersecurity as it takes on Anthropic, OpenAI"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "Enforcing zero-trust dependency policies in AWS CodeBuild with JFrog Curation"
+        "headline": "v1.57.0"
       },
       {
         "rank": 7,
@@ -138,18 +138,18 @@
       },
       {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Maintainers don&8217;t need more AI bug reports. They need fixes."
+        "topic": "ai",
+        "headline": "Build WhatsApp AI agents with Amazon Bedrock AgentCore"
       },
       {
         "rank": 9,
-        "topic": "models",
-        "headline": "Reason over time-series data with OpenTSLM on Amazon SageMaker JumpStart"
+        "topic": "kubernetes",
+        "headline": "Enforcing zero-trust dependency policies in AWS CodeBuild with JFrog Curation"
       },
       {
         "rank": 10,
         "topic": "platform",
-        "headline": "Red Hat Enterprise Linux GitHub hosted runner images now generally available"
+        "headline": "Ten Years On, Google Updates the SRE Book for the AI Era"
       }
     ],
     "articleCount": 0
