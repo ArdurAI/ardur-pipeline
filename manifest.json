@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-18T06:00:00.000Z",
-    "windowStart": "2026-11-18T06:00:00.000Z",
-    "windowEnd": "2026-11-18T12:00:00.000Z"
+    "id": "2026-11-18T12:00:00.000Z",
+    "windowStart": "2026-11-18T12:00:00.000Z",
+    "windowEnd": "2026-11-18T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-18T07:04:41.587Z",
-  "nextRefreshAt": "2026-11-18T12:00:00.000Z",
+  "publishedAt": "2026-11-18T12:49:22.701Z",
+  "nextRefreshAt": "2026-11-18T18:00:00.000Z",
   "runIds": {
-    "aggregation": "440a371a-684b-425c-a8f5-817a9cdbde34",
-    "ranking": "rank-3800d5d1",
-    "top10": "top10:2026-11-18T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-18T06:00:00.000Z-2026-11-18T07:04:59.056Z"
+    "aggregation": "669e815a-7ac9-48a6-8dfd-fded28ad105a",
+    "ranking": "rank-13f723ad",
+    "top10": "top10:2026-11-18T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-18T12:00:00.000Z-2026-11-18T12:49:40.792Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-18T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-18T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-18T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-18T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-18T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-18T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 72,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1388,
+      "count": 1324,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiZEFVX3lxTE83cWRYTHNDZHBNSV9DY1Y1aElkZ2diVzBlOWkxVFlKV1ZuWXRJSjE5bzBubDVUaEZfWk9JWTlJSkNGUHlIczJvRWtnWkY0OUhOSndXcjFhYTFFU0ZBWUpMWm9zMm4?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -50,46 +50,46 @@
     },
     {
       "category": "diversity-floor",
-      "count": 12,
+      "count": 15,
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[kubernetes] degraded: 12 distinct domains < floor 20"
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1692,
+      "count": 1632,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-4] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 36,
+      "count": 32,
       "sample": [
-        "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
-        "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
-        "[ai/cluster-ai-6] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/"
+        "[ai/cluster-ai-12] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
+        "[ai/cluster-ai-12] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
+        "[ai/cluster-ai-12] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
     "failedSources": 68,
-    "degradedTopics": 4,
+    "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
+        "topic": "ai",
+        "headline": "GPT‑6.2 Astra and GPT‑6.2 Sol"
+      },
+      {
+        "rank": 2,
         "topic": "security",
         "headline": "Java4Shell CVE-2026-114938: Frequently asked questions about OpenJDK remote code execution vulnerability"
       },
       {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "llm 0.37.3"
-      },
-      {
         "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains"
+        "topic": "kubernetes",
+        "headline": "v1.57.1"
       },
       {
         "rank": 4,
         "topic": "ai",
-        "headline": "Should You Buy Anthropic Stock on Day 1 or Wait?"
+        "headline": "Should You Really Buy Anthropic Stock At the IPO? History Has a Clear Answer for Investors."
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "v1.54.11"
+        "topic": "ai",
+        "headline": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT"
       },
       {
         "rank": 6,
         "topic": "kubernetes",
-        "headline": "v1.55.5"
+        "headline": "apis/v2.6.0-rc.0"
       },
       {
         "rank": 7,
         "topic": "kubernetes",
-        "headline": "v1.56.6"
+        "headline": "v2.5.0-rc.1"
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Microsoft aims to challenge OpenAI, Anthropic with cheaper, specialized AI models"
+        "topic": "kubernetes",
+        "headline": "v2.6.0-rc.0"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Java4Shell CVE-2026-114938 Enables Pre-Auth RCE in Jira, Jenkins, Keycloak on Java 17+ AVX-512 VBMI Servers"
+        "headline": "CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution"
       },
       {
         "rank": 10,
-        "topic": "models",
-        "headline": "How ArisGlobal scaled generative AI inference on Amazon Bedrock"
+        "topic": "security",
+        "headline": "Microsoft Takes Perception Agentic Security Platform Out of Preview"
       }
     ],
     "articleCount": 0
