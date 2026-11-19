@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-19T12:00:00.000Z",
-    "windowStart": "2026-11-19T12:00:00.000Z",
-    "windowEnd": "2026-11-19T18:00:00.000Z"
+    "id": "2026-11-19T18:00:00.000Z",
+    "windowStart": "2026-11-19T18:00:00.000Z",
+    "windowEnd": "2026-11-20T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-19T12:40:03.317Z",
-  "nextRefreshAt": "2026-11-19T18:00:00.000Z",
+  "publishedAt": "2026-11-19T20:26:23.771Z",
+  "nextRefreshAt": "2026-11-20T00:00:00.000Z",
   "runIds": {
-    "aggregation": "6d921e00-837a-44d8-9c9b-f70340fb25e4",
-    "ranking": "rank-7845046d",
-    "top10": "top10:2026-11-19T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-19T12:00:00.000Z-2026-11-19T12:40:29.509Z"
+    "aggregation": "aab05b4b-63e9-427d-838f-61819892b6c4",
+    "ranking": "rank-e634fc0f",
+    "top10": "top10:2026-11-19T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-19T18:00:00.000Z-2026-11-19T20:26:44.548Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-19T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-19T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-19T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-19T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-19T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-19T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1445,
+      "count": 1643,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,36 +52,36 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 14 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 19 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1680,
+      "count": 1962,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 17,
-      "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 33,
+      "count": 24,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 11,
+      "sample": [
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 18,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "Java4Shell CVE-2026-114938: Frequently asked questions about OpenJDK remote code execution vulnerability"
+        "topic": "ai",
+        "headline": "What to Know About Anthropic’s Record-Breaking IPO"
       },
       {
         "rank": 2,
-        "topic": "ai",
+        "topic": "models",
         "headline": "llm-gemini 0.38"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:100567: Critical: java-21-openjdk security update for RHEL 8 and 9"
+        "topic": "platform",
+        "headline": "Four PHP security releases including fixes for critical vulnerabilities"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "Dapr Runtime v1.19.2"
+        "topic": "ai",
+        "headline": "Amazon Polly launches voice cloning: A unique voice for your brand"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "AI giant Anthropic raises more than $100 billion in record-setting IPO"
+        "topic": "security",
+        "headline": "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Anthropic raises $81bn in record-breaking stock market debut"
+        "headline": "Amazon Bedrock AgentCore harness adds Strands harness defaults, built-in tools, and lifecycle hooks"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic's historic debut to put AI's promise and peril to Wall St test"
+        "headline": "How OpenAI’s Performance Factory keeps ChatGPT fast"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "Presentation: RIIIR: Rewrite It In Idiomatic Rust with AI"
+        "topic": "security",
+        "headline": "PHP security updates fix 18 flaws, including critical RCE bugs"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "Splunk Patches Nearly 140 Flaws Across Three Core Products"
+        "headline": "PHP Patches Seven Critical RCE Vulnerabilities"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "Vero Security Raises $11 Million for AI Security Engineering Platform"
+        "headline": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution"
       }
     ],
     "articleCount": 0
