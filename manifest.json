@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-18T18:00:00.000Z",
-    "windowStart": "2026-11-18T18:00:00.000Z",
-    "windowEnd": "2026-11-19T00:00:00.000Z"
+    "id": "2026-11-19T00:00:00.000Z",
+    "windowStart": "2026-11-19T00:00:00.000Z",
+    "windowEnd": "2026-11-19T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-18T20:22:04.276Z",
-  "nextRefreshAt": "2026-11-19T00:00:00.000Z",
+  "publishedAt": "2026-11-19T03:01:35.207Z",
+  "nextRefreshAt": "2026-11-19T06:00:00.000Z",
   "runIds": {
-    "aggregation": "416b4793-7e4c-4fee-b702-0df6fb9414d1",
-    "ranking": "rank-324edc94",
-    "top10": "top10:2026-11-18T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-18T18:00:00.000Z-2026-11-18T20:22:20.959Z"
+    "aggregation": "32146ce1-2258-4a78-bb29-576376f9409c",
+    "ranking": "rank-d744a925",
+    "top10": "top10:2026-11-19T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-19T00:00:00.000Z-2026-11-19T03:02:16.611Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-18T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-18T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-18T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-19T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-19T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-19T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 81,
+      "count": 84,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1577,
+      "count": 1586,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai] source microsoft.com: The operation was aborted due to timeout"
       ]
     },
     {
@@ -52,44 +52,44 @@
       "category": "diversity-floor",
       "count": 12,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
         "[kubernetes] degraded: 13 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1877,
+      "count": 1845,
       "sample": [
-        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "copyright-gate",
-      "count": 30,
-      "sample": [
-        "[models/cluster-models-20] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
-        "[models/cluster-models-20] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/",
-        "[models/cluster-models-20] paywalled (snippet-only): https://www.technologyreview.com/2026/11/17/1148203/research-reports/"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 12,
+      "count": 17,
       "sample": [
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 31,
+      "sample": [
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 72,
     "degradedTopics": 4,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "How Salesforce is advancing global-scale model serving with cross-Region inference routing in Amazon SageMaker AI"
+        "topic": "kubernetes",
+        "headline": "tests/v3.7.4"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "Advancing chip design with OpenAI models"
+        "topic": "security",
+        "headline": "RHSA-2026:100564: Critical: java-17-openjdk security update for RHEL 9"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "How the Anthropic IPO stacks up against SpaceX"
+        "headline": "Anthropic's Critics Unite Against It Ahead of IPO"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Java4Shell CVE-2026-114938: Frequently asked questions about OpenJDK remote code execution vulnerability"
+        "topic": "ai",
+        "headline": "Anthropic raises $81.3bn in biggest IPO of all-time"
       },
       {
         "rank": 5,
         "topic": "models",
-        "headline": "OpenAI says its models delivered a year&039;s worth of chip optimization on top of AMD&039;s own engineering"
+        "headline": "Google ships Gemini 4 Neon, its fourth new Gemini model in a month"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "The Silent Consensus"
+        "headline": "How the Anthropic IPO stacks up against SpaceX"
       },
       {
         "rank": 7,
-        "topic": "security",
-        "headline": "Oracle Critical Security Patch Update, November 2026 Review"
+        "topic": "platform",
+        "headline": "Ruby 4.0.10 Released"
       },
       {
         "rank": 8,
-        "topic": "platform",
-        "headline": "NGINX2Root: Remote Code Execution vulnerabilities in nginx"
+        "topic": "ai",
+        "headline": "OpenAI says its models delivered a year&039;s worth of chip optimization on top of AMD&039;s own engineering"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic is the Reluctant Winner of the AI Race"
+        "topic": "security",
+        "headline": "Java4Shell CVE-2026-114938: Frequently asked questions about OpenJDK remote code execution vulnerability"
       },
       {
         "rank": 10,
-        "topic": "platform",
-        "headline": "OpenAI spent $1.2 million finding nearly 1,000 Linux security flaws. Sam Altman says this is just the beginning."
+        "topic": "models",
+        "headline": "How ArisGlobal scaled generative AI inference on Amazon Bedrock"
       }
     ],
     "articleCount": 0
