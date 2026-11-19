@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-19T06:00:00.000Z",
-    "windowStart": "2026-11-19T06:00:00.000Z",
-    "windowEnd": "2026-11-19T12:00:00.000Z"
+    "id": "2026-11-19T12:00:00.000Z",
+    "windowStart": "2026-11-19T12:00:00.000Z",
+    "windowEnd": "2026-11-19T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-19T07:05:05.148Z",
-  "nextRefreshAt": "2026-11-19T12:00:00.000Z",
+  "publishedAt": "2026-11-19T12:40:03.317Z",
+  "nextRefreshAt": "2026-11-19T18:00:00.000Z",
   "runIds": {
-    "aggregation": "3b70c9fa-f7d4-481f-89e4-64814c93f489",
-    "ranking": "rank-4618e43e",
-    "top10": "top10:2026-11-19T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-19T06:00:00.000Z-2026-11-19T07:05:27.040Z"
+    "aggregation": "6d921e00-837a-44d8-9c9b-f70340fb25e4",
+    "ranking": "rank-7845046d",
+    "top10": "top10:2026-11-19T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-19T12:00:00.000Z-2026-11-19T12:40:29.509Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-19T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-19T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-19T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-19T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-19T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-19T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1530,
+      "count": 1445,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiWkFVX3lxTFA4SjdCUU9Jb2F6Z0RpOGJBalpPUkNadVNLTldIUFRUMXczaVQ4NWNxX3NOX19zWWlqaTJwdmdKdU1LQ0kwYXFVT0VBSS1tWjJ0eVdJVmxkeGJnQQ?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,16 +54,25 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[platform] degraded: 14 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1796,
+      "count": 1680,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 17,
+      "sample": [
+        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
@@ -71,17 +80,8 @@
       "count": 33,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 16,
-      "sample": [
-        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "models",
-        "headline": "llm-gemini 0.38"
-      },
-      {
-        "rank": 2,
-        "topic": "kubernetes",
-        "headline": "tests/v3.7.4"
-      },
-      {
-        "rank": 3,
-        "topic": "ai",
-        "headline": "How the Anthropic IPO stacks up against SpaceX"
-      },
-      {
-        "rank": 4,
-        "topic": "security",
-        "headline": "RHSA-2026:100567: Critical: java-21-openjdk security update for RHEL 8 and 9"
-      },
-      {
-        "rank": 5,
-        "topic": "models",
-        "headline": "AMD completes acquisition of AI inference chip pioneer Taalas"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic IPO raises record $81.3 billion on strong AI demand"
-      },
-      {
-        "rank": 7,
         "topic": "security",
         "headline": "Java4Shell CVE-2026-114938: Frequently asked questions about OpenJDK remote code execution vulnerability"
       },
       {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "llm-gemini 0.38"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:100567: Critical: java-21-openjdk security update for RHEL 8 and 9"
+      },
+      {
+        "rank": 4,
+        "topic": "kubernetes",
+        "headline": "Dapr Runtime v1.19.2"
+      },
+      {
+        "rank": 5,
+        "topic": "ai",
+        "headline": "AI giant Anthropic raises more than $100 billion in record-setting IPO"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Anthropic raises $81bn in record-breaking stock market debut"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Anthropic's historic debut to put AI's promise and peril to Wall St test"
+      },
+      {
         "rank": 8,
         "topic": "platform",
-        "headline": "Ruby 4.0.10 Released"
+        "headline": "Presentation: RIIIR: Rewrite It In Idiomatic Rust with AI"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "RHSA-2026:100523: Critical: kpatch-patch-5140-4271001, kpatch-patch-5140-4271131, kpatch-patch-5140-4271261, kpatch-patch-5140-4271461, and kpatch-patch-5140-427841 security update"
+        "headline": "Splunk Patches Nearly 140 Flaws Across Three Core Products"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "OpenAI says its models delivered a year&039;s worth of chip optimization on top of AMD&039;s own engineering"
+        "topic": "security",
+        "headline": "Vero Security Raises $11 Million for AI Security Engineering Platform"
       }
     ],
     "articleCount": 0
