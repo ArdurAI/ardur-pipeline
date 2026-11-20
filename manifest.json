@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-20T06:00:00.000Z",
-    "windowStart": "2026-11-20T06:00:00.000Z",
-    "windowEnd": "2026-11-20T12:00:00.000Z"
+    "id": "2026-11-20T12:00:00.000Z",
+    "windowStart": "2026-11-20T12:00:00.000Z",
+    "windowEnd": "2026-11-20T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-20T06:32:45.484Z",
-  "nextRefreshAt": "2026-11-20T12:00:00.000Z",
+  "publishedAt": "2026-11-20T16:51:02.504Z",
+  "nextRefreshAt": "2026-11-20T18:00:00.000Z",
   "runIds": {
-    "aggregation": "6d18d74b-75a2-4685-a32d-9806d236a746",
-    "ranking": "rank-a48b3d2b",
-    "top10": "top10:2026-11-20T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-20T06:00:00.000Z-2026-11-20T06:33:03.167Z"
+    "aggregation": "a9b0ccd4-f699-461d-a4f9-54f52ed660a0",
+    "ranking": "rank-da3906f6",
+    "top10": "top10:2026-11-20T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-20T12:00:00.000Z-2026-11-20T16:51:19.535Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-20T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-20T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-20T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-20T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-20T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-20T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 78,
+      "count": 63,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1603,
+      "count": 1415,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[platform] degraded: 16 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1890,
+      "count": 1734,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 25,
+      "count": 30,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 11,
       "sample": [
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 26,
+    "heldArticles": 21,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "Anthropic IPO Live Updates: Company Value Surges in Stock Market Debut"
-      },
-      {
-        "rank": 2,
         "topic": "platform",
         "headline": "GitOps Security for AI-Generated Kubernetes YAML"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:100750: Critical: nginx:1.24 security update"
+      },
+      {
         "rank": 3,
         "topic": "security",
-        "headline": "VMware patches vCenter zero-day exploited in attacks since September"
+        "headline": "CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability CVE-2026-114938 on Palo Alto Networks Products Severity: CRITICAL"
       },
       {
         "rank": 4,
-        "topic": "models",
-        "headline": "llm-gemini 0.38"
+        "topic": "security",
+        "headline": "RHSA-2026:100735: Important: sos security, bug fix, and enhancement update"
       },
       {
         "rank": 5,
-        "topic": "ai",
-        "headline": "Amid Heckles and Hurrahs, Anthropic Rings In a New Era"
+        "topic": "security",
+        "headline": "RHSA-2026:100637: Moderate: rpm security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic Debuts on Wall Street as a $2 Trillion Company"
+        "topic": "platform",
+        "headline": "Automate Lightwell updates with Mend Renovate"
       },
       {
         "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v1.14.4 LTS"
+        "topic": "ai",
+        "headline": "Breaking: Anthropic stock is crashing, and AI stocks have lost over 50% in 5 months."
       },
       {
         "rank": 8,
-        "topic": "ai",
-        "headline": "Use Kimi Code CLI with models on Amazon Bedrock"
+        "topic": "platform",
+        "headline": "Vim Classic 8.3.1 released"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It"
+        "topic": "ai",
+        "headline": "Anthropic stock is down during its second day of trading after a historic Wall Street debut"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT"
+        "topic": "ai",
+        "headline": "Anthropic's post-debut stumble delivers reality check for AI trade"
       }
     ],
     "articleCount": 0
