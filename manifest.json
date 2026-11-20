@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-20T12:00:00.000Z",
-    "windowStart": "2026-11-20T12:00:00.000Z",
-    "windowEnd": "2026-11-20T18:00:00.000Z"
+    "id": "2026-11-20T18:00:00.000Z",
+    "windowStart": "2026-11-20T18:00:00.000Z",
+    "windowEnd": "2026-11-21T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-20T16:51:02.504Z",
-  "nextRefreshAt": "2026-11-20T18:00:00.000Z",
+  "publishedAt": "2026-11-20T19:57:17.924Z",
+  "nextRefreshAt": "2026-11-21T00:00:00.000Z",
   "runIds": {
-    "aggregation": "a9b0ccd4-f699-461d-a4f9-54f52ed660a0",
-    "ranking": "rank-da3906f6",
-    "top10": "top10:2026-11-20T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-20T12:00:00.000Z-2026-11-20T16:51:19.535Z"
+    "aggregation": "8e571da5-a8ea-4839-b950-c48599f5b13b",
+    "ranking": "rank-3f473720",
+    "top10": "top10:2026-11-20T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-20T18:00:00.000Z-2026-11-20T19:57:33.606Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-20T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-20T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-20T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-20T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-20T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-20T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 75,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
         "[ai] source pytorch.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1415,
+      "count": 1526,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-7] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-5] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 8 distinct domains < floor 20",
-        "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 16 distinct domains < floor 20"
+        "[ai] degraded: 9 distinct domains < floor 20",
+        "[models] degraded: 9 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1734,
+      "count": 1818,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,11 +68,11 @@
     },
     {
       "category": "copyright-gate",
-      "count": 30,
+      "count": 28,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
@@ -80,8 +80,8 @@
       "count": 11,
       "sample": [
         "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 21,
+    "heldArticles": 23,
     "usedFallback": true
   },
   "summary": {
@@ -103,48 +103,48 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "platform",
-        "headline": "GitOps Security for AI-Generated Kubernetes YAML"
-      },
-      {
-        "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:100750: Critical: nginx:1.24 security update"
-      },
-      {
-        "rank": 3,
         "topic": "security",
         "headline": "CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability CVE-2026-114938 on Palo Alto Networks Products Severity: CRITICAL"
       },
       {
+        "rank": 2,
+        "topic": "ai",
+        "headline": "Anthropic mathematician claims to prove Riemann hypothesis, most famous problem in all of math"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:100752: Critical: OpenJDK 25.0.5.1 Security Update for Windows Builds"
+      },
+      {
         "rank": 4,
+        "topic": "ai",
+        "headline": "Combatting adversarial distillation"
+      },
+      {
+        "rank": 5,
+        "topic": "platform",
+        "headline": "GitOps Security for AI-Generated Kubernetes YAML"
+      },
+      {
+        "rank": 6,
+        "topic": "ai",
+        "headline": "Can AI help scientists identify promising drug candidates?"
+      },
+      {
+        "rank": 7,
         "topic": "security",
         "headline": "RHSA-2026:100735: Important: sos security, bug fix, and enhancement update"
       },
       {
-        "rank": 5,
+        "rank": 8,
         "topic": "security",
         "headline": "RHSA-2026:100637: Moderate: rpm security update"
       },
       {
-        "rank": 6,
-        "topic": "platform",
-        "headline": "Automate Lightwell updates with Mend Renovate"
-      },
-      {
-        "rank": 7,
-        "topic": "ai",
-        "headline": "Breaking: Anthropic stock is crashing, and AI stocks have lost over 50% in 5 months."
-      },
-      {
-        "rank": 8,
-        "topic": "platform",
-        "headline": "Vim Classic 8.3.1 released"
-      },
-      {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Anthropic stock is down during its second day of trading after a historic Wall Street debut"
+        "topic": "kubernetes",
+        "headline": "v1.15.3"
       },
       {
         "rank": 10,
