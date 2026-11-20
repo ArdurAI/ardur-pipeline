@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-19T18:00:00.000Z",
-    "windowStart": "2026-11-19T18:00:00.000Z",
-    "windowEnd": "2026-11-20T00:00:00.000Z"
+    "id": "2026-11-20T06:00:00.000Z",
+    "windowStart": "2026-11-20T06:00:00.000Z",
+    "windowEnd": "2026-11-20T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-19T20:26:23.771Z",
-  "nextRefreshAt": "2026-11-20T00:00:00.000Z",
+  "publishedAt": "2026-11-20T06:32:45.484Z",
+  "nextRefreshAt": "2026-11-20T12:00:00.000Z",
   "runIds": {
-    "aggregation": "aab05b4b-63e9-427d-838f-61819892b6c4",
-    "ranking": "rank-e634fc0f",
-    "top10": "top10:2026-11-19T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-19T18:00:00.000Z-2026-11-19T20:26:44.548Z"
+    "aggregation": "6d18d74b-75a2-4685-a32d-9806d236a746",
+    "ranking": "rank-a48b3d2b",
+    "top10": "top10:2026-11-20T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-20T06:00:00.000Z-2026-11-20T06:33:03.167Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-19T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-19T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-19T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-20T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-20T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-20T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 78,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1643,
+      "count": 1603,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-6] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 19 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 18 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1962,
+      "count": 1890,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 24,
+      "count": 25,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 11,
+      "count": 13,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "ai",
-        "headline": "What to Know About Anthropic’s Record-Breaking IPO"
+        "headline": "Anthropic IPO Live Updates: Company Value Surges in Stock Market Debut"
       },
       {
         "rank": 2,
+        "topic": "platform",
+        "headline": "GitOps Security for AI-Generated Kubernetes YAML"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "VMware patches vCenter zero-day exploited in attacks since September"
+      },
+      {
+        "rank": 4,
         "topic": "models",
         "headline": "llm-gemini 0.38"
       },
       {
-        "rank": 3,
-        "topic": "platform",
-        "headline": "Four PHP security releases including fixes for critical vulnerabilities"
-      },
-      {
-        "rank": 4,
-        "topic": "ai",
-        "headline": "Amazon Polly launches voice cloning: A unique voice for your brand"
-      },
-      {
         "rank": 5,
-        "topic": "security",
-        "headline": "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT"
+        "topic": "ai",
+        "headline": "Amid Heckles and Hurrahs, Anthropic Rings In a New Era"
       },
       {
         "rank": 6,
         "topic": "ai",
-        "headline": "Amazon Bedrock AgentCore harness adds Strands harness defaults, built-in tools, and lifecycle hooks"
+        "headline": "Anthropic Debuts on Wall Street as a $2 Trillion Company"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "How OpenAI’s Performance Factory keeps ChatGPT fast"
+        "topic": "kubernetes",
+        "headline": "v1.14.4 LTS"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "PHP security updates fix 18 flaws, including critical RCE bugs"
+        "topic": "ai",
+        "headline": "Use Kimi Code CLI with models on Amazon Bedrock"
       },
       {
         "rank": 9,
         "topic": "security",
-        "headline": "PHP Patches Seven Critical RCE Vulnerabilities"
+        "headline": "New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It"
       },
       {
         "rank": 10,
         "topic": "security",
-        "headline": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution"
+        "headline": "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT"
       }
     ],
     "articleCount": 0
