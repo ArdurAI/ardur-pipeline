@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-21T18:00:00.000Z",
-    "windowStart": "2026-11-21T18:00:00.000Z",
-    "windowEnd": "2026-11-22T00:00:00.000Z"
+    "id": "2026-11-22T00:00:00.000Z",
+    "windowStart": "2026-11-22T00:00:00.000Z",
+    "windowEnd": "2026-11-22T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-21T19:02:40.483Z",
-  "nextRefreshAt": "2026-11-22T00:00:00.000Z",
+  "publishedAt": "2026-11-22T01:59:12.751Z",
+  "nextRefreshAt": "2026-11-22T06:00:00.000Z",
   "runIds": {
-    "aggregation": "220d310d-e986-45c2-8460-f9b5dd97733b",
-    "ranking": "rank-0289dd78",
-    "top10": "top10:2026-11-21T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-21T18:00:00.000Z-2026-11-21T19:02:55.961Z"
+    "aggregation": "e7c56470-84ad-4e63-9f20-ba8f81fdf3a0",
+    "ranking": "rank-a199234e",
+    "top10": "top10:2026-11-22T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-22T00:00:00.000Z-2026-11-22T01:59:34.790Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-21T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-21T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-21T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-22T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-22T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-22T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,50 +25,41 @@
       "category": "http-error",
       "count": 57,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
+        "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1216,
+      "count": 1112,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] no extractable bodies — 0 facts for this cluster"
-      ]
-    },
-    {
-      "category": "blocked-fetch",
-      "count": 6,
-      "sample": [
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 7 distinct domains < floor 20",
-        "[models] degraded: 7 distinct domains < floor 20",
-        "[platform] degraded: 12 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1445,
+      "count": 1307,
       "sample": [
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 37,
+      "count": 34,
       "sample": [
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
@@ -77,19 +68,19 @@
     },
     {
       "category": "editorial-hold",
-      "count": 14,
+      "count": 18,
       "sample": [
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 66,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 14,
+    "heldArticles": 17,
     "usedFallback": true
   },
   "summary": {
@@ -109,7 +100,7 @@
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft"
+        "headline": "Anthropic Mathematician Claims to Solve Riemann Hypothesis With Help From Claude"
       },
       {
         "rank": 3,
@@ -124,22 +115,22 @@
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Anthropic IPO fails to prevent a tech stock wipeout"
+        "headline": "Thinking Machines Unveils Inkling 2 Mini, A Powerful 26B Parameter AI Model That Runs Locally On MacBooks With Just 32GB RAM"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Anthropic’s Debut Shows the Disconnect Between Wall Street and Silicon Valley"
-      },
-      {
-        "rank": 7,
         "topic": "security",
         "headline": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access"
       },
       {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "These Are the Top 10 Largest IPOs Following Anthropic's Historic Market Debut"
+      },
+      {
         "rank": 8,
         "topic": "models",
-        "headline": "New open model Inkling 2 Mini thinks in loops to solve problems with fewer words and still runs on a laptop"
+        "headline": "Muru"
       },
       {
         "rank": 9,
@@ -149,7 +140,7 @@
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Experimental browser SDK 4aa872100d58f0a531a7193b73c0b603c7fa444c"
+        "headline": "Kottayam Port to get first major import consignment via Vizhinjam"
       }
     ],
     "articleCount": 0
