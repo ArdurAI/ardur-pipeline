@@ -1,86 +1,95 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-22T00:00:00.000Z",
-    "windowStart": "2026-11-22T00:00:00.000Z",
-    "windowEnd": "2026-11-22T06:00:00.000Z"
+    "id": "2026-11-22T06:00:00.000Z",
+    "windowStart": "2026-11-22T06:00:00.000Z",
+    "windowEnd": "2026-11-22T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-22T01:59:12.751Z",
-  "nextRefreshAt": "2026-11-22T06:00:00.000Z",
+  "publishedAt": "2026-11-22T06:24:53.024Z",
+  "nextRefreshAt": "2026-11-22T12:00:00.000Z",
   "runIds": {
-    "aggregation": "e7c56470-84ad-4e63-9f20-ba8f81fdf3a0",
-    "ranking": "rank-a199234e",
-    "top10": "top10:2026-11-22T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-22T00:00:00.000Z-2026-11-22T01:59:34.790Z"
+    "aggregation": "69332f17-3ad6-48b3-a77e-afd0002ff7dd",
+    "ranking": "rank-8141da30",
+    "top10": "top10:2026-11-22T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-22T06:00:00.000Z-2026-11-22T06:25:08.899Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-22T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-22T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-22T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-22T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-22T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-22T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 57,
+      "count": 54,
       "sample": [
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1112,
+      "count": 1099,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-9] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 5 distinct domains < floor 20",
+        "[models] degraded: 5 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1307,
+      "count": 1232,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 34,
+      "count": 36,
       "sample": [
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 18,
+      "count": 14,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 66,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 17,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -95,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:101253: Critical: php:8.2 security update"
+        "headline": "RHSA-2026:101337: Critical: php security update"
       },
       {
         "rank": 2,
         "topic": "ai",
-        "headline": "Anthropic Mathematician Claims to Solve Riemann Hypothesis With Help From Claude"
+        "headline": "Better Recent IPO: SpaceX or Anthropic?"
       },
       {
         "rank": 3,
         "topic": "ai",
-        "headline": "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day"
+        "headline": "Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "Amazon: China-Linked Hackers&8217; AI Agents Exploited Medical Software Zero-Day"
+        "topic": "ai",
+        "headline": "SpaceX Stock Fails to Reach Orbit After Anthropic’s Blockbuster Debut"
       },
       {
         "rank": 5,
         "topic": "ai",
-        "headline": "Thinking Machines Unveils Inkling 2 Mini, A Powerful 26B Parameter AI Model That Runs Locally On MacBooks With Just 32GB RAM"
+        "headline": "Anthropic Sheds approximately $109 Billion in Market Value Two Days After Nasdaq Debut; Nasdaq Wipes Out $4 Trillion"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access"
+        "headline": "Amazon: China-Linked Hackers&8217; AI Agents Exploited Medical Software Zero-Day"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "These Are the Top 10 Largest IPOs Following Anthropic's Historic Market Debut"
+        "topic": "security",
+        "headline": "Weekly Update 531: Optimizely. Script Dependencies & Third Parties"
       },
       {
         "rank": 8,
-        "topic": "models",
-        "headline": "Muru"
+        "topic": "security",
+        "headline": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities CVE-2026-123633, CVE-2026-123007 on Palo Alto Networks Products Severity: CRITICAL"
+        "topic": "models",
+        "headline": "Meta ads is now available in AWS Quick"
       },
       {
         "rank": 10,
         "topic": "kubernetes",
-        "headline": "Kottayam Port to get first major import consignment via Vizhinjam"
+        "headline": "Turkish Foreign Minister says Israel blocks containers for Gaza — Anadolu Agency"
       }
     ],
     "articleCount": 0
