@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-22T12:00:00.000Z",
-    "windowStart": "2026-11-22T12:00:00.000Z",
-    "windowEnd": "2026-11-22T18:00:00.000Z"
+    "id": "2026-11-22T18:00:00.000Z",
+    "windowStart": "2026-11-22T18:00:00.000Z",
+    "windowEnd": "2026-11-23T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-22T17:42:16.574Z",
-  "nextRefreshAt": "2026-11-22T18:00:00.000Z",
+  "publishedAt": "2026-11-22T19:26:41.515Z",
+  "nextRefreshAt": "2026-11-23T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b2900a64-2fc2-4093-880f-c032dc0afd59",
-    "ranking": "rank-a993ba2c",
-    "top10": "top10:2026-11-22T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-22T12:00:00.000Z-2026-11-22T17:42:36.101Z"
+    "aggregation": "bde19548-5dd7-4645-a35e-e31ed531b378",
+    "ranking": "rank-437415d8",
+    "top10": "top10:2026-11-22T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-22T18:00:00.000Z-2026-11-22T19:28:20.399Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-22T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-22T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-22T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-22T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-22T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-22T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 51,
+      "count": 57,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,20 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1087,
+      "count": 83,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE96Sm1EaVlsMHctNGtBMDBYdVRreWpySVdVS1RhSVZCUzk3enZHQmlIS3lWY2Rmajh2Q3RNZWU2RDEwc3ZEX2tONEpsbEN6RXowZk1ySVdaWXVVR09jX21aelV6UQ?oc=5"
-      ]
-    },
-    {
-      "category": "blocked-fetch",
-      "count": 6,
-      "sample": [
-        "[ai] source importai.substack.com: HTTP 403 Forbidden",
-        "[models] source importai.substack.com: HTTP 403 Forbidden",
-        "[ai] source importai.substack.com: HTTP 403 Forbidden"
+        "[ai] source news.google.com: HTTP 503 Service Unavailable"
       ]
     },
     {
@@ -54,42 +45,42 @@
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 3 distinct domains < floor 20"
+        "[platform] degraded: 2 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1146,
+      "count": 252,
       "sample": [
+        "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 13,
+      "category": "copyright-gate",
+      "count": 32,
       "sample": [
-        "AI unavailable for entry 1 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 10 (ollama-cloud HTTP 402) and no facts — article held"
+        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 42,
+      "category": "editorial-hold",
+      "count": 5,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held",
+        "16 article(s) held (AI unavailable or grounding failed)"
       ]
     }
   ],
   "health": {
-    "failedSources": 68,
+    "failedSources": 74,
     "degradedTopics": 5,
-    "articlesDropped": 1,
-    "heldArticles": 9,
+    "articlesDropped": 0,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +94,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "ai",
-        "headline": "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says"
-      },
-      {
-        "rank": 2,
-        "topic": "ai",
-        "headline": "Anthropic’s record IPO raises hopes for a charitable windfall that has nonprofits preparing to scale"
-      },
-      {
-        "rank": 3,
         "topic": "security",
         "headline": "RHSA-2026:101337: Critical: php security update"
       },
       {
+        "rank": 2,
+        "topic": "security",
+        "headline": "A brief history of syslog timestamps, Sun, Nov 22nd"
+      },
+      {
+        "rank": 3,
+        "topic": "security",
+        "headline": "Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices"
+      },
+      {
         "rank": 4,
-        "topic": "ai",
-        "headline": "Anthropic’s debut no cure for market’s AI negativity | Technology"
-      },
-      {
-        "rank": 5,
-        "topic": "models",
-        "headline": "Security researchers show how cheap AI inference providers steal keys and snoop on users"
-      },
-      {
-        "rank": 6,
-        "topic": "ai",
-        "headline": "EXCLUSIVE: Like SpaceX, Anthropic ran an unusual IPO process, chafing some bankers"
-      },
-      {
-        "rank": 7,
         "topic": "kubernetes",
         "headline": "GPT-6.2 Astra vs. Claude Fable 5.2: Astra’s launch got mixed reviews, but it tested well here"
       },
       {
+        "rank": 5,
+        "topic": "security",
+        "headline": "Amazon: China-Linked Hackers&8217; AI Agents Exploited Medical Software Zero-Day"
+      },
+      {
+        "rank": 6,
+        "topic": "platform",
+        "headline": "PostgreSQL 19 Released with Online Table Repacking and Query Planning Controls"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace"
+      },
+      {
         "rank": 8,
-        "topic": "kubernetes",
-        "headline": "Cargo ship bound for Mongla Port seized at Belawan in Indonesia with 36 containers"
+        "topic": "ai",
+        "headline": "Perplexity&039;s new Monitor API turns web search from a one-off query into a nonstop watchdog"
       },
       {
         "rank": 9,
-        "topic": "kubernetes",
-        "headline": "Rackspace Spot breach let hackers access customer Kubernetes secrets"
+        "topic": "platform",
+        "headline": "Claude Code Has Been Leaking Secrets Through Its \"Don't Ask Again\" Feature"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "How to Search the Dockyard for the Scoop Containers in GTA 6"
+        "topic": "ai",
+        "headline": "AI is getting better faster than experts can reliably test whether new systems are safe, METR warns"
       }
     ],
     "articleCount": 0
