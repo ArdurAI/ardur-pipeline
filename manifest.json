@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-22T18:00:00.000Z",
-    "windowStart": "2026-11-22T18:00:00.000Z",
-    "windowEnd": "2026-11-23T00:00:00.000Z"
+    "id": "2026-11-23T06:00:00.000Z",
+    "windowStart": "2026-11-23T06:00:00.000Z",
+    "windowEnd": "2026-11-23T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-22T19:26:41.515Z",
-  "nextRefreshAt": "2026-11-23T00:00:00.000Z",
+  "publishedAt": "2026-11-23T06:43:50.944Z",
+  "nextRefreshAt": "2026-11-23T12:00:00.000Z",
   "runIds": {
-    "aggregation": "bde19548-5dd7-4645-a35e-e31ed531b378",
-    "ranking": "rank-437415d8",
-    "top10": "top10:2026-11-22T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-22T18:00:00.000Z-2026-11-22T19:28:20.399Z"
+    "aggregation": "431858b5-5e97-4113-8c3f-a894deb71f6a",
+    "ranking": "rank-320acaf3",
+    "top10": "top10:2026-11-23T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-23T06:00:00.000Z-2026-11-23T06:44:05.462Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-22T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-22T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-22T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-23T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-23T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-23T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,55 +32,64 @@
     },
     {
       "category": "other",
-      "count": 83,
+      "count": 1100,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai] source news.google.com: HTTP 503 Service Unavailable"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiY0FVX3lxTE96Sm1EaVlsMHctNGtBMDBYdVRreWpySVdVS1RhSVZCUzk3enZHQmlIS3lWY2Rmajh2Q3RNZWU2RDEwc3ZEX2tONEpsbEN6RXowZk1ySVdaWXVVR09jX21aelV6UQ?oc=5"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 4 distinct domains < floor 20",
-        "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 2 distinct domains < floor 20"
+        "[ai] degraded: 6 distinct domains < floor 20",
+        "[models] degraded: 6 distinct domains < floor 20",
+        "[platform] degraded: 5 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 252,
+      "count": 1083,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 32,
+      "category": "editorial-hold",
+      "count": 17,
       "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed"
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
-      "category": "editorial-hold",
-      "count": 5,
+      "category": "copyright-gate",
+      "count": 36,
       "sample": [
-        "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held",
-        "16 article(s) held (AI unavailable or grounding failed)"
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
   "health": {
-    "failedSources": 74,
+    "failedSources": 68,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 15,
     "usedFallback": true
   },
   "summary": {
@@ -95,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:101337: Critical: php security update"
+        "headline": "RHSA-2026:102208: Important: cockpit security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "A brief history of syslog timestamps, Sun, Nov 22nd"
+        "headline": "RHSA-2026:102191: Moderate: openssh security, bug fix, and enhancement update"
       },
       {
         "rank": 3,
-        "topic": "security",
-        "headline": "Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices"
+        "topic": "ai",
+        "headline": "OpenAI scientist proposes industry AI limits tied to model intelligence metric"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "GPT-6.2 Astra vs. Claude Fable 5.2: Astra’s launch got mixed reviews, but it tested well here"
+        "topic": "models",
+        "headline": "AMD Completes Taalas Acquisition To Strengthen AI Inference Capabilities"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Amazon: China-Linked Hackers&8217; AI Agents Exploited Medical Software Zero-Day"
+        "headline": "RHSA-2026:102196: Moderate: qemu-kvm-ma security update"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "PostgreSQL 19 Released with Online Table Repacking and Query Planning Controls"
+        "topic": "security",
+        "headline": "RHSA-2026:102183: Moderate: gfs2-utils security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace"
+        "headline": "Leverage Shares prepares three Anthropic ETFs after Nasdaq debut for short-term bullish and bearish views"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Perplexity&039;s new Monitor API turns web search from a one-off query into a nonstop watchdog"
+        "headline": "Anthropic’s stock market debut: a record IPO, a quick fade, decabillionaires, and the risks ahead | Explained"
       },
       {
         "rank": 9,
-        "topic": "platform",
-        "headline": "Claude Code Has Been Leaking Secrets Through Its \"Don't Ask Again\" Feature"
+        "topic": "ai",
+        "headline": "Anthropic makes US$119.5 billion market debut - Marketing-Interactive"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "AI is getting better faster than experts can reliably test whether new systems are safe, METR warns"
+        "topic": "models",
+        "headline": "Sarvam’s Token Factory Boosts India’s AI Inference Capabilities"
       }
     ],
     "articleCount": 0
