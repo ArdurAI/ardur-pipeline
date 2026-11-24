@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-24T06:00:00.000Z",
-    "windowStart": "2026-11-24T06:00:00.000Z",
-    "windowEnd": "2026-11-24T12:00:00.000Z"
+    "id": "2026-11-24T12:00:00.000Z",
+    "windowStart": "2026-11-24T12:00:00.000Z",
+    "windowEnd": "2026-11-24T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-24T09:39:30.144Z",
-  "nextRefreshAt": "2026-11-24T12:00:00.000Z",
+  "publishedAt": "2026-11-24T17:17:20.416Z",
+  "nextRefreshAt": "2026-11-24T18:00:00.000Z",
   "runIds": {
-    "aggregation": "5f20f78f-bf8b-447c-8882-ad1bf2bd2b35",
-    "ranking": "rank-255e4f90",
-    "top10": "top10:2026-11-24T06:00:00.000Z",
-    "articles": "synth-top10:2026-11-24T06:00:00.000Z-2026-11-24T09:39:49.197Z"
+    "aggregation": "070e1e28-faa1-4f3e-926e-8932408d4536",
+    "ranking": "rank-8aed2480",
+    "top10": "top10:2026-11-24T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-24T12:00:00.000Z-2026-11-24T17:17:38.956Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-24T06-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-24T06-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-24T06-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-24T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-24T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-24T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 66,
+      "count": 60,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1239,
+      "count": 1399,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-8] no extractable bodies — 0 facts for this cluster"
+        "[ai/cluster-ai-3] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,12 +54,12 @@
       "sample": [
         "[ai] degraded: 9 distinct domains < floor 20",
         "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 13 distinct domains < floor 20"
+        "[platform] degraded: 17 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1431,
+      "count": 1632,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,20 +68,20 @@
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 9 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 10 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 13,
       "sample": [
+        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -108,48 +108,48 @@
       },
       {
         "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:102942: Important: mariadb:11.8 security update"
+      },
+      {
+        "rank": 3,
         "topic": "kubernetes",
         "headline": "Kubernetes v1.38 Sneak Peek"
       },
       {
-        "rank": 3,
-        "topic": "security",
-        "headline": "RHSA-2026:102854: Critical: ruby security update"
-      },
-      {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:102845: Important: cockpit security update"
+        "headline": "RHSA-2026:102934: Critical: php security update"
       },
       {
         "rank": 5,
+        "topic": "security",
+        "headline": "RHSA-2026:102948: Moderate: cockpit-machines security update"
+      },
+      {
+        "rank": 6,
+        "topic": "security",
+        "headline": "RHSA-2026:102890: Low: openscap security, bug fix and enhancement update"
+      },
+      {
+        "rank": 7,
+        "topic": "ai",
+        "headline": "Dozens of insiders say OpenAI and Anthropic&039;s unreleased models have outgrown their safety measures"
+      },
+      {
+        "rank": 8,
         "topic": "kubernetes",
         "headline": "apis/v2.4.4"
       },
       {
-        "rank": 6,
-        "topic": "kubernetes",
-        "headline": "v1.72.0/v0.166.0"
-      },
-      {
-        "rank": 7,
-        "topic": "kubernetes",
-        "headline": "v2.3.8"
-      },
-      {
-        "rank": 8,
-        "topic": "security",
-        "headline": "RHSA-2026:102587: Moderate: golang security, bug fix, and enhancement update"
-      },
-      {
         "rank": 9,
-        "topic": "security",
-        "headline": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day"
+        "topic": "platform",
+        "headline": "Firefox 161.0 released"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "Introducing the Amazon Bedrock Trusted Access API with Anthropic’s Enterprise Frontier Safeguards and Enterprise Data Controls"
+        "topic": "kubernetes",
+        "headline": "v3.5.9: chore: bump version to 3.5.9 on release-3.5 branch 31242"
       }
     ],
     "articleCount": 0
