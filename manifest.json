@@ -1,29 +1,29 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-25T12:00:00.000Z",
-    "windowStart": "2026-11-25T12:00:00.000Z",
-    "windowEnd": "2026-11-25T18:00:00.000Z"
+    "id": "2026-11-25T18:00:00.000Z",
+    "windowStart": "2026-11-25T18:00:00.000Z",
+    "windowEnd": "2026-11-26T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-25T14:02:19.059Z",
-  "nextRefreshAt": "2026-11-25T18:00:00.000Z",
+  "publishedAt": "2026-11-25T21:34:14.803Z",
+  "nextRefreshAt": "2026-11-26T00:00:00.000Z",
   "runIds": {
-    "aggregation": "b4380562-3521-4e38-854b-f9dacfba806c",
-    "ranking": "rank-4488d219",
-    "top10": "top10:2026-11-25T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-25T12:00:00.000Z-2026-11-25T14:02:41.295Z"
+    "aggregation": "46cee5a4-7297-4688-8846-ab3d7c8163c0",
+    "ranking": "rank-3dbb98e3",
+    "top10": "top10:2026-11-25T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-25T18:00:00.000Z-2026-11-25T21:34:37.122Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-25T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-25T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-25T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-25T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-25T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-25T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 63,
+      "count": 69,
       "sample": [
         "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1310,
+      "count": 1346,
       "sample": [
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiakFVX3lxTE5hZERubEFhT25RazFGVjdOQUNtVTctdHlrZ2J6NzJLbmFPejgzME55MnloalR6SzdZbHlnXzJTcHZ3cmVSZW1aVF9kTElpUUN5endQa0MwVzRIQldhSFk0OWFMOUE1dEVYVlE?oc=5"
+        "[ai/cluster-ai-2] no extractable bodies — 0 facts for this cluster"
       ]
     },
     {
@@ -54,33 +54,33 @@
       "sample": [
         "[ai] degraded: 8 distinct domains < floor 20",
         "[models] degraded: 8 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[platform] degraded: 15 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1551,
+      "count": 1643,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 17,
+      "count": 12,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 29,
+      "count": 25,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed",
         "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 22,
+    "heldArticles": 26,
     "usedFallback": true
   },
   "summary": {
@@ -104,17 +104,17 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:103496: Important: grafana security update"
+        "headline": "RHSA-2026:103537: Critical: Satellite 6.16 EUS security update"
       },
       {
         "rank": 2,
         "topic": "security",
-        "headline": "RHSA-2026:103506: Moderate: glib2 security update"
+        "headline": "RHSA-2026:103523: Important: ghostscript security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:103492: Critical: php security update"
+        "headline": "RHSA-2026:103527: Moderate: cockpit security update"
       },
       {
         "rank": 4,
@@ -123,33 +123,33 @@
       },
       {
         "rank": 5,
-        "topic": "kubernetes",
-        "headline": "🚀 The story behind &8220;Drone 2&8221;: My KubeCon + CloudNativeCon North America 2026 keynote"
+        "topic": "security",
+        "headline": "Cloud Security: From Configuration Hardening to Continuous Protection"
       },
       {
         "rank": 6,
-        "topic": "security",
-        "headline": "Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation"
+        "topic": "platform",
+        "headline": "JDK 28: New jlink Security Properties Plugin - Quality Outreach Heads-up"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic, Nvidia, Dell, Workday, Deere, and More Stocks That Explain Today’s Market"
+        "headline": "Anthropic’s Stock Debut Could Hurt Tech Start-Ups"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "SoftBank Falls 14.48% After Anthropic IPO Debut"
+        "headline": "Anthropic CEO Dario Amodei says letting AI govern society would be \"a bad idea\""
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "An Indic Voice Agent with CUGA"
+        "topic": "kubernetes",
+        "headline": "🚀 The story behind &8220;Drone 2&8221;: My KubeCon + CloudNativeCon North America 2026 keynote"
       },
       {
         "rank": 10,
         "topic": "ai",
-        "headline": "AI agents now control part of Deepmind&039;s compute for Gemini experiments, but recursive self-improvement remains distant"
+        "headline": "Weekly Rundown: Waystar integrates into Google Cloud’s Gemini for healthcare; Oracle debuts AI agents for clinical trials"
       }
     ],
     "articleCount": 0
