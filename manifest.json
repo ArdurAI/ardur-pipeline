@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-24T18:00:00.000Z",
-    "windowStart": "2026-11-24T18:00:00.000Z",
-    "windowEnd": "2026-11-25T00:00:00.000Z"
+    "id": "2026-11-25T00:00:00.000Z",
+    "windowStart": "2026-11-25T00:00:00.000Z",
+    "windowEnd": "2026-11-25T06:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-24T22:17:33.225Z",
-  "nextRefreshAt": "2026-11-25T00:00:00.000Z",
+  "publishedAt": "2026-11-25T02:04:40.051Z",
+  "nextRefreshAt": "2026-11-25T06:00:00.000Z",
   "runIds": {
-    "aggregation": "c6c61882-897d-4795-a2d6-5131ad04edec",
-    "ranking": "rank-ec05935a",
-    "top10": "top10:2026-11-24T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-24T18:00:00.000Z-2026-11-24T22:17:51.483Z"
+    "aggregation": "1b87ea71-1112-41da-a402-69891ffb2b72",
+    "ranking": "rank-b78b55e3",
+    "top10": "top10:2026-11-25T00:00:00.000Z",
+    "articles": "synth-top10:2026-11-25T00:00:00.000Z-2026-11-25T02:05:00.301Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-24T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-24T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-24T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-25T00-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-25T00-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-25T00-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 75,
+      "count": 84,
       "sample": [
-        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1414,
+      "count": 1405,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMifEFVX3lxTE5PWW5MTjgyMUs2QVRIRHpDalhPaGRhWXZGbUkzODQ5bUd1WnM1YjR5VUxMS0ZtUk1nRUUydGRPZzRMOWwtZ3lORFdZTEVqTUdBYmtjSkdNWngweDdFMWt1ckdsekUxeHhLZW5VRzRKSkFteGwzMFFGWlRGckY?oc=5"
+        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiakFVX3lxTE5hZERubEFhT25RazFGVjdOQUNtVTctdHlrZ2J6NzJLbmFPejgzME55MnloalR6SzdZbHlnXzJTcHZ3cmVSZW1aVF9kTElpUUN5endQa0MwVzRIQldhSFk0OWFMOUE1dEVYVlE?oc=5"
       ]
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1620,
+      "count": 1656,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -68,19 +68,19 @@
     },
     {
       "category": "copyright-gate",
-      "count": 27,
+      "count": 24,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 3 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
       "count": 19,
       "sample": [
+        "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 24,
+    "heldArticles": 27,
     "usedFallback": true
   },
   "summary": {
@@ -108,43 +108,43 @@
       },
       {
         "rank": 2,
-        "topic": "security",
-        "headline": "RHSA-2026:103286: Important: librabbitmq security update"
-      },
-      {
-        "rank": 3,
         "topic": "ai",
         "headline": "OpenAI and Cisco introduce Shirudo"
       },
       {
+        "rank": 3,
+        "topic": "security",
+        "headline": "RHSA-2026:103286: Important: librabbitmq security update"
+      },
+      {
         "rank": 4,
         "topic": "security",
-        "headline": "RHSA-2026:103380: Critical: cjose security update"
+        "headline": "PAN-SA-2026-0015 Security Bulletin: OSS CVEs Fixed in PAN-OS Severity: INFORMATIONAL"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "RHSA-2026:103381: Moderate: openssl security update"
+        "headline": "RHSA-2026:103380: Critical: cjose security update"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "GPT-6 models demonstrate intrinsic protein-design capabilities"
+        "topic": "security",
+        "headline": "RHSA-2026:103395: Moderate: openssl security update"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "How Intentful uses dots to make more time for growth"
+        "headline": "Clay helps sales teams win with Codex and ChatGPT"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "Searching for distant planets with Astra"
+        "headline": "GPT-6 models demonstrate intrinsic protein-design capabilities"
       },
       {
         "rank": 9,
-        "topic": "security",
-        "headline": "Rackspace shuts down Spot cloud platform after security breach"
+        "topic": "ai",
+        "headline": "How Intentful uses dots to make more time for growth"
       },
       {
         "rank": 10,
