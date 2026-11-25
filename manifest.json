@@ -1,42 +1,42 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-25T00:00:00.000Z",
-    "windowStart": "2026-11-25T00:00:00.000Z",
-    "windowEnd": "2026-11-25T06:00:00.000Z"
+    "id": "2026-11-25T12:00:00.000Z",
+    "windowStart": "2026-11-25T12:00:00.000Z",
+    "windowEnd": "2026-11-25T18:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-25T02:04:40.051Z",
-  "nextRefreshAt": "2026-11-25T06:00:00.000Z",
+  "publishedAt": "2026-11-25T14:02:19.059Z",
+  "nextRefreshAt": "2026-11-25T18:00:00.000Z",
   "runIds": {
-    "aggregation": "1b87ea71-1112-41da-a402-69891ffb2b72",
-    "ranking": "rank-b78b55e3",
-    "top10": "top10:2026-11-25T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-25T00:00:00.000Z-2026-11-25T02:05:00.301Z"
+    "aggregation": "b4380562-3521-4e38-854b-f9dacfba806c",
+    "ranking": "rank-4488d219",
+    "top10": "top10:2026-11-25T12:00:00.000Z",
+    "articles": "synth-top10:2026-11-25T12:00:00.000Z-2026-11-25T14:02:41.295Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-25T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-25T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-25T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-25T12-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-25T12-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-25T12-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
     {
       "category": "http-error",
-      "count": 84,
+      "count": 63,
       "sample": [
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
-        "[ai] source arxiv.org: fetch failed",
-        "[ai] source pytorch.org: fetch failed"
+        "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1405,
+      "count": 1310,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-1] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiakFVX3lxTE5hZERubEFhT25RazFGVjdOQUNtVTctdHlrZ2J6NzJLbmFPejgzME55MnloalR6SzdZbHlnXzJTcHZ3cmVSZW1aVF9kTElpUUN5endQa0MwVzRIQldhSFk0OWFMOUE1dEVYVlE?oc=5"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-0] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMiakFVX3lxTE5hZERubEFhT25RazFGVjdOQUNtVTctdHlrZ2J6NzJLbmFPejgzME55MnloalR6SzdZbHlnXzJTcHZ3cmVSZW1aVF9kTElpUUN5endQa0MwVzRIQldhSFk0OWFMOUE1dEVYVlE?oc=5"
       ]
     },
     {
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 9 distinct domains < floor 20",
-        "[models] degraded: 9 distinct domains < floor 20",
-        "[platform] degraded: 18 distinct domains < floor 20"
+        "[ai] degraded: 8 distinct domains < floor 20",
+        "[models] degraded: 8 distinct domains < floor 20",
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1656,
+      "count": 1551,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
@@ -67,21 +67,21 @@
       ]
     },
     {
-      "category": "copyright-gate",
-      "count": 24,
-      "sample": [
-        "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
-      ]
-    },
-    {
       "category": "editorial-hold",
-      "count": 19,
+      "count": 17,
       "sample": [
         "AI unavailable for entry 2 (ollama-cloud HTTP 402) and no facts — article held",
         "AI unavailable for entry 3 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held"
+      ]
+    },
+    {
+      "category": "copyright-gate",
+      "count": 29,
+      "sample": [
+        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     }
   ],
@@ -89,7 +89,7 @@
     "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 27,
+    "heldArticles": 22,
     "usedFallback": true
   },
   "summary": {
@@ -103,53 +103,53 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "kubernetes",
-        "headline": "Kubernetes v1.38 Sneak Peek"
+        "topic": "security",
+        "headline": "RHSA-2026:103496: Important: grafana security update"
       },
       {
         "rank": 2,
-        "topic": "ai",
-        "headline": "OpenAI and Cisco introduce Shirudo"
+        "topic": "security",
+        "headline": "RHSA-2026:103506: Moderate: glib2 security update"
       },
       {
         "rank": 3,
         "topic": "security",
-        "headline": "RHSA-2026:103286: Important: librabbitmq security update"
+        "headline": "RHSA-2026:103492: Critical: php security update"
       },
       {
         "rank": 4,
-        "topic": "security",
-        "headline": "PAN-SA-2026-0015 Security Bulletin: OSS CVEs Fixed in PAN-OS Severity: INFORMATIONAL"
+        "topic": "kubernetes",
+        "headline": "v1.58.0-next.0"
       },
       {
         "rank": 5,
-        "topic": "security",
-        "headline": "RHSA-2026:103380: Critical: cjose security update"
+        "topic": "kubernetes",
+        "headline": "🚀 The story behind &8220;Drone 2&8221;: My KubeCon + CloudNativeCon North America 2026 keynote"
       },
       {
         "rank": 6,
         "topic": "security",
-        "headline": "RHSA-2026:103395: Moderate: openssl security update"
+        "headline": "Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Clay helps sales teams win with Codex and ChatGPT"
+        "headline": "Anthropic, Nvidia, Dell, Workday, Deere, and More Stocks That Explain Today’s Market"
       },
       {
         "rank": 8,
         "topic": "ai",
-        "headline": "GPT-6 models demonstrate intrinsic protein-design capabilities"
+        "headline": "SoftBank Falls 14.48% After Anthropic IPO Debut"
       },
       {
         "rank": 9,
         "topic": "ai",
-        "headline": "How Intentful uses dots to make more time for growth"
+        "headline": "An Indic Voice Agent with CUGA"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "apis/v2.4.4"
+        "topic": "ai",
+        "headline": "AI agents now control part of Deepmind&039;s compute for Gemini experiments, but recursive self-improvement remains distant"
       }
     ],
     "articleCount": 0
