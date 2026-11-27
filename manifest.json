@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-27T12:00:00.000Z",
-    "windowStart": "2026-11-27T12:00:00.000Z",
-    "windowEnd": "2026-11-27T18:00:00.000Z"
+    "id": "2026-11-27T18:00:00.000Z",
+    "windowStart": "2026-11-27T18:00:00.000Z",
+    "windowEnd": "2026-11-28T00:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-27T13:44:38.088Z",
-  "nextRefreshAt": "2026-11-27T18:00:00.000Z",
+  "publishedAt": "2026-11-27T21:02:11.037Z",
+  "nextRefreshAt": "2026-11-28T00:00:00.000Z",
   "runIds": {
-    "aggregation": "8f117c25-5975-4206-99aa-903f7ef837ef",
-    "ranking": "rank-d6c8e74e",
-    "top10": "top10:2026-11-27T12:00:00.000Z",
-    "articles": "synth-top10:2026-11-27T12:00:00.000Z-2026-11-27T13:44:52.139Z"
+    "aggregation": "9f050a3f-c691-4849-b9d3-b1dcf4d6be35",
+    "ranking": "rank-da90b607",
+    "top10": "top10:2026-11-27T18:00:00.000Z",
+    "articles": "synth-top10:2026-11-27T18:00:00.000Z-2026-11-27T21:02:32.900Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-27T12-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-27T12-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-27T12-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-27T18-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-27T18-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-27T18-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -25,18 +25,27 @@
       "category": "http-error",
       "count": 54,
       "sample": [
-        "[ai] source arxiv.org: fetch failed",
+        "[ai] source pytorch.org: fetch failed",
         "[ai] source arxiv.org: fetch failed",
         "[ai] source arxiv.org: fetch failed"
       ]
     },
     {
       "category": "other",
-      "count": 1126,
+      "count": 1125,
       "sample": [
-        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
-        "[ai/cluster-ai-4] no extractable bodies — 0 facts for this cluster"
+        "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
+        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+      ]
+    },
+    {
+      "category": "blocked-fetch",
+      "count": 6,
+      "sample": [
+        "[ai] source importai.substack.com: HTTP 403 Forbidden",
+        "[models] source importai.substack.com: HTTP 403 Forbidden",
+        "[ai] source importai.substack.com: HTTP 403 Forbidden"
       ]
     },
     {
@@ -45,42 +54,42 @@
       "sample": [
         "[ai] degraded: 4 distinct domains < floor 20",
         "[models] degraded: 4 distinct domains < floor 20",
-        "[platform] degraded: 9 distinct domains < floor 20"
+        "[platform] degraded: 11 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1275,
+      "count": 1293,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction"
-      ]
-    },
-    {
-      "category": "editorial-hold",
-      "count": 13,
-      "sample": [
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held"
+        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
       ]
     },
     {
       "category": "copyright-gate",
-      "count": 32,
+      "count": 35,
       "sample": [
-        "Copyright gate failed for rank 5 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+      ]
+    },
+    {
+      "category": "editorial-hold",
+      "count": 15,
+      "sample": [
+        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 58,
+    "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 19,
+    "heldArticles": 16,
     "usedFallback": true
   },
   "summary": {
@@ -95,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:104035: Critical: ruby:4.0 security update"
+        "headline": "RHSA-2026:104088: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 2,
-        "topic": "kubernetes",
-        "headline": "v1.54.13"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.56.7"
+        "topic": "ai",
+        "headline": "OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers"
       },
       {
         "rank": 4,
-        "topic": "kubernetes",
-        "headline": "v1.57.4"
+        "topic": "security",
+        "headline": "RHSA-2026:104035: Critical: ruby:4.0 security update"
       },
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access"
+        "headline": "Unpatched Cacti zero-day with public PoC gives remote code execution"
       },
       {
         "rank": 6,
-        "topic": "ai",
-        "headline": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026"
+        "topic": "kubernetes",
+        "headline": "AWS Nitro Sandboxes give AI agents a place to run"
       },
       {
         "rank": 7,
         "topic": "ai",
-        "headline": "Anthropic’s debut suggests one thing: Stay clear of IPOs"
+        "headline": "Frank Talk: Jensen Huang’s return and Anthropic’s shaky debut prove AI is now a national security trade"
       },
       {
         "rank": 8,
         "topic": "security",
-        "headline": "Drupal warns of new site takeover flaw exploited in attacks"
+        "headline": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "OpenAI and Cisco Unveil Shirudo To Protect Linux Systems While Security Patches Roll Out"
+        "topic": "kubernetes",
+        "headline": "v1.56.7"
       },
       {
         "rank": 10,
-        "topic": "ai",
-        "headline": "GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error"
+        "topic": "kubernetes",
+        "headline": "v1.54.13"
       }
     ],
     "articleCount": 0
