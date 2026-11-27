@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-27T00:00:00.000Z",
-    "windowStart": "2026-11-27T00:00:00.000Z",
-    "windowEnd": "2026-11-27T06:00:00.000Z"
+    "id": "2026-11-27T06:00:00.000Z",
+    "windowStart": "2026-11-27T06:00:00.000Z",
+    "windowEnd": "2026-11-27T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-27T04:00:50.156Z",
-  "nextRefreshAt": "2026-11-27T06:00:00.000Z",
+  "publishedAt": "2026-11-27T08:01:19.260Z",
+  "nextRefreshAt": "2026-11-27T12:00:00.000Z",
   "runIds": {
-    "aggregation": "4f6b5fe4-e066-4d85-af8b-53459fe5623e",
-    "ranking": "rank-2ba520d2",
-    "top10": "top10:2026-11-27T00:00:00.000Z",
-    "articles": "synth-top10:2026-11-27T00:00:00.000Z-2026-11-27T04:01:10.663Z"
+    "aggregation": "cd60f973-f774-4cb2-9473-d3a08af30e97",
+    "ranking": "rank-4b3efeae",
+    "top10": "top10:2026-11-27T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-27T06:00:00.000Z-2026-11-27T08:01:36.472Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-27T00-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-27T00-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-27T00-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-27T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-27T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-27T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,7 +32,7 @@
     },
     {
       "category": "other",
-      "count": 1144,
+      "count": 1094,
       "sample": [
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
         "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
@@ -52,14 +52,14 @@
       "category": "diversity-floor",
       "count": 15,
       "sample": [
-        "[ai] degraded: 6 distinct domains < floor 20",
-        "[models] degraded: 6 distinct domains < floor 20",
-        "[platform] degraded: 11 distinct domains < floor 20"
+        "[ai] degraded: 4 distinct domains < floor 20",
+        "[models] degraded: 4 distinct domains < floor 20",
+        "[platform] degraded: 10 distinct domains < floor 20"
       ]
     },
     {
       "category": "ai-fallback",
-      "count": 1419,
+      "count": 1268,
       "sample": [
         "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
         "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
@@ -68,28 +68,28 @@
     },
     {
       "category": "copyright-gate",
-      "count": 35,
+      "count": 31,
       "sample": [
         "Copyright gate failed for rank 1 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 2 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 4 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 13,
+      "count": 18,
       "sample": [
         "AI unavailable for entry 4 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 6 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
   "health": {
-    "failedSources": 64,
+    "failedSources": 62,
     "degradedTopics": 5,
     "articlesDropped": 0,
-    "heldArticles": 16,
+    "heldArticles": 20,
     "usedFallback": true
   },
   "summary": {
@@ -104,52 +104,52 @@
       {
         "rank": 1,
         "topic": "security",
-        "headline": "RHSA-2026:103943: Critical: ruby:3.3 security update"
+        "headline": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access"
       },
       {
         "rank": 2,
+        "topic": "security",
+        "headline": "RHSA-2026:103943: Critical: ruby:3.3 security update"
+      },
+      {
+        "rank": 3,
         "topic": "ai",
         "headline": "After OpenAI and Anthropic shut the door on their data, a Chinese AI developer is turning to Google and Meta instead"
       },
       {
-        "rank": 3,
-        "topic": "kubernetes",
-        "headline": "v1.23.0"
-      },
-      {
         "rank": 4,
         "topic": "ai",
-        "headline": "PRIME BPM Unveils AI Agents 2.0 to Accelerate Business Process Management and Transformation"
+        "headline": "IDEA Unveils MoonBit 1.0, a General-Purpose Language Aimed at AI Agents"
       },
       {
         "rank": 5,
         "topic": "kubernetes",
-        "headline": "Friday Five — November 27, 2026 | Red Hat"
+        "headline": "v1.23.0"
       },
       {
         "rank": 6,
-        "topic": "platform",
-        "headline": "Advent of Code 2026: ’Tis the Season to Code in Kotlin"
+        "topic": "kubernetes",
+        "headline": "Goodbye to plastic food containers, more and more kitchens are storing leftovers in something far safer"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "FOCUS: Japan weighs how workers can share in gains from generative AI"
+        "topic": "kubernetes",
+        "headline": "Longer voyages mask stagnating seaborne trade: UNCTAD"
       },
       {
         "rank": 8,
         "topic": "platform",
-        "headline": "Mock Service Worker Releases v3.0 with ESM-Only Build, Socket-Based Interception and GraphQL Subs"
+        "headline": "Mozilla Partners with Mistral to Bring Open-Weight AI Models to Firefox Smart Window"
       },
       {
         "rank": 9,
-        "topic": "ai",
-        "headline": "Ubisoft reportedly makes game teams justify leaving generative AI out"
+        "topic": "platform",
+        "headline": "منظمة برامجي لتنمية وتطوير المرأة والطفل"
       },
       {
         "rank": 10,
-        "topic": "security",
-        "headline": "Remus malware steals Gmail messages via fake Google Sheets extension"
+        "topic": "models",
+        "headline": "POSCO E&C to open model home for The Sharp Ilsan Centro rentals"
       }
     ],
     "articleCount": 0
