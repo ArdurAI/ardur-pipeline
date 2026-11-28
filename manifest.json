@@ -1,23 +1,23 @@
 {
   "schemaVersion": "ardur-content-pipeline/v1",
   "cycle": {
-    "id": "2026-11-27T18:00:00.000Z",
-    "windowStart": "2026-11-27T18:00:00.000Z",
-    "windowEnd": "2026-11-28T00:00:00.000Z"
+    "id": "2026-11-28T06:00:00.000Z",
+    "windowStart": "2026-11-28T06:00:00.000Z",
+    "windowEnd": "2026-11-28T12:00:00.000Z"
   },
   "status": "degraded",
-  "publishedAt": "2026-11-27T21:02:11.037Z",
-  "nextRefreshAt": "2026-11-28T00:00:00.000Z",
+  "publishedAt": "2026-11-28T07:04:45.063Z",
+  "nextRefreshAt": "2026-11-28T12:00:00.000Z",
   "runIds": {
-    "aggregation": "9f050a3f-c691-4849-b9d3-b1dcf4d6be35",
-    "ranking": "rank-da90b607",
-    "top10": "top10:2026-11-27T18:00:00.000Z",
-    "articles": "synth-top10:2026-11-27T18:00:00.000Z-2026-11-27T21:02:32.900Z"
+    "aggregation": "9fbc68ec-42c3-4d4e-826a-d163d63a7348",
+    "ranking": "rank-f74d7227",
+    "top10": "top10:2026-11-28T06:00:00.000Z",
+    "articles": "synth-top10:2026-11-28T06:00:00.000Z-2026-11-28T07:04:57.944Z"
   },
   "artifacts": {
-    "aggregation": "cycles/2026-11-27T18-00-00.000Z/aggregation.json",
-    "ranking": "cycles/2026-11-27T18-00-00.000Z/ranking.json",
-    "top10": "cycles/2026-11-27T18-00-00.000Z/top10.json",
+    "aggregation": "cycles/2026-11-28T06-00-00.000Z/aggregation.json",
+    "ranking": "cycles/2026-11-28T06-00-00.000Z/ranking.json",
+    "top10": "cycles/2026-11-28T06-00-00.000Z/top10.json",
     "articles": "latest/articles.json"
   },
   "warnings": [
@@ -32,11 +32,11 @@
     },
     {
       "category": "other",
-      "count": 1125,
+      "count": 1057,
       "sample": [
-        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
         "[ai] source venturebeat.com: HTTP 429 Too Many Requests",
-        "[ai/cluster-ai-1] no extractable bodies — 0 facts for this cluster"
+        "[ai] source magazine.sebastianraschka.com: magazine.sebastianraschka.com feed exceeded 1500000 byte body limit",
+        "[ai/cluster-ai-2] google-news redirect — no extractable body: https://news.google.com/rss/articles/CBMirAFBVV95cUxNT3NyUU5BdGJyb0lrVDFMRjRacUw2c05pVTNjZG56Z0FGN1BIYjV4MTlVUVd3ZG5rY0JrODFnamJUYmVzQXNjQkYxVmRDWnFZWm83VVgtcldBOHhaRW9MRERVU2VNZ2hoakpaa1JDWnRXdUV2QmFmUVVhN3dFak1WaXBqSGYzNF9QQTByWDhfdk02UkVVN1REVFZncXVJT0N6eWNjdFIwQVNvNHVt?oc=5"
       ]
     },
     {
@@ -59,29 +59,29 @@
     },
     {
       "category": "ai-fallback",
-      "count": 1293,
+      "count": 1151,
       "sample": [
         "[ai/cluster-ai-0] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-2] Ollama unavailable — falling back to deterministic extraction",
-        "[ai/cluster-ai-3] Ollama unavailable — falling back to deterministic extraction"
+        "[ai/cluster-ai-1] Ollama unavailable — falling back to deterministic extraction",
+        "[ai/cluster-ai-2] fetch budget exhausted (30) — 13 of 30 URLs fetched for this cluster"
       ]
     },
     {
       "category": "copyright-gate",
       "count": 35,
       "sample": [
-        "Copyright gate failed for rank 3 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 6 (verbatim-overlap); article dropped — failing closed",
-        "Copyright gate failed for rank 7 (verbatim-overlap, verbatim-overlap); article dropped — failing closed"
+        "Copyright gate failed for rank 1 (verbatim-overlap, verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 2 (verbatim-overlap); article dropped — failing closed",
+        "Copyright gate failed for rank 8 (verbatim-overlap); article dropped — failing closed"
       ]
     },
     {
       "category": "editorial-hold",
-      "count": 15,
+      "count": 14,
       "sample": [
-        "AI unavailable for entry 5 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 7 (ollama-cloud HTTP 402) and no facts — article held",
-        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held"
+        "AI unavailable for entry 8 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 9 (ollama-cloud HTTP 402) and no facts — article held",
+        "AI unavailable for entry 10 (ollama-cloud HTTP 402) and no facts — article held"
       ]
     }
   ],
@@ -103,18 +103,18 @@
     "globalTop10": [
       {
         "rank": 1,
-        "topic": "security",
-        "headline": "RHSA-2026:104088: Important: kernel security, bug fix, and enhancement update"
+        "topic": "ai",
+        "headline": "OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers"
       },
       {
         "rank": 2,
-        "topic": "platform",
-        "headline": "Security updates for Friday"
+        "topic": "ai",
+        "headline": "I bought the Anthropic IPO and it was … hilarious?"
       },
       {
         "rank": 3,
-        "topic": "ai",
-        "headline": "OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers"
+        "topic": "platform",
+        "headline": "Azure AI Gateway Reaches General Availability as a Standalone Service"
       },
       {
         "rank": 4,
@@ -124,32 +124,32 @@
       {
         "rank": 5,
         "topic": "security",
-        "headline": "Unpatched Cacti zero-day with public PoC gives remote code execution"
+        "headline": "RHSA-2026:104088: Important: kernel security, bug fix, and enhancement update"
       },
       {
         "rank": 6,
-        "topic": "kubernetes",
-        "headline": "AWS Nitro Sandboxes give AI agents a place to run"
+        "topic": "security",
+        "headline": "Unpatched Cacti zero-day with public PoC gives remote code execution"
       },
       {
         "rank": 7,
-        "topic": "ai",
-        "headline": "Frank Talk: Jensen Huang’s return and Anthropic’s shaky debut prove AI is now a national security trade"
+        "topic": "platform",
+        "headline": "Security updates for Friday"
       },
       {
         "rank": 8,
-        "topic": "security",
-        "headline": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access"
+        "topic": "ai",
+        "headline": "Anthropic Keeps 80% of Recent Hires as Meta Dangles $100M"
       },
       {
         "rank": 9,
         "topic": "kubernetes",
-        "headline": "v1.56.7"
+        "headline": "Cloud-Native Best Practices: What We Enforce on Every Azure Build"
       },
       {
         "rank": 10,
-        "topic": "kubernetes",
-        "headline": "v1.54.13"
+        "topic": "security",
+        "headline": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access"
       }
     ],
     "articleCount": 0
